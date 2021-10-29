@@ -1,3 +1,7 @@
+---
+hide_toc: true
+---
+
 # [SIST](https://github.com/jhmin-dev/SIST)
 
 매일 수업 들으며 정리한 노트 모음
