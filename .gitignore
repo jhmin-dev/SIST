@@ -5,6 +5,7 @@
 /*.jpg
 /*.png
 /*.xlsx
+*.class
 study db/
 
 # Eclipse Metadata
