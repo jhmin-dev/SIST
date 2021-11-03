@@ -1,5 +1,9 @@
 title: Study Java
 owner_name: JeongHoon Min
-remote_theme: marella/jekyll-theme-documentation
-toc_min: 2
-toc_max: 4
+markdown: GFM
+# remote_theme: marella/jekyll-theme-documentation
+# remote_theme: pmarsceill/just-the-docs
+# toc_min: 2
+# toc_max: 4
+# kramdown:
+  # input: GFM
