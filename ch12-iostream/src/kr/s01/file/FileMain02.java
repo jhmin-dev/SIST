@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class FileMain02 {
 	public static void main(String[] args) {
-		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd a hh:mm");
 		String path = "C:\\";
 		File f = new File(path);
 		
