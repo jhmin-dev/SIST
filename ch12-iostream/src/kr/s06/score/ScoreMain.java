@@ -92,18 +92,16 @@ public class ScoreMain {
 	}
 	// 파일 생성
 	public void mkFile() throws IOException {
+		boolean append=false;
 		if(new File(filename).exists()) {
 			System.out.println("이전에 작성한 파일이 존재합니다. 덮어쓰시겠습니까? [y/n]");
 			while(true) {
 				String replace=br.readLine();
 				if(replace.equalsIgnoreCase("y")) {
-					fw = new FileWriter(filename);
-					fw.write("이름\t국어\t영어\t수학\t총점\t평균\t등급");
-					fw.write(System.getProperty("line.separator"));
 					break;
 				}
 				else if(replace.equalsIgnoreCase("n")) {
-					fw = new FileWriter(filename, true);
+					append=true;
 					break;
 				}
 				else {
@@ -111,8 +109,8 @@ public class ScoreMain {
 				}
 			}
 		}
-		else {
-			fw = new FileWriter(filename);
+		fw = new FileWriter(filename, append);
+		if(!append) {
 			fw.write("이름\t국어\t영어\t수학\t총점\t평균\t등급");
 			fw.write(System.getProperty("line.separator"));
 		}
