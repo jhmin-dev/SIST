@@ -5,12 +5,33 @@ public class Score {
 	 * [실습] 이름(name), 국어(korean), 영어(english), 수학(math)
 	 * 총점 구하기(int makeSum), 평균 구하기(double makeAvg), 등급 구하기(String makeGrade)
 	 */
-	// 멤버 변수
 	private String name;
 	private int korean;
 	private int english;
 	private int math;
-	// Getters and Setters
+
+	// 총점 구하기
+	public int makeSum() {
+		return korean + english + math;
+	}
+	// 평균 구하기
+	public double makeAvg() {
+		return makeSum() / 3.0;
+	}
+	// 등급 구하기
+	public String makeGrade() {
+		String str;
+		switch((int)(makeAvg()/10)) {
+		case 10:
+		case 9: str = "A"; break;
+		case 8: str = "B"; break;
+		case 7: str = "C"; break;
+		case 6: str = "D"; break;
+		default: str = "F";
+		}
+		return str;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -35,30 +56,9 @@ public class Score {
 	public void setMath(int math) {
 		this.math = math;
 	}
-	// 멤버 메서드
-	public int makeSum() {
-		return korean+english+math;
-	}
-	public double makeAvg() {
-		return makeSum()/3d;
-	}
-	public String makeGrade() {
-		switch((int)(makeAvg()/10)) {
-		case 10:
-		case 9:
-			return "A";
-		case 8:
-			return "B";
-		case 7:
-			return "C";
-		case 6:
-			return "D";
-		default:
-			return "F";
-		}
-	}
+
 	@Override
-	public String toString() {
-		return "Score [name=" + name + ", korean=" + korean + ", english=" + english + ", math=" + math + "]";
+	public String toString() { // 성적 출력 및 파일 생성에 활용할 수 있도록 toString() 메서드를 재정의
+		return String.format("%s\t%d\t%d\t%d\t%d\t%.2f\t%s%n", name, korean, english, math, makeSum(), makeAvg(), makeGrade()); // String의 static 메서드인 format() 메서드를 이용하여 printf() 메서드처럼 포맷문자를 적용한 문자열 반환
 	}
 }
