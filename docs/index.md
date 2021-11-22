@@ -77,8 +77,8 @@ hide_toc: true
 
 ### 8. 내부 클래스 [11월 12일](1112.md) [11월 15일](1115.md)
 
-- Member [11월 12일](1112.md#Member)
-- Local [11월 15일](1115.md#Local)
+- 인스턴스 [11월 12일](1112.md#인스턴스)
+- 지역 [11월 15일](1115.md#지역)
 - static
 - 익명
 
@@ -151,10 +151,10 @@ hide_toc: true
 
 ### 1. Database 개요 [11월 18일](1118.md)
 
-### 2. SQL(Standard Query Language) [11월 18일](1118.md) [11월 19일](1119.md)
+### 2. SQL(Standard Query Language) [11월 18일](1118.md) [11월 19일](1119.md) [11월 22일](1122.md)
 
 - 2-2 SQL문의 종류 [11월 18일](1118.md#2-2-SQL문의-종류)
-- 2-3 SELECT문 [11월 18일](1118.md#2-3-SELECT문) [11월 19일](1119.md#2-3-SELECT문)
+- 2-3 SELECT문 [11월 18일](1118.md#2-3-SELECT문) [11월 19일](1119.md#2-3-SELECT문) [11월 22일](1122.md#2-3-SELECT문)
 - 2-4 INSERT문
 - 2-5 UPDATE문
 - 2-6 DELETE문
