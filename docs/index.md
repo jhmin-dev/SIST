@@ -151,10 +151,10 @@ hide_toc: true
 
 ### 1. Database 개요 [11월 18일](1118.md)
 
-### 2. SQL(Standard Query Language) [11월 18일](1118.md) [11월 19일](1119.md) [11월 22일](1122.md)
+### 2. SQL(Standard Query Language) [11월 18일](1118.md) [11월 19일](1119.md) [11월 22일](1122.md) [11월 23일](1123.md)
 
 - 2-2 SQL문의 종류 [11월 18일](1118.md#2-2-SQL문의-종류)
-- 2-3 SELECT문 [11월 18일](1118.md#2-3-SELECT문) [11월 19일](1119.md#2-3-SELECT문) [11월 22일](1122.md#2-3-SELECT문)
+- 2-3 SELECT문 [11월 18일](1118.md#2-3-SELECT문) [11월 19일](1119.md#2-3-SELECT문) [11월 22일](1122.md#2-3-SELECT문) [11월 23일](1123.md#2-3-SELECT문)
 - 2-4 INSERT문
 - 2-5 UPDATE문
 - 2-6 DELETE문
