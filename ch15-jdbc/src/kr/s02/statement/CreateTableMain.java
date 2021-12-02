@@ -19,7 +19,6 @@ public class CreateTableMain {
 		try {
 			// JDBC 수행 1단계 : 드라이버 로드
 			Class.forName(db_driver);
-			
 			// JDBC 수행 2단계 : Connection 객체 생성(ID, 비밀번호 인증)
 			conn = DriverManager.getConnection(db_url, db_id, db_password);
 			

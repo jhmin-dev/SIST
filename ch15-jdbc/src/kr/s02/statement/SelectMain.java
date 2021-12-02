@@ -21,10 +21,8 @@ public class SelectMain {
 		try {
 			// JDBC 수행 1단계 : 드라이버 로드
 			Class.forName(db_driver);
-			
 			// JDBC 수행 2단계 : Connection 객체 생성(ID, 비밀번호 인증)
 			conn = DriverManager.getConnection(db_url, db_id, db_password);
-			
 			// JDBC 수행 3단계 : Statement 객체 생성
 			stmt = conn.createStatement();
 			
@@ -35,10 +33,16 @@ public class SelectMain {
 			rs = stmt.executeQuery(sql);
 
 			System.out.println("ID\t나이");
-			while(rs.next()) {
-				System.out.print(rs.getString("id"));
+			while(rs.next()) { // ResultSet에서 결과 집합의 행에 접근할 때 커서를 사용하는데, next() 메서드는 커서를 다음 행으로 이동시키고 다음 행이 존재하면 true 반환
+				// 컬럼명을 통해 데이터를 반환
+				System.out.print(rs.getString("id")); // getString() 메서드는 입력한 컬럼명과 매칭되어 있는 데이터를 String 자료형으로 반환
 				System.out.print("\t");
-				System.out.println(rs.getInt("age"));
+				System.out.println(rs.getInt("age")); // getInt() 메서드는 입력한 컬럼명과 매칭되어 있는 데이터를 int 자료형으로 반환
+				
+				// 컬럼 인덱스를 통해 데이터를 반환
+				// System.out.print(rs.getString(1)); // SELECT문에서 전체(*)를 반환한 경우 테이블 생성시의 컬럼 인덱스를 사용할 수 있지만, 그 외의 경우 컬럼 인덱스가 변동될 수 있으므로 주의
+				// System.out.print("\t");
+				// System.out.println(rs.getInt(2));
 			}
 		}
 		catch(Exception e) {

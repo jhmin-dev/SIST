@@ -5,7 +5,7 @@ import java.sql.Statement;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class InsertMain {
+public class UpdateMain {
 	public static void main(String[] args) {
 		String db_driver = "oracle.jdbc.OracleDriver";
 		String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -25,17 +25,17 @@ public class InsertMain {
 			stmt = conn.createStatement();
 			
 			// SQL문 작성
-			// sql = "INSERT INTO test1 (id, age) VALUES ('se't', 10)"; // 문자열 내에 ' 포함시 에러
-			sql = "INSERT INTO test1 (id, age) VALUES ('se''t', 10)"; // 문자열 내에 ' 포함하고 싶으면 '' 사용
+			sql = "UPDATE test1 SET age=90 WHERE id='sky'";
 			
-			// JDBC 수행 4단계 : SQL문을 실행해서 테이블에 행을 삽입
-			int count = stmt.executeUpdate(sql); // 삽입 작업 후 삽입한 행의 수를 반환
-			System.out.println(count + "개 행이 삽입되었습니다.");
+			// JDBC 수행 4단계 : SQL문을 실행해서 테이블의 행을 갱신
+			int count = stmt.executeUpdate(sql); // 갱신 작업 후 갱신한 행의 수를 반환
+			System.out.println(count + "개 행의 정보를 갱신했습니다.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
+			// 자원 정리
 			if(stmt!=null) try {stmt.close();} catch(SQLException e) {}
 			if(conn!=null) try {conn.close();} catch(SQLException e) {}
 		}

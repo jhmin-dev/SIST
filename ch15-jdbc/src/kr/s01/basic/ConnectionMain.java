@@ -10,6 +10,7 @@ public class ConnectionMain {
 		String db_url = "jdbc:oracle:thin:@localhost:1521:xe"; // Oracle로 연결, Type 4 드라이버인 thin 사용, @호스트명(=IP 주소나 도메인으로 대체 가능), 포트 번호 1521, Oracle Database 설치시 부여되는 SID명 XE
 		String db_id = "scott";
 		String db_password = "tiger";
+		
 		try {
 			// JDBC 수행 1단계 : 드라이버 로드
 			Class.forName(db_driver);

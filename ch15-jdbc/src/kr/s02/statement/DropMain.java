@@ -5,7 +5,7 @@ import java.sql.Statement;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class InsertMain {
+public class DropMain {
 	public static void main(String[] args) {
 		String db_driver = "oracle.jdbc.OracleDriver";
 		String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -17,20 +17,19 @@ public class InsertMain {
 		String sql = null;
 		
 		try {
-			// JDBC 수행 1단계 : 드라이버 로드
+            // JDBC 수행 1단계 : 드라이버 로드
 			Class.forName(db_driver);
-			// JDBC 수행 2단계 : Connection 객체 생성(ID, 비밀번호 인증)
+            // JDBC 수행 2단계 : Connection 객체 생성
 			conn = DriverManager.getConnection(db_url, db_id, db_password);
-			// JDBC 수행 3단계 : Statement 객체 생성
+            // JDBC 수행 3단계 : Statement 객체 생성
 			stmt = conn.createStatement();
 			
 			// SQL문 작성
-			// sql = "INSERT INTO test1 (id, age) VALUES ('se't', 10)"; // 문자열 내에 ' 포함시 에러
-			sql = "INSERT INTO test1 (id, age) VALUES ('se''t', 10)"; // 문자열 내에 ' 포함하고 싶으면 '' 사용
+			sql = "DROP TABLE test1";
 			
-			// JDBC 수행 4단계 : SQL문을 실행해서 테이블에 행을 삽입
-			int count = stmt.executeUpdate(sql); // 삽입 작업 후 삽입한 행의 수를 반환
-			System.out.println(count + "개 행이 삽입되었습니다.");
+			// JDBC 수행 4단계 : SQL문을 실행해서 데이터베이스에서 테이블을 삭제
+			stmt.executeUpdate(sql); // executeUpdate() 메서드는 접근한 행의 수를 반환하며, 테이블을 생성하거나 삭제할 때는 0을 반환
+			System.out.println("테이블이 정상적으로 삭제되었습니다.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
