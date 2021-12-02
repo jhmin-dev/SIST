@@ -1,21 +1,21 @@
 public class PrintMain01 {
 	public static void main(String[] args) {
-		// ÁÖ¼® : ÄÚµå¿¡ ´ëÇÑ ¼³¸íÀ» ´Ş°Å³ª ÄÚµå¸¦ ÄÄÆÄÀÏÇÒ ¶§ Á¦¿Ü½ÃÄÑ ½ÇÇàµÇÁö ¾Êµµ·Ï ÇÒ ¶§ »ç¿ë
-		// ÇÑ ÁÙ ÁÖ¼®
+		// ì£¼ì„ : ì½”ë“œì— ëŒ€í•œ ì„¤ëª…ì„ ë‹¬ê±°ë‚˜ ì½”ë“œë¥¼ ì»´íŒŒì¼í•  ë•Œ ì œì™¸ì‹œì¼œ ì‹¤í–‰ë˜ì§€ ì•Šë„ë¡ í•  ë•Œ ì‚¬ìš©
+		// í•œ ì¤„ ì£¼ì„
 		// System.out.println("Hello Java!");
 
-		// Ãâ·Â ÈÄ ÁÙ¹Ù²Ş
+		// ì¶œë ¥ í›„ ì¤„ë°”ê¿ˆ
 		System.out.println("Hello World!!");
-		System.out.println("¿À´ÃÀº ¼ö¿äÀÏ!!");
+		System.out.println("ì˜¤ëŠ˜ì€ ìˆ˜ìš”ì¼!!");
 
-		// Ãâ·Â ÈÄ ÁÙ¹Ù²Ş ¾øÀ½
-		System.out.print("º½");
-		System.out.print("¿©¸§");
+		// ì¶œë ¥ í›„ ì¤„ë°”ê¿ˆ ì—†ìŒ
+		System.out.print("ë´„");
+		System.out.print("ì—¬ë¦„");
 		
-		// ¿©·¯ ÁÙ ÁÖ¼®
+		// ì—¬ëŸ¬ ì¤„ ì£¼ì„
 		/*
-		System.out.print("°¡À»");
-		System.out.print("°Ü¿ï");
+		System.out.print("ê°€ì„");
+		System.out.print("ê²¨ìš¸");
 		*/
 	}
 }

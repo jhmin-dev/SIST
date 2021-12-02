@@ -1,19 +1,19 @@
 package kr.s11.inter;
 
 interface A1 {
-	// »ó¼ö; ÀÎÅÍÆäÀÌ½º´Â »ı¼ºÀÚ°¡ ¾øÀ¸¹Ç·Î °´Ã¼ »ı¼ºÀÌ ºÒ°¡´ÉÇÏ°í, »ó¼ö´Â °¢ÀÚ È£Ãâ½Ã ¸Ş¸ğ¸®¿¡ ¿Ã¶ó°¨
-	public static final int W = 10; // ¿øÇü
-	int X = 20; // public static final »ı·«ÇØµµ ¿øÇü´ë·Î ¼±¾ğµÊ
-	static int Y = 30; // public final »ı·«ÇØµµ ¿øÇü´ë·Î ¼±¾ğµÊ
-	final int Z = 40; // public static »ı·«ÇØµµ ¿øÇü´ë·Î ¼±¾ğµÊ
+	// ìƒìˆ˜; ì¸í„°í˜ì´ìŠ¤ëŠ” ìƒì„±ìê°€ ì—†ìœ¼ë¯€ë¡œ ê°ì²´ ìƒì„±ì´ ë¶ˆê°€ëŠ¥í•˜ê³ , ìƒìˆ˜ëŠ” ê°ì í˜¸ì¶œì‹œ ë©”ëª¨ë¦¬ì— ì˜¬ë¼ê°
+	public static final int W = 10; // ì›í˜•
+	int X = 20; // public static final ìƒëµí•´ë„ ì›í˜•ëŒ€ë¡œ ì„ ì–¸ë¨
+	static int Y = 30; // public final ìƒëµí•´ë„ ì›í˜•ëŒ€ë¡œ ì„ ì–¸ë¨
+	final int Z = 40; // public static ìƒëµí•´ë„ ì›í˜•ëŒ€ë¡œ ì„ ì–¸ë¨
 }
 
 public class InterMain01 {
 	public static void main(String[] args) {
-		// ÀÎÅÍÆäÀÌ½º´Â °´Ã¼ »ı¼º ºÒ°¡
+		// ì¸í„°í˜ì´ìŠ¤ëŠ” ê°ì²´ ìƒì„± ë¶ˆê°€
 		// A1 ap = new A1();
 		
-		// static »ó¼öÀÌ¹Ç·Î ÀÎÅÍÆäÀÌ½º¸í.»ó¼ö¸í Çü½ÄÀ¸·Î È£ÃâÇÔ
+		// static ìƒìˆ˜ì´ë¯€ë¡œ ì¸í„°í˜ì´ìŠ¤ëª….ìƒìˆ˜ëª… í˜•ì‹ìœ¼ë¡œ í˜¸ì¶œí•¨
 		System.out.println("W = " + A1.W);
 		System.out.println("X = " + A1.X);
 		System.out.println("Y = " + A1.Y);

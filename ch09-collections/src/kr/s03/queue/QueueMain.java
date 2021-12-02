@@ -4,18 +4,18 @@ import java.util.LinkedList;
 
 public class QueueMain {
 	public static void main(String[] args) {
-		String[] array = {"¼­¿ï", "ÀÎÃµ", "±¤ÁÖ", "ºÎ»ê", "´ë±¸"};
+		String[] array = {"ì„œìš¸", "ì¸ì²œ", "ê´‘ì£¼", "ë¶€ì‚°", "ëŒ€êµ¬"};
 		LinkedList<String> ll = new LinkedList<String>();
 		
-		// ll¿¡ offer() ¸Ş¼­µå·Î µ¥ÀÌÅÍ ÀúÀå
+		// llì— offer() ë©”ì„œë“œë¡œ ë°ì´í„° ì €ì¥
 		for(int i=0;i<array.length;i++) {
 			ll.offer(array[i]);
 		}
 		System.out.println(ll);
 		
-		// ll¿¡¼­ poll() ¸Ş¼­µå·Î µ¥ÀÌÅÍ ²¨³¿(=ll ¾ÈÀÇ µ¥ÀÌÅÍ´Â Áö¿öÁü)
-		while(ll.peek()!=null) { // ll¿¡ ÀúÀåµÈ Ã¹ ¹øÂ° ¿ä¼Ò¸¦ °Ë»ö
-			System.out.print(ll.poll() + "\t"); // ll¿¡ ÀúÀåµÈ Ã¹ ¹øÂ° ¿ä¼Ò¸¦ ¹İÈ¯ÇÏ°í Á¦°Å
+		// llì—ì„œ poll() ë©”ì„œë“œë¡œ ë°ì´í„° êº¼ëƒ„(=ll ì•ˆì˜ ë°ì´í„°ëŠ” ì§€ì›Œì§)
+		while(ll.peek()!=null) { // llì— ì €ì¥ëœ ì²« ë²ˆì§¸ ìš”ì†Œë¥¼ ê²€ìƒ‰
+			System.out.print(ll.poll() + "\t"); // llì— ì €ì¥ëœ ì²« ë²ˆì§¸ ìš”ì†Œë¥¼ ë°˜í™˜í•˜ê³  ì œê±°
 		}
 		System.out.println("\n"+ll);
 	}

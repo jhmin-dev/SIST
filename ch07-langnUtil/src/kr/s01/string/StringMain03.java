@@ -7,30 +7,30 @@ public class StringMain03 {
 		int a = 100;
 		String msg = null;
 		
-		msg = s1.toUpperCase(); // ¹®ÀÚ¿­ ³» ¼Ò¹®ÀÚ¸¦ ¸ğµÎ ´ë¹®ÀÚ·Î º¯È¯
+		msg = s1.toUpperCase(); // ë¬¸ìì—´ ë‚´ ì†Œë¬¸ìë¥¼ ëª¨ë‘ ëŒ€ë¬¸ìë¡œ ë³€í™˜
 		System.out.println("msg : " + msg);
 		
-		msg = s1.toLowerCase(); // ¹®ÀÚ¿­ ³» ´ë¹®ÀÚ¸¦ ¸ğµÎ ¼Ò¹®ÀÚ·Î º¯È¯
+		msg = s1.toLowerCase(); // ë¬¸ìì—´ ë‚´ ëŒ€ë¬¸ìë¥¼ ëª¨ë‘ ì†Œë¬¸ìë¡œ ë³€í™˜
 		System.out.println("msg : " + msg);
 		
-		msg = s1.replace("aB", "b"); // Æ¯Á¤ ¹®ÀÚ¿­À» »õ·Î¿î ¹®ÀÚ¿­·Î Ä¡È¯
+		msg = s1.replace("aB", "b"); // íŠ¹ì • ë¬¸ìì—´ì„ ìƒˆë¡œìš´ ë¬¸ìì—´ë¡œ ì¹˜í™˜
 		System.out.println("msg : " + msg);
 		
-		msg = s1.trim(); // ¹®ÀÚ¿­ ³»ÀÇ °ø¹éÀ» Á¦°Å; ÀÚ¹Ù¿¡¼­ °ø¹éÀº µ¥ÀÌÅÍ·Î ÀÎÁ¤µÇÁö¸¸ ÇÁ·Î±×·¡¸ÓÀÇ ÇÊ¿ä¿¡ µû¶ó trim() ¸Ş¼­µå È°¿ë °¡´É
+		msg = s1.trim(); // ë¬¸ìì—´ ë‚´ì˜ ê³µë°±ì„ ì œê±°; ìë°”ì—ì„œ ê³µë°±ì€ ë°ì´í„°ë¡œ ì¸ì •ë˜ì§€ë§Œ í”„ë¡œê·¸ë˜ë¨¸ì˜ í•„ìš”ì— ë”°ë¼ trim() ë©”ì„œë“œ í™œìš© ê°€ëŠ¥
 		System.out.println("msg : " + msg);
 		
-		boolean f= s1.contains("aB"); // ¹®ÀÚ¿­ ³»¿¡ ÀÎÀÚ·Î Àü´Ş¹ŞÀº ¹®ÀÚ¿­ÀÌ Æ÷ÇÔµÇ¾î ÀÖÀ¸¸é true, ±×·¸Áö ¾ÊÀ¸¸é false¸¦ ¹İÈ¯; °Ë»ö ¿ëµµ·Î »ç¿ë °¡´É
+		boolean f= s1.contains("aB"); // ë¬¸ìì—´ ë‚´ì— ì¸ìë¡œ ì „ë‹¬ë°›ì€ ë¬¸ìì—´ì´ í¬í•¨ë˜ì–´ ìˆìœ¼ë©´ true, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ falseë¥¼ ë°˜í™˜; ê²€ìƒ‰ ìš©ë„ë¡œ ì‚¬ìš© ê°€ëŠ¥
 		System.out.println("f : " + f);
 		
-		f = s2.startsWith("ab"); // ¹®ÀÚ¿­ÀÌ ÀÎÀÚ¿¡ Àü´ŞµÈ ¹®ÀÚ¿­·Î ½ÃÀÛÇÏ¸é true, ±×·¸Áö ¾ÊÀ¸¸é false¸¦ ¹İÈ¯; °Ë»ö ¿ëµµ·Î »ç¿ë °¡´É
+		f = s2.startsWith("ab"); // ë¬¸ìì—´ì´ ì¸ìì— ì „ë‹¬ëœ ë¬¸ìì—´ë¡œ ì‹œì‘í•˜ë©´ true, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ falseë¥¼ ë°˜í™˜; ê²€ìƒ‰ ìš©ë„ë¡œ ì‚¬ìš© ê°€ëŠ¥
 		System.out.println("f : " + f);
 		
-		f = s2.endsWith("bc"); // ¹®ÀÚ¿­ÀÌ ÀÎÀÚ¿¡ Àü´ŞµÈ ¹®ÀÚ¿­·Î ³¡³ª¸é true, ±×·¸Áö ¾ÊÀ¸¸é false¸¦ ¹İÈ¯; °Ë»ö ¿ëµµ·Î »ç¿ë °¡´É
+		f = s2.endsWith("bc"); // ë¬¸ìì—´ì´ ì¸ìì— ì „ë‹¬ëœ ë¬¸ìì—´ë¡œ ëë‚˜ë©´ true, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ falseë¥¼ ë°˜í™˜; ê²€ìƒ‰ ìš©ë„ë¡œ ì‚¬ìš© ê°€ëŠ¥
 		System.out.println("f : " + f);
 		
-		String msg2 = String.valueOf(a); // valueOf() ¸Ş¼­µå¸¦ ÀÌ¿ëÇÏ¿© int¸¦ StringÀ¸·Î º¯È¯(=parsing)
+		String msg2 = String.valueOf(a); // valueOf() ë©”ì„œë“œë¥¼ ì´ìš©í•˜ì—¬ intë¥¼ Stringìœ¼ë¡œ ë³€í™˜(=parsing)
 		System.out.println("msg2 : " + msg2);
-		String msg3 = a + ""; // ºó ¹®ÀÚ¿­À» ¿¬°áÇÏ¿© int¸¦ StringÀ¸·Î º¯È¯(=parsing)
+		String msg3 = a + ""; // ë¹ˆ ë¬¸ìì—´ì„ ì—°ê²°í•˜ì—¬ intë¥¼ Stringìœ¼ë¡œ ë³€í™˜(=parsing)
 		System.out.println(msg3.equals(msg2));
 	}
 }

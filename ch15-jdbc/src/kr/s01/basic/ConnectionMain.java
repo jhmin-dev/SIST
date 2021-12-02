@@ -7,16 +7,16 @@ import java.sql.SQLException;
 public class ConnectionMain {
 	public static void main(String[] args) {
 		String db_driver = "oracle.jdbc.OracleDriver";
-		String db_url = "jdbc:oracle:thin:@localhost:1521:xe"; // Oracle·Î ¿¬°á, Type 4 µå¶óÀÌ¹öÀÎ thin »ç¿ë, @È£½ºÆ®¸í(=IP ÁÖ¼Ò³ª µµ¸ŞÀÎÀ¸·Î ´ëÃ¼ °¡´É), Æ÷Æ® ¹øÈ£ 1521, Oracle Database ¼³Ä¡½Ã ºÎ¿©µÇ´Â SID¸í XE
+		String db_url = "jdbc:oracle:thin:@localhost:1521:xe"; // Oracleë¡œ ì—°ê²°, Type 4 ë“œë¼ì´ë²„ì¸ thin ì‚¬ìš©, @í˜¸ìŠ¤íŠ¸ëª…(=IP ì£¼ì†Œë‚˜ ë„ë©”ì¸ìœ¼ë¡œ ëŒ€ì²´ ê°€ëŠ¥), í¬íŠ¸ ë²ˆí˜¸ 1521, Oracle Database ì„¤ì¹˜ì‹œ ë¶€ì—¬ë˜ëŠ” SIDëª… XE
 		String db_id = "scott";
 		String db_password = "tiger";
 		
 		try {
-			// JDBC ¼öÇà 1´Ü°è : µå¶óÀÌ¹ö ·Îµå
+			// JDBC ìˆ˜í–‰ 1ë‹¨ê³„ : ë“œë¼ì´ë²„ ë¡œë“œ
 			Class.forName(db_driver);
-			// JDBC ¼öÇà 2´Ü°è : Connection °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 2ë‹¨ê³„ : Connection ê°ì²´ ìƒì„±
 			Connection conn = DriverManager.getConnection(db_url, db_id, db_password);
-			System.out.println("Connection °´Ã¼°¡ »ı¼ºµÇ¾ú½À´Ï´Ù.");
+			System.out.println("Connection ê°ì²´ê°€ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		catch (SQLException e) {
 			e.printStackTrace();

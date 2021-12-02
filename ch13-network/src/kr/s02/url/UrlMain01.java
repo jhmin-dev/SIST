@@ -1,19 +1,19 @@
 package kr.s02.url;
 
 import java.net.URL;
-import java.net.MalformedURLException; // URL °´Ã¼ »ı¼º½Ã URL Çü½ÄÀ» ÁöÅ°Áö ¾ÊÀ¸¸é ¹ß»ıÇÏ´Â ¿¹¿Ü
+import java.net.MalformedURLException; // URL ê°ì²´ ìƒì„±ì‹œ URL í˜•ì‹ì„ ì§€í‚¤ì§€ ì•Šìœ¼ë©´ ë°œìƒí•˜ëŠ” ì˜ˆì™¸
 
 public class UrlMain01 {
 	public static void main(String[] args) {
 		try {
-			URL url = new URL("http://java.sun.com/index.jsp?name=milktea#content"); // ½ÇÁ¦ Á¢¼Ó °¡´ÉÇÑ ÁÖ¼Ò°¡ ¾Æ´Ï¾îµµ URL Çü½Ä¿¡ ¸ÂÀ¸¸é URL °´Ã¼°¡ »ı¼ºµÊ
-			System.out.println("ÇÁ·ÎÅäÄİ : " + url.getProtocol());
-			System.out.println("È£½ºÆ® : " + url.getHost());
-			System.out.println("±âº» Æ÷Æ® : " + url.getDefaultPort()); // ÇÁ·ÎÅäÄİÀÇ ±âº» Æ÷Æ®¸¦ ¹İÈ¯
-			System.out.println("Æ÷Æ® : " + url.getPort()); // URL °´Ã¼ »ı¼º½Ã Æ÷Æ®¸¦ ¸í½ÃÇÏÁö ¾ÊÀ¸¸é -1 ¹İÈ¯
-			System.out.println("ÆĞ½º : " + url.getPath());
-			System.out.println("Äõ¸® : " + url.getQuery()); // URL¿¡¼­ ? ÀÌÈÄ¸¦ ¹İÈ¯
-			System.out.println("·¹ÆÛ·±½º : " + url.getRef()); // URL¿¡¼­ # ÀÌÈÄ¸¦ ¹İÈ¯
+			URL url = new URL("http://java.sun.com/index.jsp?name=milktea#content"); // ì‹¤ì œ ì ‘ì† ê°€ëŠ¥í•œ ì£¼ì†Œê°€ ì•„ë‹ˆì–´ë„ URL í˜•ì‹ì— ë§ìœ¼ë©´ URL ê°ì²´ê°€ ìƒì„±ë¨
+			System.out.println("í”„ë¡œí† ì½œ : " + url.getProtocol());
+			System.out.println("í˜¸ìŠ¤íŠ¸ : " + url.getHost());
+			System.out.println("ê¸°ë³¸ í¬íŠ¸ : " + url.getDefaultPort()); // í”„ë¡œí† ì½œì˜ ê¸°ë³¸ í¬íŠ¸ë¥¼ ë°˜í™˜
+			System.out.println("í¬íŠ¸ : " + url.getPort()); // URL ê°ì²´ ìƒì„±ì‹œ í¬íŠ¸ë¥¼ ëª…ì‹œí•˜ì§€ ì•Šìœ¼ë©´ -1 ë°˜í™˜
+			System.out.println("íŒ¨ìŠ¤ : " + url.getPath());
+			System.out.println("ì¿¼ë¦¬ : " + url.getQuery()); // URLì—ì„œ ? ì´í›„ë¥¼ ë°˜í™˜
+			System.out.println("ë ˆí¼ëŸ°ìŠ¤ : " + url.getRef()); // URLì—ì„œ # ì´í›„ë¥¼ ë°˜í™˜
 		}
 		catch(MalformedURLException e) {
 			e.printStackTrace();

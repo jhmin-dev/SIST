@@ -11,10 +11,10 @@ public class BufferedReaderMain02 {
 		BufferedReader br = null;
 		try {
 			fr = new FileReader("file.txt");
-			br = new BufferedReader(fr); // FileReader°¡ ÆÄÀÏ¿¡ Á¢±ÙÇØ¼­ ¾òÀº Á¤º¸¸¦ BufferedReader¿¡ Àü´Ş; ´ë¿ë·® µ¥ÀÌÅÍ¸¦ ´Ù·ç´Â °æ¿ì FileReader ´Üµ¶ »ç¿ëº¸´Ù ¹öÆÛ °ø°£À» È°¿ëÇÏ´Â BufferedReader ¿¬°è »ç¿ëÀÌ ¼Óµµ¿¡¼­ À¯¸®
+			br = new BufferedReader(fr); // FileReaderê°€ íŒŒì¼ì— ì ‘ê·¼í•´ì„œ ì–»ì€ ì •ë³´ë¥¼ BufferedReaderì— ì „ë‹¬; ëŒ€ìš©ëŸ‰ ë°ì´í„°ë¥¼ ë‹¤ë£¨ëŠ” ê²½ìš° FileReader ë‹¨ë… ì‚¬ìš©ë³´ë‹¤ ë²„í¼ ê³µê°„ì„ í™œìš©í•˜ëŠ” BufferedReader ì—°ê³„ ì‚¬ìš©ì´ ì†ë„ì—ì„œ ìœ ë¦¬
 			String msg;
-			while((msg = br.readLine())!=null) { // readLine() ¸Ş¼­µå´Â ´õ ÀÌ»ó ÀĞÀ» µ¥ÀÌÅÍ°¡ ¾øÀ¸¸é nullÀ» ¹İÈ¯
-				System.out.println(msg); // readLine() ¸Ş¼­µå°¡ ÀĞ¾î¿Â ÇÑ ÁÙÀ» Ãâ·Â
+			while((msg = br.readLine())!=null) { // readLine() ë©”ì„œë“œëŠ” ë” ì´ìƒ ì½ì„ ë°ì´í„°ê°€ ì—†ìœ¼ë©´ nullì„ ë°˜í™˜
+				System.out.println(msg); // readLine() ë©”ì„œë“œê°€ ì½ì–´ì˜¨ í•œ ì¤„ì„ ì¶œë ¥
 			}
 		}
 		catch(FileNotFoundException e) {

@@ -5,9 +5,9 @@ import java.util.StringTokenizer;
 public class StringTokenizerMain02 {
 	public static void main(String[] args) {
 		String source = "2021-11-10 11:21:50";
-		StringTokenizer st = new StringTokenizer(source, "-: "); // º¹¼öÀÇ ±¸ºĞÀÚ ÁöÁ¤ °¡´É
-		while(st.hasMoreTokens()) { // ±¸ºĞÀÚ¸¦ ÅëÇØ ¸¸µé¾îÁø ¹®ÀÚ¿­ÀÌ ÀÖ´ÂÁö °ËÁõ
-			System.out.println(st.nextToken()); // ±¸ºĞÀÚ¸¦ ÅëÇØ ¸¸µé¾îÁø ¹®ÀÚ¿­À» ÇÏ³ª¾¿ ¹İÈ¯
+		StringTokenizer st = new StringTokenizer(source, "-: "); // ë³µìˆ˜ì˜ êµ¬ë¶„ì ì§€ì • ê°€ëŠ¥
+		while(st.hasMoreTokens()) { // êµ¬ë¶„ìë¥¼ í†µí•´ ë§Œë“¤ì–´ì§„ ë¬¸ìì—´ì´ ìˆëŠ”ì§€ ê²€ì¦
+			System.out.println(st.nextToken()); // êµ¬ë¶„ìë¥¼ í†µí•´ ë§Œë“¤ì–´ì§„ ë¬¸ìì—´ì„ í•˜ë‚˜ì”© ë°˜í™˜
 		}
 	}
 }

@@ -1,10 +1,10 @@
 package kr.s06.animal;
 
 public class Animal {
-	// ¸â¹ö º¯¼ö
-	private String name; // ÀÌ¸§
-	private int age; // ³ªÀÌ
-	private boolean fly; // ºñÇà ¿©ºÎ
+	// ë©¤ë²„ ë³€ìˆ˜
+	private String name; // ì´ë¦„
+	private int age; // ë‚˜ì´
+	private boolean fly; // ë¹„í–‰ ì—¬ë¶€
 	// Getters and Setters
 	public String getName() {
 		return name;
@@ -18,18 +18,18 @@ public class Animal {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public boolean isFly() { // booleanÇüÀº µ¥ÀÌÅÍ¸¦ ÀĞ¾î¿Ã ¶§ getÀÌ ¾Æ´Ñ is¸¦ »ç¿ëÇÏ´Â °ÍÀÌ Ç¥ÁØ
+	public boolean isFly() { // booleaní˜•ì€ ë°ì´í„°ë¥¼ ì½ì–´ì˜¬ ë•Œ getì´ ì•„ë‹Œ isë¥¼ ì‚¬ìš©í•˜ëŠ” ê²ƒì´ í‘œì¤€
 		return fly;
 	}
 	public void setFly(boolean fly) {
 		this.fly = fly;
 	}
-	// ÀÎÀÚ¸¦ ¹Ş´Â »ı¼ºÀÚ
+	// ì¸ìë¥¼ ë°›ëŠ” ìƒì„±ì
 	public Animal(String name, int age, boolean fly) {
 		this.name = name;
 		this.age = age;
 		this.fly = fly;
 	}
-	// ÀÎÀÚ ¾ø´Â ±âº» »ı¼ºÀÚ; ¸í½ÃÇÏÁö ¾ÊÀ» °æ¿ì ±âº» »ı¼ºÀÚ »ç¿ë ºÒ°¡
+	// ì¸ì ì—†ëŠ” ê¸°ë³¸ ìƒì„±ì; ëª…ì‹œí•˜ì§€ ì•Šì„ ê²½ìš° ê¸°ë³¸ ìƒì„±ì ì‚¬ìš© ë¶ˆê°€
 	public Animal() {}
 }

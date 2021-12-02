@@ -7,9 +7,9 @@ import java.io.InputStreamReader;
 
 public class MemberMain {
 	/*
-	 * [½Ç½À]
-	 * ArrayList, BufferedReader »ı¼º
-	 * ¸Ş´º : 1. È¸¿ø Á¤º¸ ÀÔ·Â, 2. È¸¿ø Á¤º¸ Ãâ·Â, 3. Á¾·á
+	 * [ì‹¤ìŠµ]
+	 * ArrayList, BufferedReader ìƒì„±
+	 * ë©”ë‰´ : 1. íšŒì› ì •ë³´ ì…ë ¥, 2. íšŒì› ì •ë³´ ì¶œë ¥, 3. ì¢…ë£Œ
 	 */
 	ArrayList<Member> ml;
 	BufferedReader br;
@@ -30,8 +30,8 @@ public class MemberMain {
 	
 	public void callMenu() throws IOException {
 		while(true) {
-			System.out.println("¸Ş´º : 1. È¸¿ø Á¤º¸ ÀÔ·Â, 2. È¸¿ø Á¤º¸ Ãâ·Â, 3. Á¾·á");
-			System.out.print("¸Ş´º > ");
+			System.out.println("ë©”ë‰´ : 1. íšŒì› ì •ë³´ ì…ë ¥, 2. íšŒì› ì •ë³´ ì¶œë ¥, 3. ì¢…ë£Œ");
+			System.out.print("ë©”ë‰´ > ");
 			String menu=br.readLine();
 			if(menu.equals("1")) {
 				setInfo();
@@ -40,30 +40,30 @@ public class MemberMain {
 				getInfo();
 			}
 			else if(menu.equals("3")) {
-				System.out.println("ÇÁ·Î±×·¥ÀÌ Á¾·áµÇ¾ú½À´Ï´Ù.");
+				System.out.println("í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 				break;
 			}
 			else {
-				System.out.println("¹øÈ£¸¦ Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ë²ˆí˜¸ë¥¼ ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 		}
 	}
 	
 	public void setInfo() throws IOException {
 		Member m=new Member();
-		System.out.print("ÀÌ¸§ > ");
+		System.out.print("ì´ë¦„ > ");
 		m.setName(br.readLine());
-		m.setAge(parseInputData("³ªÀÌ > ")); // ³ªÀÌ °ËÁõ ¸Ş¼­µå¸¦ º°µµ·Î ºĞ¸®ÇÏ¿© È£Ãâ
-		System.out.print("Á÷¾÷ > ");
+		m.setAge(parseInputData("ë‚˜ì´ > ")); // ë‚˜ì´ ê²€ì¦ ë©”ì„œë“œë¥¼ ë³„ë„ë¡œ ë¶„ë¦¬í•˜ì—¬ í˜¸ì¶œ
+		System.out.print("ì§ì—… > ");
 		m.setJob(br.readLine());
-		System.out.print("ÁÖ¼Ò > ");
+		System.out.print("ì£¼ì†Œ > ");
 		m.setAddress(br.readLine());
-		System.out.print("ÀüÈ­¹øÈ£ > ");
+		System.out.print("ì „í™”ë²ˆí˜¸ > ");
 		m.setPhone(br.readLine());
 		ml.add(m);
 	}
 	
-	// ÀÔ·Â°ªÀÌ ¼ıÀÚÀÎÁö È®ÀÎÇÏ°í, 1 ÀÌ»óÀÇ °ª¸¸ ÀÔ·Â¹Ş´Â ¸Ş¼­µå
+	// ì…ë ¥ê°’ì´ ìˆ«ìì¸ì§€ í™•ì¸í•˜ê³ , 1 ì´ìƒì˜ ê°’ë§Œ ì…ë ¥ë°›ëŠ” ë©”ì„œë“œ
 	public int parseInputData(String title) throws IOException {
 		int a;
 		while(true) {
@@ -74,21 +74,21 @@ public class MemberMain {
 					break;
 				}
 				else {
-					System.out.println("³ªÀÌ´Â 0 ÀÌÇÏÀÏ ¼ö ¾ø½À´Ï´Ù.");
+					System.out.println("ë‚˜ì´ëŠ” 0 ì´í•˜ì¼ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				}
 			}
 			catch(NumberFormatException e) {
-				System.out.println("³ªÀÌ´Â ¼ıÀÚ¸¸ ÀÔ·ÂÇÒ ¼ö ÀÖ½À´Ï´Ù.");
+				System.out.println("ë‚˜ì´ëŠ” ìˆ«ìë§Œ ì…ë ¥í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.");
 			}
 		}
 		return a;
 	}
 	
 	public void getInfo() {
-		System.out.println("ÃÑ È¸¿ø ¼ö : "+ml.size());
-		if(ml.size()!=0) System.out.println("ÀÌ¸§\t³ªÀÌ\tÁ÷¾÷\tÁÖ¼Ò\tÀüÈ­¹øÈ£");
+		System.out.println("ì´ íšŒì› ìˆ˜ : "+ml.size());
+		if(ml.size()!=0) System.out.println("ì´ë¦„\të‚˜ì´\tì§ì—…\tì£¼ì†Œ\tì „í™”ë²ˆí˜¸");
 		for(Member m:ml) {
-			System.out.println(m.getName()+"\t"+m.getAge()+"¼¼\t"+m.getJob()+"\t"+m.getAddress()+"\t"+m.getPhone());
+			System.out.println(m.getName()+"\t"+m.getAge()+"ì„¸\t"+m.getJob()+"\t"+m.getAddress()+"\t"+m.getPhone());
 		}
 	}
 	

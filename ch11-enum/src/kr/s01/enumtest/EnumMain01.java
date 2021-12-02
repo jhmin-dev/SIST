@@ -1,8 +1,8 @@
 package kr.s01.enumtest;
 
 public class EnumMain01 {
-	// enumÀ» »ç¿ëÇÏÁö ¾Ê°í static »ó¼ö¸¦ »ç¿ëÇÑ °æ¿ì
-	public static final String JAVA = "JAVA"; // ¹®ÀÚ¿­ »ó¼ö
+	// enumì„ ì‚¬ìš©í•˜ì§€ ì•Šê³  static ìƒìˆ˜ë¥¼ ì‚¬ìš©í•œ ê²½ìš°
+	public static final String JAVA = "JAVA"; // ë¬¸ìì—´ ìƒìˆ˜
 	public static final String JSP = "JSP";
 	public static final String SERVLET = "SERVLET";
 	

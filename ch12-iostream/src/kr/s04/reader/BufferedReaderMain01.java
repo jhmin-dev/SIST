@@ -8,18 +8,18 @@ public class BufferedReaderMain01 {
 	public static void main(String[] args) {
 		BufferedReader br = null;
 		try {
-			br = new BufferedReader(new InputStreamReader(System.in)); // InputStreamReader´Â System.inÀ¸·Î ¹ŞÀº ¹ÙÀÌÆ® ½ºÆ®¸²À» ¹®ÀÚ ½ºÆ®¸²À¸·Î º¯È¯ÇÏ¿© BufferedReader¿¡ Àü´Ş
-			System.out.print("´ç½ÅÀÇ ÀÌ¸§ > ");
+			br = new BufferedReader(new InputStreamReader(System.in)); // InputStreamReaderëŠ” System.inìœ¼ë¡œ ë°›ì€ ë°”ì´íŠ¸ ìŠ¤íŠ¸ë¦¼ì„ ë¬¸ì ìŠ¤íŠ¸ë¦¼ìœ¼ë¡œ ë³€í™˜í•˜ì—¬ BufferedReaderì— ì „ë‹¬
+			System.out.print("ë‹¹ì‹ ì˜ ì´ë¦„ > ");
 			String name = br.readLine();
 			System.out.println(name);
-			System.out.print("´ç½ÅÀÇ ³ªÀÌ > ");
-			int age = Integer.parseInt(br.readLine()); // StringÀ» int·Î º¯È¯
+			System.out.print("ë‹¹ì‹ ì˜ ë‚˜ì´ > ");
+			int age = Integer.parseInt(br.readLine()); // Stringì„ intë¡œ ë³€í™˜
 			System.out.println(age);
 		}
-		catch(NumberFormatException e) { // parseInt() ¸Ş¼­µå »ç¿ë½Ã ±ÇÀå
+		catch(NumberFormatException e) { // parseInt() ë©”ì„œë“œ ì‚¬ìš©ì‹œ ê¶Œì¥
 			e.printStackTrace();
 		}
-		catch(IOException e) { // readLine() ¸Ş¼­µå »ç¿ë½Ã ÀÇ¹«
+		catch(IOException e) { // readLine() ë©”ì„œë“œ ì‚¬ìš©ì‹œ ì˜ë¬´
 			e.printStackTrace();
 		}
 		finally {

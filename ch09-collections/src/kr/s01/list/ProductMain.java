@@ -6,87 +6,87 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 
 public class ProductMain {
-	// ¸â¹ö º¯¼ö; list¿Í brÀ» »ı¼ºÀÚ»Ó¸¸ ¾Æ´Ï¶ó ¸â¹ö ¸Ş¼­µåµé¿¡¼­ »ç¿ëÇÒ °ÍÀÌ¹Ç·Î ¸â¹ö º¯¼ö·Î ¼±¾ğÇØ¾ß ÇÔ
+	// ë©¤ë²„ ë³€ìˆ˜; listì™€ brì„ ìƒì„±ìë¿ë§Œ ì•„ë‹ˆë¼ ë©¤ë²„ ë©”ì„œë“œë“¤ì—ì„œ ì‚¬ìš©í•  ê²ƒì´ë¯€ë¡œ ë©¤ë²„ ë³€ìˆ˜ë¡œ ì„ ì–¸í•´ì•¼ í•¨
 	ArrayList<Product> list;
 	BufferedReader br;
 	
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	public ProductMain() {
 		list = new ArrayList<Product>();
 		try {
-			// ¸Ş´º ¸Ş¼­µå È£Ãâ Àü¿¡ ÀÔ·Â ¹ŞÀ» ¼ö ÀÖ¾î¾ß ÇÔ
+			// ë©”ë‰´ ë©”ì„œë“œ í˜¸ì¶œ ì „ì— ì…ë ¥ ë°›ì„ ìˆ˜ ìˆì–´ì•¼ í•¨
 			br = new BufferedReader(new InputStreamReader(System.in));
-			// °´Ã¼°¡ »ı¼ºµÇ¸é ¹Ù·Î ¸Ş´º ¸Ş¼­µå È£Ãâ
+			// ê°ì²´ê°€ ìƒì„±ë˜ë©´ ë°”ë¡œ ë©”ë‰´ ë©”ì„œë“œ í˜¸ì¶œ
 			callMenu();
 		}
 		catch(Exception e) {
-			// ÄÜ¼Ö¿¡ ¿¹¿Ü ¹®±¸ Ç¥½Ã
+			// ì½˜ì†”ì— ì˜ˆì™¸ ë¬¸êµ¬ í‘œì‹œ
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®; try~catch¸¦ ÇÑ ÁÙ·Î ÀÎ½ÄÇÏ¹Ç·Î if¹® ºí·°À» ¸¸µéÁö ¾Ê¾Æµµ µÊ
+			// ìì› ì •ë¦¬; try~catchë¥¼ í•œ ì¤„ë¡œ ì¸ì‹í•˜ë¯€ë¡œ ifë¬¸ ë¸”ëŸ­ì„ ë§Œë“¤ì§€ ì•Šì•„ë„ ë¨
 			if(br!=null) try {br.close();} catch(IOException e) {}
 		}
 	}
 
-	// ¸Ş´º
-	public void callMenu() throws IOException { // ÀÔ·Â ÀÚÃ¼°¡ ºÒ°¡´ÉÇÑ °æ¿ì´Â Á¾·á
+	// ë©”ë‰´
+	public void callMenu() throws IOException { // ì…ë ¥ ìì²´ê°€ ë¶ˆê°€ëŠ¥í•œ ê²½ìš°ëŠ” ì¢…ë£Œ
 		while(true) {
 			try {
-				System.out.println("¸Ş´º : 1. »óÇ° ÀÔ·Â, 2. »óÇ° ¸ñ·Ï º¸±â, 3. Á¾·á");
-				System.out.print("¸Ş´º > ");
+				System.out.println("ë©”ë‰´ : 1. ìƒí’ˆ ì…ë ¥, 2. ìƒí’ˆ ëª©ë¡ ë³´ê¸°, 3. ì¢…ë£Œ");
+				System.out.print("ë©”ë‰´ > ");
 				int num = Integer.parseInt(br.readLine());
 				if(num == 1) {
-					// »óÇ° ÀÔ·Â ¸Ş¼­µå È£Ãâ
+					// ìƒí’ˆ ì…ë ¥ ë©”ì„œë“œ í˜¸ì¶œ
 					input();
 				}
 				else if(num == 2) {
-					// »óÇ° ¸ñ·Ï º¸±â ¸Ş¼­µå È£Ãâ
+					// ìƒí’ˆ ëª©ë¡ ë³´ê¸° ë©”ì„œë“œ í˜¸ì¶œ
 					output();
 				}
 				else if(num == 3) {
-					System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+					System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 					break;
 				}
 				else {
-					System.out.println("¸Ş´º ¹øÈ£¸¦ Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+					System.out.println("ë©”ë‰´ ë²ˆí˜¸ë¥¼ ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 				}
 			}
-			catch(NumberFormatException e) { // ¼ıÀÚ¸¦ ÀÔ·ÂÇÏÁö ¾ÊÀº °æ¿ì´Â while¹®À» ¹İº¹ÇÏ¿© ´Ù½Ã ÀÔ·ÂÇÏ°Ô ÇÔ
-				System.out.println("¼ıÀÚ¸¸ Çã¿ëµË´Ï´Ù.");
+			catch(NumberFormatException e) { // ìˆ«ìë¥¼ ì…ë ¥í•˜ì§€ ì•Šì€ ê²½ìš°ëŠ” whileë¬¸ì„ ë°˜ë³µí•˜ì—¬ ë‹¤ì‹œ ì…ë ¥í•˜ê²Œ í•¨
+				System.out.println("ìˆ«ìë§Œ í—ˆìš©ë©ë‹ˆë‹¤.");
 			}
 		}
 	}
 	
-	// »óÇ° ÀÔ·Â
+	// ìƒí’ˆ ì…ë ¥
 	public void input() throws IOException {
 		Product p = new Product();
-		System.out.print("»óÇ°¸í > ");
+		System.out.print("ìƒí’ˆëª… > ");
 		p.setName(br.readLine());
-		System.out.print("»óÇ° ¹øÈ£ > ");
+		System.out.print("ìƒí’ˆ ë²ˆí˜¸ > ");
 		p.setNum(br.readLine());
-		System.out.print("»óÇ° °¡°İ > ");
-		p.setPrice(Integer.parseInt(br.readLine())); // °¡°İÀÇ °æ¿ì ¿¬»ê °¡´É¼ºÀÌ ÀÖÀ¸¹Ç·Î StringÀÌ ¾Æ´Ï¶ó int·Î ÀÔ·Â¹ŞÀ½
-		System.out.print("Á¦Á¶»ç > ");
+		System.out.print("ìƒí’ˆ ê°€ê²© > ");
+		p.setPrice(Integer.parseInt(br.readLine())); // ê°€ê²©ì˜ ê²½ìš° ì—°ì‚° ê°€ëŠ¥ì„±ì´ ìˆìœ¼ë¯€ë¡œ Stringì´ ì•„ë‹ˆë¼ intë¡œ ì…ë ¥ë°›ìŒ
+		System.out.print("ì œì¡°ì‚¬ > ");
 		p.setMaker(br.readLine());
-		System.out.print("Àç°í > ");
+		System.out.print("ì¬ê³  > ");
 		p.setStock(Integer.parseInt(br.readLine()));
 		
-		// Product¸¦ ArrayList¿¡ ÀúÀå
+		// Productë¥¼ ArrayListì— ì €ì¥
 		list.add(p);
 	}
 	
-	// »óÇ° ¸ñ·Ï º¸±â
+	// ìƒí’ˆ ëª©ë¡ ë³´ê¸°
 	public void output() {
-		System.out.println("»óÇ°¸í\t¹øÈ£\t°¡°İ\tÁ¦Á¶»ç\tÀç°í");
-		// ArrayList¸¦ 2Â÷¿ø ¹è¿­Ã³·³ È°¿ë
+		System.out.println("ìƒí’ˆëª…\të²ˆí˜¸\tê°€ê²©\tì œì¡°ì‚¬\tì¬ê³ ");
+		// ArrayListë¥¼ 2ì°¨ì› ë°°ì—´ì²˜ëŸ¼ í™œìš©
 		for(Product p : list) {
-			System.out.printf("%s\t%s\t%,d¿ø\t%s\t%,d°³\n", p.getName(), p.getNum(), p.getPrice(), p.getMaker(), p.getStock());
+			System.out.printf("%s\t%s\t%,dì›\t%s\t%,dê°œ\n", p.getName(), p.getNum(), p.getPrice(), p.getMaker(), p.getStock());
 		}
 	}
 	
 	public static void main(String[] args) {
-		// °´Ã¼°¡ »ı¼ºµÇ¸é ¸Ş´º ¸Ş¼­µå¿¡¼­ ÀÛ¾÷À» ¼öÇàÇÏ¹Ç·Î, main¿¡¼­ ÀÛ¾÷À» ÁøÇàÇÏÁö ¾ÊÀ¸´Ï º¯¼ö ¼±¾ğÇÒ ÇÊ¿äµµ ¾øÀ½
+		// ê°ì²´ê°€ ìƒì„±ë˜ë©´ ë©”ë‰´ ë©”ì„œë“œì—ì„œ ì‘ì—…ì„ ìˆ˜í–‰í•˜ë¯€ë¡œ, mainì—ì„œ ì‘ì—…ì„ ì§„í–‰í•˜ì§€ ì•Šìœ¼ë‹ˆ ë³€ìˆ˜ ì„ ì–¸í•  í•„ìš”ë„ ì—†ìŒ
 		new ProductMain();
 	}
 }

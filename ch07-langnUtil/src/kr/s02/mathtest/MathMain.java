@@ -3,21 +3,21 @@ package kr.s02.mathtest;
 public class MathMain {
 	public static void main(String[] args) {
 		int a = Math.abs(-10);
-		System.out.println("-10ÀÇ Àı´ë°ª : " + a);
+		System.out.println("-10ì˜ ì ˆëŒ€ê°’ : " + a);
 		
 		double b = Math.ceil(3.3);
-		System.out.println("3.3ÀÇ ¿Ã¸² : " + b);
+		System.out.println("3.3ì˜ ì˜¬ë¦¼ : " + b);
 		
 		double c = Math.floor(3.7);
-		System.out.println("3.7ÀÇ ¹ö¸² : " + c);
+		System.out.println("3.7ì˜ ë²„ë¦¼ : " + c);
 		
-		int d = Math.round(3.7f); // round() ¸Ş¼­µåÀÇ °æ¿ì float ÀÎÀÚ´Â int·Î ¹İÈ¯ÇÏ°í double ÀÎÀÚ´Â longÀ¸·Î ¹İÈ¯
-		System.out.println("3.7ÀÇ ¹İ¿Ã¸² : " + d);
+		int d = Math.round(3.7f); // round() ë©”ì„œë“œì˜ ê²½ìš° float ì¸ìëŠ” intë¡œ ë°˜í™˜í•˜ê³  double ì¸ìëŠ” longìœ¼ë¡œ ë°˜í™˜
+		System.out.println("3.7ì˜ ë°˜ì˜¬ë¦¼ : " + d);
 		
 		int e = Math.max(3, 5);
-		System.out.println("3°ú 5 Áß ÃÖ´ñ°ª : " + e);
+		System.out.println("3ê³¼ 5 ì¤‘ ìµœëŒ“ê°’ : " + e);
 		
 		int f = Math.min(4, 7);
-		System.out.println("4°ú 7 Áß ÃÖ¼Ú°ª : " + f);
+		System.out.println("4ê³¼ 7 ì¤‘ ìµœì†Ÿê°’ : " + f);
 	}
 }

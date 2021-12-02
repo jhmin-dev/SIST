@@ -1,13 +1,13 @@
 public class OperatorMain01 {
 	public static void main(String[] args) {
-		System.out.println("====Áõ°¨ ¿¬»êÀÚ====");
-		// Áõ°¡ ¿¬»êÀÚ
+		System.out.println("====ì¦ê° ì—°ì‚°ì====");
+		// ì¦ê°€ ì—°ì‚°ì
 		int i = 5;
-		System.out.println(++i); // i¸¦ 1 Áõ°¡½ÃÅ² ÈÄ Áõ°¡µÈ °ª 6À» Ãâ·Â
-		System.out.println(i++); // iÀÇ ÇöÀç °ª 6À» Ãâ·ÂÇÑ ÈÄ °ªÀ» 1 Áõ°¡½ÃÄÑ 7À» ¸Ş¸ğ¸®¿¡ ÀúÀå
-		System.out.println(i); // 7À» Ãâ·Â
+		System.out.println(++i); // ië¥¼ 1 ì¦ê°€ì‹œí‚¨ í›„ ì¦ê°€ëœ ê°’ 6ì„ ì¶œë ¥
+		System.out.println(i++); // iì˜ í˜„ì¬ ê°’ 6ì„ ì¶œë ¥í•œ í›„ ê°’ì„ 1 ì¦ê°€ì‹œì¼œ 7ì„ ë©”ëª¨ë¦¬ì— ì €ì¥
+		System.out.println(i); // 7ì„ ì¶œë ¥
 
-		// °¨¼Ò ¿¬»êÀÚ
+		// ê°ì†Œ ì—°ì‚°ì
 		int j = 10;
 		System.out.println(--j);
 		System.out.println(j--);

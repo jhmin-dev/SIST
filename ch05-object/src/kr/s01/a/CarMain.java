@@ -1,28 +1,28 @@
 package kr.s01.a;
-class Car { // ºÎ Å¬·¡½º
-	// ¸â¹ö º¯¼ö ¿ª½Ã ÃÊ±â°ªÀ» ÁöÁ¤ÇØÁÙ ¼ö ÀÖÀ½
-	String company = "Çö´ëÀÚµ¿Â÷";
-	String model = "¾ÆÀÌ¿À´Ğ 5";
-	String color = "Àº»ö";
+class Car { // ë¶€ í´ë˜ìŠ¤
+	// ë©¤ë²„ ë³€ìˆ˜ ì—­ì‹œ ì´ˆê¸°ê°’ì„ ì§€ì •í•´ì¤„ ìˆ˜ ìˆìŒ
+	String company = "í˜„ëŒ€ìë™ì°¨";
+	String model = "ì•„ì´ì˜¤ë‹‰ 5";
+	String color = "ì€ìƒ‰";
 	int maxSpeed = 350;
 	int speed;
 }
 
-public class CarMain { // ÁÖ Å¬·¡½º
+public class CarMain { // ì£¼ í´ë˜ìŠ¤
 	
 	public static void main(String[] args) {
-		// °´Ã¼ ¼±¾ğ ¹× »ı¼º
+		// ê°ì²´ ì„ ì–¸ ë° ìƒì„±
 		Car myCar = new Car();
 		
-		// °´Ã¼ÀÇ ¸â¹ö º¯¼ö¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ ÀĞ±â
-		System.out.println("Á¦ÀÛÈ¸»ç : " + myCar.company);
-		System.out.println("¸ğµ¨¸í : " + myCar.model);
-		System.out.println("»ö»ó : " + myCar.color);
-		System.out.println("ÃÖ´ë¼Ó·Â : " + myCar.maxSpeed);
-		System.out.println("ÇöÀç¼Ó·Â : " + myCar.speed); // ¸â¹ö º¯¼ö¿¡ ÃÊ±â°ªÀ» ÁöÁ¤ÇØÁÖÁö ¾ÊÀº °æ¿ì, ÀÚ·áÇüÀÇ ±âº»°ªÀ¸·Î ÃÊ±âÈ­µÊ; Á¤¼öÀÇ °æ¿ì 0, StringÀÇ °æ¿ì null(°´Ã¼¸¦ ¸¸µéÁö ¾Ê¾Æ ÁÖ¼Ò°¡ ¾ø´Ù´Â ÀÇ¹Ì)
+		// ê°ì²´ì˜ ë©¤ë²„ ë³€ìˆ˜ì— ì €ì¥ëœ ë°ì´í„° ì½ê¸°
+		System.out.println("ì œì‘íšŒì‚¬ : " + myCar.company);
+		System.out.println("ëª¨ë¸ëª… : " + myCar.model);
+		System.out.println("ìƒ‰ìƒ : " + myCar.color);
+		System.out.println("ìµœëŒ€ì†ë ¥ : " + myCar.maxSpeed);
+		System.out.println("í˜„ì¬ì†ë ¥ : " + myCar.speed); // ë©¤ë²„ ë³€ìˆ˜ì— ì´ˆê¸°ê°’ì„ ì§€ì •í•´ì£¼ì§€ ì•Šì€ ê²½ìš°, ìë£Œí˜•ì˜ ê¸°ë³¸ê°’ìœ¼ë¡œ ì´ˆê¸°í™”ë¨; ì •ìˆ˜ì˜ ê²½ìš° 0, Stringì˜ ê²½ìš° null(ê°ì²´ë¥¼ ë§Œë“¤ì§€ ì•Šì•„ ì£¼ì†Œê°€ ì—†ë‹¤ëŠ” ì˜ë¯¸)
 		
-		// ¸â¹ö º¯¼öÀÇ °ª º¯°æ
+		// ë©¤ë²„ ë³€ìˆ˜ì˜ ê°’ ë³€ê²½
 		myCar.speed = 60;
-		System.out.println("¼öÁ¤µÈ ÇöÀç¼Ó·Â : " + myCar.speed);
+		System.out.println("ìˆ˜ì •ëœ í˜„ì¬ì†ë ¥ : " + myCar.speed);
 	}
 }

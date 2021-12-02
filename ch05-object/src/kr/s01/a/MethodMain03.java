@@ -1,34 +1,34 @@
 package kr.s01.a;
 public class MethodMain03 {
-	// ¸â¹ö º¯¼ö
+	// ë©¤ë²„ ë³€ìˆ˜
 	String name;
 	int korean;
 	int english;
 	int math;
 	
-	// ¸â¹ö ¸Ş¼­µå
-	// ÃÑÁ¡ ±¸ÇÏ±â
-	public int makeSum() { // ÀÎÀÚ°¡ ¾ø´Â °æ¿ì¿¡µµ ¼Ò°ıÈ£´Â »ı·«ÇÒ ¼ö ¾øÀ½
-		return korean + english + math; // ¸â¹ö º¯¼öµéÀÌ °°Àº °´Ã¼ÀÇ ±¸¼º¿øÀÌ¹Ç·Î ÀÎÀÚ·Î ¹ŞÁö ¾Ê¾Æµµ °ªÀ» °¡Á®´Ù ¾µ ¼ö ÀÖÀ½
+	// ë©¤ë²„ ë©”ì„œë“œ
+	// ì´ì  êµ¬í•˜ê¸°
+	public int makeSum() { // ì¸ìê°€ ì—†ëŠ” ê²½ìš°ì—ë„ ì†Œê´„í˜¸ëŠ” ìƒëµí•  ìˆ˜ ì—†ìŒ
+		return korean + english + math; // ë©¤ë²„ ë³€ìˆ˜ë“¤ì´ ê°™ì€ ê°ì²´ì˜ êµ¬ì„±ì›ì´ë¯€ë¡œ ì¸ìë¡œ ë°›ì§€ ì•Šì•„ë„ ê°’ì„ ê°€ì ¸ë‹¤ ì“¸ ìˆ˜ ìˆìŒ
 	}
-	// Æò±Õ ±¸ÇÏ±â
+	// í‰ê·  êµ¬í•˜ê¸°
 	public int makeAverage() {
-		return makeSum() / 3; // °°Àº °´Ã¼¿¡ Æ÷ÇÔµÈ ´Ù¸¥ ¸â¹ö ¸Ş¼­µå¸¦ È£ÃâÇÒ ¼ö ÀÖÀ½
+		return makeSum() / 3; // ê°™ì€ ê°ì²´ì— í¬í•¨ëœ ë‹¤ë¥¸ ë©¤ë²„ ë©”ì„œë“œë¥¼ í˜¸ì¶œí•  ìˆ˜ ìˆìŒ
 	}
 	
 	public static void main(String[] args) {
 		MethodMain03 me = new MethodMain03();
 		
-		me.name = "È«±æµ¿";
+		me.name = "í™ê¸¸ë™";
 		me.korean = 98;
 		me.english = 97;
 		me.math = 96;
 		
-		System.out.println("ÀÌ¸§ : " + me.name);
-		System.out.println("±¹¾î : " + me.korean);
-		System.out.println("¿µ¾î : " + me.english);
-		System.out.println("¼öÇĞ : " + me.math);
-		System.out.println("ÃÑÁ¡ : " + me.makeSum());
-		System.out.println("Æò±Õ : " + me.makeAverage());
+		System.out.println("ì´ë¦„ : " + me.name);
+		System.out.println("êµ­ì–´ : " + me.korean);
+		System.out.println("ì˜ì–´ : " + me.english);
+		System.out.println("ìˆ˜í•™ : " + me.math);
+		System.out.println("ì´ì  : " + me.makeSum());
+		System.out.println("í‰ê·  : " + me.makeAverage());
 	}
 }

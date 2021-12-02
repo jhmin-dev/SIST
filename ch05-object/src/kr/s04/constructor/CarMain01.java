@@ -1,19 +1,19 @@
 package kr.s04.constructor;
 
 class Car {
-	String color; // »ö»ó
-	String gearType; // º¯¼Ó±â Á¾·ù
-	int door; // ¹®ÀÇ ¼ö
+	String color; // ìƒ‰ìƒ
+	String gearType; // ë³€ì†ê¸° ì¢…ë¥˜
+	int door; // ë¬¸ì˜ ìˆ˜
 	
-	// ±âº» »ı¼ºÀÚ; »ı·« °¡´É
-	// ´Ü ÇÑ ¹ø¸¸ È£Ãâ; ÀÌ¹Ì ¸¸µé¾îÁø °´Ã¼ ¾È¿¡¼­ ´Ù½Ã »ı¼ºÀÚ¸¦ È£ÃâÇÒ ¼ö ¾øÀ½(¸â¹ö°¡ ¾Æ´Ï¹Ç·Î)
-	// ¸â¹ö º¯¼ö ÃÊ±âÈ­
-	public Car() {} // {} ºí·°¿¡ ¼öÇà¹®À» ³Ö¾î ÃÊ±âÈ­ ÀÛ¾÷À» ¼öÇàÇÒ ¼ö ÀÖ°í, ÀÎÀÚ ÀÚ·áÇüµµ ¼³Á¤ÇÒ ¼ö ÀÖÀ½
+	// ê¸°ë³¸ ìƒì„±ì; ìƒëµ ê°€ëŠ¥
+	// ë‹¨ í•œ ë²ˆë§Œ í˜¸ì¶œ; ì´ë¯¸ ë§Œë“¤ì–´ì§„ ê°ì²´ ì•ˆì—ì„œ ë‹¤ì‹œ ìƒì„±ìë¥¼ í˜¸ì¶œí•  ìˆ˜ ì—†ìŒ(ë©¤ë²„ê°€ ì•„ë‹ˆë¯€ë¡œ)
+	// ë©¤ë²„ ë³€ìˆ˜ ì´ˆê¸°í™”
+	public Car() {} // {} ë¸”ëŸ­ì— ìˆ˜í–‰ë¬¸ì„ ë„£ì–´ ì´ˆê¸°í™” ì‘ì—…ì„ ìˆ˜í–‰í•  ìˆ˜ ìˆê³ , ì¸ì ìë£Œí˜•ë„ ì„¤ì •í•  ìˆ˜ ìˆìŒ
 }
 
 public class CarMain01 {
 	public static void main(String[] args) {
-		Car c1 = new Car(); // new ¿¬»êÀÚ ´ÙÀ½¿¡ »ı¼ºÀÚ°¡ ¿Í¼­ ¸â¹ö º¯¼ö¸¦ ÃÊ±âÈ­ÇÔ
+		Car c1 = new Car(); // new ì—°ì‚°ì ë‹¤ìŒì— ìƒì„±ìê°€ ì™€ì„œ ë©¤ë²„ ë³€ìˆ˜ë¥¼ ì´ˆê¸°í™”í•¨
 		System.out.println("c1.color : " + c1.color);
 		System.out.println("c1.gearType : " + c1.gearType);
 		System.out.println("c1.door : " + c1.door);
@@ -22,7 +22,7 @@ public class CarMain01 {
 		c1.door = 4;		
 		System.out.println(c1.color + ", " + c1.gearType + ", " + c1.door);
 		
-		// »õ·Ó°Ô °´Ã¼¸¦ »ı¼ºÇÔ
+		// ìƒˆë¡­ê²Œ ê°ì²´ë¥¼ ìƒì„±í•¨
 		Car c2 = new Car();
 		c2.color = "red";
 		c2.gearType = "manual";

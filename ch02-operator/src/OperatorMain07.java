@@ -1,12 +1,12 @@
 public class OperatorMain07 {
 	public static void main(String[] args) {
-		System.out.println("====Á¶°Ç(»ïÇ×) ¿¬»êÀÚ====");
+		System.out.println("====ì¡°ê±´(ì‚¼í•­) ì—°ì‚°ì====");
 		
 		int x = 10, y = -10;
 		
-		int absX = x >= 0 ? x : -x; // ¿¬»êÀÚ ¿ì¼±¼øÀ§·Î ÀÎÇØ ¼Ò°ıÈ£ ¾ø¾îµµ µ¿ÀÛÇÏÁö¸¸, °¡µ¶¼ºÀ» À§ÇØ ¼Ò°ıÈ£ »ç¿ëÇØµµ °ü°è¾øÀ½
+		int absX = x >= 0 ? x : -x; // ì—°ì‚°ì ìš°ì„ ìˆœìœ„ë¡œ ì¸í•´ ì†Œê´„í˜¸ ì—†ì–´ë„ ë™ì‘í•˜ì§€ë§Œ, ê°€ë…ì„±ì„ ìœ„í•´ ì†Œê´„í˜¸ ì‚¬ìš©í•´ë„ ê´€ê³„ì—†ìŒ
 		int absY = (y >= 0) ? y : -y;
-		System.out.println("x = " + x + "ÀÏ ¶§ xÀÇ Àı´ë°ªÀº = " + absX);
-		System.out.println("x = " + y + "ÀÏ ¶§ yÀÇ Àı´ë°ªÀº = " + absY);
+		System.out.println("x = " + x + "ì¼ ë•Œ xì˜ ì ˆëŒ€ê°’ì€ = " + absX);
+		System.out.println("x = " + y + "ì¼ ë•Œ yì˜ ì ˆëŒ€ê°’ì€ = " + absY);
 	}
 }

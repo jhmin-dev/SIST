@@ -8,21 +8,21 @@ public class HashSetMain01 {
 		String[] array = {"Java", "Oracle", "JSP", "Java", "HTML"};
 		HashSet<String> hs = new HashSet<String>();
 		
-		// µ¥ÀÌÅÍ ÀúÀå
+		// ë°ì´í„° ì €ì¥
 		for(String n : array) {
-			hs.add(n); // Áßº¹ ºÒÇã; add() ¸Ş¼­µå¿¡¼­ °É·¯³¿
+			hs.add(n); // ì¤‘ë³µ ë¶ˆí—ˆ; add() ë©”ì„œë“œì—ì„œ ê±¸ëŸ¬ëƒ„
 		}
-		System.out.println(hs); // Á¤·ÄÀ» º¸ÀåÇÏÁö ¾ÊÀ½
+		System.out.println(hs); // ì •ë ¬ì„ ë³´ì¥í•˜ì§€ ì•ŠìŒ
 
-		// µ¥ÀÌÅÍ ÀĞ±â; HashSet¿¡¼­ ¹Ù·Î ÀĞ´Â °ÍÀÌ ¾Æ´Ï¶ó, Iterator·Î º¹»çÇØ¼­ ÀĞ´Â °ÍÀÌ ¿øÄ¢
-		Iterator<String> ir = hs.iterator(); // iterator() ¸Ş¼­µå·Î HashSetÀÇ µ¥ÀÌÅÍ¸¦ Iterator¿¡ º¹»ç
-		while(ir.hasNext()) { // hasNext() ¸Ş¼­µå·Î ÀúÀåµÈ µ¥ÀÌÅÍ°¡ ÀÖ´ÂÁö È®ÀÎ
-			System.out.println(ir.next()); // next() ¸Ş¼­µå·Î µ¥ÀÌÅÍ¸¦ ²¨³¿
+		// ë°ì´í„° ì½ê¸°; HashSetì—ì„œ ë°”ë¡œ ì½ëŠ” ê²ƒì´ ì•„ë‹ˆë¼, Iteratorë¡œ ë³µì‚¬í•´ì„œ ì½ëŠ” ê²ƒì´ ì›ì¹™
+		Iterator<String> ir = hs.iterator(); // iterator() ë©”ì„œë“œë¡œ HashSetì˜ ë°ì´í„°ë¥¼ Iteratorì— ë³µì‚¬
+		while(ir.hasNext()) { // hasNext() ë©”ì„œë“œë¡œ ì €ì¥ëœ ë°ì´í„°ê°€ ìˆëŠ”ì§€ í™•ì¸
+			System.out.println(ir.next()); // next() ë©”ì„œë“œë¡œ ë°ì´í„°ë¥¼ êº¼ëƒ„
 		}
 		
 		System.out.println();
 		
-		// È®Àå for¹®À» ÀÌ¿ëÇÑ µ¥ÀÌÅÍ ÀĞ±â
+		// í™•ì¥ forë¬¸ì„ ì´ìš©í•œ ë°ì´í„° ì½ê¸°
 		for(String s : hs) {
 			System.out.println(s);
 		}		

@@ -5,21 +5,21 @@ import java.util.ArrayList;
 public class ArrayListMain04 {
 	public static void main(String[] args) {
 		ArrayList<String> al = new ArrayList<String>();
-		al.add("»ç°ú");
-		al.add("¸Á°í");
-		al.add("¹Ù³ª³ª");
-		al.add("¿À·»Áö");
-		al.add("»ç°ú");
+		al.add("ì‚¬ê³¼");
+		al.add("ë§ê³ ");
+		al.add("ë°”ë‚˜ë‚˜");
+		al.add("ì˜¤ë Œì§€");
+		al.add("ì‚¬ê³¼");
 
-		System.out.println("»èÁ¦ Àü");
+		System.out.println("ì‚­ì œ ì „");
 		for(int i=0;i<al.size();i++) {
 			System.out.println(i + " : " + al.get(i));
 		}
 
-		// al.remove(2); // remove() ¸Ş¼­µå¿¡ ÀÎµ¦½º °ªÀ» ÀÔ·ÂÇÏ¿© ÁöÁ¤ÇÑ ¿ä¼Ò »èÁ¦; ÀÎµ¦½º º¯µ¿ ¹ß»ı
-		al.remove("»ç°ú"); // remove() ¸Ş¼­µå¿¡ ÀúÀåµÈ ¿ä¼Ò¸¦ ÀÔ·Â½Ã, ÀÏÄ¡ÇÏ´Â (Ã¹ ¹øÂ°) ¿ä¼Ò »èÁ¦; ÀÎµ¦½º º¯µ¿ ¹ß»ı
+		// al.remove(2); // remove() ë©”ì„œë“œì— ì¸ë±ìŠ¤ ê°’ì„ ì…ë ¥í•˜ì—¬ ì§€ì •í•œ ìš”ì†Œ ì‚­ì œ; ì¸ë±ìŠ¤ ë³€ë™ ë°œìƒ
+		al.remove("ì‚¬ê³¼"); // remove() ë©”ì„œë“œì— ì €ì¥ëœ ìš”ì†Œë¥¼ ì…ë ¥ì‹œ, ì¼ì¹˜í•˜ëŠ” (ì²« ë²ˆì§¸) ìš”ì†Œ ì‚­ì œ; ì¸ë±ìŠ¤ ë³€ë™ ë°œìƒ
 
-		System.out.println("»èÁ¦ ÈÄ");
+		System.out.println("ì‚­ì œ í›„");
 		for(int i=0;i<al.size();i++) {
 			System.out.println(i + " : " + al.get(i));
 		}
@@ -30,23 +30,23 @@ public class ArrayListMain04 {
 		al2.add(3);
 		al2.add(20);
 		
-		System.out.println("»èÁ¦ Àü");
+		System.out.println("ì‚­ì œ ì „");
 		for(int i=0;i<al2.size();i++) {
 			System.out.println(i + " : " + al2.get(i));
 		}
 		
-		// al2.remove(2); // ÀÎµ¦½º¸¦ ÁöÁ¤ÇØ ¿ä¼Ò »èÁ¦
+		// al2.remove(2); // ì¸ë±ìŠ¤ë¥¼ ì§€ì •í•´ ìš”ì†Œ ì‚­ì œ
 		// Integer n = 10;
-		// al2.remove(n); // 10°ú ÀÏÄ¡ÇÏ´Â ¿ä¼Ò »èÁ¦
-		al2.remove((Integer)10); // ±×³É 10À» ÀÔ·ÂÇÏ¸é int¶ó ÀÎµ¦½º·Î ÀÎ½ÄÇÏ¿© ¿¹¿Ü ¹ß»ıÇÏ¹Ç·Î IntegerÀÓÀ» ¸í½ÃÇØ¾ß ÇÔ
+		// al2.remove(n); // 10ê³¼ ì¼ì¹˜í•˜ëŠ” ìš”ì†Œ ì‚­ì œ
+		al2.remove((Integer)10); // ê·¸ëƒ¥ 10ì„ ì…ë ¥í•˜ë©´ intë¼ ì¸ë±ìŠ¤ë¡œ ì¸ì‹í•˜ì—¬ ì˜ˆì™¸ ë°œìƒí•˜ë¯€ë¡œ Integerì„ì„ ëª…ì‹œí•´ì•¼ í•¨
 		
-		System.out.println("»èÁ¦ ÈÄ");
+		System.out.println("ì‚­ì œ í›„");
 		for(int i=0;i<al2.size();i++) {
 			System.out.println(i + " : " + al2.get(i));
 		}
 		
-		al2.set(1, 30); // set() ¸Ş¼­µå¿¡ ÀÎµ¦½º¸¦ ÁöÁ¤ÇÏ°í º¯°æÇÒ µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇÏ¿© ÁöÁ¤ÇÑ ¿ä¼ÒÀÇ µ¥ÀÌÅÍ¸¦ º¯°æ
-		System.out.println("º¯°æ ÈÄ");
+		al2.set(1, 30); // set() ë©”ì„œë“œì— ì¸ë±ìŠ¤ë¥¼ ì§€ì •í•˜ê³  ë³€ê²½í•  ë°ì´í„°ë¥¼ ì…ë ¥í•˜ì—¬ ì§€ì •í•œ ìš”ì†Œì˜ ë°ì´í„°ë¥¼ ë³€ê²½
+		System.out.println("ë³€ê²½ í›„");
 		for(int i=0;i<al2.size();i++) {
 			System.out.println(i + " : " + al2.get(i));
 		}

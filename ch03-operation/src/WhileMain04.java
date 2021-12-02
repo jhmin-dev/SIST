@@ -3,16 +3,16 @@ public class WhileMain04 {
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		
 		int a, total = 0;
-		System.out.println("0 Àü±îÁö ÀÔ·Â¹ŞÀº Á¤¼ö·Î ÇÕ ±¸ÇÏ±â");
-		System.out.print("´©ÀûÇÒ Á¤¼ö µ¥ÀÌÅÍ ÀÔ·Â : "); // °¡ÀÌµå ¹®ÀÚ¿­
+		System.out.println("0 ì „ê¹Œì§€ ì…ë ¥ë°›ì€ ì •ìˆ˜ë¡œ í•© êµ¬í•˜ê¸°");
+		System.out.print("ëˆ„ì í•  ì •ìˆ˜ ë°ì´í„° ì…ë ¥ : "); // ê°€ì´ë“œ ë¬¸ìì—´
 		
-		// Áõ°¨½Ä ¾øÀÌ ·çÇÁ¸¦ ºüÁ®³ª¿À´Â ¹æ½Ä
-		while((a = input.nextInt()) != 0) { // ÀÔ·Â¹ŞÀº °ªÀ» a¿¡ ÀúÀåÇÏ°í, aÀÇ °ªÀÌ 0ÀÌ ¾Æ´Ï¸é true
-			total += a; // ´©Àû
-			System.out.print("´©ÀûÇÒ Á¤¼ö µ¥ÀÌÅÍ ÀÔ·Â : "); // °¡ÀÌµå ¹®ÀÚ¿­
+		// ì¦ê°ì‹ ì—†ì´ ë£¨í”„ë¥¼ ë¹ ì ¸ë‚˜ì˜¤ëŠ” ë°©ì‹
+		while((a = input.nextInt()) != 0) { // ì…ë ¥ë°›ì€ ê°’ì„ aì— ì €ì¥í•˜ê³ , aì˜ ê°’ì´ 0ì´ ì•„ë‹ˆë©´ true
+			total += a; // ëˆ„ì 
+			System.out.print("ëˆ„ì í•  ì •ìˆ˜ ë°ì´í„° ì…ë ¥ : "); // ê°€ì´ë“œ ë¬¸ìì—´
 		}
 		
-		System.out.println("total = " + total); // ´©ÀûÇÑ µ¥ÀÌÅÍ Ãâ·Â
+		System.out.println("total = " + total); // ëˆ„ì í•œ ë°ì´í„° ì¶œë ¥
 		
 		input.close();
 	}

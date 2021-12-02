@@ -7,17 +7,17 @@ public class Score {
 		float avg;
 		
 		do {
-			System.out.print("±¹¾î : ");
+			System.out.print("êµ­ì–´ : ");
 			korean = input.nextInt();
-		} while(korean < 0 || korean > 100); // 0ºÎÅÍ 100 »çÀÌÀÇ °ª ÀÔ·Â½Ã false°¡ µÇ¾î do~while¹® ºí·° Å»Ãâ
+		} while(korean < 0 || korean > 100); // 0ë¶€í„° 100 ì‚¬ì´ì˜ ê°’ ì…ë ¥ì‹œ falseê°€ ë˜ì–´ do~whileë¬¸ ë¸”ëŸ­ íƒˆì¶œ
 		
 		do {
-			System.out.print("¿µ¾î : ");
+			System.out.print("ì˜ì–´ : ");
 			english = input.nextInt();
 		} while(english < 0 || english > 100);
 		
 		do {
-			System.out.print("¼öÇĞ : ");
+			System.out.print("ìˆ˜í•™ : ");
 			math = input.nextInt();
 		} while(math < 0 || math > 100);
 		
@@ -25,7 +25,7 @@ public class Score {
 		                                        
 		avg = sum / 3.0f;
 		
-		switch((int)(avg / 10)) { // 0ºÎÅÍ 100±îÁö¸¦ ÇÏ³ªÇÏ³ª case·Î ÁöÁ¤ÇÏ±â ¹ø°Å·Ó°í, µî±ŞÀº 10 ´ÜÀ§·Î °áÁ¤µÇ¹Ç·Î ÀÎÀÚ°ªµµ /10ÇÑ °ªÀ» ¾¸
+		switch((int)(avg / 10)) { // 0ë¶€í„° 100ê¹Œì§€ë¥¼ í•˜ë‚˜í•˜ë‚˜ caseë¡œ ì§€ì •í•˜ê¸° ë²ˆê±°ë¡­ê³ , ë“±ê¸‰ì€ 10 ë‹¨ìœ„ë¡œ ê²°ì •ë˜ë¯€ë¡œ ì¸ìê°’ë„ /10í•œ ê°’ì„ ì”€
 		case 10:
 		case 9:
 			grade = 'A'; break;
@@ -40,7 +40,7 @@ public class Score {
 		}
 		
 		System.out.println();
-		System.out.printf("ÃÑÁ¡ : %d\nÆò±Õ : %.2f\nµî±Ş : %c", sum, avg, grade);
+		System.out.printf("ì´ì  : %d\ní‰ê·  : %.2f\në“±ê¸‰ : %c", sum, avg, grade);
 		
 		input.close();
 	}

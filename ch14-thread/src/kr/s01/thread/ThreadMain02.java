@@ -1,25 +1,25 @@
 package kr.s01.thread;
 
 public class ThreadMain02 implements Runnable {
-	// Runnable ÀÎÅÍÆäÀÌ½ºÀÇ Ãß»ó ¸Ş¼­µå ±¸Çö
+	// Runnable ì¸í„°í˜ì´ìŠ¤ì˜ ì¶”ìƒ ë©”ì„œë“œ êµ¬í˜„
 	@Override public void run() {
 		for(int i=0;i<10;i++) {
 			try {
-				Thread.sleep(1000); // Thread Å¬·¡½º¸¦ »ó¼Ó¹ŞÁö ¾Ê¾ÒÀ¸¹Ç·Î static ¸Ş¼­µåÀÎ sleep() ¸Ş¼­µå¸¦ È£ÃâÇÏ·Á¸é Å¬·¡½º¸íÀ» ¸í½ÃÇØ¾ß ÇÔ
+				Thread.sleep(1000); // Thread í´ë˜ìŠ¤ë¥¼ ìƒì†ë°›ì§€ ì•Šì•˜ìœ¼ë¯€ë¡œ static ë©”ì„œë“œì¸ sleep() ë©”ì„œë“œë¥¼ í˜¸ì¶œí•˜ë ¤ë©´ í´ë˜ìŠ¤ëª…ì„ ëª…ì‹œí•´ì•¼ í•¨
 			}
 			catch(InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.printf("½º·¹µå ÀÌ¸§ : %s, ", Thread.currentThread().getName()); // Thread Å¬·¡½º¸¦ »ó¼Ó¹ŞÁö ¾Ê¾ÒÀ¸¹Ç·Î static ¸Ş¼­µåÀÎ currentThread() ¸Ş¼­µå¸¦ È£ÃâÇÏ·Á¸é Å¬·¡½º¸íÀ» ¸í½ÃÇØ¾ß ÇÔ
+			System.out.printf("ìŠ¤ë ˆë“œ ì´ë¦„ : %s, ", Thread.currentThread().getName()); // Thread í´ë˜ìŠ¤ë¥¼ ìƒì†ë°›ì§€ ì•Šì•˜ìœ¼ë¯€ë¡œ static ë©”ì„œë“œì¸ currentThread() ë©”ì„œë“œë¥¼ í˜¸ì¶œí•˜ë ¤ë©´ í´ë˜ìŠ¤ëª…ì„ ëª…ì‹œí•´ì•¼ í•¨
 			System.out.printf("temp value : %d%n", i);
 		}
 	}
 	
 	public static void main(String[] args) {
-		// run() ¸Ş¼­µå¸¦ °®°í ÀÖ´Â Å¸°Ù °´Ã¼ »ı¼º
+		// run() ë©”ì„œë“œë¥¼ ê°–ê³  ìˆëŠ” íƒ€ê²Ÿ ê°ì²´ ìƒì„±
 		ThreadMain02 tm = new ThreadMain02();
-		// Thread °´Ã¼ »ı¼º
-		Thread t = new Thread(tm, "Ã¹ ¹øÂ°"); // Å¸°Ù °´Ã¼¿Í Thread ÀÌ¸§À» ÀÎÀÚ·Î Àü´ŞÇÏ¿© Thread °´Ã¼ »ı¼º
-		t.start(); // ÁöÁ¤ÇÑ Å¸°Ù °´Ã¼ÀÇ run() ¸Ş¼­µå È£Ãâ
+		// Thread ê°ì²´ ìƒì„±
+		Thread t = new Thread(tm, "ì²« ë²ˆì§¸"); // íƒ€ê²Ÿ ê°ì²´ì™€ Thread ì´ë¦„ì„ ì¸ìë¡œ ì „ë‹¬í•˜ì—¬ Thread ê°ì²´ ìƒì„±
+		t.start(); // ì§€ì •í•œ íƒ€ê²Ÿ ê°ì²´ì˜ run() ë©”ì„œë“œ í˜¸ì¶œ
 	}
 }

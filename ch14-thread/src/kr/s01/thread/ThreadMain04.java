@@ -9,17 +9,17 @@ public class ThreadMain04 implements Runnable {
 			catch(InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.println("½º·¹µå ÀÌ¸§ : " + Thread.currentThread().getName());
+			System.out.println("ìŠ¤ë ˆë“œ ì´ë¦„ : " + Thread.currentThread().getName());
 		}
 	}
 	
 	public static void main(String[] args) {
 		ThreadMain04 tm = new ThreadMain04();
-		Thread t1 = new Thread(tm, "Ã¹ ¹øÂ°***");
-		t1.start(); // ThreadMain04 °´Ã¼ÀÇ run() ¸Ş¼­µå È£Ãâ
-		Thread t2 = new Thread(tm, "µÎ ¹øÂ°~~~");
-		t2.start(); // ThreadMain04 °´Ã¼ÀÇ run() ¸Ş¼­µå È£Ãâ
-		Thread t3 = new Thread(tm, "¼¼ ¹øÂ°===");
-		t3.start(); // ThreadMain04 °´Ã¼ÀÇ run() ¸Ş¼­µå È£Ãâ
+		Thread t1 = new Thread(tm, "ì²« ë²ˆì§¸***");
+		t1.start(); // ThreadMain04 ê°ì²´ì˜ run() ë©”ì„œë“œ í˜¸ì¶œ
+		Thread t2 = new Thread(tm, "ë‘ ë²ˆì§¸~~~");
+		t2.start(); // ThreadMain04 ê°ì²´ì˜ run() ë©”ì„œë“œ í˜¸ì¶œ
+		Thread t3 = new Thread(tm, "ì„¸ ë²ˆì§¸===");
+		t3.start(); // ThreadMain04 ê°ì²´ì˜ run() ë©”ì„œë“œ í˜¸ì¶œ
 	}
 }

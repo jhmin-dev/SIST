@@ -1,14 +1,14 @@
 public class ArrayMain12 {
 	public static void main(String[] args) {
-		// 2Â÷¿ø ¹è¿­ ¼±¾ğ ¹× »ı¼º, ÃÊ±âÈ­
-		int[][] array = {{10, 20, 30, 40}, {20, 30, 40, 50}}; // 2Çà 4¿­
+		// 2ì°¨ì› ë°°ì—´ ì„ ì–¸ ë° ìƒì„±, ì´ˆê¸°í™”
+		int[][] array = {{10, 20, 30, 40}, {20, 30, 40, 50}}; // 2í–‰ 4ì—´
 		
-		// ¹İº¹¹®À» ÀÌ¿ëÇÑ Ãâ·Â
-		for(int i=0;i<array.length;i++) { // Çà
-			for(int j=0;j<array[i].length;j++) { // ¿­
+		// ë°˜ë³µë¬¸ì„ ì´ìš©í•œ ì¶œë ¥
+		for(int i=0;i<array.length;i++) { // í–‰
+			for(int j=0;j<array[i].length;j++) { // ì—´
 				System.out.print(array[i][j] + "\t");
 			}
-			System.out.println(); // ´Ü¼ø ÁÙ¹Ù²Ş(ÇàÀÌ ¹Ù²î¾úÀ½À» ³ªÅ¸³»±â À§ÇØ)
+			System.out.println(); // ë‹¨ìˆœ ì¤„ë°”ê¿ˆ(í–‰ì´ ë°”ë€Œì—ˆìŒì„ ë‚˜íƒ€ë‚´ê¸° ìœ„í•´)
 		}
 		
 	}

@@ -1,11 +1,11 @@
 public class BreakMain03 {
 	public static void main(String[] args) {
-		// ´ÙÁß ¹İº¹¹®¿¡¼­ break label »ç¿ë
-		exit_for: // label ÁöÁ¤
+		// ë‹¤ì¤‘ ë°˜ë³µë¬¸ì—ì„œ break label ì‚¬ìš©
+		exit_for: // label ì§€ì •
 		for(int i=0;i<3;i++) {
 			for(int j=0;j<5;j++) {
 				if(j == 3)
-					break exit_for; // break ´ÙÀ½¿¡ labelÀ» ¸í½ÃÇÏ¸é labelÀÌ ÁöÁ¤µÈ for¹®À» ºüÁ®³ª°¨
+					break exit_for; // break ë‹¤ìŒì— labelì„ ëª…ì‹œí•˜ë©´ labelì´ ì§€ì •ëœ forë¬¸ì„ ë¹ ì ¸ë‚˜ê°
 				System.out.println("i = " + i + ", j = " + j);
 			}
 		}

@@ -7,24 +7,24 @@ public class HashtableMain {
 	public static void main(String[] args) {
 		Hashtable<String, String> h = new Hashtable<String, String>();
 		
-		// h¿¡ put() ¸Ş¼­µå·Î µ¥ÀÌÅÍ ÀúÀå
-		h.put("name", "È«±æµ¿");
-		h.put("age", "20"); // °ªÀÇ ÀÚ·áÇüÀ» StringÀ¸·Î ÁöÁ¤Çß±â ¶§¹®¿¡ 10 ÀÔ·Â½Ã ¿¹¿Ü ¹ß»ı
+		// hì— put() ë©”ì„œë“œë¡œ ë°ì´í„° ì €ì¥
+		h.put("name", "í™ê¸¸ë™");
+		h.put("age", "20"); // ê°’ì˜ ìë£Œí˜•ì„ Stringìœ¼ë¡œ ì§€ì •í–ˆê¸° ë•Œë¬¸ì— 10 ì…ë ¥ì‹œ ì˜ˆì™¸ ë°œìƒ
 		h.put("tel", "010-1234-5678");
-		h.put("job", "Å½Á¤");
-		h.put("address", "¼­¿ï½Ã");
-		h.put("name", "³Ê±¼"); // ½Äº°ÀÚÀÇ Áßº¹À» ºÒÇãÇÏ¸ç, ½Äº°ÀÚ°¡ Áßº¹µÇ´Â °æ¿ì ¸¶Áö¸·¿¡ µî·ÏÇÑ °ªÀ» ÀúÀå
-		// h.put("zipcode", null); // ½ÇÇà½Ã NullPointerException; °ª¿¡ nullÀ» ÀÎÁ¤ÇÏÁö ¾ÊÀ½
-		// h.put(null, "¸¶Æ÷±¸"); // ½ÇÇà½Ã NullPointerException; ½Äº°ÀÚ¿¡ nullÀ» ÀÎÁ¤ÇÏÁö ¾ÊÀ½
+		h.put("job", "íƒì •");
+		h.put("address", "ì„œìš¸ì‹œ");
+		h.put("name", "ë„ˆêµ´"); // ì‹ë³„ìì˜ ì¤‘ë³µì„ ë¶ˆí—ˆí•˜ë©°, ì‹ë³„ìê°€ ì¤‘ë³µë˜ëŠ” ê²½ìš° ë§ˆì§€ë§‰ì— ë“±ë¡í•œ ê°’ì„ ì €ì¥
+		// h.put("zipcode", null); // ì‹¤í–‰ì‹œ NullPointerException; ê°’ì— nullì„ ì¸ì •í•˜ì§€ ì•ŠìŒ
+		// h.put(null, "ë§ˆí¬êµ¬"); // ì‹¤í–‰ì‹œ NullPointerException; ì‹ë³„ìì— nullì„ ì¸ì •í•˜ì§€ ì•ŠìŒ
 		System.out.println(h);
 		
-		// get() ¸Ş¼­µå¿¡ ½Äº°ÀÚ¸¦ ÀÎÀÚ·Î ÀÔ·ÂÇÏ¿© ¿¬°áµÈ °ªÀ» ¹İÈ¯¹ŞÀ½
+		// get() ë©”ì„œë“œì— ì‹ë³„ìë¥¼ ì¸ìë¡œ ì…ë ¥í•˜ì—¬ ì—°ê²°ëœ ê°’ì„ ë°˜í™˜ë°›ìŒ
 		String name = h.get("name");
 		System.out.println("name = " + name);
 
 		System.out.println();
 		
-		// h¿¡ ÀúÀåµÈ ½Äº°ÀÚ ±¸ÇÏ±â; keys() ¸Ş¼­µå¸¦ ÅëÇØ Enumeration °´Ã¼·Î º¹»çÇØ¾ß ÇÔ
+		// hì— ì €ì¥ëœ ì‹ë³„ì êµ¬í•˜ê¸°; keys() ë©”ì„œë“œë¥¼ í†µí•´ Enumeration ê°ì²´ë¡œ ë³µì‚¬í•´ì•¼ í•¨
 		Enumeration<String> en = h.keys();
 		while(en.hasMoreElements()) {
 			String key = en.nextElement();

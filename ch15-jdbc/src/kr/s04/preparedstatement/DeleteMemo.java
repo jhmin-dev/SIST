@@ -15,30 +15,30 @@ public class DeleteMemo {
 		
 		try {
 			br = new BufferedReader(new InputStreamReader(System.in));
-			System.out.println("¸Ş¸ğ¸¦ »èÁ¦ÇÕ´Ï´Ù.");
-			System.out.print("¸Ş¸ğ ¹øÈ£ > ");
+			System.out.println("ë©”ëª¨ë¥¼ ì‚­ì œí•©ë‹ˆë‹¤.");
+			System.out.print("ë©”ëª¨ ë²ˆí˜¸ > ");
 			int num = Integer.parseInt(br.readLine());
 			
-			// JDBC ¼öÇà 1,2´Ü°è
+			// JDBC ìˆ˜í–‰ 1,2ë‹¨ê³„
 			conn = DBUtil.getConnection();
 			
-			// SQL¹® ÀÛ¼º
+			// SQLë¬¸ ì‘ì„±
 			sql = "DELETE FROM test2 WHERE num=?";
 			
-			// JDBC ¼öÇà 3´Ü°è : PreparedStatement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : PreparedStatement ê°ì²´ ìƒì„±
 			pstmt = conn.prepareStatement(sql);
-			// ?¿¡ µ¥ÀÌÅÍ¸¦ ¹ÙÀÎµù
+			// ?ì— ë°ì´í„°ë¥¼ ë°”ì¸ë”©
 			pstmt.setInt(1, num);
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºíÀÇ ÇàÀ» »èÁ¦
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ì˜ í–‰ì„ ì‚­ì œ
 			int count = pstmt.executeUpdate();
-			System.out.println(count + "°³ ÇàÀÌ »èÁ¦µÇ¾ú½À´Ï´Ù.");
+			System.out.println(count + "ê°œ í–‰ì´ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			if(br!=null) try {br.close();} catch(Exception e) {}
 			DBUtil.executeClose(null, pstmt, conn);
 		}

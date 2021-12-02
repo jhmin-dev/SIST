@@ -3,14 +3,14 @@ package kr.s07.instanceoftest;
 class Parent {
 	@Override
 	public String toString() {
-		return "Parent Å¬·¡½º";
+		return "Parent í´ë˜ìŠ¤";
 	}
 }
 
 class Child extends Parent {
 	@Override
 	public String toString() {
-		return "Child Å¬·¡½º";
+		return "Child í´ë˜ìŠ¤";
 	}
 }
 
@@ -18,10 +18,10 @@ public class InstanceofMain01 {
 	public static void main(String[] args) {
 		Parent p = new Parent();
 		
-		// ÄÄÆÄÀÏ½Ã¿¡´Â ¿À·ù°¡ ¾øÀ¸³ª, ½ÇÇà½Ã ¿À·ù ¹ß»ı
+		// ì»´íŒŒì¼ì‹œì—ëŠ” ì˜¤ë¥˜ê°€ ì—†ìœ¼ë‚˜, ì‹¤í–‰ì‹œ ì˜¤ë¥˜ ë°œìƒ
 		// Child ch = (Child)p;
 		
-		// °´Ã¼ p°¡ Child ÀÚ·áÇüÀ¸·Î Ä³½ºÆ®ÇÒ ¼ö ÀÖ´ÂÁö¸¦ instanceof ¿¬»êÀÚ·Î °ËÁõ
+		// ê°ì²´ pê°€ Child ìë£Œí˜•ìœ¼ë¡œ ìºìŠ¤íŠ¸í•  ìˆ˜ ìˆëŠ”ì§€ë¥¼ instanceof ì—°ì‚°ìë¡œ ê²€ì¦
 		if(p instanceof Child) {
 			Child ch2 = (Child)p;
 			System.out.println(ch2);

@@ -10,11 +10,11 @@ public class HashSetMain02 {
 		HashSet<Integer> set = new HashSet<Integer>();
 		Random r = new Random();
 		while(set.size()<6) {
-			set.add(r.nextInt(45)+1); // 1~45 ¹üÀ§ÀÇ ³­¼ö, Áßº¹°ª ºÒÇã
+			set.add(r.nextInt(45)+1); // 1~45 ë²”ìœ„ì˜ ë‚œìˆ˜, ì¤‘ë³µê°’ ë¶ˆí—ˆ
 		}
 		System.out.println(set);
 		
-		ArrayList<Integer> list = new ArrayList<Integer>(set); // Collections.sort() ¸Ş¼­µå´Â List ÀÎÅÍÆäÀÌ½º ÀÚ·áÇü¸¸ ÀÎÀÚ·Î ¹Ş±â ¶§¹®¿¡, ArrayListÀÇ »ı¼ºÀÚ¸¦ ÅëÇØ setÀÇ µ¥ÀÌÅÍ¸¦ º¹»çÇÑ list¸¦ »ı¼º
+		ArrayList<Integer> list = new ArrayList<Integer>(set); // Collections.sort() ë©”ì„œë“œëŠ” List ì¸í„°í˜ì´ìŠ¤ ìë£Œí˜•ë§Œ ì¸ìë¡œ ë°›ê¸° ë•Œë¬¸ì—, ArrayListì˜ ìƒì„±ìë¥¼ í†µí•´ setì˜ ë°ì´í„°ë¥¼ ë³µì‚¬í•œ listë¥¼ ìƒì„±
 		Collections.sort(list);
 		for(int num : list) {
 			System.out.print(num + "\t");

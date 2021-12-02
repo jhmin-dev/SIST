@@ -1,17 +1,17 @@
 package kr.s01.p1;
 
-import kr.s01.p2.PackTwo; // È£ÃâÇÏ°íÀÚ ÇÏ´Â Å¬·¡½ºÀÇ ÆĞÅ°Áö¸¦ µî·Ï
+import kr.s01.p2.PackTwo; // í˜¸ì¶œí•˜ê³ ì í•˜ëŠ” í´ë˜ìŠ¤ì˜ íŒ¨í‚¤ì§€ë¥¼ ë“±ë¡
 
 public class PackMain {
 	public static void main(String[] args) {
 		// kr.s01.p1.PackOne p1 = new kr.s01.p1.PackOne();
-		PackOne p1 = new PackOne(); // °°Àº ÆĞÅ°ÁöÀÇ Å¬·¡½º´Â È£Ãâ½Ã ÆĞÅ°Áö¸íÀ» »ı·«ÇÒ ¼ö ÀÖÀ½
+		PackOne p1 = new PackOne(); // ê°™ì€ íŒ¨í‚¤ì§€ì˜ í´ë˜ìŠ¤ëŠ” í˜¸ì¶œì‹œ íŒ¨í‚¤ì§€ëª…ì„ ìƒëµí•  ìˆ˜ ìˆìŒ
 		p1.study();
 		
 		kr.s01.p2.PackTwo p2 = new kr.s01.p2.PackTwo();
 		p2.play();
 		
-		PackTwo p3 = new PackTwo(); // µî·ÏÇß±â ¶§¹®¿¡ È£Ãâ½Ã ÆĞÅ°Áö¸íÀ» »ı·«ÇÒ ¼ö ÀÖÀ½
+		PackTwo p3 = new PackTwo(); // ë“±ë¡í–ˆê¸° ë•Œë¬¸ì— í˜¸ì¶œì‹œ íŒ¨í‚¤ì§€ëª…ì„ ìƒëµí•  ìˆ˜ ìˆìŒ
 		p3.play();
 		
 	}

@@ -12,20 +12,20 @@ public class SelectMain {
 		String sql = null;
 		
 		try {
-			// JDBC ¼öÇà 1´Ü°è : µå¶óÀÌ¹ö ·Îµå
-			// JDBC ¼öÇà 2´Ü°è : Connection °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 1ë‹¨ê³„ : ë“œë¼ì´ë²„ ë¡œë“œ
+			// JDBC ìˆ˜í–‰ 2ë‹¨ê³„ : Connection ê°ì²´ ìƒì„±
 			conn = DBUtil.getConnection();
 			
-			// SQL¹® ÀÛ¼º
+			// SQLë¬¸ ì‘ì„±
 			sql = "SELECT * FROM test1";
 			
-			// JDBC ¼öÇà 3´Ü°è : PreparedStatement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : PreparedStatement ê°ì²´ ìƒì„±
 			pstmt = conn.prepareStatement(sql);
 					
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºí¿¡ ¹İ¿µÇÏ°í °á°ú ÁıÇÕÀ» ResultSet¿¡ ´ã¾Æ¼­ ¹İÈ¯
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ì— ë°˜ì˜í•˜ê³  ê²°ê³¼ ì§‘í•©ì„ ResultSetì— ë‹´ì•„ì„œ ë°˜í™˜
 			rs = pstmt.executeQuery();
 			
-			System.out.println("ID\t³ªÀÌ");
+			System.out.println("ID\të‚˜ì´");
 			while(rs.next()) {
 				System.out.print(rs.getString("id") + "\t");
 				System.out.println(rs.getInt("age"));
@@ -35,7 +35,7 @@ public class SelectMain {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			DBUtil.executeClose(rs, pstmt, conn);
 		}
 	}

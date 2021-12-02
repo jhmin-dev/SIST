@@ -1,10 +1,10 @@
 package kr.s05.statictest;
 
 public class StaticCount {
-	int c; // ÀÎ½ºÅÏ½º º¯¼ö; °´Ã¼ »ı¼º½Ã ¸Ş¸ğ¸®¿¡ ¿Ã¶ó°¨
-	static int count; // static(Å¬·¡½º) º¯¼ö; °´Ã¼ »ı¼º°ú ¹«°üÇÏ°Ô È£ÃâµÇ¸é ¸Ş¸ğ¸®¿¡ ¿Ã¶ó°¨
+	int c; // ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜; ê°ì²´ ìƒì„±ì‹œ ë©”ëª¨ë¦¬ì— ì˜¬ë¼ê°
+	static int count; // static(í´ë˜ìŠ¤) ë³€ìˆ˜; ê°ì²´ ìƒì„±ê³¼ ë¬´ê´€í•˜ê²Œ í˜¸ì¶œë˜ë©´ ë©”ëª¨ë¦¬ì— ì˜¬ë¼ê°
 
-	public StaticCount() { // »ı¼ºÀÚ
+	public StaticCount() { // ìƒì„±ì
 		c++;
 		count++;
 	}

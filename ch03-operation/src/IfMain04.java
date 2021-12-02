@@ -5,7 +5,7 @@ public class IfMain04 {
 		int score;
 		char grade;
 		
-		System.out.print("己利 涝仿 : ");
+		System.out.print("靹膘爜 鞛呺牓 : ");
 		score = input.nextInt();
 		
 		if(score>100||score<0)
@@ -21,7 +21,7 @@ public class IfMain04 {
 		else
 			grade = 'F';
 		
-		System.out.printf("己利 : %d\n殿鞭 : %c\n", score, grade);		
+		System.out.printf("靹膘爜 : %d\n霌标笁 : %c\n", score, grade);		
 		
 		input.close();
 	}

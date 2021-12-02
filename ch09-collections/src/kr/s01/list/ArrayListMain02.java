@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class ArrayListMain02 {
 	public static void main(String[] args) {
-		// ¸®½ºÆ®´Â ÀúÀåµÇ´Â ¼ø¼­¸¦ À¯ÁöÇÏ¸ç, Áßº¹ ÀúÀåÀ» Çã¿ë
+		// ë¦¬ìŠ¤íŠ¸ëŠ” ì €ì¥ë˜ëŠ” ìˆœì„œë¥¼ ìœ ì§€í•˜ë©°, ì¤‘ë³µ ì €ì¥ì„ í—ˆìš©
 		ArrayList al = new ArrayList();
-		al.add("°¡³ª´Ù"); // ÀÎµ¦½º 0¹ø, StringÀÌ Object·Î ¾÷Ä³½ºÆÃ
-		al.add("¶ó¸¶¹Ù");
-		al.add("»ç¾ÆÀÚ");
-		al.add("Â÷Ä«ÆÄ");
+		al.add("ê°€ë‚˜ë‹¤"); // ì¸ë±ìŠ¤ 0ë²ˆ, Stringì´ Objectë¡œ ì—…ìºìŠ¤íŒ…
+		al.add("ë¼ë§ˆë°”");
+		al.add("ì‚¬ì•„ì");
+		al.add("ì°¨ì¹´íŒŒ");
 		
-		// ¹İº¹¹®À» ÀÌ¿ëÇÑ ArrayListÀÇ ¿ä¼Ò Ãâ·Â
-		for(int i=0;i<al.size();i++) { // ¸®½ºÆ®ÀÇ ±æÀÌ´Â size() ¸Ş¼­µå¸¦ ÀÌ¿ë
-			String name = (String)al.get(i); // ArrayList¿¡ ÀúÀåµÈ ¿ä¼Ò´Â get() ¸Ş¼­µå¸¦ ÅëÇØ ¹İÈ¯ÇÒ ¼ö ÀÖÀ¸¸ç, Object·Î ¹İÈ¯µÇ¹Ç·Î ´Ù¿îÄ³½ºÆÃÇØ¾ß ÇÔ
+		// ë°˜ë³µë¬¸ì„ ì´ìš©í•œ ArrayListì˜ ìš”ì†Œ ì¶œë ¥
+		for(int i=0;i<al.size();i++) { // ë¦¬ìŠ¤íŠ¸ì˜ ê¸¸ì´ëŠ” size() ë©”ì„œë“œë¥¼ ì´ìš©
+			String name = (String)al.get(i); // ArrayListì— ì €ì¥ëœ ìš”ì†ŒëŠ” get() ë©”ì„œë“œë¥¼ í†µí•´ ë°˜í™˜í•  ìˆ˜ ìˆìœ¼ë©°, Objectë¡œ ë°˜í™˜ë˜ë¯€ë¡œ ë‹¤ìš´ìºìŠ¤íŒ…í•´ì•¼ í•¨
 			System.out.println(name);
 		}
 	}

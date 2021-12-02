@@ -2,7 +2,7 @@ package kr.s02.method;
 
 public class MethodMain03 {
 	// Variable Arguments
-	public void argTest(int ... n) { // ÀÚ·áÇüÀ» ¸í½ÃÇÏ°í ... ÈÄ¿¡ ÀÎÀÚ¸¦ ¸í½ÃÇÏ¸é °¡º¯ ÀÎÀÚ°¡ µÊ
+	public void argTest(int ... n) { // ìë£Œí˜•ì„ ëª…ì‹œí•˜ê³  ... í›„ì— ì¸ìë¥¼ ëª…ì‹œí•˜ë©´ ê°€ë³€ ì¸ìê°€ ë¨
 		for(int i=0;i<n.length;i++) {
 			System.out.println("n[" + i + "] : " + n[i]);
 		}
@@ -11,8 +11,8 @@ public class MethodMain03 {
 	
 	public static void main(String[] args) {
 		MethodMain03 me = new MethodMain03();
-		me.argTest(); // ÀÎÀÚ¸¦ ÀÔ·ÂÇÏÁö ¾ÊÀº °æ¿ì, ±æÀÌ 0ÀÎ ºó ¹è¿­ÀÌ »ı¼ºµÇ¾î for¹®Àº µ¿ÀÛÇÏÁö ¾ÊÀ½
-		me.argTest(10); // 10ÀÌ n¿¡ Á÷Á¢ Àü´ŞµÇ´Â °ÍÀÌ ¾Æ´Ï¶ó, nÀÌ °¡¸®Å°´Â ±æÀÌ 1ÀÎ ¹è¿­ÀÇ ¿ä¼Ò°¡ µÊ
+		me.argTest(); // ì¸ìë¥¼ ì…ë ¥í•˜ì§€ ì•Šì€ ê²½ìš°, ê¸¸ì´ 0ì¸ ë¹ˆ ë°°ì—´ì´ ìƒì„±ë˜ì–´ forë¬¸ì€ ë™ì‘í•˜ì§€ ì•ŠìŒ
+		me.argTest(10); // 10ì´ nì— ì§ì ‘ ì „ë‹¬ë˜ëŠ” ê²ƒì´ ì•„ë‹ˆë¼, nì´ ê°€ë¦¬í‚¤ëŠ” ê¸¸ì´ 1ì¸ ë°°ì—´ì˜ ìš”ì†Œê°€ ë¨
 		me.argTest(20, 30);
 		me.argTest(40, 50, 60);
 	}

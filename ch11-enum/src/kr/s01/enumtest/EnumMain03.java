@@ -6,11 +6,11 @@ enum Item {
 
 public class EnumMain03 {
 	public static void main(String[] args) {
-		// values() ¸Ş¼­µå¸¦ ÅëÇØ ¿­°Å ÀÚ·áÇü Item¿¡ Æ÷ÇÔµÈ ¸ğµç ¿­°Å °´Ã¼µéÀ» ¹è¿­·Î ¹İÈ¯
+		// values() ë©”ì„œë“œë¥¼ í†µí•´ ì—´ê±° ìë£Œí˜• Itemì— í¬í•¨ëœ ëª¨ë“  ì—´ê±° ê°ì²´ë“¤ì„ ë°°ì—´ë¡œ ë°˜í™˜
 		Item[] items = Item.values();
 		System.out.println("items.length : " + items.length);
 		
-		// È®Àå for¹®À» ÀÌ¿ëÇÑ Ãâ·Â
+		// í™•ì¥ forë¬¸ì„ ì´ìš©í•œ ì¶œë ¥
 		for(Item n : items) {
 			System.out.println(n.ordinal());
 		}

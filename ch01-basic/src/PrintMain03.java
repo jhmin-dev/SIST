@@ -1,23 +1,23 @@
 public class PrintMain03 {
 	public static void main(String[] args) {
-		// ¹®ÀÚ: ÇÑ ¹®ÀÚ
+		// ë¬¸ì: í•œ ë¬¸ì
 		System.out.println('A');
-		System.out.println('°¡');
-		// System.out.println('ºÎ»ê'); // ¹®ÀÚ¿­À» '' Ã³¸®ÇØ¼­ ¿À·ù ¹ß»ı
+		System.out.println('ê°€');
+		// System.out.println('ë¶€ì‚°'); // ë¬¸ìì—´ì„ '' ì²˜ë¦¬í•´ì„œ ì˜¤ë¥˜ ë°œìƒ
 		
-		// ¹®ÀÚ¿­ : ÇÑ ¹®ÀÚ ÀÌ»óÀÇ ¹®ÀÚµé
-		System.out.println("¼­¿ï");
+		// ë¬¸ìì—´ : í•œ ë¬¸ì ì´ìƒì˜ ë¬¸ìë“¤
+		System.out.println("ì„œìš¸");
 		System.out.println("Bus");
 		System.out.println("Z");
 		
-		// ¼ıÀÚ(Á¤¼ö)
+		// ìˆ«ì(ì •ìˆ˜)
 		System.out.println(23);
 		
-		// ¼ıÀÚ(½Ç¼ö)
+		// ìˆ«ì(ì‹¤ìˆ˜)
 		System.out.println(25.67);
 		
-		// ³í¸®°ª(boolean)
-		System.out.println(true); // "" Ã³¸®½Ã µ¥ÀÌÅÍ Á¾·ù°¡ ¹®ÀÚ¿­·Î ¹Ù²ñ, ´ë¹®ÀÚ »ç¿ë½Ã ¿À·ù
+		// ë…¼ë¦¬ê°’(boolean)
+		System.out.println(true); // "" ì²˜ë¦¬ì‹œ ë°ì´í„° ì¢…ë¥˜ê°€ ë¬¸ìì—´ë¡œ ë°”ë€œ, ëŒ€ë¬¸ì ì‚¬ìš©ì‹œ ì˜¤ë¥˜
 		System.out.println(false);
 	}
 }

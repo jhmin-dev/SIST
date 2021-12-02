@@ -1,20 +1,20 @@
 public class ArrayMain05 {
 	public static void main(String[] args) {
-		// ¹è¿­ÀÇ ¼±¾ğ ¹× »ı¼º
+		// ë°°ì—´ì˜ ì„ ì–¸ ë° ìƒì„±
 		String[] array = new String[3];
-		// ¹è¿­ÀÇ ÃÊ±âÈ­
+		// ë°°ì—´ì˜ ì´ˆê¸°í™”
 		array[0] = "Java";
 		array[1] = "JSP";
 		array[2] = "Servlet";
 		
-		// ÀÏ¹İ for¹®
+		// ì¼ë°˜ forë¬¸
 		for(int i=0;i<array.length;i++) {
 			System.out.println(array[i]);
 		}
 		
 		System.out.println();
 		
-		// È®Àå for¹®
+		// í™•ì¥ forë¬¸
 		for(String s : array) {
 			System.out.println(s);
 		}

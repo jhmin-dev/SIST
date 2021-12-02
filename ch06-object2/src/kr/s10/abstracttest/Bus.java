@@ -1,11 +1,11 @@
 package kr.s10.abstracttest;
 
 public class Bus extends Car {
-	// »ó¼Ó¹ŞÀº Ãß»ó ¸Ş¼­µå¸¦ ±¸ÇöÇÏÁö ¾ÊÀ¸¸é ¿À·ù ¹ß»ı
+	// ìƒì†ë°›ì€ ì¶”ìƒ ë©”ì„œë“œë¥¼ êµ¬í˜„í•˜ì§€ ì•Šìœ¼ë©´ ì˜¤ë¥˜ ë°œìƒ
 	@Override public int getEnergy() {
 		return 10;
 	}
 	public void getPassenger() {
-		System.out.println("½ÂÂ÷ÇÕ´Ï´Ù.");
+		System.out.println("ìŠ¹ì°¨í•©ë‹ˆë‹¤.");
 	}
 }

@@ -1,25 +1,25 @@
 package kr.s03.statictest;
 
 public class InnerMain {
-	// static ³»ºÎ Å¬·¡½º
+	// static ë‚´ë¶€ í´ë˜ìŠ¤
 	public static class StaticInner {
 		int iv = 100;
-		static int cv = 200; // ³»ºÎ Å¬·¡½º¸¦ staticÀ¸·Î ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é ÄÄÆÄÀÏ ¿¡·¯
+		static int cv = 200; // ë‚´ë¶€ í´ë˜ìŠ¤ë¥¼ staticìœ¼ë¡œ ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ ì»´íŒŒì¼ ì—ëŸ¬
 		public void fun() {
-			System.out.println("fun ¸Ş¼­µå");
+			System.out.println("fun ë©”ì„œë“œ");
 		}
-		public static void make() { // ³»ºÎ Å¬·¡½º¸¦ staticÀ¸·Î ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é ÄÄÆÄÀÏ ¿¡·¯
-			System.out.println("make ¸Ş¼­µå");
+		public static void make() { // ë‚´ë¶€ í´ë˜ìŠ¤ë¥¼ staticìœ¼ë¡œ ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ ì»´íŒŒì¼ ì—ëŸ¬
+			System.out.println("make ë©”ì„œë“œ");
 		}
 	}
 	
 	public static void main(String[] args) {
-		// static ³»ºÎ Å¬·¡½ºÀÇ static º¯¼ö³ª static ¸Ş¼­µå¿¡ Á¢±Ù½Ã .À¸·Î ¿ÜºÎ Å¬·¡½º¸íÀ» ÇÔ²² ¸í½ÃÇØ¾ß ÇÔ
+		// static ë‚´ë¶€ í´ë˜ìŠ¤ì˜ static ë³€ìˆ˜ë‚˜ static ë©”ì„œë“œì— ì ‘ê·¼ì‹œ .ìœ¼ë¡œ ì™¸ë¶€ í´ë˜ìŠ¤ëª…ì„ í•¨ê»˜ ëª…ì‹œí•´ì•¼ í•¨
 		System.out.println(InnerMain.StaticInner.cv);
 		InnerMain.StaticInner.make();
-		// static ³»ºÎ Å¬·¡½ºÀÇ °´Ã¼´Â (¿ÜºÎ Å¬·¡½º °´Ã¼ »ı¼ºÀ» °ÅÄ¡Áö ¾Ê°í) ´Üµ¶À¸·Î »ı¼º
+		// static ë‚´ë¶€ í´ë˜ìŠ¤ì˜ ê°ì²´ëŠ” (ì™¸ë¶€ í´ë˜ìŠ¤ ê°ì²´ ìƒì„±ì„ ê±°ì¹˜ì§€ ì•Šê³ ) ë‹¨ë…ìœ¼ë¡œ ìƒì„±
 		InnerMain.StaticInner si = new InnerMain.StaticInner();
-		// static ³»ºÎ Å¬·¡½ºÀÇ ÀÎ½ºÅÏ½º º¯¼ö³ª ÀÎ½ºÅÏ½º ¸Ş¼­µå´Â °´Ã¼ »ı¼º ÈÄ È£Ãâ °¡´É
+		// static ë‚´ë¶€ í´ë˜ìŠ¤ì˜ ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜ë‚˜ ì¸ìŠ¤í„´ìŠ¤ ë©”ì„œë“œëŠ” ê°ì²´ ìƒì„± í›„ í˜¸ì¶œ ê°€ëŠ¥
 		System.out.println(si.iv);
 		si.fun();
 	}

@@ -5,7 +5,7 @@ public class PhoneMain {
 		SmartPhone sp = new SmartPhone("010-1234", "A1001", "White", "Android");
 		FeaturePhone fp = new FeaturePhone("010-4321", "Z1001", "Black", 800);
 		
-		System.out.println("¹øÈ£\t¸ğµ¨\t»ö»ó\t¿É¼Ç(OS/È­¼Ò ¼ö)");
+		System.out.println("ë²ˆí˜¸\tëª¨ë¸\tìƒ‰ìƒ\tì˜µì…˜(OS/í™”ì†Œ ìˆ˜)");
 		
 		System.out.print(sp.getNumber() + "\t");
 		System.out.print(sp.getModel() + "\t");

@@ -17,41 +17,41 @@ public class SelectDetailMemo {
 		
 		try {
 			br = new BufferedReader(new InputStreamReader(System.in));
-			System.out.println("¸Ş¸ğ »ó¼¼ ÆäÀÌÁö¸¦ Á¶È¸ÇÕ´Ï´Ù.");
-			System.out.print("¸Ş¸ğ ¹øÈ£ > ");
+			System.out.println("ë©”ëª¨ ìƒì„¸ í˜ì´ì§€ë¥¼ ì¡°íšŒí•©ë‹ˆë‹¤.");
+			System.out.print("ë©”ëª¨ ë²ˆí˜¸ > ");
 			int num = Integer.parseInt(br.readLine());
 			
-			// JDBC ¼öÇà 1,2´Ü°è
+			// JDBC ìˆ˜í–‰ 1,2ë‹¨ê³„
 			conn = DBUtil.getConnection();
 			
-			// SQL¹® ÀÛ¼º
+			// SQLë¬¸ ì‘ì„±
 			sql = "SELECT * FROM test2 WHERE num=?";
 					
-			// JDBC ¼öÇà 3´Ü°è : PreparedStatement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : PreparedStatement ê°ì²´ ìƒì„±
 			pstmt = conn.prepareStatement(sql);
-			// ?¿¡ µ¥ÀÌÅÍ¸¦ ¹ÙÀÎµù
-			pstmt.setInt(1, num); // »ó¼¼ ÆäÀÌÁö¸¦ Á¶È¸ÇÏ±â À§ÇØ¼­´Â Å×ÀÌºí¿¡ PRIMARY KEY°¡ ÁöÁ¤µÇ¾î ÀÖ¾î¾ß ÇÔ
+			// ?ì— ë°ì´í„°ë¥¼ ë°”ì¸ë”©
+			pstmt.setInt(1, num); // ìƒì„¸ í˜ì´ì§€ë¥¼ ì¡°íšŒí•˜ê¸° ìœ„í•´ì„œëŠ” í…Œì´ë¸”ì— PRIMARY KEYê°€ ì§€ì •ë˜ì–´ ìˆì–´ì•¼ í•¨
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºí·ÎºÎÅÍ ÇÑ °³ÀÇ ·¹ÄÚµå¸¦ ¾ò¾î ResultSet¿¡ ´ã¾Æ¼­ ¹İÈ¯
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ë¡œë¶€í„° í•œ ê°œì˜ ë ˆì½”ë“œë¥¼ ì–»ì–´ ResultSetì— ë‹´ì•„ì„œ ë°˜í™˜
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()) { // ÀÔ·ÂÇÑ PRIMARY KEY °ªÀ» °¡Áø ÇàÀÌ ÀÖ´Â °æ¿ì; ResultSet Ä¿¼­ÀÇ ÃÊ±â À§Ä¡´Â Ã¹ ¹øÂ° Çà ÀüÀ¸·Î, next() ¸Ş¼­µå¸¦ 1È¸ ½ÇÇàÇØ¾ß Ä¿¼­°¡ Ã¹ ¹øÂ° ÇàÀ¸·Î ÀÌµ¿ÇÏ°Ô µÊ
-				System.out.println("¹øÈ£ : " + rs.getInt("num")); // getString()µµ »ç¿ë °¡´É
-				System.out.println("Á¦¸ñ : " + rs.getString("title"));
-				System.out.println("ÀÛ¼ºÀÚ : " + rs.getString("name"));
-				System.out.println("³»¿ë : " + rs.getString("memo"));
-				System.out.println("ÀÌ¸ŞÀÏ : " + rs.getString("email"));
-				System.out.println("ÀÛ¼ºÀÏ : " + rs.getDate("reg_date"));
+			if(rs.next()) { // ì…ë ¥í•œ PRIMARY KEY ê°’ì„ ê°€ì§„ í–‰ì´ ìˆëŠ” ê²½ìš°; ResultSet ì»¤ì„œì˜ ì´ˆê¸° ìœ„ì¹˜ëŠ” ì²« ë²ˆì§¸ í–‰ ì „ìœ¼ë¡œ, next() ë©”ì„œë“œë¥¼ 1íšŒ ì‹¤í–‰í•´ì•¼ ì»¤ì„œê°€ ì²« ë²ˆì§¸ í–‰ìœ¼ë¡œ ì´ë™í•˜ê²Œ ë¨
+				System.out.println("ë²ˆí˜¸ : " + rs.getInt("num")); // getString()ë„ ì‚¬ìš© ê°€ëŠ¥
+				System.out.println("ì œëª© : " + rs.getString("title"));
+				System.out.println("ì‘ì„±ì : " + rs.getString("name"));
+				System.out.println("ë‚´ìš© : " + rs.getString("memo"));
+				System.out.println("ì´ë©”ì¼ : " + rs.getString("email"));
+				System.out.println("ì‘ì„±ì¼ : " + rs.getDate("reg_date"));
 			}
-			else { // ÀÔ·ÂÇÑ PRIMARY KEY °ªÀ» °¡Áø ÇàÀÌ ¾ø´Â °æ¿ì
-				System.out.println("°Ë»öµÈ µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù.");
+			else { // ì…ë ¥í•œ PRIMARY KEY ê°’ì„ ê°€ì§„ í–‰ì´ ì—†ëŠ” ê²½ìš°
+				System.out.println("ê²€ìƒ‰ëœ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			if(br!=null) try {br.close();} catch(Exception e) {}
 			DBUtil.executeClose(rs, pstmt, conn);
 		}

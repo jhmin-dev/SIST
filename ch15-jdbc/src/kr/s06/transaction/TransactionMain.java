@@ -14,22 +14,22 @@ public class TransactionMain {
 		String sql = null;
 		
 		try {
-			// JDBC ¼öÇà 1,2´Ü°è
+			// JDBC ìˆ˜í–‰ 1,2ë‹¨ê³„
 			conn = DBUtil.getConnection();
 			
-			// Æ®·£Àè¼Ç Ã³¸®¸¦ À§ÇØ¼­ ÀÚµ¿ COMMIT ÇØÁ¦
+			// íŠ¸ëœì­ì…˜ ì²˜ë¦¬ë¥¼ ìœ„í•´ì„œ ìë™ COMMIT í•´ì œ
 			conn.setAutoCommit(false);
 			
-			// SQL¹® ÀÛ¼º
+			// SQLë¬¸ ì‘ì„±
 			sql = "INSERT INTO test1 VALUES (?, ?)";
 			
-			// JDBC ¼öÇà 3´Ü°è;
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„;
 			pstmt1 = conn.prepareStatement(sql);
-			// ?¿¡ µ¥ÀÌÅÍ¸¦ ¹ÙÀÎµù
+			// ?ì— ë°ì´í„°ë¥¼ ë°”ì¸ë”©
 			pstmt1.setString(1, "test");
 			pstmt1.setInt(2, 10);
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹® ½ÇÇà
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ ì‹¤í–‰
 			pstmt1.executeUpdate();
 			
 			sql = "INSERT INTO test1 VALUES (?, ?)";
@@ -38,21 +38,21 @@ public class TransactionMain {
 			pstmt2.setInt(2, 20);
 			pstmt2.executeUpdate();
 			
-			// Æ®·£Àè¼Ç Å×½ºÆ®¸¦ À§ÇØ ¿À·ù°¡ ÀÖ´Â SQL¹® ÀÛ¼º
+			// íŠ¸ëœì­ì…˜ í…ŒìŠ¤íŠ¸ë¥¼ ìœ„í•´ ì˜¤ë¥˜ê°€ ìˆëŠ” SQLë¬¸ ì‘ì„±
 			sql = "INSERT INTO test1 VALUES (?, ?";
 			pstmt3 = conn.prepareStatement(sql);
 			pstmt3.setString(1, "ROLLBACK");
 			pstmt3.setInt(2, 30);
 			pstmt3.executeUpdate();
 			
-			// ¸ğµç SQL¹®ÀÌ Á¤»óÀûÀ¸·Î Ã³¸®µÇ¸é COMMIT
+			// ëª¨ë“  SQLë¬¸ì´ ì •ìƒì ìœ¼ë¡œ ì²˜ë¦¬ë˜ë©´ COMMIT
 			conn.commit();
-			System.out.println("ÀÛ¾÷ ¿Ï·á");	
+			System.out.println("ì‘ì—… ì™„ë£Œ");	
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 			
-			// ¿¹¿Ü ¹ß»ıÇÏ¸é ROLLBACK
+			// ì˜ˆì™¸ ë°œìƒí•˜ë©´ ROLLBACK
 			try {
 				conn.rollback();
 			}
@@ -63,7 +63,7 @@ public class TransactionMain {
 		finally {
 			DBUtil.executeClose(null, pstmt1, null);
 			DBUtil.executeClose(null, pstmt3, null);
-			DBUtil.executeClose(null, pstmt2, conn); // PreparedStatement °´Ã¼°¡ ¿©·¯ °³ÀÏ ¶§, °¢°¢ÀÇ Á¤¸® ¼ø¼­´Â Áß¿äÇÏÁö ¾Ê°í Connection °´Ã¼¸¸ ¸¶Áö¸·¿¡ Á¤¸®ÇÏ¸é µÊ
+			DBUtil.executeClose(null, pstmt2, conn); // PreparedStatement ê°ì²´ê°€ ì—¬ëŸ¬ ê°œì¼ ë•Œ, ê°ê°ì˜ ì •ë¦¬ ìˆœì„œëŠ” ì¤‘ìš”í•˜ì§€ ì•Šê³  Connection ê°ì²´ë§Œ ë§ˆì§€ë§‰ì— ì •ë¦¬í•˜ë©´ ë¨
 		}
 	}
 }

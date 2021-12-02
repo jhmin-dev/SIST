@@ -1,6 +1,6 @@
 public class OperatorMain05 {
 	public static void main(String[] args) {
-		System.out.println("====³í¸® ¿¬»êÀÚ====");
+		System.out.println("====ë…¼ë¦¬ ì—°ì‚°ì====");
 		boolean a, b, result;
 		a = true;
 		b = false;

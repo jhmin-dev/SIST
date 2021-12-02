@@ -1,24 +1,24 @@
 public class IfMain06 {
 	public static void main(String[] args) {
 		/*
-		 * [½Ç½À]
-		 * Á¤¼ö µÎ °³¸¦ ÀÔ·Â¹Þ¾Æ¼­ º¯¼ö¿¡ ÀúÀåÇÏ°í µÎ °ª Áß ÃÖ´ñ°ª°ú ÃÖ¼Ú°ªÀ» ±¸ÇÏ¿© Ãâ·ÂÇÏ½Ã¿À.
-		 * ´Ü, ÀÔ·Â¹ÞÀº µÎ ¼ö°¡ °°À» °æ¿ì "µÎ ¼ö´Â °°´Ù."¶ó°í Ãâ·ÂÇÏ½Ã¿À.
+		 * [ì‹¤ìŠµ]
+		 * ì •ìˆ˜ ë‘ ê°œë¥¼ ìž…ë ¥ë°›ì•„ì„œ ë³€ìˆ˜ì— ì €ìž¥í•˜ê³  ë‘ ê°’ ì¤‘ ìµœëŒ“ê°’ê³¼ ìµœì†Ÿê°’ì„ êµ¬í•˜ì—¬ ì¶œë ¥í•˜ì‹œì˜¤.
+		 * ë‹¨, ìž…ë ¥ë°›ì€ ë‘ ìˆ˜ê°€ ê°™ì„ ê²½ìš° "ë‘ ìˆ˜ëŠ” ê°™ë‹¤."ë¼ê³  ì¶œë ¥í•˜ì‹œì˜¤.
 		 */
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		
-		System.out.print("Ã¹ ¹øÂ° Á¤¼ö : ");
+		System.out.print("ì²« ë²ˆì§¸ ì •ìˆ˜ : ");
 		int a = input.nextInt();
-		System.out.print("µÎ ¹øÂ° Á¤¼ö : ");
+		System.out.print("ë‘ ë²ˆì§¸ ì •ìˆ˜ : ");
 		int b = input.nextInt();
 		
 		input.close();
 		
 		if(a>b)
-			System.out.printf("ÃÖ´ñ°ª : %d, ÃÖ¼Ú°ª : %d\n", a, b);
+			System.out.printf("ìµœëŒ“ê°’ : %d, ìµœì†Ÿê°’ : %d\n", a, b);
 		else if(a<b)
-			System.out.printf("ÃÖ´ñ°ª : %d, ÃÖ¼Ú°ª : %d\n", b, a);
+			System.out.printf("ìµœëŒ“ê°’ : %d, ìµœì†Ÿê°’ : %d\n", b, a);
 		else
-			System.out.println("µÎ ¼ö´Â °°´Ù.");
+			System.out.println("ë‘ ìˆ˜ëŠ” ê°™ë‹¤.");
 	}
 }

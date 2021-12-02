@@ -1,22 +1,22 @@
 package kr.s01.a;
 public class Student {
 	
-	// ÇÊµå
+	// í•„ë“œ
 	String name;
 	int age;
 	
 	public static void main(String[] args) {
-		// °´Ã¼ ¼±¾ð; ÀÚ·áÇüÀ» Å¬·¡½º¸íÀ¸·Î »ç¿ëÇÏ¿© º¯¼ö¸¦ ¼±¾ð
+		// ê°ì²´ ì„ ì–¸; ìžë£Œí˜•ì„ í´ëž˜ìŠ¤ëª…ìœ¼ë¡œ ì‚¬ìš©í•˜ì—¬ ë³€ìˆ˜ë¥¼ ì„ ì–¸
 		Student s;
 		
-		// °´Ã¼ »ý¼º; ¸Þ¸ð¸®¿¡ °´Ã¼¸¦ »ý¼ºÇÏ°í °´Ã¼ÀÇ ÁÖ¼Ò¸¦ s¿¡ ÀúÀå; °´Ã¼¿¡´Â ¸â¹ö º¯¼ö name°ú age°¡ Æ÷ÇÔµÊ
-		s = new Student(); // new ¿¬»êÀÚ´Â °´Ã¼¸¦ »ý¼ºÇÏ´Â ¿ªÇÒ; ÀÚ¹Ù¿¡¼­´Â ¹è¿­ ¿ª½Ã °´Ã¼·Î Ãë±ÞµÇ¾î new ¿¬»êÀÚ·Î »ý¼º
+		// ê°ì²´ ìƒì„±; ë©”ëª¨ë¦¬ì— ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ê°ì²´ì˜ ì£¼ì†Œë¥¼ sì— ì €ìž¥; ê°ì²´ì—ëŠ” ë©¤ë²„ ë³€ìˆ˜ nameê³¼ ageê°€ í¬í•¨ë¨
+		s = new Student(); // new ì—°ì‚°ìžëŠ” ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ì—­í• ; ìžë°”ì—ì„œëŠ” ë°°ì—´ ì—­ì‹œ ê°ì²´ë¡œ ì·¨ê¸‰ë˜ì–´ new ì—°ì‚°ìžë¡œ ìƒì„±
 		
-		// °´Ã¼ÀÇ ÇÊµå¿¡ µ¥ÀÌÅÍ¸¦ ÀúÀå
-		s.name = "È«±æµ¿";
+		// ê°ì²´ì˜ í•„ë“œì— ë°ì´í„°ë¥¼ ì €ìž¥
+		s.name = "í™ê¸¸ë™";
 		s.age = 20;
 		
-		// °´Ã¼ÀÇ ÇÊµå¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ ÀÐ±â
+		// ê°ì²´ì˜ í•„ë“œì— ì €ìž¥ëœ ë°ì´í„° ì½ê¸°
 		System.out.println(s.name + ", " + s.age);
 	}
 }

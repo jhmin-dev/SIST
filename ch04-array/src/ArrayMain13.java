@@ -1,6 +1,6 @@
 public class ArrayMain13 {
 	public static void main(String[] args) {
-		// 2Â÷¿ø ¹è¿­ ¼±¾ğ ¹× »ı¼º
+		// 2ì°¨ì› ë°°ì—´ ì„ ì–¸ ë° ìƒì„±
 		int[][] score = {
 			{98, 99, 80}, 
 			{97, 85, 70}, 
@@ -9,15 +9,15 @@ public class ArrayMain13 {
 			{88, 85, 80},
 		};
 		
-		System.out.println("¹øÈ£\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ");
-		for(int i=0;i<score.length;i++) { // Çà
-			int sum = 0; // ÃÑÁ¡À» °¢ Çà¸¶´Ù ÃÊ±âÈ­ ÈÄ ´©Àû½ÃÅ°±â À§ÇØ
-			System.out.print(i + 1 + "\t"); // ¹øÈ£ Ãâ·Â
-			for(int j=0;j<score[i].length;j++) { // ¿­
-				sum += score[i][j]; // ÃÑÁ¡
-				System.out.print(score[i][j] + "\t"); // °ú¸ñ ¼ºÀû Ãâ·Â
+		System.out.println("ë²ˆí˜¸\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· ");
+		for(int i=0;i<score.length;i++) { // í–‰
+			int sum = 0; // ì´ì ì„ ê° í–‰ë§ˆë‹¤ ì´ˆê¸°í™” í›„ ëˆ„ì ì‹œí‚¤ê¸° ìœ„í•´
+			System.out.print(i + 1 + "\t"); // ë²ˆí˜¸ ì¶œë ¥
+			for(int j=0;j<score[i].length;j++) { // ì—´
+				sum += score[i][j]; // ì´ì 
+				System.out.print(score[i][j] + "\t"); // ê³¼ëª© ì„±ì  ì¶œë ¥
 			}
-			System.out.println(sum + "\t" + sum / score[i].length); // ÃÑÁ¡, Æò±Õ Ãâ·Â
+			System.out.println(sum + "\t" + sum / score[i].length); // ì´ì , í‰ê·  ì¶œë ¥
 		}
 	}
 }

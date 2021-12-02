@@ -1,45 +1,45 @@
 package kr.s08.bank;
 
-public class BankAccount { // ÀÏ¹İ °èÁÂ
+public class BankAccount { // ì¼ë°˜ ê³„ì¢Œ
 	/*
-	 * [½Ç½À]
-	 * °èÁÂ¹øÈ£(number), ¿¹±İÁÖ(name), ÀÜ°í(balance)
-	 * »ı¼ºÀÚ¸¦ ÀÌ¿ëÇÏ¿© °èÁÂ ¹øÈ£, ¿¹±İÁÖ, ÀÜ°í¸¦ ¼¼ÆÃ
-	 * ÀÔ±İÇÏ±â(deposit), Ãâ±İÇÏ±â(withdraw : ÀÜ°í ºÎÁ· È®ÀÎ), °èÁÂ Á¤º¸ º¸±â(printAccount : ÀÏ¹İ °èÁÂ ¹øÈ£, ¿¹±İÁÖ, °èÁÂ ÀÜ¾×)
+	 * [ì‹¤ìŠµ]
+	 * ê³„ì¢Œë²ˆí˜¸(number), ì˜ˆê¸ˆì£¼(name), ì”ê³ (balance)
+	 * ìƒì„±ìë¥¼ ì´ìš©í•˜ì—¬ ê³„ì¢Œ ë²ˆí˜¸, ì˜ˆê¸ˆì£¼, ì”ê³ ë¥¼ ì„¸íŒ…
+	 * ì…ê¸ˆí•˜ê¸°(deposit), ì¶œê¸ˆí•˜ê¸°(withdraw : ì”ê³  ë¶€ì¡± í™•ì¸), ê³„ì¢Œ ì •ë³´ ë³´ê¸°(printAccount : ì¼ë°˜ ê³„ì¢Œ ë²ˆí˜¸, ì˜ˆê¸ˆì£¼, ê³„ì¢Œ ì”ì•¡)
 	 */
-	protected String number; // »ó¼ÓÀ» °í·ÁÇÏ¿© Á¢±Ù Á¦ÇÑÀÚ¸¦ protected·Î ÁöÁ¤
+	protected String number; // ìƒì†ì„ ê³ ë ¤í•˜ì—¬ ì ‘ê·¼ ì œí•œìë¥¼ protectedë¡œ ì§€ì •
 	protected String name;
-	protected int balance; // ÀºÇà ÇÁ·Î±×·¥Àº longÀ» ¾²Áö¸¸ ¿¹Á¦¿¡¼­ Å« ¼ö¸¦ »ç¿ëÇÏÁö ¾ÊÀ¸¹Ç·Î int ÀÚ·áÇü »ç¿ë
+	protected int balance; // ì€í–‰ í”„ë¡œê·¸ë¨ì€ longì„ ì“°ì§€ë§Œ ì˜ˆì œì—ì„œ í° ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì§€ ì•Šìœ¼ë¯€ë¡œ int ìë£Œí˜• ì‚¬ìš©
 	
 	public BankAccount(String number, String name, int balance) {
 		this.number=number;
 		this.name=name;
 		this.balance=balance;
-		System.out.println(number+" °èÁÂ°¡ °³¼³µÇ¾ú½À´Ï´Ù.\n");
+		System.out.println(number+" ê³„ì¢Œê°€ ê°œì„¤ë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 	}
 	
 	public void deposit(int money) {
 		if(money>=0) {
 			balance+=money;
-			System.out.printf("%,d¿øÀ» ¿¹±İÇÏ¿´½À´Ï´Ù.\n", money);
+			System.out.printf("%,dì›ì„ ì˜ˆê¸ˆí•˜ì˜€ìŠµë‹ˆë‹¤.\n", money);
 			return;
 		}
-		System.out.println("0¿ø ÀÌ»óÀ» ¿¹±İÇÏ¼¼¿ä.");
+		System.out.println("0ì› ì´ìƒì„ ì˜ˆê¸ˆí•˜ì„¸ìš”.");
 	}
 	
 	public void withdraw(int money) {
 		if(balance>=money) {
 			balance-=money;
-			System.out.printf("%,d¿øÀ» Ãâ±İÇÏ¿´½À´Ï´Ù.\n", money);
+			System.out.printf("%,dì›ì„ ì¶œê¸ˆí•˜ì˜€ìŠµë‹ˆë‹¤.\n", money);
 			return;
 		}
-		System.out.println("ÀÜ°í°¡ ºÎÁ·ÇÕ´Ï´Ù.");
+		System.out.println("ì”ê³ ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤.");
 	}
 	
 	public void printAccount() {
-		System.out.println("°èÁÂ ¹øÈ£ : ÀÏ¹İ "+number);
-		System.out.println("¿¹±İÁÖ : "+name);
-		System.out.printf("°èÁÂ ÀÜ¾× : %,d¿ø\n", balance);
+		System.out.println("ê³„ì¢Œ ë²ˆí˜¸ : ì¼ë°˜ "+number);
+		System.out.println("ì˜ˆê¸ˆì£¼ : "+name);
+		System.out.printf("ê³„ì¢Œ ì”ì•¡ : %,dì›\n", balance);
 		System.out.println();
 	}
 }

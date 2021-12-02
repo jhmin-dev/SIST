@@ -1,16 +1,16 @@
 package kr.s05.supertest;
-// ºÎ¸ð Å¬·¡½º
+// ë¶€ëª¨ í´ëž˜ìŠ¤
 class People {
 	int a = 100;
 	public People() {
-		super(); // ºÎ¸ð Å¬·¡½ºÀÎ ObjectÀÇ ±âº» »ý¼ºÀÚ È£ÃâÀ» ¸ÕÀú ¼öÇàÇÏ¿© Object ¿µ¿ªÀ» ¸¸µé°í ÀÚ½Ä Å¬·¡½ºÀÎ PeopleÀ» ÃÊ±âÈ­; ºÎ¸ð Å¬·¡½ºÀÇ ±âº» »ý¼ºÀÚ´Â »ý·«ÇØµµ ÄÄÆÄÀÏ·¯¿¡ ÀÇÇØ ÀÚµ¿À¸·Î Æ÷ÇÔµÊ
+		super(); // ë¶€ëª¨ í´ëž˜ìŠ¤ì¸ Objectì˜ ê¸°ë³¸ ìƒì„±ìž í˜¸ì¶œì„ ë¨¼ì € ìˆ˜í–‰í•˜ì—¬ Object ì˜ì—­ì„ ë§Œë“¤ê³  ìžì‹ í´ëž˜ìŠ¤ì¸ Peopleì„ ì´ˆê¸°í™”; ë¶€ëª¨ í´ëž˜ìŠ¤ì˜ ê¸°ë³¸ ìƒì„±ìžëŠ” ìƒëžµí•´ë„ ì»´íŒŒì¼ëŸ¬ì— ì˜í•´ ìžë™ìœ¼ë¡œ í¬í•¨ë¨
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìžì‹ í´ëž˜ìŠ¤
 class Student extends People {
 	int b = 200;
 	public Student() {
-		super(); // ºÎ¸ð Å¬·¡½ºÀÎ PeopleÀÇ ±âº» »ý¼ºÀÚ È£ÃâÀ» ¸ÕÀú ¼öÇàÇÏ¿© People ¿µ¿ªÀ» ¸¸µé°í ÀÚ½Ä Å¬·¡½ºÀÎ Student¸¦ ÃÊ±âÈ­
+		super(); // ë¶€ëª¨ í´ëž˜ìŠ¤ì¸ Peopleì˜ ê¸°ë³¸ ìƒì„±ìž í˜¸ì¶œì„ ë¨¼ì € ìˆ˜í–‰í•˜ì—¬ People ì˜ì—­ì„ ë§Œë“¤ê³  ìžì‹ í´ëž˜ìŠ¤ì¸ Studentë¥¼ ì´ˆê¸°í™”
 	}
 }
 

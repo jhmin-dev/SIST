@@ -2,18 +2,18 @@ package kr.s05.wrapper;
 
 public class WrapperMain02 {
 	public static void main(String[] args) {
-		// ¸í½ÃÀûÀ¸·Î °´Ã¼ »ı¼º
+		// ëª…ì‹œì ìœ¼ë¡œ ê°ì²´ ìƒì„±
 		Integer obj1 = new Integer(12);
 		Integer obj2 = new Integer(7);
 		
-		// ¿¬»ê
-		int result = obj1.intValue() + obj2.intValue(); // intVaule() ¸Ş¼­µå¸¦ ÀÌ¿ëÇØ °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ int·Î ¹İÈ¯
+		// ì—°ì‚°
+		int result = obj1.intValue() + obj2.intValue(); // intVaule() ë©”ì„œë“œë¥¼ ì´ìš©í•´ ê°ì²´ì˜ ë°ì´í„°ë¥¼ intë¡œ ë°˜í™˜
 		System.out.println("result = " + result);
 		
-		// ¾Ï½ÃÀûÀ¸·Î °´Ã¼ »ı¼º
+		// ì•”ì‹œì ìœ¼ë¡œ ê°ì²´ ìƒì„±
 		Integer obj3 = 10;
 		Integer obj4 = 20;
-		int result2 = obj3 + obj4; // ÀÚµ¿ Boxing, UnboxingÀÌ ÀÏ¾î³ª¹Ç·Î º°µµÀÇ ¸Ş¼­µå ÇÊ¿ä ¾øÀÌ Integer °´Ã¼³¢¸® ¹Ù·Î ¿¬»êÇÏ°í ±× °á°ú¸¦ int º¯¼ö¿¡ ÀúÀå °¡´É
+		int result2 = obj3 + obj4; // ìë™ Boxing, Unboxingì´ ì¼ì–´ë‚˜ë¯€ë¡œ ë³„ë„ì˜ ë©”ì„œë“œ í•„ìš” ì—†ì´ Integer ê°ì²´ë¼ë¦¬ ë°”ë¡œ ì—°ì‚°í•˜ê³  ê·¸ ê²°ê³¼ë¥¼ int ë³€ìˆ˜ì— ì €ì¥ ê°€ëŠ¥
 		System.out.println("result2 = " + result2);
 	}
 }

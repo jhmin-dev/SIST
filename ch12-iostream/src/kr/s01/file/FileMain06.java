@@ -5,14 +5,14 @@ import java.io.File;
 public class FileMain06 {
 	public static void main(String[] args) {
 		File f1 = new File("C:\\javaWork\\javaSample");
-		// mkdir() ¸Ş¼­µå´Â µğ·ºÅä¸®¸¦ »ı¼ºÇÒ ¼ö ÀÖÀ¸¸é »ı¼º ÈÄ true¸¦ ¹İÈ¯ÇÏ°í, ±×·¸Áö ¾ÊÀ¸¸é false¸¦ ¹İÈ¯
-		System.out.println("µğ·ºÅä¸® »ı¼º : " + f1.mkdir());
-		// delete() ¸Ş¼­µå·Î µğ·ºÅä¸®¸¦ »èÁ¦
+		// mkdir() ë©”ì„œë“œëŠ” ë””ë ‰í† ë¦¬ë¥¼ ìƒì„±í•  ìˆ˜ ìˆìœ¼ë©´ ìƒì„± í›„ trueë¥¼ ë°˜í™˜í•˜ê³ , ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ falseë¥¼ ë°˜í™˜
+		System.out.println("ë””ë ‰í† ë¦¬ ìƒì„± : " + f1.mkdir());
+		// delete() ë©”ì„œë“œë¡œ ë””ë ‰í† ë¦¬ë¥¼ ì‚­ì œ
 		if(f1.delete()) {
-			System.out.println(f1.getName() + " µğ·ºÅä¸®°¡ »èÁ¦µÇ¾ú½À´Ï´Ù!");
+			System.out.println(f1.getName() + " ë””ë ‰í† ë¦¬ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤!");
 		}
 		else {
-			System.out.println("µğ·ºÅä¸®¸¦ »èÁ¦ÇÒ ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("ë””ë ‰í† ë¦¬ë¥¼ ì‚­ì œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		}
 	}
 }

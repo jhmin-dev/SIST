@@ -7,17 +7,17 @@ import java.io.IOException;
 
 public class ScoreMain {
 	/*
-	 * [½Ç½À] ¸Ş´º : 1. ¼ºÀû ÀÔ·Â, 2. ¼ºÀû Ãâ·Â, 3. Á¾·á
-	 * [Á¶°Ç] 0~100 »çÀÌ·Î ÀÔ·ÂÇÏµµ·Ï °­Á¦(int parseInputData(String title))
+	 * [ì‹¤ìŠµ] ë©”ë‰´ : 1. ì„±ì  ì…ë ¥, 2. ì„±ì  ì¶œë ¥, 3. ì¢…ë£Œ
+	 * [ì¡°ê±´] 0~100 ì‚¬ì´ë¡œ ì…ë ¥í•˜ë„ë¡ ê°•ì œ(int parseInputData(String title))
 	 */
-	// ¸â¹ö º¯¼ö
+	// ë©¤ë²„ ë³€ìˆ˜
 	ArrayList<Score> al;
 	BufferedReader br;
-	// °´Ã¼ »ı¼º
+	// ê°ì²´ ìƒì„±
 	public static void main(String[] args) {
 		new ScoreMain();
 	}
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	public ScoreMain() {
 		al = new ArrayList<Score>();
 		try {
@@ -31,11 +31,11 @@ public class ScoreMain {
 			if(br!=null) try {br.close();} catch(IOException e) {};
 		}
 	}
-	// ¸Ş´º ¸Ş¼­µå
+	// ë©”ë‰´ ë©”ì„œë“œ
 	public void menu() throws IOException {
 		while(true) {
-			System.out.println("¸Ş´º : 1. ¼ºÀû ÀÔ·Â, 2. ¼ºÀû Ãâ·Â, 3. Á¾·á");
-			System.out.print("¸Ş´º > ");
+			System.out.println("ë©”ë‰´ : 1. ì„±ì  ì…ë ¥, 2. ì„±ì  ì¶œë ¥, 3. ì¢…ë£Œ");
+			System.out.print("ë©”ë‰´ > ");
 			try {
 				int menu=Integer.parseInt(br.readLine());
 				if(menu==1) {
@@ -45,52 +45,52 @@ public class ScoreMain {
 					getScore();
 				}
 				else if(menu==3) {
-					System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+					System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 					break;
 				}
-				else { // 1,2,3 ¿ÜÀÇ ¼ıÀÚ ÀÔ·Â
+				else { // 1,2,3 ì™¸ì˜ ìˆ«ì ì…ë ¥
 					throw new NumberFormatException();
 				}
 			}
-			catch(NumberFormatException e) { // ¼ıÀÚ ¿Ü ¹®ÀÚ ÀÔ·Â
-				System.out.println("¸Ş´º ¹øÈ£¸¦ Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+			catch(NumberFormatException e) { // ìˆ«ì ì™¸ ë¬¸ì ì…ë ¥
+				System.out.println("ë©”ë‰´ ë²ˆí˜¸ë¥¼ ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 		}
 	}
-	// ¼ºÀû ÀÔ·Â
+	// ì„±ì  ì…ë ¥
 	public void setScore() throws IOException {
 		Score s = new Score();
-		System.out.print("ÀÌ¸§ > ");
+		System.out.print("ì´ë¦„ > ");
 		s.setName(br.readLine());
-		s.setKorean(parseInputData("±¹¾î > "));
-		s.setEnglish(parseInputData("¿µ¾î > "));
-		s.setMath(parseInputData("¼öÇĞ > "));
+		s.setKorean(parseInputData("êµ­ì–´ > "));
+		s.setEnglish(parseInputData("ì˜ì–´ > "));
+		s.setMath(parseInputData("ìˆ˜í•™ > "));
 		al.add(s);
 	}
-	// ¼ºÀû Ãâ·Â
+	// ì„±ì  ì¶œë ¥
 	public void getScore() {
-		// System.out.println(al); // ÀÔ·ÂÀÌ Á¦´ë·Î µÇ¾ú´ÂÁö È®ÀÎÇÏ±â À§ÇØ ÀçÁ¤ÀÇµÈ toString() ¸Ş¼­µå È£Ãâ
-		System.out.println("ÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ\tµî±Ş");
+		// System.out.println(al); // ì…ë ¥ì´ ì œëŒ€ë¡œ ë˜ì—ˆëŠ”ì§€ í™•ì¸í•˜ê¸° ìœ„í•´ ì¬ì •ì˜ëœ toString() ë©”ì„œë“œ í˜¸ì¶œ
+		System.out.println("ì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· \të“±ê¸‰");
 		for(Score s : al) {
 			System.out.printf("%s\t%3d\t%3d\t%3d\t%3d\t%6.2f\t%s\n", s.getName(), s.getKorean(), s.getEnglish(), s.getMath(), s.makeSum(), s.makeAvg(), s.makeGrade());
 		}
 	}
-	// ÀÔ·Â°ª °Ë»ç
+	// ì…ë ¥ê°’ ê²€ì‚¬
 	public int parseInputData(String title) throws IOException {
 		while(true) {
 			System.out.print(title);	
 			try {
 				int s=Integer.parseInt(br.readLine());
 				if(s<0||s>100) {
-					throw new ScoreValueException("¼ºÀûÀº 0¿¡¼­ 100 »çÀÌÀÇ °ªÀÌ¾î¾ß ÇÕ´Ï´Ù."); // ÀÔ·Â°ªÀÌ Á¶°Ç ¹ÌÃæÁ·½Ã ¿¹¿Ü¸¦ ´øÁ® catch ºí·°À¸·Î ÀÌµ¿
+					throw new ScoreValueException("ì„±ì ì€ 0ì—ì„œ 100 ì‚¬ì´ì˜ ê°’ì´ì–´ì•¼ í•©ë‹ˆë‹¤."); // ì…ë ¥ê°’ì´ ì¡°ê±´ ë¯¸ì¶©ì¡±ì‹œ ì˜ˆì™¸ë¥¼ ë˜ì ¸ catch ë¸”ëŸ­ìœ¼ë¡œ ì´ë™
 				}		
-				return s; // ¿¹¿Ü°¡ ¹ß»ıÇÏÁö ¾ÊÀº °æ¿ì s¸¦ ¹İÈ¯ÇÏ¿© ¸Ş¼­µå Á¾·á
+				return s; // ì˜ˆì™¸ê°€ ë°œìƒí•˜ì§€ ì•Šì€ ê²½ìš° së¥¼ ë°˜í™˜í•˜ì—¬ ë©”ì„œë“œ ì¢…ë£Œ
 			}
 			catch(ScoreValueException e) {
 				System.out.println(e.getMessage());
 			}
 			catch(NumberFormatException e) {
-				System.out.println("¼ıÀÚ¸¸ ÀÔ·ÂÇÏ¼¼¿ä.");
+				System.out.println("ìˆ«ìë§Œ ì…ë ¥í•˜ì„¸ìš”.");
 			}
 		}
 	}

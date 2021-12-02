@@ -3,37 +3,37 @@ package kr.s08.bank;
 public class BankMain {
 	public static void main(String[] args) {
 		/*
-		 * ¸¶ÀÌ³Ê½º °èÁÂ »ı¼º
-		 * ÀÔÃâ±İ ¹× Á¤º¸ Ãâ·Â
+		 * ë§ˆì´ë„ˆìŠ¤ ê³„ì¢Œ ìƒì„±
+		 * ì…ì¶œê¸ˆ ë° ì •ë³´ ì¶œë ¥
 		 */
-		/* ÀÔ·ÂÀ» ¹Ş¾Æ ¸¶ÀÌ³Ê½º °èÁÂ¸¦ »ı¼º
+		/* ì…ë ¥ì„ ë°›ì•„ ë§ˆì´ë„ˆìŠ¤ ê³„ì¢Œë¥¼ ìƒì„±
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		
-		System.out.println("°èÁÂ ±âº» Á¤º¸¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		System.out.print("°èÁÂ ¹øÈ£ > ");
+		System.out.println("ê³„ì¢Œ ê¸°ë³¸ ì •ë³´ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+		System.out.print("ê³„ì¢Œ ë²ˆí˜¸ > ");
 		String number = input.nextLine();
-		System.out.print("¿¹±İÁÖ¸í > ");
+		System.out.print("ì˜ˆê¸ˆì£¼ëª… > ");
 		String name = input.nextLine();
-		System.out.print("°èÁÂ ÀÜ¾× > ");
+		System.out.print("ê³„ì¢Œ ì”ì•¡ > ");
 		int balance = input.nextInt();
-		System.out.print("¸¶ÀÌ³Ê½º ÇÑµµ > ");
+		System.out.print("ë§ˆì´ë„ˆìŠ¤ í•œë„ > ");
 		int minusLimit = input.nextInt();
 		
 		input.close();
 		
 		MinusAccount ma = new MinusAccount(number, name, balance, minusLimit);
 		*/
-		MinusAccount ma = new MinusAccount("110-1234", "È«±æµ¿", 1000, 500);
+		MinusAccount ma = new MinusAccount("110-1234", "í™ê¸¸ë™", 1000, 500);
 		
 		ma.printAccount();
 		
 		ma.deposit(2000);
 		ma.printAccount();
 		
-		ma.withdraw(3100); // °èÁÂ ÀÜ°í°¡ -500ÀÌ µÉ ¶§±îÁö´Â Ãâ±İ °¡´É
+		ma.withdraw(3100); // ê³„ì¢Œ ì”ê³ ê°€ -500ì´ ë  ë•Œê¹Œì§€ëŠ” ì¶œê¸ˆ ê°€ëŠ¥
 		ma.printAccount();
 		
-		ma.withdraw(500); // ÇÑµµ ÃÊ°ú·Î Ãâ±İ ºÒ°¡
+		ma.withdraw(500); // í•œë„ ì´ˆê³¼ë¡œ ì¶œê¸ˆ ë¶ˆê°€
 		ma.printAccount();
 	}
 }

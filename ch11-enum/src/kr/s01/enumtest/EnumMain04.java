@@ -3,15 +3,15 @@ package kr.s01.enumtest;
 enum Item2 {
 	ADD(5), DEL(11), SEARCH(2), CANCEL(22);
 	
-	// ¿­°Å °´Ã¼ »ı¼º½Ã ÁöÁ¤ÇÑ »ó¼ö°ªµéÀ» ÀúÀåÇÏ±â À§ÇÑ °ø°£ »ı¼º
+	// ì—´ê±° ê°ì²´ ìƒì„±ì‹œ ì§€ì •í•œ ìƒìˆ˜ê°’ë“¤ì„ ì €ì¥í•˜ê¸° ìœ„í•œ ê³µê°„ ìƒì„±
 	private final int var;
 	
-	// »ı¼ºÀÚ Á¤ÀÇ
+	// ìƒì„±ì ì •ì˜
 	Item2(int v) {
 		var = v;
 	}
 	
-	// »ó¼ö°ªÀ» ¹İÈ¯ÇÏ´Â ¸Ş¼­µå Á¤ÀÇ
+	// ìƒìˆ˜ê°’ì„ ë°˜í™˜í•˜ëŠ” ë©”ì„œë“œ ì •ì˜
 	public int getVar() {
 		return var;
 	}
@@ -24,8 +24,8 @@ public class EnumMain04 {
 		System.out.println(Item2.SEARCH);
 		System.out.println(Item2.CANCEL);
 		
-		for(Item2 n : Item2.values()) { // values() ¸Ş¼­µå·Î ¹è¿­À» »ı¼ºÇØ¼­ È®Àå for¹® ÀÌ¿ë
-			System.out.println(n + " : " + n.getVar()); // getVar() ¸Ş¼­µå·Î »ó¼ö°ª ¹İÈ¯
+		for(Item2 n : Item2.values()) { // values() ë©”ì„œë“œë¡œ ë°°ì—´ì„ ìƒì„±í•´ì„œ í™•ì¥ forë¬¸ ì´ìš©
+			System.out.println(n + " : " + n.getVar()); // getVar() ë©”ì„œë“œë¡œ ìƒìˆ˜ê°’ ë°˜í™˜
 		}
 	}
 }

@@ -1,29 +1,29 @@
 package kr.s01.thread;
 
 public class ThreadMain01 extends Thread {
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	public ThreadMain01(String threadname) {
 		super(threadname);
 	}
-	// ThreadÀÇ run() ¸Ş¼­µå ÀçÁ¤ÀÇ
+	// Threadì˜ run() ë©”ì„œë“œ ì¬ì •ì˜
 	@Override public void run() {
-		Thread t = currentThread(); // ÇöÀç ¼öÇàµÇ´Â Thread °´Ã¼¸¦ ¹İÈ¯
-		System.out.println("½ÇÇà ½º·¹µå : " + t);
+		Thread t = currentThread(); // í˜„ì¬ ìˆ˜í–‰ë˜ëŠ” Thread ê°ì²´ë¥¼ ë°˜í™˜
+		System.out.println("ì‹¤í–‰ ìŠ¤ë ˆë“œ : " + t);
 		
 		for(int i=0;i<10;i++) {
 			try {
-				sleep(1000); // ÁöÁ¤µÈ ½Ã°£(´ÜÀ§: ¹Ğ¸®¼¼ÄÁµå)¸¸Å­ ¼öÇàÀ» ¸ØÃã
+				sleep(1000); // ì§€ì •ëœ ì‹œê°„(ë‹¨ìœ„: ë°€ë¦¬ì„¸ì»¨ë“œ)ë§Œí¼ ìˆ˜í–‰ì„ ë©ˆì¶¤
 			}
-			catch(InterruptedException e) { // sleep() ¸Ş¼­µå »ç¿ë½Ã ÀÇ¹«ÀûÀ¸·Î Ã³¸®ÇØ¾ß ÇÏ´Â ¿¹¿Ü
+			catch(InterruptedException e) { // sleep() ë©”ì„œë“œ ì‚¬ìš©ì‹œ ì˜ë¬´ì ìœ¼ë¡œ ì²˜ë¦¬í•´ì•¼ í•˜ëŠ” ì˜ˆì™¸
 				e.printStackTrace();
 			}
-			System.out.printf("½º·¹µå ÀÌ¸§ : %s, ", currentThread().getName()); // getName() ¸Ş¼­µå´Â Thread °´Ã¼ÀÇ ÀÌ¸§À» ¹İÈ¯
+			System.out.printf("ìŠ¤ë ˆë“œ ì´ë¦„ : %s, ", currentThread().getName()); // getName() ë©”ì„œë“œëŠ” Thread ê°ì²´ì˜ ì´ë¦„ì„ ë°˜í™˜
 			System.out.printf("temp value : %d%n", i);
 		}
 	}
 	
 	public static void main(String[] args) {
-		ThreadMain01 tm = new ThreadMain01("Ã¹ ¹øÂ°");
-		tm.start(); // start() ¸Ş¼­µå¸¦ ½ÇÇàÇÏ¸é run() ¸Ş¼­µå¸¦ ½ÇÇàÇÏ°í µ¿½Ã ÀÛ¾÷ÀÌ °¡´ÉÇÏ°Ô²û ÇÔ; run() ¸Ş¼­µå¸¦ ´Üµ¶ ½ÇÇàÇÏ¸é µ¿½Ã ÀÛ¾÷ ºÒ°¡
+		ThreadMain01 tm = new ThreadMain01("ì²« ë²ˆì§¸");
+		tm.start(); // start() ë©”ì„œë“œë¥¼ ì‹¤í–‰í•˜ë©´ run() ë©”ì„œë“œë¥¼ ì‹¤í–‰í•˜ê³  ë™ì‹œ ì‘ì—…ì´ ê°€ëŠ¥í•˜ê²Œë” í•¨; run() ë©”ì„œë“œë¥¼ ë‹¨ë… ì‹¤í–‰í•˜ë©´ ë™ì‹œ ì‘ì—… ë¶ˆê°€
 	}
 }

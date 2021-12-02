@@ -2,22 +2,22 @@ package kr.s10.abstracttest;
 
 public class CarMain {
 	public static void main(String[] args) {
-		// Ãß»ó Å¬·¡½º´Â °´Ã¼ »ı¼º ºÒ°¡´É
+		// ì¶”ìƒ í´ë˜ìŠ¤ëŠ” ê°ì²´ ìƒì„± ë¶ˆê°€ëŠ¥
 		// Car car = new Car();
 		
 		Bus b = new Bus();
 		b.drive();
 		b.getPassenger();
-		System.out.println("¹ö½ºÀÇ ¿¬·á ¼Ò¸ğ·® : " + b.getEnergy());
+		System.out.println("ë²„ìŠ¤ì˜ ì—°ë£Œ ì†Œëª¨ëŸ‰ : " + b.getEnergy());
 		
 		Truck t = new Truck();
 		t.drive();
 		t.getProduct();
-		System.out.println("Æ®·°ÀÇ ¿¬·á ¼Ò¸ğ·® : " + t.getEnergy());
+		System.out.println("íŠ¸ëŸ­ì˜ ì—°ë£Œ ì†Œëª¨ëŸ‰ : " + t.getEnergy());
 		
 		FireEngine f = new FireEngine();
 		f.stop();
 		f.getWater();
-		System.out.println("¼Ò¹æÂ÷ÀÇ ¿¬·á ¼Ò¸ğ·® : " + f.getEnergy());
+		System.out.println("ì†Œë°©ì°¨ì˜ ì—°ë£Œ ì†Œëª¨ëŸ‰ : " + f.getEnergy());
 	}
 }

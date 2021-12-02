@@ -1,17 +1,17 @@
 package kr.s02.local;
 
 public class LocalMain01 {
-	// ¸â¹ö ¸Ş¼­µå
+	// ë©¤ë²„ ë©”ì„œë“œ
 	public void innerTest() {
-		// ·ÎÄÃ ³»ºÎ Å¬·¡½º Á¤ÀÇ
+		// ë¡œì»¬ ë‚´ë¶€ í´ë˜ìŠ¤ ì •ì˜
 		class Inner {
 			public void getData() {
-				System.out.println("Local ³»ºÎ Å¬·¡½º");
+				System.out.println("Local ë‚´ë¶€ í´ë˜ìŠ¤");
 			}
 		}
-		// ·ÎÄÃ ³»ºÎ Å¬·¡½ºÀÇ °´Ã¼ »ı¼º
+		// ë¡œì»¬ ë‚´ë¶€ í´ë˜ìŠ¤ì˜ ê°ì²´ ìƒì„±
 		Inner inner = new Inner();
-		// ·ÎÄÃ ³»ºÎ Å¬·¡½ºÀÇ ¸Ş¼­µå È£Ãâ
+		// ë¡œì»¬ ë‚´ë¶€ í´ë˜ìŠ¤ì˜ ë©”ì„œë“œ í˜¸ì¶œ
 		inner.getData();
 	}
 	

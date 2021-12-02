@@ -1,23 +1,23 @@
 package kr.s02.overloading;
 
 public class OverloadingMain02 {
-	// Àü´ŞµÇ´Â ÀÎÀÚÀÇ ÀÚ·áÇüÀ» StringÀ¸·Î º¯È¯ÇÏ¿© ¹®ÀÚ¿­ÀÇ ±æÀÌ¸¦ ±¸ÇÏ´Â ¸Ş¼­µå ¸¸µé±â
+	// ì „ë‹¬ë˜ëŠ” ì¸ìì˜ ìë£Œí˜•ì„ Stringìœ¼ë¡œ ë³€í™˜í•˜ì—¬ ë¬¸ìì—´ì˜ ê¸¸ì´ë¥¼ êµ¬í•˜ëŠ” ë©”ì„œë“œ ë§Œë“¤ê¸°
 	public void getLength(int n) {
 		String s = String.valueOf(n);
-		getLength(s); // printlnÀ» ¹İº¹ÀûÀ¸·Î ¾²´Â ´ë½Å, ÀÌ¹Ì Á¤ÀÇÇÑ ¸Ş¼­µå¸¦ È£Ãâ; s°¡ StringÀÌ±â ¶§¹®¿¡ ÀÎÀÚ°¡ StringÀÎ getLength¸¦ È£ÃâÇÏ°Ô µÊ
+		getLength(s); // printlnì„ ë°˜ë³µì ìœ¼ë¡œ ì“°ëŠ” ëŒ€ì‹ , ì´ë¯¸ ì •ì˜í•œ ë©”ì„œë“œë¥¼ í˜¸ì¶œ; sê°€ Stringì´ê¸° ë•Œë¬¸ì— ì¸ìê°€ Stringì¸ getLengthë¥¼ í˜¸ì¶œí•˜ê²Œ ë¨
 	}
 	void getLength(float n) {
 		String s = String.valueOf(n);
 		getLength(s);
 	}
 	private void getLength(String s) {
-		System.out.println(s + "ÀÇ ±æÀÌ : " + s.length());
+		System.out.println(s + "ì˜ ê¸¸ì´ : " + s.length());
 	}
 	
 	public static void main(String[] args) {
 		OverloadingMain02 om = new OverloadingMain02();
-		om.getLength(1000); // 1, 0, 0, 0 °¢°¢ÀÌ ¹®ÀÚ·Î Ãë±ŞµÇ´Â ¹®ÀÚ¿­ÀÇ ±æÀÌ¸¦ ±¸ÇÔ
-		om.getLength(3.14f); // 3, ., 1, 4 °¢°¢ÀÌ ¹®ÀÚ·Î Ãë±ŞµÇ´Â ¹®ÀÚ¿­ÀÇ ±æÀÌ¸¦ ±¸ÇÔ
+		om.getLength(1000); // 1, 0, 0, 0 ê°ê°ì´ ë¬¸ìë¡œ ì·¨ê¸‰ë˜ëŠ” ë¬¸ìì—´ì˜ ê¸¸ì´ë¥¼ êµ¬í•¨
+		om.getLength(3.14f); // 3, ., 1, 4 ê°ê°ì´ ë¬¸ìë¡œ ì·¨ê¸‰ë˜ëŠ” ë¬¸ìì—´ì˜ ê¸¸ì´ë¥¼ êµ¬í•¨
 		om.getLength("Hello");
 	}
 }

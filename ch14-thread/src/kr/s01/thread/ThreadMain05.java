@@ -18,16 +18,16 @@ public class ThreadMain05 {
 	public static void main(String[] args) {
 		System.out.println(Thread.currentThread().getName() + " start");
 		
-		// Å¸°Ù °´Ã¼ »ı¼º
+		// íƒ€ê²Ÿ ê°ì²´ ìƒì„±
 		MyRunnableTwo mt = new MyRunnableTwo();
-		// Thread °´Ã¼ »ı¼º
+		// Thread ê°ì²´ ìƒì„±
 		Thread myThread = new Thread(mt);
-		myThread.start(); // MyRunnableTwo °´Ã¼ÀÇ run() ¸Ş¼­µå ½ÇÇà
+		myThread.start(); // MyRunnableTwo ê°ì²´ì˜ run() ë©”ì„œë“œ ì‹¤í–‰
 		
 		try {
-			myThread.join(); // join() ¸Ş¼­µå¸¦ È£ÃâÇÑ Thread°¡ Á¾·áÇÒ ¶§±îÁö ÇöÀç Thread´Â ±â´Ù¸®°Ô ÇÔ; myThread°¡ join()À» È£ÃâÇÏÁö ¾ÊÀ¸¸é mainÀÌ myThreadº¸´Ù ¸ÕÀú Á¾·áµÉ ¼ö ÀÖÀ½; ¿©·¯ Thread µ¿½Ã ¼öÇà½Ã¿¡ ¼ø¼­¸¦ ÇÁ·Î±×·¡¸Ó°¡ ¿øÇÏ´Â ´ë·Î ÁöÁ¤ °¡´É
+			myThread.join(); // join() ë©”ì„œë“œë¥¼ í˜¸ì¶œí•œ Threadê°€ ì¢…ë£Œí•  ë•Œê¹Œì§€ í˜„ì¬ ThreadëŠ” ê¸°ë‹¤ë¦¬ê²Œ í•¨; myThreadê°€ join()ì„ í˜¸ì¶œí•˜ì§€ ì•Šìœ¼ë©´ mainì´ myThreadë³´ë‹¤ ë¨¼ì € ì¢…ë£Œë  ìˆ˜ ìˆìŒ; ì—¬ëŸ¬ Thread ë™ì‹œ ìˆ˜í–‰ì‹œì— ìˆœì„œë¥¼ í”„ë¡œê·¸ë˜ë¨¸ê°€ ì›í•˜ëŠ” ëŒ€ë¡œ ì§€ì • ê°€ëŠ¥
 		}
-		catch (InterruptedException e) { // join() ¸Ş¼­µå »ç¿ë½Ã ÀÇ¹«ÀûÀ¸·Î Ã³¸®ÇØ¾ß ÇÏ´Â ¿¹¿Ü
+		catch (InterruptedException e) { // join() ë©”ì„œë“œ ì‚¬ìš©ì‹œ ì˜ë¬´ì ìœ¼ë¡œ ì²˜ë¦¬í•´ì•¼ í•˜ëŠ” ì˜ˆì™¸
 			e.printStackTrace();
 		}
 		

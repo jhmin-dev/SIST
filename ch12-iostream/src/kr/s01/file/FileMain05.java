@@ -4,16 +4,16 @@ import java.io.File;
 
 public class FileMain05 {
 	public static void main(String[] args) {
-		// ÇöÀç ÆÄÀÏ¸í
+		// í˜„ì¬ íŒŒì¼ëª…
 		String path = "example.txt";
-		// ÇöÀç ÆÄÀÏ °´Ã¼ »ı¼º
+		// í˜„ì¬ íŒŒì¼ ê°ì²´ ìƒì„±
 		File f = new File(path);		
-		// delete() ¸Ş¼­µå´Â ÆÄÀÏÀ» »èÁ¦ÇÒ ¼ö ÀÖÀ¸¸é »èÁ¦ ÈÄ true¸¦ ¹İÈ¯ÇÏ¸ç, ±×·¸Áö ¾ÊÀ¸¸é false¸¦ ¹İÈ¯
+		// delete() ë©”ì„œë“œëŠ” íŒŒì¼ì„ ì‚­ì œí•  ìˆ˜ ìˆìœ¼ë©´ ì‚­ì œ í›„ trueë¥¼ ë°˜í™˜í•˜ë©°, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ falseë¥¼ ë°˜í™˜
 		if(f.delete()) {
-			System.out.println(f.getName() + " ÆÄÀÏ »èÁ¦");
+			System.out.println(f.getName() + " íŒŒì¼ ì‚­ì œ");
 		}
 		else {
-			System.out.println("ÆÄÀÏÀ» »èÁ¦ÇÒ ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("íŒŒì¼ì„ ì‚­ì œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		}
 	}
 }

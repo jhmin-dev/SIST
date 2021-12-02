@@ -2,20 +2,20 @@ package kr.s02.method;
 
 public class MethodMain02 {
 	// Call by reference
-	public void increase(int[] n) { // ¹è¿­(°´Ã¼)ÀÇ ÁÖ¼Ò¸¦ n¿¡ Àü´Ş
-		for(int i=0;i<n.length;i++) { // ÁÖ¼Ò°¡ ÀúÀåµÈ nÀ» ÅëÇØ ¹è¿­¿¡ Á¢±Ù; n°ú ref1Àº µ¿ÀÏÇÑ ¹è¿­À» °¡¸®Å´
+	public void increase(int[] n) { // ë°°ì—´(ê°ì²´)ì˜ ì£¼ì†Œë¥¼ nì— ì „ë‹¬
+		for(int i=0;i<n.length;i++) { // ì£¼ì†Œê°€ ì €ì¥ëœ nì„ í†µí•´ ë°°ì—´ì— ì ‘ê·¼; nê³¼ ref1ì€ ë™ì¼í•œ ë°°ì—´ì„ ê°€ë¦¬í‚´
 			n[i]++;
 		}
 	}
 	
 	public static void main(String[] args) {
-		int[] ref1 = {100, 200, 300}; // ¹è¿­ÀÇ ¼±¾ğ, »ı¼º, ÃÊ±âÈ­
-		for(int i=0;i<ref1.length;i++) { // ¸Ş¼­µå È£Ãâ Àü
+		int[] ref1 = {100, 200, 300}; // ë°°ì—´ì˜ ì„ ì–¸, ìƒì„±, ì´ˆê¸°í™”
+		for(int i=0;i<ref1.length;i++) { // ë©”ì„œë“œ í˜¸ì¶œ ì „
 			System.out.println("ref1[" + i + "] : " + ref1[i]);
 		}
-		MethodMain02 me = new MethodMain02(); // °´Ã¼ÀÇ ¼±¾ğ, »ı¼º
-		me.increase(ref1); // ¸Ş¼­µå È£Ãâ
-		for(int i=0;i<ref1.length;i++) { // ¸Ş¼­µå È£Ãâ ÈÄ
+		MethodMain02 me = new MethodMain02(); // ê°ì²´ì˜ ì„ ì–¸, ìƒì„±
+		me.increase(ref1); // ë©”ì„œë“œ í˜¸ì¶œ
+		for(int i=0;i<ref1.length;i++) { // ë©”ì„œë“œ í˜¸ì¶œ í›„
 			System.out.println("ref1[" + i + "] : " + ref1[i]);
 		}
 	}

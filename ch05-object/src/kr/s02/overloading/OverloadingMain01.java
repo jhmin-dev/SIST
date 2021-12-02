@@ -3,21 +3,21 @@ package kr.s02.overloading;
 public class OverloadingMain01 {
 	
 	public void print(int n) {
-		System.out.println("Á¤¼ö n = " + n);
+		System.out.println("ì •ìˆ˜ n = " + n);
 	}
 	/*
-	public void print(int a) { // ÀÎÀÚÀÇ ¼ö¸¦ Á¡°ËÇÏ°í, ÀÚ·áÇüÀ» Á¡°ËÇßÀ¸³ª Â÷ÀÌ°¡ ¾ø¾î µ¿ÀÏÇÑ ¸Ş¼­µå·Î ÀÎ½ÄµÊ
-		System.out.println("Á¤¼ö a = " + a);
+	public void print(int a) { // ì¸ìì˜ ìˆ˜ë¥¼ ì ê²€í•˜ê³ , ìë£Œí˜•ì„ ì ê²€í–ˆìœ¼ë‚˜ ì°¨ì´ê°€ ì—†ì–´ ë™ì¼í•œ ë©”ì„œë“œë¡œ ì¸ì‹ë¨
+		System.out.println("ì •ìˆ˜ a = " + a);
 	}
 	*/
-	public void print(double a) { // ÀÎÀÚÀÇ ÀÚ·áÇüÀÌ ´Ù¸£±â ¶§¹®¿¡ ´Ù¸¥ ¸Ş¼­µå·Î ÀÎ½ÄµÊ
-		System.out.println("½Ç¼ö a = " + a);
+	public void print(double a) { // ì¸ìì˜ ìë£Œí˜•ì´ ë‹¤ë¥´ê¸° ë•Œë¬¸ì— ë‹¤ë¥¸ ë©”ì„œë“œë¡œ ì¸ì‹ë¨
+		System.out.println("ì‹¤ìˆ˜ a = " + a);
 	}
 	public void print(double n, long a) {
-		System.out.println("½Ç¼ö n = " + n + ", Á¤¼ö a = " + a);
+		System.out.println("ì‹¤ìˆ˜ n = " + n + ", ì •ìˆ˜ a = " + a);
 	}
-	public void print(long a, double n) { // ÀÎÀÚ ÀÚ·áÇüµéÀÇ ¹èÄ¡ ¼ø¼­°¡ ´Ù¸£±â ¶§¹®¿¡ ´Ù¸¥ ¸Ş¼­µå·Î ÀÎ½ÄµÊ
-		System.out.println("½Ç¼ö n = " + n + ", Á¤¼ö a = " + a);
+	public void print(long a, double n) { // ì¸ì ìë£Œí˜•ë“¤ì˜ ë°°ì¹˜ ìˆœì„œê°€ ë‹¤ë¥´ê¸° ë•Œë¬¸ì— ë‹¤ë¥¸ ë©”ì„œë“œë¡œ ì¸ì‹ë¨
+		System.out.println("ì‹¤ìˆ˜ n = " + n + ", ì •ìˆ˜ a = " + a);
 	}
 	public static void main(String[] args) {
 		OverloadingMain01 ot = new OverloadingMain01();

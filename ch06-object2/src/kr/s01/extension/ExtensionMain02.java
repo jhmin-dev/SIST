@@ -1,23 +1,23 @@
 package kr.s01.extension;
-// ºÎ¸ğ Å¬·¡½º
+// ë¶€ëª¨ í´ë˜ìŠ¤
 class People {
 	public void eat() {
-		System.out.println("½Ä»çÇÏ´Ù.");
+		System.out.println("ì‹ì‚¬í•˜ë‹¤.");
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class Student extends People {
 	public void study() {
-		System.out.println("°øºÎÇÏ´Ù.");
+		System.out.println("ê³µë¶€í•˜ë‹¤.");
 	}
 }
 
 public class ExtensionMain02 {
 	public static void main(String[] args) {
 		Student s = new Student();
-		s.eat(); // PeopleÀÇ ¸Ş¼­µå¸¦ »ó¼Ó¹Ş¾Æ È£Ãâ
-		s.study(); // StudentÀÇ ¸Ş¼­µå¸¦ È£Ãâ
-		System.out.println(s.toString()); // ObjectÀÇ ¸Ş¼­µå¸¦ (PeopleÀ» ÅëÇØ) »ó¼Ó¹Ş¾Æ È£Ãâ
-		System.out.println(s); // ÂüÁ¶ º¯¼ö¸¸ ¾µ °æ¿ì ÀÚµ¿ÀûÀ¸·Î toString()À» È£Ãâ
+		s.eat(); // Peopleì˜ ë©”ì„œë“œë¥¼ ìƒì†ë°›ì•„ í˜¸ì¶œ
+		s.study(); // Studentì˜ ë©”ì„œë“œë¥¼ í˜¸ì¶œ
+		System.out.println(s.toString()); // Objectì˜ ë©”ì„œë“œë¥¼ (Peopleì„ í†µí•´) ìƒì†ë°›ì•„ í˜¸ì¶œ
+		System.out.println(s); // ì°¸ì¡° ë³€ìˆ˜ë§Œ ì“¸ ê²½ìš° ìë™ì ìœ¼ë¡œ toString()ì„ í˜¸ì¶œ
 	}
 }

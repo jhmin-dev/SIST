@@ -1,11 +1,11 @@
 package kr.s10.abstracttest;
 
 public class Truck extends Car {
-	// »ó¼Ó¹ŞÀº Ãß»ó ¸Ş¼­µå¸¦ ±¸ÇöÇÏÁö ¾ÊÀ¸¸é ¿À·ù ¹ß»ı
+	// ìƒì†ë°›ì€ ì¶”ìƒ ë©”ì„œë“œë¥¼ êµ¬í˜„í•˜ì§€ ì•Šìœ¼ë©´ ì˜¤ë¥˜ ë°œìƒ
 	@Override public int getEnergy() {
 		return 20;
 	}
 	public void getProduct() {
-		System.out.println("»óÇ°À» ÀûÀçÇÕ´Ï´Ù.");
+		System.out.println("ìƒí’ˆì„ ì ì¬í•©ë‹ˆë‹¤.");
 	}
 }

@@ -11,27 +11,27 @@ public class CallableStatementMain {
 		String sql = null;
 		
 		try {
-			// JDBC ¼öÇà 1,2´Ü°è
+			// JDBC ìˆ˜í–‰ 1,2ë‹¨ê³„
 			conn = DBUtil.getConnection();
 			
-			// ÇÁ·Î½ÃÀú È£Ãâ ¹®Àå ÀÛ¼º
-			sql = "{call adjust(?, ?)}"; // ÀÎÀÚ¿¡ Á÷Á¢ °ªÀ» ÀÔ·ÂÇÏÁö ¾Ê°í ¹ÙÀÎµå º¯¼ö ? »ç¿ë
+			// í”„ë¡œì‹œì € í˜¸ì¶œ ë¬¸ì¥ ì‘ì„±
+			sql = "{call adjust(?, ?)}"; // ì¸ìì— ì§ì ‘ ê°’ì„ ì…ë ¥í•˜ì§€ ì•Šê³  ë°”ì¸ë“œ ë³€ìˆ˜ ? ì‚¬ìš©
 			
-			// JDBC ¼öÇà 3´Ü°è : CallableStatement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : CallableStatement ê°ì²´ ìƒì„±
 			cstmt = conn.prepareCall(sql);
-			// ?¿¡ µ¥ÀÌÅÍ¸¦ ¹ÙÀÎµù
+			// ?ì— ë°ì´í„°ë¥¼ ë°”ì¸ë”©
 			cstmt.setString(1, "CALL");
 			cstmt.setFloat(2, 0.06f);
 			
-			// JDBC ¼öÇà ´Ü°è : ÇÁ·Î½ÃÀú ½ÇÇà
+			// JDBC ìˆ˜í–‰ ë‹¨ê³„ : í”„ë¡œì‹œì € ì‹¤í–‰
 			cstmt.executeUpdate();
-			System.out.println("±Ş¿© Á¤º¸°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+			System.out.println("ê¸‰ì—¬ ì •ë³´ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			DBUtil.executeClose(cstmt, conn);
 		}
 	}

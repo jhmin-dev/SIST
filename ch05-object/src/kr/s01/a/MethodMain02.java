@@ -1,27 +1,27 @@
 package kr.s01.a;
 public class MethodMain02 {
-	// Á¤¼öÇü µ¥ÀÌÅÍ¸¦ ¹İÈ¯ÇÏ´Â ¸â¹ö ¸Ş¼­µå
+	// ì •ìˆ˜í˜• ë°ì´í„°ë¥¼ ë°˜í™˜í•˜ëŠ” ë©¤ë²„ ë©”ì„œë“œ
 	public int signOf(int a) {
-		int sign = 0; // µ¿ÀÛ ½ÃÀÛ
+		int sign = 0; // ë™ì‘ ì‹œì‘
 		if(a>0)
 			sign = 1;
 		else if(a<0)
-			sign = -1; //  µ¿ÀÛ ³¡; ÃÊ±â°ªÀ» ¼±¾ğÇß±â ¶§¹®¿¡ else »ı·« °¡´É
-		return sign; // °á°ú°ª ¹İÈ¯
+			sign = -1; //  ë™ì‘ ë; ì´ˆê¸°ê°’ì„ ì„ ì–¸í–ˆê¸° ë•Œë¬¸ì— else ìƒëµ ê°€ëŠ¥
+		return sign; // ê²°ê³¼ê°’ ë°˜í™˜
 	}
 	
 	public static void main(String[] args) {
 		/*
-		 * [½Ç½À] ÀÔ·ÂÇÑ intÇü Á¤¼ö°¡ À½¼öÀÌ¸é -1À», 0ÀÌ¸é 0À», ¾ç¼öÀÌ¸é 1À» ¹İÈ¯ÇÏ´Â signOf ¸Ş¼­µå¸¦ ÀÛ¼ºÇÏ½Ã¿À.
-		 * [Ãâ·Â ¿¹½Ã]
-		 * Á¤¼ö ÀÔ·Â > 5
-		 * °á°ú°ªÀº ?
+		 * [ì‹¤ìŠµ] ì…ë ¥í•œ intí˜• ì •ìˆ˜ê°€ ìŒìˆ˜ì´ë©´ -1ì„, 0ì´ë©´ 0ì„, ì–‘ìˆ˜ì´ë©´ 1ì„ ë°˜í™˜í•˜ëŠ” signOf ë©”ì„œë“œë¥¼ ì‘ì„±í•˜ì‹œì˜¤.
+		 * [ì¶œë ¥ ì˜ˆì‹œ]
+		 * ì •ìˆ˜ ì…ë ¥ > 5
+		 * ê²°ê³¼ê°’ì€ ?
 		 */
-		MethodMain02 method = new MethodMain02(); // ¸Ş¼­µå´Â °´Ã¼¿¡ Æ÷ÇÔµÇ¾î µ¿ÀÛÇÏ±â ¶§¹®¿¡ ¹İµå½Ã °´Ã¼¸¦ »ı¼ºÇØ¾ß »ç¿ë °¡´É
+		MethodMain02 method = new MethodMain02(); // ë©”ì„œë“œëŠ” ê°ì²´ì— í¬í•¨ë˜ì–´ ë™ì‘í•˜ê¸° ë•Œë¬¸ì— ë°˜ë“œì‹œ ê°ì²´ë¥¼ ìƒì„±í•´ì•¼ ì‚¬ìš© ê°€ëŠ¥
 		java.util.Scanner input = new java.util.Scanner(System.in);
-		System.out.print("Á¤¼ö ÀÔ·Â > ");
+		System.out.print("ì •ìˆ˜ ì…ë ¥ > ");
 		int result = method.signOf(input.nextInt());
 		input.close();
-		System.out.println("°á°ú°ªÀº ? " + result);
+		System.out.println("ê²°ê³¼ê°’ì€ ? " + result);
 	}
 }

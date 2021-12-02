@@ -2,28 +2,28 @@ package kr.s06.animal;
 
 public class AnimalMain {
 	public static void main(String[] args) {
-		// ±âº» »ı¼ºÀÚ¸¦ ÀÌ¿ëÇÏ¿© °´Ã¼ »ı¼º
+		// ê¸°ë³¸ ìƒì„±ìë¥¼ ì´ìš©í•˜ì—¬ ê°ì²´ ìƒì„±
 		Animal a1 = new Animal();
-		// ±âº» Á¤º¸ ¼¼ÆÃ
-		a1.setName("±â¸°");
+		// ê¸°ë³¸ ì •ë³´ ì„¸íŒ…
+		a1.setName("ê¸°ë¦°");
 		a1.setAge(10);
 		a1.setFly(false);
-		// Á¤º¸ Ãâ·Â
-		System.out.println("ÀÌ¸§ : " + a1.getName());
-		System.out.println("³ªÀÌ : " + a1.getAge());
-		System.out.println("ºñÇà ¿©ºÎ : " + (a1.isFly() ? "°¡´É" : "ºÒ°¡´É")); // »ïÇ× ¿¬»êÀÚ¸¦ ÀÌ¿ëÇØ¼­ trueÀÏ ¶§ °¡´É, falseÀÏ ¶§ ºÒ°¡´É Ãâ·Â; ¿ì¼±¼øÀ§ ¹®Á¦°¡ ÀÖÀ¸´Ï ¼Ò°ıÈ£ ÇÊ¿ä
+		// ì •ë³´ ì¶œë ¥
+		System.out.println("ì´ë¦„ : " + a1.getName());
+		System.out.println("ë‚˜ì´ : " + a1.getAge());
+		System.out.println("ë¹„í–‰ ì—¬ë¶€ : " + (a1.isFly() ? "ê°€ëŠ¥" : "ë¶ˆê°€ëŠ¥")); // ì‚¼í•­ ì—°ì‚°ìë¥¼ ì´ìš©í•´ì„œ trueì¼ ë•Œ ê°€ëŠ¥, falseì¼ ë•Œ ë¶ˆê°€ëŠ¥ ì¶œë ¥; ìš°ì„ ìˆœìœ„ ë¬¸ì œê°€ ìˆìœ¼ë‹ˆ ì†Œê´„í˜¸ í•„ìš”
 		
 		System.out.println();
 		
-		// »ı¼ºÀÚ·Î ±âº» Á¤º¸ ¼¼ÆÃ
-		Animal a2 = new Animal("±â·¯±â", 3, true);
-		// Á¤º¸ Ãâ·Â
-		System.out.println("ÀÌ¸§ : " + a2.getName());
-		System.out.println("³ªÀÌ : " + a2.getAge());
-		System.out.println("ºñÇà ¿©ºÎ : " + printFly(a2.isFly())); // °°Àº Å¬·¡½ºÀÇ static ¸Ş¼­µå´Â Å¬·¡½º¸í ¸í½ÃÇÏÁö ¾Ê°í È£Ãâ °¡´É
+		// ìƒì„±ìë¡œ ê¸°ë³¸ ì •ë³´ ì„¸íŒ…
+		Animal a2 = new Animal("ê¸°ëŸ¬ê¸°", 3, true);
+		// ì •ë³´ ì¶œë ¥
+		System.out.println("ì´ë¦„ : " + a2.getName());
+		System.out.println("ë‚˜ì´ : " + a2.getAge());
+		System.out.println("ë¹„í–‰ ì—¬ë¶€ : " + printFly(a2.isFly())); // ê°™ì€ í´ë˜ìŠ¤ì˜ static ë©”ì„œë“œëŠ” í´ë˜ìŠ¤ëª… ëª…ì‹œí•˜ì§€ ì•Šê³  í˜¸ì¶œ ê°€ëŠ¥
 	}
-	// »ïÇ× ¿¬»êÀÚ ÀÌ¿ëÇÏ´Â ¸Ş¼­µå ¸¸µé±â; ¸Ş¼­µå À§Ä¡´Â main À§, ¾Æ·¡ ¹«°ü
-	private static String printFly(boolean fly) { // °´Ã¼ »ı¼º ¾øÀÌ È£Ãâ °¡´É
-		return fly ? "°¡´É" : "ºÒ°¡´É";
+	// ì‚¼í•­ ì—°ì‚°ì ì´ìš©í•˜ëŠ” ë©”ì„œë“œ ë§Œë“¤ê¸°; ë©”ì„œë“œ ìœ„ì¹˜ëŠ” main ìœ„, ì•„ë˜ ë¬´ê´€
+	private static String printFly(boolean fly) { // ê°ì²´ ìƒì„± ì—†ì´ í˜¸ì¶œ ê°€ëŠ¥
+		return fly ? "ê°€ëŠ¥" : "ë¶ˆê°€ëŠ¥";
 	}
 }

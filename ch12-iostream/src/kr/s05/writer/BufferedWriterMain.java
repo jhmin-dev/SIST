@@ -11,11 +11,11 @@ public class BufferedWriterMain {
 		try {
 			fw = new FileWriter("bufferedWriter.txt");
 			bw = new BufferedWriter(fw);
-			bw.write("BufferedWriter Å×½ºÆ®ÀÔ´Ï´Ù."); // ¹öÆÛ¿¡ ³»¿ëÀ» Ãâ·Â
-			bw.newLine(); // OS È¯°æ¿¡ ¸Â´Â ÁÙ¹Ù²Ş
-			bw.write("¾È³çÇÏ¼¼¿ä"+System.getProperty("line.separator")+"line test!"); // OS È¯°æ¿¡ ¸Â´Â ÁÙ¹Ù²Ş
-			bw.flush(); // ¹öÆÛÀÇ ³»¿ëÀ» ºñ¿ì°í ÆÄÀÏ¿¡ ³»¿ëÀ» Ãâ·Â
-			System.out.println("ÆÄÀÏÀ» »ı¼ºÇÏ°í ³»¿ëÀ» Ãâ·Â");
+			bw.write("BufferedWriter í…ŒìŠ¤íŠ¸ì…ë‹ˆë‹¤."); // ë²„í¼ì— ë‚´ìš©ì„ ì¶œë ¥
+			bw.newLine(); // OS í™˜ê²½ì— ë§ëŠ” ì¤„ë°”ê¿ˆ
+			bw.write("ì•ˆë…•í•˜ì„¸ìš”"+System.getProperty("line.separator")+"line test!"); // OS í™˜ê²½ì— ë§ëŠ” ì¤„ë°”ê¿ˆ
+			bw.flush(); // ë²„í¼ì˜ ë‚´ìš©ì„ ë¹„ìš°ê³  íŒŒì¼ì— ë‚´ìš©ì„ ì¶œë ¥
+			System.out.println("íŒŒì¼ì„ ìƒì„±í•˜ê³  ë‚´ìš©ì„ ì¶œë ¥");
 		}
 		catch(IOException e) {
 			e.printStackTrace();

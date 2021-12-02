@@ -3,7 +3,7 @@ package kr.s07.serial;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.ObjectInputStream; // ¿ªÁ÷·ÄÈ­ ¸Ş¼­µå¸¦ »ç¿ëÇÏ±â À§ÇØ ÇÊ¿ä
+import java.io.ObjectInputStream; // ì—­ì§ë ¬í™” ë©”ì„œë“œë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•´ í•„ìš”
 
 public class SerialMain02 {
 	public static void main(String[] args) {
@@ -14,8 +14,8 @@ public class SerialMain02 {
 			fis = new FileInputStream("object.ser");
 			ois = new ObjectInputStream(fis);
 			
-			// ¿ªÁ÷·ÄÈ­ ¼öÇà
-			Customer m = (Customer)ois.readObject(); // readObject() ¸Ş¼­µå´Â Object °´Ã¼¸¦ ¹İÈ¯ÇÏ¹Ç·Î ´Ù¿îÄ³½ºÆÃ
+			// ì—­ì§ë ¬í™” ìˆ˜í–‰
+			Customer m = (Customer)ois.readObject(); // readObject() ë©”ì„œë“œëŠ” Object ê°ì²´ë¥¼ ë°˜í™˜í•˜ë¯€ë¡œ ë‹¤ìš´ìºìŠ¤íŒ…
 			
 			System.out.println(m.getName());
 		}
@@ -25,7 +25,7 @@ public class SerialMain02 {
 		catch(IOException e) {
 			e.printStackTrace();
 		}
-		catch(ClassNotFoundException e) { // readObject() ¸Ş¼­µå »ç¿ë½Ã ÀÇ¹«ÀûÀ¸·Î Ã³¸®ÇØ¾ß ÇÏ´Â ¿¹¿Ü
+		catch(ClassNotFoundException e) { // readObject() ë©”ì„œë“œ ì‚¬ìš©ì‹œ ì˜ë¬´ì ìœ¼ë¡œ ì²˜ë¦¬í•´ì•¼ í•˜ëŠ” ì˜ˆì™¸
 			e.printStackTrace();
 		}
 		finally {

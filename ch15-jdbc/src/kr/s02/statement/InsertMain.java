@@ -17,20 +17,20 @@ public class InsertMain {
 		String sql = null;
 		
 		try {
-			// JDBC ¼öÇà 1´Ü°è : µå¶óÀÌ¹ö ·Îµå
+			// JDBC ìˆ˜í–‰ 1ë‹¨ê³„ : ë“œë¼ì´ë²„ ë¡œë“œ
 			Class.forName(db_driver);
-			// JDBC ¼öÇà 2´Ü°è : Connection °´Ã¼ »ı¼º(ID, ºñ¹Ğ¹øÈ£ ÀÎÁõ)
+			// JDBC ìˆ˜í–‰ 2ë‹¨ê³„ : Connection ê°ì²´ ìƒì„±(ID, ë¹„ë°€ë²ˆí˜¸ ì¸ì¦)
 			conn = DriverManager.getConnection(db_url, db_id, db_password);
-			// JDBC ¼öÇà 3´Ü°è : Statement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : Statement ê°ì²´ ìƒì„±
 			stmt = conn.createStatement();
 			
-			// SQL¹® ÀÛ¼º
-			// sql = "INSERT INTO test1 (id, age) VALUES ('se't', 10)"; // ¹®ÀÚ¿­ ³»¿¡ ' Æ÷ÇÔ½Ã ¿¡·¯
-			sql = "INSERT INTO test1 (id, age) VALUES ('se''t', 10)"; // ¹®ÀÚ¿­ ³»¿¡ ' Æ÷ÇÔÇÏ°í ½ÍÀ¸¸é '' »ç¿ë
+			// SQLë¬¸ ì‘ì„±
+			// sql = "INSERT INTO test1 (id, age) VALUES ('se't', 10)"; // ë¬¸ìì—´ ë‚´ì— ' í¬í•¨ì‹œ ì—ëŸ¬
+			sql = "INSERT INTO test1 (id, age) VALUES ('se''t', 10)"; // ë¬¸ìì—´ ë‚´ì— ' í¬í•¨í•˜ê³  ì‹¶ìœ¼ë©´ '' ì‚¬ìš©
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºí¿¡ ÇàÀ» »ğÀÔ
-			int count = stmt.executeUpdate(sql); // »ğÀÔ ÀÛ¾÷ ÈÄ »ğÀÔÇÑ ÇàÀÇ ¼ö¸¦ ¹İÈ¯
-			System.out.println(count + "°³ ÇàÀÌ »ğÀÔµÇ¾ú½À´Ï´Ù.");
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ì— í–‰ì„ ì‚½ì…
+			int count = stmt.executeUpdate(sql); // ì‚½ì… ì‘ì—… í›„ ì‚½ì…í•œ í–‰ì˜ ìˆ˜ë¥¼ ë°˜í™˜
+			System.out.println(count + "ê°œ í–‰ì´ ì‚½ì…ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();

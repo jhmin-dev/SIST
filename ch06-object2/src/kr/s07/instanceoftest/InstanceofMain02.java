@@ -1,17 +1,17 @@
 package kr.s07.instanceoftest;
-// ºÎ¸ğ Å¬·¡½º
+// ë¶€ëª¨ í´ë˜ìŠ¤
 class Car {
 	public void drive() {
-		System.out.println("ÁÖÇà");
+		System.out.println("ì£¼í–‰");
 	}
 	public void stop() {
-		System.out.println("¸ØÃã");
+		System.out.println("ë©ˆì¶¤");
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class FireEngine extends Car {
 	public void getWater() {
-		System.out.println("¹° »Ñ¸®±â");
+		System.out.println("ë¬¼ ë¿Œë¦¬ê¸°");
 	}
 }
 
@@ -19,15 +19,15 @@ public class InstanceofMain02 {
 	public static void main(String[] args) {
 		FireEngine fe = new FireEngine();
 		
-		if(fe instanceof FireEngine) { // fe´Â FireEngine Å¸ÀÔ »ç¿ë °¡´É
+		if(fe instanceof FireEngine) { // feëŠ” FireEngine íƒ€ì… ì‚¬ìš© ê°€ëŠ¥
 			System.out.println("This is a FireEngine instance");
 		}
 		
-		if(fe instanceof Car) { // fe´Â Car Å¸ÀÔ »ç¿ë °¡´É
+		if(fe instanceof Car) { // feëŠ” Car íƒ€ì… ì‚¬ìš© ê°€ëŠ¥
 			System.out.println("This is a Car instance");
 		}
 		
-		if(fe instanceof Object) { // fe´Â Object Å¸ÀÔ »ç¿ë °¡´É; ¸ğµç Å¬·¡½º´Â Object Å¸ÀÔÀ¸·Î Çüº¯È¯ °¡´É
+		if(fe instanceof Object) { // feëŠ” Object íƒ€ì… ì‚¬ìš© ê°€ëŠ¥; ëª¨ë“  í´ë˜ìŠ¤ëŠ” Object íƒ€ì…ìœ¼ë¡œ í˜•ë³€í™˜ ê°€ëŠ¥
 			System.out.println("This is an Object instance");
 		}
 	}

@@ -3,7 +3,7 @@ package kr.s07.finaltest;
 class FinalMe {
 	int var = 100;
 	
-	// ¸Ş¼­µå¿¡ finalÀ» ÁöÁ¤ÇÏ¸é ÀÚ½Ä Å¬·¡½º¿¡¼­ ¸Ş¼­µå ¿À¹ö¶óÀÌµùÀ» ÇÒ ¼ö ¾øÀ½
+	// ë©”ì„œë“œì— finalì„ ì§€ì •í•˜ë©´ ìì‹ í´ë˜ìŠ¤ì—ì„œ ë©”ì„œë“œ ì˜¤ë²„ë¼ì´ë”©ì„ í•  ìˆ˜ ì—†ìŒ
 	public final void setVar(int var) {
 		this.var = var;
 	}

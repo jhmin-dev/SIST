@@ -1,17 +1,17 @@
 package kr.s06.poly;
-// ºÎ¸ğ Å¬·¡½º
+// ë¶€ëª¨ í´ë˜ìŠ¤
 class Product {
-	int price; // Á¦Ç°ÀÇ °¡°İ
-	int bonusPoint; // Á¦Ç° ±¸¸Å½Ã Á¦°øÇÏ´Â º¸³Ê½º Á¡¼ö
+	int price; // ì œí’ˆì˜ ê°€ê²©
+	int bonusPoint; // ì œí’ˆ êµ¬ë§¤ì‹œ ì œê³µí•˜ëŠ” ë³´ë„ˆìŠ¤ ì ìˆ˜
 	public Product(int price) {
 		this.price = price;
-		this.bonusPoint = price/10; // º¸³Ê½º Á¡¼ö´Â Á¦Ç° °¡°İÀÇ 10%
+		this.bonusPoint = price/10; // ë³´ë„ˆìŠ¤ ì ìˆ˜ëŠ” ì œí’ˆ ê°€ê²©ì˜ 10%
 	}
 	public String getName() {
-		return "»óÇ°";
+		return "ìƒí’ˆ";
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class Tv extends Product {
 	public Tv() {
 		super(200);
@@ -20,7 +20,7 @@ class Tv extends Product {
 		return "Tv";
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class Computer extends Product {
 	public Computer() {
 		super(300);
@@ -31,34 +31,34 @@ class Computer extends Product {
 }
 
 class Buyer {
-	int money = 1000; // º¸À¯ ±İ¾×
-	int bonusPoint; // º¸À¯ º¸³Ê½º Á¡¼ö
-	public void buy(Product p) { // °´Ã¼ÀÇ ÁÖ¼Ò¸¦ ¹ŞÀ¸·Á¸é ÀÚ·áÇüÀ» ¸í½ÃÇØ¾ß ÇÏ´Âµ¥, Á¦Ç° Á¾·ù°¡ ¸¹À» °æ¿ì ÀÚ·áÇü¸¶´Ù ¸Ş¼­µå ¿À¹ö·ÎµùÇÏ´Â °ÍÀº ¹ø°Å·Î¿ò; ÀÎÀÚ ÀÚ·áÇüÀ» ºÎ¸ğ Å¬·¡½º Å¸ÀÔÀ¸·Î ÁöÁ¤½Ã, Tv °´Ã¼³ª Computer °´Ã¼ Àü´Ş¹ŞÀ» ¶§ Product Å¬·¡½º Å¸ÀÔÀ¸·Î ÀÚµ¿ Çüº¯È¯ÀÌ ÀÏ¾î³²
+	int money = 1000; // ë³´ìœ  ê¸ˆì•¡
+	int bonusPoint; // ë³´ìœ  ë³´ë„ˆìŠ¤ ì ìˆ˜
+	public void buy(Product p) { // ê°ì²´ì˜ ì£¼ì†Œë¥¼ ë°›ìœ¼ë ¤ë©´ ìë£Œí˜•ì„ ëª…ì‹œí•´ì•¼ í•˜ëŠ”ë°, ì œí’ˆ ì¢…ë¥˜ê°€ ë§ì„ ê²½ìš° ìë£Œí˜•ë§ˆë‹¤ ë©”ì„œë“œ ì˜¤ë²„ë¡œë”©í•˜ëŠ” ê²ƒì€ ë²ˆê±°ë¡œì›€; ì¸ì ìë£Œí˜•ì„ ë¶€ëª¨ í´ë˜ìŠ¤ íƒ€ì…ìœ¼ë¡œ ì§€ì •ì‹œ, Tv ê°ì²´ë‚˜ Computer ê°ì²´ ì „ë‹¬ë°›ì„ ë•Œ Product í´ë˜ìŠ¤ íƒ€ì…ìœ¼ë¡œ ìë™ í˜•ë³€í™˜ì´ ì¼ì–´ë‚¨
 		if(money < p.price) {
-			System.out.println("ÀÜ¾×ÀÌ ºÎÁ·ÇÏ¿© ¹°°ÇÀ» ±¸¸ÅÇÒ ¼ö ¾ø½À´Ï´Ù.");
-			return; // buy ¸Ş¼­µå¸¦ ºüÁ®³ª°¨; ±âº»ÀûÀ¸·Î returnÀº »ı·«½Ã ¸Ş¼­µå Á¦ÀÏ ³¡¿¡ ÄÄÆÄÀÏ·¯¿¡ ÀÇÇØ ÀÚµ¿À¸·Î Æ÷ÇÔµÇ¾î ¸Ş¼­µå Á¾·á ¿ªÇÒ; voidÇü ¸Ş¼­µå¿¡¼­´Â if¹® ³»¿¡ returnÀ» ¸í½ÃÇÏ¿© if~else¹® È¿°ú¸¦ ³¾ ¼ö ÀÖÀ½
+			System.out.println("ì”ì•¡ì´ ë¶€ì¡±í•˜ì—¬ ë¬¼ê±´ì„ êµ¬ë§¤í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+			return; // buy ë©”ì„œë“œë¥¼ ë¹ ì ¸ë‚˜ê°; ê¸°ë³¸ì ìœ¼ë¡œ returnì€ ìƒëµì‹œ ë©”ì„œë“œ ì œì¼ ëì— ì»´íŒŒì¼ëŸ¬ì— ì˜í•´ ìë™ìœ¼ë¡œ í¬í•¨ë˜ì–´ ë©”ì„œë“œ ì¢…ë£Œ ì—­í• ; voidí˜• ë©”ì„œë“œì—ì„œëŠ” ifë¬¸ ë‚´ì— returnì„ ëª…ì‹œí•˜ì—¬ if~elseë¬¸ íš¨ê³¼ë¥¼ ë‚¼ ìˆ˜ ìˆìŒ
 		}
 		money -= p.price;
 		bonusPoint += p.bonusPoint;
-		System.out.println(p.getName() + "À»/¸¦ ±¸¸ÅÇß½À´Ï´Ù."); // getNameÀº ÀçÁ¤ÀÇµÈ ¸Ş¼­µåÀÌ±â ¶§¹®¿¡ ´Ù½Ã Çüº¯È¯ÇÒ ÇÊ¿ä ¾øÀ½
-		System.out.println("ÇöÀç ³²Àº µ·Àº " + money + "¸¸¿øÀÔ´Ï´Ù.");
-		System.out.println("ÇöÀç º¸³Ê½º Á¡¼ö´Â " + bonusPoint + "Á¡ÀÔ´Ï´Ù.");
+		System.out.println(p.getName() + "ì„/ë¥¼ êµ¬ë§¤í–ˆìŠµë‹ˆë‹¤."); // getNameì€ ì¬ì •ì˜ëœ ë©”ì„œë“œì´ê¸° ë•Œë¬¸ì— ë‹¤ì‹œ í˜•ë³€í™˜í•  í•„ìš” ì—†ìŒ
+		System.out.println("í˜„ì¬ ë‚¨ì€ ëˆì€ " + money + "ë§Œì›ì…ë‹ˆë‹¤.");
+		System.out.println("í˜„ì¬ ë³´ë„ˆìŠ¤ ì ìˆ˜ëŠ” " + bonusPoint + "ì ì…ë‹ˆë‹¤.");
 	}
 }
 
 public class PolyMain05 {
 	public static void main(String[] args) {
-		Buyer b = new Buyer(); // °í°´ °´Ã¼ »ı¼º
-		Tv tv = new Tv(); // Tv °´Ã¼ »ı¼º
-		Computer pc = new Computer(); // Computer °´Ã¼ »ı¼º
-		b.buy(tv); // Tv Å¬·¡½º Å¸ÀÔ¿¡¼­ Product Å¬·¡½º Å¸ÀÔÀ¸·Î Çüº¯È¯(=¾÷Ä³½ºÆÃ)
-		b.buy(pc); // Computer Å¬·¡½º Å¸ÀÔ¿¡¼­ Product Å¬·¡½º Å¸ÀÔÀ¸·Î Çüº¯È¯(=¾÷Ä³½ºÆÃ)
-		Audio au = new Audio(); // Audio °´Ã¼ »ı¼º
+		Buyer b = new Buyer(); // ê³ ê° ê°ì²´ ìƒì„±
+		Tv tv = new Tv(); // Tv ê°ì²´ ìƒì„±
+		Computer pc = new Computer(); // Computer ê°ì²´ ìƒì„±
+		b.buy(tv); // Tv í´ë˜ìŠ¤ íƒ€ì…ì—ì„œ Product í´ë˜ìŠ¤ íƒ€ì…ìœ¼ë¡œ í˜•ë³€í™˜(=ì—…ìºìŠ¤íŒ…)
+		b.buy(pc); // Computer í´ë˜ìŠ¤ íƒ€ì…ì—ì„œ Product í´ë˜ìŠ¤ íƒ€ì…ìœ¼ë¡œ í˜•ë³€í™˜(=ì—…ìºìŠ¤íŒ…)
+		Audio au = new Audio(); // Audio ê°ì²´ ìƒì„±
 		b.buy(au);
 	}
 }
-//ÀÚ½Ä Å¬·¡½º
-class Audio extends Product { // »õ Å¬·¡½º¸¦ Ãß°¡ÇØµµ Product¸¦ »ó¼Ó¹Ş±â¸¸ ÇÏ¸é ±¸¸Å ÇàÀ§ ¸Ş¼­µå¸¦ º°µµ·Î ¸¸µé ÇÊ¿ä ¾øÀ½
+//ìì‹ í´ë˜ìŠ¤
+class Audio extends Product { // ìƒˆ í´ë˜ìŠ¤ë¥¼ ì¶”ê°€í•´ë„ Productë¥¼ ìƒì†ë°›ê¸°ë§Œ í•˜ë©´ êµ¬ë§¤ í–‰ìœ„ ë©”ì„œë“œë¥¼ ë³„ë„ë¡œ ë§Œë“¤ í•„ìš” ì—†ìŒ
 	public Audio() {
 		super(400);
 	}

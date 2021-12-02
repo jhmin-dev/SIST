@@ -1,27 +1,27 @@
 public class WhileMain06 {
 	public static void main(String[] args) {
-		// ÀºÇà ÇÁ·Î±×·¥
+		// ì€í–‰ í”„ë¡œê·¸ë¨
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		
-		int balance = 0; // ÀÜ°í ¼±¾ğ
+		int balance = 0; // ì”ê³  ì„ ì–¸
 		
 		while(true) {
 			System.out.println("========");
-			System.out.println("1. ¿¹±İ | 2. Ãâ±İ | 3. ÀÜ±İ | 4. Á¾·á"); // ¸Ş´º Ãâ·Â
+			System.out.println("1. ì˜ˆê¸ˆ | 2. ì¶œê¸ˆ | 3. ì”ê¸ˆ | 4. ì¢…ë£Œ"); // ë©”ë‰´ ì¶œë ¥
 			System.out.println("========");
 			
-			System.out.print("¸Ş´º ¼±ÅÃ > ");
-			int num = input.nextInt(); // while¹® ºí·° ³»¿¡¼­¸¸ »ıÁ¸ÇÏ´Â Áö¿ª º¯¼ö·Î, ¹İº¹ ½ÇÇàµÇ´õ¶óµµ ÇÑ ¹ø¸¸ ¼±¾ğÇÑ °ÍÀ¸·Î ÀÎ½ÄÇÔ
+			System.out.print("ë©”ë‰´ ì„ íƒ > ");
+			int num = input.nextInt(); // whileë¬¸ ë¸”ëŸ­ ë‚´ì—ì„œë§Œ ìƒì¡´í•˜ëŠ” ì§€ì—­ ë³€ìˆ˜ë¡œ, ë°˜ë³µ ì‹¤í–‰ë˜ë”ë¼ë„ í•œ ë²ˆë§Œ ì„ ì–¸í•œ ê²ƒìœ¼ë¡œ ì¸ì‹í•¨
 			if(num == 1) {
-				System.out.print("¿¹±İ¾× > ");
+				System.out.print("ì˜ˆê¸ˆì•¡ > ");
 				balance += input.nextInt();
 			}
 			else if(num == 2) {
 				while(true) {
-					System.out.print("Ãâ±İ¾× > ");
+					System.out.print("ì¶œê¸ˆì•¡ > ");
 					int withdraw = input.nextInt();
 					if(withdraw>balance) {
-						System.out.println("ÀÜ±İº¸´Ù ´õ ¸¹ÀÌ Ãâ±İÇÒ ¼ö ¾ø½À´Ï´Ù.");
+						System.out.println("ì”ê¸ˆë³´ë‹¤ ë” ë§ì´ ì¶œê¸ˆí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 					}
 					else {
 						balance -= withdraw;
@@ -30,14 +30,14 @@ public class WhileMain06 {
 				}
 			}
 			else if(num == 3) {
-				System.out.printf("ÀÜ°í : %,d¿ø\n", balance);
+				System.out.printf("ì”ê³  : %,dì›\n", balance);
 			}
 			else if(num == 4) {
-				System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+				System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 				break;
 			}
 			else {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 		}
 		

@@ -1,15 +1,15 @@
 public class ArrayMain02 {
 	public static void main(String[] args) {
-		// ¹è¿­ ¼±¾ğ ¹× »ı¼º(¾Ï½ÃÀû ¹è¿­ »ı¼º), ÃÊ±âÈ­
-		int[] score = {100,88,88,100,90}; // score.length´Â 5·Î ÀúÀåµÊ
+		// ë°°ì—´ ì„ ì–¸ ë° ìƒì„±(ì•”ì‹œì  ë°°ì—´ ìƒì„±), ì´ˆê¸°í™”
+		int[] score = {100,88,88,100,90}; // score.lengthëŠ” 5ë¡œ ì €ì¥ë¨
 		int sum = 0;
 		float avg = 0.0f;
 		
 		for(int i=0;i<score.length;i++) {
 			sum += score[i];
 		}
-		avg = sum / (float)score.length; // ºĞ¸ğ¿¡ ¹è¿­ÀÇ ±æÀÌ¸¦ ÀÌ¿ëÇÏ°Ô µÇ¸é, ¹è¿­¿¡ ¿ä¼Ò¸¦ Ãß°¡ÇÏ°Å³ª »èÁ¦ÇÏ´õ¶óµµ ºĞ¸ğ¸¦ ¼öÁ¤ÇÒ ÇÊ¿ä ¾øÀ½
+		avg = sum / (float)score.length; // ë¶„ëª¨ì— ë°°ì—´ì˜ ê¸¸ì´ë¥¼ ì´ìš©í•˜ê²Œ ë˜ë©´, ë°°ì—´ì— ìš”ì†Œë¥¼ ì¶”ê°€í•˜ê±°ë‚˜ ì‚­ì œí•˜ë”ë¼ë„ ë¶„ëª¨ë¥¼ ìˆ˜ì •í•  í•„ìš” ì—†ìŒ
 		
-		System.out.printf("ÃÑÁ¡ : %d\nÆò±Õ : %.2f", sum, avg);
+		System.out.printf("ì´ì  : %d\ní‰ê·  : %.2f", sum, avg);
 	}
 }

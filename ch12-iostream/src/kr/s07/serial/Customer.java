@@ -2,7 +2,7 @@ package kr.s07.serial;
 
 import java.io.Serializable;
 
-public class Customer implements Serializable { // Serializable ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÏ¸é ÇØ´ç Å¬·¡½º´Â °´Ã¼ Á÷·ÄÈ­ ´ë»óÀÌ µÇ¾î °´Ã¼ Á÷·ÄÈ­¸¦ ¼öÇà °¡´É; SerializableÀÌ ±¸ÇöµÇÁö ¾ÊÀ¸¸é °´Ã¼ Á÷·ÄÈ­ ºÒ°¡; Serializable ÀÎÅÍÆäÀÌ½º´Â ºñ¾î ÀÖ´Â ÀÎÅÍÆäÀÌ½º·Î, ±¸ÇöÇØ¾ß ÇÒ º°µµÀÇ Ãß»ó ¸Ş¼­µå °¡Áö°í ÀÖÁö ¾ÊÀ½; µ¥ÀÌÅÍ°¡ µé¾î°£ ¸â¹ö º¯¼ö¸¸ Á÷·ÄÈ­ ´ë»ó
+public class Customer implements Serializable { // Serializable ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•˜ë©´ í•´ë‹¹ í´ë˜ìŠ¤ëŠ” ê°ì²´ ì§ë ¬í™” ëŒ€ìƒì´ ë˜ì–´ ê°ì²´ ì§ë ¬í™”ë¥¼ ìˆ˜í–‰ ê°€ëŠ¥; Serializableì´ êµ¬í˜„ë˜ì§€ ì•Šìœ¼ë©´ ê°ì²´ ì§ë ¬í™” ë¶ˆê°€; Serializable ì¸í„°í˜ì´ìŠ¤ëŠ” ë¹„ì–´ ìˆëŠ” ì¸í„°í˜ì´ìŠ¤ë¡œ, êµ¬í˜„í•´ì•¼ í•  ë³„ë„ì˜ ì¶”ìƒ ë©”ì„œë“œ ê°€ì§€ê³  ìˆì§€ ì•ŠìŒ; ë°ì´í„°ê°€ ë“¤ì–´ê°„ ë©¤ë²„ ë³€ìˆ˜ë§Œ ì§ë ¬í™” ëŒ€ìƒ
 	private String name;
 	
 	public Customer(String name) {

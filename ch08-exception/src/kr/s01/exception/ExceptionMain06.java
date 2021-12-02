@@ -1,15 +1,15 @@
 package kr.s01.exception;
 
 public class ExceptionMain06 {
-	// throw¸¦ ÀÌ¿ëÇÑ ÀÎÀ§Àû ¿¹¿Ü ¹ß»ý
+	// throwë¥¼ ì´ìš©í•œ ì¸ìœ„ì  ì˜ˆì™¸ ë°œìƒ
 	public void methodA(String[] n) throws Exception {
-		if(n.length>0) { // ÀÔ·ÂÇÑ °ªÀÌ ÀÖ´Â °æ¿ì
+		if(n.length>0) { // ìž…ë ¥í•œ ê°’ì´ ìžˆëŠ” ê²½ìš°
 			for(String s : n) {
 				System.out.println(s);
 			}
 		}
-		else { // ÀÔ·ÂÇÑ °ªÀÌ ¾ø´Â °æ¿ì
-			throw new Exception("ÀÔ·ÂÇÑ µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù."); // ¿¹¿Ü °´Ã¼¸¦ »ý¼ºÇÏ¿© ´øÁü(=Á¶°ÇÀ» ¸¸Á·ÇÏÁö ¾Ê´Â °æ¿ì¿¡ catch ºí·°À¸·Î ÀÌµ¿½ÃÅ´); throw¸¦ ¸í½ÃÇÏÁö ¾ÊÀ¸¸é »ý¼ºµÈ ¿¹¿Ü °´Ã¼°¡ ¸Þ¼­µå¿Í °ü·Ã ¾ø´Â(=¿¹¿Ü ¹ß»ýÀÌ ¾Æ´Ñ) °ÍÀ¸·Î ÀÎ½ÄµÊ
+		else { // ìž…ë ¥í•œ ê°’ì´ ì—†ëŠ” ê²½ìš°
+			throw new Exception("ìž…ë ¥í•œ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤."); // ì˜ˆì™¸ ê°ì²´ë¥¼ ìƒì„±í•˜ì—¬ ë˜ì§(=ì¡°ê±´ì„ ë§Œì¡±í•˜ì§€ ì•ŠëŠ” ê²½ìš°ì— catch ë¸”ëŸ­ìœ¼ë¡œ ì´ë™ì‹œí‚´); throwë¥¼ ëª…ì‹œí•˜ì§€ ì•Šìœ¼ë©´ ìƒì„±ëœ ì˜ˆì™¸ ê°ì²´ê°€ ë©”ì„œë“œì™€ ê´€ë ¨ ì—†ëŠ”(=ì˜ˆì™¸ ë°œìƒì´ ì•„ë‹Œ) ê²ƒìœ¼ë¡œ ì¸ì‹ë¨
 		}
 	}
 	
@@ -19,7 +19,7 @@ public class ExceptionMain06 {
 			ex.methodA(args);
 		}
 		catch(Exception e) {
-			System.out.println(e.getMessage()); // ¿¹¿Ü °´Ã¼¿¡ ¸í½ÃÇÑ ¸Þ½ÃÁö¸¦ Ãâ·Â
+			System.out.println(e.getMessage()); // ì˜ˆì™¸ ê°ì²´ì— ëª…ì‹œí•œ ë©”ì‹œì§€ë¥¼ ì¶œë ¥
 		}
 	}
 }

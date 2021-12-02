@@ -2,10 +2,10 @@ public class WhileMain03 {
 	public static void main(String[] args) {
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		
-		System.out.print("´Ü ÀÔ·Â : ");
+		System.out.print("ë‹¨ ìž…ë ¥ : ");
 		int dan = input.nextInt();
 		
-		System.out.println(dan + "´Ü");
+		System.out.println(dan + "ë‹¨");
 		System.out.println("========");
 		
 		int i = 1;

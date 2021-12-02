@@ -17,25 +17,25 @@ public class UpdateMain {
 		String sql = null;
 		
 		try {
-			// JDBC ¼öÇà 1´Ü°è : µå¶óÀÌ¹ö ·Îµå
+			// JDBC ìˆ˜í–‰ 1ë‹¨ê³„ : ë“œë¼ì´ë²„ ë¡œë“œ
 			Class.forName(db_driver);
-			// JDBC ¼öÇà 2´Ü°è : Connection °´Ã¼ »ı¼º(ID, ºñ¹Ğ¹øÈ£ ÀÎÁõ)
+			// JDBC ìˆ˜í–‰ 2ë‹¨ê³„ : Connection ê°ì²´ ìƒì„±(ID, ë¹„ë°€ë²ˆí˜¸ ì¸ì¦)
 			conn = DriverManager.getConnection(db_url, db_id, db_password);
-			// JDBC ¼öÇà 3´Ü°è : Statement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : Statement ê°ì²´ ìƒì„±
 			stmt = conn.createStatement();
 			
-			// SQL¹® ÀÛ¼º
+			// SQLë¬¸ ì‘ì„±
 			sql = "UPDATE test1 SET age=90 WHERE id='sky'";
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºíÀÇ ÇàÀ» °»½Å
-			int count = stmt.executeUpdate(sql); // °»½Å ÀÛ¾÷ ÈÄ °»½ÅÇÑ ÇàÀÇ ¼ö¸¦ ¹İÈ¯
-			System.out.println(count + "°³ ÇàÀÇ Á¤º¸¸¦ °»½ÅÇß½À´Ï´Ù.");
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ì˜ í–‰ì„ ê°±ì‹ 
+			int count = stmt.executeUpdate(sql); // ê°±ì‹  ì‘ì—… í›„ ê°±ì‹ í•œ í–‰ì˜ ìˆ˜ë¥¼ ë°˜í™˜
+			System.out.println(count + "ê°œ í–‰ì˜ ì •ë³´ë¥¼ ê°±ì‹ í–ˆìŠµë‹ˆë‹¤.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			if(stmt!=null) try {stmt.close();} catch(SQLException e) {}
 			if(conn!=null) try {conn.close();} catch(SQLException e) {}
 		}

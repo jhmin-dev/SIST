@@ -1,5 +1,5 @@
 package kr.s07.finaltest;
-// Å¬·¡½º¿¡ finalÀ» ¸í½ÃÇÏ¸é »ó¼ÓÀÌ ºÒ°¡´ÉÇÔ
+// í´ë˜ìŠ¤ì— finalì„ ëª…ì‹œí•˜ë©´ ìƒì†ì´ ë¶ˆê°€ëŠ¥í•¨
 // final class Me2 {
 class Me2 {
 	int num = 200;

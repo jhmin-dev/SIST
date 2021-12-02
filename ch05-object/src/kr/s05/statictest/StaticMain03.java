@@ -1,17 +1,17 @@
 package kr.s05.statictest;
 
 class StaticMethod {
-	String s1 = "½ºÅÂÆ½";
+	String s1 = "ìŠ¤íƒœí‹±";
 	static String s2 = "static";
 	
-	public static String getString() { // static ¸Ş¼­µå´Â È£Ãâ½Ã ¸Ş¸ğ¸®¿¡ ¿Ã¶ó°¨
-		// return s1; // ÀÎ½ºÅÏ½º º¯¼ö´Â °´Ã¼¸¦ »ı¼ºÇÏÁö ¾ÊÀ¸¸é ¸Ş¸ğ¸®¿¡ ¿Ã¶ó°¡ ÀÖÁö ¾ÊÀ½
-		return s2; // static º¯¼ö´Â È£Ãâ½Ã ¸Ş¸ğ¸®¿¡ ¿Ã¶ó°¨; getString°ú s2°¡ °°Àº Å¬·¡½º¿¡ ÀÖ¾î È£Ãâ½Ã Å¬·¡½º¸í »ı·« °¡´É
+	public static String getString() { // static ë©”ì„œë“œëŠ” í˜¸ì¶œì‹œ ë©”ëª¨ë¦¬ì— ì˜¬ë¼ê°
+		// return s1; // ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜ëŠ” ê°ì²´ë¥¼ ìƒì„±í•˜ì§€ ì•Šìœ¼ë©´ ë©”ëª¨ë¦¬ì— ì˜¬ë¼ê°€ ìˆì§€ ì•ŠìŒ
+		return s2; // static ë³€ìˆ˜ëŠ” í˜¸ì¶œì‹œ ë©”ëª¨ë¦¬ì— ì˜¬ë¼ê°; getStringê³¼ s2ê°€ ê°™ì€ í´ë˜ìŠ¤ì— ìˆì–´ í˜¸ì¶œì‹œ í´ë˜ìŠ¤ëª… ìƒëµ ê°€ëŠ¥
 	}
 }
 
 public class StaticMain03 {
 	public static void main(String[] args) {
-		System.out.println(StaticMethod.getString()); // mainÀÇ Å¬·¡½º¿Í getStringÀÇ Å¬·¡½º°¡ °°Áö ¾ÊÀ¸¹Ç·Î Å¬·¡½º¸íÀ» ¸í½ÃÇØ¾ß static ¸Ş¼­µå¿¡ Á¢±Ù °¡´É; static º¯¼ö¿Í static ¸Ş¼­µå´Â È£ÃâÇÏ¸é ¹Ù·Î »ç¿ë °¡´ÉÇÔ; String.valueOf() ¿ª½Ã static ¸Ş¼­µå
+		System.out.println(StaticMethod.getString()); // mainì˜ í´ë˜ìŠ¤ì™€ getStringì˜ í´ë˜ìŠ¤ê°€ ê°™ì§€ ì•Šìœ¼ë¯€ë¡œ í´ë˜ìŠ¤ëª…ì„ ëª…ì‹œí•´ì•¼ static ë©”ì„œë“œì— ì ‘ê·¼ ê°€ëŠ¥; static ë³€ìˆ˜ì™€ static ë©”ì„œë“œëŠ” í˜¸ì¶œí•˜ë©´ ë°”ë¡œ ì‚¬ìš© ê°€ëŠ¥í•¨; String.valueOf() ì—­ì‹œ static ë©”ì„œë“œ
 	}
 }

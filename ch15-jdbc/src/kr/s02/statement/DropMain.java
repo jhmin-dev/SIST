@@ -17,19 +17,19 @@ public class DropMain {
 		String sql = null;
 		
 		try {
-            // JDBC ¼öÇà 1´Ü°è : µå¶óÀÌ¹ö ·Îµå
+            // JDBC ìˆ˜í–‰ 1ë‹¨ê³„ : ë“œë¼ì´ë²„ ë¡œë“œ
 			Class.forName(db_driver);
-            // JDBC ¼öÇà 2´Ü°è : Connection °´Ã¼ »ı¼º
+            // JDBC ìˆ˜í–‰ 2ë‹¨ê³„ : Connection ê°ì²´ ìƒì„±
 			conn = DriverManager.getConnection(db_url, db_id, db_password);
-            // JDBC ¼öÇà 3´Ü°è : Statement °´Ã¼ »ı¼º
+            // JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : Statement ê°ì²´ ìƒì„±
 			stmt = conn.createStatement();
 			
-			// SQL¹® ÀÛ¼º
+			// SQLë¬¸ ì‘ì„±
 			sql = "DROP TABLE test1";
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ Å×ÀÌºíÀ» »èÁ¦
-			stmt.executeUpdate(sql); // executeUpdate() ¸Ş¼­µå´Â Á¢±ÙÇÑ ÇàÀÇ ¼ö¸¦ ¹İÈ¯ÇÏ¸ç, Å×ÀÌºíÀ» »ı¼ºÇÏ°Å³ª »èÁ¦ÇÒ ¶§´Â 0À» ¹İÈ¯
-			System.out.println("Å×ÀÌºíÀÌ Á¤»óÀûÀ¸·Î »èÁ¦µÇ¾ú½À´Ï´Ù.");
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ í…Œì´ë¸”ì„ ì‚­ì œ
+			stmt.executeUpdate(sql); // executeUpdate() ë©”ì„œë“œëŠ” ì ‘ê·¼í•œ í–‰ì˜ ìˆ˜ë¥¼ ë°˜í™˜í•˜ë©°, í…Œì´ë¸”ì„ ìƒì„±í•˜ê±°ë‚˜ ì‚­ì œí•  ë•ŒëŠ” 0ì„ ë°˜í™˜
+			System.out.println("í…Œì´ë¸”ì´ ì •ìƒì ìœ¼ë¡œ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();

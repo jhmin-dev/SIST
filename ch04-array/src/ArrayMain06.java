@@ -2,25 +2,25 @@ public class ArrayMain06 {
 	public static void main(String[] args) {
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		
-		String[] course = {"±¹¾î", "¿µ¾î", "¼öÇĞ"};
+		String[] course = {"êµ­ì–´", "ì˜ì–´", "ìˆ˜í•™"};
 		int[] score = new int[course.length];
 		
 		int sum = 0;
 		float avg = 0.0f;
 		
 		for(int i=0;i<course.length;i++) {
-			do { // Á¡¼ö¸¦ ¿Ã¹Ù¸£°Ô ÀÔ·ÂÇÏµµ·Ï °­Á¦
-				System.out.print(course[i] + " > "); // °¡ÀÌµå ¹®ÀÚ¿­·Î °ú¸ñ¸í Ãâ·Â
+			do { // ì ìˆ˜ë¥¼ ì˜¬ë°”ë¥´ê²Œ ì…ë ¥í•˜ë„ë¡ ê°•ì œ
+				System.out.print(course[i] + " > "); // ê°€ì´ë“œ ë¬¸ìì—´ë¡œ ê³¼ëª©ëª… ì¶œë ¥
 				score[i] = input.nextInt();
 			} while(score[i]<0 || score[i]>100);
-			sum += score[i]; // º°µµÀÇ ¹İº¹¹®À» ¸¸µéÁö ¾Ê±â À§ÇØ ÀÔ·Â¹ŞÀ¸¸é¼­ ÃÑÁ¡µµ ±¸ÇÔ
+			sum += score[i]; // ë³„ë„ì˜ ë°˜ë³µë¬¸ì„ ë§Œë“¤ì§€ ì•Šê¸° ìœ„í•´ ì…ë ¥ë°›ìœ¼ë©´ì„œ ì´ì ë„ êµ¬í•¨
 		}
 		
 		input.close();
 		
 		avg = sum / (float)course.length;
 		
-		System.out.printf("ÃÑÁ¡ : %d\n", sum);
-		System.out.printf("Æò±Õ : %.2f", avg);
+		System.out.printf("ì´ì  : %d\n", sum);
+		System.out.printf("í‰ê·  : %.2f", avg);
 	}
 }

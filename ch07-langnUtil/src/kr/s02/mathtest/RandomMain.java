@@ -1,23 +1,23 @@
 package kr.s02.mathtest;
 
-import java.util.Random; // ³­¼ö »ı¼ºÀ» À§ÇÑ Å¬·¡½º
+import java.util.Random; // ë‚œìˆ˜ ìƒì„±ì„ ìœ„í•œ í´ë˜ìŠ¤
 
 public class RandomMain {
 	public static void main(String[] args) {
-		String[] gift = {"½º¸¶Æ®Æù", "TV", "³ÃÀå°í", "²Î!"};
+		String[] gift = {"ìŠ¤ë§ˆíŠ¸í°", "TV", "ëƒ‰ì¥ê³ ", "ê½!"};
 		
-		double ran = Math.random(); // random() ¸Ş¼­µå´Â 0.0 ÀÌ»ó, 1.0 ¹Ì¸¸ÀÇ ÀÓÀÇÀÇ °ªÀ» ¹İÈ¯; ³­¼öÀÇ ¹üÀ§°¡ Á¼À¸¸é °ãÄ¥ ¿ì·Á°¡ ÀÖ±â ¶§¹®¿¡ double ÀÚ·áÇü »ç¿ë
-		System.out.println("¹ß»ıÇÑ ³­¼ö : " + ran);
+		double ran = Math.random(); // random() ë©”ì„œë“œëŠ” 0.0 ì´ìƒ, 1.0 ë¯¸ë§Œì˜ ì„ì˜ì˜ ê°’ì„ ë°˜í™˜; ë‚œìˆ˜ì˜ ë²”ìœ„ê°€ ì¢ìœ¼ë©´ ê²¹ì¹  ìš°ë ¤ê°€ ìˆê¸° ë•Œë¬¸ì— double ìë£Œí˜• ì‚¬ìš©
+		System.out.println("ë°œìƒí•œ ë‚œìˆ˜ : " + ran);
 		
-		int get = (int)(ran * gift.length); // ³­¼öÀÇ ¹üÀ§¸¦ °¡°øÇÏ¿© ÀÏÀÇ ÀÚ¸®°¡ ¹è¿­ÀÇ ÀÎµ¦½º¿Í µ¿ÀÏÇÑ ¹üÀ§¸¦ °®°Ô ÇÏ°í, °­Á¦ Çüº¯È¯À¸·Î ¼Ò¼ıÁ¡ ÀÌÇÏ Àı»ç
-		System.out.println("Á¤¼ö ÇüÅÂÀÇ ³­¼ö : " + get);
-		System.out.println("¿À´ÃÀÇ ¼±¹° : " + gift[get]);
+		int get = (int)(ran * gift.length); // ë‚œìˆ˜ì˜ ë²”ìœ„ë¥¼ ê°€ê³µí•˜ì—¬ ì¼ì˜ ìë¦¬ê°€ ë°°ì—´ì˜ ì¸ë±ìŠ¤ì™€ ë™ì¼í•œ ë²”ìœ„ë¥¼ ê°–ê²Œ í•˜ê³ , ê°•ì œ í˜•ë³€í™˜ìœ¼ë¡œ ì†Œìˆ«ì  ì´í•˜ ì ˆì‚¬
+		System.out.println("ì •ìˆ˜ í˜•íƒœì˜ ë‚œìˆ˜ : " + get);
+		System.out.println("ì˜¤ëŠ˜ì˜ ì„ ë¬¼ : " + gift[get]);
 
-		String[] luck = {"±ÍÀÎÀ» ¸¸³²", "·Î¶Ç ´çÃ·", "ÇÇ°ïÇÑ ÀÏ", "Ã»È¥ ¹ŞÀ½"};
+		String[] luck = {"ê·€ì¸ì„ ë§Œë‚¨", "ë¡œë˜ ë‹¹ì²¨", "í”¼ê³¤í•œ ì¼", "ì²­í˜¼ ë°›ìŒ"};
 		
-		Random r = new Random(); // static ¸Ş¼­µå°¡ ¾Æ´Ï¶ó °´Ã¼¸¦ »ı¼ºÇØ¾ß ÇÔ
-		get = r.nextInt(4); // 0ºÎÅÍ ÀÎÀÚ¿¡ Àü´ŞµÈ °ª Á÷Àü±îÁöÀÇ ¹üÀ§·Î Á¤¼öÇü ³­¼ö ¹ß»ı
-		System.out.println("¹ß»ıÇÑ ³­¼ö : " + get);
-		System.out.println("¿À´ÃÀÇ ¿î¼¼ : " + luck[get]);
+		Random r = new Random(); // static ë©”ì„œë“œê°€ ì•„ë‹ˆë¼ ê°ì²´ë¥¼ ìƒì„±í•´ì•¼ í•¨
+		get = r.nextInt(4); // 0ë¶€í„° ì¸ìì— ì „ë‹¬ëœ ê°’ ì§ì „ê¹Œì§€ì˜ ë²”ìœ„ë¡œ ì •ìˆ˜í˜• ë‚œìˆ˜ ë°œìƒ
+		System.out.println("ë°œìƒí•œ ë‚œìˆ˜ : " + get);
+		System.out.println("ì˜¤ëŠ˜ì˜ ìš´ì„¸ : " + luck[get]);
 	}
 }

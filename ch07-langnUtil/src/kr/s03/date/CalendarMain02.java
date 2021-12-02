@@ -6,34 +6,34 @@ import java.util.Scanner;
 public class CalendarMain02 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Èñ¸Á ¿¬µµ¿Í ¿ùÀ» ÀÔ·ÂÇÏ¼¼¿ä! (¿¹: ¿¬µµ > 2021, ¿ù > 7)");
-		System.out.print("¿¬µµ > ");
+		System.out.println("í¬ë§ ì—°ë„ì™€ ì›”ì„ ì…ë ¥í•˜ì„¸ìš”! (ì˜ˆ: ì—°ë„ > 2021, ì›” > 7)");
+		System.out.print("ì—°ë„ > ");
 		int year = input.nextInt();
-		System.out.print("¿ù > ");
+		System.out.print("ì›” > ");
 		int month = input.nextInt();
 		input.close();
 		
-		System.out.println("[ " + year + "³â " + month + "¿ù ]");
+		System.out.println("[ " + year + "ë…„ " + month + "ì›” ]");
 		System.out.println("========");
-		System.out.println("ÀÏ  ¿ù  È­  ¼ö  ¸ñ  ±İ  Åä");
+		System.out.println("ì¼  ì›”  í™”  ìˆ˜  ëª©  ê¸ˆ  í† ");
 	
-		// ÇöÀç ³¯Â¥¿Í ½Ã°£À» ±¸ÇÔ; new·Î °´Ã¼ »ı¼º ºÒ°¡
+		// í˜„ì¬ ë‚ ì§œì™€ ì‹œê°„ì„ êµ¬í•¨; newë¡œ ê°ì²´ ìƒì„± ë¶ˆê°€
 		Calendar cal = Calendar.getInstance();
-		// Èñ¸Á ¿¬µµ, ¿ù, ÀÏ ¼¼ÆÃ; ¿ùÀÇ ¹üÀ§´Â 0~11ÀÌ±â ¶§¹®¿¡ ÀÔ·Â ¿ù-1, ÀÏÀº ´Ş·ÂÀÌ 1ÀÏºÎÅÍ ½ÃÀÛÇÏ±â ¶§¹®¿¡ 1ÀÏ·Î ¼¼ÆÃ
+		// í¬ë§ ì—°ë„, ì›”, ì¼ ì„¸íŒ…; ì›”ì˜ ë²”ìœ„ëŠ” 0~11ì´ê¸° ë•Œë¬¸ì— ì…ë ¥ ì›”-1, ì¼ì€ ë‹¬ë ¥ì´ 1ì¼ë¶€í„° ì‹œì‘í•˜ê¸° ë•Œë¬¸ì— 1ì¼ë¡œ ì„¸íŒ…
 		cal.set(year, month-1, 1);
-		// 1ÀÏÀÇ ¿äÀÏÀ» ±¸ÇÏ±â; ¿äÀÏÀÇ ¹üÀ§´Â 1=ÀÏ¿äÀÏ, 7=Åä¿äÀÏ
+		// 1ì¼ì˜ ìš”ì¼ì„ êµ¬í•˜ê¸°; ìš”ì¼ì˜ ë²”ìœ„ëŠ” 1=ì¼ìš”ì¼, 7=í† ìš”ì¼
 		int week = cal.get(Calendar.DAY_OF_WEEK);
-		// ¿ùÀÇ ¸¶Áö¸· ³¯Â¥ ±¸ÇÏ±â
+		// ì›”ì˜ ë§ˆì§€ë§‰ ë‚ ì§œ êµ¬í•˜ê¸°
 		int lastOfDate = cal.getActualMaximum(Calendar.DATE);
 		
-		// Ã¹ ³¯Â¥¸¦ Ç¥½ÃÇÏ±â Àü °ø¹é Ã³¸®
+		// ì²« ë‚ ì§œë¥¼ í‘œì‹œí•˜ê¸° ì „ ê³µë°± ì²˜ë¦¬
 		for(int i=1;i<week;i++) {
-			System.out.printf("%3s", " "); // 3Ä­ Àâ°í °ø¹é ³ÖÀ½
+			System.out.printf("%3s", " "); // 3ì¹¸ ì¡ê³  ê³µë°± ë„£ìŒ
 		}
-		// 1ÀÏºÎÅÍ ¸¶Áö¸· ³¯Â¥±îÁö Ç¥½Ã
+		// 1ì¼ë¶€í„° ë§ˆì§€ë§‰ ë‚ ì§œê¹Œì§€ í‘œì‹œ
 		for(int i=1;i<=lastOfDate;i++) {
-			System.out.printf("%3d", i); // 3Ä­ Àâ°í ³¯Â¥ ³ÖÀ½
-			if(week%7==0) System.out.println(); // Åä¿äÀÏÀÌ¸é ÁÙ¹Ù²Ş
+			System.out.printf("%3d", i); // 3ì¹¸ ì¡ê³  ë‚ ì§œ ë„£ìŒ
+			if(week%7==0) System.out.println(); // í† ìš”ì¼ì´ë©´ ì¤„ë°”ê¿ˆ
 			week++;
 		}
 		System.out.println("\n========");

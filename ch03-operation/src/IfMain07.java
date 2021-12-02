@@ -1,41 +1,41 @@
 public class IfMain07 {
 	public static void main(String[] args) {
 		/*
-		 * [½Ç½À]
-		 * »ı³â¿ùÀÏÀ» ÀÔ·ÂÇÏ°í ¸¸ ³ªÀÌ¸¦ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
-		 * ¸¸ ³ªÀÌ = (ÇöÀç ¿¬µµ - »ı³â) - (»ıÀÏÀÌ Áö³µÀ¸¸é 0, »ıÀÏÀÌ Áö³ªÁö ¾Ê¾ÒÀ¸¸é 1)
+		 * [ì‹¤ìŠµ]
+		 * ìƒë…„ì›”ì¼ì„ ì…ë ¥í•˜ê³  ë§Œ ë‚˜ì´ë¥¼ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
+		 * ë§Œ ë‚˜ì´ = (í˜„ì¬ ì—°ë„ - ìƒë…„) - (ìƒì¼ì´ ì§€ë‚¬ìœ¼ë©´ 0, ìƒì¼ì´ ì§€ë‚˜ì§€ ì•Šì•˜ìœ¼ë©´ 1)
 		 * 
-		 * [Ãâ·Â ¿¹½Ã]
-		 * ¿¬µµ ÀÔ·Â : 2001
-		 * ¿ù ÀÔ·Â : 10
-		 * ÀÏ ÀÔ·Â : 20
-		 * ¸¸ ³ªÀÌ´Â ?
+		 * [ì¶œë ¥ ì˜ˆì‹œ]
+		 * ì—°ë„ ì…ë ¥ : 2001
+		 * ì›” ì…ë ¥ : 10
+		 * ì¼ ì…ë ¥ : 20
+		 * ë§Œ ë‚˜ì´ëŠ” ?
 		 */
 		int thisYear = 2021;
 		int thisMonth = 11;
 		int thisDate = 1;
 		java.util.Scanner input = new java.util.Scanner(System.in);
-		System.out.println("»ı³â¿ùÀÏÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("ìƒë…„ì›”ì¼ì„ ì…ë ¥í•˜ì„¸ìš”.");
 		
 		int year, month, date;
 		
-		while(true) { // ¿¬µµ ·çÇÁ
-			System.out.print("¿¬µµ ÀÔ·Â : ");
+		while(true) { // ì—°ë„ ë£¨í”„
+			System.out.print("ì—°ë„ ì…ë ¥ : ");
 			year = input.nextInt();
 			if(year>1900) {
-				while(true) { // ¿ù ·çÇÁ
-					System.out.print("¿ù ÀÔ·Â : ");
+				while(true) { // ì›” ë£¨í”„
+					System.out.print("ì›” ì…ë ¥ : ");
 					month = input.nextInt();
 					if(month>=1&&month<=12) {
-						while(true) { // ÀÏ ·çÇÁ
-							System.out.print("ÀÏ ÀÔ·Â : ");
+						while(true) { // ì¼ ë£¨í”„
+							System.out.print("ì¼ ì…ë ¥ : ");
 							date = input.nextInt();
 							if(month==2){
 								if(date>=1&&date<=28) {
 									break;	
 								}
 								else {
-									System.out.println("ÀÏÀº 1ºÎÅÍ 28±îÁö¸¸ °¡´ÉÇÕ´Ï´Ù.");
+									System.out.println("ì¼ì€ 1ë¶€í„° 28ê¹Œì§€ë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 								}
 							}
 							else if((month%2==0&&month<=6)||(month%2==1&&month>=9)) {
@@ -43,7 +43,7 @@ public class IfMain07 {
 									break;	
 								}
 								else {
-									System.out.println("ÀÏÀº 1ºÎÅÍ 30±îÁö¸¸ °¡´ÉÇÕ´Ï´Ù.");
+									System.out.println("ì¼ì€ 1ë¶€í„° 30ê¹Œì§€ë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 								}
 							}
 							else {
@@ -51,33 +51,33 @@ public class IfMain07 {
 									break;	
 								}
 								else {
-									System.out.println("ÀÏÀº 1ºÎÅÍ 31±îÁö¸¸ °¡´ÉÇÕ´Ï´Ù.");
+									System.out.println("ì¼ì€ 1ë¶€í„° 31ê¹Œì§€ë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 								}
 							}
 						}
-						break; // ¿ù ·çÇÁ Å»Ãâ
+						break; // ì›” ë£¨í”„ íƒˆì¶œ
 					}
 					else {
-						System.out.println("¿ùÀº 1ºÎÅÍ 12±îÁö¸¸ °¡´ÉÇÕ´Ï´Ù.");
+						System.out.println("ì›”ì€ 1ë¶€í„° 12ê¹Œì§€ë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 					}
 				}
-				break; // ¿¬µµ ·çÇÁ Å»Ãâ
+				break; // ì—°ë„ ë£¨í”„ íƒˆì¶œ
 			}
 			else {
-				System.out.println("¿¬µµ¸¦ Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+				System.out.println("ì—°ë„ë¥¼ ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			}
 		}
 		
 		int age=thisYear-year;
-		if(thisMonth<month) { // »ıÀÏ Áö³ªÁö ¾ÊÀ½(¿ù)
+		if(thisMonth<month) { // ìƒì¼ ì§€ë‚˜ì§€ ì•ŠìŒ(ì›”)
 			age-=1;
 		}
 		else if(thisMonth==month) {
-			if(thisDate<date) { // »ıÀÏ Áö³ªÁö ¾ÊÀ½(ÀÏ)
+			if(thisDate<date) { // ìƒì¼ ì§€ë‚˜ì§€ ì•ŠìŒ(ì¼)
 				age-=1;
 			}
 		}
-		System.out.println("¸¸ ³ªÀÌ´Â ? "+age);
+		System.out.println("ë§Œ ë‚˜ì´ëŠ” ? "+age);
 		
 		input.close();
 	}

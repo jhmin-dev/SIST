@@ -1,36 +1,36 @@
 public class PrintMain04 {
 	public static void main(String[] args) {
 		/*
-		 * [½Ç½À]
+		 * [ì‹¤ìŠµ]
 		 * 
-		 * Ã¶¼ö´Â ÇĞ±³¿¡¼­ ¼ºÀûÇ¥¸¦ ¾Æ·¡¿Í °°ÀÌ ¹Ş¾Ò½À´Ï´Ù.
-		 * ³»¿ëÀ» Ãâ·ÂÇÏ½Ã¿À.(Á¡¼ö´Â ¼ıÀÚ·Î ¸í½Ã, true´Â ³í¸®°ªÀ¸·Î Ç¥½Ã)
+		 * ì² ìˆ˜ëŠ” í•™êµì—ì„œ ì„±ì í‘œë¥¼ ì•„ë˜ì™€ ê°™ì´ ë°›ì•˜ìŠµë‹ˆë‹¤.
+		 * ë‚´ìš©ì„ ì¶œë ¥í•˜ì‹œì˜¤.(ì ìˆ˜ëŠ” ìˆ«ìë¡œ ëª…ì‹œ, trueëŠ” ë…¼ë¦¬ê°’ìœ¼ë¡œ í‘œì‹œ)
 		 * 
-		 * ¼ºÀûÇ¥
+		 * ì„±ì í‘œ
 		 * ========
-		 * ÀÌ¸§ : Ã¶¼ö
-		 * ±¹¾î : 89
-		 * ¿µ¾î : 70
-		 * ¼öÇĞ : 95
-		 * ÃÑÁ¡ : 254
-		 * Æò±Õ : 84.67
-		 * Åë°ú ¿©ºÎ : true
+		 * ì´ë¦„ : ì² ìˆ˜
+		 * êµ­ì–´ : 89
+		 * ì˜ì–´ : 70
+		 * ìˆ˜í•™ : 95
+		 * ì´ì  : 254
+		 * í‰ê·  : 84.67
+		 * í†µê³¼ ì—¬ë¶€ : true
 		 */
 		
-		System.out.println("¼ºÀûÇ¥");
+		System.out.println("ì„±ì í‘œ");
 		System.out.println("========");
-		System.out.println("ÀÌ¸§ : Ã¶¼ö");
-		System.out.print("±¹¾î : ");
+		System.out.println("ì´ë¦„ : ì² ìˆ˜");
+		System.out.print("êµ­ì–´ : ");
 		System.out.println(89);
-		System.out.print("¿µ¾î : ");
+		System.out.print("ì˜ì–´ : ");
 		System.out.println(70);
-		System.out.print("¼öÇĞ : ");
+		System.out.print("ìˆ˜í•™ : ");
 		System.out.println(95);
-		System.out.print("ÃÑÁ¡ : ");
+		System.out.print("ì´ì  : ");
 		System.out.println(254);
-		System.out.print("Æò±Õ : ");
+		System.out.print("í‰ê·  : ");
 		System.out.println(84.67);
-		System.out.print("Åë°ú ¿©ºÎ : ");
+		System.out.print("í†µê³¼ ì—¬ë¶€ : ");
 		System.out.println(true);
 	}
 }

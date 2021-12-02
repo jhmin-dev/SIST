@@ -8,24 +8,24 @@ import java.net.UnknownHostException;
 
 public class InetAddressMain01 {
 	public static void main(String[] args) {
-		BufferedReader br = null; // finally¿¡¼­ ÀÚ¿ø Á¤¸®ÇÏ±â À§ÇØ¼­´Â ¹İµå½Ã try ¹Û¿¡¼­ º¯¼ö ¼±¾ğÇØ¾ß ÇÔ
+		BufferedReader br = null; // finallyì—ì„œ ìì› ì •ë¦¬í•˜ê¸° ìœ„í•´ì„œëŠ” ë°˜ë“œì‹œ try ë°–ì—ì„œ ë³€ìˆ˜ ì„ ì–¸í•´ì•¼ í•¨
 		String url = null;
 		InetAddress iaddr = null;
 		
 		try {
 			br = new BufferedReader(new InputStreamReader(System.in));
-			System.out.print("À¥»çÀÌÆ® µµ¸ŞÀÎ ÀÔ·Â > ");
+			System.out.print("ì›¹ì‚¬ì´íŠ¸ ë„ë©”ì¸ ì…ë ¥ > ");
 			url = br.readLine();
 			
-			iaddr = InetAddress.getByName(url); // static ¸Ş¼­µåÀÎ getByName() ¸Ş¼­µå¿¡ µµ¸ŞÀÎÀ» Àü´ŞÇÏ¸é IP ÁÖ¼Ò¸¦ °®´Â InetAddress °´Ã¼ ¹İÈ¯; Àß¸ø ÀÔ·ÂÇÏ´Â °æ¿ì UnknownHostException ¹ß»ı
+			iaddr = InetAddress.getByName(url); // static ë©”ì„œë“œì¸ getByName() ë©”ì„œë“œì— ë„ë©”ì¸ì„ ì „ë‹¬í•˜ë©´ IP ì£¼ì†Œë¥¼ ê°–ëŠ” InetAddress ê°ì²´ ë°˜í™˜; ì˜ëª» ì…ë ¥í•˜ëŠ” ê²½ìš° UnknownHostException ë°œìƒ
 			
-			System.out.println("È£½ºÆ® ÀÌ¸§ : " + iaddr.getHostName()); // getHostName() ¸Ş¼­µå´Â µµ¸ŞÀÎÀÌ ÀÖÀ¸¸é µµ¸ŞÀÎ¸íÀ» ¹İÈ¯ÇÏ°í, µµ¸ŞÀÎÀÌ ¾øÀ¸¸é IP ÁÖ¼Ò¸¦ ¹İÈ¯
-			System.out.println("È£½ºÆ® IP ÁÖ¼Ò : " + iaddr.getHostAddress()); // getHostAddress() ¸Ş¼­µå´Â IP ÁÖ¼Ò¸¦ ¹İÈ¯
+			System.out.println("í˜¸ìŠ¤íŠ¸ ì´ë¦„ : " + iaddr.getHostName()); // getHostName() ë©”ì„œë“œëŠ” ë„ë©”ì¸ì´ ìˆìœ¼ë©´ ë„ë©”ì¸ëª…ì„ ë°˜í™˜í•˜ê³ , ë„ë©”ì¸ì´ ì—†ìœ¼ë©´ IP ì£¼ì†Œë¥¼ ë°˜í™˜
+			System.out.println("í˜¸ìŠ¤íŠ¸ IP ì£¼ì†Œ : " + iaddr.getHostAddress()); // getHostAddress() ë©”ì„œë“œëŠ” IP ì£¼ì†Œë¥¼ ë°˜í™˜
 			
-			iaddr = InetAddress.getLocalHost(); // getLocalHost() ¸Ş¼­µå´Â ·ÎÄÃ È£½ºÆ® IP ÁÖ¼Ò¸¦ °®´Â InetAddress °´Ã¼ ¹İÈ¯
+			iaddr = InetAddress.getLocalHost(); // getLocalHost() ë©”ì„œë“œëŠ” ë¡œì»¬ í˜¸ìŠ¤íŠ¸ IP ì£¼ì†Œë¥¼ ê°–ëŠ” InetAddress ê°ì²´ ë°˜í™˜
 			
-			System.out.println("·ÎÄÃ È£½ºÆ® ÀÌ¸§ : " + iaddr.getHostName());
-			System.out.println("·ÎÄÃ È£½ºÆ® IP ÁÖ¼Ò : " + iaddr.getHostAddress());
+			System.out.println("ë¡œì»¬ í˜¸ìŠ¤íŠ¸ ì´ë¦„ : " + iaddr.getHostName());
+			System.out.println("ë¡œì»¬ í˜¸ìŠ¤íŠ¸ IP ì£¼ì†Œ : " + iaddr.getHostAddress());
 		}
 		catch(UnknownHostException e) {
 			e.printStackTrace();
@@ -33,7 +33,7 @@ public class InetAddressMain01 {
 		catch(IOException e) {
 			e.printStackTrace();
 		}
-		finally { // ÄÜ¼Ö ÀÔ·Â½Ã¿¡´Â ÀÚ¿ø Á¤¸® »ı·« °¡´É
+		finally { // ì½˜ì†” ì…ë ¥ì‹œì—ëŠ” ìì› ì •ë¦¬ ìƒëµ ê°€ëŠ¥
 			if(br!=null) try {br.close();} catch(IOException e) {}
 		}
 	}

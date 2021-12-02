@@ -1,23 +1,23 @@
 package kr.s01.member;
 
 class Outer3 {
-	// ¸â¹ö º¯¼ö
+	// ë©¤ë²„ ë³€ìˆ˜
 	int value = 10;
-	// ¸â¹ö ³»ºÎ Å¬·¡½º	
+	// ë©¤ë²„ ë‚´ë¶€ í´ë˜ìŠ¤	
 	class Inner3 {
 		int value = 20;
 		public void method1() {
 			int value = 30;
-			System.out.println("Áö¿ª º¯¼ö value : " + value);
-			System.out.println("Inner3ÀÇ ¸â¹ö º¯¼ö value : " + this.value);
-			System.out.println("Outer3ÀÇ ¸â¹ö º¯¼ö value : " + Outer3.this.value);
+			System.out.println("ì§€ì—­ ë³€ìˆ˜ value : " + value);
+			System.out.println("Inner3ì˜ ë©¤ë²„ ë³€ìˆ˜ value : " + this.value);
+			System.out.println("Outer3ì˜ ë©¤ë²„ ë³€ìˆ˜ value : " + Outer3.this.value);
 		}
 	}
 }
 
 public class MemberMain03 {
 	public static void main(String[] args) {
-		Outer3.Inner3 oi = new Outer3().new Inner3(); // °¨½Î°í ÀÖ´Â Å¬·¡½ºÀÇ °´Ã¼¸¦ È£ÃâÇÒ ÀÏÀÌ ¾ø´Ù¸é Outer3 ÂüÁ¶ º¯¼ö¸¦ ¸¸µéÁö ¾Ê¾Æµµ µÊ
+		Outer3.Inner3 oi = new Outer3().new Inner3(); // ê°ì‹¸ê³  ìˆëŠ” í´ë˜ìŠ¤ì˜ ê°ì²´ë¥¼ í˜¸ì¶œí•  ì¼ì´ ì—†ë‹¤ë©´ Outer3 ì°¸ì¡° ë³€ìˆ˜ë¥¼ ë§Œë“¤ì§€ ì•Šì•„ë„ ë¨
 		oi.method1();
 	}
 }

@@ -2,10 +2,10 @@ package kr.s05.wrapper;
 
 public class WrapperMain01 {
 	public static void main(String[] args) {
-		boolean b = true; // ±âº» ÀÚ·áÇü µ¥ÀÌÅÍ
-		Boolean wrap_b = new Boolean(b); // ¸í½ÃÀû °´Ã¼ »ı¼º; deprecatedµÊ
-		Boolean wrap_b2 = b; // ¾Ï½ÃÀû °´Ã¼ »ı¼º
-		System.out.println(wrap_b2); // ÂüÁ¶ ÀÚ·áÇü µ¥ÀÌÅÍ
+		boolean b = true; // ê¸°ë³¸ ìë£Œí˜• ë°ì´í„°
+		Boolean wrap_b = new Boolean(b); // ëª…ì‹œì  ê°ì²´ ìƒì„±; deprecatedë¨
+		Boolean wrap_b2 = b; // ì•”ì‹œì  ê°ì²´ ìƒì„±
+		System.out.println(wrap_b2); // ì°¸ì¡° ìë£Œí˜• ë°ì´í„°
 		
 		Integer wrap_i = new Integer(200);
 		Integer wrap_i2 = 200;

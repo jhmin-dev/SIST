@@ -1,6 +1,6 @@
 public class OperatorMain09 {
 	public static void main(String[] args) {
-		System.out.println("====´ëÀÔ ¿¬»êÀÚ====");
+		System.out.println("====ëŒ€ì… ì—°ì‚°ì====");
 		int a = 5, b = 7;
 		
 		a += b; // a = a + b
@@ -9,7 +9,7 @@ public class OperatorMain09 {
 		a -= b; // a = a - b
 		System.out.println("a = " + a);
 		
-		a *= b; // a = a * b; a&=b´Â a = a & b¿Í °°À¸¸ç, ºñÆ® ´ÜÀ§ÀÇ AND ¿¬»êÀ» ¼öÇàÇÔ
+		a *= b; // a = a * b; a&=bëŠ” a = a & bì™€ ê°™ìœ¼ë©°, ë¹„íŠ¸ ë‹¨ìœ„ì˜ AND ì—°ì‚°ì„ ìˆ˜í–‰í•¨
 		System.out.println("a = " + a);
 		
 		a /= b; // a = a / b

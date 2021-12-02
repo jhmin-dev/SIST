@@ -1,17 +1,17 @@
 package kr.s05.supertest;
-// ºÎ¸ğ Å¬·¡½º
+// ë¶€ëª¨ í´ë˜ìŠ¤
 class Dad {
 	public String getLunch() {
-		return "¹ä";
+		return "ë°¥";
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class Daughter extends Dad {
 	@Override
 	public String getLunch() {
-		return "»§";
+		return "ë¹µ";
 	}
-	// ºÎ¸ğ Å¬·¡½º ¿µ¿ªÀÇ getLunch ¸Ş¼­µå¸¦ È£Ãâ
+	// ë¶€ëª¨ í´ë˜ìŠ¤ ì˜ì—­ì˜ getLunch ë©”ì„œë“œë¥¼ í˜¸ì¶œ
 	public String getRice() {
 		return super.getLunch();
 	}
@@ -20,7 +20,7 @@ class Daughter extends Dad {
 public class SuperMain01 {
 	public static void main(String[] args) {
 		Daughter d  = new Daughter();
-		System.out.println("µşÀº " + d.getLunch() + "À» ¸Ô´Â´Ù.");
-		System.out.println("µşÀº ¿ù¿äÀÏ¿¡´Â " + d.getRice() + "À» ¸Ô´Â´Ù.");
+		System.out.println("ë”¸ì€ " + d.getLunch() + "ì„ ë¨¹ëŠ”ë‹¤.");
+		System.out.println("ë”¸ì€ ì›”ìš”ì¼ì—ëŠ” " + d.getRice() + "ì„ ë¨¹ëŠ”ë‹¤.");
 	}
 }

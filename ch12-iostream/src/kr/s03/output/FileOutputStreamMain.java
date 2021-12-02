@@ -7,11 +7,11 @@ public class FileOutputStreamMain {
 	public static void main(String[] args) {
 		FileOutputStream fos = null;
 		try {
-			fos = new FileOutputStream("fileout.txt"); // »ó´ë °æ·Î; file.txt°¡ ÇÁ·ÎÁ§Æ® ¹Ø¿¡ ÀÖ´Â °ÍÀ¸·Î ÀÎ½Ä
-			// fos = new FileOutputStream("fileout.txt", true); // FileOutputStreamÀÇ ±âº»°ªÀº µ¤¾î¾²±â ¸ğµåÀÌ¸ç, »ı¼ºÀÚ¿¡ µÎ ¹øÂ° ÀÎÀÚ·Î true Àü´Ş½Ã ÀÌ¾î¾²±â ¸ğµå
-			String message = "Hello File! ÆÄÀÏ¿¡ ³»¿ëÀ» Ãâ·ÂÇÕ´Ï´Ù.";
-			fos.write(message.getBytes()); // getByes() ¸Ş¼­µå·Î StringÀ» byte[]·Î º¯È¯ ÈÄ write() ¸Ş¼­µå¿¡ Àü´Ş
-			System.out.println("ÆÄÀÏÀ» »ı¼ºÇÏ°í ³»¿ëÀ» ÆÄÀÏ¿¡ Ãâ·ÂÇÕ´Ï´Ù.");
+			fos = new FileOutputStream("fileout.txt"); // ìƒëŒ€ ê²½ë¡œ; file.txtê°€ í”„ë¡œì íŠ¸ ë°‘ì— ìˆëŠ” ê²ƒìœ¼ë¡œ ì¸ì‹
+			// fos = new FileOutputStream("fileout.txt", true); // FileOutputStreamì˜ ê¸°ë³¸ê°’ì€ ë®ì–´ì“°ê¸° ëª¨ë“œì´ë©°, ìƒì„±ìì— ë‘ ë²ˆì§¸ ì¸ìë¡œ true ì „ë‹¬ì‹œ ì´ì–´ì“°ê¸° ëª¨ë“œ
+			String message = "Hello File! íŒŒì¼ì— ë‚´ìš©ì„ ì¶œë ¥í•©ë‹ˆë‹¤.";
+			fos.write(message.getBytes()); // getByes() ë©”ì„œë“œë¡œ Stringì„ byte[]ë¡œ ë³€í™˜ í›„ write() ë©”ì„œë“œì— ì „ë‹¬
+			System.out.println("íŒŒì¼ì„ ìƒì„±í•˜ê³  ë‚´ìš©ì„ íŒŒì¼ì— ì¶œë ¥í•©ë‹ˆë‹¤.");
 		}
 		catch(IOException e) {
 			e.printStackTrace();

@@ -1,11 +1,11 @@
 package kr.s07.array;
 
 public class Book {
-	// ¸â¹ö º¯¼ö
-	private String category; // ºĞ·ù
-	private String name; // µµ¼­¸í
-	private int price; // °¡°İ
-	private double discount; // ÇÒÀÎÀ²
+	// ë©¤ë²„ ë³€ìˆ˜
+	private String category; // ë¶„ë¥˜
+	private String name; // ë„ì„œëª…
+	private int price; // ê°€ê²©
+	private double discount; // í• ì¸ìœ¨
 	// Getters and Setters
 	public String getCategory() {
 		return category;
@@ -31,7 +31,7 @@ public class Book {
 	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
-	// ¹è¿­¿¡ ³Ö´Â °ÍÀ» Æí¸®ÇÏ°Ô ÇÏ±â À§ÇØ »ı¼ºÀÚ ¸í½Ã
+	// ë°°ì—´ì— ë„£ëŠ” ê²ƒì„ í¸ë¦¬í•˜ê²Œ í•˜ê¸° ìœ„í•´ ìƒì„±ì ëª…ì‹œ
 	public Book() {}
 	public Book(String category, String name, int price, double discount) {
 		this.category = category;

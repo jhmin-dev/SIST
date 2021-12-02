@@ -1,16 +1,16 @@
 package kr.s05.supertest;
-// ºÎ¸ð Å¬·¡½º
+// ë¶€ëª¨ í´ëž˜ìŠ¤
 class People2 {
 	int a;
-	// ºÎ¸ð Å¬·¡½º¿¡ ±âº» »ý¼ºÀÚ°¡ ¾ø°í ÀÎÀÚ°¡ ÀÖ´Â »ý¼ºÀÚ¸¸ Á¤ÀÇµÈ »óÅÂÀÌ±â ¶§¹®¿¡ ÀÚ½Ä Å¬·¡½º¿¡¼­ °´Ã¼¸¦ »ý¼ºÇÒ ¶§´Â ¸í½ÃÀûÀ¸·Î ºÎ¸ð Å¬·¡½ºÀÇ ÀÎÀÚ°¡ ÀÖ´Â »ý¼ºÀÚ¸¦ È£ÃâÇØ¾ß °´Ã¼ »ý¼ºÀÌ °¡´ÉÇÔ
+	// ë¶€ëª¨ í´ëž˜ìŠ¤ì— ê¸°ë³¸ ìƒì„±ìžê°€ ì—†ê³  ì¸ìžê°€ ìžˆëŠ” ìƒì„±ìžë§Œ ì •ì˜ëœ ìƒíƒœì´ê¸° ë•Œë¬¸ì— ìžì‹ í´ëž˜ìŠ¤ì—ì„œ ê°ì²´ë¥¼ ìƒì„±í•  ë•ŒëŠ” ëª…ì‹œì ìœ¼ë¡œ ë¶€ëª¨ í´ëž˜ìŠ¤ì˜ ì¸ìžê°€ ìžˆëŠ” ìƒì„±ìžë¥¼ í˜¸ì¶œí•´ì•¼ ê°ì²´ ìƒì„±ì´ ê°€ëŠ¥í•¨
 	public People2(int a) {
 		this.a = a;
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
-class Student2 extends People2 { // »ý¼ºÀÚ¸¦ ¸í½ÃÇÏÁö ¾ÊÀ» °æ¿ì, ºÎ¸ð Å¬·¡½º¿¡ ±âº» »ý¼ºÀÚ°¡ ¾ø±â ¶§¹®¿¡ ¿À·ù ¹ß»ý
+// ìžì‹ í´ëž˜ìŠ¤
+class Student2 extends People2 { // ìƒì„±ìžë¥¼ ëª…ì‹œí•˜ì§€ ì•Šì„ ê²½ìš°, ë¶€ëª¨ í´ëž˜ìŠ¤ì— ê¸°ë³¸ ìƒì„±ìžê°€ ì—†ê¸° ë•Œë¬¸ì— ì˜¤ë¥˜ ë°œìƒ
 	public Student2() {
-		super(100); // ºÎ¸ð Å¬·¡½ºÀÇ ÀÎÀÚ ÀÚ·áÇüÀÌ intÀÎ »ý¼ºÀÚ¸¦ È£Ãâ 
+		super(100); // ë¶€ëª¨ í´ëž˜ìŠ¤ì˜ ì¸ìž ìžë£Œí˜•ì´ intì¸ ìƒì„±ìžë¥¼ í˜¸ì¶œ 
 	}
 }
 

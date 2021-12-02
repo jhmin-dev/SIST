@@ -2,26 +2,26 @@ package kr.s01.string;
 
 public class StringBufferMain {
 	public static void main(String[] args) {
-		StringBuffer sb = new StringBuffer("¿©¸§ ´ş´Ù!!");
+		StringBuffer sb = new StringBuffer("ì—¬ë¦„ ë¥ë‹¤!!");
 		System.out.println("1 : " + sb);
 		
-		sb.insert(2, 'ÀÌ'); // insert() ¸Ş¼­µå¸¦ ÀÌ¿ëÇØ ¿øÇÏ´Â ÀÎµ¦½º¿¡ ¿øÇÏ´Â ¹®ÀÚ¸¦ »ğÀÔ; ÀÎµ¦½º º¯µ¿ ¹ß»ı
+		sb.insert(2, 'ì´'); // insert() ë©”ì„œë“œë¥¼ ì´ìš©í•´ ì›í•˜ëŠ” ì¸ë±ìŠ¤ì— ì›í•˜ëŠ” ë¬¸ìë¥¼ ì‚½ì…; ì¸ë±ìŠ¤ ë³€ë™ ë°œìƒ
 		System.out.println("2 : " + sb);
 		
-		sb.append("°¡À»Àº "); // append() ¸Ş¼­µå¸¦ ÀÌ¿ëÇØ ±âÁ¸ ¹®ÀÚ¿­ ¸¶Áö¸·¿¡ ¿øÇÏ´Â ¹®ÀÚ¿­À» ¿¬°á
+		sb.append("ê°€ì„ì€ "); // append() ë©”ì„œë“œë¥¼ ì´ìš©í•´ ê¸°ì¡´ ë¬¸ìì—´ ë§ˆì§€ë§‰ì— ì›í•˜ëŠ” ë¬¸ìì—´ì„ ì—°ê²°
 		System.out.println("3 : " + sb);
-		sb.append("½Ã¿øÇÏ´Ù!");
+		sb.append("ì‹œì›í•˜ë‹¤!");
 		System.out.println("4 : " + sb);
 
-		sb.replace(0, 3, "¿©Çà°¡ÀÚ!!"); // replace() ¸Ş¼­µå¸¦ ÀÌ¿ëÇØ ½ÃÀÛ ÀÎµ¦½ººÎÅÍ ³¡ ÀÎµ¦½º Á÷Àü±îÁöÀÇ ¹®ÀÚ¿­À» ¿øÇÏ´Â ¹®ÀÚ¿­·Î ´ëÃ¼
+		sb.replace(0, 3, "ì—¬í–‰ê°€ì!!"); // replace() ë©”ì„œë“œë¥¼ ì´ìš©í•´ ì‹œì‘ ì¸ë±ìŠ¤ë¶€í„° ë ì¸ë±ìŠ¤ ì§ì „ê¹Œì§€ì˜ ë¬¸ìì—´ì„ ì›í•˜ëŠ” ë¬¸ìì—´ë¡œ ëŒ€ì²´
 		System.out.println("5 : " + sb);
 		
-		sb.deleteCharAt(0); // deleteCharAt() ¸Ş¼­µå¸¦ ÀÌ¿ëÇØ ÁöÁ¤ÇÑ ÀÎµ¦½ºÀÇ ¹®ÀÚ¸¦ »èÁ¦; ÀÎµ¦½º º¯µ¿ ¹ß»ı
+		sb.deleteCharAt(0); // deleteCharAt() ë©”ì„œë“œë¥¼ ì´ìš©í•´ ì§€ì •í•œ ì¸ë±ìŠ¤ì˜ ë¬¸ìë¥¼ ì‚­ì œ; ì¸ë±ìŠ¤ ë³€ë™ ë°œìƒ
 		System.out.println("6 : " + sb);
-		sb.delete(0, 3); // delete() ¸Ş¼­µå¸¦ ÀÌ¿ëÇØ ½ÃÀÛ ÀÎµ¦½ººÎÅÍ ³¡ ÀÎµ¦½º Á÷Àü±îÁöÀÇ ¹®ÀÚ¿­À» »èÁ¦; ÀÎµ¦½º º¯µ¿ ¹ß»ı
+		sb.delete(0, 3); // delete() ë©”ì„œë“œë¥¼ ì´ìš©í•´ ì‹œì‘ ì¸ë±ìŠ¤ë¶€í„° ë ì¸ë±ìŠ¤ ì§ì „ê¹Œì§€ì˜ ë¬¸ìì—´ì„ ì‚­ì œ; ì¸ë±ìŠ¤ ë³€ë™ ë°œìƒ
 		System.out.println("7 : " + sb);
 		
-		String str = sb.toString(); // StringBuffer¿¡¼­ StringÀ¸·Î º¯È¯; µÎ Å¬·¡½º´Â »ó¼Ó °ü°è°¡ ¾Æ´Ï±â ¶§¹®¿¡ toString() ¸Ş¼­µå¸¦ ÀÌ¿ë
+		String str = sb.toString(); // StringBufferì—ì„œ Stringìœ¼ë¡œ ë³€í™˜; ë‘ í´ë˜ìŠ¤ëŠ” ìƒì† ê´€ê³„ê°€ ì•„ë‹ˆê¸° ë•Œë¬¸ì— toString() ë©”ì„œë“œë¥¼ ì´ìš©
 		System.out.println(str);
 	}
 }

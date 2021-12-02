@@ -2,13 +2,13 @@ public class ArrayMain04 {
 	public static void main(String[] args) {
 		int[] array = {10, 20, 30, 40, 50};
 		
-		// ÀÏ¹İ for¹®
+		// ì¼ë°˜ forë¬¸
 		for(int i=0;i<array.length;i++) {
 			System.out.println("array[" + i + "] : " + array[i]);
 		}
 		
-		// È®Àå for¹®(=°³¼±µÈ ·çÇÁ)
-		for(int num : array) { // ¹è¿­ arrayÀÇ ¿ä¼Ò¸¦ º¯¼ö num¿¡ ÀúÀå; ÀÎµ¦½º¸¦ »ç¿ëÇÏÁö ¾Ê°í Á÷Á¢ ¹è¿­ÀÇ °¢ µ¥ÀÌÅÍ¿¡ Á¢±Ù
+		// í™•ì¥ forë¬¸(=ê°œì„ ëœ ë£¨í”„)
+		for(int num : array) { // ë°°ì—´ arrayì˜ ìš”ì†Œë¥¼ ë³€ìˆ˜ numì— ì €ì¥; ì¸ë±ìŠ¤ë¥¼ ì‚¬ìš©í•˜ì§€ ì•Šê³  ì§ì ‘ ë°°ì—´ì˜ ê° ë°ì´í„°ì— ì ‘ê·¼
 			System.out.print(num + "\t");
 		}
 	}

@@ -3,10 +3,10 @@ package kr.s05.statictest;
 public class StaticMain01 {
 	public static void main(String[] args) {
 		StaticCount sc1 = new StaticCount();
-		System.out.println("c : " + sc1.c + ", count : " + StaticCount.count); // static º¯¼ö´Â °´Ã¼¿¡ Æ÷ÇÔµÇ¾î ÀÖÁö ¾ÊÀ¸¹Ç·Î, È£Ãâ½Ã °´Ã¼°¡ ¾Æ´Ï¶ó Å¬·¡½º¸¦ ÅëÇØ Á¢±Ù
+		System.out.println("c : " + sc1.c + ", count : " + StaticCount.count); // static ë³€ìˆ˜ëŠ” ê°ì²´ì— í¬í•¨ë˜ì–´ ìˆì§€ ì•Šìœ¼ë¯€ë¡œ, í˜¸ì¶œì‹œ ê°ì²´ê°€ ì•„ë‹ˆë¼ í´ë˜ìŠ¤ë¥¼ í†µí•´ ì ‘ê·¼
 		StaticCount sc2 = new StaticCount();
-		System.out.println("c : " + sc2.c + ", count : " + sc2.count); // static º¯¼ö¸¦ °´Ã¼¸¦ ÅëÇØ Á¢±ÙÇÒ °æ¿ì ¿À·ù°¡ ¹ß»ıÇÏÁö´Â ¾ÊÁö¸¸, Á¤»óÀûÀ¸·Î È£ÃâÇÏ´Â ¹æ¹ıÀÌ ¾Æ´Ô
+		System.out.println("c : " + sc2.c + ", count : " + sc2.count); // static ë³€ìˆ˜ë¥¼ ê°ì²´ë¥¼ í†µí•´ ì ‘ê·¼í•  ê²½ìš° ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì§€ëŠ” ì•Šì§€ë§Œ, ì •ìƒì ìœ¼ë¡œ í˜¸ì¶œí•˜ëŠ” ë°©ë²•ì´ ì•„ë‹˜
 		StaticCount sc3 = new StaticCount();
-		System.out.println("c : " + sc3.c + ", count : " + StaticCount.count); // °´Ã¼ÀÇ ¸â¹ö º¯¼ö c´Â °´Ã¼°¡ »õ·Î »ı¼ºµÉ ¶§¸¶´Ù ÃÊ±â°ª 0À¸·Î »õ·Î ¸¸µé¾îÁö°í »ı¼ºÀÚ¿¡ ÀÇÇØ °ªÀÌ 1ÀÌ µÊ; static º¯¼ö count´Â ÇÑ ¹ø¸¸ ¸¸µé¾îÁö°í ±× º¯¼ö¸¦ °è¼Ó °¡Á®´Ù ¾²±â ¶§¹®¿¡ »ı¼ºÀÚ°¡ ½ÇÇàµÉ ¶§¸¶´Ù 1¾¿ °ªÀÌ Áõ°¡ÇÏ°Ô µÊ
+		System.out.println("c : " + sc3.c + ", count : " + StaticCount.count); // ê°ì²´ì˜ ë©¤ë²„ ë³€ìˆ˜ cëŠ” ê°ì²´ê°€ ìƒˆë¡œ ìƒì„±ë  ë•Œë§ˆë‹¤ ì´ˆê¸°ê°’ 0ìœ¼ë¡œ ìƒˆë¡œ ë§Œë“¤ì–´ì§€ê³  ìƒì„±ìì— ì˜í•´ ê°’ì´ 1ì´ ë¨; static ë³€ìˆ˜ countëŠ” í•œ ë²ˆë§Œ ë§Œë“¤ì–´ì§€ê³  ê·¸ ë³€ìˆ˜ë¥¼ ê³„ì† ê°€ì ¸ë‹¤ ì“°ê¸° ë•Œë¬¸ì— ìƒì„±ìê°€ ì‹¤í–‰ë  ë•Œë§ˆë‹¤ 1ì”© ê°’ì´ ì¦ê°€í•˜ê²Œ ë¨
 	}
 }

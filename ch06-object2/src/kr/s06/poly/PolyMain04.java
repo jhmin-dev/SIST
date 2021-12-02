@@ -1,24 +1,24 @@
 package kr.s06.poly;
-// ºÎ¸ğ Å¬·¡½º
+// ë¶€ëª¨ í´ë˜ìŠ¤
 class Car {
 	public void drive() {
-		System.out.println("ÁÖÇà");
+		System.out.println("ì£¼í–‰");
 	}
 	public void stop() {
-		System.out.println("¸ØÃã");
+		System.out.println("ë©ˆì¶¤");
 	}
 	public void getPower() {
-		System.out.println("ÀÏ¹İ ÀÚµ¿Â÷");
+		System.out.println("ì¼ë°˜ ìë™ì°¨");
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class FireEngine extends Car {
 	public void getWater() {
-		System.out.println("¹° »Ñ¸®±â");
+		System.out.println("ë¬¼ ë¿Œë¦¬ê¸°");
 	}
 	@Override
 	public void getPower() {
-		System.out.println("¼Ò¹æ ¼³ºñ¸¦ °®Ãá ÀÚµ¿Â÷");
+		System.out.println("ì†Œë°© ì„¤ë¹„ë¥¼ ê°–ì¶˜ ìë™ì°¨");
 	}
 }
 
@@ -32,10 +32,10 @@ public class PolyMain04 {
 		
 		System.out.println();
 		
-		Car ca = new FireEngine(); // ºÎ¸ğ Å¬·¡½º Å¸ÀÔÀ¸·Î FireEngine °´Ã¼¸¦ »ı¼º
+		Car ca = new FireEngine(); // ë¶€ëª¨ í´ë˜ìŠ¤ íƒ€ì…ìœ¼ë¡œ FireEngine ê°ì²´ë¥¼ ìƒì„±
 		ca.drive();
 		ca.stop();
-		// ca.getWater(); // ¸Ş¸ğ¸®¿¡´Â ¸¸µé¾îÁ® ÀÖÁö¸¸, Car Å¸ÀÔÀÌ¶ó È£Ãâ ¹üÀ§°¡ Á¦ÇÑµÇ¾î ÀÖ¾î È£Ãâ ºÒ°¡
-		ca.getPower(); // Car Å¸ÀÔÀÌ¶óµµ ÀçÁ¤ÀÇµÈ ¸Ş¼­µå´Â FireEngineÀÇ ¸Ş¼­µå°¡ È£ÃâµÊ
+		// ca.getWater(); // ë©”ëª¨ë¦¬ì—ëŠ” ë§Œë“¤ì–´ì ¸ ìˆì§€ë§Œ, Car íƒ€ì…ì´ë¼ í˜¸ì¶œ ë²”ìœ„ê°€ ì œí•œë˜ì–´ ìˆì–´ í˜¸ì¶œ ë¶ˆê°€
+		ca.getPower(); // Car íƒ€ì…ì´ë¼ë„ ì¬ì •ì˜ëœ ë©”ì„œë“œëŠ” FireEngineì˜ ë©”ì„œë“œê°€ í˜¸ì¶œë¨
 	}
 }

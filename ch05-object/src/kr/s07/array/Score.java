@@ -1,14 +1,14 @@
 package kr.s07.array;
 
-public class Score { // Å¬·¡½º¸íÀ» ´ë¹®ÀÚ·Î ½ÃÀÛÇØ¾ß º¯¼ö¸í°ú Çò°¥¸®Áö ¾ÊÀ½
+public class Score { // í´ë˜ìŠ¤ëª…ì„ ëŒ€ë¬¸ìë¡œ ì‹œì‘í•´ì•¼ ë³€ìˆ˜ëª…ê³¼ í—·ê°ˆë¦¬ì§€ ì•ŠìŒ
 	/*
-	 * [½Ç½À]
-	 * ¸â¹ö º¯¼ö ÀÌ¸§(name), ±¹¾î(korean), ¿µ¾î(english), ¼öÇĞ(math) »ı¼º
-	 * ¹İÈ¯ÇüÀÌ intÀÎ ÃÑÁ¡À» ±¸ÇÏ´Â ¸Ş¼­µå(makeSum), Æò±ÕÀ» ±¸ÇÏ´Â ¸Ş¼­µå(makeAvg) »ı¼º
-	 * ¹İÈ¯ÇüÀÌ StringÀÎ µî±ŞÀ» ±¸ÇÏ´Â ¸Ş¼­µå(makeGrade) »ı¼º
-	 * ÀÎÀÚ°¡ ¾ø´Â »ı¼ºÀÚ, ÀÎÀÚ°¡ ÀÖ´Â »ı¼ºÀÚ ¸í½Ã
+	 * [ì‹¤ìŠµ]
+	 * ë©¤ë²„ ë³€ìˆ˜ ì´ë¦„(name), êµ­ì–´(korean), ì˜ì–´(english), ìˆ˜í•™(math) ìƒì„±
+	 * ë°˜í™˜í˜•ì´ intì¸ ì´ì ì„ êµ¬í•˜ëŠ” ë©”ì„œë“œ(makeSum), í‰ê· ì„ êµ¬í•˜ëŠ” ë©”ì„œë“œ(makeAvg) ìƒì„±
+	 * ë°˜í™˜í˜•ì´ Stringì¸ ë“±ê¸‰ì„ êµ¬í•˜ëŠ” ë©”ì„œë“œ(makeGrade) ìƒì„±
+	 * ì¸ìê°€ ì—†ëŠ” ìƒì„±ì, ì¸ìê°€ ìˆëŠ” ìƒì„±ì ëª…ì‹œ
 	 */
-	// Àº´ĞÈ­
+	// ì€ë‹‰í™”
 	private String name;
 	private int korean;
 	private int english;
@@ -38,8 +38,8 @@ public class Score { // Å¬·¡½º¸íÀ» ´ë¹®ÀÚ·Î ½ÃÀÛÇØ¾ß º¯¼ö¸í°ú Çò°¥¸®Áö ¾ÊÀ½
 	public void setMath(int math) {
 		this.math = math;
 	}
-	// ÃÑÁ¡, Æò±Õ, µî±ŞÀ» ±¸ÇÏ´Â ¸Ş¼­µå
-	public int makeSum() { // ¸Ş¼­µå´Â µ¿ÀÛÀ» ÀÇ¹ÌÇÏ¹Ç·Î ¸Ş¼­µå¸íÀº µ¿»çÇüÀ» »ç¿ë
+	// ì´ì , í‰ê· , ë“±ê¸‰ì„ êµ¬í•˜ëŠ” ë©”ì„œë“œ
+	public int makeSum() { // ë©”ì„œë“œëŠ” ë™ì‘ì„ ì˜ë¯¸í•˜ë¯€ë¡œ ë©”ì„œë“œëª…ì€ ë™ì‚¬í˜•ì„ ì‚¬ìš©
 		return korean+english+math;
 	}
 	public int makeAvg() {
@@ -62,7 +62,7 @@ public class Score { // Å¬·¡½º¸íÀ» ´ë¹®ÀÚ·Î ½ÃÀÛÇØ¾ß º¯¼ö¸í°ú Çò°¥¸®Áö ¾ÊÀ½
 		}
 		return grade;
 	}
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	Score(){}
 	Score(String name, int korean, int english, int math){
 		this.name=name;

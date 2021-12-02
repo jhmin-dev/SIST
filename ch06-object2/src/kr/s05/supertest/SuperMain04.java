@@ -1,5 +1,5 @@
 package kr.s05.supertest;
-// ºÎ¸ğ Å¬·¡½º
+// ë¶€ëª¨ í´ë˜ìŠ¤
 class Point {
 	int x;
 	int y;
@@ -11,11 +11,11 @@ class Point {
 		return "x : " + x + ", y : " + y;
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class Point3D extends Point {
 	int z;
 	public Point3D() {
-		super(10, 20); // ºÎ¸ğ Å¬·¡½º¿¡ ±âº» »ı¼ºÀÚ°¡ ¾øÀ¸¹Ç·Î, ÀÎÀÚ°¡ ÀÖ´Â »ı¼ºÀÚ¸¦ È£ÃâÇØ¾ß ÇÔ
+		super(10, 20); // ë¶€ëª¨ í´ë˜ìŠ¤ì— ê¸°ë³¸ ìƒì„±ìê°€ ì—†ìœ¼ë¯€ë¡œ, ì¸ìê°€ ìˆëŠ” ìƒì„±ìë¥¼ í˜¸ì¶œí•´ì•¼ í•¨
 		z = 7;
 	}
 	public Point3D(int x, int y, int z) {

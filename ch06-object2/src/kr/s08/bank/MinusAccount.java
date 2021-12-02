@@ -2,12 +2,12 @@ package kr.s08.bank;
 
 public class MinusAccount extends BankAccount {
 	/*
-	 * BankAccount »ó¼Ó
-	 * ¸¶ÀÌ³Ê½º ÇÑµµ(minusLimit)
-	 * ÇÑµµ¸¦ Àû¿ëÇÑ Ãâ±İÇÏ±â(withdraw) ÀçÁ¤ÀÇ
-	 * ¸¶ÀÌ³Ê½º ÇÑµµ Á¤º¸°¡ Æ÷ÇÔµÈ °èÁÂ Á¤º¸ º¸±â(printAccount) ÀçÁ¤ÀÇ
+	 * BankAccount ìƒì†
+	 * ë§ˆì´ë„ˆìŠ¤ í•œë„(minusLimit)
+	 * í•œë„ë¥¼ ì ìš©í•œ ì¶œê¸ˆí•˜ê¸°(withdraw) ì¬ì •ì˜
+	 * ë§ˆì´ë„ˆìŠ¤ í•œë„ ì •ë³´ê°€ í¬í•¨ëœ ê³„ì¢Œ ì •ë³´ ë³´ê¸°(printAccount) ì¬ì •ì˜
 	 */
-	private int minusLimit; // printAccount°¡ get ¸Ş¼­µå ¿ªÇÒÀ» ´ë½ÅÇÏ´Ï º°µµ·Î Getter & Setter ¸¸µéÁö ¾Ê¾Æµµ µÊ
+	private int minusLimit; // printAccountê°€ get ë©”ì„œë“œ ì—­í• ì„ ëŒ€ì‹ í•˜ë‹ˆ ë³„ë„ë¡œ Getter & Setter ë§Œë“¤ì§€ ì•Šì•„ë„ ë¨
 
 	public MinusAccount(String number, String name, int balance, int minusLimit) {
 		super(number, name, balance);
@@ -22,17 +22,17 @@ public class MinusAccount extends BankAccount {
 	@Override public void withdraw(int money) {
 		if(balance+minusLimit>=money) {
 			balance-=money;
-			System.out.printf("%,d¿øÀ» Ãâ±İÇÏ¿´½À´Ï´Ù.\n", money);
+			System.out.printf("%,dì›ì„ ì¶œê¸ˆí•˜ì˜€ìŠµë‹ˆë‹¤.\n", money);
 			return;
 		}
-		System.out.println("¸¶ÀÌ³Ê½º ÇÑµµ ÃÊ°ú·Î Ãâ±İµÇÁö ¾Ê½À´Ï´Ù.");
+		System.out.println("ë§ˆì´ë„ˆìŠ¤ í•œë„ ì´ˆê³¼ë¡œ ì¶œê¸ˆë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 	}
 
 	@Override public void printAccount() {
-		System.out.println("°èÁÂ ¹øÈ£ : ¸¶ÀÌ³Ê½º "+number);
-		System.out.println("¿¹±İÁÖ : "+name);
-		System.out.printf("°èÁÂ ÀÜ¾× : %,d¿ø\n", balance);
-		System.out.printf("¸¶ÀÌ³Ê½º ÇÑµµ : %,d¿ø\n", minusLimit);
+		System.out.println("ê³„ì¢Œ ë²ˆí˜¸ : ë§ˆì´ë„ˆìŠ¤ "+number);
+		System.out.println("ì˜ˆê¸ˆì£¼ : "+name);
+		System.out.printf("ê³„ì¢Œ ì”ì•¡ : %,dì›\n", balance);
+		System.out.printf("ë§ˆì´ë„ˆìŠ¤ í•œë„ : %,dì›\n", minusLimit);
 		System.out.println();
 	}
 }

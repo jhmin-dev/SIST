@@ -1,21 +1,21 @@
 public class SwitchMain01 {
 	public static void main(String[] args) {
 		java.util.Scanner input = new java.util.Scanner(System.in);
-		System.out.print("Á¤¼öÇü µ¥ÀÌÅÍ ÀÔ·Â : ");
+		System.out.print("ì •ìˆ˜í˜• ë°ì´í„° ì…ë ¥ : ");
 		int a = input.nextInt();
 		
-		switch(a) { // intÀÎ a¸¦ ÀÎÀÚ°ªÀ¸·Î »ç¿ë
+		switch(a) { // intì¸ aë¥¼ ì¸ìê°’ìœ¼ë¡œ ì‚¬ìš©
 		case 1:
-			System.out.println("1 ÀÔ·Â");
-			break; // {} ºí·° Å»Ãâ; »ı·«½Ã ´ÙÀ½ ÄÉÀÌ½ºÀÇ ¼öÇà¹®±îÁö ½ÇÇàÇÔ
+			System.out.println("1 ì…ë ¥");
+			break; // {} ë¸”ëŸ­ íƒˆì¶œ; ìƒëµì‹œ ë‹¤ìŒ ì¼€ì´ìŠ¤ì˜ ìˆ˜í–‰ë¬¸ê¹Œì§€ ì‹¤í–‰í•¨
 		case 2:
-			System.out.println("2 ÀÔ·Â");
+			System.out.println("2 ì…ë ¥");
 			break;
 		case 3:
-			System.out.println("3 ÀÔ·Â");
+			System.out.println("3 ì…ë ¥");
 			break;
-		default: // if¹®¿¡¼­ÀÇ else ¿ªÇÒ; ¸¶Áö¸·ÀÌ¹Ç·Î break »ı·« °¡´É
-			System.out.println("1, 2, 3ÀÌ ¾Æ´Ñ ¼ıÀÚ°¡ ÀÔ·ÂµÊ");
+		default: // ifë¬¸ì—ì„œì˜ else ì—­í• ; ë§ˆì§€ë§‰ì´ë¯€ë¡œ break ìƒëµ ê°€ëŠ¥
+			System.out.println("1, 2, 3ì´ ì•„ë‹Œ ìˆ«ìê°€ ì…ë ¥ë¨");
 		}
 		
 		input.close();

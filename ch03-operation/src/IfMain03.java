@@ -2,15 +2,15 @@ public class IfMain03 {
 	public static void main(String[] args) {
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		
-		System.out.print("Á¤¼ö ÇÑ °³ ÀÔ·Â : ");
+		System.out.print("ì •ìˆ˜ í•œ ê°œ ì…ë ¥ : ");
 		int a = input.nextInt();
 		
 		if(a>0)
-			System.out.println(a + "´Â ¾ç¼öÀÔ´Ï´Ù.");
+			System.out.println(a + "ëŠ” ì–‘ìˆ˜ì…ë‹ˆë‹¤.");
 		else if(a<0)
-			System.out.println(a + "´Â À½¼öÀÔ´Ï´Ù.");
+			System.out.println(a + "ëŠ” ìŒìˆ˜ì…ë‹ˆë‹¤.");
 		else
-			System.out.println("0ÀÔ´Ï´Ù.");
+			System.out.println("0ì…ë‹ˆë‹¤.");
 		
 		input.close();
 	}

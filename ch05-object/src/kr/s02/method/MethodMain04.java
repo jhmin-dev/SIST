@@ -2,21 +2,21 @@ package kr.s02.method;
 
 import java.util.Scanner;
 /*
- * [½Ç½À] 
+ * [ì‹¤ìŠµ] 
  * Account
- * 1) ¸â¹ö º¯¼ö : °èÁÂ ¹øÈ£(account_num), ¿¹±İÁÖ(name), ÀÜ°í(balance)
- * 2) ¸â¹ö ¸Ş¼­µå : 
- * 1. ¿¹±İÇÏ±â(deposit): balance °ª ´©Àû ÈÄ, ÀÔ±İÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù. Ãâ·Â
- * 2. Ãâ±İÇÏ±â(withdraw): balance °ª Â÷°¨ ÈÄ, Ãâ±İÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù. Ãâ·Â
- * 3. °èÁÂÁ¤º¸(printAccount): °èÁÂ ¹øÈ£, ¿¹±İÁÖ, ÀÜ°í Ãâ·Â
+ * 1) ë©¤ë²„ ë³€ìˆ˜ : ê³„ì¢Œ ë²ˆí˜¸(account_num), ì˜ˆê¸ˆì£¼(name), ì”ê³ (balance)
+ * 2) ë©¤ë²„ ë©”ì„œë“œ : 
+ * 1. ì˜ˆê¸ˆí•˜ê¸°(deposit): balance ê°’ ëˆ„ì  í›„, ì…ê¸ˆì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤. ì¶œë ¥
+ * 2. ì¶œê¸ˆí•˜ê¸°(withdraw): balance ê°’ ì°¨ê° í›„, ì¶œê¸ˆì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤. ì¶œë ¥
+ * 3. ê³„ì¢Œì •ë³´(printAccount): ê³„ì¢Œ ë²ˆí˜¸, ì˜ˆê¸ˆì£¼, ì”ê³  ì¶œë ¥
  * MethodMain04
- * 1) Account »ı¼º
- * 2) °èÁÂ ±âº» Á¤º¸ ÀÔ·Â: °èÁÂ ¹øÈ£, ¿¹±İÁÖ, ÀÜ°í
- * 3) °èÁÂ Á¤º¸ Ãâ·Â
- * 4) ÀÔ±İÇÏ±â
- * 5) °èÁÂ Á¤º¸ Ãâ·Â
- * 6) Ãâ±İÇÏ±â
- * 7) °èÁÂ Á¤º¸ Ãâ·Â
+ * 1) Account ìƒì„±
+ * 2) ê³„ì¢Œ ê¸°ë³¸ ì •ë³´ ì…ë ¥: ê³„ì¢Œ ë²ˆí˜¸, ì˜ˆê¸ˆì£¼, ì”ê³ 
+ * 3) ê³„ì¢Œ ì •ë³´ ì¶œë ¥
+ * 4) ì…ê¸ˆí•˜ê¸°
+ * 5) ê³„ì¢Œ ì •ë³´ ì¶œë ¥
+ * 6) ì¶œê¸ˆí•˜ê¸°
+ * 7) ê³„ì¢Œ ì •ë³´ ì¶œë ¥
  */
 class Account {
 	String account_num, name;
@@ -24,17 +24,17 @@ class Account {
 	
 	public void deposit(int n) {
 		balance+=n;
-		System.out.println("ÀÔ±İÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+		System.out.println("ì…ê¸ˆì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 	public void withdraw(int n) {
 		balance-=n;
-		System.out.println("Ãâ±İÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+		System.out.println("ì¶œê¸ˆì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 	public void printAccount() {
-		System.out.println("====°èÁÂ Á¤º¸====");
-		System.out.println("°èÁÂ ¹øÈ£ : "+account_num);
-		System.out.println("¿¹±İÁÖ : "+name);
-		System.out.printf("ÀÜ°í : %,d¿ø\n", balance);
+		System.out.println("====ê³„ì¢Œ ì •ë³´====");
+		System.out.println("ê³„ì¢Œ ë²ˆí˜¸ : "+account_num);
+		System.out.println("ì˜ˆê¸ˆì£¼ : "+name);
+		System.out.printf("ì”ê³  : %,dì›\n", balance);
 	}
 }
 
@@ -43,50 +43,50 @@ public class MethodMain04 {
 		Account bank=new Account();
 		Scanner input=new Scanner(System.in);
 		
-		System.out.println("°èÁÂ ±âº» Á¤º¸¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		System.out.print("°èÁÂ¹øÈ£ > ");
-		bank.account_num=input.nextLine(); // ÇÑ ÁÙ ÀüÃ¼¸¦ ÀÔ·Â¹Ş´Â ¸Ş¼­µå
-		System.out.print("¿¹±İÁÖ > ");
-		bank.name=input.next(); // °ø¹é Àü±îÁö¸¦ ÀÔ·Â¹Ş´Â ¸Ş¼­µå
-		System.out.print("ÀÜ°í > ");
+		System.out.println("ê³„ì¢Œ ê¸°ë³¸ ì •ë³´ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+		System.out.print("ê³„ì¢Œë²ˆí˜¸ > ");
+		bank.account_num=input.nextLine(); // í•œ ì¤„ ì „ì²´ë¥¼ ì…ë ¥ë°›ëŠ” ë©”ì„œë“œ
+		System.out.print("ì˜ˆê¸ˆì£¼ > ");
+		bank.name=input.next(); // ê³µë°± ì „ê¹Œì§€ë¥¼ ì…ë ¥ë°›ëŠ” ë©”ì„œë“œ
+		System.out.print("ì”ê³  > ");
 		bank.balance=input.nextInt();
 		/*
 		bank.printAccount();
 
-		System.out.println("====ÀÔ±İ====");
-		System.out.print("ÀÔ±İÇÒ ±İ¾×À» ÀÔ·ÂÇÏ¼¼¿ä > ");
+		System.out.println("====ì…ê¸ˆ====");
+		System.out.print("ì…ê¸ˆí•  ê¸ˆì•¡ì„ ì…ë ¥í•˜ì„¸ìš” > ");
 		bank.deposit(input.nextInt());
 		bank.printAccount();
 		
-		System.out.println("====Ãâ±İ====");
-		System.out.print("Ãâ±İÇÒ ±İ¾×À» ÀÔ·ÂÇÏ¼¼¿ä > ");
+		System.out.println("====ì¶œê¸ˆ====");
+		System.out.print("ì¶œê¸ˆí•  ê¸ˆì•¡ì„ ì…ë ¥í•˜ì„¸ìš” > ");
 		bank.withdraw(input.nextInt());
 		bank.printAccount();
 		*/
-		while(true) { // ¸Ş´º ¸¸µé±â; ±âº» Á¤º¸´Â while¹® ¹Û¿¡¼­ ¸ÕÀú ÀÔ·ÂÇØ¾ß ÇÔ
+		while(true) { // ë©”ë‰´ ë§Œë“¤ê¸°; ê¸°ë³¸ ì •ë³´ëŠ” whileë¬¸ ë°–ì—ì„œ ë¨¼ì € ì…ë ¥í•´ì•¼ í•¨
 			System.out.println("========");
-			System.out.println("1. ¿¹±İ|2. Ãâ±İ|3. ÀÜ°í|4. Á¾·á");
+			System.out.println("1. ì˜ˆê¸ˆ|2. ì¶œê¸ˆ|3. ì”ê³ |4. ì¢…ë£Œ");
 			System.out.println("========");
 			
-			System.out.print("¸Ş´º ¼±ÅÃ > ");
+			System.out.print("ë©”ë‰´ ì„ íƒ > ");
 			int num=input.nextInt();
 			if(num==1) {
-				System.out.print("¿¹±İ¾× > ");
+				System.out.print("ì˜ˆê¸ˆì•¡ > ");
 				bank.deposit(input.nextInt());
 			}
 			else if(num==2) {
-				System.out.print("Ãâ±İ¾× > ");
+				System.out.print("ì¶œê¸ˆì•¡ > ");
 				bank.withdraw(input.nextInt());
 			}
 			else if(num==3) {
 				bank.printAccount();
 			}
 			else if(num==4) {
-				System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+				System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 				break;
 			}
 			else {
-				System.out.println("¸Ş´º¸¦ Àß¸ø ¼±ÅÃÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ë©”ë‰´ë¥¼ ì˜ëª» ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 		}
 		input.close();

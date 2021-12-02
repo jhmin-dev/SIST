@@ -2,6 +2,6 @@ package kr.s01.p1;
 
 public class PackOne {
 	public void study() {
-		System.out.println("°øºÎ¸¦ ¿­½ÉÈ÷ ÇÕ´Ï´Ù!!");
+		System.out.println("ê³µë¶€ë¥¼ ì—´ì‹¬ížˆ í•©ë‹ˆë‹¤!!");
 	}
 }

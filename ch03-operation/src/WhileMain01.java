@@ -1,8 +1,8 @@
 public class WhileMain01 {
 	public static void main(String[] args) {
-		int i=1; // ÃÊ±â½Ä ÁöÁ¤
-		while(i<=10) { // Á¶°Ç½Ä ÁöÁ¤
-			System.out.println(i++); // Áõ°¨½Ä ÁöÁ¤; Áõ°¨½ÄÀ» ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é ¹«ÇÑ ·çÇÁ°¡ ¹ß»ı
+		int i=1; // ì´ˆê¸°ì‹ ì§€ì •
+		while(i<=10) { // ì¡°ê±´ì‹ ì§€ì •
+			System.out.println(i++); // ì¦ê°ì‹ ì§€ì •; ì¦ê°ì‹ì„ ì§€ì •í•˜ì§€ ì•Šìœ¼ë©´ ë¬´í•œ ë£¨í”„ê°€ ë°œìƒ
 		}
 		System.out.println("========");
 		int j=10;

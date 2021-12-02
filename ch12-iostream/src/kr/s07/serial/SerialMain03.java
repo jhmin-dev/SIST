@@ -4,31 +4,31 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.IOException;
-import java.util.ArrayList; // ArrayList Å¬·¡½º´Â SerializableÀ» ±¸ÇöÇÏ°í ÀÖÀ¸¹Ç·Î Á÷·ÄÈ­ °¡´É
+import java.util.ArrayList; // ArrayList í´ë˜ìŠ¤ëŠ” Serializableì„ êµ¬í˜„í•˜ê³  ìˆìœ¼ë¯€ë¡œ ì§ë ¬í™” ê°€ëŠ¥
 
 public class SerialMain03 {
 	public static void main(String[] args) {
-		// ÂüÁ¶ º¯¼ö ¼±¾ğ
+		// ì°¸ì¡° ë³€ìˆ˜ ì„ ì–¸
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		
-		// Á÷·ÄÈ­ÇÒ °´Ã¼ »ı¼º
-		UserInfo u1 = new UserInfo("³Ê±¼", 20, "¼­¿ï½Ã");
-		UserInfo u2 = new UserInfo("Äáµ¹", 18, "ºÎ»ê½Ã");
+		// ì§ë ¬í™”í•  ê°ì²´ ìƒì„±
+		UserInfo u1 = new UserInfo("ë„ˆêµ´", 20, "ì„œìš¸ì‹œ");
+		UserInfo u2 = new UserInfo("ì½©ëŒ", 18, "ë¶€ì‚°ì‹œ");
 
 		ArrayList<UserInfo> list = new ArrayList<UserInfo>();
 		list.add(u1);
 		list.add(u2);
 		
 		try {
-			// °´Ã¼ »ı¼ºÇÏ¿© ÂüÁ¶ º¯¼ö¿¡ ÇÒ´ç
+			// ê°ì²´ ìƒì„±í•˜ì—¬ ì°¸ì¡° ë³€ìˆ˜ì— í• ë‹¹
 			fos = new FileOutputStream("userInfo.ser");
 			oos = new ObjectOutputStream(fos);
 			
-			// °´Ã¼ Á÷·ÄÈ­ ¼öÇà
+			// ê°ì²´ ì§ë ¬í™” ìˆ˜í–‰
 			oos.writeObject(list);
 			
-			System.out.println("°´Ã¼ Á÷·ÄÈ­°¡ ¼º°øÀûÀ¸·Î ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+			System.out.println("ê°ì²´ ì§ë ¬í™”ê°€ ì„±ê³µì ìœ¼ë¡œ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		catch(IOException e) {
 			e.printStackTrace();

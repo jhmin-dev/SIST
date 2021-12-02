@@ -1,18 +1,18 @@
 package kr.s09.abstracttest;
-// ÀÏ¹Ý Å¬·¡½º¿¡¼­´Â Ãß»ó ¸Þ¼­µå¸¦ ¸¸µé ¼ö ¾øÀ½
+// ì¼ë°˜ í´ëž˜ìŠ¤ì—ì„œëŠ” ì¶”ìƒ ë©”ì„œë“œë¥¼ ë§Œë“¤ ìˆ˜ ì—†ìŒ
 abstract class A2 {
-	// Ãß»ó ¸Þ¼­µå; ±¸ÇöÀÌ µÇÁö ¾ÊÀº ¹Ì¿Ï¼º ¸Þ¼­µå
+	// ì¶”ìƒ ë©”ì„œë“œ; êµ¬í˜„ì´ ë˜ì§€ ì•Šì€ ë¯¸ì™„ì„± ë©”ì„œë“œ
 	public abstract void getA();
-	// ÀÏ¹Ý ¸Þ¼­µå; {} ºí·°ÀÌ ÀÖÀ¸¸é (¼öÇà¹®ÀÌ ¾ø´õ¶óµµ) ¸Þ¼­µå°¡ ±¸ÇöµÈ °Í
+	// ì¼ë°˜ ë©”ì„œë“œ; {} ë¸”ëŸ­ì´ ìžˆìœ¼ë©´ (ìˆ˜í–‰ë¬¸ì´ ì—†ë”ë¼ë„) ë©”ì„œë“œê°€ êµ¬í˜„ëœ ê²ƒ
 	public void make() {
-		System.out.println("make ¸Þ¼­µå");
+		System.out.println("make ë©”ì„œë“œ");
 	}
 }
-// Ãß»ó Å¬·¡½º¸¦ »ó¼Ó¹ÞÀ¸¸é Ãß»ó Å¬·¡½º°¡ °¡Áö°í ÀÖ´Â Ãß»ó ¸Þ¼­µå¸¦ ÀÚ½Ä Å¬·¡½º¿¡ ±¸ÇöÇØ¾ß ÇÔ
+// ì¶”ìƒ í´ëž˜ìŠ¤ë¥¼ ìƒì†ë°›ìœ¼ë©´ ì¶”ìƒ í´ëž˜ìŠ¤ê°€ ê°€ì§€ê³  ìžˆëŠ” ì¶”ìƒ ë©”ì„œë“œë¥¼ ìžì‹ í´ëž˜ìŠ¤ì— êµ¬í˜„í•´ì•¼ í•¨
 class B2 extends A2 {
-	// ÀçÁ¤ÀÇ¸¦ ÅëÇØ ºÎ¸ð Å¬·¡½ºÀÇ ¹Ì±¸ÇöµÈ Ãß»ó ¸Þ¼­µå°¡ È£ÃâµÇÁö ¾Êµµ·Ï ÇÔ
+	// ìž¬ì •ì˜ë¥¼ í†µí•´ ë¶€ëª¨ í´ëž˜ìŠ¤ì˜ ë¯¸êµ¬í˜„ëœ ì¶”ìƒ ë©”ì„œë“œê°€ í˜¸ì¶œë˜ì§€ ì•Šë„ë¡ í•¨
 	@Override public void getA() {
-		System.out.println("getA ¸Þ¼­µå");
+		System.out.println("getA ë©”ì„œë“œ");
 	}
 }
 

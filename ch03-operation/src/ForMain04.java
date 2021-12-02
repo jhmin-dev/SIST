@@ -1,15 +1,15 @@
 public class ForMain04 {
 	public static void main(String[] args) {
 		java.util.Scanner input = new java.util.Scanner(System.in);
-		System.out.print("´ÜÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ë‹¨ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		int dan = input.nextInt();
 		
-		System.out.println(dan + "´Ü");
+		System.out.println(dan + "ë‹¨");
 		System.out.println("========");
 		
 		if(dan<=9&&dan>=1) {
 			for(int i=1;i<=9;i++) {
-				System.out.println(dan + " * " + i + " = " + dan * i); // °ö¼ÀÀº µ¡¼Àº¸´Ù ¿ì¼±¼øÀ§°¡ ³ô±â ¶§¹®¿¡ ¼Ò°ıÈ£ ¾ø¾îµµ °ö¼À ¸ÕÀú ½ÇÇàÇÏ°í ¹®ÀÚ¿­·Î ¿¬°áÇÔ
+				System.out.println(dan + " * " + i + " = " + dan * i); // ê³±ì…ˆì€ ë§ì…ˆë³´ë‹¤ ìš°ì„ ìˆœìœ„ê°€ ë†’ê¸° ë•Œë¬¸ì— ì†Œê´„í˜¸ ì—†ì–´ë„ ê³±ì…ˆ ë¨¼ì € ì‹¤í–‰í•˜ê³  ë¬¸ìì—´ë¡œ ì—°ê²°í•¨
 			}
 		}
 		else if(dan>9){
@@ -18,7 +18,7 @@ public class ForMain04 {
 			}
 		}
 		else {
-			System.out.println("¾çÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+			System.out.println("ì–‘ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 		}
 		input.close();
 	}

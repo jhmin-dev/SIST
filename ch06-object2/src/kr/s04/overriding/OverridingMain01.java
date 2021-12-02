@@ -1,19 +1,19 @@
 package kr.s04.overriding;
-// ºÎ¸ğ Å¬·¡½º
+// ë¶€ëª¨ í´ë˜ìŠ¤
 class GrandParent {
 	public String getCar() {
-		return "±¸Çü ÀÚµ¿Â÷";
+		return "êµ¬í˜• ìë™ì°¨";
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class Father extends GrandParent {
-	// ¸Ş¼­µå ¿À¹ö¶óÀÌµù; ¸Ş¼­µåÀÇ Çü½ÄÀº °°°í ³»¿ë¸¸ ±³Ã¼
+	// ë©”ì„œë“œ ì˜¤ë²„ë¼ì´ë”©; ë©”ì„œë“œì˜ í˜•ì‹ì€ ê°™ê³  ë‚´ìš©ë§Œ êµì²´
 	@Override
 	public String getCar() {
-		return "½ÅÇü ÀÚµ¿Â÷";
+		return "ì‹ í˜• ìë™ì°¨";
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class Uncle extends GrandParent {
 	
 }
@@ -21,9 +21,9 @@ class Uncle extends GrandParent {
 public class OverridingMain01 {
 	public static void main(String[] args) {
 		Father ft = new Father();
-		System.out.println(ft.getCar()); // GrandParent¿¡¼­ »ó¼Ó¹ŞÀº ¸Ş¼­µå ´ë½Å Father¿¡¼­ ÀçÁ¤ÀÇÇÑ ¸Ş¼­µå°¡ È£ÃâµÊ
+		System.out.println(ft.getCar()); // GrandParentì—ì„œ ìƒì†ë°›ì€ ë©”ì„œë“œ ëŒ€ì‹  Fatherì—ì„œ ì¬ì •ì˜í•œ ë©”ì„œë“œê°€ í˜¸ì¶œë¨
 		
 		Uncle uc = new Uncle();
-		System.out.println(uc.getCar()); // GrandParent¿¡¼­ »ó¼Ó¹ŞÀº ¸Ş¼­µå°¡ È£ÃâµÊ
+		System.out.println(uc.getCar()); // GrandParentì—ì„œ ìƒì†ë°›ì€ ë©”ì„œë“œê°€ í˜¸ì¶œë¨
 	}
 }

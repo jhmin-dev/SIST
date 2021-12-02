@@ -1,30 +1,30 @@
 package kr.s01.file;
 
 import java.io.File;
-import java.io.IOException; // ÆÄÀÏ »ı¼º½Ã ¹ß»ı °¡´É
+import java.io.IOException; // íŒŒì¼ ìƒì„±ì‹œ ë°œìƒ ê°€ëŠ¥
 
 public class FileMain03 {
 	public static void main(String[] args) {
-		// Àı´ë °æ·Î
-		// String path = "C:\\javaWork2\\sample.txt"; // IOException ¹ß»ı
+		// ì ˆëŒ€ ê²½ë¡œ
+		// String path = "C:\\javaWork2\\sample.txt"; // IOException ë°œìƒ
 		// String path = "C:\\javaWork\\sample.txt";
 		
-		// »ó´ë °æ·Î
-		String path = "sample.txt"; // ÇÁ·ÎÁ§Æ® ³»¿¡¼­ ÆÄÀÏÀ» Ã£À½
+		// ìƒëŒ€ ê²½ë¡œ
+		String path = "sample.txt"; // í”„ë¡œì íŠ¸ ë‚´ì—ì„œ íŒŒì¼ì„ ì°¾ìŒ
 		
 		File f1 = new File(path);
-		System.out.println("ÆÄÀÏ »ı¼º");
+		System.out.println("íŒŒì¼ ìƒì„±");
 		try {
-			System.out.println(f1.createNewFile()); // createNewFile() ¸Ş¼­µå´Â try~catchÇÏÁö ¾ÊÀ¸¸é ÄÄÆÄÀÏ ¿¡·¯; Á¦°øµÈ °æ·Î¸¦ ±â¹İÀ¸·Î ÆÄÀÏÀ» »ı¼ºÇÏ¸ç, »ı¼ºµÇ¸é true¸¦ ¹İÈ¯ÇÏ°í ±×·¸Áö ¾ÊÀ¸¸é false¸¦ ¹İÈ¯; °æ·Î°¡ Àß¸øµÇ¸é IOException ¹ß»ı
+			System.out.println(f1.createNewFile()); // createNewFile() ë©”ì„œë“œëŠ” try~catchí•˜ì§€ ì•Šìœ¼ë©´ ì»´íŒŒì¼ ì—ëŸ¬; ì œê³µëœ ê²½ë¡œë¥¼ ê¸°ë°˜ìœ¼ë¡œ íŒŒì¼ì„ ìƒì„±í•˜ë©°, ìƒì„±ë˜ë©´ trueë¥¼ ë°˜í™˜í•˜ê³  ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ falseë¥¼ ë°˜í™˜; ê²½ë¡œê°€ ì˜ëª»ë˜ë©´ IOException ë°œìƒ
 		}
 		catch(IOException e) {
-			e.printStackTrace(); // ¿¹¿Ü ¹®±¸ Ãâ·Â
+			e.printStackTrace(); // ì˜ˆì™¸ ë¬¸êµ¬ ì¶œë ¥
 		}
 		
-		System.out.println("ÆÄÀÏ Á¤º¸");
-		System.out.println("Àı´ë °æ·Î : " + f1.getAbsolutePath());
-		System.out.println("»ó´ë °æ·Î : " + f1.getPath()); // Á¦°øµÈ Á¤º¸¸¦ ÅëÇØ ±¸ÇÏ±â ¶§¹®¿¡, Àı´ë °æ·Î¸¸ Á¦°øÇßÀ» °æ¿ì getPath() ¸Ş¼­µå´Â Àı´ë °æ·Î¸¦ ¹İÈ¯
-		System.out.println("µğ·ºÅä¸®¸í : " + f1.getParent()); // Á¦°øµÈ Á¤º¸¸¦ ÅëÇØ ±¸ÇÏ±â ¶§¹®¿¡, µğ·ºÅä¸®¸¦ Æ÷ÇÔÇÏÁö ¾ÊÀº »ó´ë °æ·Î¸¸ Á¦°øÇßÀ» °æ¿ì getParent() ¸Ş¼­µå´Â nullÀ» ¹İÈ¯
-		System.out.println("ÆÄÀÏ¸í : " + f1.getName());
+		System.out.println("íŒŒì¼ ì •ë³´");
+		System.out.println("ì ˆëŒ€ ê²½ë¡œ : " + f1.getAbsolutePath());
+		System.out.println("ìƒëŒ€ ê²½ë¡œ : " + f1.getPath()); // ì œê³µëœ ì •ë³´ë¥¼ í†µí•´ êµ¬í•˜ê¸° ë•Œë¬¸ì—, ì ˆëŒ€ ê²½ë¡œë§Œ ì œê³µí–ˆì„ ê²½ìš° getPath() ë©”ì„œë“œëŠ” ì ˆëŒ€ ê²½ë¡œë¥¼ ë°˜í™˜
+		System.out.println("ë””ë ‰í† ë¦¬ëª… : " + f1.getParent()); // ì œê³µëœ ì •ë³´ë¥¼ í†µí•´ êµ¬í•˜ê¸° ë•Œë¬¸ì—, ë””ë ‰í† ë¦¬ë¥¼ í¬í•¨í•˜ì§€ ì•Šì€ ìƒëŒ€ ê²½ë¡œë§Œ ì œê³µí–ˆì„ ê²½ìš° getParent() ë©”ì„œë“œëŠ” nullì„ ë°˜í™˜
+		System.out.println("íŒŒì¼ëª… : " + f1.getName());
 	}
 }

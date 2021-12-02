@@ -1,6 +1,6 @@
 
 public class Hello {
 	public static void main(String[] args) {
-		System.out.println("Hello World!!\nµµ·Î·Õ\nÄÚÄÚ\n¹¹¸ÔÁö");
+		System.out.println("Hello World!!\në„ë¡œë¡±\nì½”ì½”\në­ë¨¹ì§€");
 	}
 }

@@ -1,13 +1,13 @@
 package kr.s01.member;
 
 class Outer2 {
-	// ¸â¹ö º¯¼ö
+	// ë©¤ë²„ ë³€ìˆ˜
 	private int x = 100;
-	// ¸â¹ö ³»ºÎ Å¬·¡½º
+	// ë©¤ë²„ ë‚´ë¶€ í´ë˜ìŠ¤
 	class Inner2 {
 		private int y = 200;
 		public void make() {
-			System.out.println("x = " + x); // x¿Í Inner2°¡ ¸ğµÎ Outer2ÀÇ ¸â¹ö·Î ÀÎ½ÄµÇ±â ¶§¹®¿¡ Outer2ÀÇ private º¯¼ö¸¦ Inner2¿¡¼­ ¹Ù·Î Á¢±Ù °¡´É; À¥¿¡¼­´Â °ÅÀÇ »ç¿ëÇÏÁö ¾ÊÁö¸¸ ¾Èµå·ÎÀÌµå¿¡¼­´Â Getters, Setters ¸¸µå´Â ´ë½Å ³»ºÎ Å¬·¡½º¸¦ »ç¿ëÇÏ´Â Æí
+			System.out.println("x = " + x); // xì™€ Inner2ê°€ ëª¨ë‘ Outer2ì˜ ë©¤ë²„ë¡œ ì¸ì‹ë˜ê¸° ë•Œë¬¸ì— Outer2ì˜ private ë³€ìˆ˜ë¥¼ Inner2ì—ì„œ ë°”ë¡œ ì ‘ê·¼ ê°€ëŠ¥; ì›¹ì—ì„œëŠ” ê±°ì˜ ì‚¬ìš©í•˜ì§€ ì•Šì§€ë§Œ ì•ˆë“œë¡œì´ë“œì—ì„œëŠ” Getters, Setters ë§Œë“œëŠ” ëŒ€ì‹  ë‚´ë¶€ í´ë˜ìŠ¤ë¥¼ ì‚¬ìš©í•˜ëŠ” í¸
 			System.out.println("y = " + y);
 		}
 	}

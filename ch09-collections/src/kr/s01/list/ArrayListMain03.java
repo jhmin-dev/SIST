@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class ArrayListMain03 {
 	public static void main(String[] args) {
-		// Á¦³×¸¯ Ç¥Çö: °´Ã¼¸¦ »ý¼ºÇÒ ¶§ °´Ã¼¿¡ ÀúÀåÇÒ ¼ö ÀÖ´Â ¿ä¼ÒÀÇ ÀÚ·áÇüÀ» Å¬·¡½º¸í°ú »ý¼ºÀÚ¸í ´ÙÀ½¿¡ <>·Î ÁöÁ¤; Á¦³×¸¯ Ç¥ÇöÀ» »ç¿ëÇÏÁö ¾ÊÀ¸¸é µ¥ÀÌÅÍ ÀÐ¾î¿Ã ¶§ ClassCastException µî ¿¹¿Ü°¡ ¹ß»ýÇÒ ¼ö ÀÖÀ¸¹Ç·Î, »ç¿ëÀÌ ±ÇÀåµÊ
+		// ì œë„¤ë¦­ í‘œí˜„: ê°ì²´ë¥¼ ìƒì„±í•  ë•Œ ê°ì²´ì— ì €ìž¥í•  ìˆ˜ ìžˆëŠ” ìš”ì†Œì˜ ìžë£Œí˜•ì„ í´ëž˜ìŠ¤ëª…ê³¼ ìƒì„±ìžëª… ë‹¤ìŒì— <>ë¡œ ì§€ì •; ì œë„¤ë¦­ í‘œí˜„ì„ ì‚¬ìš©í•˜ì§€ ì•Šìœ¼ë©´ ë°ì´í„° ì½ì–´ì˜¬ ë•Œ ClassCastException ë“± ì˜ˆì™¸ê°€ ë°œìƒí•  ìˆ˜ ìžˆìœ¼ë¯€ë¡œ, ì‚¬ìš©ì´ ê¶Œìž¥ë¨
 		ArrayList<String> al = new ArrayList<String>();
-		al.add("¼­¿ï"); // Á¦³×¸¯ Ç¥ÇöÀ» ¾²¸é Object·Î ¾÷Ä³½ºÆÃµÇÁö ¾Ê°í StringÀ¸·Î ÀúÀåµÊ
-		al.add("ºÎ»ê");
-		// al.add(1000); // Á¦³×¸¯ Ç¥ÇöÀ» ½á¼­ ArrayList °´Ã¼¸¦ »ý¼ºÇÒ ¶§ ÀúÀåµÇ´Â °´Ã¼ÀÇ ÀÚ·áÇüÀ» StringÀ¸·Î ÁöÁ¤ÇßÀ¸¹Ç·Î Integer °´Ã¼¸¦ ÀúÀåÇÒ ¼ö ¾øÀ½(=ÄÄÆÄÀÏ½Ã ¿À·ù ¹ß»ý)
-		al.add("ÀÎÃµ");
+		al.add("ì„œìš¸"); // ì œë„¤ë¦­ í‘œí˜„ì„ ì“°ë©´ Objectë¡œ ì—…ìºìŠ¤íŒ…ë˜ì§€ ì•Šê³  Stringìœ¼ë¡œ ì €ìž¥ë¨
+		al.add("ë¶€ì‚°");
+		// al.add(1000); // ì œë„¤ë¦­ í‘œí˜„ì„ ì¨ì„œ ArrayList ê°ì²´ë¥¼ ìƒì„±í•  ë•Œ ì €ìž¥ë˜ëŠ” ê°ì²´ì˜ ìžë£Œí˜•ì„ Stringìœ¼ë¡œ ì§€ì •í–ˆìœ¼ë¯€ë¡œ Integer ê°ì²´ë¥¼ ì €ìž¥í•  ìˆ˜ ì—†ìŒ(=ì»´íŒŒì¼ì‹œ ì˜¤ë¥˜ ë°œìƒ)
+		al.add("ì¸ì²œ");
 		
-		// ¹Ýº¹¹®À» ÀÌ¿ëÇÑ ArrayListÀÇ ¿ä¼Ò Ãâ·Â
+		// ë°˜ë³µë¬¸ì„ ì´ìš©í•œ ArrayListì˜ ìš”ì†Œ ì¶œë ¥
 		for(int i=0;i<al.size();i++) {
-			String city = al.get(i); // Á¦³×¸¯ Ç¥ÇöÀ» ¾²¸é Object°¡ ¾Æ´Ï¶ó StringÀ¸·Î ¹ÝÈ¯
+			String city = al.get(i); // ì œë„¤ë¦­ í‘œí˜„ì„ ì“°ë©´ Objectê°€ ì•„ë‹ˆë¼ Stringìœ¼ë¡œ ë°˜í™˜
 			System.out.println(city);
 		}
 		
-		// È®Àå for¹®À» ÀÌ¿ëÇÑ ArrayListÀÇ ¿ä¼Ò Ãâ·Â
+		// í™•ìž¥ forë¬¸ì„ ì´ìš©í•œ ArrayListì˜ ìš”ì†Œ ì¶œë ¥
 		for(String city : al) {
 			System.out.println(city);
 		}

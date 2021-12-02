@@ -9,14 +9,14 @@ public class HashMapMain02 {
 		String[] msg = {"Berlin", "Paris", "Seoul", "New York", "London"};
 		HashMap<Integer, String> mp = new HashMap<Integer, String>();
 
-		// ¹İº¹¹®À» ÅëÇØ µ¥ÀÌÅÍ ÀúÀå
+		// ë°˜ë³µë¬¸ì„ í†µí•´ ë°ì´í„° ì €ì¥
 		for(int i=0;i<msg.length;i++) {
 			mp.put(i, msg[i]);
 		}
 		System.out.println(mp);
 		
-		// ½Äº°ÀÚ¸¦ ¸ğµÎ ÃßÃâÇÏ°í, ½Äº°ÀÚ¸¦ ÅëÇØ °ªÀ» ÀĞ±â; keySet() ¸Ş¼­µå¸¦ ÅëÇØ Set ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ °´Ã¼·Î º¹»ç ÈÄ, iterator() ¸Ş¼­µå¸¦ ÅëÇØ Iterator °´Ã¼·Î º¹»çÇØ¾ß ÇÔ
-		Iterator<Integer> keys = mp.keySet().iterator(); // mp.keySet()Àº Set ÀÎÅÍÆäÀÌ½º ÀÚ·áÇü
+		// ì‹ë³„ìë¥¼ ëª¨ë‘ ì¶”ì¶œí•˜ê³ , ì‹ë³„ìë¥¼ í†µí•´ ê°’ì„ ì½ê¸°; keySet() ë©”ì„œë“œë¥¼ í†µí•´ Set ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ ê°ì²´ë¡œ ë³µì‚¬ í›„, iterator() ë©”ì„œë“œë¥¼ í†µí•´ Iterator ê°ì²´ë¡œ ë³µì‚¬í•´ì•¼ í•¨
+		Iterator<Integer> keys = mp.keySet().iterator(); // mp.keySet()ì€ Set ì¸í„°í˜ì´ìŠ¤ ìë£Œí˜•
 		while(keys.hasNext()) {
 			Integer key = keys.next();
 			System.out.println(key + ", " + mp.get(key));

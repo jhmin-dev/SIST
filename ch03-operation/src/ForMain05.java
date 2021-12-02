@@ -1,9 +1,9 @@
 public class ForMain05 {
 	public static void main(String[] args) {
-		// ¥Ÿ¡ﬂ forπÆ
-		for(int dan=2;dan<=9;dan++) { // ¥‹
-			System.out.println("** " + dan + "¥‹ **");
-			for(int i=1;i<=9;i++) { // ∞ˆ«ÿ¡ˆ¥¬ ºˆ
+		// Îã§Ï§ë forÎ¨∏
+		for(int dan=2;dan<=9;dan++) { // Îã®
+			System.out.println("** " + dan + "Îã® **");
+			for(int i=1;i<=9;i++) { // Í≥±Ìï¥ÏßÄÎäî Ïàò
 				System.out.println(dan + " * " + i + " = " + dan*i);
 			}
 		}

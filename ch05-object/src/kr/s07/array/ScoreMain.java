@@ -3,37 +3,37 @@ package kr.s07.array;
 public class ScoreMain {
 	public static void main(String[] args) {
 		/*
-		 * [½Ç½À]
-		 * ¹è¿­ »ı¼º, ¹è¿­ÀÇ ±æÀÌ 4
-		 * ÀÚ·áÇüÀÌ intÀÎ ¹İ ÀüÃ¼ÀÇ ÃÑÁ¡(total), ¹İ ÀüÃ¼ÀÇ Æò±Õ(avg) º¯¼ö »ı¼º
-		 * Score °´Ã¼¸¦ 4°³ »ı¼ºÇØ¼­ ¹è¿­¿¡ ÀúÀå
-		 * ¹İº¹¹®À» ÀÌ¿ëÇÏ¿© ¹è¿­¿¡ Á¢±ÙÇØ¼­ °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ÀĞ±â
-		 * ¹İ ÀüÃ¼ÀÇ ÃÑÁ¡°ú Æò±Õ Ãâ·Â
+		 * [ì‹¤ìŠµ]
+		 * ë°°ì—´ ìƒì„±, ë°°ì—´ì˜ ê¸¸ì´ 4
+		 * ìë£Œí˜•ì´ intì¸ ë°˜ ì „ì²´ì˜ ì´ì (total), ë°˜ ì „ì²´ì˜ í‰ê· (avg) ë³€ìˆ˜ ìƒì„±
+		 * Score ê°ì²´ë¥¼ 4ê°œ ìƒì„±í•´ì„œ ë°°ì—´ì— ì €ì¥
+		 * ë°˜ë³µë¬¸ì„ ì´ìš©í•˜ì—¬ ë°°ì—´ì— ì ‘ê·¼í•´ì„œ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ì½ê¸°
+		 * ë°˜ ì „ì²´ì˜ ì´ì ê³¼ í‰ê·  ì¶œë ¥
 		 */
 		Score[] scoreArray=new Score[4];
 
 		int total=0;
 		int avg=0 ;
-		/* ÀÔ·ÂÀ» ¹Ş¾Æ °´Ã¼¸¦ »ı¼º
+		/* ì…ë ¥ì„ ë°›ì•„ ê°ì²´ë¥¼ ìƒì„±
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		for(int i=0;i<scoreArray.length;i++) {
-			System.out.print("ÀÌ¸§ > ");
+			System.out.print("ì´ë¦„ > ");
 			String name = input.nextLine();
-			System.out.print("±¹¾î > ");
+			System.out.print("êµ­ì–´ > ");
 			int korean = input.nextInt();
-			System.out.print("¿µ¾î > ");
+			System.out.print("ì˜ì–´ > ");
 			int english = input.nextInt();
-			System.out.print("¼öÇĞ > ");
+			System.out.print("ìˆ˜í•™ > ");
 			int math = input.nextInt();
-			input.nextLine(); // ¼öÇĞ Á¡¼ö¸¦ ÀÔ·ÂÇÏ¸é¼­ Ä£ ¿£ÅÍ(\n)¸¦ Èí¼öÇÏ´Â ¿ëµµ; ¾øÀ» °æ¿ì ·çÇÁ¸¦ µ¹ ¶§ ÀÌ¸§ÀÌ \nÀ¸·Î ÀÔ·ÂµÊ
+			input.nextLine(); // ìˆ˜í•™ ì ìˆ˜ë¥¼ ì…ë ¥í•˜ë©´ì„œ ì¹œ ì—”í„°(\n)ë¥¼ í¡ìˆ˜í•˜ëŠ” ìš©ë„; ì—†ì„ ê²½ìš° ë£¨í”„ë¥¼ ëŒ ë•Œ ì´ë¦„ì´ \nìœ¼ë¡œ ì…ë ¥ë¨
 			scoreArray[i] = new Score(name, korean, english, math);
 		}
 		input.close();
 		*/
-		scoreArray[0]=new Score("È«±æµ¿", 98, 96, 88);
-		scoreArray[1]=new Score("ÀÌ¼ø½Å", 99, 72, 82);
-		scoreArray[2]=new Score("Àå¿µ½Ç", 97, 83, 81);
-		scoreArray[3]=new Score("±èÀ¯½Å", 86, 66, 83);
+		scoreArray[0]=new Score("í™ê¸¸ë™", 98, 96, 88);
+		scoreArray[1]=new Score("ì´ìˆœì‹ ", 99, 72, 82);
+		scoreArray[2]=new Score("ì¥ì˜ì‹¤", 97, 83, 81);
+		scoreArray[3]=new Score("ê¹€ìœ ì‹ ", 86, 66, 83);
 		
 		for(Score score : scoreArray) {
 			System.out.print(score.getName()+"\t");
@@ -46,6 +46,6 @@ public class ScoreMain {
 			total += score.makeSum();
 		}
 		avg = total / (scoreArray.length * 3);
-		System.out.println("¹İ ÀüÃ¼ÀÇ ÃÑÁ¡ : "+total+"\t¹İ ÀüÃ¼ÀÇ Æò±Õ : "+avg);
+		System.out.println("ë°˜ ì „ì²´ì˜ ì´ì  : "+total+"\të°˜ ì „ì²´ì˜ í‰ê·  : "+avg);
 	}
 }

@@ -2,33 +2,33 @@ package kr.s01.exception;
 
 import java.util.Scanner;
 
-class NegativeNumberUseException extends Exception { //»ç¿ëÀÚ Á¤ÀÇ ¿¹¿Ü Å¬·¡½º
-	public NegativeNumberUseException(String str) { // ¿¹¿Ü ¹®±¸¸¦ ÁöÁ¤ÇÒ ¼ö ÀÖµµ·Ï ÀÎÀÚ¸¦ ¸í½Ã
-		super(str); // ÀÎÀÚ¸¦ Exception¿¡ Àü´Ş
+class NegativeNumberUseException extends Exception { //ì‚¬ìš©ì ì •ì˜ ì˜ˆì™¸ í´ë˜ìŠ¤
+	public NegativeNumberUseException(String str) { // ì˜ˆì™¸ ë¬¸êµ¬ë¥¼ ì§€ì •í•  ìˆ˜ ìˆë„ë¡ ì¸ìë¥¼ ëª…ì‹œ
+		super(str); // ì¸ìë¥¼ Exceptionì— ì „ë‹¬
 	}
 }
 
 public class ExceptionMain07 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.print("0 ÀÌ»óÀÇ ¼ö¸¦ ÀÔ·Â > ");
+		System.out.print("0 ì´ìƒì˜ ìˆ˜ë¥¼ ì…ë ¥ > ");
 		try {
 			int a = input.nextInt();
 			if(a >= 0) {
-				System.out.println("ÀÔ·ÂÇÑ ¼ö : " + a);
+				System.out.println("ì…ë ¥í•œ ìˆ˜ : " + a);
 			}
-			else { // »ç¿ëÀÚ°¡ Á¤ÀÇÇÑ ¿¹¿Ü¸¦ ÀÎÀ§ÀûÀ¸·Î ¹ß»ı
-				throw new NegativeNumberUseException("À½¼ö¸¦ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.");
+			else { // ì‚¬ìš©ìê°€ ì •ì˜í•œ ì˜ˆì™¸ë¥¼ ì¸ìœ„ì ìœ¼ë¡œ ë°œìƒ
+				throw new NegativeNumberUseException("ìŒìˆ˜ë¥¼ ì‚¬ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			}
 		}
-		catch(NegativeNumberUseException e) { // »ç¿ëÀÚ°¡ Á¤ÀÇÇÑ ¿¹¿Ü°¡ ¹ß»ıÇÑ °æ¿ì
+		catch(NegativeNumberUseException e) { // ì‚¬ìš©ìê°€ ì •ì˜í•œ ì˜ˆì™¸ê°€ ë°œìƒí•œ ê²½ìš°
 			System.out.println(e.getMessage());
 		}
-		catch(Exception e) { // ±× ¿ÜÀÇ ¿¹¿Ü°¡ ¹ß»ıÇÑ °æ¿ì
-			System.out.println("¿¹¿Ü°¡ ¹ß»ıÇß½À´Ï´Ù.");
+		catch(Exception e) { // ê·¸ ì™¸ì˜ ì˜ˆì™¸ê°€ ë°œìƒí•œ ê²½ìš°
+			System.out.println("ì˜ˆì™¸ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.");
 		}
 		finally {
-			if(input!=null) input.close(); // ¿¹¿Ü ¹ß»ı ¿©ºÎ¿Í °ü°è¾øÀÌ ÀÚ¿ø Á¤¸®; inputÀÌ nullÀÎ °æ¿ì closeÇÒ ¼ö ¾øÀ¸¹Ç·Î Á¶°Ç¹® Ã³¸®
+			if(input!=null) input.close(); // ì˜ˆì™¸ ë°œìƒ ì—¬ë¶€ì™€ ê´€ê³„ì—†ì´ ìì› ì •ë¦¬; inputì´ nullì¸ ê²½ìš° closeí•  ìˆ˜ ì—†ìœ¼ë¯€ë¡œ ì¡°ê±´ë¬¸ ì²˜ë¦¬
 		}
 	}
 }

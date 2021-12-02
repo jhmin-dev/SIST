@@ -4,11 +4,11 @@ public class OperatorMain03 {
 		int english = 95;
 		int math = 88;
 		
-		// ÃÑÁ¡ ±¸ÇÏ±â
+		// ì´ì  êµ¬í•˜ê¸°
 		int sum = korean + english + math;
-		// Æò±Õ ±¸ÇÏ±â
+		// í‰ê·  êµ¬í•˜ê¸°
 		int avg = sum / 3;
 		
-		System.out.printf("±¹¾î : %dÁ¡\n¿µ¾î : %dÁ¡\n¼öÇĞ : %dÁ¡\nÃÑÁ¡ : %dÁ¡\nÆò±Õ : %dÁ¡\n", korean, english, math, sum, avg);
+		System.out.printf("êµ­ì–´ : %dì \nì˜ì–´ : %dì \nìˆ˜í•™ : %dì \nì´ì  : %dì \ní‰ê·  : %dì \n", korean, english, math, sum, avg);
 	}
 }

@@ -1,24 +1,24 @@
 package kr.s01.a;
 public class MethodMain01 {
-	// ¹İÈ¯ÇÏ´Â µ¥ÀÌÅÍ°¡ ÀÖ´Â °æ¿ì
+	// ë°˜í™˜í•˜ëŠ” ë°ì´í„°ê°€ ìˆëŠ” ê²½ìš°
 	public int add(int a, int b){
 		return a + b;
 	}
 	
-	// ¹İÈ¯ÇÏ´Â µ¥ÀÌÅÍ°¡ ¾ø´Â °æ¿ì
+	// ë°˜í™˜í•˜ëŠ” ë°ì´í„°ê°€ ì—†ëŠ” ê²½ìš°
 	public void print(String str) {
 		System.out.println(str);
 	}
 	
-	public static void main(String[] args) { // main ¸Ş¼­µå´Â ¹İÈ¯ÇÏ´Â µ¥ÀÌÅÍ°¡ ¾ø´Â voidÇü ¸Ş¼­µå
-		// °´Ã¼ ¼±¾ğ ¹× »ı¼º
-		MethodMain01 method = new MethodMain01(); // »ı¼ºÀÚ´Â ¸í½ÃÇÏÁö ¾Ê¾Æµµ È£Ãâ °¡´É
+	public static void main(String[] args) { // main ë©”ì„œë“œëŠ” ë°˜í™˜í•˜ëŠ” ë°ì´í„°ê°€ ì—†ëŠ” voidí˜• ë©”ì„œë“œ
+		// ê°ì²´ ì„ ì–¸ ë° ìƒì„±
+		MethodMain01 method = new MethodMain01(); // ìƒì„±ìëŠ” ëª…ì‹œí•˜ì§€ ì•Šì•„ë„ í˜¸ì¶œ ê°€ëŠ¥
 		
-		// ¹İÈ¯ÇÏ´Â µ¥ÀÌÅÍ°¡ ÀÖ´Â ¸Ş¼­µå È£Ãâ
+		// ë°˜í™˜í•˜ëŠ” ë°ì´í„°ê°€ ìˆëŠ” ë©”ì„œë“œ í˜¸ì¶œ
 		int result = method.add(5, 8);
 		System.out.println("result = " + result);
 		
-		// ¹İÈ¯ÇÏ´Â µ¥ÀÌÅÍ°¡ ¾ø´Â ¸Ş¼­µå È£Ãâ
-		method.print("°¡À»"); // voidÇü ¸Ş¼­µå´Â µ¥ÀÌÅÍ°¡ ¾øÀ¸¹Ç·Î º¯¼ö¿¡ ´ëÀÔÇÒ ¼ö ¾øÀ½
+		// ë°˜í™˜í•˜ëŠ” ë°ì´í„°ê°€ ì—†ëŠ” ë©”ì„œë“œ í˜¸ì¶œ
+		method.print("ê°€ì„"); // voidí˜• ë©”ì„œë“œëŠ” ë°ì´í„°ê°€ ì—†ìœ¼ë¯€ë¡œ ë³€ìˆ˜ì— ëŒ€ì…í•  ìˆ˜ ì—†ìŒ
 	}
 }

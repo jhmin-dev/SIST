@@ -1,30 +1,30 @@
 package kr.s01.list;
 
 import java.util.ArrayList;
-import java.util.Collections; // ArrayList¿¡´Â Á¤·Ä ¸Ş¼­µå°¡ ¾øÀ½
+import java.util.Collections; // ArrayListì—ëŠ” ì •ë ¬ ë©”ì„œë“œê°€ ì—†ìŒ
 
 public class ArrayListMain06 {
 	public static void main(String[] args) {
 		ArrayList<String> list = new ArrayList<String>();
-		list.add("¸Ó·ç");
-		list.add("»ç°ú");
-		list.add("¾ŞµÎ");
-		list.add("ÀÚµÎ");
-		list.add("»ç°ú");
-		list.add("»ç°ú");
+		list.add("ë¨¸ë£¨");
+		list.add("ì‚¬ê³¼");
+		list.add("ì•µë‘");
+		list.add("ìë‘");
+		list.add("ì‚¬ê³¼");
+		list.add("ì‚¬ê³¼");
 		
-		// ÀÎµ¦½º Å½»ö
-		int index1 = list.indexOf("»ç°ú"); // ¾Õ¿¡¼­ºÎÅÍ "»ç°ú"¸¦ Å½»ö
-		System.out.println("Ã¹ ¹øÂ° »ç°ú : " + index1);
-		int index2 = list.lastIndexOf("»ç°ú"); // ³¡¿¡¼­ºÎÅÍ "»ç°ú"¸¦ Å½»ö
-		System.out.println("¸¶Áö¸· »ç°ú : " + index2);
-		int index3 = list.indexOf("¸Á°í"); // ¾ø´Â ¿ä¼ÒÀÇ ÀÎµ¦½º¸¦ Å½»öÇÏ¸é -1·Î ¹İÈ¯
-		System.out.println("¸Á°í : " + index3);
+		// ì¸ë±ìŠ¤ íƒìƒ‰
+		int index1 = list.indexOf("ì‚¬ê³¼"); // ì•ì—ì„œë¶€í„° "ì‚¬ê³¼"ë¥¼ íƒìƒ‰
+		System.out.println("ì²« ë²ˆì§¸ ì‚¬ê³¼ : " + index1);
+		int index2 = list.lastIndexOf("ì‚¬ê³¼"); // ëì—ì„œë¶€í„° "ì‚¬ê³¼"ë¥¼ íƒìƒ‰
+		System.out.println("ë§ˆì§€ë§‰ ì‚¬ê³¼ : " + index2);
+		int index3 = list.indexOf("ë§ê³ "); // ì—†ëŠ” ìš”ì†Œì˜ ì¸ë±ìŠ¤ë¥¼ íƒìƒ‰í•˜ë©´ -1ë¡œ ë°˜í™˜
+		System.out.println("ë§ê³  : " + index3);
 		
-		// Á¤·Ä
-		Collections.sort(list); // »çÀü¼øÀ¸·Î ¿ä¼Ò¸¦ Á¤·Ä(=ÀÎµ¦½º Àç¹èÄ¡)
+		// ì •ë ¬
+		Collections.sort(list); // ì‚¬ì „ìˆœìœ¼ë¡œ ìš”ì†Œë¥¼ ì •ë ¬(=ì¸ë±ìŠ¤ ì¬ë°°ì¹˜)
 		System.out.println(list);
-		Collections.reverse(list); // »çÀü¼øÀÇ ¿ª¼øÀ¸·Î ¿ä¼Ò¸¦ Á¤·Ä
+		Collections.reverse(list); // ì‚¬ì „ìˆœì˜ ì—­ìˆœìœ¼ë¡œ ìš”ì†Œë¥¼ ì •ë ¬
 		System.out.println(list);
 	}
 }

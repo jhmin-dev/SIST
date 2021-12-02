@@ -1,27 +1,27 @@
 package kr.s01.a;
 public class Student02 {
-	// ÇÊµå
-	// ¸â¹ö º¯¼ö
+	// í•„ë“œ
+	// ë©¤ë²„ ë³€ìˆ˜
 	String name;
 	int age;
 	String hobby;
 	
 	public static void main(String[] args) {
-		// °´Ã¼ÀÇ ¼±¾ğ ¹× »ı¼º
+		// ê°ì²´ì˜ ì„ ì–¸ ë° ìƒì„±
 		Student02 student = new Student02();
 		
-		student.name = "È«±æµ¿";
+		student.name = "í™ê¸¸ë™";
 		student.age = 20;
-		student.hobby = "Ãà±¸";
+		student.hobby = "ì¶•êµ¬";
 		
 		System.out.println(student.name + ", " + student.age + ", " + student.hobby);
 		
-		// °´Ã¼´Â ¹«ÇÑÈ÷ »ı¼º °¡´ÉÇÔ; ÇÏ³ªÀÇ ¼³°èµµ¸éÀ¸·Î ÁÖ¼Ò(¿Í ÀúÀåµÈ µ¥ÀÌÅÍ)°¡ ´Ù¸¥ ¿©·¯ °Ç¹°À» Áş´Â °Í
+		// ê°ì²´ëŠ” ë¬´í•œíˆ ìƒì„± ê°€ëŠ¥í•¨; í•˜ë‚˜ì˜ ì„¤ê³„ë„ë©´ìœ¼ë¡œ ì£¼ì†Œ(ì™€ ì €ì¥ëœ ë°ì´í„°)ê°€ ë‹¤ë¥¸ ì—¬ëŸ¬ ê±´ë¬¼ì„ ì§“ëŠ” ê²ƒ
 		Student02 student2 = new Student02();
 		
-		student2.name = "¹Ú¹®¼ö";
+		student2.name = "ë°•ë¬¸ìˆ˜";
 		student2.age = 45;
-		student2.hobby = "¾ß±¸";
+		student2.hobby = "ì•¼êµ¬";
 		
 		System.out.println(student2.name + ", " + student2.age + ", " + student2.hobby);	
 	}

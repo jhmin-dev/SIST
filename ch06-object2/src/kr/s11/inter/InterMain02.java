@@ -1,19 +1,19 @@
 package kr.s11.inter;
 
 interface A2 {
-	// Ãß»ó ¸Ş¼­µå; ÀÎÅÍÆäÀÌ½º´Â °´Ã¼ »ı¼ºÀÌ ºÒ°¡ÇÏ¹Ç·Î ÀÏ¹İ Å¬·¡½º¿¡¼­ ±¸ÇöÇÏ¿© »ç¿ë
-	public abstract void getA(); // ¿øÇü
-	void getB(); // public abstract »ı·«ÇØµµ ¿øÇü´ë·Î ¼±¾ğµÊ
+	// ì¶”ìƒ ë©”ì„œë“œ; ì¸í„°í˜ì´ìŠ¤ëŠ” ê°ì²´ ìƒì„±ì´ ë¶ˆê°€í•˜ë¯€ë¡œ ì¼ë°˜ í´ë˜ìŠ¤ì—ì„œ êµ¬í˜„í•˜ì—¬ ì‚¬ìš©
+	public abstract void getA(); // ì›í˜•
+	void getB(); // public abstract ìƒëµí•´ë„ ì›í˜•ëŒ€ë¡œ ì„ ì–¸ë¨
 }
 
-// ÀÎÅÍÆäÀÌ½º¸¦ Å¬·¡½º¿¡ ±¸Çö
+// ì¸í„°í˜ì´ìŠ¤ë¥¼ í´ë˜ìŠ¤ì— êµ¬í˜„
 class B2 implements A2 {
-	// ÀÎÅÍÆäÀÌ½ºÀÇ Ãß»ó ¸Ş¼­µå¸¦ ±¸Çö; ±¸ÇöµÇÁö ¾ÊÀº Ãß»ó ¸Ş¼­µå°¡ ÀÖÀ» °æ¿ì ¿À·ù ¹ß»ı
+	// ì¸í„°í˜ì´ìŠ¤ì˜ ì¶”ìƒ ë©”ì„œë“œë¥¼ êµ¬í˜„; êµ¬í˜„ë˜ì§€ ì•Šì€ ì¶”ìƒ ë©”ì„œë“œê°€ ìˆì„ ê²½ìš° ì˜¤ë¥˜ ë°œìƒ
 	@Override public void getA() {
-		System.out.println("getA ¸Ş¼­µå");
+		System.out.println("getA ë©”ì„œë“œ");
 	}
 	@Override public void getB() {
-		System.out.println("getB ¸Ş¼­µå");
+		System.out.println("getB ë©”ì„œë“œ");
 	}
 }
 

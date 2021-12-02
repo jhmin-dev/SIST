@@ -14,13 +14,13 @@ public class InetAddressMain02 {
 			InetAddress[] addresses;
 			
 			br = new BufferedReader(new InputStreamReader(System.in));
-			System.out.print("À¥»çÀÌÆ® µµ¸ŞÀÎ ÀÔ·Â > ");
+			System.out.print("ì›¹ì‚¬ì´íŠ¸ ë„ë©”ì¸ ì…ë ¥ > ");
 			url = br.readLine();
 			
-			addresses = InetAddress.getAllByName(url); // static ¸Ş¼­µåÀÎ getAllByName() ¸Ş¼­µå¿¡ µµ¸ŞÀÎÀ» Àü´ŞÇÏ¸é ÇØ´ç µµ¸ŞÀÎ°ú ¸ÅÇÎµÇ¾î ÀÖ´Â ¸ğµç IP ÁÖ¼Ò Á¤º¸¸¦ InetAddress[]·Î ¹İÈ¯
+			addresses = InetAddress.getAllByName(url); // static ë©”ì„œë“œì¸ getAllByName() ë©”ì„œë“œì— ë„ë©”ì¸ì„ ì „ë‹¬í•˜ë©´ í•´ë‹¹ ë„ë©”ì¸ê³¼ ë§¤í•‘ë˜ì–´ ìˆëŠ” ëª¨ë“  IP ì£¼ì†Œ ì •ë³´ë¥¼ InetAddress[]ë¡œ ë°˜í™˜
 			
 			for(int i=0;i<addresses.length;i++) {
-				System.out.println("È£½ºÆ® ÀÌ¸§ : " + addresses[i].getHostName() + ", " + "È£½ºÆ® IP ÁÖ¼Ò : " + addresses[i].getHostAddress());
+				System.out.println("í˜¸ìŠ¤íŠ¸ ì´ë¦„ : " + addresses[i].getHostName() + ", " + "í˜¸ìŠ¤íŠ¸ IP ì£¼ì†Œ : " + addresses[i].getHostAddress());
 			}
 		}
 		catch(UnknownHostException e) {

@@ -1,7 +1,7 @@
 public class ContinueMain {
 	public static void main(String[] args) {
 		for(int i=0;i<=10;i++) {
-			if(i%3==0) { // 3ÀÇ ¹è¼öÀÏ ¶§ °Ç³Ê¶Ü
+			if(i%3==0) { // 3ì˜ ë°°ìˆ˜ì¼ ë•Œ ê±´ë„ˆëœ€
 				continue;
 			}
 			System.out.println(i);

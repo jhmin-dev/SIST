@@ -1,16 +1,16 @@
 package kr.s01.exception;
 
-import java.io.IOException; // BufferedReaderÀÇ ¿¹¿Ü¸¦ Ã³¸®ÇÏ±â À§ÇØ ÇÊ¿ä
-import java.io.BufferedReader; // ¹ü¿ëÀûÀ¸·Î Scannerº¸´Ù ¸¹ÀÌ »ç¿ëµÊ
-import java.io.InputStreamReader; // BufferedReader¸¦ »ç¿ëÇÏ±â À§ÇØ ÇÊ¿ä
+import java.io.IOException; // BufferedReaderì˜ ì˜ˆì™¸ë¥¼ ì²˜ë¦¬í•˜ê¸° ìœ„í•´ í•„ìš”
+import java.io.BufferedReader; // ë²”ìš©ì ìœ¼ë¡œ Scannerë³´ë‹¤ ë§ì´ ì‚¬ìš©ë¨
+import java.io.InputStreamReader; // BufferedReaderë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•´ í•„ìš”
 
 public class ExceptionMain05 {
-	// ¸Ş¼­µå¿¡ throws ¿¹¾à¾î¸¦ »ç¿ëÇÏ¿© ¹ß»ıÇÒ °¡´É¼ºÀÌ ÀÖ´Â ¿¹¿Ü Å¬·¡½ºµéÀ» ¸í½ÃÇÏ¸é, ¸Ş¼­µå ³»¿¡ try~catch ºí·°À» »ı·«ÇÏ°í, ¿¹¿Ü°¡ ¹ß»ıÇÏ¸é ¿¹¿Ü¸¦ º¸°üÇÏ°í ¸Ş¼­µå¸¦ È£ÃâÇÑ °÷¿¡¼­ try~catch ºí·°À» ¸¸µé°í ±× °÷À¸·Î ¿¹¿Ü¸¦ ¾çµµ
+	// ë©”ì„œë“œì— throws ì˜ˆì•½ì–´ë¥¼ ì‚¬ìš©í•˜ì—¬ ë°œìƒí•  ê°€ëŠ¥ì„±ì´ ìˆëŠ” ì˜ˆì™¸ í´ë˜ìŠ¤ë“¤ì„ ëª…ì‹œí•˜ë©´, ë©”ì„œë“œ ë‚´ì— try~catch ë¸”ëŸ­ì„ ìƒëµí•˜ê³ , ì˜ˆì™¸ê°€ ë°œìƒí•˜ë©´ ì˜ˆì™¸ë¥¼ ë³´ê´€í•˜ê³  ë©”ì„œë“œë¥¼ í˜¸ì¶œí•œ ê³³ì—ì„œ try~catch ë¸”ëŸ­ì„ ë§Œë“¤ê³  ê·¸ ê³³ìœ¼ë¡œ ì˜ˆì™¸ë¥¼ ì–‘ë„
 	public void printData() throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("´Ü ÀÔ·Â > ");
-		int dan = Integer.parseInt(br.readLine()); // readLine() ¸Ş¼­µå´Â \n, \r, \r\nÀÌ Á¦°ÅµÈ ÇÑ ÁÙÀÇ µ¥ÀÌÅÍ¸¦ ¹®ÀÚ¿­·Î ¹İÈ¯ÇÏ¹Ç·Î ¹®ÀÚ¿­ parsing ÇÊ¿ä; readLine() ¸Ş¼­µå »ç¿ë½Ã IOExceptionÀÌ ¹ß»ıÇÒ ¼ö ÀÖ°í, IOExceptionÀº ÀÏ¹İÀû ExceptionÀÌ¶ó throws È¤Àº try~catchÇÏÁö ¾ÊÀ¸¸é ÄÄÆÄÀÏ ¿À·ù ¹ß»ı
-		System.out.println(dan + "´Ü");
+		System.out.print("ë‹¨ ì…ë ¥ > ");
+		int dan = Integer.parseInt(br.readLine()); // readLine() ë©”ì„œë“œëŠ” \n, \r, \r\nì´ ì œê±°ëœ í•œ ì¤„ì˜ ë°ì´í„°ë¥¼ ë¬¸ìì—´ë¡œ ë°˜í™˜í•˜ë¯€ë¡œ ë¬¸ìì—´ parsing í•„ìš”; readLine() ë©”ì„œë“œ ì‚¬ìš©ì‹œ IOExceptionì´ ë°œìƒí•  ìˆ˜ ìˆê³ , IOExceptionì€ ì¼ë°˜ì  Exceptionì´ë¼ throws í˜¹ì€ try~catchí•˜ì§€ ì•Šìœ¼ë©´ ì»´íŒŒì¼ ì˜¤ë¥˜ ë°œìƒ
+		System.out.println(dan + "ë‹¨");
 		System.out.println("========");
 		for(int i=1;i<=9;i++) {
 			System.out.println(dan + " * " + i + " = " + dan*i);
@@ -19,15 +19,15 @@ public class ExceptionMain05 {
 	
 	public static void main(String[] args) {
 		ExceptionMain05 ex = new ExceptionMain05();
-		// ex.printData(); // throws ¿¹¾à¾î »ç¿ëÇÑ ¸Ş¼­µå È£Ãâ½Ã ÀÇ¹«ÀûÀ¸·Î try~catch ºí·° ÀÛ¼ºÇØ¾ß ÇÔ
+		// ex.printData(); // throws ì˜ˆì•½ì–´ ì‚¬ìš©í•œ ë©”ì„œë“œ í˜¸ì¶œì‹œ ì˜ë¬´ì ìœ¼ë¡œ try~catch ë¸”ëŸ­ ì‘ì„±í•´ì•¼ í•¨
 		try {
 			ex.printData();
 		}
 		catch(NumberFormatException e) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¼ıÀÚ¸¸ ÀÔ·ÂÇÏ¼¼¿ä.");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ìˆ«ìë§Œ ì…ë ¥í•˜ì„¸ìš”.");
 		}
-		catch(IOException e) { // IOExceptionÀº ÀÔ·Â ´ë±â ÁßÀÎµ¥ ÇÁ·Î±×·¥À» °­Á¦ Áß´ÜÇÏ°Å³ª, ½Ã½ºÅÛ È¯°æÀÌ ºÒ¾ÈÁ¤ÇØ¼­ System.inÀÇ ÀÔ·Â Á¤º¸¸¦ »ó½ÇÇßÀ» ¶§ ¹ß»ı °¡´ÉÇÏ¸ç µ¹¹ßÀûÀ¸·Î ¹ß»ıÇÏ±â ¶§¹®¿¡ ¿¹¿Ü Ã³¸®¸¦ ÀÇ¹«È­ÇÏ´Â °Í; ÀÌ ¿¹Á¦¿¡¼­´Â ÇÁ·Î±×·¥ °­Á¦ Áß´Ü½Ã parseInt()°¡ ÀÔ·Â¹ŞÀº °ÍÀÌ ¾ø±â ¶§¹®¿¡ NumberFormatExceptionµµ ÇÔ²² ¹ß»ı; ¸¸¾à ÀÔ·Â¹Ş±â Àü¿¡ br.close();·Î ÀÚ¿øÀ» Á¤¸®ÇÏ¸é IOException ¹ß»ı
-			System.out.println("ÀÔÃâ·Â ¿¹¿Ü°¡ ¹ß»ıÇß½À´Ï´Ù.");
+		catch(IOException e) { // IOExceptionì€ ì…ë ¥ ëŒ€ê¸° ì¤‘ì¸ë° í”„ë¡œê·¸ë¨ì„ ê°•ì œ ì¤‘ë‹¨í•˜ê±°ë‚˜, ì‹œìŠ¤í…œ í™˜ê²½ì´ ë¶ˆì•ˆì •í•´ì„œ System.inì˜ ì…ë ¥ ì •ë³´ë¥¼ ìƒì‹¤í–ˆì„ ë•Œ ë°œìƒ ê°€ëŠ¥í•˜ë©° ëŒë°œì ìœ¼ë¡œ ë°œìƒí•˜ê¸° ë•Œë¬¸ì— ì˜ˆì™¸ ì²˜ë¦¬ë¥¼ ì˜ë¬´í™”í•˜ëŠ” ê²ƒ; ì´ ì˜ˆì œì—ì„œëŠ” í”„ë¡œê·¸ë¨ ê°•ì œ ì¤‘ë‹¨ì‹œ parseInt()ê°€ ì…ë ¥ë°›ì€ ê²ƒì´ ì—†ê¸° ë•Œë¬¸ì— NumberFormatExceptionë„ í•¨ê»˜ ë°œìƒ; ë§Œì•½ ì…ë ¥ë°›ê¸° ì „ì— br.close();ë¡œ ìì›ì„ ì •ë¦¬í•˜ë©´ IOException ë°œìƒ
+			System.out.println("ì…ì¶œë ¥ ì˜ˆì™¸ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.");
 		}
 	}
 }

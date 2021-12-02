@@ -1,13 +1,13 @@
 package kr.s04.constructor;
 
-class Car2 { // °°Àº ÆÐÅ°Áö¿¡ °°Àº Å¬·¡½º°¡ ÀÖÀ¸¸é Ãæµ¹
+class Car2 { // ê°™ì€ íŒ¨í‚¤ì§€ì— ê°™ì€ í´ëž˜ìŠ¤ê°€ ìžˆìœ¼ë©´ ì¶©ëŒ
 	String color;
 	String gearType;
 	int door;
 	
-	// »ý¼ºÀÚ ¿À¹ö·Îµù
-	public Car2() {} // »ý¼ºÀÚ¸¦ ÇÏ³ª ÀÌ»ó ¸í½ÃÇÏ¸é ÄÄÆÄÀÏ·¯´Â ¸í½ÃµÈ »ý¼ºÀÚ¸¸ ÀÌ¿ëÇÔ; »ý¼ºÀÚ¸¦ ¸í½ÃÇÏ¸é¼­ ±âº» »ý¼ºÀÚ¸¦ ÀÌ¿ëÇÏ·Á¸é ±âº» »ý¼ºÀÚ ¿ª½Ã ¸í½ÃÇØ¾ß ÇÔ
-	public Car2(String c, String g) { // ÀÎÀÚ°¡ ÀÖ´Â »ý¼ºÀÚ¸¦ ¸í½ÃÇÏ¸é, °´Ã¼¸¦ »ý¼ºÇÏ¸é¼­ ¿øÇÏ´Â µ¥ÀÌÅÍ·Î ÃÊ±âÈ­ °¡´É
+	// ìƒì„±ìž ì˜¤ë²„ë¡œë”©
+	public Car2() {} // ìƒì„±ìžë¥¼ í•˜ë‚˜ ì´ìƒ ëª…ì‹œí•˜ë©´ ì»´íŒŒì¼ëŸ¬ëŠ” ëª…ì‹œëœ ìƒì„±ìžë§Œ ì´ìš©í•¨; ìƒì„±ìžë¥¼ ëª…ì‹œí•˜ë©´ì„œ ê¸°ë³¸ ìƒì„±ìžë¥¼ ì´ìš©í•˜ë ¤ë©´ ê¸°ë³¸ ìƒì„±ìž ì—­ì‹œ ëª…ì‹œí•´ì•¼ í•¨
+	public Car2(String c, String g) { // ì¸ìžê°€ ìžˆëŠ” ìƒì„±ìžë¥¼ ëª…ì‹œí•˜ë©´, ê°ì²´ë¥¼ ìƒì„±í•˜ë©´ì„œ ì›í•˜ëŠ” ë°ì´í„°ë¡œ ì´ˆê¸°í™” ê°€ëŠ¥
 		color = c;
 		gearType = g;
 		door = 4;

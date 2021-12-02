@@ -3,7 +3,7 @@ public class DoWhileMain {
 		String str = "Hello World";
 		int su = 0;
 		
-		while(su++ < 5) { // 5È¸ ½ÇÇà
+		while(su++ < 5) { // 5íšŒ ì‹¤í–‰
 			System.out.println(str);
 		}
 		
@@ -11,7 +11,7 @@ public class DoWhileMain {
 		
 		int su2 = 0;
 		
-		do { // 6È¸ ½ÇÇà; do~while¹®¿¡ while¹®°ú µ¿ÀÏÇÑ Á¶°Ç½Ä »ç¿ëÇÒ °æ¿ì, Ç×»ó do~while¹®ÀÌ while¹®º¸´Ù ÇÑ ¹ø ´õ ½ÇÇàÇÏ°Ô µÊ
+		do { // 6íšŒ ì‹¤í–‰; do~whileë¬¸ì— whileë¬¸ê³¼ ë™ì¼í•œ ì¡°ê±´ì‹ ì‚¬ìš©í•  ê²½ìš°, í•­ìƒ do~whileë¬¸ì´ whileë¬¸ë³´ë‹¤ í•œ ë²ˆ ë” ì‹¤í–‰í•˜ê²Œ ë¨
 			System.out.println(str);
 		} while(su2++ < 5);
 	}

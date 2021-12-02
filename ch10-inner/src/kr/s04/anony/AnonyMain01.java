@@ -3,36 +3,36 @@ package kr.s04.anony;
 class Inner6 {
 	int y = 200;
 	public void disp() {
-		System.out.println("Inner6ÀÇ disp ¸Ş¼­µå");
+		System.out.println("Inner6ì˜ disp ë©”ì„œë“œ");
 	}	
 }
 
 public class AnonyMain01 {
-	// ¸â¹ö ¸Ş¼­µå
+	// ë©¤ë²„ ë©”ì„œë“œ
 	public void fun() {
-		// ·ÎÄÃ ³»ºÎ Å¬·¡½º Á¤ÀÇ
+		// ë¡œì»¬ ë‚´ë¶€ í´ë˜ìŠ¤ ì •ì˜
 		class InnerTest extends Inner6 {
 			int x = 300;
 			public void make() {
-				System.out.println("make ¸Ş¼­µå");
+				System.out.println("make ë©”ì„œë“œ");
 			}
 			@Override
 			public void disp() {
-				System.out.println("InnerTestÀÇ disp ¸Ş¼­µå");
+				System.out.println("InnerTestì˜ disp ë©”ì„œë“œ");
 			}
 		}
-		// ·ÎÄÃ ³»ºÎ Å¬·¡½ºÀÇ °´Ã¼ »ı¼º
+		// ë¡œì»¬ ë‚´ë¶€ í´ë˜ìŠ¤ì˜ ê°ì²´ ìƒì„±
 		InnerTest inner = new InnerTest();
-		// ·ÎÄÃ ³»ºÎ Å¬·¡½ºÀÇ ¸â¹ö È£Ãâ
-		System.out.println(inner.y); // »ó¼Ó¹ŞÀº º¯¼ö È£Ãâ
-		inner.disp(); // ÀçÁ¤ÀÇµÈ ¸Ş¼­µå È£Ãâ
+		// ë¡œì»¬ ë‚´ë¶€ í´ë˜ìŠ¤ì˜ ë©¤ë²„ í˜¸ì¶œ
+		System.out.println(inner.y); // ìƒì†ë°›ì€ ë³€ìˆ˜ í˜¸ì¶œ
+		inner.disp(); // ì¬ì •ì˜ëœ ë©”ì„œë“œ í˜¸ì¶œ
 		System.out.println(inner.x);
 		inner.make();	
-		Inner6 i6 = inner; // ºÎ¸ğ Å¬·¡½º ÀÚ·áÇüÀ¸·Î ¾÷Ä³½ºÆÃ
+		Inner6 i6 = inner; // ë¶€ëª¨ í´ë˜ìŠ¤ ìë£Œí˜•ìœ¼ë¡œ ì—…ìºìŠ¤íŒ…
 		System.out.println(i6.y);
-		i6.disp(); // ÀçÁ¤ÀÇµÈ ¸Ş¼­µå È£Ãâ
-		// System.out.println(i6.x); // ÀÚ½Ä Å¬·¡½º ¿µ¿ªÀÇ º¯¼ö È£Ãâ ºÒ°¡
-		// i6.make(); // ÀÚ½Ä Å¬·¡½º ¿µ¿ªÀÇ ¸Ş¼­µå È£Ãâ ºÒ°¡
+		i6.disp(); // ì¬ì •ì˜ëœ ë©”ì„œë“œ í˜¸ì¶œ
+		// System.out.println(i6.x); // ìì‹ í´ë˜ìŠ¤ ì˜ì—­ì˜ ë³€ìˆ˜ í˜¸ì¶œ ë¶ˆê°€
+		// i6.make(); // ìì‹ í´ë˜ìŠ¤ ì˜ì—­ì˜ ë©”ì„œë“œ í˜¸ì¶œ ë¶ˆê°€
 	}
 	
 	public static void main(String[] args) {

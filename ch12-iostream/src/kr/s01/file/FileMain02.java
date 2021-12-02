@@ -10,27 +10,27 @@ public class FileMain02 {
 		String path = "C:\\";
 		File f = new File(path);
 		
-		// ÁöÁ¤ÇÑ °æ·ÎÀÇ ÇÏÀ§ µğ·ºÅä¸® ¹× ÆÄÀÏ Á¤º¸¸¦ File[]·Î º¯È¯
+		// ì§€ì •í•œ ê²½ë¡œì˜ í•˜ìœ„ ë””ë ‰í† ë¦¬ ë° íŒŒì¼ ì •ë³´ë¥¼ File[]ë¡œ ë³€í™˜
 		File[] files = f.listFiles();
 		
-		String attribute = ""; // ÀĞ±â Àü¿ë, ¼û±è ÆÄÀÏ µîÀÇ Á¤º¸¸¦ ÀúÀåÇÒ º¯¼ö ÃÊ±âÈ­
+		String attribute = ""; // ì½ê¸° ì „ìš©, ìˆ¨ê¹€ íŒŒì¼ ë“±ì˜ ì •ë³´ë¥¼ ì €ì¥í•  ë³€ìˆ˜ ì´ˆê¸°í™”
 		String size = "";
 		String name = "";
 		
 		for(int i=0;i<files.length;i++) {
-			File f2 = files[i]; // File ¹è¿­·ÎºÎÅÍ File °´Ã¼¸¦ ¹İÈ¯
+			File f2 = files[i]; // File ë°°ì—´ë¡œë¶€í„° File ê°ì²´ë¥¼ ë°˜í™˜
 			name = f2.getName();
-			if(f2.isDirectory()) { // f2°¡ µğ·ºÅä¸®ÀÎ °æ¿ì
+			if(f2.isDirectory()) { // f2ê°€ ë””ë ‰í† ë¦¬ì¸ ê²½ìš°
 				size = "0";
 				attribute = "DIR";	
 			}
-			else { // f2°¡ ÆÄÀÏÀÎ °æ¿ì
-				size = f2.length() + ""; // longÇüÀ¸·Î ¹İÈ¯µÈ ÆÄÀÏ Å©±â¿¡ ºó ¹®ÀÚ¿­À» ¿¬°áÇØ ¹®ÀÚ¿­·Î º¯È¯ 
-				attribute = f2.canRead() ? "R" : " "; // ÀĞ±â °¡´ÉÇÏ¸é attribute¿¡ R Ãß°¡
-				attribute += f2.canWrite() ? "W" : " "; // ¾²±â °¡´ÉÇÏ¸é attribute¿¡ W Ãß°¡
-				attribute += f2.isHidden() ? "H" : " "; // ¼û±è ÆÄÀÏÀÌ¸é attribute¿¡ H Ãß°¡
+			else { // f2ê°€ íŒŒì¼ì¸ ê²½ìš°
+				size = f2.length() + ""; // longí˜•ìœ¼ë¡œ ë°˜í™˜ëœ íŒŒì¼ í¬ê¸°ì— ë¹ˆ ë¬¸ìì—´ì„ ì—°ê²°í•´ ë¬¸ìì—´ë¡œ ë³€í™˜ 
+				attribute = f2.canRead() ? "R" : " "; // ì½ê¸° ê°€ëŠ¥í•˜ë©´ attributeì— R ì¶”ê°€
+				attribute += f2.canWrite() ? "W" : " "; // ì“°ê¸° ê°€ëŠ¥í•˜ë©´ attributeì— W ì¶”ê°€
+				attribute += f2.isHidden() ? "H" : " "; // ìˆ¨ê¹€ íŒŒì¼ì´ë©´ attributeì— H ì¶”ê°€
 			}
-			// System.out.println(f2.lastModified()); // lastModified() ¸Ş¼­µå´Â ÆÄÀÏÀÇ ¸¶Áö¸· ¼öÁ¤ ³¯Â¥¸¦ 1970-01-01 00:00:00 ÀÌÈÄ Áö³ª°£ ¹Ğ¸®¼¼ÄÁµå·Î È¯»êÇÏ¿© longÇüÀ¸·Î ¹İÈ¯
+			// System.out.println(f2.lastModified()); // lastModified() ë©”ì„œë“œëŠ” íŒŒì¼ì˜ ë§ˆì§€ë§‰ ìˆ˜ì • ë‚ ì§œë¥¼ 1970-01-01 00:00:00 ì´í›„ ì§€ë‚˜ê°„ ë°€ë¦¬ì„¸ì»¨ë“œë¡œ í™˜ì‚°í•˜ì—¬ longí˜•ìœ¼ë¡œ ë°˜í™˜
 			System.out.printf("%s %3s %6s %s\n", sf.format(new Date(f2.lastModified())), attribute, size, name);
 		}	
 	}

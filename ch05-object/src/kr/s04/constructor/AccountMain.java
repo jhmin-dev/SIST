@@ -1,43 +1,43 @@
 package kr.s04.constructor;
 
 public class AccountMain {
-	// ¸â¹ö º¯¼ö
-	String accountNo; // °èÁÂ ¹øÈ£
-	String ownerName; // ¿¹±İÁÖ¸í
-	int balance; // ÀÜ°í
+	// ë©¤ë²„ ë³€ìˆ˜
+	String accountNo; // ê³„ì¢Œ ë²ˆí˜¸
+	String ownerName; // ì˜ˆê¸ˆì£¼ëª…
+	int balance; // ì”ê³ 
 	
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	public AccountMain(String a, String o, int b) {
 		accountNo = a;
 		ownerName = o;
 		balance = b;
-		System.out.println("°èÁÂ »ı¼ºÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+		System.out.println("ê³„ì¢Œ ìƒì„±ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 	
-	// ¸â¹ö ¸Ş¼­µå
-	public void deposit(int amount) { // ¿¹±İÇÏ±â
+	// ë©¤ë²„ ë©”ì„œë“œ
+	public void deposit(int amount) { // ì˜ˆê¸ˆí•˜ê¸°
 		balance += amount;
-		System.out.println("ÀÔ±İÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+		System.out.println("ì…ê¸ˆì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
-	public void withdraw(int amount) { // Ãâ±İÇÏ±â
+	public void withdraw(int amount) { // ì¶œê¸ˆí•˜ê¸°
 		balance -= amount;
-		System.out.println("Ãâ±İÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+		System.out.println("ì¶œê¸ˆì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
-	public void printAccount() { // °èÁÂ Á¤º¸ º¸±â
-		System.out.println("°èÁÂ¹øÈ£ : " + accountNo);
-		System.out.println("¿¹±İÁÖ¸í : " + ownerName);
-		System.out.printf("ÀÜ°í : %,d¿ø\n", balance);
+	public void printAccount() { // ê³„ì¢Œ ì •ë³´ ë³´ê¸°
+		System.out.println("ê³„ì¢Œë²ˆí˜¸ : " + accountNo);
+		System.out.println("ì˜ˆê¸ˆì£¼ëª… : " + ownerName);
+		System.out.printf("ì”ê³  : %,dì›\n", balance);
 	}
 	
 	public static void main(String[] args) {
-		// °èÁÂ »ı¼º
-		AccountMain am = new AccountMain("100-123", "È«±æµ¿", 1000);
-		// °èÁÂ Á¤º¸
+		// ê³„ì¢Œ ìƒì„±
+		AccountMain am = new AccountMain("100-123", "í™ê¸¸ë™", 1000);
+		// ê³„ì¢Œ ì •ë³´
 		am.printAccount();
-		//ÀÔ±İ
+		//ì…ê¸ˆ
 		am.deposit(1000);
 		am.printAccount();
-		//Ãâ±İ
+		//ì¶œê¸ˆ
 		am.withdraw(2000);
 		am.printAccount();
 	}

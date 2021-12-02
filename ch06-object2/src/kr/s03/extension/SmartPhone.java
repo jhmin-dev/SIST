@@ -6,9 +6,9 @@ public class SmartPhone extends Phone {
 	public String getOs() {
 		return os;
 	}
-	// SmartPhone °´Ã¼¸¦ »ý¼ºÇÏ¸é ¸Þ¸ð¸®¿¡ ¸ÕÀú Object ¿µ¿ªÀÌ ¸¸µé¾îÁö°í(Object Å¬·¡½ºÀÇ ¸â¹ö°¡ ¸Þ¸ð¸®¿¡ ¿Ã¶ó°¨), ´ÙÀ½À¸·Î ºÎ¸ð Å¬·¡½º ¿µ¿ªÀÌ ¸¸µé¾îÁö¸ç(ºÎ¸ð Å¬·¡½ºÀÇ ¸â¹ö°¡ ¸Þ¸ð¸®¿¡ ¿Ã¶ó°¨), ¸¶Áö¸·À¸·Î ÀÚ½Ä Å¬·¡½º ¿µ¿ªÀÌ »ý¼ºµÊ(ÀÚ½Ä Å¬·¡½ºÀÇ ¸â¹ö°¡ ¸Þ¸ð¸®¿¡ ¿Ã¶ó°¨); ¼¼ ¿µ¿ªÀº º°µµÀÇ °´Ã¼°¡ ¾Æ´Ï¶ó ÇÏ³ªÀÇ °´Ã¼ÀÌ¹Ç·Î ÁÖ¼Ò´Â ÇÏ³ªÀÓ
+	// SmartPhone ê°ì²´ë¥¼ ìƒì„±í•˜ë©´ ë©”ëª¨ë¦¬ì— ë¨¼ì € Object ì˜ì—­ì´ ë§Œë“¤ì–´ì§€ê³ (Object í´ëž˜ìŠ¤ì˜ ë©¤ë²„ê°€ ë©”ëª¨ë¦¬ì— ì˜¬ë¼ê°), ë‹¤ìŒìœ¼ë¡œ ë¶€ëª¨ í´ëž˜ìŠ¤ ì˜ì—­ì´ ë§Œë“¤ì–´ì§€ë©°(ë¶€ëª¨ í´ëž˜ìŠ¤ì˜ ë©¤ë²„ê°€ ë©”ëª¨ë¦¬ì— ì˜¬ë¼ê°), ë§ˆì§€ë§‰ìœ¼ë¡œ ìžì‹ í´ëž˜ìŠ¤ ì˜ì—­ì´ ìƒì„±ë¨(ìžì‹ í´ëž˜ìŠ¤ì˜ ë©¤ë²„ê°€ ë©”ëª¨ë¦¬ì— ì˜¬ë¼ê°); ì„¸ ì˜ì—­ì€ ë³„ë„ì˜ ê°ì²´ê°€ ì•„ë‹ˆë¼ í•˜ë‚˜ì˜ ê°ì²´ì´ë¯€ë¡œ ì£¼ì†ŒëŠ” í•˜ë‚˜ìž„
 	public SmartPhone(String number, String model, String color, String os) {
-		this.number = number; // PhoneÀÇ number¸¦ »ó¼Ó¹Þ¾Ò±â ¶§¹®¿¡ ÀÚ½Å(=this)ÀÇ °ÍÃ³·³ ÀÎ½Ä
+		this.number = number; // Phoneì˜ numberë¥¼ ìƒì†ë°›ì•˜ê¸° ë•Œë¬¸ì— ìžì‹ (=this)ì˜ ê²ƒì²˜ëŸ¼ ì¸ì‹
 		this.model = model;
 		this.color = color;
 		this.os = os;

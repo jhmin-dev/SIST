@@ -1,11 +1,11 @@
 public class OperatorMain04 {
 	public static void main(String[] args) {
-		System.out.println("====ºñ±³ ¿¬»êÀÚ====");
+		System.out.println("====ë¹„êµ ì—°ì‚°ì====");
 		boolean result;
 		int a = 10;
 		double b = 10.5;
 		
-		result = a < b; // intÀÎ a°¡ double·Î ÀÚµ¿ Çüº¯È¯µÇ¾î ¿¬»êÀÌ ¼öÇàµÊ
+		result = a < b; // intì¸ aê°€ doubleë¡œ ìë™ í˜•ë³€í™˜ë˜ì–´ ì—°ì‚°ì´ ìˆ˜í–‰ë¨
 		System.out.println("a < b : " + result);
 		
 		result = a > b;

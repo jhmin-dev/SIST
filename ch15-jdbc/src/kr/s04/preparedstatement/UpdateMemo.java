@@ -17,22 +17,22 @@ public class UpdateMemo {
 		
 		try {
 			br = new BufferedReader(new InputStreamReader(System.in));
-			System.out.println("¸Ş¸ğ¸¦ ¼öÁ¤ÇÕ´Ï´Ù.");
-			System.out.print("¸Ş¸ğ ¹øÈ£ > ");
+			System.out.println("ë©”ëª¨ë¥¼ ìˆ˜ì •í•©ë‹ˆë‹¤.");
+			System.out.print("ë©”ëª¨ ë²ˆí˜¸ > ");
 			int num = Integer.parseInt(br.readLine());
-			System.out.print("Á¦¸ñ > ");
+			System.out.print("ì œëª© > ");
 			String title = br.readLine();
-			System.out.print("ÀÛ¼ºÀÚ > ");
+			System.out.print("ì‘ì„±ì > ");
 			String name = br.readLine();
-			System.out.print("³»¿ë > ");
+			System.out.print("ë‚´ìš© > ");
 			String memo = br.readLine();
-			System.out.print("ÀÌ¸ŞÀÏ > ");
+			System.out.print("ì´ë©”ì¼ > ");
 			String email = br.readLine();
 			
-			// JDBC ¼öÇà 1,2´Ü°è
+			// JDBC ìˆ˜í–‰ 1,2ë‹¨ê³„
 			conn = DBUtil.getConnection();
 			
-			// ºó ÇàÀ» ÀÔ·Â¹ŞÀº °æ¿ì, ±âÁ¸ Á¤º¸¸¦ À¯ÁöÇÒ ¼ö ÀÖ°Ô²û SELECT¹® ½ÇÇà
+			// ë¹ˆ í–‰ì„ ì…ë ¥ë°›ì€ ê²½ìš°, ê¸°ì¡´ ì •ë³´ë¥¼ ìœ ì§€í•  ìˆ˜ ìˆê²Œë” SELECTë¬¸ ì‹¤í–‰
 			if(title.equals("")|name.equals("")|memo.equals("")|email.equals("")) {
 				sql = "SELECT * FROM test2 WHERE num=?";
 				PreparedStatement pstmt2 = conn.prepareStatement(sql);
@@ -44,30 +44,30 @@ public class UpdateMemo {
 					if (memo.equals("")) memo = rs.getString("memo");
 					if (email.equals("")) email = rs.getString("email");
 				}
-				DBUtil.executeClose(rs, pstmt2, null); // ÀÚ¿ø Á¤¸®¸¦ ÇÏ±â À§ÇØ¼­´Â SQL¹®Àå¸¶´Ù º°µµÀÇ PreparedStatement °´Ã¼¸¦ »ı¼ºÇØ¾ß ÇÔ
+				DBUtil.executeClose(rs, pstmt2, null); // ìì› ì •ë¦¬ë¥¼ í•˜ê¸° ìœ„í•´ì„œëŠ” SQLë¬¸ì¥ë§ˆë‹¤ ë³„ë„ì˜ PreparedStatement ê°ì²´ë¥¼ ìƒì„±í•´ì•¼ í•¨
 			}
 			
-			// SQL¹® ÀÛ¼º
+			// SQLë¬¸ ì‘ì„±
 			sql = "UPDATE test2 SET title=?, name=?, memo=?, email=? WHERE num=?";
 			
-			// JDBC ¼öÇà 3´Ü°è
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„
 			pstmt = conn.prepareStatement(sql);
-			// ?¿¡ µ¥ÀÌÅÍ¸¦ ¹ÙÀÎµù
+			// ?ì— ë°ì´í„°ë¥¼ ë°”ì¸ë”©
 			pstmt.setString(1, title);
 			pstmt.setString(2, name);
 			pstmt.setString(3, memo);
 			pstmt.setString(4, email);
 			pstmt.setInt(5, num);
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºíÀÇ Çà º¯°æ
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ì˜ í–‰ ë³€ê²½
 			int count = pstmt.executeUpdate();
-			System.out.println(count + "°³ ÇàÀÇ Á¤º¸¸¦ ¼öÁ¤Çß½À´Ï´Ù.");
+			System.out.println(count + "ê°œ í–‰ì˜ ì •ë³´ë¥¼ ìˆ˜ì •í–ˆìŠµë‹ˆë‹¤.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			DBUtil.executeClose(null, pstmt, conn);
 			if(br!=null) try {br.close();} catch(Exception e) {}
 		}

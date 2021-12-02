@@ -7,20 +7,20 @@ public class FileWriterMain {
 	public static void main(String[] args) {
 		FileWriter fw = null;
 		try {
-			// µ¤¾î¾²±â
+			// ë®ì–´ì“°ê¸°
 			fw = new FileWriter("fileWriter.txt");
-			// ÀÌ¾î¾²±â
+			// ì´ì–´ì“°ê¸°
 			// fw = new FileWriter("fileWriter.txt", true);
-			String msg = "¾È³çÇÏ¼¼¿ä! FileWriter Å×½ºÆ®ÀÔ´Ï´Ù.";
-			fw.write(msg); // write() ¸Ş¼­µå´Â char[], À¯´ÏÄÚµå °ª, String µîÀ» ÀÎÀÚ·Î ¹Ş¾Æ ¹öÆÛ¿¡ ³»¿ëÀ» Ãâ·Â
-			fw.flush(); // ¹öÆÛÀÇ ³»¿ëÀ» ºñ¿ì°í ÆÄÀÏ¿¡ ³»¿ëÀ» Ãâ·Â
-			System.out.println("ÆÄÀÏÀ» »ı¼ºÇÏ°í ÆÄÀÏ¿¡ ³»¿ëÀ» Ãâ·Â");
+			String msg = "ì•ˆë…•í•˜ì„¸ìš”! FileWriter í…ŒìŠ¤íŠ¸ì…ë‹ˆë‹¤.";
+			fw.write(msg); // write() ë©”ì„œë“œëŠ” char[], ìœ ë‹ˆì½”ë“œ ê°’, String ë“±ì„ ì¸ìë¡œ ë°›ì•„ ë²„í¼ì— ë‚´ìš©ì„ ì¶œë ¥
+			fw.flush(); // ë²„í¼ì˜ ë‚´ìš©ì„ ë¹„ìš°ê³  íŒŒì¼ì— ë‚´ìš©ì„ ì¶œë ¥
+			System.out.println("íŒŒì¼ì„ ìƒì„±í•˜ê³  íŒŒì¼ì— ë‚´ìš©ì„ ì¶œë ¥");
 		}
 		catch(IOException e) {
 			e.printStackTrace();
 		}
 		finally {
-			if(fw!=null) try {fw.close();} catch(IOException e) {} // FileWriterÀÇ close() ¸Ş¼­µå´Â ÀÚ¿øÀ» Á¤¸®ÇÏ±â Àü¿¡ ¹öÆÛ¸¦ È®ÀÎÇØ¼­ ³²¾Æ ÀÖ´Â µ¥ÀÌÅÍ°¡ ÀÖÀ¸¸é flush() ¸Ş¼­µå¸¦ È£ÃâÇÏ¿© Ã³¸®ÇÔ; µ¥ÀÌÅÍ ´©¶ô ¹æÁö
+			if(fw!=null) try {fw.close();} catch(IOException e) {} // FileWriterì˜ close() ë©”ì„œë“œëŠ” ìì›ì„ ì •ë¦¬í•˜ê¸° ì „ì— ë²„í¼ë¥¼ í™•ì¸í•´ì„œ ë‚¨ì•„ ìˆëŠ” ë°ì´í„°ê°€ ìˆìœ¼ë©´ flush() ë©”ì„œë“œë¥¼ í˜¸ì¶œí•˜ì—¬ ì²˜ë¦¬í•¨; ë°ì´í„° ëˆ„ë½ ë°©ì§€
 		}
 	}
 }

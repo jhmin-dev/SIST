@@ -1,24 +1,24 @@
 package kr.s03.date;
 
-import java.text.DateFormat; // ³¯Â¥ ¹× ½Ã°£ÀÇ Ãâ·Â Çü½ÄÀ» º¯°æÇÏ±â À§ÇÑ Å¬·¡½º
-import java.text.SimpleDateFormat; // ³¯Â¥ ¹× ½Ã°£ÀÇ Ãâ·Â Çü½ÄÀ» º¸´Ù ÀÚÀ¯·Ó°Ô º¯°æÇÏ±â À§ÇÑ Å¬·¡½º
+import java.text.DateFormat; // ë‚ ì§œ ë° ì‹œê°„ì˜ ì¶œë ¥ í˜•ì‹ì„ ë³€ê²½í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤
+import java.text.SimpleDateFormat; // ë‚ ì§œ ë° ì‹œê°„ì˜ ì¶œë ¥ í˜•ì‹ì„ ë³´ë‹¤ ììœ ë¡­ê²Œ ë³€ê²½í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤
 import java.util.Date;
 
 public class DateMain {
 	public static void main(String[] args) {
 		Date now = new Date();
-		System.out.println(now); // ÇöÀç ³¯Â¥ ¹× ½Ã°£À» ±âº» Çü½ÄÀ¸·Î Ãâ·Â
-		// System.out.println(now.toLocaleString()); // ÇöÀç ³¯Â¥ ¹× ½Ã°£À» ÇÑ±¹ Çü½ÄÀ¸·Î Ãâ·Â; deprecatedµÇ¾î »ç¿ëÇÏÁö ¾ÊÀ½
+		System.out.println(now); // í˜„ì¬ ë‚ ì§œ ë° ì‹œê°„ì„ ê¸°ë³¸ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥
+		// System.out.println(now.toLocaleString()); // í˜„ì¬ ë‚ ì§œ ë° ì‹œê°„ì„ í•œêµ­ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥; deprecatedë˜ì–´ ì‚¬ìš©í•˜ì§€ ì•ŠìŒ
 		
-		DateFormat df = DateFormat.getInstance(); // SHORT styleÀÌ Àû¿ëµÈ formatter °´Ã¼ ¹İÈ¯
-		String today = df.format(now); // Date °´Ã¼¿¡ Æ÷¸ËÀ» Àû¿ëÇÏ¿© ¹®ÀÚ¿­·Î ¹İÈ¯
+		DateFormat df = DateFormat.getInstance(); // SHORT styleì´ ì ìš©ëœ formatter ê°ì²´ ë°˜í™˜
+		String today = df.format(now); // Date ê°ì²´ì— í¬ë§·ì„ ì ìš©í•˜ì—¬ ë¬¸ìì—´ë¡œ ë°˜í™˜
 		System.out.println(today);
 		
-		df = DateFormat.getDateTimeInstance(); // FORMAT localeÀÌ Àû¿ëµÈ formatter °´Ã¼ ¹İÈ¯
-		today = df.format(now); // Date °´Ã¼¿¡ Æ÷¸ËÀ» Àû¿ëÇÏ¿© ¹®ÀÚ¿­·Î ¹İÈ¯
+		df = DateFormat.getDateTimeInstance(); // FORMAT localeì´ ì ìš©ëœ formatter ê°ì²´ ë°˜í™˜
+		today = df.format(now); // Date ê°ì²´ì— í¬ë§·ì„ ì ìš©í•˜ì—¬ ë¬¸ìì—´ë¡œ ë°˜í™˜
 		System.out.println(today);
 		
-		SimpleDateFormat sf = new SimpleDateFormat("yyyy³â MM¿ù ddÀÏ E¿äÀÏ a hh:mm:ss"); // ÁöÁ¤ÇÑ ÆĞÅÏÀÇ formatter °´Ã¼ »ı¼º; y´Â ¿¬µµ, MÀº ¿ù, d´Â ÀÏ, E´Â ¿äÀÏ, a´Â ¿ÀÀü/¿ÀÈÄ, h´Â 0~11½Ã, mÀº ºĞ, s´Â ÃÊ¸¦ ÀÇ¹ÌÇÏ¸ç yyyy´Â 4ÀÚ¸®·Î ¿¬µµ¸¦ Ãâ·ÂÇÏ¶ó´Â ÀÇ¹Ì 
+		SimpleDateFormat sf = new SimpleDateFormat("yyyyë…„ MMì›” ddì¼ Eìš”ì¼ a hh:mm:ss"); // ì§€ì •í•œ íŒ¨í„´ì˜ formatter ê°ì²´ ìƒì„±; yëŠ” ì—°ë„, Mì€ ì›”, dëŠ” ì¼, EëŠ” ìš”ì¼, aëŠ” ì˜¤ì „/ì˜¤í›„, hëŠ” 0~11ì‹œ, mì€ ë¶„, sëŠ” ì´ˆë¥¼ ì˜ë¯¸í•˜ë©° yyyyëŠ” 4ìë¦¬ë¡œ ì—°ë„ë¥¼ ì¶œë ¥í•˜ë¼ëŠ” ì˜ë¯¸ 
 		today = sf.format(now);
 		System.out.println(today);		
 	}

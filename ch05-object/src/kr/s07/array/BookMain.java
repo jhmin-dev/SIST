@@ -2,40 +2,40 @@ package kr.s07.array;
 
 public class BookMain {
 	public static void main(String[] args) {
-		// Book °´Ã¼¸¦ ¿ä¼Ò·Î °®´Â ¹è¿­ ¼±¾ð ¹× »ý¼º
-		Book[] bookArray = new Book[3]; // ±æÀÌ 3ÀÎ ¹è¿­ÀÌ »ý¼ºµÇ°í, °¢ ¿ä¼Ò´Â null·Î ÃÊ±âÈ­µÊ; °´Ã¼°¡ ¾ÆÁ÷ »ý¼ºµÇÁö ¾Ê¾Æ ÁÖ¼Ò°¡ ¾ø´Ù´Â ÀÇ¹Ì
+		// Book ê°ì²´ë¥¼ ìš”ì†Œë¡œ ê°–ëŠ” ë°°ì—´ ì„ ì–¸ ë° ìƒì„±
+		Book[] bookArray = new Book[3]; // ê¸¸ì´ 3ì¸ ë°°ì—´ì´ ìƒì„±ë˜ê³ , ê° ìš”ì†ŒëŠ” nullë¡œ ì´ˆê¸°í™”ë¨; ê°ì²´ê°€ ì•„ì§ ìƒì„±ë˜ì§€ ì•Šì•„ ì£¼ì†Œê°€ ì—†ë‹¤ëŠ” ì˜ë¯¸
 		int total = 0;
 		
-		// Book °´Ã¼¸¦ 3°³ »ý¼ºÇÏ¿© ¹è¿­¿¡ ÀúÀå
-		bookArray[0] = new Book("IT", "Java", 5000, 0.05); // »ý¼ºµÈ °´Ã¼ÀÇ ÁÖ¼Ò°¡ ¹è¿­ÀÇ 0¹ø ÀÎµ¦½º¿¡ ÀúÀåµÊ
-		bookArray[1] = new Book("¹Ì¼ú", "°íÈå", 4000, 0.03);
-		bookArray[2] = new Book("À½¾Ç", "¾Æ¸®¶û", 6000, 0.06);
+		// Book ê°ì²´ë¥¼ 3ê°œ ìƒì„±í•˜ì—¬ ë°°ì—´ì— ì €ìž¥
+		bookArray[0] = new Book("IT", "Java", 5000, 0.05); // ìƒì„±ëœ ê°ì²´ì˜ ì£¼ì†Œê°€ ë°°ì—´ì˜ 0ë²ˆ ì¸ë±ìŠ¤ì— ì €ìž¥ë¨
+		bookArray[1] = new Book("ë¯¸ìˆ ", "ê³ í", 4000, 0.03);
+		bookArray[2] = new Book("ìŒì•…", "ì•„ë¦¬ëž‘", 6000, 0.06);
 		
-		// ¹è¿­ÀÇ ¿ä¼Ò Ãâ·Â; ÂüÁ¶°ªÀÌ Ãâ·ÂµÊ
+		// ë°°ì—´ì˜ ìš”ì†Œ ì¶œë ¥; ì°¸ì¡°ê°’ì´ ì¶œë ¥ë¨
 		System.out.println(bookArray[0]);
 		System.out.println(bookArray[1]);
 		System.out.println(bookArray[2]);
 		
-		// ¹Ýº¹¹®À» ÀÌ¿ëÇØ ¹è¿­¿¡ Á¢±ÙÇØ¼­ °´Ã¼¸¦ È£ÃâÇÏ°í °´Ã¼ÀÇ ¸â¹ö º¯¼ö¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ Ãâ·Â
+		// ë°˜ë³µë¬¸ì„ ì´ìš©í•´ ë°°ì—´ì— ì ‘ê·¼í•´ì„œ ê°ì²´ë¥¼ í˜¸ì¶œí•˜ê³  ê°ì²´ì˜ ë©¤ë²„ ë³€ìˆ˜ì— ì €ìž¥ëœ ë°ì´í„° ì¶œë ¥
 		for(int i=0;i<bookArray.length;i++) {
-			System.out.print(bookArray[i].getCategory() + "\t"); // °´Ã¼ÀÇ ¸â¹ö º¯¼ö´Â privateÀÌ¶ó Á÷Á¢ Á¢±Ù ºÒ°¡
+			System.out.print(bookArray[i].getCategory() + "\t"); // ê°ì²´ì˜ ë©¤ë²„ ë³€ìˆ˜ëŠ” privateì´ë¼ ì§ì ‘ ì ‘ê·¼ ë¶ˆê°€
 			System.out.print(bookArray[i].getName() + "\t");
-			System.out.printf("%,d¿ø\t", bookArray[i].getPrice());
-			System.out.printf("%.2f%%\n", bookArray[i].getDiscount()); // printf¿¡¼­ %¸¦ ÀÏ¹Ý¹®ÀÚ·Î Ãâ·ÂÇÏ·Á¸é %% »ç¿ë
+			System.out.printf("%,dì›\t", bookArray[i].getPrice());
+			System.out.printf("%.2f%%\n", bookArray[i].getDiscount()); // printfì—ì„œ %ë¥¼ ì¼ë°˜ë¬¸ìžë¡œ ì¶œë ¥í•˜ë ¤ë©´ %% ì‚¬ìš©
 		}
 		
 		System.out.println();
 		
-		// È®Àå for¹®
-		for(Book book : bookArray) { // ÂüÁ¶ ÀÚ·áÇüÀº Å¬·¡½º¸í BookÀ» Àû°í ÂüÁ¶ º¯¼ö bookÀ» ¼±¾ð
+		// í™•ìž¥ forë¬¸
+		for(Book book : bookArray) { // ì°¸ì¡° ìžë£Œí˜•ì€ í´ëž˜ìŠ¤ëª… Bookì„ ì ê³  ì°¸ì¡° ë³€ìˆ˜ bookì„ ì„ ì–¸
 			System.out.printf("%s\t", book.getCategory());
 			System.out.printf("%s\t", book.getName());
-			System.out.printf("%,d¿ø\t", book.getPrice());
+			System.out.printf("%,dì›\t", book.getPrice());
 			System.out.printf("%.2f%%\n", book.getDiscount());
-			// ÇÕ°è
+			// í•©ê³„
 			total += book.getPrice();
 		}
-		// ÇÕ°è Ãâ·Â
-		System.out.printf("°¡°ÝÀÇ ÇÕ : %,d¿ø", total);
+		// í•©ê³„ ì¶œë ¥
+		System.out.printf("ê°€ê²©ì˜ í•© : %,dì›", total);
 	}
 }

@@ -1,28 +1,28 @@
 package kr.s04.overriding;
-// ºÎ¸ğ Å¬·¡½º
+// ë¶€ëª¨ í´ë˜ìŠ¤
 class Dad {
 	public String getLunch() {
-		return "¹ä";
+		return "ë°¥";
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class Son extends Dad {
 	
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class Daughter extends Dad {
 	@Override
 	public String getLunch() {
-		return "»§";
+		return "ë¹µ";
 	}
 }
 
 public class OverridingMain02 {
 	public static void main(String[] args) {
 		Son s = new Son();
-		System.out.println("¾ÆµéÀº " + s.getLunch() + "À» ¸Ô´Â´Ù.");
+		System.out.println("ì•„ë“¤ì€ " + s.getLunch() + "ì„ ë¨¹ëŠ”ë‹¤.");
 		
 		Daughter d = new Daughter();
-		System.out.println("µşÀº " + d.getLunch() + "À» ¸Ô´Â´Ù.");
+		System.out.println("ë”¸ì€ " + d.getLunch() + "ì„ ë¨¹ëŠ”ë‹¤.");
 	}
 }

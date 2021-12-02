@@ -6,22 +6,22 @@ public class HashMapMain01 {
 	public static void main(String[] args) {
 		HashMap<String, Integer> mp = new HashMap<String, Integer>();
 		
-		// mp¿¡ put() ¸Ş¼­µå·Î µ¥ÀÌÅÍ ÀúÀå
-		mp.put("³Ê±¼", 95);
-		mp.put("Äáµ¹", 100);
-		mp.put("¹ãµ¹", 85);
-		mp.put("¸µÅ©", 93);
-		mp.put("Á©´Ù", 70);
-		mp.put("Äáµ¹", 0); // Map ÀÎÅÍÆäÀÌ½º´Â ½Äº°ÀÚÀÇ Áßº¹À» ºÒÇãÇÏ¸ç, ½Äº°ÀÚ°¡ Áßº¹µÇ¾úÀ» °æ¿ì ¸¶Áö¸·¿¡ µî·ÏÇÑ °ªÀ» ÀúÀå
-		mp.put("°¡³í", null); // °ªÀ¸·Î null ÀÎÁ¤
-		mp.put(null, 100); // ½Äº°ÀÚ·Î null ÀÎÁ¤
+		// mpì— put() ë©”ì„œë“œë¡œ ë°ì´í„° ì €ì¥
+		mp.put("ë„ˆêµ´", 95);
+		mp.put("ì½©ëŒ", 100);
+		mp.put("ë°¤ëŒ", 85);
+		mp.put("ë§í¬", 93);
+		mp.put("ì ¤ë‹¤", 70);
+		mp.put("ì½©ëŒ", 0); // Map ì¸í„°í˜ì´ìŠ¤ëŠ” ì‹ë³„ìì˜ ì¤‘ë³µì„ ë¶ˆí—ˆí•˜ë©°, ì‹ë³„ìê°€ ì¤‘ë³µë˜ì—ˆì„ ê²½ìš° ë§ˆì§€ë§‰ì— ë“±ë¡í•œ ê°’ì„ ì €ì¥
+		mp.put("ê°€ë…¼", null); // ê°’ìœ¼ë¡œ null ì¸ì •
+		mp.put(null, 100); // ì‹ë³„ìë¡œ null ì¸ì •
 		System.out.println(mp);
 		
-		// get() ¸Ş¼­µå¿¡ ½Äº°ÀÚ¸¦ ÀÎÀÚ·Î ÀÔ·ÂÇÏ¿© ¿¬°áµÈ °ªÀ» ¹İÈ¯¹ŞÀ½
-		int num = mp.get("Äáµ¹"); // Integer¿¡¼­ int·Î ÀÚµ¿ º¯È¯ ¹ß»ı
-		System.out.println("Äáµ¹ÀÇ ¼ºÀûÀº " + num);
+		// get() ë©”ì„œë“œì— ì‹ë³„ìë¥¼ ì¸ìë¡œ ì…ë ¥í•˜ì—¬ ì—°ê²°ëœ ê°’ì„ ë°˜í™˜ë°›ìŒ
+		int num = mp.get("ì½©ëŒ"); // Integerì—ì„œ intë¡œ ìë™ ë³€í™˜ ë°œìƒ
+		System.out.println("ì½©ëŒì˜ ì„±ì ì€ " + num);
 		int nullnum = mp.get(null);
-		Integer nullnum2 = mp.get("°¡³í"); // int·Î º¯¼ö ¼±¾ğ½Ã Integer¸¦ int·Î º¯È¯ÇÏ´Â °úÁ¤¿¡¼­ ¿¹¿Ü ¹ß»ı; ÀúÀå½Ã¿¡´Â ¹®Á¦°¡ ¾ø¾îµµ È£Ãâ½Ã ¹®Á¦µÉ ¼ö ÀÖÀ¸¹Ç·Î Á¶°Ç¹®À¸·Î null Á¦¿ÜÇÏµµ·Ï °ËÁõÇÏ´Â °ÍÀÌ ¾ÈÀü
-		System.out.println("½Äº°ÀÚ null : " + nullnum + ", °ª null : " + nullnum2);
+		Integer nullnum2 = mp.get("ê°€ë…¼"); // intë¡œ ë³€ìˆ˜ ì„ ì–¸ì‹œ Integerë¥¼ intë¡œ ë³€í™˜í•˜ëŠ” ê³¼ì •ì—ì„œ ì˜ˆì™¸ ë°œìƒ; ì €ì¥ì‹œì—ëŠ” ë¬¸ì œê°€ ì—†ì–´ë„ í˜¸ì¶œì‹œ ë¬¸ì œë  ìˆ˜ ìˆìœ¼ë¯€ë¡œ ì¡°ê±´ë¬¸ìœ¼ë¡œ null ì œì™¸í•˜ë„ë¡ ê²€ì¦í•˜ëŠ” ê²ƒì´ ì•ˆì „
+		System.out.println("ì‹ë³„ì null : " + nullnum + ", ê°’ null : " + nullnum2);
 	}
 }

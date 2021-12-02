@@ -1,13 +1,13 @@
 package kr.s02.packtwo;
 
-import kr.s02.packone.People; // importÇÏÁö ¾ÊÀ¸¸é ÆĞÅ°Áö°¡ ´Ş¶ó People Å¬·¡½º¸¦ »ó¼Ó¹ŞÀ» ¼ö ¾øÀ½
+import kr.s02.packone.People; // importí•˜ì§€ ì•Šìœ¼ë©´ íŒ¨í‚¤ì§€ê°€ ë‹¬ë¼ People í´ë˜ìŠ¤ë¥¼ ìƒì†ë°›ì„ ìˆ˜ ì—†ìŒ
 
 class Student extends People {
 	public void print() {
-		// System.out.println("a = " + a); // private; »ó¼Ó °ü°è¶óµµ °°Àº Å¬·¡½º°¡ ¾Æ´Ï¹Ç·Î È£Ãâ ºÒ°¡
-		// System.out.println("b = " + b); // default; »ó¼Ó °ü°è¶óµµ °°Àº ÆĞÅ°Áö°¡ ¾Æ´Ï¹Ç·Î È£Ãâ ºÒ°¡
-		System.out.println("c = " + c); // protected; »ó¼Ó °ü°èÀÌ¹Ç·Î ´Ù¸¥ ÆĞÅ°Áö¶óµµ È£Ãâ °¡´É
-		System.out.println("d = " + d); // public; Á¢±Ù Á¦ÇÑÀÌ ¾øÀ¸¹Ç·Î È£Ãâ °¡´É
+		// System.out.println("a = " + a); // private; ìƒì† ê´€ê³„ë¼ë„ ê°™ì€ í´ë˜ìŠ¤ê°€ ì•„ë‹ˆë¯€ë¡œ í˜¸ì¶œ ë¶ˆê°€
+		// System.out.println("b = " + b); // default; ìƒì† ê´€ê³„ë¼ë„ ê°™ì€ íŒ¨í‚¤ì§€ê°€ ì•„ë‹ˆë¯€ë¡œ í˜¸ì¶œ ë¶ˆê°€
+		System.out.println("c = " + c); // protected; ìƒì† ê´€ê³„ì´ë¯€ë¡œ ë‹¤ë¥¸ íŒ¨í‚¤ì§€ë¼ë„ í˜¸ì¶œ ê°€ëŠ¥
+		System.out.println("d = " + d); // public; ì ‘ê·¼ ì œí•œì´ ì—†ìœ¼ë¯€ë¡œ í˜¸ì¶œ ê°€ëŠ¥
 	}
 }
 

@@ -26,11 +26,11 @@ public class ScoreMain {
 		}
 	}
 
-	// ¸Ş´º
+	// ë©”ë‰´
 	public void callMenu() throws IOException {
 		while(true) {
-			System.out.println("¸Ş´º : 1. ¼ºÀû ÀÔ·Â, 2. ¼ºÀû Ãâ·Â, 3. ÆÄÀÏ »ı¼º, 4. ÆÄÀÏ ÀĞ±â, 5. Á¾·á");
-			System.out.print("¸Ş´º > ");
+			System.out.println("ë©”ë‰´ : 1. ì„±ì  ì…ë ¥, 2. ì„±ì  ì¶œë ¥, 3. íŒŒì¼ ìƒì„±, 4. íŒŒì¼ ì½ê¸°, 5. ì¢…ë£Œ");
+			System.out.print("ë©”ë‰´ > ");
 			try {
 				int num = Integer.parseInt(br.readLine());
 				if(num == 1) {
@@ -46,79 +46,79 @@ public class ScoreMain {
 					readFile();
 				}
 				else if(num == 5) {
-					System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+					System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 					break;
 				}
 				else {
-					System.out.println("Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù.");
+					System.out.println("ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤.");
 				}
 			}
 			catch(NumberFormatException e) {
-				System.out.println("¼ıÀÚ¸¸ ÀÔ·Â °¡´É!");
+				System.out.println("ìˆ«ìë§Œ ì…ë ¥ ê°€ëŠ¥!");
 			}
 		}
 	}
-	// ¼ºÀû ÀÔ·Â
+	// ì„±ì  ì…ë ¥
 	public void input() throws IOException {
 		Score s = new Score();
-		System.out.print("ÀÌ¸§ > ");
+		System.out.print("ì´ë¦„ > ");
 		s.setName(br.readLine());
-		s.setKorean(parseInputData("±¹¾î > "));
-		s.setEnglish(parseInputData("¿µ¾î > "));
-		s.setMath(parseInputData("¼öÇĞ > "));
-		list.add(s); // Score °´Ã¼¸¦ ArrayList¿¡ ÀúÀå
+		s.setKorean(parseInputData("êµ­ì–´ > "));
+		s.setEnglish(parseInputData("ì˜ì–´ > "));
+		s.setMath(parseInputData("ìˆ˜í•™ > "));
+		list.add(s); // Score ê°ì²´ë¥¼ ArrayListì— ì €ì¥
 	}
-	// ¼ºÀû ¹üÀ§ Ã¼Å©(0~100)
+	// ì„±ì  ë²”ìœ„ ì²´í¬(0~100)
 	public int parseInputData(String course) throws IOException {
 		while(true) {
 			System.out.print(course);
 			try {
 				int num = Integer.parseInt(br.readLine());
 				if(num < 0 || num > 100) {
-					throw new ScoreValueException("0~100 »çÀÌÀÇ °ª¸¸ ÀÎÁ¤");
+					throw new ScoreValueException("0~100 ì‚¬ì´ì˜ ê°’ë§Œ ì¸ì •");
 				}
 				return num;
 			}
 			catch(NumberFormatException e) {
-				System.out.println("¼ıÀÚ¸¸ ÀÔ·ÂÇÏ¼¼¿ä.");
+				System.out.println("ìˆ«ìë§Œ ì…ë ¥í•˜ì„¸ìš”.");
 			}
 			catch(ScoreValueException e) {
 				System.out.println(e.getMessage());
 			}
 		}
 	}
-	// ¼ºÀû Ãâ·Â
+	// ì„±ì  ì¶œë ¥
 	public void output() {
 		if(list.size()>0) {
-			System.out.println("ÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ\tµî±Ş");
+			System.out.println("ì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· \të“±ê¸‰");
 			for(Score s : list) {
-				System.out.print(s); // ÀçÁ¤ÀÇµÈ toString() ¸Ş¼­µå°¡ %n Æ÷ÇÔÇÏ°í ÀÖÀ¸¹Ç·Î print() ¸Ş¼­µå »ç¿ë
+				System.out.print(s); // ì¬ì •ì˜ëœ toString() ë©”ì„œë“œê°€ %n í¬í•¨í•˜ê³  ìˆìœ¼ë¯€ë¡œ print() ë©”ì„œë“œ ì‚¬ìš©
 			}
 		}
 		else {
-			System.out.println("Ãâ·ÂÇÒ ¼ºÀûÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("ì¶œë ¥í•  ì„±ì ì´ ì—†ìŠµë‹ˆë‹¤.");
 		}
 	}
-	// ÆÄÀÏ »ı¼º
+	// íŒŒì¼ ìƒì„±
 	public void createFile() {
 		FileWriter fw = null;
 		try {
 			fw = new FileWriter("score.txt");
-			fw.write("ÀÌ·ë\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ\tµî±Ş\n");
+			fw.write("ì´ë£¸\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· \të“±ê¸‰\n");
 			for(Score s : list) {
-				fw.write(s.toString()); // s¸¸ ¸í½ÃÇÏ¸é Score ÀÚ·áÇüÀ¸·Î ÀÎ½ÄÇØ¼­ ÄÄÆÄÀÏ ¿¡·¯
+				fw.write(s.toString()); // së§Œ ëª…ì‹œí•˜ë©´ Score ìë£Œí˜•ìœ¼ë¡œ ì¸ì‹í•´ì„œ ì»´íŒŒì¼ ì—ëŸ¬
 			}
 			fw.flush();
-			System.out.println("ÆÄÀÏÀÌ »ı¼ºµÇ¾ú½À´Ï´Ù.");
+			System.out.println("íŒŒì¼ì´ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		catch(IOException e) {
-			System.out.println("ÆÄÀÏ »ı¼º ¿À·ù");
+			System.out.println("íŒŒì¼ ìƒì„± ì˜¤ë¥˜");
 		}
 		finally {
 			if(fw!=null) try {fw.close();} catch(IOException e) {}
 		}
 	}
-	// ÆÄÀÏ ÀĞ±â
+	// íŒŒì¼ ì½ê¸°
 	public void readFile() {
 		FileReader fr= null;
 		int readChar;
@@ -129,10 +129,10 @@ public class ScoreMain {
 			}
 		}
 		catch(FileNotFoundException e) {
-			System.out.println("»ı¼ºµÈ ÆÄÀÏÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("ìƒì„±ëœ íŒŒì¼ì´ ì—†ìŠµë‹ˆë‹¤.");
 		}
 		catch(IOException e) {
-			System.out.println("ÆÄÀÏ ÀĞ±â ¿À·ù");
+			System.out.println("íŒŒì¼ ì½ê¸° ì˜¤ë¥˜");
 		}
 		finally {
 			if(fr!=null) try {fr.close();} catch(IOException e) {}
@@ -140,10 +140,10 @@ public class ScoreMain {
 	}
 	public static void main(String[] args) {
 		/*
-		 * [½Ç½À]
-		 * ¸Ş´º : 1. ¼ºÀû ÀÔ·Â, 2. ¼ºÀû Ãâ·Â, 3. ÆÄÀÏ »ı¼º, 4. ÆÄÀÏ ÀĞ±â, 5. Á¾·á
-		 * ÆÄÀÏ »ı¼º¿¡´Â FileOutputStream, FileWriter Áß ÇÏ³ª¸¦ ÀÌ¿ë
-		 * ÆÄÀÏ ÀĞ±â¿¡´Â FileInputStream, FileReader Áß ÇÏ³ª¸¦ ÀÌ¿ë
+		 * [ì‹¤ìŠµ]
+		 * ë©”ë‰´ : 1. ì„±ì  ì…ë ¥, 2. ì„±ì  ì¶œë ¥, 3. íŒŒì¼ ìƒì„±, 4. íŒŒì¼ ì½ê¸°, 5. ì¢…ë£Œ
+		 * íŒŒì¼ ìƒì„±ì—ëŠ” FileOutputStream, FileWriter ì¤‘ í•˜ë‚˜ë¥¼ ì´ìš©
+		 * íŒŒì¼ ì½ê¸°ì—ëŠ” FileInputStream, FileReader ì¤‘ í•˜ë‚˜ë¥¼ ì´ìš©
 		 */
 		new ScoreMain();
 	}

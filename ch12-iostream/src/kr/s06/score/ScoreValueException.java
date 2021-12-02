@@ -1,7 +1,7 @@
 package kr.s06.score;
 
 public class ScoreValueException extends Exception {
-	// »ç¿ëÀÚ Á¤ÀÇ ¿¹¿Ü Å¬·¡½º
+	// ì‚¬ìš©ì ì •ì˜ ì˜ˆì™¸ í´ë˜ìŠ¤
 	public ScoreValueException(String message) {
 		super(message);
 	}

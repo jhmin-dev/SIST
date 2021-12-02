@@ -2,13 +2,13 @@ package kr.s01.list;
 
 import java.util.ArrayList;
 
-class CartItem { // ¹®ÀÚ¿­°ú int¸¦ ¹­¾î °ü¸®ÇÏ±â À§ÇØ Å¬·¡½º »ı¼º
-	private String name; // »óÇ°¸í
-	private int num; // ¼ö·®
-	private int price; // °¡°İ
+class CartItem { // ë¬¸ìì—´ê³¼ intë¥¼ ë¬¶ì–´ ê´€ë¦¬í•˜ê¸° ìœ„í•´ í´ë˜ìŠ¤ ìƒì„±
+	private String name; // ìƒí’ˆëª…
+	private int num; // ìˆ˜ëŸ‰
+	private int price; // ê°€ê²©
 	
-	public CartItem() {} // ±âº» »ı¼ºÀÚ
-	public CartItem(String name, int num, int price) { // ÀÎÀÚ°¡ ÀÖ´Â »ı¼ºÀÚ
+	public CartItem() {} // ê¸°ë³¸ ìƒì„±ì
+	public CartItem(String name, int num, int price) { // ì¸ìê°€ ìˆëŠ” ìƒì„±ì
 		this.name = name;
 		this.num = num;
 		this.price = price;
@@ -38,11 +38,11 @@ class CartItem { // ¹®ÀÚ¿­°ú int¸¦ ¹­¾î °ü¸®ÇÏ±â À§ÇØ Å¬·¡½º »ı¼º
 public class ArrayListMain07 {
 	public static void main(String[] args) {
 		ArrayList<CartItem> list = new ArrayList<CartItem>();
-		list.add(new CartItem("¶ó¸é", 10, 10000));
-		list.add(new CartItem("±èÄ¡", 5, 20000));
-		list.add(new CartItem("¸¸µÎ", 20, 30000));
+		list.add(new CartItem("ë¼ë©´", 10, 10000));
+		list.add(new CartItem("ê¹€ì¹˜", 5, 20000));
+		list.add(new CartItem("ë§Œë‘", 20, 30000));
 		
-		// ¹İº¹¹®À» ÀÌ¿ëÇÑ ¿ä¼Ò Ãâ·Â; ArrayList°¡ 2Â÷¿ø ¹è¿­À» ´ëÃ¼ÇÒ ¼ö ÀÖ°í, µ¥ÀÌÅÍ Ãß°¡, º¯°æ, »èÁ¦°¡ °¡´ÉÇÏ¹Ç·Î ´õ Æí¸®
+		// ë°˜ë³µë¬¸ì„ ì´ìš©í•œ ìš”ì†Œ ì¶œë ¥; ArrayListê°€ 2ì°¨ì› ë°°ì—´ì„ ëŒ€ì²´í•  ìˆ˜ ìˆê³ , ë°ì´í„° ì¶”ê°€, ë³€ê²½, ì‚­ì œê°€ ê°€ëŠ¥í•˜ë¯€ë¡œ ë” í¸ë¦¬
 		for(int i=0;i<list.size();i++) {
 			CartItem c = list.get(i);
 			System.out.println(c.getName() + ", " + c.getNum() + ", " + c.getPrice());

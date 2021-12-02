@@ -19,28 +19,28 @@ public class SelectMain {
 		String sql = null;
 		
 		try {
-			// JDBC ¼öÇà 1´Ü°è : µå¶óÀÌ¹ö ·Îµå
+			// JDBC ìˆ˜í–‰ 1ë‹¨ê³„ : ë“œë¼ì´ë²„ ë¡œë“œ
 			Class.forName(db_driver);
-			// JDBC ¼öÇà 2´Ü°è : Connection °´Ã¼ »ı¼º(ID, ºñ¹Ğ¹øÈ£ ÀÎÁõ)
+			// JDBC ìˆ˜í–‰ 2ë‹¨ê³„ : Connection ê°ì²´ ìƒì„±(ID, ë¹„ë°€ë²ˆí˜¸ ì¸ì¦)
 			conn = DriverManager.getConnection(db_url, db_id, db_password);
-			// JDBC ¼öÇà 3´Ü°è : Statement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : Statement ê°ì²´ ìƒì„±
 			stmt = conn.createStatement();
 			
-			// SQL¹® ÀÛ¼º
+			// SQLë¬¸ ì‘ì„±
 			sql = "SELECT * FROM test1";
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºí·ÎºÎÅÍ ÇàÀ» Àü´Ş¹Ş¾Æ¼­ °á°ú ÁıÇÕÀ» ¸¸µé°í, ResultSet °´Ã¼¿¡ ´ã¾Æ¼­ ¹İÈ¯
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ë¡œë¶€í„° í–‰ì„ ì „ë‹¬ë°›ì•„ì„œ ê²°ê³¼ ì§‘í•©ì„ ë§Œë“¤ê³ , ResultSet ê°ì²´ì— ë‹´ì•„ì„œ ë°˜í™˜
 			rs = stmt.executeQuery(sql);
 
-			System.out.println("ID\t³ªÀÌ");
-			while(rs.next()) { // ResultSet¿¡¼­ °á°ú ÁıÇÕÀÇ Çà¿¡ Á¢±ÙÇÒ ¶§ Ä¿¼­¸¦ »ç¿ëÇÏ´Âµ¥, next() ¸Ş¼­µå´Â Ä¿¼­¸¦ ´ÙÀ½ ÇàÀ¸·Î ÀÌµ¿½ÃÅ°°í ´ÙÀ½ ÇàÀÌ Á¸ÀçÇÏ¸é true ¹İÈ¯
-				// ÄÃ·³¸íÀ» ÅëÇØ µ¥ÀÌÅÍ¸¦ ¹İÈ¯
-				System.out.print(rs.getString("id")); // getString() ¸Ş¼­µå´Â ÀÔ·ÂÇÑ ÄÃ·³¸í°ú ¸ÅÄªµÇ¾î ÀÖ´Â µ¥ÀÌÅÍ¸¦ String ÀÚ·áÇüÀ¸·Î ¹İÈ¯
+			System.out.println("ID\të‚˜ì´");
+			while(rs.next()) { // ResultSetì—ì„œ ê²°ê³¼ ì§‘í•©ì˜ í–‰ì— ì ‘ê·¼í•  ë•Œ ì»¤ì„œë¥¼ ì‚¬ìš©í•˜ëŠ”ë°, next() ë©”ì„œë“œëŠ” ì»¤ì„œë¥¼ ë‹¤ìŒ í–‰ìœ¼ë¡œ ì´ë™ì‹œí‚¤ê³  ë‹¤ìŒ í–‰ì´ ì¡´ì¬í•˜ë©´ true ë°˜í™˜
+				// ì»¬ëŸ¼ëª…ì„ í†µí•´ ë°ì´í„°ë¥¼ ë°˜í™˜
+				System.out.print(rs.getString("id")); // getString() ë©”ì„œë“œëŠ” ì…ë ¥í•œ ì»¬ëŸ¼ëª…ê³¼ ë§¤ì¹­ë˜ì–´ ìˆëŠ” ë°ì´í„°ë¥¼ String ìë£Œí˜•ìœ¼ë¡œ ë°˜í™˜
 				System.out.print("\t");
-				System.out.println(rs.getInt("age")); // getInt() ¸Ş¼­µå´Â ÀÔ·ÂÇÑ ÄÃ·³¸í°ú ¸ÅÄªµÇ¾î ÀÖ´Â µ¥ÀÌÅÍ¸¦ int ÀÚ·áÇüÀ¸·Î ¹İÈ¯
+				System.out.println(rs.getInt("age")); // getInt() ë©”ì„œë“œëŠ” ì…ë ¥í•œ ì»¬ëŸ¼ëª…ê³¼ ë§¤ì¹­ë˜ì–´ ìˆëŠ” ë°ì´í„°ë¥¼ int ìë£Œí˜•ìœ¼ë¡œ ë°˜í™˜
 				
-				// ÄÃ·³ ÀÎµ¦½º¸¦ ÅëÇØ µ¥ÀÌÅÍ¸¦ ¹İÈ¯
-				// System.out.print(rs.getString(1)); // SELECT¹®¿¡¼­ ÀüÃ¼(*)¸¦ ¹İÈ¯ÇÑ °æ¿ì Å×ÀÌºí »ı¼º½ÃÀÇ ÄÃ·³ ÀÎµ¦½º¸¦ »ç¿ëÇÒ ¼ö ÀÖÁö¸¸, ±× ¿ÜÀÇ °æ¿ì ÄÃ·³ ÀÎµ¦½º°¡ º¯µ¿µÉ ¼ö ÀÖÀ¸¹Ç·Î ÁÖÀÇ
+				// ì»¬ëŸ¼ ì¸ë±ìŠ¤ë¥¼ í†µí•´ ë°ì´í„°ë¥¼ ë°˜í™˜
+				// System.out.print(rs.getString(1)); // SELECTë¬¸ì—ì„œ ì „ì²´(*)ë¥¼ ë°˜í™˜í•œ ê²½ìš° í…Œì´ë¸” ìƒì„±ì‹œì˜ ì»¬ëŸ¼ ì¸ë±ìŠ¤ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìˆì§€ë§Œ, ê·¸ ì™¸ì˜ ê²½ìš° ì»¬ëŸ¼ ì¸ë±ìŠ¤ê°€ ë³€ë™ë  ìˆ˜ ìˆìœ¼ë¯€ë¡œ ì£¼ì˜
 				// System.out.print("\t");
 				// System.out.println(rs.getInt(2));
 			}
@@ -49,7 +49,7 @@ public class SelectMain {
 			e.printStackTrace();
 		}
 		finally {
-			// °´Ã¼ »ı¼º ¼ø¼­ÀÇ ¿ª¼øÀ¸·Î ÀÚ¿ø Á¤¸®
+			// ê°ì²´ ìƒì„± ìˆœì„œì˜ ì—­ìˆœìœ¼ë¡œ ìì› ì •ë¦¬
 			if(rs!=null) try {rs.close();} catch(SQLException e) {}
 			if(stmt!=null) try {stmt.close();} catch(SQLException e) {}
 			if(conn!=null) try {conn.close();} catch(SQLException e) {}

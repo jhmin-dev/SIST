@@ -10,27 +10,27 @@ public class DeleteMain {
 		String sql = null;
 		
 		try {
-			// JDBC ¼öÇà 1´Ü°è : µå¶óÀÌ¹ö ·Îµå
-			// JDBC ¼öÇà 2´Ü°è : Connection °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 1ë‹¨ê³„ : ë“œë¼ì´ë²„ ë¡œë“œ
+			// JDBC ìˆ˜í–‰ 2ë‹¨ê³„ : Connection ê°ì²´ ìƒì„±
 			conn = DBUtil.getConnection();
 			
-			// SQL¹® ÀÛ¼º
+			// SQLë¬¸ ì‘ì„±
 			sql = "DELETE FROM test1 WHERE id=?";
 			
-			// JDBC ¼öÇà 3´Ü°è : PreparedStatement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : PreparedStatement ê°ì²´ ìƒì„±
 			pstmt = conn.prepareStatement(sql);
-			// ?¿¡ µ¥ÀÌÅÍ ¹ÙÀÎµù
+			// ?ì— ë°ì´í„° ë°”ì¸ë”©
 			pstmt.setString(1, "star");
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºíÀÇ ÇàÀ» »èÁ¦
-			int count = pstmt.executeUpdate(); // »èÁ¦ ÀÛ¾÷ ÈÄ »èÁ¦ÇÑ ÇàÀÇ ¼ö¸¦ ¹İÈ¯
-			System.out.println(count + "°³ ÇàÀ» »èÁ¦ÇÏ¿´½À´Ï´Ù.");
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ì˜ í–‰ì„ ì‚­ì œ
+			int count = pstmt.executeUpdate(); // ì‚­ì œ ì‘ì—… í›„ ì‚­ì œí•œ í–‰ì˜ ìˆ˜ë¥¼ ë°˜í™˜
+			System.out.println(count + "ê°œ í–‰ì„ ì‚­ì œí•˜ì˜€ìŠµë‹ˆë‹¤.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			DBUtil.executeClose(null, pstmt, conn);
 		}
 	}

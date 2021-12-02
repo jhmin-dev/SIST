@@ -3,22 +3,22 @@ public class IfMain05 {
 		int a = 10;
 		float b = 10.0f;
 		
-		if(a == b) { // a°¡ floatÀ¸·Î Çüº¯È¯µÊ
-			System.out.println("10°ú 10.0f´Â °°´Ù!");
+		if(a == b) { // aê°€ floatìœ¼ë¡œ í˜•ë³€í™˜ë¨
+			System.out.println("10ê³¼ 10.0fëŠ” ê°™ë‹¤!");
 		}
 		
 		char c = '0';
 		int d = 0;
 		
-		if(c != d) { // '0'ÀÌ int·Î Çüº¯È¯µÇ¸é 48ÀÌ µÊ
-			System.out.println("'0'°ú 0Àº °°Áö ¾Ê´Ù.");
+		if(c != d) { // '0'ì´ intë¡œ í˜•ë³€í™˜ë˜ë©´ 48ì´ ë¨
+			System.out.println("'0'ê³¼ 0ì€ ê°™ì§€ ì•Šë‹¤.");
 		}
 		
 		char e = 'A';
 		int f = 65;
 		
 		if(e == f) {
-			System.out.println("'A'¿Í 65´Â °°´Ù.");
+			System.out.println("'A'ì™€ 65ëŠ” ê°™ë‹¤.");
 		}
 	}
 }

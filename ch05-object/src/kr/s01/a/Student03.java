@@ -1,7 +1,7 @@
 package kr.s01.a;
 public class Student03 {
-	// ÇÊµå
-	// ¸â¹ö º¯¼ö
+	// í•„ë“œ
+	// ë©¤ë²„ ë³€ìˆ˜
 	String name;
 	int korean;
 	int english;
@@ -10,23 +10,23 @@ public class Student03 {
 	double avg;
 	
 	public static void main(String[] args) {
-		// °´Ã¼ ¼±¾ğ ¹× »ı¼º
+		// ê°ì²´ ì„ ì–¸ ë° ìƒì„±
 		Student03 student = new Student03();
 		
-		// °´Ã¼ÀÇ ÇÊµå¿¡ µ¥ÀÌÅÍ¸¦ ÀúÀå
-		student.name = "È«±æµ¿"; // .(dot) ¿¬»êÀÚ´Â »óÀ§¿ä¼Ò(°´Ã¼)¿¡¼­ ÇÏÀ§¿ä¼Ò(¸â¹ö º¯¼ö)·Î Á¢±ÙÇÒ ¶§ »ç¿ë
+		// ê°ì²´ì˜ í•„ë“œì— ë°ì´í„°ë¥¼ ì €ì¥
+		student.name = "í™ê¸¸ë™"; // .(dot) ì—°ì‚°ìëŠ” ìƒìœ„ìš”ì†Œ(ê°ì²´)ì—ì„œ í•˜ìœ„ìš”ì†Œ(ë©¤ë²„ ë³€ìˆ˜)ë¡œ ì ‘ê·¼í•  ë•Œ ì‚¬ìš©
 		student.korean = 98;
 		student.english = 97;
 		student.math = 95;
 		student.sum = student.korean + student.english + student.math;
 		student.avg = student.sum / 3.0;
 		
-		// °´Ã¼ÀÇ ÇÊµå¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ ÀĞ±â
-		System.out.println("ÀÌ¸§ : " + student.name);
-		System.out.println("±¹¾î : " + student.korean);
-		System.out.println("¿µ¾î : " + student.english);
-		System.out.println("¼öÇĞ : " + student.math);
-		System.out.println("ÃÑÁ¡ : " + student.sum);
-		System.out.printf("Æò±Õ : %.2f", student.avg);
+		// ê°ì²´ì˜ í•„ë“œì— ì €ì¥ëœ ë°ì´í„° ì½ê¸°
+		System.out.println("ì´ë¦„ : " + student.name);
+		System.out.println("êµ­ì–´ : " + student.korean);
+		System.out.println("ì˜ì–´ : " + student.english);
+		System.out.println("ìˆ˜í•™ : " + student.math);
+		System.out.println("ì´ì  : " + student.sum);
+		System.out.printf("í‰ê·  : %.2f", student.avg);
 	}
 }

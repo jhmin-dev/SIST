@@ -4,15 +4,15 @@ import java.io.File;
 
 public class FileMain04 {
 	public static void main(String[] args) {
-		// ÇöÀç ÆÄÀÏ¸í
+		// í˜„ì¬ íŒŒì¼ëª…
 		String path = "sample.txt";
-		// »õ ÆÄÀÏ¸í
+		// ìƒˆ íŒŒì¼ëª…
 		String path2 = "example.txt";
-		// ÇöÀç ÆÄÀÏ °´Ã¼ »ı¼º
+		// í˜„ì¬ íŒŒì¼ ê°ì²´ ìƒì„±
 		File f1 = new File(path);
-		// »õ ÆÄÀÏ °´Ã¼ »ı¼º
+		// ìƒˆ íŒŒì¼ ê°ì²´ ìƒì„±
 		File f2 = new File(path2);
-		// »õ ÆÄÀÏ¸í Á¤º¸¸¦ °¡Áø File °´Ã¼¸¦ renameTo() ¸Ş¼­µåÀÇ ÀÎÀÚ·Î Àü´ŞÇÏ¿© ÆÄÀÏ¸í º¯°æ; ÆÄÀÏ¸í º¯°æ ÀÛ¾÷¿¡ ¼º°øÇÏ¸é true, ±×·¸Áö ¾ÊÀ¸¸é false ¹İÈ¯
-		System.out.println("ÆÄÀÏ¸í º¯°æ : " + f1.renameTo(f2));
+		// ìƒˆ íŒŒì¼ëª… ì •ë³´ë¥¼ ê°€ì§„ File ê°ì²´ë¥¼ renameTo() ë©”ì„œë“œì˜ ì¸ìë¡œ ì „ë‹¬í•˜ì—¬ íŒŒì¼ëª… ë³€ê²½; íŒŒì¼ëª… ë³€ê²½ ì‘ì—…ì— ì„±ê³µí•˜ë©´ true, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ false ë°˜í™˜
+		System.out.println("íŒŒì¼ëª… ë³€ê²½ : " + f1.renameTo(f2));
 	}
 }

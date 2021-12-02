@@ -1,16 +1,16 @@
 package kr.s01.thread;
 
 public class ThreadMain03 implements Runnable {
-	// Runnable ÀÎÅÍÆäÀÌ½ºÀÇ run() ¸Ş¼­µå ±¸Çö
+	// Runnable ì¸í„°í˜ì´ìŠ¤ì˜ run() ë©”ì„œë“œ êµ¬í˜„
 	@Override public void run() {
-		System.out.println("run() ¸Ş¼­µå, ½º·¹µå ÀÌ¸§ : " + Thread.currentThread().getName());
+		System.out.println("run() ë©”ì„œë“œ, ìŠ¤ë ˆë“œ ì´ë¦„ : " + Thread.currentThread().getName());
 	}
-	public static void main(String[] args) { // main() ¸Ş¼­µåµµ Thread ÇüÅÂ·Î ±¸ÇöµÇ¾î ¸Ş¸ğ¸®¿¡ ¿Ã¶ó°¡¸é ½º½º·Î µ¿ÀÛÇÏ¸ç, µ¿½Ã ½ÇÇà °¡´É
-		System.out.println("main ¸Ş¼­µå, ½º·¹µå ÀÌ¸§ : " + Thread.currentThread().getName());
-		// Å¸°Ù °´Ã¼ »ı¼º
+	public static void main(String[] args) { // main() ë©”ì„œë“œë„ Thread í˜•íƒœë¡œ êµ¬í˜„ë˜ì–´ ë©”ëª¨ë¦¬ì— ì˜¬ë¼ê°€ë©´ ìŠ¤ìŠ¤ë¡œ ë™ì‘í•˜ë©°, ë™ì‹œ ì‹¤í–‰ ê°€ëŠ¥
+		System.out.println("main ë©”ì„œë“œ, ìŠ¤ë ˆë“œ ì´ë¦„ : " + Thread.currentThread().getName());
+		// íƒ€ê²Ÿ ê°ì²´ ìƒì„±
 		ThreadMain03 tm = new ThreadMain03();
-		// Thread °´Ã¼ »ı¼º
-		Thread t = new Thread(tm); // Å¸°Ù °´Ã¼ ÁöÁ¤
-		t.start(); // ThreadMain03 °´Ã¼ÀÇ run() ¸Ş¼­µå ¼öÇà
+		// Thread ê°ì²´ ìƒì„±
+		Thread t = new Thread(tm); // íƒ€ê²Ÿ ê°ì²´ ì§€ì •
+		t.start(); // ThreadMain03 ê°ì²´ì˜ run() ë©”ì„œë“œ ìˆ˜í–‰
 	}
 }

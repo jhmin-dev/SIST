@@ -1,48 +1,48 @@
 public class SwitchMain03 {
 	public static void main(String[] args) {
 		/*
-		 * [½Ç½À]
-		 * Á¤¼ö 2°³¸¦ ÀÔ·Â ¹Ş°í »ê¼ú ¿¬»êÀÚ(+,-,*,/,%)¸¦ ÀÔ·Â¹Ş¾Æ ¿¬»êÀ» ¼öÇàÇÑ °á°ú¸¦ Ãâ·ÂÇÏ½Ã¿À.
-		 * [Ãâ·Â ¿¹½Ã]
-		 * Ã¹ ¹øÂ° ¼ö : 7
-		 * ¿¬»êÀÚ : +
-		 * µÎ ¹øÂ° ¼ö : 5
+		 * [ì‹¤ìŠµ]
+		 * ì •ìˆ˜ 2ê°œë¥¼ ì…ë ¥ ë°›ê³  ì‚°ìˆ  ì—°ì‚°ì(+,-,*,/,%)ë¥¼ ì…ë ¥ë°›ì•„ ì—°ì‚°ì„ ìˆ˜í–‰í•œ ê²°ê³¼ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤.
+		 * [ì¶œë ¥ ì˜ˆì‹œ]
+		 * ì²« ë²ˆì§¸ ìˆ˜ : 7
+		 * ì—°ì‚°ì : +
+		 * ë‘ ë²ˆì§¸ ìˆ˜ : 5
 		 * 7 + 5 = 12
 		 */
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		
 		int result = 0;
 			
-		System.out.print("Ã¹ ¹øÂ° ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì²« ë²ˆì§¸ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		int first = input.nextInt();
-		System.out.print("¿¬»êÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì—°ì‚°ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		String operator = input.next();
-		System.out.print("µÎ ¹øÂ° ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ë‘ ë²ˆì§¸ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		int second = input.nextInt();
 		
 		switch(operator) {
 		case "+":
-			result = first + second; break; // ÁÙ¹Ù²ŞÀº ¼¼¹ÌÄİ·ĞÀ¸·Î ±¸ºĞÇÏ±â ¶§¹®¿¡ ¼öÇà¹®°ú break°¡ ÇÑ ÁÙÀÌ¾îµµ µÊ
+			result = first + second; break; // ì¤„ë°”ê¿ˆì€ ì„¸ë¯¸ì½œë¡ ìœ¼ë¡œ êµ¬ë¶„í•˜ê¸° ë•Œë¬¸ì— ìˆ˜í–‰ë¬¸ê³¼ breakê°€ í•œ ì¤„ì´ì–´ë„ ë¨
 		case "-":
 			result = first - second; break;
 		case "*":
 			result = first * second; break;
 		case "/":
-			if(second==0) { // 0À¸·Î ³ª´©´Â ¿¬»êÀ» ¼öÇàÇÏ·Á ÇÏ¸é ÀÚ¹Ù¿¡¼­ ¿À·ù°¡ ¹ß»ıÇÏ¹Ç·Î, ÀÌ¸¦ ¾È³»ÇÏ°í Á¤»ó Á¾·á½ÃÅ°±â À§ÇÔ
-				System.out.println("\n0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù.");
-				System.exit(0); // ÇÁ·Î±×·¥À» Á¾·áÇÏÁö ¾ÊÀ¸¸é Ãâ·Â¹® ¼öÇà½Ã º¯¼ö ÃÊ±âÈ­°¡ ¾È µÇ¾î ¿À·ù°¡ ¹ß»ıÇÔ
+			if(second==0) { // 0ìœ¼ë¡œ ë‚˜ëˆ„ëŠ” ì—°ì‚°ì„ ìˆ˜í–‰í•˜ë ¤ í•˜ë©´ ìë°”ì—ì„œ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ë¯€ë¡œ, ì´ë¥¼ ì•ˆë‚´í•˜ê³  ì •ìƒ ì¢…ë£Œì‹œí‚¤ê¸° ìœ„í•¨
+				System.out.println("\n0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+				System.exit(0); // í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•˜ì§€ ì•Šìœ¼ë©´ ì¶œë ¥ë¬¸ ìˆ˜í–‰ì‹œ ë³€ìˆ˜ ì´ˆê¸°í™”ê°€ ì•ˆ ë˜ì–´ ì˜¤ë¥˜ê°€ ë°œìƒí•¨
 			}
 			result = first / second; break;
 		case "%":
 			if(second==0) {
-				System.out.println("\n0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù.");
+				System.out.println("\n0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 				System.exit(0);
 			}
 			result = first % second; break;
 		default:
-			System.out.println(); // ´Ü¼ø ÁÙ¹Ù²Ş
-			System.out.println("¿¬»êÀÚ¸¦ Àß¸ø ÀÔ·ÂÇÏ¿´½À´Ï´Ù.");
-			System.exit(0); // ÇÁ·Î±×·¥ Á¾·á; Àß¸øµÈ ¿¬»êÀÚ ÀÔ·ÂÇÑ °æ¿ì¿¡ Ãâ·Â¹®ÀÌ ¼öÇàµÇÁö ¾Êµµ·Ï ÇÏ±â À§ÇÔ
+			System.out.println(); // ë‹¨ìˆœ ì¤„ë°”ê¿ˆ
+			System.out.println("ì—°ì‚°ìë¥¼ ì˜ëª» ì…ë ¥í•˜ì˜€ìŠµë‹ˆë‹¤.");
+			System.exit(0); // í”„ë¡œê·¸ë¨ ì¢…ë£Œ; ì˜ëª»ëœ ì—°ì‚°ì ì…ë ¥í•œ ê²½ìš°ì— ì¶œë ¥ë¬¸ì´ ìˆ˜í–‰ë˜ì§€ ì•Šë„ë¡ í•˜ê¸° ìœ„í•¨
 		}
 
 		System.out.printf("\n%d %s %d = %d\n", first, operator, second, result);

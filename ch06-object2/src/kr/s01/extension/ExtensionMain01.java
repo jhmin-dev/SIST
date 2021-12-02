@@ -1,9 +1,9 @@
 package kr.s01.extension;
-// ºÎ¸ğ Å¬·¡½º
-class Parent extends Object { // ±âº»ÀûÀ¸·Î »ı·«µÇ¸ç, ÀÚ¹ÙÀÇ ¸ğµç Å¬·¡½º´Â ÀÚµ¿ÀûÀ¸·Î Object°¡ »ó¼ÓµÊ
+// ë¶€ëª¨ í´ë˜ìŠ¤
+class Parent extends Object { // ê¸°ë³¸ì ìœ¼ë¡œ ìƒëµë˜ë©°, ìë°”ì˜ ëª¨ë“  í´ë˜ìŠ¤ëŠ” ìë™ì ìœ¼ë¡œ Objectê°€ ìƒì†ë¨
 	int a = 100;
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class Child extends Parent {
 
 }
@@ -11,6 +11,6 @@ class Child extends Parent {
 public class ExtensionMain01 {
 	public static void main(String[] args) {
 		Child ch = new Child();
-		System.out.println(ch.a); // »ó¼Ó °ü°è¸¦ ¸ÎÀ¸¸é ºÎ¸ğ Å¬·¡½ºÀÇ ÀÚ¿øÀ» ÀÚ½Ä Å¬·¡½º¿¡¼­ °¡Á®´Ù ¾µ ¼ö ÀÖÀ½
+		System.out.println(ch.a); // ìƒì† ê´€ê³„ë¥¼ ë§ºìœ¼ë©´ ë¶€ëª¨ í´ë˜ìŠ¤ì˜ ìì›ì„ ìì‹ í´ë˜ìŠ¤ì—ì„œ ê°€ì ¸ë‹¤ ì“¸ ìˆ˜ ìˆìŒ
 	}
 }

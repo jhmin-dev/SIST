@@ -2,9 +2,9 @@ public class ForMain03 {
 	public static void main(String[] args) {
 		int sum = 0;
 		for(int i=1;i<=100;i++) {
-			// if(i%2==0) // Â¦¼öÀÇ ÇÕ ±¸ÇÏ±â
+			// if(i%2==0) // ì§ìˆ˜ì˜ í•© êµ¬í•˜ê¸°
 			sum += i; // sum = sum + i
 		}
-		System.out.println("1ºÎÅÍ 100±îÁöÀÇ ÇÕ = " + sum);
+		System.out.println("1ë¶€í„° 100ê¹Œì§€ì˜ í•© = " + sum);
 	}
 }

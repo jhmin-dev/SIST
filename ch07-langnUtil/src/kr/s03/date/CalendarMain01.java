@@ -4,35 +4,35 @@ import java.util.Calendar;
 
 public class CalendarMain01 {
 	public static void main(String[] args) {
-		Calendar today = Calendar.getInstance(); // Ãß»ó Å¬·¡½º¶ó new·Î °´Ã¼ »ı¼ºÇÏÁö ¸øÇÏ°í getInstance() ¸Ş¼­µå·Î °´Ã¼ ¹İÈ¯; ÀÚ½Ä Å¬·¡½º GregorianCalendar °´Ã¼°¡ »ı¼ºµÊ
-		System.out.println(today); // ½Äº°ÀÚ(=static »ó¼ö)¿Í °ªÀÇ ½ÖÀ¸·Î ±¸¼º
+		Calendar today = Calendar.getInstance(); // ì¶”ìƒ í´ë˜ìŠ¤ë¼ newë¡œ ê°ì²´ ìƒì„±í•˜ì§€ ëª»í•˜ê³  getInstance() ë©”ì„œë“œë¡œ ê°ì²´ ë°˜í™˜; ìì‹ í´ë˜ìŠ¤ GregorianCalendar ê°ì²´ê°€ ìƒì„±ë¨
+		System.out.println(today); // ì‹ë³„ì(=static ìƒìˆ˜)ì™€ ê°’ì˜ ìŒìœ¼ë¡œ êµ¬ì„±
 		
-		int year = today.get(Calendar.YEAR); // get()¸Ş¼­µå·Î ½Äº°ÀÚ¿Í ¸ÅÄªµÈ °ªÀ» ¹İÈ¯
-		int month = today.get(Calendar.MONTH) + 1; // MONTHÀÇ °æ¿ì ³»ºÎÀûÀ¸·Î 0~11·Î Ã³¸®ÇÏ±â ¶§¹®¿¡ 11¿ùÀº 10ÀÇ °ªÀ» °¡Áü
+		int year = today.get(Calendar.YEAR); // get()ë©”ì„œë“œë¡œ ì‹ë³„ìì™€ ë§¤ì¹­ëœ ê°’ì„ ë°˜í™˜
+		int month = today.get(Calendar.MONTH) + 1; // MONTHì˜ ê²½ìš° ë‚´ë¶€ì ìœ¼ë¡œ 0~11ë¡œ ì²˜ë¦¬í•˜ê¸° ë•Œë¬¸ì— 11ì›”ì€ 10ì˜ ê°’ì„ ê°€ì§
 		int date = today.get(Calendar.DATE);
-		System.out.println(year + "³â " + month + "¿ù " + date + "ÀÏ");
+		System.out.println(year + "ë…„ " + month + "ì›” " + date + "ì¼");
 		
-		int day = today.get(Calendar.DAY_OF_WEEK); // DAY_OF_WEEK´Â 1ÀÌ ÀÏ¿äÀÏ, 7ÀÌ Åä¿äÀÏÀ» ÀÇ¹Ì
+		int day = today.get(Calendar.DAY_OF_WEEK); // DAY_OF_WEEKëŠ” 1ì´ ì¼ìš”ì¼, 7ì´ í† ìš”ì¼ì„ ì˜ë¯¸
 		/*
-		String nday = ""; // ºó ¹®ÀÚ¿­·Î ÃÊ±âÈ­
+		String nday = ""; // ë¹ˆ ë¬¸ìì—´ë¡œ ì´ˆê¸°í™”
 		switch(day) {
-		case 1: nday = "ÀÏ"; break;
-		case 2: nday = "¿ù"; break;
-		case 3: nday = "È­"; break;
-		case 4: nday = "¼ö"; break;
-		case 5: nday = "¸ñ"; break;
-		case 6: nday = "±İ"; break;
-		case 7: nday = "Åä"; break;
-		System.out.println(nday + "¿äÀÏ");
+		case 1: nday = "ì¼"; break;
+		case 2: nday = "ì›”"; break;
+		case 3: nday = "í™”"; break;
+		case 4: nday = "ìˆ˜"; break;
+		case 5: nday = "ëª©"; break;
+		case 6: nday = "ê¸ˆ"; break;
+		case 7: nday = "í† "; break;
+		System.out.println(nday + "ìš”ì¼");
 		}
 		*/
-		String weekday = "ÀÏ¿ùÈ­¼ö¸ñ±İÅä";
-		System.out.println(weekday.charAt(day + 1) + "¿äÀÏ");
+		String weekday = "ì¼ì›”í™”ìˆ˜ëª©ê¸ˆí† ";
+		System.out.println(weekday.charAt(day + 1) + "ìš”ì¼");
 		
-		int amPm = today.get(Calendar.AM_PM); // ¿ÀÀü=0, ¿ÀÈÄ=1
-		System.out.println(amPm == Calendar.AM ? "¿ÀÀü" : "¿ÀÈÄ");
+		int amPm = today.get(Calendar.AM_PM); // ì˜¤ì „=0, ì˜¤í›„=1
+		System.out.println(amPm == Calendar.AM ? "ì˜¤ì „" : "ì˜¤í›„");
 		
-		int hour = today.get(Calendar.HOUR); // 12½Ã°£ Ç¥±â¹ı; HOUR_OF_DAY´Â 24½Ã°£ Ç¥±â¹ı
+		int hour = today.get(Calendar.HOUR); // 12ì‹œê°„ í‘œê¸°ë²•; HOUR_OF_DAYëŠ” 24ì‹œê°„ í‘œê¸°ë²•
 		int min = today.get(Calendar.MINUTE);
 		int sec = today.get(Calendar.SECOND);
 		System.out.println(hour + ":" + min + ":" + sec);

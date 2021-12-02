@@ -1,29 +1,29 @@
 package kr.s11.inter;
 
 interface Inter1 {
-	// Ãß»ó ¸Ş¼­µå
+	// ì¶”ìƒ ë©”ì„œë“œ
 	public abstract int getA();	
 }
 
 interface Inter2 {
-	// Ãß»ó ¸Ş¼­µå
+	// ì¶”ìƒ ë©”ì„œë“œ
 	public abstract int getB();
 }
 
-// Inter1°ú Inter2°¡ Inter3¿¡ »ó¼Ó; ÀÎÅÍÆäÀÌ½º³¢¸®´Â »ó¼ÓÀÌ °¡´ÉÇÏ¸ç, ´ÙÁß »ó¼Óµµ ÀÎÁ¤µÊ
+// Inter1ê³¼ Inter2ê°€ Inter3ì— ìƒì†; ì¸í„°í˜ì´ìŠ¤ë¼ë¦¬ëŠ” ìƒì†ì´ ê°€ëŠ¥í•˜ë©°, ë‹¤ì¤‘ ìƒì†ë„ ì¸ì •ë¨
 interface Inter3 extends Inter1, Inter2 {
-	// Ãß»ó ¸Ş¼­µå
+	// ì¶”ìƒ ë©”ì„œë“œ
 	public abstract int getData();
 }
 
 interface Inter4 {
-	// Ãß»ó ¸Ş¼­µå
+	// ì¶”ìƒ ë©”ì„œë“œ
 	public abstract String getStr();
 }
 
-// Å¬·¡½º¿¡ Inter3°ú Inter4¸¦ ±¸Çö; ÇÑ Å¬·¡½º¿¡ ¿©·¯ ÀÎÅÍÆäÀÌ½º¸¦ µ¿½Ã¿¡ ±¸Çö °¡´É
+// í´ë˜ìŠ¤ì— Inter3ê³¼ Inter4ë¥¼ êµ¬í˜„; í•œ í´ë˜ìŠ¤ì— ì—¬ëŸ¬ ì¸í„°í˜ì´ìŠ¤ë¥¼ ë™ì‹œì— êµ¬í˜„ ê°€ëŠ¥
 class InterSub implements Inter3, Inter4 {
-	// Inter3ÀÇ Ãß»ó ¸Ş¼­µå ±¸Çö
+	// Inter3ì˜ ì¶”ìƒ ë©”ì„œë“œ êµ¬í˜„
 	@Override public int getA() {
 		return 10;
 	}
@@ -33,9 +33,9 @@ class InterSub implements Inter3, Inter4 {
 	@Override public int getData() {
 		return 30;
 	}
-	// Inter4ÀÇ Ãß»ó ¸Ş¼­µå ±¸Çö
+	// Inter4ì˜ ì¶”ìƒ ë©”ì„œë“œ êµ¬í˜„
 	@Override public String getStr() {
-		return "¼­¿ï";
+		return "ì„œìš¸";
 	}
 }
 

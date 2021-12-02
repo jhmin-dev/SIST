@@ -1,8 +1,8 @@
 package kr.s01.list;
 
 public class Member {
-	/* [½Ç½À]
-	 * ¸â¹ö º¯¼ö : ÀÌ¸§(name), ³ªÀÌ(age), Á÷¾÷(job), ÁÖ¼Ò(address), ÀüÈ­¹øÈ£(phone)
+	/* [ì‹¤ìŠµ]
+	 * ë©¤ë²„ ë³€ìˆ˜ : ì´ë¦„(name), ë‚˜ì´(age), ì§ì—…(job), ì£¼ì†Œ(address), ì „í™”ë²ˆí˜¸(phone)
 	 */
 	private String name;
 	private int age;

@@ -5,7 +5,7 @@ class People {
 }
 
 class Animal {
-	// ObjectÀÇ ¸Ş¼­µå¸¦ ¿À¹ö¶óÀÌµù
+	// Objectì˜ ë©”ì„œë“œë¥¼ ì˜¤ë²„ë¼ì´ë”©
 	@Override public String toString() {
 		return "Animal";
 	}
@@ -14,10 +14,10 @@ class Animal {
 public class OverridingMain03 {
 	public static void main(String[] args) {
 		People p = new People();
-		System.out.println(p.toString()); // ObjectÀÇ toString()
+		System.out.println(p.toString()); // Objectì˜ toString()
 		
 		Animal a = new Animal();
-		System.out.println(a.toString()); // ObjectÀÇ toString()À» ÀçÁ¤ÀÇ
+		System.out.println(a.toString()); // Objectì˜ toString()ì„ ì¬ì •ì˜
 		System.out.println(a);
 	}
 }

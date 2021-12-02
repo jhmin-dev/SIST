@@ -1,14 +1,14 @@
 package kr.s01.extension;
-// ºÎ¸ğ Å¬·¡½º
+// ë¶€ëª¨ í´ë˜ìŠ¤
 class A {
-	int x = 100; // Á¢±Ù Á¦ÇÑÀÚ¸¦ »ı·«½Ã default·Î ¼³Á¤µÇ¸ç, °°Àº ÆĞÅ°Áö ³»¿¡¼­ È£Ãâ °¡´É
-	private int y = 200; // °°Àº Å¬·¡½º ³»¿¡¼­¸¸ È£Ãâ °¡´ÉÇÏµµ·Ï Àº´ĞÈ­
+	int x = 100; // ì ‘ê·¼ ì œí•œìë¥¼ ìƒëµì‹œ defaultë¡œ ì„¤ì •ë˜ë©°, ê°™ì€ íŒ¨í‚¤ì§€ ë‚´ì—ì„œ í˜¸ì¶œ ê°€ëŠ¥
+	private int y = 200; // ê°™ì€ í´ë˜ìŠ¤ ë‚´ì—ì„œë§Œ í˜¸ì¶œ ê°€ëŠ¥í•˜ë„ë¡ ì€ë‹‰í™”
 	
 	public int getY() {
 		return y;
 	}
 }
-// ÀÚ½Ä Å¬·¡½º
+// ìì‹ í´ë˜ìŠ¤
 class B extends A {
 	int z = 300;
 }
@@ -17,8 +17,8 @@ public class ExtensionMain03 {
 	public static void main(String[] args) {
 		B bp = new B();
 		System.out.println(bp.x);
-		// System.out.println(bp.y); // private ¸â¹ö º¯¼ö´Â »ó¼Ó °ü°è¸¦ ¸Î¾îµµ °°Àº Å¬·¡½º°¡ ¾Æ´Ï±â ¶§¹®¿¡ È£Ãâ ºÒ°¡
-		System.out.println(bp.getY()); // ºÎ¸ğ Å¬·¡½º¿¡¼­ public ¸Ş¼­µå¸¦ ¸¸µé¾îµÎ¸é Àº´ĞÈ­µÈ yÀÇ °ªÀ» º¹»çÇØ¼­ Àü´Ş¹ŞÀ» ¼ö ÀÖÀ½
+		// System.out.println(bp.y); // private ë©¤ë²„ ë³€ìˆ˜ëŠ” ìƒì† ê´€ê³„ë¥¼ ë§ºì–´ë„ ê°™ì€ í´ë˜ìŠ¤ê°€ ì•„ë‹ˆê¸° ë•Œë¬¸ì— í˜¸ì¶œ ë¶ˆê°€
+		System.out.println(bp.getY()); // ë¶€ëª¨ í´ë˜ìŠ¤ì—ì„œ public ë©”ì„œë“œë¥¼ ë§Œë“¤ì–´ë‘ë©´ ì€ë‹‰í™”ëœ yì˜ ê°’ì„ ë³µì‚¬í•´ì„œ ì „ë‹¬ë°›ì„ ìˆ˜ ìˆìŒ
 		System.out.println(bp.z);
 	}
 }

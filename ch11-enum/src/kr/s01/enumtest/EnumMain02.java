@@ -1,7 +1,7 @@
 package kr.s01.enumtest;
-// ¿­°ÅÇü »ó¼ö
+// ì—´ê±°í˜• ìƒìˆ˜
 enum Lesson {
-	JAVA, JSP, SERVLET // º¯¼ö¸íÀ» ½Äº°ÀÚ ¹× °ªÀ¸·Î »ç¿ëÇÏ´Â ¿­°Å °´Ã¼ »ı¼º
+	JAVA, JSP, SERVLET // ë³€ìˆ˜ëª…ì„ ì‹ë³„ì ë° ê°’ìœ¼ë¡œ ì‚¬ìš©í•˜ëŠ” ì—´ê±° ê°ì²´ ìƒì„±
 }
 
 public class EnumMain02 {
@@ -10,13 +10,13 @@ public class EnumMain02 {
 		System.out.println(Lesson.JSP);
 		System.out.println(Lesson.SERVLET);
 		
-		// name() ¸Ş¼­µå·Î ¿­°Å °´Ã¼ÀÇ ¹®ÀÚ¿­ ¹İÈ¯
+		// name() ë©”ì„œë“œë¡œ ì—´ê±° ê°ì²´ì˜ ë¬¸ìì—´ ë°˜í™˜
 		System.out.println(Lesson.JAVA.name());
 		System.out.println(Lesson.JSP.name());
 		System.out.println(Lesson.SERVLET.name());
 		
-		// ordinal() ¸Ş¼­µå·Î ¿­°Å °´Ã¼ÀÇ ¼ø¹ø ¹İÈ¯
-		System.out.println(Lesson.JAVA.ordinal()); // ¼ø¹øÀº 0ºÎÅÍ ½ÃÀÛ
+		// ordinal() ë©”ì„œë“œë¡œ ì—´ê±° ê°ì²´ì˜ ìˆœë²ˆ ë°˜í™˜
+		System.out.println(Lesson.JAVA.ordinal()); // ìˆœë²ˆì€ 0ë¶€í„° ì‹œì‘
 		System.out.println(Lesson.JSP.ordinal());
 		System.out.println(Lesson.SERVLET.ordinal());
 	}

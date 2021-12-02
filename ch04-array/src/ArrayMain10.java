@@ -1,22 +1,22 @@
 public class ArrayMain10 {
 	public static void main(String[] args) {
 		/*
-		 * [½Ç½À] 
-		 * ´ÜÀ» ÀÔ·Â¹Ş¾Æ¼­ 1ºÎÅÍ 9±îÁö °öÇØ¼­ °á°ú°ªÀ» ±¸ÇÏ°í ¹è¿­¿¡ ±× °ªÀ» ÀúÀåÇÑ ÈÄ, ±¸±¸´Ü Ãâ·Â Çü½Ä(2 * 1 = 2)À¸·Î ¹è¿­¿¡¼­ °ªÀ» ºÒ·²¿Í Ãâ·ÂÇÏ½Ã¿À.
+		 * [ì‹¤ìŠµ] 
+		 * ë‹¨ì„ ì…ë ¥ë°›ì•„ì„œ 1ë¶€í„° 9ê¹Œì§€ ê³±í•´ì„œ ê²°ê³¼ê°’ì„ êµ¬í•˜ê³  ë°°ì—´ì— ê·¸ ê°’ì„ ì €ì¥í•œ í›„, êµ¬êµ¬ë‹¨ ì¶œë ¥ í˜•ì‹(2 * 1 = 2)ìœ¼ë¡œ ë°°ì—´ì—ì„œ ê°’ì„ ë¶ˆëŸ´ì™€ ì¶œë ¥í•˜ì‹œì˜¤.
 		 */
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		int[] array = new int[9];
 		int dan;
 		while(true) {
-			System.out.print("´ÜÀ» ÀÔ·ÂÇÏ¼¼¿ä > ");
+			System.out.print("ë‹¨ì„ ì…ë ¥í•˜ì„¸ìš” > ");
 			dan = input.nextInt();
 			if(dan>=1&&dan<=9) {
 				break;
 			}
-			System.out.println("´ÜÀº 1ºÎÅÍ 9±îÁö¸¸ °¡´ÉÇÕ´Ï´Ù.");
+			System.out.println("ë‹¨ì€ 1ë¶€í„° 9ê¹Œì§€ë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 		}
 		for(int i=0;i<array.length;i++) {
-			array[i] = dan*(i+1); // ¹è¿­ÀÇ ÀÎµ¦½º¿Í ±¸±¸´ÜÀÇ °öÇÏ´Â ¼ö°¡ °°Áö ¾ÊÀ½ À¯ÀÇ
+			array[i] = dan*(i+1); // ë°°ì—´ì˜ ì¸ë±ìŠ¤ì™€ êµ¬êµ¬ë‹¨ì˜ ê³±í•˜ëŠ” ìˆ˜ê°€ ê°™ì§€ ì•ŠìŒ ìœ ì˜
 			System.out.printf("%d * %d = %d\n", dan, i+1, array[i]);
 		}
 		input.close();

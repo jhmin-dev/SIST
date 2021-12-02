@@ -1,26 +1,26 @@
 public class OperatorMain11 {
 	public static void main(String[] args) {
 		/*
-		 * [½Ç½À] ¼ºÀû Ã³¸®
-		 * ±¹¾î, ¿µ¾î, ¼öÇĞ ¼ºÀûÀ» ÀÔ·Â¹Ş¾Æ¼­ ÃÑÁ¡, Æò±Õ(double)À» ±¸ÇÏ°í °¢°¢À» Ãâ·Â
-		 * [Ãâ·Â ¿¹½Ã] 
-		 * ±¹¾î = 
-		 * ¿µ¾î = 
-		 * ¼öÇĞ = 
-		 * ÃÑÁ¡ = 
-		 * Æò±Õ = (¼Ò¼ıÁ¡ ¾Æ·¡ µÑÂ° ÀÚ¸®±îÁö Ç¥½Ã)
+		 * [ì‹¤ìŠµ] ì„±ì  ì²˜ë¦¬
+		 * êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì„±ì ì„ ì…ë ¥ë°›ì•„ì„œ ì´ì , í‰ê· (double)ì„ êµ¬í•˜ê³  ê°ê°ì„ ì¶œë ¥
+		 * [ì¶œë ¥ ì˜ˆì‹œ] 
+		 * êµ­ì–´ = 
+		 * ì˜ì–´ = 
+		 * ìˆ˜í•™ = 
+		 * ì´ì  = 
+		 * í‰ê·  = (ì†Œìˆ«ì  ì•„ë˜ ë‘˜ì§¸ ìë¦¬ê¹Œì§€ í‘œì‹œ)
 		 */
-		java.util.Scanner input = new java.util.Scanner(System.in); // ÀÔ·Â ½ÃÀÛ
+		java.util.Scanner input = new java.util.Scanner(System.in); // ì…ë ¥ ì‹œì‘
 		
-		System.out.print("±¹¾î : "); // ÀÔ·Â½ÃÀÇ °¡ÀÌµå ¹®ÀÚ¿­; printlnÀ» ¾²¸é ´ÙÀ½ ÁÙ¿¡ ÀÔ·ÂÇÏ°Ô µÊ
-		int kor = input.nextInt(); // Á¤¼ö¸¦ ÀÔ·Â¹Ş´Â ÇÔ¼ö·Î °ªÀ» ¹Ş¾Æ º¯¼ö¿¡ ´ëÀÔ
-		System.out.print("¿µ¾î : ");
+		System.out.print("êµ­ì–´ : "); // ì…ë ¥ì‹œì˜ ê°€ì´ë“œ ë¬¸ìì—´; printlnì„ ì“°ë©´ ë‹¤ìŒ ì¤„ì— ì…ë ¥í•˜ê²Œ ë¨
+		int kor = input.nextInt(); // ì •ìˆ˜ë¥¼ ì…ë ¥ë°›ëŠ” í•¨ìˆ˜ë¡œ ê°’ì„ ë°›ì•„ ë³€ìˆ˜ì— ëŒ€ì…
+		System.out.print("ì˜ì–´ : ");
 		int eng = input.nextInt();
-		System.out.print("¼öÇĞ : ");
+		System.out.print("ìˆ˜í•™ : ");
 		int math = input.nextInt();
 		
-		System.out.printf("±¹¾î = %d\n¿µ¾î = %d\n¼öÇĞ = %d\nÃÑÁ¡ = %d\nÆò±Õ = %.2f", kor, eng, math, kor+eng+math, (kor+eng+math)/3d); // ¸¸¾à (kor+eng+math)/3À¸·Î ¿¬»ê ÈÄ¿¡ ±× °á°ú¸¦ double·Î Çüº¯È¯ÇÏ°Ô µÇ¸é, ¿¬»êÀº Á¤¼ö³¢¸®ÀÇ ³ª´°¼ÀÀ¸·Î ¸òÀ» ±¸Çß±â ¶§¹®¿¡ ¼Ò¼ıÁ¡ ¾Æ·¡ Á¤º¸°¡ ºÎÁ¤È®ÇØÁü.
+		System.out.printf("êµ­ì–´ = %d\nì˜ì–´ = %d\nìˆ˜í•™ = %d\nì´ì  = %d\ní‰ê·  = %.2f", kor, eng, math, kor+eng+math, (kor+eng+math)/3d); // ë§Œì•½ (kor+eng+math)/3ìœ¼ë¡œ ì—°ì‚° í›„ì— ê·¸ ê²°ê³¼ë¥¼ doubleë¡œ í˜•ë³€í™˜í•˜ê²Œ ë˜ë©´, ì—°ì‚°ì€ ì •ìˆ˜ë¼ë¦¬ì˜ ë‚˜ëˆ—ì…ˆìœ¼ë¡œ ëª«ì„ êµ¬í–ˆê¸° ë•Œë¬¸ì— ì†Œìˆ«ì  ì•„ë˜ ì •ë³´ê°€ ë¶€ì •í™•í•´ì§.
 		
-		input.close(); // ÀÔ·Â ³¡
+		input.close(); // ì…ë ¥ ë
 	}
 }

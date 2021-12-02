@@ -7,8 +7,8 @@ public class ForMain01 {
 		System.out.println("========");
 		
 		for(int i=1;i<=5;i++)
-			System.out.println(i); // ¼öÇà¹®ÀÌ ÇÑ ÁÙÀÎ °æ¿ì {} ºí·° »ý·« °¡´É
+			System.out.println(i); // ìˆ˜í–‰ë¬¸ì´ í•œ ì¤„ì¸ ê²½ìš° {} ë¸”ëŸ­ ìƒëžµ ê°€ëŠ¥
 		
-		System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("í”„ë¡œê·¸ëž¨ ì¢…ë£Œ");
 	}
 }

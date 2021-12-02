@@ -3,9 +3,9 @@ package kr.s01.basic;
 public class DriverMain {
 	public static void main(String[] args) {
 		try {
-			// JDBC ¼öÇà 1´Ü°è : µå¶óÀÌ¹ö ·Îµå
-			Class.forName("oracle.jdbc.OracleDriver"); // ÀÔ·ÂÇÑ ¹®ÀÚ¿­À» ÀÌ¸§À¸·Î °®´Â Å¬·¡½º¸¦ Ã£¾Æ ¸Ş¸ğ¸®¿¡ ·Îµå
-			System.out.println("µå¶óÀÌ¹ö°¡ Á¤»óÀûÀ¸·Î ¼³Ä¡µÇ¾ú½À´Ï´Ù.");
+			// JDBC ìˆ˜í–‰ 1ë‹¨ê³„ : ë“œë¼ì´ë²„ ë¡œë“œ
+			Class.forName("oracle.jdbc.OracleDriver"); // ì…ë ¥í•œ ë¬¸ìì—´ì„ ì´ë¦„ìœ¼ë¡œ ê°–ëŠ” í´ë˜ìŠ¤ë¥¼ ì°¾ì•„ ë©”ëª¨ë¦¬ì— ë¡œë“œ
+			System.out.println("ë“œë¼ì´ë²„ê°€ ì •ìƒì ìœ¼ë¡œ ì„¤ì¹˜ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		catch(ClassNotFoundException e) {
 			e.printStackTrace();

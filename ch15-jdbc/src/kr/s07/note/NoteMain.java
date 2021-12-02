@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class NoteMain {
 	private BufferedReader br;
-	private NoteDAO note; // callMenu() ¸Ş¼­µå¿¡¼­ »ç¿ëÇÏ±â ¶§¹®¿¡ ¸â¹ö º¯¼ö·Î ¼±¾ğ
+	private NoteDAO note; // callMenu() ë©”ì„œë“œì—ì„œ ì‚¬ìš©í•˜ê¸° ë•Œë¬¸ì— ë©¤ë²„ ë³€ìˆ˜ë¡œ ì„ ì–¸
 	
 	public NoteMain() {
 		note = new NoteDAO();
@@ -22,74 +22,74 @@ public class NoteMain {
 		}
 	}
 	
-	// ¸Ş´º
+	// ë©”ë‰´
 	public void callMenu() throws IOException {
 		while(true) {
-			System.out.println("¸Ş´º : 1. ±Û ¾²±â, 2. ¸ñ·Ï º¸±â, 3. »ó¼¼ ±Û º¸±â, 4. ±Û ¼öÁ¤, 5. ±Û »èÁ¦, 6.Á¾·á");
-			System.out.print("¸Ş´º > ");
+			System.out.println("ë©”ë‰´ : 1. ê¸€ ì“°ê¸°, 2. ëª©ë¡ ë³´ê¸°, 3. ìƒì„¸ ê¸€ ë³´ê¸°, 4. ê¸€ ìˆ˜ì •, 5. ê¸€ ì‚­ì œ, 6.ì¢…ë£Œ");
+			System.out.print("ë©”ë‰´ > ");
 			try {
 				int num = Integer.parseInt(br.readLine());
-				if(num==1) { // ±Û ¾²±â
-					System.out.print("ÀÌ¸§ > ");
+				if(num==1) { // ê¸€ ì“°ê¸°
+					System.out.print("ì´ë¦„ > ");
 					String name = br.readLine();
-					System.out.print("ºñ¹Ğ¹øÈ£ > ");
+					System.out.print("ë¹„ë°€ë²ˆí˜¸ > ");
 					String passwd = br.readLine();
-					System.out.print("Á¦¸ñ > ");
+					System.out.print("ì œëª© > ");
 					String subject = br.readLine();
-					System.out.print("³»¿ë > ");
+					System.out.print("ë‚´ìš© > ");
 					String content = br.readLine();
-					System.out.print("ÀÌ¸ŞÀÏ > ");
+					System.out.print("ì´ë©”ì¼ > ");
 					String email = br.readLine();
 					
-					// NoteDAOÀÇ insertInfo() ¸Ş¼­µå¸¦ È£ÃâÇØ¼­ µ¥ÀÌÅÍ¸¦ Àü´Ş
+					// NoteDAOì˜ insertInfo() ë©”ì„œë“œë¥¼ í˜¸ì¶œí•´ì„œ ë°ì´í„°ë¥¼ ì „ë‹¬
 					note.insertInfo(name, passwd, subject, content, email);
 				}
-				else if(num==2) { // ¸ñ·Ï º¸±â
+				else if(num==2) { // ëª©ë¡ ë³´ê¸°
 					note.selectListInfo();
 				}
-				else if(num==3) { // »ó¼¼ ±Û º¸±â
-					note.selectListInfo(); // ±Û ¹øÈ£ È®ÀÎ¿ë ¸ñ·Ï º¸±â
-					System.out.println("»ó¼¼ Á¤º¸¸¦ È®ÀÎÇÏ·Á´Â ±Û ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä!");
-					System.out.print("±Û ¹øÈ£ > ");
+				else if(num==3) { // ìƒì„¸ ê¸€ ë³´ê¸°
+					note.selectListInfo(); // ê¸€ ë²ˆí˜¸ í™•ì¸ìš© ëª©ë¡ ë³´ê¸°
+					System.out.println("ìƒì„¸ ì •ë³´ë¥¼ í™•ì¸í•˜ë ¤ëŠ” ê¸€ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”!");
+					System.out.print("ê¸€ ë²ˆí˜¸ > ");
 					num = Integer.parseInt(br.readLine());
 					note.selectDetailInfo(num);
 				}
-				else if(num==4) { // ±Û ¼öÁ¤
-					note.selectListInfo(); // ±Û ¹øÈ£ È®ÀÎ¿ë ¸ñ·Ï º¸±â
-					System.out.println("¼öÁ¤ÇÏ·Á´Â ±Û ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä!");
-					System.out.print("±Û ¹øÈ£ > ");
+				else if(num==4) { // ê¸€ ìˆ˜ì •
+					note.selectListInfo(); // ê¸€ ë²ˆí˜¸ í™•ì¸ìš© ëª©ë¡ ë³´ê¸°
+					System.out.println("ìˆ˜ì •í•˜ë ¤ëŠ” ê¸€ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”!");
+					System.out.print("ê¸€ ë²ˆí˜¸ > ");
 					num = Integer.parseInt(br.readLine());
-					if(note.selectDetailInfo(num)==-1) continue; // ¾ø´Â ±Û ¹øÈ£¸¦ ÀÔ·ÂÇßÀ» ¶§, ´õ ÀÌ»ó ÀÔ·Â¹ŞÁö ¾Êµµ·Ï Ã³¸®
-					System.out.println("¼öÁ¤ÇÒ ³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä!");
-					System.out.print("ÀÌ¸§ > ");
+					if(note.selectDetailInfo(num)==-1) continue; // ì—†ëŠ” ê¸€ ë²ˆí˜¸ë¥¼ ì…ë ¥í–ˆì„ ë•Œ, ë” ì´ìƒ ì…ë ¥ë°›ì§€ ì•Šë„ë¡ ì²˜ë¦¬
+					System.out.println("ìˆ˜ì •í•  ë‚´ìš©ì„ ì…ë ¥í•˜ì„¸ìš”!");
+					System.out.print("ì´ë¦„ > ");
 					String name = br.readLine();
-					System.out.print("ºñ¹Ğ¹øÈ£ > ");
+					System.out.print("ë¹„ë°€ë²ˆí˜¸ > ");
 					String passwd = br.readLine();
-					System.out.print("Á¦¸ñ > ");
+					System.out.print("ì œëª© > ");
 					String subject = br.readLine();
-					System.out.print("³»¿ë > ");
+					System.out.print("ë‚´ìš© > ");
 					String content = br.readLine();
-					System.out.print("ÀÌ¸ŞÀÏ > ");
+					System.out.print("ì´ë©”ì¼ > ");
 					String email = br.readLine();
 					note.updateInfo(num, name, passwd, subject, content, email);
 				}
-				else if(num==5) { // ±Û »èÁ¦
-					note.selectListInfo(); // ±Û ¹øÈ£ È®ÀÎ¿ë ¸ñ·Ï º¸±â
-					System.out.println("»èÁ¦ÇÏ·Á´Â ±Û ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä!");
-					System.out.print("±Û ¹øÈ£ > ");
+				else if(num==5) { // ê¸€ ì‚­ì œ
+					note.selectListInfo(); // ê¸€ ë²ˆí˜¸ í™•ì¸ìš© ëª©ë¡ ë³´ê¸°
+					System.out.println("ì‚­ì œí•˜ë ¤ëŠ” ê¸€ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”!");
+					System.out.print("ê¸€ ë²ˆí˜¸ > ");
 					num = Integer.parseInt(br.readLine());
 					note.deleteInfo(num);
 				}
-				else if(num==6) { // Á¾·á
-					System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+				else if(num==6) { // ì¢…ë£Œ
+					System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 					break;
 				}
 				else {
-					System.out.println("Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù!");
+					System.out.println("ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤!");
 				}
 			}
 			catch(NumberFormatException e) {
-				System.out.println("¼ıÀÚ¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù!");
+				System.out.println("ìˆ«ìë§Œ ì…ë ¥ ê°€ëŠ¥í•©ë‹ˆë‹¤!");
 			}
 		}
 	}

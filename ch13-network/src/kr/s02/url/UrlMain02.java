@@ -15,9 +15,9 @@ public class UrlMain02 {
 		
 		try {
 			url = new URL(address);
-			br = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8")); // openStream() ¸Ş¼­µå¸¦ ÅëÇØ URL °´Ã¼¿¡ ÀúÀåµÈ ÁÖ¼Ò¿¡ Á¢±ÙÇÏ¿© ÀÔ·Â ½ºÆ®¸²À» ¹İÈ¯; µÎ ¹øÂ° ÀÎÀÚ·Î ÀÎÄÚµù ¹æ½Ä ÁöÁ¤; ÀÎÄÚµù ¹æ½ÄÀ» ÁöÁ¤ÇÏÁö ¾ÊÀ» °æ¿ì ÇÑ±Û µî ¿µ¹® ÀÌ¿ÜÀÇ ¹®ÀÚ´Â ±úÁü
+			br = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8")); // openStream() ë©”ì„œë“œë¥¼ í†µí•´ URL ê°ì²´ì— ì €ì¥ëœ ì£¼ì†Œì— ì ‘ê·¼í•˜ì—¬ ì…ë ¥ ìŠ¤íŠ¸ë¦¼ì„ ë°˜í™˜; ë‘ ë²ˆì§¸ ì¸ìë¡œ ì¸ì½”ë”© ë°©ì‹ ì§€ì •; ì¸ì½”ë”© ë°©ì‹ì„ ì§€ì •í•˜ì§€ ì•Šì„ ê²½ìš° í•œê¸€ ë“± ì˜ë¬¸ ì´ì™¸ì˜ ë¬¸ìëŠ” ê¹¨ì§
 			
-			while((line = br.readLine())!=null) { // ÀÔ·Â ½ºÆ®¸²¿¡¼­ ÇÑ ÁÙ¾¿ ÀĞ°í, ´õ ÀĞÀ» µ¥ÀÌÅÍ°¡ ¾øÀ¸¸é ·çÇÁ Áß´Ü
+			while((line = br.readLine())!=null) { // ì…ë ¥ ìŠ¤íŠ¸ë¦¼ì—ì„œ í•œ ì¤„ì”© ì½ê³ , ë” ì½ì„ ë°ì´í„°ê°€ ì—†ìœ¼ë©´ ë£¨í”„ ì¤‘ë‹¨
 				System.out.println(line);
 			}
 		}

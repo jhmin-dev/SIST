@@ -1,10 +1,10 @@
 public class WhileMain02 {
 	public static void main(String[] args) {
-		int sum = 0, su = 1; // ÃÊ±â½Ä
-		while(su<=100) { // Á¶°Ç½Ä
-			sum+=su; // ´©Àû
-			su++; // Áõ°¨½Ä
+		int sum = 0, su = 1; // ì´ˆê¸°ì‹
+		while(su<=100) { // ì¡°ê±´ì‹
+			sum+=su; // ëˆ„ì 
+			su++; // ì¦ê°ì‹
 		}
-		System.out.println("1ºÎÅÍ 100±îÁöÀÇ ÇÕ = "+sum);
+		System.out.println("1ë¶€í„° 100ê¹Œì§€ì˜ í•© = "+sum);
 	}
 }

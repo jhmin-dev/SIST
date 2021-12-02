@@ -1,32 +1,32 @@
 package kr.s09.abstracttest;
-// Ãß»ó Å¬·¡½º
+// ì¶”ìƒ í´ë˜ìŠ¤
 abstract class AbsEx1 {
-	// ÇÊµå
+	// í•„ë“œ
 	int a = 100;
 	int b = 200;
-	final String STR = "abstract test"; // ¹®ÀÚ¿­ »ó¼ö
-	// ÀÏ¹İ ¸Ş¼­µå
+	final String STR = "abstract test"; // ë¬¸ìì—´ ìƒìˆ˜
+	// ì¼ë°˜ ë©”ì„œë“œ
 	public String getStr() {
 		return STR;
 	}
-	// Ãß»ó ¸Ş¼­µå
+	// ì¶”ìƒ ë©”ì„œë“œ
 	abstract public int getA();
 	public abstract int getB();
 }
-// Ãß»ó Å¬·¡½º¿¡ Ãß»ó Å¬·¡½º¸¦ »ó¼ÓÇÑ °æ¿ì, »ó¼Ó¹ŞÀº Ãß»ó ¸Ş¼­µå¸¦ ±¸ÇöÇÏÁö ¾Ê¾Æµµ ¿À·ù°¡ ¹ß»ıÇÏÁö ¾ÊÀ½
+// ì¶”ìƒ í´ë˜ìŠ¤ì— ì¶”ìƒ í´ë˜ìŠ¤ë¥¼ ìƒì†í•œ ê²½ìš°, ìƒì†ë°›ì€ ì¶”ìƒ ë©”ì„œë“œë¥¼ êµ¬í˜„í•˜ì§€ ì•Šì•„ë„ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì§€ ì•ŠìŒ
 abstract class AbsEx2 extends AbsEx1 {
-	// ÇÊµå
-	String msg = "½Å¼¼°è";
-	// Ãß»ó ¸Ş¼­µå
+	// í•„ë“œ
+	String msg = "ì‹ ì„¸ê³„";
+	// ì¶”ìƒ ë©”ì„œë“œ
 	public abstract String getMsg();
-	// Ãß»ó ¸Ş¼­µå ±¸Çö
+	// ì¶”ìƒ ë©”ì„œë“œ êµ¬í˜„
 	@Override public int getA() {
 		return a;
 	}
 }
-// ÀÏ¹İ Å¬·¡½º¿¡ Ãß»ó Å¬·¡½º¸¦ »ó¼ÓÇÑ °æ¿ì, »ó¼Ó¹ŞÀº Ãß»ó ¸Ş¼­µå¸¦ ¸ğµÎ ±¸ÇöÇØ¾ß ÇÔ
+// ì¼ë°˜ í´ë˜ìŠ¤ì— ì¶”ìƒ í´ë˜ìŠ¤ë¥¼ ìƒì†í•œ ê²½ìš°, ìƒì†ë°›ì€ ì¶”ìƒ ë©”ì„œë“œë¥¼ ëª¨ë‘ êµ¬í˜„í•´ì•¼ í•¨
 public class AbstractMain03 extends AbsEx2 {
-	// Ãß»ó ¸Ş¼­µå ±¸Çö
+	// ì¶”ìƒ ë©”ì„œë“œ êµ¬í˜„
 	@Override public int getB() {
 		return b;
 	}

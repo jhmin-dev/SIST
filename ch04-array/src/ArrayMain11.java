@@ -1,12 +1,12 @@
 public class ArrayMain11 {
 	public static void main(String[] args) {
-		// 2Â÷¿ø ¹è¿­ ¼±¾ğ
+		// 2ì°¨ì› ë°°ì—´ ì„ ì–¸
 		int test[][];
 		
-		// 2Â÷¿ø ¹è¿­ »ı¼º
-		test = new int[2][3]; // 2Çà 3¿­
+		// 2ì°¨ì› ë°°ì—´ ìƒì„±
+		test = new int[2][3]; // 2í–‰ 3ì—´
 		
-		// 2Â÷¿ø ¹è¿­ÀÇ ÃÊ±âÈ­
+		// 2ì°¨ì› ë°°ì—´ì˜ ì´ˆê¸°í™”
 		test[0][0] = 100;
 		test[0][1] = 200;
 		test[0][2] = 300;
@@ -15,7 +15,7 @@ public class ArrayMain11 {
 		test[1][1] = 500;
 		test[1][2] = 600;
 		
-		// ¹è¿­ÀÇ ¿ä¼Ò Ãâ·Â
+		// ë°°ì—´ì˜ ìš”ì†Œ ì¶œë ¥
 		System.out.println(test[0][0]);
 		System.out.println(test[0][1]);
 		System.out.println(test[0][2]);
@@ -25,18 +25,18 @@ public class ArrayMain11 {
 		
 		System.out.println("========");
 		
-		for(int i=0;i<test.length;i++) { // Çà
-			for(int j=0;j<test[i].length;j++) { // ¿­
+		for(int i=0;i<test.length;i++) { // í–‰
+			for(int j=0;j<test[i].length;j++) { // ì—´
 				System.out.println("test[" + i + "][" + j + "]: " + test[i][j]);
 			}
 		}
 		
-		// 2Â÷¿ø ¹è¿­ ¼±¾ğ ¹× »ı¼º
-		int[][] test2 = new int[3][5]; // 3Çà 5
+		// 2ì°¨ì› ë°°ì—´ ì„ ì–¸ ë° ìƒì„±
+		int[][] test2 = new int[3][5]; // 3í–‰ 5
 		
-		// 2Â÷¿ø ¹è¿­ ¼±¾ğ ¹× »ı¼º(¸í½ÃÀû), ÃÊ±âÈ­
+		// 2ì°¨ì› ë°°ì—´ ì„ ì–¸ ë° ìƒì„±(ëª…ì‹œì ), ì´ˆê¸°í™”
 		int[][] test3 = new int[][] {{100, 200, 300}, {400, 500, 600}};
-		int[][] test4 = new int[][] { // °¡µ¶¼ºÀ» À§ÇØ
+		int[][] test4 = new int[][] { // ê°€ë…ì„±ì„ ìœ„í•´
 			{100, 200, 300}, 
 			{400, 500, 600}
 		};

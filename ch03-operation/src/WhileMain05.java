@@ -3,19 +3,19 @@ public class WhileMain05 {
 		java.util.Scanner input = new java.util.Scanner(System.in);
 		
 		int a, total = 0;
-		System.out.println("0 Àü±îÁö ÀÔ·Â¹ŞÀº Á¤¼ö·Î ÇÕ ±¸ÇÏ±â");
+		System.out.println("0 ì „ê¹Œì§€ ì…ë ¥ë°›ì€ ì •ìˆ˜ë¡œ í•© êµ¬í•˜ê¸°");
 		
-		// ÃÊ±â½Ä ¾øÀÌ ·çÇÁ¸¦ ºüÁ®³ª¿À´Â ÇüÅÂ; Áõ°¨½Ä ¾ø´Â ÇüÅÂÀÇ °æ¿ì °¡ÀÌµå ¹®ÀÚ¿­À» 2¹ø ¾²Áö¸¸ ÃÊ±â½Ä ¾ø´Â ÇüÅÂ´Â 1¹ø¸¸ ¾²´Ï ÄÚµå°¡ ´õ ±ò²ûÇÔ
+		// ì´ˆê¸°ì‹ ì—†ì´ ë£¨í”„ë¥¼ ë¹ ì ¸ë‚˜ì˜¤ëŠ” í˜•íƒœ; ì¦ê°ì‹ ì—†ëŠ” í˜•íƒœì˜ ê²½ìš° ê°€ì´ë“œ ë¬¸ìì—´ì„ 2ë²ˆ ì“°ì§€ë§Œ ì´ˆê¸°ì‹ ì—†ëŠ” í˜•íƒœëŠ” 1ë²ˆë§Œ ì“°ë‹ˆ ì½”ë“œê°€ ë” ê¹”ë”í•¨
 		while(true) {
-			System.out.print("´©ÀûÇÒ Á¤¼ö ÀÔ·Â : ");
+			System.out.print("ëˆ„ì í•  ì •ìˆ˜ ì…ë ¥ : ");
 			a = input.nextInt();
 			if(a == 0) {
-				break; // while¹® Å»Ãâ
+				break; // whileë¬¸ íƒˆì¶œ
 			}
-			total += a; // ´©Àû
+			total += a; // ëˆ„ì 
 		}
 		
-		System.out.println("total = " + total); // ´©ÀûÇÑ µ¥ÀÌÅÍ Ãâ·Â
+		System.out.println("total = " + total); // ëˆ„ì í•œ ë°ì´í„° ì¶œë ¥
 		
 		input.close();
 	}

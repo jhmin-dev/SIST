@@ -10,28 +10,28 @@ public class UpdateMain {
 		String sql = null;
 		
 		try {
-			// JDBC ¼öÇà 1´Ü°è : µå¶óÀÌ¹ö ·Îµå
-			// JDBC ¼öÇà 2´Ü°è : Connection °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 1ë‹¨ê³„ : ë“œë¼ì´ë²„ ë¡œë“œ
+			// JDBC ìˆ˜í–‰ 2ë‹¨ê³„ : Connection ê°ì²´ ìƒì„±
 			conn = DBUtil.getConnection();
 			
-			// SQL¹® ÀÛ¼º
-			sql = "UPDATE test1 SET age=? WHERE id=?"; // µ¥ÀÌÅÍ¸¦ ³ÖÀ» ÀÚ¸®¿¡ ¹ÙÀÎµå º¯¼ö ?¸¦ ¸í½Ã
+			// SQLë¬¸ ì‘ì„±
+			sql = "UPDATE test1 SET age=? WHERE id=?"; // ë°ì´í„°ë¥¼ ë„£ì„ ìë¦¬ì— ë°”ì¸ë“œ ë³€ìˆ˜ ?ë¥¼ ëª…ì‹œ
 			
-			// JDBC ¼öÇà 3´Ü°è : PreparedStatement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : PreparedStatement ê°ì²´ ìƒì„±
 			pstmt = conn.prepareStatement(sql);
-			// ?¿¡ µ¥ÀÌÅÍ ¹ÙÀÎµù
-			pstmt.setInt(1, 19); // Ã¹ ¹øÂ° ?¿¡ µ¥ÀÌÅÍ¸¦ Àü´Ş; ÀÚ·áÇüÀº µ¥ÀÌÅÍ¸¦ ÀúÀåÇÒ ÄÃ·³(=age)ÀÇ ÀÚ·áÇüÀ» µû¸§
-			pstmt.setString(2, "star"); // µÎ ¹øÂ° ?¿¡ µ¥ÀÌÅÍ¸¦ Àü´Ş; ÀÚ·áÇüÀº µ¥ÀÌÅÍ¸¦ ÀúÀåÇÒ ÄÃ·³(=id)ÀÇ ÀÚ·áÇüÀ» µû¸§
+			// ?ì— ë°ì´í„° ë°”ì¸ë”©
+			pstmt.setInt(1, 19); // ì²« ë²ˆì§¸ ?ì— ë°ì´í„°ë¥¼ ì „ë‹¬; ìë£Œí˜•ì€ ë°ì´í„°ë¥¼ ì €ì¥í•  ì»¬ëŸ¼(=age)ì˜ ìë£Œí˜•ì„ ë”°ë¦„
+			pstmt.setString(2, "star"); // ë‘ ë²ˆì§¸ ?ì— ë°ì´í„°ë¥¼ ì „ë‹¬; ìë£Œí˜•ì€ ë°ì´í„°ë¥¼ ì €ì¥í•  ì»¬ëŸ¼(=id)ì˜ ìë£Œí˜•ì„ ë”°ë¦„
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºíÀÇ ÇàÀ» °»½Å
-			int count = pstmt.executeUpdate(); // °»½Å ÀÛ¾÷ ÈÄ °»½ÅÇÑ ÇàÀÇ ¼ö¸¦ ¹İÈ¯
-			System.out.println(count + "°³ ÇàÀÇ Á¤º¸¸¦ °»½ÅÇß½À´Ï´Ù.");			
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ì˜ í–‰ì„ ê°±ì‹ 
+			int count = pstmt.executeUpdate(); // ê°±ì‹  ì‘ì—… í›„ ê°±ì‹ í•œ í–‰ì˜ ìˆ˜ë¥¼ ë°˜í™˜
+			System.out.println(count + "ê°œ í–‰ì˜ ì •ë³´ë¥¼ ê°±ì‹ í–ˆìŠµë‹ˆë‹¤.");			
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			DBUtil.executeClose(null, pstmt, conn);
 		}
 	}

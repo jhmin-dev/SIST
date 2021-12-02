@@ -13,31 +13,31 @@ public class SelectListMemo {
 		String sql = null;
 		
 		try {
-			// JDBC ¼öÇà 1,2´Ü°è
+			// JDBC ìˆ˜í–‰ 1,2ë‹¨ê³„
 			conn = DBUtil.getConnection();
 			
-			// SQL¹® ÀÛ¼º
-			sql = "SELECT * FROM test2 ORDER BY num DESC"; // ÃÖ½Å±ÛÀÌ »ó´Ü¿¡ ¿À°Ô²û Á¤·Ä; reg_dateµµ ÀÌ¿ë °¡´ÉÇÏÁö¸¸, ÀÏ¹İÀûÀ¸·Î ¸ñ·Ï¿¡¼­´Â PRIMARY KEY¸¦ ÀÌ¿ëÇÏ¿© Á¤·Ä
+			// SQLë¬¸ ì‘ì„±
+			sql = "SELECT * FROM test2 ORDER BY num DESC"; // ìµœì‹ ê¸€ì´ ìƒë‹¨ì— ì˜¤ê²Œë” ì •ë ¬; reg_dateë„ ì´ìš© ê°€ëŠ¥í•˜ì§€ë§Œ, ì¼ë°˜ì ìœ¼ë¡œ ëª©ë¡ì—ì„œëŠ” PRIMARY KEYë¥¼ ì´ìš©í•˜ì—¬ ì •ë ¬
 			
-			// JDBC ¼öÇà 3´Ü°è : PreparedStatement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : PreparedStatement ê°ì²´ ìƒì„±
 			pstmt = conn.prepareStatement(sql);
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºí·ÎºÎÅÍ °á°ú ÁıÇÕÀ» ¾ò°í ResultSet¿¡ ´ã¾Æ¼­ ¹İÈ¯
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ë¡œë¶€í„° ê²°ê³¼ ì§‘í•©ì„ ì–»ê³  ResultSetì— ë‹´ì•„ì„œ ë°˜í™˜
 			rs = pstmt.executeQuery();
 			
-			System.out.println("¹øÈ£\tÁ¦¸ñ\tÀÛ¼ºÀÚ\tÀÛ¼ºÀÏ"); // ³»¿ë ¹× ÀÌ¸ŞÀÏÀº »ó¼¼ ÆäÀÌÁö¿¡¼­¸¸ Á¶È¸ÇÏ°í, ¸ñ·Ï¿¡¼­´Â »ı·«
+			System.out.println("ë²ˆí˜¸\tì œëª©\tì‘ì„±ì\tì‘ì„±ì¼"); // ë‚´ìš© ë° ì´ë©”ì¼ì€ ìƒì„¸ í˜ì´ì§€ì—ì„œë§Œ ì¡°íšŒí•˜ê³ , ëª©ë¡ì—ì„œëŠ” ìƒëµ
 			while(rs.next()) {
 				System.out.print(rs.getInt("num") + "\t");
 				System.out.print(rs.getString("title") + "\t");
 				System.out.print(rs.getString("name") + "\t");
-				System.out.println(rs.getDate("reg_date")); // ÄÃ·³ÀÇ ÀÚ·áÇüÀÌ DATEÀÎ °æ¿ì, getDate() ¸Ş¼­µå¿Í getString() ¸Ş¼­µå ¸ğµÎ »ç¿ë °¡´É
+				System.out.println(rs.getDate("reg_date")); // ì»¬ëŸ¼ì˜ ìë£Œí˜•ì´ DATEì¸ ê²½ìš°, getDate() ë©”ì„œë“œì™€ getString() ë©”ì„œë“œ ëª¨ë‘ ì‚¬ìš© ê°€ëŠ¥
 			}
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			DBUtil.executeClose(rs, pstmt, conn);
 		}
 	}

@@ -1,13 +1,13 @@
 public class OperatorMain08 {
 	public static void main(String[] args) {
-		System.out.println("====Á¶°Ç(»ïÇ×) ¿¬»êÀÚ====");
+		System.out.println("====ì¡°ê±´(ì‚¼í•­) ì—°ì‚°ì====");
 		int a = 5, b = 10;
 		int max, min;
 		
 		max = a > b ? a : b;
 		min = a < b ? a : b;
 		
-		System.out.println(a + "¿Í " + b + "ÀÇ ÃÖ´ñ°ªÀº " + max);
-		System.out.println(a + "¿Í " + b + "ÀÇ ÃÖ¼Ú°ªÀº " + min);
+		System.out.println(a + "ì™€ " + b + "ì˜ ìµœëŒ“ê°’ì€ " + max);
+		System.out.println(a + "ì™€ " + b + "ì˜ ìµœì†Ÿê°’ì€ " + min);
 	}
 }

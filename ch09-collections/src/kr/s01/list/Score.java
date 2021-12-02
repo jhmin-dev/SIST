@@ -2,10 +2,10 @@ package kr.s01.list;
 
 public class Score {
 	/*
-	 * [½Ç½À] ÀÌ¸§(name), ±¹¾î(korean), ¿µ¾î(english), ¼öÇĞ(math)
-	 * ÃÑÁ¡ ±¸ÇÏ±â(int makeSum), Æò±Õ ±¸ÇÏ±â(double makeAvg), µî±Ş ±¸ÇÏ±â(String makeGrade)
+	 * [ì‹¤ìŠµ] ì´ë¦„(name), êµ­ì–´(korean), ì˜ì–´(english), ìˆ˜í•™(math)
+	 * ì´ì  êµ¬í•˜ê¸°(int makeSum), í‰ê·  êµ¬í•˜ê¸°(double makeAvg), ë“±ê¸‰ êµ¬í•˜ê¸°(String makeGrade)
 	 */
-	// ¸â¹ö º¯¼ö
+	// ë©¤ë²„ ë³€ìˆ˜
 	private String name;
 	private int korean;
 	private int english;
@@ -35,7 +35,7 @@ public class Score {
 	public void setMath(int math) {
 		this.math = math;
 	}
-	// ¸â¹ö ¸Ş¼­µå
+	// ë©¤ë²„ ë©”ì„œë“œ
 	public int makeSum() {
 		return korean+english+math;
 	}

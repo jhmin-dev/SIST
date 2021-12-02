@@ -3,7 +3,7 @@ package kr.s01.exception;
 public class ExceptionMain04 {
 	public static void main(String[] args) {
 		// try~catch~finally
-		System.out.println("¿¹¿Ü°¡ ¹ß»ıÇÏÁö ¾Ê´Â °æ¿ì");
+		System.out.println("ì˜ˆì™¸ê°€ ë°œìƒí•˜ì§€ ì•ŠëŠ” ê²½ìš°");
 		try {
 			System.out.println("1");
 			System.out.println("2");
@@ -15,10 +15,10 @@ public class ExceptionMain04 {
 			System.out.println("4");
 		}
 		System.out.println("========");
-		System.out.println("¿¹¿Ü°¡ ¹ß»ıÇÏ´Â °æ¿ì");
+		System.out.println("ì˜ˆì™¸ê°€ ë°œìƒí•˜ëŠ” ê²½ìš°");
 		try {
 			System.out.println("1");
-			System.out.println(10/0); // ÀÎÀ§ÀûÀ¸·Î ArithmeticException ¹ß»ı
+			System.out.println(10/0); // ì¸ìœ„ì ìœ¼ë¡œ ArithmeticException ë°œìƒ
 			System.out.println("2");
 		}
 		catch(Exception e) {

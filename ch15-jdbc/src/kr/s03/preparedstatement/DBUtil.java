@@ -13,15 +13,15 @@ public class DBUtil {
 	private static final String DB_ID = "scott";
 	private static final String DB_PASSWORD = "tiger";
 
-	// Connection °´Ã¼ »ı¼º ¹× ¹İÈ¯
+	// Connection ê°ì²´ ìƒì„± ë° ë°˜í™˜
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
-		// JDBC ¼öÇà 1´Ü°è : µå¶óÀÌ¹ö ·Îµå
+		// JDBC ìˆ˜í–‰ 1ë‹¨ê³„ : ë“œë¼ì´ë²„ ë¡œë“œ
 		Class.forName(DB_DRIVER);
-		// JDBC ¼öÇà 2´Ü°è : Connection °´Ã¼ »ı¼º
+		// JDBC ìˆ˜í–‰ 2ë‹¨ê³„ : Connection ê°ì²´ ìƒì„±
 		return DriverManager.getConnection(DB_URL, DB_ID, DB_PASSWORD);
 	}
 	
-	// ÀÚ¿ø Á¤¸®
+	// ìì› ì •ë¦¬
 	public static void executeClose(ResultSet rs, PreparedStatement pstmt, Connection conn) {
 		if(rs!=null) try {rs.close();} catch(SQLException e) {}
 		if(pstmt!=null) try {pstmt.close();} catch(SQLException e) {}

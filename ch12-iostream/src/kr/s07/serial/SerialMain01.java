@@ -2,24 +2,24 @@ package kr.s07.serial;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream; // Á÷·ÄÈ­ ¸Ş¼­µå¸¦ »ç¿ëÇÏ±â À§ÇØ ÇÊ¿ä
+import java.io.ObjectOutputStream; // ì§ë ¬í™” ë©”ì„œë“œë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•´ í•„ìš”
 
 public class SerialMain01 {
 	public static void main(String[] args) {
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		
-		// Á÷·ÄÈ­ÇÒ °´Ã¼ »ı¼º
-		Customer c = new Customer("³Ê±¼");
+		// ì§ë ¬í™”í•  ê°ì²´ ìƒì„±
+		Customer c = new Customer("ë„ˆêµ´");
 		
 		try {
 			fos = new FileOutputStream("object.ser");
 			oos = new ObjectOutputStream(fos);
 			
-			// °´Ã¼ Á÷·ÄÈ­ ¼öÇà
-			oos.writeObject(c); // cÀÇ Å¬·¡½º°¡ SerializableÀ» implementsÇÏ°í ÀÖÁö ¾ÊÀ¸¸é ½ÇÇà½Ã NotSerializableException ¿¡·¯ ¹ß»ı
+			// ê°ì²´ ì§ë ¬í™” ìˆ˜í–‰
+			oos.writeObject(c); // cì˜ í´ë˜ìŠ¤ê°€ Serializableì„ implementsí•˜ê³  ìˆì§€ ì•Šìœ¼ë©´ ì‹¤í–‰ì‹œ NotSerializableException ì—ëŸ¬ ë°œìƒ
 			
-			System.out.println("°´Ã¼ Á÷·ÄÈ­°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+			System.out.println("ê°ì²´ ì§ë ¬í™”ê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		catch(IOException e) {
 			e.printStackTrace();

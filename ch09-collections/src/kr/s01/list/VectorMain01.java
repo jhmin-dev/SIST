@@ -5,34 +5,34 @@ import java.util.Vector;
 public class VectorMain01 {
 	public static void main(String[] args) {
 		Vector<Double> v = new Vector<Double>();
-		// °´Ã¼
+		// ê°ì²´
 		v.add(100.3);
 		v.add(3.14);
-		v.add(1000.); // 1000.0¿¡¼­ 0 »ı·« °¡´É
+		v.add(1000.); // 1000.0ì—ì„œ 0 ìƒëµ ê°€ëŠ¥
 		
-		// È®Àå for¹®
+		// í™•ì¥ forë¬¸
 		for(Double n : v) {
-			System.out.println(n); // Vector¿¡ ÀúÀåµÈ ¿ä¼Ò Ãâ·Â
+			System.out.println(n); // Vectorì— ì €ì¥ëœ ìš”ì†Œ ì¶œë ¥
 		}
 		
-		// ÀÚ¿ø °Ë»ö
-		double search = 1000.0; // °Ë»öÇÒ ¿ä¼Ò
+		// ìì› ê²€ìƒ‰
+		double search = 1000.0; // ê²€ìƒ‰í•  ìš”ì†Œ
 		int index = v.indexOf(search);
-		if(index!=-1) { // °Ë»öÇÒ ¿ä¼Ò°¡ v¿¡ ÀÖ´Â °æ¿ì
-			System.out.println("°Ë»ö ¿ä¼Ò " + search + "ÀÇ À§Ä¡ : " + index);
+		if(index!=-1) { // ê²€ìƒ‰í•  ìš”ì†Œê°€ vì— ìˆëŠ” ê²½ìš°
+			System.out.println("ê²€ìƒ‰ ìš”ì†Œ " + search + "ì˜ ìœ„ì¹˜ : " + index);
 		}
-		else { // °Ë»öÇÒ ¿ä¼Ò°¡ v¿¡ ¾ø´Â °æ¿ì
-			System.out.println("°Ë»ö ¿ä¼Ò " + search + "ÀÌ/°¡ v¿¡ ¾ø½À´Ï´Ù.");
+		else { // ê²€ìƒ‰í•  ìš”ì†Œê°€ vì— ì—†ëŠ” ê²½ìš°
+			System.out.println("ê²€ìƒ‰ ìš”ì†Œ " + search + "ì´/ê°€ vì— ì—†ìŠµë‹ˆë‹¤.");
 		}
 		
-		// ÀÚ¿ø »èÁ¦
-		double del = 3.14; // »èÁ¦ÇÒ ¿ä¼Ò
-		if(v.contains(del)) { // »èÁ¦ÇÒ ¿ä¼Ò°¡ v¿¡ ÀÖ´Â °æ¿ì
+		// ìì› ì‚­ì œ
+		double del = 3.14; // ì‚­ì œí•  ìš”ì†Œ
+		if(v.contains(del)) { // ì‚­ì œí•  ìš”ì†Œê°€ vì— ìˆëŠ” ê²½ìš°
 			v.remove(del);
-			System.out.println(del + "ÀÇ »èÁ¦¸¦ ¿Ï·áÇÏ¿´½À´Ï´Ù : " + v);
+			System.out.println(del + "ì˜ ì‚­ì œë¥¼ ì™„ë£Œí•˜ì˜€ìŠµë‹ˆë‹¤ : " + v);
 		}
-		else { // »èÁ¦ÇÒ ¿ä¼Ò°¡ v¿¡ ¾ø´Â °æ¿ì
-			System.out.println(del + "ÀÌ/°¡ v¿¡ ¾ø½À´Ï´Ù : " + v);
+		else { // ì‚­ì œí•  ìš”ì†Œê°€ vì— ì—†ëŠ” ê²½ìš°
+			System.out.println(del + "ì´/ê°€ vì— ì—†ìŠµë‹ˆë‹¤ : " + v);
 		}
 	}
 }

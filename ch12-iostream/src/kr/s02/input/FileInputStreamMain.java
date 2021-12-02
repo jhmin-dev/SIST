@@ -1,36 +1,36 @@
 package kr.s02.input;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException; // ÆÄÀÏÀÌ ¾ø´Â °æ¿ì ¹ß»ıÇÏ´Â ¿¹¿Ü
+import java.io.FileNotFoundException; // íŒŒì¼ì´ ì—†ëŠ” ê²½ìš° ë°œìƒí•˜ëŠ” ì˜ˆì™¸
 import java.io.IOException;
 
 public class FileInputStreamMain {
 	public static void main(String[] args) {
-		// ÃÊ±âÈ­
+		// ì´ˆê¸°í™”
 		FileInputStream fis = null;
 		int readbyte = 0;
 		byte[] readbyte2;
-		// ÆÄÀÏ·ÎºÎÅÍ ÀÔ·Â¹ŞÀ½
+		// íŒŒì¼ë¡œë¶€í„° ì…ë ¥ë°›ìŒ
 		try {
-			fis = new FileInputStream("file.txt"); // »ó´ë °æ·Î; file.txt°¡ ÇÁ·ÎÁ§Æ® ¹Ø¿¡ ÀÖ´Â °ÍÀ¸·Î ÀÎ½Ä
+			fis = new FileInputStream("file.txt"); // ìƒëŒ€ ê²½ë¡œ; file.txtê°€ í”„ë¡œì íŠ¸ ë°‘ì— ìˆëŠ” ê²ƒìœ¼ë¡œ ì¸ì‹
 			/*
-			// ÆÄÀÏÀÇ Á¤º¸¸¦ ÇÑ ¹®ÀÚ¾¿ ÀĞ±â; ¿µ¹® ÀÌ¿ÜÀÇ ¹®ÀÚ´Â ±úÁü
-			while((readbyte = fis.read())!=-1) { // read() ¸Ş¼­µå´Â ´õ ÀÌ»ó ÀĞÀ» µ¥ÀÌÅÍ°¡ ¾øÀ¸¸é -1À» ¹İÈ¯
-				System.out.print((char)readbyte); // read() ¸Ş¼­µå°¡ ¹İÈ¯ÇÑ ASCII ÄÚµå¸¦ char·Î Ä³½ºÆÃÇÏ¿© Ãâ·Â
+			// íŒŒì¼ì˜ ì •ë³´ë¥¼ í•œ ë¬¸ìì”© ì½ê¸°; ì˜ë¬¸ ì´ì™¸ì˜ ë¬¸ìëŠ” ê¹¨ì§
+			while((readbyte = fis.read())!=-1) { // read() ë©”ì„œë“œëŠ” ë” ì´ìƒ ì½ì„ ë°ì´í„°ê°€ ì—†ìœ¼ë©´ -1ì„ ë°˜í™˜
+				System.out.print((char)readbyte); // read() ë©”ì„œë“œê°€ ë°˜í™˜í•œ ASCII ì½”ë“œë¥¼ charë¡œ ìºìŠ¤íŒ…í•˜ì—¬ ì¶œë ¥
 			}
 			*/
-			// ÆÄÀÏÀÇ Á¤º¸¸¦ ¹è¿­·Î ÀĞ±â; 2byte ¹®ÀÚµµ ±úÁöÁö ¾ÊÀ½
-			readbyte2 = new byte[fis.available()]; // available() ¸Ş¼­µå´Â ÆÄÀÏÀÇ µ¥ÀÌÅÍ¸¦ ¹ÙÀÌÆ® ´ÜÀ§·Î È¯»êÇÏ¿© °ªÀ» ¹İÈ¯ÇÏ¹Ç·Î, ¹è¿­ÀÇ ±æÀÌ¸¦ Á¤È®ÇÏ°Ô ÁöÁ¤ °¡´É
-			fis.read(readbyte2); // read() ¸Ş¼­µå¿¡ byte[]À» ÀÎÀÚ·Î Àü´ŞÇÏ¸é, ÆÄÀÏ·ÎºÎÅÍ ÀÔ·Â¹ŞÀº µ¥ÀÌÅÍ¸¦ byte[]¿¡ ÀúÀå
-			System.out.println(new String(readbyte2)); // byte[]À» StringÀ¸·Î º¯È¯ÇÏ¿© Ãâ·Â
+			// íŒŒì¼ì˜ ì •ë³´ë¥¼ ë°°ì—´ë¡œ ì½ê¸°; 2byte ë¬¸ìë„ ê¹¨ì§€ì§€ ì•ŠìŒ
+			readbyte2 = new byte[fis.available()]; // available() ë©”ì„œë“œëŠ” íŒŒì¼ì˜ ë°ì´í„°ë¥¼ ë°”ì´íŠ¸ ë‹¨ìœ„ë¡œ í™˜ì‚°í•˜ì—¬ ê°’ì„ ë°˜í™˜í•˜ë¯€ë¡œ, ë°°ì—´ì˜ ê¸¸ì´ë¥¼ ì •í™•í•˜ê²Œ ì§€ì • ê°€ëŠ¥
+			fis.read(readbyte2); // read() ë©”ì„œë“œì— byte[]ì„ ì¸ìë¡œ ì „ë‹¬í•˜ë©´, íŒŒì¼ë¡œë¶€í„° ì…ë ¥ë°›ì€ ë°ì´í„°ë¥¼ byte[]ì— ì €ì¥
+			System.out.println(new String(readbyte2)); // byte[]ì„ Stringìœ¼ë¡œ ë³€í™˜í•˜ì—¬ ì¶œë ¥
 		}
-		catch(FileNotFoundException e) { // FileInputStream °´Ã¼ »ı¼º½Ã ¹ß»ı °¡´É
+		catch(FileNotFoundException e) { // FileInputStream ê°ì²´ ìƒì„±ì‹œ ë°œìƒ ê°€ëŠ¥
 			e.printStackTrace();
 		}
-		catch(IOException e) { // read()¸Ş¼­µå¿¡¼­ ¹ß»ı °¡´É
+		catch(IOException e) { // read()ë©”ì„œë“œì—ì„œ ë°œìƒ ê°€ëŠ¥
 			e.printStackTrace();
 		}
-		finally { // ÀÚ¿ø Á¤¸®
+		finally { // ìì› ì •ë¦¬
 			if(fis!=null) try {fis.close();} catch(IOException e) {}
 		}		
 	}

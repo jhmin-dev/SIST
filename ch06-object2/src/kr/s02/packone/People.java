@@ -1,12 +1,12 @@
 package kr.s02.packone;
 
 public class People {
-	// °°Àº Å¬·¡½º¿¡¼­¸¸ È£Ãâ °¡´É
+	// ê°™ì€ í´ëž˜ìŠ¤ì—ì„œë§Œ í˜¸ì¶œ ê°€ëŠ¥
 	private int a = 10;
-	// °°Àº ÆÐÅ°Áö¿¡¼­¸¸ È£Ãâ °¡´É
+	// ê°™ì€ íŒ¨í‚¤ì§€ì—ì„œë§Œ í˜¸ì¶œ ê°€ëŠ¥
 	int b = 20;
-	// °°Àº ÆÐÅ°ÁöÀÌ°Å³ª »ó¼Ó °ü°èÀÌ¸é È£Ãâ °¡´É
+	// ê°™ì€ íŒ¨í‚¤ì§€ì´ê±°ë‚˜ ìƒì† ê´€ê³„ì´ë©´ í˜¸ì¶œ ê°€ëŠ¥
 	protected int c = 30;
-	// Á¢±Ù Á¦ÇÑÀÌ ¾øÀ½
+	// ì ‘ê·¼ ì œí•œì´ ì—†ìŒ
 	public int d = 40;
 }

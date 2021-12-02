@@ -1,12 +1,12 @@
 public class ArrayMain08 {
 	public static void main(String[] args) {
-		// Å¬·¡½º¸¦ ½ÇÇàÇÒ ¶§ mainÀÇ ÀÎÀÚÀÎ args°¡ °¡¸®Å°´Â ¹è¿­¿¡ µ¥ÀÌÅÍ¸¦ Àü´ŞÇØ¼­ È°¿ëÇÒ ¼ö ÀÖÀ½
+		// í´ë˜ìŠ¤ë¥¼ ì‹¤í–‰í•  ë•Œ mainì˜ ì¸ìì¸ argsê°€ ê°€ë¦¬í‚¤ëŠ” ë°°ì—´ì— ë°ì´í„°ë¥¼ ì „ë‹¬í•´ì„œ í™œìš©í•  ìˆ˜ ìˆìŒ
 		System.out.println(args[0] + args[1]);
 
-		// argsÀÇ ÀÚ·áÇüÀÌ StringÀÌ¶ó ¼ıÀÚ¸¦ Àü´ŞÇØµµ ¹®ÀÚ¿­·Î º¯È¯ÇØ ÀúÀåÇÏ±â ¶§¹®¿¡ ¿¬»ê¿¡ È°¿ëÇÏ·Á¸é º°µµÀÇ º¯È¯ ÀÛ¾÷ÀÌ ÇÊ¿äÇÔ
+		// argsì˜ ìë£Œí˜•ì´ Stringì´ë¼ ìˆ«ìë¥¼ ì „ë‹¬í•´ë„ ë¬¸ìì—´ë¡œ ë³€í™˜í•´ ì €ì¥í•˜ê¸° ë•Œë¬¸ì— ì—°ì‚°ì— í™œìš©í•˜ë ¤ë©´ ë³„ë„ì˜ ë³€í™˜ ì‘ì—…ì´ í•„ìš”í•¨
 		int num = Integer.parseInt(args[0]);
 		int num2 = Integer.parseInt(args[1]);
 		
-		System.out.println("ÇÕ°è : " + (num + num2));
+		System.out.println("í•©ê³„ : " + (num + num2));
 	}
 }

@@ -1,25 +1,25 @@
 package kr.s11.inter;
 
 interface Inter {
-	// Ãß»ó ¸Ş¼­µå
+	// ì¶”ìƒ ë©”ì„œë“œ
 	public abstract void play();
 }
 
 class A implements Inter {
 	@Override public void play() {
-		System.out.println("ÇÇ¾Æ³ë¸¦ ¿¬ÁÖÇÕ´Ï´Ù.");
+		System.out.println("í”¼ì•„ë…¸ë¥¼ ì—°ì£¼í•©ë‹ˆë‹¤.");
 	}
 }
 
 class C implements Inter {
 	@Override public void play() {
-		System.out.println("Ã¿·Î¸¦ ¿¬ÁÖÇÕ´Ï´Ù.");
+		System.out.println("ì²¼ë¡œë¥¼ ì—°ì£¼í•©ë‹ˆë‹¤.");
 	}
 }
 
 class Admin {
 	public void autoPlay(Inter i) {
-		// i¸¦ ÅëÇØ °´Ã¼¿¡ Á¢±ÙÇØ¼­ ¸Ş¼­µå¸¦ È£ÃâÇÔ; °øÅë ÀÚ·áÇüÀ» »ç¿ëÇÏÁö ¸øÇÏ¸é ¸Ş¼­µå¸¦ Å¬·¡½º ÀÚ·áÇü¸¶´Ù º°µµ·Î ¸¸µé¾î¾ß ÇÏ¸ç, Object ÀÚ·áÇüÀÇ °æ¿ì play() ¸Ş¼­µå È£Ãâ ºÒ°¡
+		// ië¥¼ í†µí•´ ê°ì²´ì— ì ‘ê·¼í•´ì„œ ë©”ì„œë“œë¥¼ í˜¸ì¶œí•¨; ê³µí†µ ìë£Œí˜•ì„ ì‚¬ìš©í•˜ì§€ ëª»í•˜ë©´ ë©”ì„œë“œë¥¼ í´ë˜ìŠ¤ ìë£Œí˜•ë§ˆë‹¤ ë³„ë„ë¡œ ë§Œë“¤ì–´ì•¼ í•˜ë©°, Object ìë£Œí˜•ì˜ ê²½ìš° play() ë©”ì„œë“œ í˜¸ì¶œ ë¶ˆê°€
 		i.play();
 	}
 }

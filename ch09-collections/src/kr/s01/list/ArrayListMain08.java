@@ -6,15 +6,15 @@ import java.util.ArrayList;
 public class ArrayListMain08 {
 	public static void main(String[] args) {
 		/*
-		 * [½Ç½À] ·Î¶Ç ÇÁ·Î±×·¥
-		 * 1ºÎÅÍ 45±îÁöÀÇ ¹üÀ§¿¡¼­ °ãÄ¡Áö ¾Ê´Â 6°³ ¼ö¸¦ ±¸ÇÏ¸é¼­ ArrayList¿¡ ÀúÀåÇÏ°í Ãâ·ÂÇÏ½Ã¿À.
+		 * [ì‹¤ìŠµ] ë¡œë˜ í”„ë¡œê·¸ë¨
+		 * 1ë¶€í„° 45ê¹Œì§€ì˜ ë²”ìœ„ì—ì„œ ê²¹ì¹˜ì§€ ì•ŠëŠ” 6ê°œ ìˆ˜ë¥¼ êµ¬í•˜ë©´ì„œ ArrayListì— ì €ì¥í•˜ê³  ì¶œë ¥í•˜ì‹œì˜¤.
 		 */
 		ArrayList<Integer> lottery = new ArrayList<Integer>();
 		Random lt = new Random();
-		while(lottery.size()<6) { // lotteryÀÇ ±æÀÌ°¡ 6ÀÌ µÇ¸é ·çÇÁ Áß´Ü
-			int num=lt.nextInt(45)+1; // 0ºÎÅÍ 44±îÁöÀÇ ¹üÀ§¿¡¼­ Á¤¼öÇü ³­¼ö¸¦ ¹ß»ıÇÏ¿© 1À» ´õÇÑ °ªÀ» num¿¡ ÀúÀå
-			if(!lottery.contains(num)) { // lottery¿¡ numÀÌ ¾ø´Â °æ¿ì
-				lottery.add(num); // lottery¿¡ numÀ» ÀúÀå
+		while(lottery.size()<6) { // lotteryì˜ ê¸¸ì´ê°€ 6ì´ ë˜ë©´ ë£¨í”„ ì¤‘ë‹¨
+			int num=lt.nextInt(45)+1; // 0ë¶€í„° 44ê¹Œì§€ì˜ ë²”ìœ„ì—ì„œ ì •ìˆ˜í˜• ë‚œìˆ˜ë¥¼ ë°œìƒí•˜ì—¬ 1ì„ ë”í•œ ê°’ì„ numì— ì €ì¥
+			if(!lottery.contains(num)) { // lotteryì— numì´ ì—†ëŠ” ê²½ìš°
+				lottery.add(num); // lotteryì— numì„ ì €ì¥
 			}
 		}
 		System.out.println(lottery);

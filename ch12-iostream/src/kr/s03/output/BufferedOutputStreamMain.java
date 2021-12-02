@@ -6,24 +6,24 @@ import java.io.IOException;
 
 public class BufferedOutputStreamMain {
 	public static void main(String[] args) {
-		// ½ºÆ®¸² °´Ã¼ ¼±¾ğ; ½ºÆ®¸² °´Ã¼ »ı¼º½Ã¿¡ ¿¹¿Ü°¡ ¹ß»ıÇÒ ¼ö ÀÖ±â ¶§¹®¿¡ ¼±¾ğ°ú »ı¼ºÀ» ºĞ¸®; ¼±¾ğÀ» try¿¡ Æ÷ÇÔÇÏ¸é finally¿¡¼­ ÀÚ¿øÀ» Á¤¸®ÇÒ ¼ö ¾øÀ½
+		// ìŠ¤íŠ¸ë¦¼ ê°ì²´ ì„ ì–¸; ìŠ¤íŠ¸ë¦¼ ê°ì²´ ìƒì„±ì‹œì— ì˜ˆì™¸ê°€ ë°œìƒí•  ìˆ˜ ìˆê¸° ë•Œë¬¸ì— ì„ ì–¸ê³¼ ìƒì„±ì„ ë¶„ë¦¬; ì„ ì–¸ì„ tryì— í¬í•¨í•˜ë©´ finallyì—ì„œ ìì›ì„ ì •ë¦¬í•  ìˆ˜ ì—†ìŒ
 		FileOutputStream fos = null;
 		BufferedOutputStream bo = null;
-		// ½ºÆ®¸² °´Ã¼ »ı¼º
+		// ìŠ¤íŠ¸ë¦¼ ê°ì²´ ìƒì„±
 		try {
-			fos = new FileOutputStream("bufferOut.txt"); // bufferOut.txt »ı¼º
+			fos = new FileOutputStream("bufferOut.txt"); // bufferOut.txt ìƒì„±
 			bo = new BufferedOutputStream(fos);
-			String str = "BufferedOutputStream Test ÀÔ´Ï´Ù.";
-			bo.write(str.getBytes()); // strÀÇ ³»¿ëÀ» ¹öÆÛ¿¡ Ãâ·Â; ÆÄÀÏ¿¡´Â ³»¿ë ¾øÀ½
-			bo.flush(); // ¹öÆÛ¸¦ ºñ¿ì°í ¹öÆÛ¿¡ ÀÖ´Â µ¥ÀÌÅÍ¸¦ ÆÄÀÏ¿¡ Ãâ·Â
-			System.out.println("ÆÄÀÏÀ» »ı¼ºÇÏ°í ÆÄÀÏ¿¡ ³»¿ëÀ» Ãâ·ÂÇÕ´Ï´Ù.");
+			String str = "BufferedOutputStream Test ì…ë‹ˆë‹¤.";
+			bo.write(str.getBytes()); // strì˜ ë‚´ìš©ì„ ë²„í¼ì— ì¶œë ¥; íŒŒì¼ì—ëŠ” ë‚´ìš© ì—†ìŒ
+			bo.flush(); // ë²„í¼ë¥¼ ë¹„ìš°ê³  ë²„í¼ì— ìˆëŠ” ë°ì´í„°ë¥¼ íŒŒì¼ì— ì¶œë ¥
+			System.out.println("íŒŒì¼ì„ ìƒì„±í•˜ê³  íŒŒì¼ì— ë‚´ìš©ì„ ì¶œë ¥í•©ë‹ˆë‹¤.");
 		}
 		catch(IOException e) {
 			e.printStackTrace();
 		}
-		// ÀÚ¿ø Á¤¸®; ½ºÆ®¸² °´Ã¼ »ı¼º ¿ª¼øÀ¸·Î ÇØ¾ß ¾ÈÀü; ÀÌ ¿¹Á¦¿¡¼­´Â bo°¡ fosÀÇ ÀÚ¿øÀ» »ç¿ëÇÏ¹Ç·Î, bo ´İ±â Àü¿¡ fos ´İÀ¸¸é ¹®Á¦ »ı±æ ¼ö ÀÖÀ½
+		// ìì› ì •ë¦¬; ìŠ¤íŠ¸ë¦¼ ê°ì²´ ìƒì„± ì—­ìˆœìœ¼ë¡œ í•´ì•¼ ì•ˆì „; ì´ ì˜ˆì œì—ì„œëŠ” boê°€ fosì˜ ìì›ì„ ì‚¬ìš©í•˜ë¯€ë¡œ, bo ë‹«ê¸° ì „ì— fos ë‹«ìœ¼ë©´ ë¬¸ì œ ìƒê¸¸ ìˆ˜ ìˆìŒ
 		finally {
-			 if(bo!=null) try {bo.close();} catch(IOException e) {} // BufferedOutputStreamÀÇ close() ¸Ş¼­µå´Â ÀÚ¿øÀ» Á¤¸®ÇÏ±â Àü¿¡ ¹öÆÛ¸¦ È®ÀÎÇØ¼­ ³²¾Æ ÀÖ´Â µ¥ÀÌÅÍ°¡ ÀÖÀ¸¸é flush() ¸Ş¼­µå¸¦ È£ÃâÇÏ¿© Ã³¸®ÇÔ; µ¥ÀÌÅÍ ´©¶ô ¹æÁö
+			 if(bo!=null) try {bo.close();} catch(IOException e) {} // BufferedOutputStreamì˜ close() ë©”ì„œë“œëŠ” ìì›ì„ ì •ë¦¬í•˜ê¸° ì „ì— ë²„í¼ë¥¼ í™•ì¸í•´ì„œ ë‚¨ì•„ ìˆëŠ” ë°ì´í„°ê°€ ìˆìœ¼ë©´ flush() ë©”ì„œë“œë¥¼ í˜¸ì¶œí•˜ì—¬ ì²˜ë¦¬í•¨; ë°ì´í„° ëˆ„ë½ ë°©ì§€
 			 if(fos!=null) try {fos.close();} catch(IOException e) {}
 		}
 	}

@@ -1,21 +1,21 @@
 package kr.s01.a;
 class Worker {
 	/*
-	 * [½Ç½À] 
+	 * [ì‹¤ìŠµ] 
 	 * Worker
-	 * 1) ¸â¹ö º¯¼ö : Á÷¿ø ÀÌ¸§(name), ±Ş¿©(money), °èÁÂ ÀÜ°í(balance)
-	 * 2) ¸â¹ö ¸Ş¼­µå : work(½ÇÇàÇÏ¸é money¿¡ 1,000¿ø ´©Àû), deposit(½ÇÇàÇÏ¸é moneyÀÇ µ·À» balance·Î ´©Àû½ÃÅ°°í money´Â 0À¸·Î Ã³¸®)
+	 * 1) ë©¤ë²„ ë³€ìˆ˜ : ì§ì› ì´ë¦„(name), ê¸‰ì—¬(money), ê³„ì¢Œ ì”ê³ (balance)
+	 * 2) ë©¤ë²„ ë©”ì„œë“œ : work(ì‹¤í–‰í•˜ë©´ moneyì— 1,000ì› ëˆ„ì ), deposit(ì‹¤í–‰í•˜ë©´ moneyì˜ ëˆì„ balanceë¡œ ëˆ„ì ì‹œí‚¤ê³  moneyëŠ” 0ìœ¼ë¡œ ì²˜ë¦¬)
 	 * MethodMain04
-	 * 1) Worker °´Ã¼ »ı¼º
-	 * 2) Á÷¿øÀÇ ÀÌ¸§ ÁöÁ¤
-	 * 3) 10¹ø ÀÏÇÏ´Âµ¥ ¹ø µ·ÀÌ 3,000¿øÀÏ ¶§¸¶´Ù °èÁÂ¿¡ ÀúÃà
-	 * 4) Á÷¿ø ÀÌ¸§, ÇöÀç °èÁÂ¿¡ ÀÔ±İµÇÁö ¾Ê°í ³²¾Æ ÀÖ´Â ±Ş¿©(money), °èÁÂ ÀÜ°í(balance)¸¦ Ãâ·Â
+	 * 1) Worker ê°ì²´ ìƒì„±
+	 * 2) ì§ì›ì˜ ì´ë¦„ ì§€ì •
+	 * 3) 10ë²ˆ ì¼í•˜ëŠ”ë° ë²ˆ ëˆì´ 3,000ì›ì¼ ë•Œë§ˆë‹¤ ê³„ì¢Œì— ì €ì¶•
+	 * 4) ì§ì› ì´ë¦„, í˜„ì¬ ê³„ì¢Œì— ì…ê¸ˆë˜ì§€ ì•Šê³  ë‚¨ì•„ ìˆëŠ” ê¸‰ì—¬(money), ê³„ì¢Œ ì”ê³ (balance)ë¥¼ ì¶œë ¥
 	 */
 	String name;
 	int money, balance;
 	
 	public void work() {
-		money+=1000; // Ã³À½ »ı¼º½Ã 0À¸·Î ÃÊ±âÈ­µÇ±â ¶§¹®¿¡ ¹®Á¦ ¹ß»ıÇÏÁö ¾Ê°í ´©ÀûµÊ
+		money+=1000; // ì²˜ìŒ ìƒì„±ì‹œ 0ìœ¼ë¡œ ì´ˆê¸°í™”ë˜ê¸° ë•Œë¬¸ì— ë¬¸ì œ ë°œìƒí•˜ì§€ ì•Šê³  ëˆ„ì ë¨
 	}
 	
 	public void deposit() {
@@ -27,15 +27,15 @@ class Worker {
 public class MethodMain04 {
 	public static void main(String[] args) {
 		Worker w = new Worker();
-		w.name = "³Ê±¼";
+		w.name = "ë„ˆêµ´";
 		for(int i=0;i<10;i++) {
 			w.work();
-			if(w.money>=3000) { // w.money%3000==0µµ °¡´É
+			if(w.money>=3000) { // w.money%3000==0ë„ ê°€ëŠ¥
 				w.deposit();
 			}
 		}
-		System.out.println("ÀÌ¸§ : " + w.name);
-		System.out.printf("³²¾Æ ÀÖ´Â ±Ş¿© : %,d¿ø\n", w.money);
-		System.out.printf("°èÁÂ ÀÜ°í : %,d¿ø", w.balance);
+		System.out.println("ì´ë¦„ : " + w.name);
+		System.out.printf("ë‚¨ì•„ ìˆëŠ” ê¸‰ì—¬ : %,dì›\n", w.money);
+		System.out.printf("ê³„ì¢Œ ì”ê³  : %,dì›", w.balance);
 	}
 }

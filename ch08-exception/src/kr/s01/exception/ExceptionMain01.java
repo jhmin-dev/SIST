@@ -3,10 +3,10 @@ package kr.s01.exception;
 public class ExceptionMain01 {
 	public static void main(String[] args) {
 		int[] array = {10,20,30};
-		// ÀÎÀ§ÀûÀ¸·Î ¿¹¿Ü¸¦ ¹ß»ı½ÃÅ°±â À§ÇØ ¾ø´Â ÀÎµ¦½º 3À» È£Ãâ
+		// ì¸ìœ„ì ìœ¼ë¡œ ì˜ˆì™¸ë¥¼ ë°œìƒì‹œí‚¤ê¸° ìœ„í•´ ì—†ëŠ” ì¸ë±ìŠ¤ 3ì„ í˜¸ì¶œ
 		for(int i=0;i<=array.length;i++) {
 			System.out.println("array[" + i + "] : " + array[i]);
-		} // for¹® Á¾·á
-		System.out.println("ÇÁ·Î±×·¥ Á¤»ó Á¾·á"); // ¿¹¿Ü ¹ß»ıÀ¸·Î ÇÁ·Î±×·¥ ºñÁ¤»ó Á¾·áµÇ¾î Ãâ·ÂµÇÁö ¾ÊÀ½
+		} // forë¬¸ ì¢…ë£Œ
+		System.out.println("í”„ë¡œê·¸ë¨ ì •ìƒ ì¢…ë£Œ"); // ì˜ˆì™¸ ë°œìƒìœ¼ë¡œ í”„ë¡œê·¸ë¨ ë¹„ì •ìƒ ì¢…ë£Œë˜ì–´ ì¶œë ¥ë˜ì§€ ì•ŠìŒ
 	}
 }

@@ -5,31 +5,31 @@ public class StringMain02 {
 		String s1 = "This is false";
 		
 		int index = s1.indexOf('s');
-		System.out.println("¹®ÀÚ s°¡ Ã³À½À¸·Î µîÀåÇÑ À§Ä¡ : " + index);
+		System.out.println("ë¬¸ì sê°€ ì²˜ìŒìœ¼ë¡œ ë“±ì¥í•œ ìœ„ì¹˜ : " + index);
 		
-		index = s1.indexOf("is"); // indexOf ¸Ş¼­µåÀÇ °æ¿ì ¹İÈ¯°ªÀÌ 1°³ÀÌ¹Ç·Î, ¹®ÀÚ¿­ÀÇ À§Ä¡´Â ÇØ´ç ¹®ÀÚ¿­(=is)ÀÇ Ã¹ ¹øÂ° ¹®ÀÚ(=i)ÀÇ À§Ä¡¸¦ ¹İÈ¯
-		System.out.println("¹®ÀÚ¿­ isÀÇ À§Ä¡ : " + index);
+		index = s1.indexOf("is"); // indexOf ë©”ì„œë“œì˜ ê²½ìš° ë°˜í™˜ê°’ì´ 1ê°œì´ë¯€ë¡œ, ë¬¸ìì—´ì˜ ìœ„ì¹˜ëŠ” í•´ë‹¹ ë¬¸ìì—´(=is)ì˜ ì²« ë²ˆì§¸ ë¬¸ì(=i)ì˜ ìœ„ì¹˜ë¥¼ ë°˜í™˜
+		System.out.println("ë¬¸ìì—´ isì˜ ìœ„ì¹˜ : " + index);
 		
 		index = s1.lastIndexOf('s');
-		System.out.println("¹®ÀÚ s°¡ ¸¶Áö¸·À¸·Î µîÀåÇÑ À§Ä¡ : " + index);
+		System.out.println("ë¬¸ì sê°€ ë§ˆì§€ë§‰ìœ¼ë¡œ ë“±ì¥í•œ ìœ„ì¹˜ : " + index);
 		
-		char c = s1.charAt(8); // ÀÔ·ÂÇÑ ÀÎµ¦½º°ª¿¡ ÇØ´çÇÏ´Â ¹®ÀÚ¸¦ ¹İÈ¯
-		System.out.println("ÃßÃâÇÑ ¹®ÀÚ : " + c);
+		char c = s1.charAt(8); // ì…ë ¥í•œ ì¸ë±ìŠ¤ê°’ì— í•´ë‹¹í•˜ëŠ” ë¬¸ìë¥¼ ë°˜í™˜
+		System.out.println("ì¶”ì¶œí•œ ë¬¸ì : " + c);
 		
-		index = s1.indexOf('F'); // ´ë¼Ò¹®ÀÚ¸¦ ±¸ºĞÇÏ¸ç, ¹®ÀÚ¿­¿¡ Æ÷ÇÔµÇÁö ¾ÊÀº ¹®ÀÚ´Â -1À» ¹İÈ¯
+		index = s1.indexOf('F'); // ëŒ€ì†Œë¬¸ìë¥¼ êµ¬ë¶„í•˜ë©°, ë¬¸ìì—´ì— í¬í•¨ë˜ì§€ ì•Šì€ ë¬¸ìëŠ” -1ì„ ë°˜í™˜
 		System.out.println(index);
 		index = s1.indexOf('f');
 		
-		String str = s1.substring(index); // ÁöÁ¤ÇÑ ÀÎµ¦½ººÎÅÍ ¸¶Áö¸· ÀÎµ¦½º±îÁöÀÇ ¹®ÀÚ¿­À» ÃßÃâ
-		System.out.println("¼Ò¹®ÀÚ fºÎÅÍ ³¡±îÁöÀÇ ¹®ÀÚ¿­À» ÃßÃâ : " + str);
+		String str = s1.substring(index); // ì§€ì •í•œ ì¸ë±ìŠ¤ë¶€í„° ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ê¹Œì§€ì˜ ë¬¸ìì—´ì„ ì¶”ì¶œ
+		System.out.println("ì†Œë¬¸ì fë¶€í„° ëê¹Œì§€ì˜ ë¬¸ìì—´ì„ ì¶”ì¶œ : " + str);
 		
-		str = s1.substring(index, index+3); // ½ÃÀÛ ÀÎµ¦½ººÎÅÍ ³¡ ÀÎµ¦½º Á÷Àü±îÁöÀÇ ¹®ÀÚ¿­À» ÃßÃâ(=³¡ ÀÎµ¦½º´Â Æ÷ÇÔµÇÁö ¾ÊÀ½)
-		System.out.println("ÀÎµ¦½º 8ºÎÅÍ ÀÎµ¦½º 11 Á÷Àü±îÁöÀÇ ¹®ÀÚ¿­ ÃßÃâ : " + str);
+		str = s1.substring(index, index+3); // ì‹œì‘ ì¸ë±ìŠ¤ë¶€í„° ë ì¸ë±ìŠ¤ ì§ì „ê¹Œì§€ì˜ ë¬¸ìì—´ì„ ì¶”ì¶œ(=ë ì¸ë±ìŠ¤ëŠ” í¬í•¨ë˜ì§€ ì•ŠìŒ)
+		System.out.println("ì¸ë±ìŠ¤ 8ë¶€í„° ì¸ë±ìŠ¤ 11 ì§ì „ê¹Œì§€ì˜ ë¬¸ìì—´ ì¶”ì¶œ : " + str);
 		
 		int length = s1.length();
-		System.out.println("¹®ÀÚ¿­ s1ÀÇ ±æÀÌ : " + length);
+		System.out.println("ë¬¸ìì—´ s1ì˜ ê¸¸ì´ : " + length);
 		
-		String[] array = s1.split(" "); // °ø¹éÀ» ±¸ºĞÀÚ·Î ÇÏ¿© ¹®ÀÚ¿­À» ÀÚ¸£°í ¹è¿­·Î ¹İÈ¯
+		String[] array = s1.split(" "); // ê³µë°±ì„ êµ¬ë¶„ìë¡œ í•˜ì—¬ ë¬¸ìì—´ì„ ìë¥´ê³  ë°°ì—´ë¡œ ë°˜í™˜
 		for(int i=0;i<array.length;i++) {
 			System.out.println("array[" + i + "] : " + array[i]);
 		}

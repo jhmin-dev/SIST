@@ -12,46 +12,46 @@ public class InsertMemo {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
-		String title, name, memo, email; // try ºí·°¿¡¼­¸¸ »ç¿ëÇÏ´Â º¯¼öÀÌ¹Ç·Î try ºí·° ¾È¿¡¼­ ¼±¾ğÇØµµ ¹«¹æ
+		String title, name, memo, email; // try ë¸”ëŸ­ì—ì„œë§Œ ì‚¬ìš©í•˜ëŠ” ë³€ìˆ˜ì´ë¯€ë¡œ try ë¸”ëŸ­ ì•ˆì—ì„œ ì„ ì–¸í•´ë„ ë¬´ë°©
 		
 		try {
 			br = new BufferedReader(new InputStreamReader(System.in));
-			System.out.println("¸Ş¸ğ¸¦ ÀÔ·ÂÇÕ´Ï´Ù.");
-			System.out.print("Á¦¸ñ > ");
+			System.out.println("ë©”ëª¨ë¥¼ ì…ë ¥í•©ë‹ˆë‹¤.");
+			System.out.print("ì œëª© > ");
 			title = br.readLine();
-			System.out.print("ÀÌ¸§ > ");
+			System.out.print("ì´ë¦„ > ");
 			name = br.readLine();
-			System.out.print("¸Ş¸ğ > ");
+			System.out.print("ë©”ëª¨ > ");
 			memo = br.readLine();
-			System.out.print("ÀÌ¸ŞÀÏ > ");
+			System.out.print("ì´ë©”ì¼ > ");
 			email = br.readLine();
 			
-			// JDBC ¼öÇà 1,2´Ü°è
+			// JDBC ìˆ˜í–‰ 1,2ë‹¨ê³„
 			conn = DBUtil.getConnection();
 			
-			// SQL¹® ÀÛ¼º
-			sql = "INSERT INTO test2 (num, title, name, memo, email, reg_date) " // ±ä ¹®ÀÚ¿­Àº °¡µ¶¼ºÀ» À§ÇØ ºĞ¸® ÈÄ + ¿¬»êÀÚ·Î ¿¬°á
-				+ "VALUES(test2_seq.NEXTVAL, ?, ?, ?, ?, SYSDATE)"; // ½ÃÄö½ºÀÇ ´ÙÀ½ °ª ¹İÈ¯°ú ÇöÀç ³¯Â¥ ¹İÈ¯Àº ¸í·É¾î·Î Ã³¸®µÇ¾î¾ß ÇÏ¹Ç·Î ¹ÙÀÎµå º¯¼ö »ç¿ë ºÒ°¡
+			// SQLë¬¸ ì‘ì„±
+			sql = "INSERT INTO test2 (num, title, name, memo, email, reg_date) " // ê¸´ ë¬¸ìì—´ì€ ê°€ë…ì„±ì„ ìœ„í•´ ë¶„ë¦¬ í›„ + ì—°ì‚°ìë¡œ ì—°ê²°
+				+ "VALUES(test2_seq.NEXTVAL, ?, ?, ?, ?, SYSDATE)"; // ì‹œí€€ìŠ¤ì˜ ë‹¤ìŒ ê°’ ë°˜í™˜ê³¼ í˜„ì¬ ë‚ ì§œ ë°˜í™˜ì€ ëª…ë ¹ì–´ë¡œ ì²˜ë¦¬ë˜ì–´ì•¼ í•˜ë¯€ë¡œ ë°”ì¸ë“œ ë³€ìˆ˜ ì‚¬ìš© ë¶ˆê°€
 			
-			// JDBC ¼öÇà 3´Ü°è : PreparedStatement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : PreparedStatement ê°ì²´ ìƒì„±
 			pstmt = conn.prepareStatement(sql);
-			// ?¿¡ µ¥ÀÌÅÍ¸¦ ¹ÙÀÎµù
+			// ?ì— ë°ì´í„°ë¥¼ ë°”ì¸ë”©
 			pstmt.setString(1, title);
 			pstmt.setString(2, name);
 			pstmt.setString(3, memo);
 			pstmt.setString(4, email);
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºí¿¡ ÇàÀ» »ğÀÔ
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ì— í–‰ì„ ì‚½ì…
 			int count = pstmt.executeUpdate();
-			System.out.println(count + "°³ ÇàÀ» »ğÀÔÇÏ¿´½À´Ï´Ù.");
+			System.out.println(count + "ê°œ í–‰ì„ ì‚½ì…í•˜ì˜€ìŠµë‹ˆë‹¤.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			DBUtil.executeClose(null, pstmt, conn);
-			if(br!=null) try {br.close();} catch(Exception e) {} // ÄÜ¼Ö·ÎºÎÅÍ ÀÔ·Â¹Ş´Â °æ¿ì¿¡´Â »ı·« °¡´É
+			if(br!=null) try {br.close();} catch(Exception e) {} // ì½˜ì†”ë¡œë¶€í„° ì…ë ¥ë°›ëŠ” ê²½ìš°ì—ëŠ” ìƒëµ ê°€ëŠ¥
 		}
 	}
 }

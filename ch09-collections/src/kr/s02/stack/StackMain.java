@@ -4,17 +4,17 @@ import java.util.Stack;
 
 public class StackMain {
 	public static void main(String[] args) {
-		String[] array = {"Áø´Ş·¡", "¹éÇÕ", "°³³ª¸®", "º¢²É", "Àå¹Ì"};
+		String[] array = {"ì§„ë‹¬ë˜", "ë°±í•©", "ê°œë‚˜ë¦¬", "ë²šê½ƒ", "ì¥ë¯¸"};
 		Stack<String> stk = new Stack<String>();
 		
-		// stk¿¡ push() ¸Ş¼­µå·Î µ¥ÀÌÅÍ¸¦ ÀúÀå
+		// stkì— push() ë©”ì„œë“œë¡œ ë°ì´í„°ë¥¼ ì €ì¥
 		for(int i=0;i<array.length;i++) {
 			stk.push(array[i]);
 		}
 		System.out.println(stk);
 		
-		// stk¿¡¼­ pop() ¸Ş¼­µå·Î µ¥ÀÌÅÍ¸¦ ²¨³¿(=stk ¾ÈÀÇ µ¥ÀÌÅÍ´Â Áö¿öÁü)
-		while(!stk.isEmpty()) { // stkÀÌ ºñ¾î ÀÖÁö ¾ÊÀº µ¿¾È ·çÇÁ
+		// stkì—ì„œ pop() ë©”ì„œë“œë¡œ ë°ì´í„°ë¥¼ êº¼ëƒ„(=stk ì•ˆì˜ ë°ì´í„°ëŠ” ì§€ì›Œì§)
+		while(!stk.isEmpty()) { // stkì´ ë¹„ì–´ ìˆì§€ ì•Šì€ ë™ì•ˆ ë£¨í”„
 			System.out.print(stk.pop() + "\t");
 		}
 		System.out.println("\n"+stk);

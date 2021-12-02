@@ -1,13 +1,13 @@
 package kr.s02.packtwo;
 
-import kr.s02.packone.People; // importÇÏÁö ¾ÊÀ¸¸é ÆĞÅ°Áö°¡ ´Ş¶ó People Å¬·¡½º¸¦ »ı¼ºÇÒ ¼ö ¾øÀ½
+import kr.s02.packone.People; // importí•˜ì§€ ì•Šìœ¼ë©´ íŒ¨í‚¤ì§€ê°€ ë‹¬ë¼ People í´ë˜ìŠ¤ë¥¼ ìƒì„±í•  ìˆ˜ ì—†ìŒ
 
 public class AccessMain {
 	public static void main(String[] args) {
 		People p = new People();
-		// System.out.println(p.a); // private; °°Àº Å¬·¡½º°¡ ¾Æ´Ï±â ¶§¹®¿¡ È£Ãâ ºÒ°¡
-		// System.out.println(p.b); // default; °°Àº ÆĞÅ°Áö°¡ ¾Æ´Ï±â ¶§¹®¿¡ È£Ãâ ºÒ°¡
-		// System.out.println(p.c); // protected; °°Àº ÆĞÅ°Áöµµ ¾Æ´Ï°í »ó¼Ó °ü°èµµ ¾Æ´Ï±â ¶§¹®¿¡ È£Ãâ ºÒ°¡
-		System.out.println(p.d); // public; Á¢±Ù Á¦ÇÑÀÌ ¾øÀ¸¹Ç·Î È£Ãâ °¡´É
+		// System.out.println(p.a); // private; ê°™ì€ í´ë˜ìŠ¤ê°€ ì•„ë‹ˆê¸° ë•Œë¬¸ì— í˜¸ì¶œ ë¶ˆê°€
+		// System.out.println(p.b); // default; ê°™ì€ íŒ¨í‚¤ì§€ê°€ ì•„ë‹ˆê¸° ë•Œë¬¸ì— í˜¸ì¶œ ë¶ˆê°€
+		// System.out.println(p.c); // protected; ê°™ì€ íŒ¨í‚¤ì§€ë„ ì•„ë‹ˆê³  ìƒì† ê´€ê³„ë„ ì•„ë‹ˆê¸° ë•Œë¬¸ì— í˜¸ì¶œ ë¶ˆê°€
+		System.out.println(p.d); // public; ì ‘ê·¼ ì œí•œì´ ì—†ìœ¼ë¯€ë¡œ í˜¸ì¶œ ê°€ëŠ¥
 	}
 }

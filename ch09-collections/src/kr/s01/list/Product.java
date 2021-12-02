@@ -1,11 +1,11 @@
 package kr.s01.list;
 
 public class Product {
-	private String name; // »óÇ°¸í
-	private int price; // »óÇ° °¡°İ
-	private String num; // »óÇ° ¹øÈ£
-	private String maker; // Á¦Á¶»ç
-	private int stock; // Àç°í
+	private String name; // ìƒí’ˆëª…
+	private int price; // ìƒí’ˆ ê°€ê²©
+	private String num; // ìƒí’ˆ ë²ˆí˜¸
+	private String maker; // ì œì¡°ì‚¬
+	private int stock; // ì¬ê³ 
 	// Getters and Setters
 	public String getName() {
 		return name;

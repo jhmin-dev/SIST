@@ -14,10 +14,10 @@ public class SerialMain04 {
 			fis = new FileInputStream("userInfo.ser");
 			ois = new ObjectInputStream(fis);
 			
-			// ¿ªÁ÷·ÄÈ­ ¼öÇà
+			// ì—­ì§ë ¬í™” ìˆ˜í–‰
 			ArrayList<UserInfo> al = (ArrayList<UserInfo>)ois.readObject();
 			
-			System.out.println(al); // al¿¡ ÀúÀåµÈ UserInfo °´Ã¼µéÀÇ ÀçÁ¤ÀÇµÈ toString()ÀÌ Ãâ·ÂµÊ
+			System.out.println(al); // alì— ì €ì¥ëœ UserInfo ê°ì²´ë“¤ì˜ ì¬ì •ì˜ëœ toString()ì´ ì¶œë ¥ë¨
 		}
 		catch(FileNotFoundException e) {
 			e.printStackTrace();

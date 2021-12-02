@@ -2,12 +2,12 @@ package kr.s05.statictest;
 
 public class StaticMain02 {
 	
-	int a; // ÀÎ½ºÅÏ½º º¯¼ö
-	static String s; // static(Å¬·¡½º) º¯¼ö
+	int a; // ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜
+	static String s; // static(í´ë˜ìŠ¤) ë³€ìˆ˜
 	
-	public static void main(String[] args) { // ÇÁ·Î±×·¥ ½ÇÇà½Ã main ¸Ş¼­µå°¡ static ¿µ¿ª¿¡ ¿Ã¶ó°¨
-		// a = 10; // ÀÎ½ºÅÏ½º º¯¼ö´Â °´Ã¼ »ı¼º ÀÌÈÄ¿¡ È£Ãâ
-		s = "ÀÚ¹ÙÀÇ ²Ş"; // static º¯¼ö´Â °´Ã¼ »ı¼º°ú ¹«°üÇÏ°Ô È£Ãâ; main°ú s°¡ °°Àº Å¬·¡½º¿¡ ÀÖ±â ¶§¹®¿¡ Å¬·¡½º¸í »ı·«ÇØµµ È£ÃâµÊ
+	public static void main(String[] args) { // í”„ë¡œê·¸ë¨ ì‹¤í–‰ì‹œ main ë©”ì„œë“œê°€ static ì˜ì—­ì— ì˜¬ë¼ê°
+		// a = 10; // ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜ëŠ” ê°ì²´ ìƒì„± ì´í›„ì— í˜¸ì¶œ
+		s = "ìë°”ì˜ ê¿ˆ"; // static ë³€ìˆ˜ëŠ” ê°ì²´ ìƒì„±ê³¼ ë¬´ê´€í•˜ê²Œ í˜¸ì¶œ; mainê³¼ sê°€ ê°™ì€ í´ë˜ìŠ¤ì— ìˆê¸° ë•Œë¬¸ì— í´ë˜ìŠ¤ëª… ìƒëµí•´ë„ í˜¸ì¶œë¨
 		System.out.println("s = " + StaticMain02.s);
 	}
 }

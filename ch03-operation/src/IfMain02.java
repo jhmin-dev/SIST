@@ -1,15 +1,15 @@
 public class IfMain02 {
 	public static void main(String[] args) {
-		java.util.Scanner input = new java.util.Scanner(System.in); // ÀÔ·Â ½ÃÀÛ
+		java.util.Scanner input = new java.util.Scanner(System.in); // ì…ë ¥ ì‹œì‘
 		
-		System.out.print("Á¤¼öÇü µ¥ÀÌÅÍ ÇÑ °³ ÀÔ·Â : ");
+		System.out.print("ì •ìˆ˜í˜• ë°ì´í„° í•œ ê°œ ì…ë ¥ : ");
 		int a = input.nextInt();
 		
 		if(a%2==1)
-			System.out.println("È¦¼öÀÔ´Ï´Ù!!");
+			System.out.println("í™€ìˆ˜ì…ë‹ˆë‹¤!!");
 		else
-			System.out.println("Â¦¼öÀÔ´Ï´Ù!!");
+			System.out.println("ì§ìˆ˜ì…ë‹ˆë‹¤!!");
 
-		input.close(); // ÀÔ·Â Á¾·á
+		input.close(); // ì…ë ¥ ì¢…ë£Œ
 	}
 }

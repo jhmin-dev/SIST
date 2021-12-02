@@ -5,9 +5,9 @@ import java.util.StringTokenizer;
 public class StringTokenizerMain01 {
 	public static void main(String[] args) {
 		String source = "100,200,300,400";
-		StringTokenizer st = new StringTokenizer(source, ","); // ¹®ÀÚ¿­°ú ±¸ºĞÀÚ¸¦ ÀÎÀÚ·Î ¹Ş°í, ±¸ºĞÀÚ¸¦ ÅëÇØ ¸¸µé¾îÁø ¹®ÀÚ¿­À» ³»ºÎ¿¡ º¸°üÇÏ´Â °´Ã¼ »ı¼º; ¹İÈ¯ÇüÀÌ ¹è¿­ÀÌ ¾Æ´Ï¹Ç·Î for¹®À¸·Î Á¢±ÙÇÏÁö ¾ÊÀ½
-		while(st.hasMoreTokens()) { // hasMoreTokens() ¸Ş¼­µå·Î ±¸ºĞÀÚ¸¦ ÅëÇØ ¸¸µé¾îÁø ¹®ÀÚ¿­ÀÌ ÀÖ´ÂÁö °ËÁõ
-			System.out.println(st.nextToken()); // nextToken() ¸Ş¼­µå·Î ±¸ºĞÀÚ¸¦ ÅëÇØ ¸¸µé¾îÁø ¹®ÀÚ¿­À» ÇÏ³ª¾¿ ¹İÈ¯
+		StringTokenizer st = new StringTokenizer(source, ","); // ë¬¸ìì—´ê³¼ êµ¬ë¶„ìë¥¼ ì¸ìë¡œ ë°›ê³ , êµ¬ë¶„ìë¥¼ í†µí•´ ë§Œë“¤ì–´ì§„ ë¬¸ìì—´ì„ ë‚´ë¶€ì— ë³´ê´€í•˜ëŠ” ê°ì²´ ìƒì„±; ë°˜í™˜í˜•ì´ ë°°ì—´ì´ ì•„ë‹ˆë¯€ë¡œ forë¬¸ìœ¼ë¡œ ì ‘ê·¼í•˜ì§€ ì•ŠìŒ
+		while(st.hasMoreTokens()) { // hasMoreTokens() ë©”ì„œë“œë¡œ êµ¬ë¶„ìë¥¼ í†µí•´ ë§Œë“¤ì–´ì§„ ë¬¸ìì—´ì´ ìˆëŠ”ì§€ ê²€ì¦
+			System.out.println(st.nextToken()); // nextToken() ë©”ì„œë“œë¡œ êµ¬ë¶„ìë¥¼ í†µí•´ ë§Œë“¤ì–´ì§„ ë¬¸ìì—´ì„ í•˜ë‚˜ì”© ë°˜í™˜
 		}
 	}
 }

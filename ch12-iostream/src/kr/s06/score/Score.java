@@ -2,23 +2,23 @@ package kr.s06.score;
 
 public class Score {
 	/*
-	 * [½Ç½À] ÀÌ¸§(name), ±¹¾î(korean), ¿µ¾î(english), ¼öÇĞ(math)
-	 * ÃÑÁ¡ ±¸ÇÏ±â(int makeSum), Æò±Õ ±¸ÇÏ±â(double makeAvg), µî±Ş ±¸ÇÏ±â(String makeGrade)
+	 * [ì‹¤ìŠµ] ì´ë¦„(name), êµ­ì–´(korean), ì˜ì–´(english), ìˆ˜í•™(math)
+	 * ì´ì  êµ¬í•˜ê¸°(int makeSum), í‰ê·  êµ¬í•˜ê¸°(double makeAvg), ë“±ê¸‰ êµ¬í•˜ê¸°(String makeGrade)
 	 */
 	private String name;
 	private int korean;
 	private int english;
 	private int math;
 
-	// ÃÑÁ¡ ±¸ÇÏ±â
+	// ì´ì  êµ¬í•˜ê¸°
 	public int makeSum() {
 		return korean + english + math;
 	}
-	// Æò±Õ ±¸ÇÏ±â
+	// í‰ê·  êµ¬í•˜ê¸°
 	public double makeAvg() {
 		return makeSum() / 3.0;
 	}
-	// µî±Ş ±¸ÇÏ±â
+	// ë“±ê¸‰ êµ¬í•˜ê¸°
 	public String makeGrade() {
 		String str;
 		switch((int)(makeAvg()/10)) {
@@ -58,7 +58,7 @@ public class Score {
 	}
 
 	@Override
-	public String toString() { // ¼ºÀû Ãâ·Â ¹× ÆÄÀÏ »ı¼º¿¡ È°¿ëÇÒ ¼ö ÀÖµµ·Ï toString() ¸Ş¼­µå¸¦ ÀçÁ¤ÀÇ
-		return String.format("%s\t%d\t%d\t%d\t%d\t%.2f\t%s%n", name, korean, english, math, makeSum(), makeAvg(), makeGrade()); // StringÀÇ static ¸Ş¼­µåÀÎ format() ¸Ş¼­µå¸¦ ÀÌ¿ëÇÏ¿© printf() ¸Ş¼­µåÃ³·³ Æ÷¸Ë¹®ÀÚ¸¦ Àû¿ëÇÑ ¹®ÀÚ¿­ ¹İÈ¯
+	public String toString() { // ì„±ì  ì¶œë ¥ ë° íŒŒì¼ ìƒì„±ì— í™œìš©í•  ìˆ˜ ìˆë„ë¡ toString() ë©”ì„œë“œë¥¼ ì¬ì •ì˜
+		return String.format("%s\t%d\t%d\t%d\t%d\t%.2f\t%s%n", name, korean, english, math, makeSum(), makeAvg(), makeGrade()); // Stringì˜ static ë©”ì„œë“œì¸ format() ë©”ì„œë“œë¥¼ ì´ìš©í•˜ì—¬ printf() ë©”ì„œë“œì²˜ëŸ¼ í¬ë§·ë¬¸ìë¥¼ ì ìš©í•œ ë¬¸ìì—´ ë°˜í™˜
 	}
 }

@@ -1,11 +1,11 @@
 package kr.s03.extension;
 
 public class Phone {
-	// ÆĞÅ°Áö°¡ ´Ş¶óÁú °ÍÀ» ¿°µÎ¿¡ µÎ°í Á¢±Ù Á¦ÇÑÀÚ¸¦ ÁöÁ¤
+	// íŒ¨í‚¤ì§€ê°€ ë‹¬ë¼ì§ˆ ê²ƒì„ ì—¼ë‘ì— ë‘ê³  ì ‘ê·¼ ì œí•œìë¥¼ ì§€ì •
 	protected String number;
 	protected String model;
 	protected String color;
-	// Getters; Setters¸¦ ¸¸µéÁö ¾Ê°í »ı¼ºÀÚ·Î ±â´É ´ëÃ¼
+	// Getters; Settersë¥¼ ë§Œë“¤ì§€ ì•Šê³  ìƒì„±ìë¡œ ê¸°ëŠ¥ ëŒ€ì²´
 	public String getNumber() {
 		return number;
 	}

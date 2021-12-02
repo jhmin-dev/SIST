@@ -4,23 +4,23 @@ import java.io.File;
 
 public class FileMain01 {
 	public static void main(String[] args) {
-		String path = "C:\\"; // µğ·ºÅä¸® °æ·Î ÁØºñ
-		File f = new File(path); // ÁØºñÇÑ path¸¦ Àü´ŞÇØ File °´Ã¼ »ı¼º
-		if(!f.exists() || !f.isDirectory()) { // ÀÎÀÚ·Î Àü´ŞµÈ path°¡ ½Ã½ºÅÛ¿¡ Á¸ÀçÇÏ´ÂÁö, ±×¸®°í µğ·ºÅä¸®ÀÎÁö¸¦ È®ÀÎ
-			System.out.println("À¯È¿ÇÏÁö ¾ÊÀº µğ·ºÅä¸®ÀÔ´Ï´Ù.");
-			System.exit(0); // ÇÁ·Î±×·¥ Á¾·á
+		String path = "C:\\"; // ë””ë ‰í† ë¦¬ ê²½ë¡œ ì¤€ë¹„
+		File f = new File(path); // ì¤€ë¹„í•œ pathë¥¼ ì „ë‹¬í•´ File ê°ì²´ ìƒì„±
+		if(!f.exists() || !f.isDirectory()) { // ì¸ìë¡œ ì „ë‹¬ëœ pathê°€ ì‹œìŠ¤í…œì— ì¡´ì¬í•˜ëŠ”ì§€, ê·¸ë¦¬ê³  ë””ë ‰í† ë¦¬ì¸ì§€ë¥¼ í™•ì¸
+			System.out.println("ìœ íš¨í•˜ì§€ ì•Šì€ ë””ë ‰í† ë¦¬ì…ë‹ˆë‹¤.");
+			System.exit(0); // í”„ë¡œê·¸ë¨ ì¢…ë£Œ
 		}
 		
-		// ÁöÁ¤ÇÑ µğ·ºÅä¸®ÀÇ ÇÏÀ§ µğ·ºÅä¸® ¹× ÆÄÀÏ Á¤º¸ ÀĞ±â
-		File[] files = f.listFiles(); // listFiles() ¸Ş¼­µå¸¦ ÅëÇØ ÇÏÀ§ µğ·ºÅä¸® ¹× ÆÄÀÏ Á¤º¸¸¦ File ¹è¿­·Î ¹İÈ¯
+		// ì§€ì •í•œ ë””ë ‰í† ë¦¬ì˜ í•˜ìœ„ ë””ë ‰í† ë¦¬ ë° íŒŒì¼ ì •ë³´ ì½ê¸°
+		File[] files = f.listFiles(); // listFiles() ë©”ì„œë“œë¥¼ í†µí•´ í•˜ìœ„ ë””ë ‰í† ë¦¬ ë° íŒŒì¼ ì •ë³´ë¥¼ File ë°°ì—´ë¡œ ë°˜í™˜
 		for(int i=0;i<files.length;i++) {
-			File f2 = files[i]; // File ¹è¿­·ÎºÎÅÍ File °´Ã¼ ¹İÈ¯
-			if(f2.isDirectory()) { // f2°¡ µğ·ºÅä¸®ÀÎ °æ¿ì
-				System.out.println("[" + f2.getName() + "]"); // getName() ¸Ş¼­µå·Î µğ·ºÅä¸®¸í Ãâ·Â
+			File f2 = files[i]; // File ë°°ì—´ë¡œë¶€í„° File ê°ì²´ ë°˜í™˜
+			if(f2.isDirectory()) { // f2ê°€ ë””ë ‰í† ë¦¬ì¸ ê²½ìš°
+				System.out.println("[" + f2.getName() + "]"); // getName() ë©”ì„œë“œë¡œ ë””ë ‰í† ë¦¬ëª… ì¶œë ¥
 			}
-			else { // f2°¡ ÆÄÀÏÀÎ °æ¿ì
-				System.out.print(f2.getName()); // getName() ¸Ş¼­µå·Î ÆÄÀÏ¸í Ãâ·Â
-				System.out.printf(" (%,d bytes)\n", f2.length()); // length() ¸Ş¼­µå·Î ÆÄÀÏ Å©±â Ãâ·Â
+			else { // f2ê°€ íŒŒì¼ì¸ ê²½ìš°
+				System.out.print(f2.getName()); // getName() ë©”ì„œë“œë¡œ íŒŒì¼ëª… ì¶œë ¥
+				System.out.printf(" (%,d bytes)\n", f2.length()); // length() ë©”ì„œë“œë¡œ íŒŒì¼ í¬ê¸° ì¶œë ¥
 			}
 		}
 	}

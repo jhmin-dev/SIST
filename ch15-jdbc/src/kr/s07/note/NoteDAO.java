@@ -6,45 +6,45 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 /*
- * DAO(Data Access Object): µ¥ÀÌÅÍº£ÀÌ½ºÀÇ µ¥ÀÌÅÍ¸¦ Àü¹®ÀûÀ¸·Î È£ÃâÇÏ°í Á¦¾îÇÏ´Â °´Ã¼
+ * DAO(Data Access Object): ë°ì´í„°ë² ì´ìŠ¤ì˜ ë°ì´í„°ë¥¼ ì „ë¬¸ì ìœ¼ë¡œ í˜¸ì¶œí•˜ê³  ì œì–´í•˜ëŠ” ê°ì²´
  */
 public class NoteDAO {
-	// ±Û ¾²±â
+	// ê¸€ ì“°ê¸°
 	public void insertInfo(String name, String passwd, String subject, String content, String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
 		
 		try {
-			// JDBC ¼öÇà 1,2´Ü°è
+			// JDBC ìˆ˜í–‰ 1,2ë‹¨ê³„
 			conn = DBUtil.getConnection();
 			
-			// SQL¹® ÀÛ¼º
+			// SQLë¬¸ ì‘ì„±
 			sql = "INSERT INTO note VALUES (note_seq.NEXTVAL, ?, ?, ?, ?, ?, SYSDATE)";
 			
-			// JDBC ¼öÇà 3´Ü°è : PreparedStatment °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : PreparedStatment ê°ì²´ ìƒì„±
 			pstmt = conn.prepareStatement(sql);
-			// ?¿¡ µ¥ÀÌÅÍ¸¦ ¹ÙÀÎµù
+			// ?ì— ë°ì´í„°ë¥¼ ë°”ì¸ë”©
 			pstmt.setString(1, name);
 			pstmt.setString(2, passwd);
 			pstmt.setString(3, subject);
 			pstmt.setString(4, content);
 			pstmt.setString(5, email);
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºí¿¡ ÇàÀ» Ãß°¡
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ì— í–‰ì„ ì¶”ê°€
 			pstmt.executeUpdate();
-			System.out.println("±Û ÀÛ¼ºÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+			System.out.println("ê¸€ ì‘ì„±ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			DBUtil.executeClose(null, pstmt, conn);
 		}
 	}
 	
-	// ¸ñ·Ï º¸±â
+	// ëª©ë¡ ë³´ê¸°
 	public void selectListInfo() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -52,24 +52,24 @@ public class NoteDAO {
 		String sql = null;
 		
 		try {
-			// JDBC ¼öÇà 1,2´Ü°è
+			// JDBC ìˆ˜í–‰ 1,2ë‹¨ê³„
 			conn = DBUtil.getConnection();
 			
-			// SQL¹® ÀÛ¼º
+			// SQLë¬¸ ì‘ì„±
 			sql = "SELECT * FROM note ORDER BY num DESC";
 			
-			// JDBC ¼öÇà 3´Ü°è : PreparedStatement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : PreparedStatement ê°ì²´ ìƒì„±
 			pstmt = conn.prepareStatement(sql);
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºí·ÎºÎÅÍ °á°ú ÁıÇÕÀ» ¾ò°í ResultSet¿¡ ´ã¾Æ¼­ ¹İÈ¯
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ë¡œë¶€í„° ê²°ê³¼ ì§‘í•©ì„ ì–»ê³  ResultSetì— ë‹´ì•„ì„œ ë°˜í™˜
 			rs = pstmt.executeQuery();
 			
-			System.out.println("±Û ¹øÈ£\tÁ¦¸ñ\t\tÀÌ¸§\tÀÛ¼ºÀÏ");
+			System.out.println("ê¸€ ë²ˆí˜¸\tì œëª©\t\tì´ë¦„\tì‘ì„±ì¼");
 			String subject, name;
 			while(rs.next()) {
 				System.out.print(rs.getInt("num")+"\t");
 				subject = rs.getString("subject");
-				if(subject.length()>6+6) { // Á¦¸ñÀÌ ±æ¸é ¸»ÁÙÀÓÇ¥ Ã³¸®; ±æÀÌ »óÇÑÀÌ 60byte(=±¹¹® 20ÀÚ)ÀÌ¹Ç·Î, Á¤·Ä¿ëÀ¸·Î \t 2°³ »ç¿ë
+				if(subject.length()>6+6) { // ì œëª©ì´ ê¸¸ë©´ ë§ì¤„ì„í‘œ ì²˜ë¦¬; ê¸¸ì´ ìƒí•œì´ 60byte(=êµ­ë¬¸ 20ì)ì´ë¯€ë¡œ, ì •ë ¬ìš©ìœ¼ë¡œ \t 2ê°œ ì‚¬ìš©
 					System.out.print(subject.substring(0,4+6)+"..\t");
 				}
 				else if(subject.length()>7) {
@@ -79,25 +79,25 @@ public class NoteDAO {
 					System.out.print(subject+"\t\t");
 				}
 				name = rs.getString("name");
-				if(name.length()>6) { // ÀÌ¸§ÀÌ ±æ¸é ¸»ÁÙÀÓÇ¥ Ã³¸®
+				if(name.length()>6) { // ì´ë¦„ì´ ê¸¸ë©´ ë§ì¤„ì„í‘œ ì²˜ë¦¬
 					System.out.print(name.substring(0,4)+"..\t");
 				}
 				else {
 					System.out.print(name+"\t");
 				}
-				System.out.println(rs.getDate("reg_date")); // ¸ñ·Ï º¸±â¿¡¼­´Â ¿¬, ¿ù, ÀÏ¸¸ Ç¥½Ã
+				System.out.println(rs.getDate("reg_date")); // ëª©ë¡ ë³´ê¸°ì—ì„œëŠ” ì—°, ì›”, ì¼ë§Œ í‘œì‹œ
 			}
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			DBUtil.executeClose(rs, pstmt, conn);
 		}
 	}
 	
-	// »ó¼¼ ±Û º¸±â
+	// ìƒì„¸ ê¸€ ë³´ê¸°
 	public int selectDetailInfo(int num) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -105,45 +105,45 @@ public class NoteDAO {
 		String sql = null;
 		
 		try {
-			// JDBC ¼öÇà 1,2´Ü°è
+			// JDBC ìˆ˜í–‰ 1,2ë‹¨ê³„
 			conn = DBUtil.getConnection();
 			
-			// SQL¹® ÀÛ¼º
+			// SQLë¬¸ ì‘ì„±
 			sql = "SELECT * FROM note WHERE num=?";
 			
-			// JDBC ¼öÇà 3´Ü°è : PreparedStatement °´Ã¼ »ı¼º
+			// JDBC ìˆ˜í–‰ 3ë‹¨ê³„ : PreparedStatement ê°ì²´ ìƒì„±
 			pstmt = conn.prepareStatement(sql);
-			// ?¿¡ µ¥ÀÌÅÍ¸¦ ¹ÙÀÎµù
+			// ?ì— ë°ì´í„°ë¥¼ ë°”ì¸ë”©
 			pstmt.setInt(1, num);
 			
-			// JDBC ¼öÇà 4´Ü°è : SQL¹®À» ½ÇÇàÇØ¼­ Å×ÀÌºí·ÎºÎÅÍ ÇÑ °³ÀÇ ·¹ÄÚµå¸¦ ¾ò°í ResultSet¿¡ ´ã¾Æ¼­ ¹İÈ¯
+			// JDBC ìˆ˜í–‰ 4ë‹¨ê³„ : SQLë¬¸ì„ ì‹¤í–‰í•´ì„œ í…Œì´ë¸”ë¡œë¶€í„° í•œ ê°œì˜ ë ˆì½”ë“œë¥¼ ì–»ê³  ResultSetì— ë‹´ì•„ì„œ ë°˜í™˜
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				System.out.println("±Û ¹øÈ£ : " + rs.getInt("num"));
-				System.out.println("ÀÌ¸§ : " + rs.getString("name"));
-				System.out.println("ºñ¹Ğ¹øÈ£ : " + rs.getString("passwd"));
-				System.out.println("Á¦¸ñ : " + rs.getString("subject"));
-				System.out.println("³»¿ë : " + rs.getString("content"));
-				System.out.println("ÀÌ¸ŞÀÏ : " + rs.getString("email"));
-				System.out.println("ÀÛ¼ºÀÏ : " + rs.getString("reg_date")); // »ó¼¼ ±Û º¸±â¿¡¼­´Â ¿¬, ¿ù, ÀÏ, ½Ã, ºĞ, ÃÊ±îÁö Ç¥½Ã
+				System.out.println("ê¸€ ë²ˆí˜¸ : " + rs.getInt("num"));
+				System.out.println("ì´ë¦„ : " + rs.getString("name"));
+				System.out.println("ë¹„ë°€ë²ˆí˜¸ : " + rs.getString("passwd"));
+				System.out.println("ì œëª© : " + rs.getString("subject"));
+				System.out.println("ë‚´ìš© : " + rs.getString("content"));
+				System.out.println("ì´ë©”ì¼ : " + rs.getString("email"));
+				System.out.println("ì‘ì„±ì¼ : " + rs.getString("reg_date")); // ìƒì„¸ ê¸€ ë³´ê¸°ì—ì„œëŠ” ì—°, ì›”, ì¼, ì‹œ, ë¶„, ì´ˆê¹Œì§€ í‘œì‹œ
 			}
 			else {
-				System.out.println(num + "¹ø ±ÛÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù!");
-				return -1; // ¾ø´Â ±Û ¹øÈ£¸¦ ÀÔ·ÂÇÏ¿© »ó¼¼ ±Û º¸±â ÀÛ¾÷¿¡ ½ÇÆĞÇÑ °æ¿ì
+				System.out.println(num + "ë²ˆ ê¸€ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤!");
+				return -1; // ì—†ëŠ” ê¸€ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì—¬ ìƒì„¸ ê¸€ ë³´ê¸° ì‘ì—…ì— ì‹¤íŒ¨í•œ ê²½ìš°
 			}
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			// ÀÚ¿ø Á¤¸®
+			// ìì› ì •ë¦¬
 			DBUtil.executeClose(rs, pstmt, conn);
 		}
-		return 0; // ÀÖ´Â ±Û ¹øÈ£¸¦ ÀÔ·ÂÇÏ¿© Á¤»óÀûÀ¸·Î »ó¼¼ ±Û º¸±â ÀÛ¾÷À» ¿Ï·áÇÑ °æ¿ì
+		return 0; // ìˆëŠ” ê¸€ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì—¬ ì •ìƒì ìœ¼ë¡œ ìƒì„¸ ê¸€ ë³´ê¸° ì‘ì—…ì„ ì™„ë£Œí•œ ê²½ìš°
 	}
 	
-	// ±Û ¼öÁ¤
+	// ê¸€ ìˆ˜ì •
 	public void updateInfo(int num, String name, String passwd, String subject, String content, String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -176,8 +176,8 @@ public class NoteDAO {
 			pstmt.setString(5, email);
 			pstmt.setInt(6, num);
 			int count = pstmt.executeUpdate();
-			if(count!=0) System.out.println(num + "¹ø ±ÛÀÌ ¼öÁ¤µÇ¾ú½À´Ï´Ù.");
-			else System.out.println(num + "¹ø ±ÛÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù!");
+			if(count!=0) System.out.println(num + "ë²ˆ ê¸€ì´ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
+			else System.out.println(num + "ë²ˆ ê¸€ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤!");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -187,7 +187,7 @@ public class NoteDAO {
 		}
 	}
 	
-	// ±Û »èÁ¦
+	// ê¸€ ì‚­ì œ
 	public void deleteInfo(int num) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -199,8 +199,8 @@ public class NoteDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			int count = pstmt.executeUpdate();
-			if(count!=0) System.out.println(num + "¹ø ±ÛÀ» »èÁ¦ÇÏ¿´½À´Ï´Ù.");
-			else System.out.println(num + "¹ø ±ÛÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù!");
+			if(count!=0) System.out.println(num + "ë²ˆ ê¸€ì„ ì‚­ì œí•˜ì˜€ìŠµë‹ˆë‹¤.");
+			else System.out.println(num + "ë²ˆ ê¸€ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤!");
 		}
 		catch(Exception e) {
 			e.printStackTrace();

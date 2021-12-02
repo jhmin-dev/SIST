@@ -1,38 +1,38 @@
 package kr.s01.a;
 class Tv {
-	// ¸â¹ö º¯¼ö(=¼Ó¼º)
-	boolean power; // Àü¿ø »óÅÂ(on/off)
-	int channel; // ÇöÀç Ã¤³Î
+	// ë©¤ë²„ ë³€ìˆ˜(=ì†ì„±)
+	boolean power; // ì „ì› ìƒíƒœ(on/off)
+	int channel; // í˜„ì¬ ì±„ë„
 	
-	// ¸â¹ö ¸Ş¼­µå(=µ¿ÀÛ)
+	// ë©¤ë²„ ë©”ì„œë“œ(=ë™ì‘)
 	public void isPower() {
-		power = !power; // power°ªÀÌ trueÀÌ¸é false·Î, falseÀÌ¸é true·Î Åä±Û
+		power = !power; // powerê°’ì´ trueì´ë©´ falseë¡œ, falseì´ë©´ trueë¡œ í† ê¸€
 	}
 	public void channelUp() {
-		++channel; // Ã¤³ÎÀ» 1 ³ôÀÓ
+		++channel; // ì±„ë„ì„ 1 ë†’ì„
 	}
 	public void channelDown() {
-		--channel; // Ã¤³ÎÀ» 1 ³·Ãã
+		--channel; // ì±„ë„ì„ 1 ë‚®ì¶¤
 	}
 }
 
 public class TvMain {
 	
 	public static void main(String[] args) {
-		// °´Ã¼ ¼±¾ğ ¹× »ı¼º
+		// ê°ì²´ ì„ ì–¸ ë° ìƒì„±
 		Tv t = new Tv();
-		// Tv¸¦ ½ÇÇà
+		// Tvë¥¼ ì‹¤í–‰
 		t.isPower();
-		System.out.println("Tv ½ÇÇà ¿©ºÎ : " + t.power);
-		System.out.println("ÇöÀç Ã¤³Î : " + t.channel);
-		// Ã¤³Î º¯°æ
+		System.out.println("Tv ì‹¤í–‰ ì—¬ë¶€ : " + t.power);
+		System.out.println("í˜„ì¬ ì±„ë„ : " + t.channel);
+		// ì±„ë„ ë³€ê²½
 		t.channel = 7;
-		System.out.println("Ã¹ ¹øÂ° º¯°æµÈ Ã¤³Î : " + t.channel);
-		// Ã¤³Î º¯°æ
+		System.out.println("ì²« ë²ˆì§¸ ë³€ê²½ëœ ì±„ë„ : " + t.channel);
+		// ì±„ë„ ë³€ê²½
 		t.channelDown();
-		System.out.println("µÎ ¹øÂ° º¯°æµÈ Ã¤³Î : " + t.channel);
-		// Tv¸¦ Á¾·á
+		System.out.println("ë‘ ë²ˆì§¸ ë³€ê²½ëœ ì±„ë„ : " + t.channel);
+		// Tvë¥¼ ì¢…ë£Œ
 		t.isPower();
-		System.out.println("Tv ½ÇÇà ¿©ºÎ : " + t.power);
+		System.out.println("Tv ì‹¤í–‰ ì—¬ë¶€ : " + t.power);
 	}
 }

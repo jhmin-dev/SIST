@@ -1,16 +1,16 @@
 public class VariableMain02 {
 	public static void main(String[] args) {
 		/*
-		 * [½Ç½À] 
-		 * Á¤¼ö¸¦ ´ãÀ» ¼ö ÀÖ´Â º¯¼ö¸¦ 3°³ ÁöÁ¤ÇÑ´Ù.
-		 * º¯¼ö¸íÀº °¢°¢ a, b, c¶ó°í ÁöÁ¤ÇÏ°í ¿øÇÏ´Â Á¤¼ö·Î ÃÊ±âÈ­ÇÑ´Ù.
-		 * a + b ¿¬»ê ÈÄ Ãâ·ÂÇÒ ¶§
-		 * "°á°ú = 50" Çü½ÄÀ¸·Î Ãâ·ÂÇÑ´Ù.
-		 * c¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ¸¦ 80À¸·Î º¯°æÇØ¼­
-		 * "c = 80" Çü½ÄÀ¸·Î Ãâ·ÂÇÑ´Ù.
+		 * [ì‹¤ìŠµ] 
+		 * ì •ìˆ˜ë¥¼ ë‹´ì„ ìˆ˜ ìžˆëŠ” ë³€ìˆ˜ë¥¼ 3ê°œ ì§€ì •í•œë‹¤.
+		 * ë³€ìˆ˜ëª…ì€ ê°ê° a, b, cë¼ê³  ì§€ì •í•˜ê³  ì›í•˜ëŠ” ì •ìˆ˜ë¡œ ì´ˆê¸°í™”í•œë‹¤.
+		 * a + b ì—°ì‚° í›„ ì¶œë ¥í•  ë•Œ
+		 * "ê²°ê³¼ = 50" í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•œë‹¤.
+		 * cì— ì €ìž¥ëœ ë°ì´í„°ë¥¼ 80ìœ¼ë¡œ ë³€ê²½í•´ì„œ
+		 * "c = 80" í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•œë‹¤.
 		 */
 		int a = 607, b = 801, c = 312;
-		System.out.println("°á°ú = " + (a + b));
+		System.out.println("ê²°ê³¼ = " + (a + b));
 		c = 80;
 		System.out.println("c = " + c);
 	}

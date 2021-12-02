@@ -1,7 +1,7 @@
 public class HelloWorld {
 	public static void main(String[] args) {
-		System.out.println("¿À´ÃÀº ¼ö¿äÀÏ!");
-		System.out.println("³»ÀÏÀº ¸ñ¿äÀÏ!");
-		System.out.println("¸ğ·¹´Â ±İ¿äÀÏ!");
+		System.out.println("ì˜¤ëŠ˜ì€ ìˆ˜ìš”ì¼!");
+		System.out.println("ë‚´ì¼ì€ ëª©ìš”ì¼!");
+		System.out.println("ëª¨ë ˆëŠ” ê¸ˆìš”ì¼!");
 	}
 }

@@ -1,7 +1,7 @@
 package kr.s04.thistest;
 
 public class ThisMain03 {
-	// Àº´ĞÈ­
+	// ì€ë‹‰í™”
 	private String name;
 	private String job;
 	private int age;
@@ -10,12 +10,12 @@ public class ThisMain03 {
 	private String hobby;
 	private int level;
 	
-	// Ä¸½¶È­; ÀÌÅ¬¸³½º¿¡¼­ ÀÚµ¿À¸·Î ÀÛ¼º
+	// ìº¡ìŠí™”; ì´í´ë¦½ìŠ¤ì—ì„œ ìë™ìœ¼ë¡œ ì‘ì„±
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
-		this.name = name; // ¸â¹ö º¯¼ö¸í°ú Áö¿ª º¯¼ö¸íÀ» µ¿ÀÏÇÏ°Ô ÁöÁ¤Çß±â ¶§¹®¿¡ ¸Ş¼­µå ³»¿¡¼­ this¸¦ ÀÌ¿ëÇØ¼­ ¸â¹ö º¯¼ö¿Í Áö¿ª º¯¼ö¸¦ ±¸ºĞ
+		this.name = name; // ë©¤ë²„ ë³€ìˆ˜ëª…ê³¼ ì§€ì—­ ë³€ìˆ˜ëª…ì„ ë™ì¼í•˜ê²Œ ì§€ì •í–ˆê¸° ë•Œë¬¸ì— ë©”ì„œë“œ ë‚´ì—ì„œ thisë¥¼ ì´ìš©í•´ì„œ ë©¤ë²„ ë³€ìˆ˜ì™€ ì§€ì—­ ë³€ìˆ˜ë¥¼ êµ¬ë¶„
 	}
 	public String getJob() {
 		return job;

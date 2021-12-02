@@ -1,24 +1,24 @@
 public class SwitchMain02 {
 	public static void main(String[] args) {
 		java.util.Scanner input = new java.util.Scanner(System.in);
-		System.out.print("°èÀı ÀÔ·Â : ");
-		String season = input.next(); // next() ÇÔ¼ö·Î ¹®ÀÚ¿­À» ÀÔ·Â¹Ş¾Æ season¿¡ Àü´Ş
+		System.out.print("ê³„ì ˆ ì…ë ¥ : ");
+		String season = input.next(); // next() í•¨ìˆ˜ë¡œ ë¬¸ìì—´ì„ ì…ë ¥ë°›ì•„ seasonì— ì „ë‹¬
 		
 		switch(season) {
-		case "º½":
-			System.out.println("²ÉÀÌ ÇÇ´Â °èÀı");
+		case "ë´„":
+			System.out.println("ê½ƒì´ í”¼ëŠ” ê³„ì ˆ");
 			break;
-		case "¿©¸§":
-			System.out.println("¶ß°Å¿î ÅÂ¾çÀÇ °èÀı");
+		case "ì—¬ë¦„":
+			System.out.println("ëœ¨ê±°ìš´ íƒœì–‘ì˜ ê³„ì ˆ");
 			break;
-		case "°¡À»":
-			System.out.println("»êµé¹Ù¶÷ÀÌ ºÎ´Â °èÀı");
+		case "ê°€ì„":
+			System.out.println("ì‚°ë“¤ë°”ëŒì´ ë¶€ëŠ” ê³„ì ˆ");
 			break;
-		case "°Ü¿ï":
-			System.out.println("´«ÀÌ ³»¸®´Â °èÀı");
+		case "ê²¨ìš¸":
+			System.out.println("ëˆˆì´ ë‚´ë¦¬ëŠ” ê³„ì ˆ");
 			break;
 		default:
-			System.out.println("°èÀıÀ» ÀÔ·ÂÇÏÁö ¾Ê¾Ò½À´Ï´Ù.");
+			System.out.println("ê³„ì ˆì„ ì…ë ¥í•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 		}
 		
 		input.close();
