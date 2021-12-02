@@ -145,7 +145,10 @@ hide_toc: true
 <!-- - 16-5 소켓 -->
 <!-- - 16-6 UDP(User Datagram Protocol) -->
 
-### 17. JDBC
+### 17. JDBC [11월 30일](1130.md) [12월 1일](1201.md) [12월 2일](1202.md)
+
+<!-- - 17-1 데이터베이스 -->
+- 17-2 JDBC(Java Database Connectivity) [11월 30일](1130.md#17-2-JDBCJava-Database-Connectivity) [12월 1일](1201.md#17-2-JDBCJava-Database-Connectivity) [12월 2일](1202.md#17-2-JDBCJava-Database-Connectivity)
 
 ## Oracle SQL
 
@@ -170,3 +173,40 @@ hide_toc: true
 - 3-5 동의어(Synonym) [11월 26일](1126.md#3-5-동의어Synonym)
 
 ### 4. 권한 [11월 26일](1126.md)
+
+## PL/SQL
+
+### 1. PL/SQL이란? [11월 26일](1126.md)
+
+### 2. PL/SQL의 기본 구조 [11월 26일](1126.md)
+
+### 3. 기본 형태 작성 및 출력 [11월 26일](1126.md)
+
+- 3-1 기본 구조 [11월 26일](1126.md#3-1-기본-구조)
+- 3-2 메시지 출력
+- 3-3 익명 블럭(Anonymous Block)
+- 3-4 예외처리부
+- 3-5 Exception의 구분
+
+### 4. PL/SQL의 구성 요소 [11월 26일](1126.md)
+
+- 4-1 변수와 상수 [11월 26일](1126.md4-1-변수와-상수)
+- 4-2 콜렉션
+- 4-3 레코드
+
+### 5. PL/SQL 문장과 커서 [11월 26일](1126.md)
+
+- 5-1 IF문 [11월 26일](1126.md#5-1-IF문)
+- 5-2 CASE문
+- 5-3 LOOP문
+- 5-4 WHILE LOOP문
+- 5-5 FOR LOOP문
+<!-- - 5-6 GOTO문 -->
+- 5-7 커서(Cursor)
+
+### 6. PL/SQL 서브프로그램 [11월 26일](1126.md) [11월 29일](1129.md) [11월 30일](1130.md)
+
+- 6-1 함수(Function) [11월 26일](1126.md#6-1-함수Function) [11월 29일](1129.md#6-1-함수Function)
+- 6-2 내장 프로시저(Stored Procedure) [11월 29일](1129.md#6-2-내장-프로시저Stored-Procedure) [11월 30일](1130.md#6-2-내장-프로시저Stored-Procedure)
+<!-- - 6-3 패키지(Package) -->
+<!-- - 6-4 트리거(Trigger) -->
