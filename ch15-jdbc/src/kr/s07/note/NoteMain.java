@@ -28,8 +28,8 @@ public class NoteMain {
 			System.out.println("메뉴 : 1. 글 쓰기, 2. 목록 보기, 3. 상세 글 보기, 4. 글 수정, 5. 글 삭제, 6.종료");
 			System.out.print("메뉴 > ");
 			try {
-				int num = Integer.parseInt(br.readLine());
-				if(num==1) { // 글 쓰기
+				int menu = Integer.parseInt(br.readLine());
+				if(menu==1) { // 글 쓰기
 					System.out.print("이름 > ");
 					String name = br.readLine();
 					System.out.print("비밀번호 > ");
@@ -40,26 +40,28 @@ public class NoteMain {
 					String content = br.readLine();
 					System.out.print("이메일 > ");
 					String email = br.readLine();
-					
 					// NoteDAO의 insertInfo() 메서드를 호출해서 데이터를 전달
 					note.insertInfo(name, passwd, subject, content, email);
 				}
-				else if(num==2) { // 목록 보기
+				else if(menu==2) { // 목록 보기
 					note.selectListInfo();
 				}
-				else if(num==3) { // 상세 글 보기
+				else if(menu==3) { // 상세 글 보기
 					note.selectListInfo(); // 글 번호 확인용 목록 보기
 					System.out.println("상세 정보를 확인하려는 글 번호를 입력하세요!");
 					System.out.print("글 번호 > ");
-					num = Integer.parseInt(br.readLine());
+					int num = Integer.parseInt(br.readLine());
 					note.selectDetailInfo(num);
 				}
-				else if(num==4) { // 글 수정
+				else if(menu==4) { // 글 수정
 					note.selectListInfo(); // 글 번호 확인용 목록 보기
 					System.out.println("수정하려는 글 번호를 입력하세요!");
-					System.out.print("글 번호 > ");
-					num = Integer.parseInt(br.readLine());
-					if(note.selectDetailInfo(num)==-1) continue; // 없는 글 번호를 입력했을 때, 더 이상 입력받지 않도록 처리
+					int num;
+					while(true) { // 올바른 글 번호 입력 강제
+						System.out.print("글 번호 > ");
+						num = Integer.parseInt(br.readLine());
+						if(note.selectDetailInfo(num)==1) break;
+					}
 					System.out.println("수정할 내용을 입력하세요!");
 					System.out.print("이름 > ");
 					String name = br.readLine();
@@ -73,14 +75,15 @@ public class NoteMain {
 					String email = br.readLine();
 					note.updateInfo(num, name, passwd, subject, content, email);
 				}
-				else if(num==5) { // 글 삭제
+				else if(menu==5) { // 글 삭제
 					note.selectListInfo(); // 글 번호 확인용 목록 보기
 					System.out.println("삭제하려는 글 번호를 입력하세요!");
 					System.out.print("글 번호 > ");
-					num = Integer.parseInt(br.readLine());
+					int num = Integer.parseInt(br.readLine());
 					note.deleteInfo(num);
+					note.selectListInfo(); // 삭제가 정상적으로 수행되었는지 확인하기 위해 목록 호출
 				}
-				else if(num==6) { // 종료
+				else if(menu==6) { // 종료
 					System.out.println("프로그램을 종료합니다.");
 					break;
 				}
