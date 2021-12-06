@@ -21,5 +21,6 @@
 		```
 	+ LSP-jdtls
 - Eclipse
-	+ Eclipse Color Theme, Eclipse Moonrise UI Theme
+	+ Eclipse Color Theme
+	+ AmaterasERD
 - Oracle SQL Developer
