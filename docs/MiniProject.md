@@ -6,27 +6,27 @@ title: "MiniProject"
 
 ## 테이블
 
-### m_member
+### 회원 정보 `m_member`
 
-- me_num
-- me_id
-- me_passwd
-- me_name
-- me_birthdate
-- me_phone
+- 회원 번호 `me_num`
+- 아이디 `me_id`
+- 비밀번호 `me_passwd`
+- 이름 `me_name`
+- 생년월일 `me_birthdate`
+- 연락처 `me_phone`
 
-### m_movie
+### 영화 정보 `m_movie`
 
-- mo_num
-- mo_title
-- mo_date
-- mo_seats
+- 영화 번호 `mo_num`
+- 영화 제목`mo_title`
+- 상영 날짜 및 시간 `mo_date`
+- 남은 좌석 `mo_seats`
 
-### m_reservation
+### 예매 정보 `m_reservation`
 
-- re_num
-- me_num
-- mo_num
+- 예매 번호 `re_num`
+- 회원 번호 `me_num`
+- 영화 번호 `mo_num`
 
 ### `table.sql`
 
@@ -63,22 +63,22 @@ CREATE SEQUENCE m_reservation_seq;
 
 #### 첫 번째 while
 
-1. insertUser
-2. loginCheck
+1. 회원 가입 `insertUser()`
+2. 로그인 `loginCheck()`
 
 #### 두 번째 while
 
-1. reserve
-2. reservationCheck
+1. 예매하기 `reserve()`
+2. 예매 정보 보기 `reservationCheck()`
 
 ### 영화 페이지
 
-1. insertMovie
-2. selectListMovie
-3. updateMovie
-4. deleteMovie
+1. 영화 등록 `insertMovie()`
+2. 영화 목록 확인 `selectListMovie()`
+3. 영화 수정 `updateMovie()`
+4. 영화 삭제 `deleteMovie()`
 
-### 추가
+### (추가)
 
 - 나이 제한
 - 개봉 기간
