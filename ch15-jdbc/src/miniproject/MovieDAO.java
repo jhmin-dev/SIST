@@ -63,13 +63,13 @@ public class MovieDAO {
 			pstmt_i.executeUpdate();
 			pstmt_u.executeUpdate();
 			conn.commit();
-			System.out.println("커밋");
+			System.out.println(getMovieOneLine(reservation)+"을/를 "+reservation.getRe_seats()+"석 예매했습니다.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 			try {
 				conn.rollback();
-				System.out.println("롤백");
+				System.out.println("예매에 실패했습니다!");
 			}
 			catch(SQLException se) {
 				se.printStackTrace();
@@ -103,12 +103,19 @@ public class MovieDAO {
 			check=1;
 		}
 		else if(mo_seats==0) {
-			System.out.println("해당 영화는 현재 전 좌석이 매진되었습니다!");
+			System.out.println(getMovieOneLine(reservation)+"은/는 현재 전 좌석이 매진되었습니다!");
 		}
 		else {
-			System.out.println("해당 영화는 현재 최대 "+mo_seats+"석만 예매 가능합니다!");
+			System.out.println(getMovieOneLine(reservation)+"은/는 현재 최대 "+mo_seats+"석만 예매 가능합니다!");
 		}
 		return check;
+	}
+	
+	// 영화 제목과 상영일 한 줄 반환
+	public String getMovieOneLine(ReservationVO reservation) {
+		String mo_title = getInfo(reservation, "mo_title");
+		String mo_date = getInfo(reservation, "mo_date");
+		return mo_title+" ("+mo_date.substring(5,10)+" 상영) ";
 	}
 	
 	// 특정 컬럼의 정보 반환
@@ -147,7 +154,7 @@ public class MovieDAO {
 			}
 		}
 		catch(Exception e) {
-			
+			e.printStackTrace();
 		}
 		finally {
 			DBUtil.executeClose(rs, pstmt, conn);
