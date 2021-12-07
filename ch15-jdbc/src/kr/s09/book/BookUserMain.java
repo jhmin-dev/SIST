@@ -47,6 +47,10 @@ public class BookUserMain {
 					MemberVO vo = new MemberVO();
 					System.out.print("아이디 > ");
 					vo.setMe_id(br.readLine());
+					if(dao.checkID(vo.getMe_id())==1) { // 아이디 중복 체크
+						System.out.println("중복된 아이디입니다.");
+						continue; // 메뉴로 되돌아감
+					}
 					System.out.print("비밀번호 > ");
 					vo.setMe_passwd(br.readLine());
 					System.out.print("이름 > ");
@@ -74,13 +78,38 @@ public class BookUserMain {
 			try {
 				int menu = Integer.parseInt(br.readLine());
 				if(menu==1) { // 도서 목록
-					
+					dao.selectListBook();
 				}
 				else if(menu==2) { // 도서 대출하기
-					
+					System.out.println("도서 검색");
+					dao.selectListBook();
+					ReservationVO vo = new ReservationVO();
+					vo.setMe_num(me_num);
+					while(true) {
+						System.out.println("대출할 도서 번호를 입력하세요(입력 중지: 0)");
+						System.out.print("번호 > ");
+						vo.setBk_num(Integer.parseInt(br.readLine()));
+						if(vo.getBk_num()==0) break; // 메뉴로 되돌아가기
+						int reserved=dao.getStatusReservation(vo.getBk_num()); // 대출 여부 확인
+						if(reserved==1) {
+							System.out.println("대출 중인 도서는 신청할 수 없습니다.");
+						}
+						else if(reserved==-1) {
+							System.out.println("도서 번호를 잘못 입력했습니다.");
+						}
+						else {
+							dao.insertReservation(vo);
+							break;
+						}
+					}
 				}
 				else if(menu==3) { // 내 대출 목록
-					
+					dao.selectMyList(me_num);
+					System.out.println("반납할 도서의 대출 번호를 입력하세요(입력 중지: 0)");
+					System.out.print("대출 번호 > ");
+					int re_num = Integer.parseInt(br.readLine());
+					if(re_num==0) continue; // 메뉴로 되돌아가기
+					dao.updateReservation(re_num);
 				}
 				else if(menu==4) { // 종료
 					System.out.println("프로그램을 종료합니다.");

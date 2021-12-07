@@ -43,7 +43,8 @@ public class BookAdminMain {
 					dao.selectListBook();
 				}
 				else if(menu==4) { // 대출 목록
-					
+					System.out.println("대출 내역");
+					dao.selectListReservation();
 				}
 				else if(menu==5) { // 종료
 					System.out.println("프로그램을 종료합니다.");
