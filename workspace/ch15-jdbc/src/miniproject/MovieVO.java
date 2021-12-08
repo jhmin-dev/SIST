@@ -1,14 +1,12 @@
 package miniproject;
 
-import java.sql.Date;
-
 public class MovieVO {
 	private int mo_num;
 	private String mo_title;
-	private Date mo_date;
+	private String mo_date;
 	private int mo_seats;
 	private int mo_ban;
-	
+
 	public int getMo_num() {
 		return mo_num;
 	}
@@ -21,10 +19,10 @@ public class MovieVO {
 	public void setMo_title(String mo_title) {
 		this.mo_title = mo_title;
 	}
-	public Date getMo_date() {
+	public String getMo_date() {
 		return mo_date;
 	}
-	public void setMo_date(Date mo_date) {
+	public void setMo_date(String mo_date) {
 		this.mo_date = mo_date;
 	}
 	public int getMo_seats() {

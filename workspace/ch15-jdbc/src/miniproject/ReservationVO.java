@@ -30,4 +30,7 @@ public class ReservationVO {
 	public void setRe_seats(int re_seats) {
 		this.re_seats = re_seats;
 	}
+	
+	
+
 }
