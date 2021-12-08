@@ -146,6 +146,44 @@ public class BookDAO {
 		return count;
 	}
 	
+	// 반납 여부 체크
+	public int getStatusBack(int re_num, int me_num) {
+		int count = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		
+		try {
+			// JDBC 수행 1,2단계
+			conn = DBUtil.getConnection();
+			// SQL문 작성
+			sql = "SELECT re_status FROM reservation WHERE re_num=? AND me_num=?";
+			// JDBC 수행 3단계
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setInt(1, re_num); // 대출 번호
+			pstmt.setInt(2, me_num); // 회원 번호
+			// JDBC 수행 4단계 : SQL문을 실행해서 테이블로부터 반납 여부 체크
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+			else {
+				count = -1;
+			}	
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		
+		return count;
+	}
+	
 	// 반납 처리
 	public void updateReservation(int re_num) {
 		Connection conn = null;

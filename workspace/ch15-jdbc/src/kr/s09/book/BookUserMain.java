@@ -109,6 +109,11 @@ public class BookUserMain {
 					System.out.print("대출 번호 > ");
 					int re_num = Integer.parseInt(br.readLine());
 					if(re_num==0) continue; // 메뉴로 되돌아가기
+					int bk_status = dao.getStatusBack(re_num, me_num);
+					if(bk_status!=1) {
+						System.out.println("대출하지 않은 도서는 반납할 수 없습니다.");
+						continue; // 메뉴로 되돌아가기
+					}
 					dao.updateReservation(re_num);
 				}
 				else if(menu==4) { // 종료
