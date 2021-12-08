@@ -49,6 +49,8 @@ public class BookDAO {
 			// SQL문 작성
 			sql = "SELECT * FROM book LEFT OUTER JOIN (SELECT bk_num, re_status from reservation WHERE re_status=1)"
 				+ "USING(bk_num) ORDER BY bk_num DESC";
+			// sql = "SELECT bk_num, bk_name, bk_category, bk_regdate, re_status FROM book "
+			// 	+ "LEFT OUTER JOIN (SELECT * FROM reservation WHERE re_status=1) USING(bk_num) ORDER BY bk_num DESC";
 			// JDBC 수행 3단계
 			pstmt = conn.prepareStatement(sql);
 			// JDBC 수행 4단계 : SQL문을 실행해서 테이블로부터 결과 집합을 얻고 ResultSet에 담아서 반환
