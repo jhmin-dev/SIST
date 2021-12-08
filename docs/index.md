@@ -145,10 +145,10 @@ hide_toc: true
 <!-- - 16-5 소켓 -->
 <!-- - 16-6 UDP(User Datagram Protocol) -->
 
-### 17. JDBC [11월 30일](1130.md) [12월 1일](1201.md) [12월 2일](1202.md) [12월 3일](1203.md) [12월 2일](1202.md) [12월 6일](1206.md)
+### 17. JDBC [11월 30일](1130.md) [12월 1일](1201.md) [12월 2일](1202.md) [12월 3일](1203.md) [12월 2일](1202.md) [12월 6일](1206.md) [12월 7일](1207.md)
 
 <!-- - 17-1 데이터베이스 -->
-- 17-2 JDBC(Java Database Connectivity) [11월 30일](1130.md#17-2-JDBCJava-Database-Connectivity) [12월 1일](1201.md#17-2-JDBCJava-Database-Connectivity) [12월 2일](1202.md#17-2-JDBCJava-Database-Connectivity) [12월 3일](1203.md#17-3-JDBCJava-Database-Connectivity) [12월 6일](1206.md#17-6-JDBCJava-Database-Connectivity)
+- 17-2 JDBC(Java Database Connectivity) [11월 30일](1130.md#17-2-JDBCJava-Database-Connectivity) [12월 1일](1201.md#17-2-JDBCJava-Database-Connectivity) [12월 2일](1202.md#17-2-JDBCJava-Database-Connectivity) [12월 3일](1203.md#17-3-JDBCJava-Database-Connectivity) [12월 6일](1206.md#17-6-JDBCJava-Database-Connectivity) [12월 7일](1207.md#17-6-JDBCJava-Database-Connectivity)
 
 ## Oracle SQL
 
