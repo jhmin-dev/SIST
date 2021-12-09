@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>특수문자 처리</title>
+</head>
+<body>
+<h3>문자 엔티티</h3>
+<!-- 
+&nbsp;	공백
+&lt;	<	less than
+&gt;	>	greater than
+&amp;	&	ampersand
+&quot;	"	quotation mark
+&copy;	©	copyright
+&trade;	™	trademark의 약자
+ -->
+공백 처리 : 공백 사용시 &nbsp;&nbsp;&nbsp;&nbsp; 공백으로 보여짐<br> <!-- &nbsp;는 디자인을 파괴하기 때문에 사용하지 않는 것 권장; CSS로 처리해야 함 -->
+
+&lt;하하&gt;
+<하하><br> <!-- 꺽쇠는 태그로 인식됨 -->
+자바 &amp; JSP
+자바 & JSP<br> <!-- &는 문자 엔티티로 인식됨 -->
+&quot;즐거운 하루&quot;
+"즐거운 하루"<br> <!-- 큰따옴표는 속성의 값으로 인식됨 -->
+<!-- 꺽쇠, &, 큰따옴표를 직접 명시해도 브라우저에서 일반 문자처럼 처리해주지만, 문법적으로 올바른 형식은 아니며 오류 누적시 디자인이 깨질 수 있음 -->
+
+&copy; 한국상사<br>
+오메가&trade;
+</body>
+</html>
