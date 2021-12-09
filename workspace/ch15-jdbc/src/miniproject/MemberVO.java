@@ -48,20 +48,20 @@ public class MemberVO {
 		this.me_phone = me_phone;
 	}
 
-	public int getAge(String brithday) { //¸¸ Ãß°¡ÀûÀ¸·Î Á¦¾à°É¾î¾ßÇÑ´Ù.
+	public int getAge(String brithday) { //ë§Œ ì¶”ê°€ì ìœ¼ë¡œ ì œì•½ê±¸ì–´ì•¼í•œë‹¤.
 		Calendar today = Calendar.getInstance();
 		StringTokenizer st = new StringTokenizer(brithday,"/ -");
 		int age_year = Integer.parseInt(st.nextToken());
 		int age_month = Integer.parseInt(st.nextToken());
 		int age_day = Integer.parseInt(st.nextToken());
 		int year = today.get(Calendar.YEAR);
-		int month = today.get(Calendar.MONTH)+1; // CalendarÀÇ MONTH´Â ¿ùÀ» 0~11·Î Ã³¸®
+		int month = today.get(Calendar.MONTH)+1; // Calendarì˜ MONTHëŠ” ì›”ì„ 0~11ë¡œ ì²˜ë¦¬
 		int day = today.get(Calendar.DATE);
 		int me_age = 0;
 
-		if(age_month>month) { //»ıÀÏÀÌ ¾È Áö³²
+		if(age_month>month) { //ìƒì¼ì´ ì•ˆ ì§€ë‚¨
 			me_age = (year-age_year);
-		}else if (age_month<month){//»ıÀÏÀÌ Áö³²
+		}else if (age_month<month){//ìƒì¼ì´ ì§€ë‚¨
 			me_age = (year-age_year)+1;
 		}else if(age_month == month) {
 			if(age_day<=day) {
@@ -70,7 +70,7 @@ public class MemberVO {
 				me_age = (year-age_year);
 			}
 		}else {
-			System.out.println("»ı³â¿ùÀÏÀ» ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			System.out.println("ìƒë…„ì›”ì¼ì„ ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		}
 
 		return me_age;

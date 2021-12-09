@@ -1,5 +1,7 @@
 package miniproject;
 
+import java.sql.Date;
+
 public class MovieVO {
 	private int mo_num;
 	private String mo_title;

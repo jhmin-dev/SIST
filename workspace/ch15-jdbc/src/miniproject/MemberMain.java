@@ -27,40 +27,45 @@ public class MemberMain {
 	
 	public void callMenu() throws IOException {
 		while(true) {
-			System.out.print("1.·Î±×ÀÎ, 2.È¸¿ø °¡ÀÔ, 3.Á¾·á");
+			System.out.print("1. ë¡œê·¸ì¸, 2. íšŒì› ê°€ì…, 3. ì¢…ë£Œ");
 			try {
 				int no = Integer.parseInt(br.readLine());
-				if(no==1) { // ·Î±×ÀÎ
-					System.out.print("¾ÆÀÌµğ:");
+				if(no == 1) {
+					System.out.print("ì•„ì´ë”” > ");
 					String me_id = br.readLine();
-					System.out.print("ºñ¹Ğ¹øÈ£");
+
+					System.out.print("ë¹„ë°€ë²ˆí˜¸ > ");
 					String me_passwd = br.readLine();
 
 					me_num = dao.loginCheck(me_id, me_passwd);
+					ReservationVO revo = new ReservationVO(); // íšŒì› ë²ˆí˜¸ë¡œ íšŒì› ì´ë¦„ì„ ê°€ì ¸ì˜¤ê¸° ìœ„í•´ ê°ì²´ë¥¼ ë§Œë“¤ê³  dao.getInfo() ë©”ì„œë“œ ì‚¬ìš©
+					revo.setMe_num(me_num);
 					if(me_num!=0) {
-						System.out.println(me_id + "(" + me_num + ")´Ô ·Î±×ÀÎ µÇ¾ú½À´Ï´Ù.");
+						System.out.println(dao.getInfo(revo, "me_name") + " (" + me_id + ")ë‹˜ ë¡œê·¸ì¸ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 						flag = true;
 						break;
 					}
-					System.out.println("¾ÆÀÌµğ ¶Ç´Â ºñ¹Ğ¹øÈ£°¡ ºÒÀÏÄ¡ÇÕ´Ï´Ù.");
+					System.out.println("ì•„ì´ë”” ë˜ëŠ” ë¹„ë°€ë²ˆí˜¸ê°€ ë¶ˆì¼ì¹˜í•©ë‹ˆë‹¤.");
 
-				}else if (no ==2) { // È¸¿ø °¡ÀÔ
-					System.out.print("¾ÆÀÌµğ ÀÔ·Â>");
+				}else if (no ==2) {
+					System.out.print("ì•„ì´ë”” ì…ë ¥ > ");
 					String me_id = br.readLine();
 					int count = dao.checkId(me_id);
+
 					if(count ==1) {
-						System.out.println("¾ÆÀÌµğ°¡ Áßº¹µÇ¾ú½À´Ï´Ù.");
+						System.out.println("ì•„ì´ë””ê°€ ì¤‘ë³µë˜ì—ˆìŠµë‹ˆë‹¤.");
 						continue;
 					}
 
-					System.out.print("ºñ¹Ğ¹øÈ£ ÀÔ·Â>");
+					System.out.print("ë¹„ë°€ë²ˆí˜¸ ì…ë ¥ > ");
 					String me_passwd = br.readLine();
-					System.out.print("ÀÌ¸§ >");
+					System.out.print("ì´ë¦„ > ");
 					String me_name = br.readLine();
-					System.out.print("»ı³â¿ùÀÏ>");
+					System.out.println("ìƒë…„ì›”ì¼ì„ ì…ë ¥í•˜ì„¸ìš”. 2021/12/09 í˜•ì‹ìœ¼ë¡œ ì…ë ¥í•´ì•¼ í•©ë‹ˆë‹¤.");
+					System.out.print("ìƒë…„ì›”ì¼ > ");
 					String brithdate = br.readLine();
 					int me_age = vo.getAge(brithdate);
-					System.out.print("ÀüÈ­¹øÈ£>");
+					System.out.print("ì „í™”ë²ˆí˜¸ > ");
 					String me_phone = br.readLine();
 
 					vo.setMe_id(me_id);
@@ -68,46 +73,52 @@ public class MemberMain {
 					vo.setMe_name(me_name);
 					vo.setMe_Age(me_age);
 					vo.setMe_phone(me_phone);
-					dao.insertMember(vo);					
-				}else if(no==3) { // Á¾·á
-					System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+					dao.insertMember(vo);
+					
+				}else if(no==3) {
+					System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí–ˆìŠµë‹ˆë‹¤.");
 					break;
+
 				}else {
-					System.out.println("Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù");
+					System.out.println("ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤!");
 				}
 			}catch(NumberFormatException e) {
-				System.out.println("¼ıÀÚ¸¸ ÀÔ·Â°¡´É");
+				System.out.println("ìˆ«ìë§Œ ì…ë ¥ ê°€ëŠ¥í•©ë‹ˆë‹¤!");
 			}
 		}
-		while(flag) {			
-			System.out.println("¸Ş´º : 1. ¿¹¸ÅÇÏ±â, 2. ¿¹¸Å Á¤º¸ º¸±â, 3. ¿¹¸Å Ãë¼ÒÇÏ±â, 4. Á¾·á");
-			System.out.print("¸Ş´º > ");
+		
+		while(flag) {
+			ReservationVO revo = new ReservationVO();
+			revo.setMe_num(me_num);
+			System.out.println("ë©”ë‰´ : 1. ì˜ˆë§¤í•˜ê¸°, 2. " + dao.getInfo(revo, "me_name") + " ë‹˜ì˜ ì˜ˆë§¤ ì •ë³´ ë³´ê¸°, 3. ì˜ˆë§¤ ì·¨ì†Œí•˜ê¸°, 4. ì¢…ë£Œ");
+			System.out.print("ë©”ë‰´ > ");
 			try {
 				int menu=Integer.parseInt(br.readLine());
 				if(menu==1) {
-					System.out.println("»ó¿µ½Ã°£Ç¥");
+					System.out.println("ìƒì˜ì‹œê°„í‘œ");
 					dao.selectListMovie();
 					ReservationVO vo = new ReservationVO();
+					
 					vo.setMe_num(me_num);
-					System.out.println("¿¹¸ÅÇÒ ¿µÈ­ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-					System.out.print("¹øÈ£ > ");
+					System.out.println("ì˜ˆë§¤í•  ì˜í™” ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+					System.out.print("ë²ˆí˜¸ > ");
 					vo.setMo_num(Integer.parseInt(br.readLine()));
 					if(dao.checkAge(vo)!=1) {
 						continue;
 					}
 					while(true) {
-						System.out.println("¿¹¸ÅÇÒ ÁÂ¼® ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä. 1ÀÎ¿¡¼­ 4ÀÎ±îÁöÀÇ ÀÚ¸®¸¦ ¿¹¸ÅÇÒ ¼ö ÀÖ½À´Ï´Ù.");
-						System.out.print("ÁÂ¼® ¼ö > ");
+						System.out.println("ì˜ˆë§¤í•  ì¢Œì„ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”. 1ì¸ì—ì„œ 4ì¸ê¹Œì§€ì˜ ìë¦¬ë¥¼ ì˜ˆë§¤í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.");
+						System.out.print("ì¢Œì„ ìˆ˜ > ");
 						int re_seats=Integer.parseInt(br.readLine());
 						if(re_seats<=4 && re_seats>=1) {
 							vo.setRe_seats(re_seats);
 							break;
 						}
 						else if(re_seats>4) {
-							System.out.println("ÇÑ ¹ø¿¡ ÃÖ´ë 4ÀÚ¸®±îÁö¸¸ ¿¹¸Å °¡´ÉÇÕ´Ï´Ù!");
+							System.out.println("í•œ ë²ˆì— ìµœëŒ€ 4ìë¦¬ê¹Œì§€ë§Œ ì˜ˆë§¤ ê°€ëŠ¥í•©ë‹ˆë‹¤!");
 						}
 						else {
-							System.out.println("¿¹¸ÅÇÒ ÁÂ¼® ¼ö´Â Àû¾îµµ 1ÀÚ¸® ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù!");
+							System.out.println("ì˜ˆë§¤í•  ì¢Œì„ ìˆ˜ëŠ” ì ì–´ë„ 1ìë¦¬ ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤!");
 						}
 					}
 					if(dao.checkSeats(vo)!=1) {
@@ -116,34 +127,35 @@ public class MemberMain {
 					dao.reserve(vo);
 				}
 				else if(menu==2) {
-					dao.selectListReservation(me_num);
+					System.out.println("ì˜ˆë§¤ ì •ë³´ ë³´ê¸°");
+					dao.reservationCheck(me_num);
 				}
 				else if(menu==3) {
-					dao.selectListReservation(me_num);
-					System.out.println("Ãë¼ÒÇÏ·Á´Â ¿¹¸ÅÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-					System.out.print("¿¹¸Å ¹øÈ£ > ");
+					dao.reservationCheck(me_num);
+					System.out.println("ì·¨ì†Œí•˜ë ¤ëŠ” ì˜ˆë§¤ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+					System.out.print("ì˜ˆë§¤ ë²ˆí˜¸ > ");
 					int re_num = Integer.parseInt(br.readLine());
 					ReservationVO vo = dao.getReservationVO(re_num);
 					if(vo.getMe_num()!=me_num) {
-						System.out.println("¿¹¸Å ¹øÈ£¸¦ Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù.");
+						System.out.println("ì˜ˆë§¤ ë²ˆí˜¸ë¥¼ ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤.");
 						continue;
 					}
 					if(vo.getRe_seats()==0) {
-						System.out.println("ÀÌ¹Ì Ãë¼ÒÇÑ ¿¹¸Å ³»¿ªÀÔ´Ï´Ù.");
+						System.out.println("ì´ë¯¸ ì·¨ì†Œí•œ ì˜ˆë§¤ ë‚´ì—­ì…ë‹ˆë‹¤.");
 						continue;
 					}
 					dao.cancelReservation(vo);
 				}
 				else if(menu==4) {
-					System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+					System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 					break;
 				}
 				else {
-					throw new NumberFormatException(); // catch ºí·°À¸·Î ÀÌµ¿
+					throw new NumberFormatException();
 				}
 			}
 			catch(NumberFormatException e) {
-				System.out.println("¸Ş´º¸¦ Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù!");
+				System.out.println("ë©”ë‰´ë¥¼ ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤!");
 			}
 		}
 	}

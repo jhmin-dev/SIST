@@ -21,53 +21,55 @@ public class MovieMain {
 			if(br!=null) try {br.close();} catch(IOException e) {}
 		}
 	}
-	
+
 	public void callMenu() throws IOException {
-		while(true) {
-			System.out.println("¸Ş´º : 1. ¿µÈ­ µî·Ï, 2. ¿µÈ­ ¸ñ·Ï È®ÀÎ, 3. ¿µÈ­ ¼öÁ¤, 4. ¿µÈ­ »èÁ¦, 5. ÀüÃ¼ ¿¹¸Å ³»¿ª È®ÀÎ, 6. Á¾·á");
-			System.out.print("¸Ş´º > ");
+		while (true) {
+			System.out.println("ë©”ë‰´ : 1. ì˜í™” ë“±ë¡, 2. ì˜í™” ëª©ë¡ í™•ì¸, 3. ì˜í™” ìˆ˜ì •, 4. ì˜í™” ì‚­ì œ, 5. ì „ì²´ ì˜ˆë§¤ì í™•ì¸, 6. ì¢…ë£Œ");
+			System.out.print("ë©”ë‰´ > ");
 			try {
-				int menu=Integer.parseInt(br.readLine());
-				if(menu==1) { // ¿µÈ­ µî·Ï
-					System.out.print("¿µÈ­Á¦¸ñ>");
+				int menu = Integer.parseInt(br.readLine());
+				if (menu == 1) {
+					System.out.print("ì˜í™” ì œëª© > ");
 					String mo_title = br.readLine();
-
-					System.out.print("»ó¿µ³¯Â¥(ex:2021/12/09)>");
+					
+					System.out.println("ìƒì˜ ë‚ ì§œë¥¼ ì…ë ¥í•˜ì„¸ìš”. 2021/12/09 í˜•ì‹ìœ¼ë¡œ ì…ë ¥í•´ì•¼ í•©ë‹ˆë‹¤.");
+					System.out.print("ìƒì˜ ë‚ ì§œ > ");
 					String mo_date = br.readLine();
-
-					System.out.print("»ó¿µ½Ã°£(ex:14:00)>");
+					
+					System.out.println("ìƒì˜ ì‹œê°„ì„ ì…ë ¥í•˜ì„¸ìš”. 14:00 í˜•ì‹ìœ¼ë¡œ ì…ë ¥í•´ì•¼ í•©ë‹ˆë‹¤.");
+					System.out.print("ìƒì˜ ì‹œê°„ > ");
 					String mo_time = br.readLine();
-
-					System.out.print("ÁÂ¼®¼ö>");
+					
+					System.out.print("ì¢Œì„ ìˆ˜ > ");
 					int mo_seats = Integer.parseInt(br.readLine());
-
-					System.out.print("³ªÀÌÁ¦ÇÑ>");
+					
+					System.out.print("ë‚˜ì´ ì œí•œ > ");
 					int mo_ban = Integer.parseInt(br.readLine());
-
+					
 					MovieVO vo = new MovieVO();
 					vo.setMo_title(mo_title);
 					vo.setMo_date(mo_date);
 					vo.setMo_time(mo_time);
 					vo.setMo_seats(mo_seats);
 					vo.setMo_ban(mo_ban);
-
+					
 					dao.insertMovie(vo);
-				}
-				else if(menu==2) { // ¿µÈ­ ¸ñ·Ï È®ÀÎ
+					
+					
+				} else if (menu == 2) {//ì˜í™”ëª©ë¡
 					dao.selectListMovie();
-				}
-				else if(menu==3) { // ¿µÈ­ ¼öÁ¤
+				}else if(menu==3) {//ì˜í™”ìˆ˜ì •
 					dao.selectListMovie();
-					System.out.println("---------------------");
-					System.out.print("¿µÈ­ ¹øÈ£:");
+					System.out.println("=====================");
+					System.out.print("ì˜í™” ë²ˆí˜¸ > ");
 					int mo_num = Integer.parseInt(br.readLine());
-					System.out.print("¿µÈ­ Á¦¸ñ:");
+					System.out.print("ì˜í™” ì œëª© > ");
 					String mo_title = br.readLine();
-					System.out.print("¿µÈ­ ³¯Â¥:");
+					System.out.print("ì˜í™” ë‚ ì§œ > ");
 					String mo_date =  br.readLine();
-					System.out.print("¿µÈ­ ½Ã°£:");
+					System.out.print("ì˜í™” ì‹œê°„ > ");
 					String mo_time = br.readLine();
-					System.out.print("¿µÈ­ ÁÂ¼®:");
+					System.out.print("ì˜í™” ì¢Œì„ > ");
 					int mo_seats = Integer.parseInt(br.readLine());
 
 					MovieVO movie = new MovieVO();
@@ -78,34 +80,31 @@ public class MovieMain {
 					movie.setMo_seats(mo_seats);
 
 					dao.updateMovie(movie);
-				}
-				else if(menu==4) { // ¿µÈ­ »èÁ¦
-					// dao.selectListMovie();
-					System.out.println("»èÁ¦ÇÒ ¿µÈ­ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-					System.out.print("¹øÈ£ > ");
+				} else if (menu == 4) { // ì˜í™” ì‚­ì œ
+					dao.selectListMovie();
+					System.out.println("ì‚­ì œí•  ì˜í™” ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+					System.out.print("ë²ˆí˜¸ > ");
 					int mo_num = Integer.parseInt(br.readLine());
-					if(dao.checkMovie(mo_num)!=1) {
-						System.out.println("¿µÈ­ ¹øÈ£¸¦ Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù!");
+					if (dao.checkMovie(mo_num) != 1) {
+						System.out.println("ì˜í™” ë²ˆí˜¸ë¥¼ ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤!");
 						continue;
 					}
 					dao.deleteMovie(mo_num);
-				}
-				else if(menu==5) { // ÀüÃ¼ ¿¹¸Å ³»¿ª È®ÀÎ
-					dao.selectListReservation();
-				}
-				else if(menu==6) { // Á¾·á
-					System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+				}else if(menu==5) {
+					dao.reservationCheck();
+				}else if(menu ==6) {
+					System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 					break;
+				}else {
+					throw new NumberFormatException();
 				}
-				else {
-					throw new NumberFormatException(); // catch ºí·°À¸·Î ÀÌµ¿
-				}
-			}
-			catch(NumberFormatException e) {
-				System.out.println("¸Ş´º¸¦ Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù!");
+			} catch (NumberFormatException e) {
+				System.out.println("ë©”ë‰´ë¥¼ ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤!");
 			}
 		}
+
 	}
+
 	
 	public static void main(String[] args) {
 		new MovieMain();

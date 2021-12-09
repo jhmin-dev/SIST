@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MovieDAO {
-	// ¿µÈ­ µî·Ï
+	// ì˜í™” ë“±ë¡
 	public void insertMovie(MovieVO vo) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -23,140 +23,161 @@ public class MovieDAO {
 			pstmt.setInt(4, vo.getMo_seats());
 			pstmt.setInt(5, vo.getMo_ban());
 			pstmt.executeUpdate();
-			System.out.println("¿µÈ­µî·ÏÀÌ µÇ¾ú½À´Ï´Ù.");
-
+			System.out.println("ì˜í™” ë“±ë¡ì´ ë˜ì—ˆìŠµë‹ˆë‹¤.");
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			DBUtil.executeClose(null,pstmt,conn);
-		}
+		}	
 	}
-
-	// ¿µÈ­ ¸ñ·Ï È®ÀÎ
+	
+	// ì˜í™” ëª©ë¡ í™•ì¸
 	public void selectListMovie() {
-		Connection conn=null;
+		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
-
 		try {
-			conn=DBUtil.getConnection();
+			conn = DBUtil.getConnection();
 			sql = "SELECT mo_num,mo_title,mo_date,mo_time,mo_ban,mo_seats FROM m_movie "
 					+ "LEFT OUTER JOIN(SELECT * FROM m_reservation WHERE re_num=1) "
 					+ "USING(mo_num) ORDER BY mo_num DESC ";
-			pstmt=conn.prepareStatement(sql);
-			rs=pstmt.executeQuery();
-
-			System.out.println("===========================================================");
-			System.out.println("¿µÈ­¹øÈ£\t¿µÈ­Á¦¸ñ\t¿¬·ÉÁ¦ÇÑ\t»ó¿µÀÏ\t\t»ó¿µ½Ã°£\tÁÂ¼®");
-			System.out.println("===========================================================");
-
-			while(rs.next()) {
-				System.out.print(rs.getInt("mo_num")+"\t");
-				System.out.print(rs.getString("mo_title")+"\t");
-				System.out.print(rs.getInt("mo_ban")+"\t");
-				System.out.print(rs.getString("mo_date")+"\t");
-				System.out.print(rs.getString("mo_time")+"\t");
-				System.out.println(rs.getInt("mo_seats")+"\t");
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			DBUtil.executeClose(rs, pstmt,conn);
-		}
-	}
-	
-	// ¿µÈ­ ¼öÁ¤
-	public void updateMovie(MovieVO movie) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		String sql = null;
-
-		try {
-			conn = DBUtil.getConnection();
-
-			sql = "UPDATE movie SET mo_title=?,"
-					+ "mo_date=?, mo_time=? mo_seats=? WHERE mo_num=?";
-
 			pstmt = conn.prepareStatement(sql);
-
-			pstmt.setInt(1,movie.getMo_num());
-			pstmt.setString(2, movie.getMo_title());
-			pstmt.setString(3,movie.getMo_date());
-			pstmt.setString(4,movie.getMo_time());
-			pstmt.setInt(5 ,movie.getMo_seats());
-
-			int count = pstmt.executeUpdate();
-			System.out.println(count+"ÆíÀÇ ¿µÈ­ Á¤º¸°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.");
-
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			DBUtil.executeClose(null,pstmt,conn);
-		}
-
-	}
-	
-	// ¿µÈ­ »èÁ¦
-	public void deleteMovie(int mo_num) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		String sql = null;
-		
-		try {
-			conn = DBUtil.getConnection();
-			sql = "DELETE FROM m_movie WHERE mo_num=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, mo_num);
-			int count = pstmt.executeUpdate();
-			System.out.println(count+"ÆíÀÇ ¿µÈ­¸¦ »èÁ¦ÇÏ¿´½À´Ï´Ù.");
-		}
-		catch(Exception e) {
-			if(e.getMessage().trim().endsWith("child record found")) { // »èÁ¦ÇÏ·Á´Â mo_num °ªÀÌ m_reservation Å×ÀÌºí¿¡¼­ ÂüÁ¶µÇ°í ÀÖ¾î »èÁ¦¿¡ ½ÇÆĞÇÑ °æ¿ì
-				System.out.println("ÇØ´ç ¿µÈ­´Â ¿¹¸ÅÀÚ°¡ ÀÖÀ¸¹Ç·Î »èÁ¦ÇÒ ¼ö ¾ø½À´Ï´Ù!");
-			}
-			else {
-				e.printStackTrace();
-			}
-		}
-		finally {
-			DBUtil.executeClose(null, pstmt, conn);
-		}
-	}
-	
-	// ¿µÈ­ Á¸Àç ¿©ºÎ È®ÀÎ
-	public int checkMovie(int mo_num) {
-		int check = 0;
-		
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = null;
-		
-		try {
-			conn = DBUtil.getConnection();
-			sql = "SELECT mo_num FROM m_movie WHERE mo_num=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, mo_num);
 			rs = pstmt.executeQuery();
-			if(rs.next()) { // ÀÖ´Â ¿µÈ­ ¹øÈ£¸¦ ÀÔ·ÂÇÑ °æ¿ì
-				check = 1;
+
+			System.out.println("================================================================");
+			System.out.println("ì˜í™” ë²ˆí˜¸\tì˜í™” ì œëª©\t\tê´€ëŒê°€\tìƒì˜ ë‚ ì§œ\t\tìƒì˜ ì‹œê°„\tì”ì—¬ ì¢Œì„ ìˆ˜");
+			System.out.println("================================================================");
+
+			while (rs.next()) {
+				System.out.print(rs.getInt("mo_num") + "\t");
+				String mo_title = rs.getString("mo_title"); // ì˜í™” ì œëª©ì´ ë„ˆë¬´ ê¸¸ë©´ ë§ì¤„ì„í‘œ ì²˜ë¦¬í•˜ê¸° ìœ„í•´ ë³€ìˆ˜ ì„ ì–¸
+				if(mo_title.length()>6+6) {
+					System.out.print(mo_title.substring(0,6+6-2) + "..\t");
+				}
+				else if(mo_title.length()>6) {
+					System.out.print(mo_title + "\t");
+				}
+				else {
+					System.out.print(mo_title + "\t\t");
+				}
+				int mo_ban = rs.getInt("mo_ban"); // ì—°ë ¹ ì œí•œ 0ì¸ ê²½ìš° ì „ì—°ë ¹ì´ë¼ê³  ì¶œë ¥í•˜ê¸° ìœ„í•´ ë³€ìˆ˜ ì„ ì–¸
+				if(mo_ban==0) {
+					System.out.print("ì „ì—°ë ¹\t");
+				}
+				else {
+					System.out.print(mo_ban + "\t");
+				}
+				System.out.print(rs.getString("mo_date") + "\t");
+				System.out.print(rs.getString("mo_time") + "\t");
+				int mo_seats = rs.getInt("mo_seats"); // ë‚¨ì€ ì¢Œì„ ìˆ˜ 0ì¸ ê²½ìš° ë§¤ì§„ì´ë¼ê³  ì¶œë ¥í•˜ê¸° ìœ„í•´ ë³€ìˆ˜ ì„ ì–¸
+				if(mo_seats==0) {
+					System.out.println("ë§¤ì§„");
+				}
+				else {
+					System.out.println(mo_seats);
+				}
 			}
-			else { // ¾ø´Â ¿µÈ­ ¹øÈ£¸¦ ÀÔ·ÂÇÑ °æ¿ì
-				check = -1;
-			}
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 			DBUtil.executeClose(rs, pstmt, conn);
 		}
-		
-		return check;
 	}
+
+	// ì˜í™” ìˆ˜ì •  (MovieDAO) 
+	   public void updateMovie(MovieVO movie) {
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      String sql = null;
+	      
+	      try {
+	         conn = DBUtil.getConnection();
+	         
+	         sql = "UPDATE m_movie SET mo_title=?,"
+	               + "mo_date=?, mo_time=?,mo_seats=? WHERE mo_num=?";
+	         
+	         pstmt = conn.prepareStatement(sql);
+	         
+	        
+	         pstmt.setString(1, movie.getMo_title());
+	         pstmt.setString(2,movie.getMo_date());
+	         pstmt.setString(3,movie.getMo_time());
+	         pstmt.setInt(4 ,movie.getMo_seats());
+	         pstmt.setInt(5,movie.getMo_num());
+	         
+	         int count = pstmt.executeUpdate();
+	         System.out.println(count+"í¸ì˜ ì˜í™” ì •ë³´ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
+	         
+	      }catch(Exception e) {
+	         e.printStackTrace();
+	      }finally {
+	         DBUtil.executeClose(null,pstmt,conn);
+	      }
+	   
+	   }
 	
-	// È¸¿ø °¡ÀÔ
+	// ì˜í™” ì‚­ì œ
+	   public void deleteMovie(int mo_num) {
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      String sql = null;
+	      
+	      try {
+	         conn = DBUtil.getConnection();
+	         sql = "DELETE FROM m_movie WHERE mo_num=?";
+	         pstmt = conn.prepareStatement(sql);
+	         pstmt.setInt(1, mo_num);
+	         int count = pstmt.executeUpdate();
+	         System.out.println(count+"í¸ì˜ ì˜í™”ë¥¼ ì‚­ì œí•˜ì˜€ìŠµë‹ˆë‹¤.");
+	      }
+	      catch(Exception e) {
+	         if(e.getMessage().trim().endsWith("child record found")) { // ì‚­ì œí•˜ë ¤ëŠ” mo_num ê°’ì´ m_reservation í…Œì´ë¸”ì—ì„œ ì°¸ì¡°ë˜ê³  ìˆì–´ ì‚­ì œì— ì‹¤íŒ¨í•œ ê²½ìš°
+	            System.out.println("í•´ë‹¹ ì˜í™”ëŠ” ì˜ˆë§¤ìê°€ ìˆìœ¼ë¯€ë¡œ ì‚­ì œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
+	         }
+	         else {
+	            e.printStackTrace();
+	         }
+	      }
+	      finally {
+	         DBUtil.executeClose(null, pstmt, conn);
+	      }
+	   }
+	   
+	   // ì˜í™” ì¡´ì¬ ì—¬ë¶€ í™•ì¸
+	   public int checkMovie(int mo_num) {
+	      int check = 0;
+	      
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	      String sql = null;
+	      
+	      try {
+	         conn = DBUtil.getConnection();
+	         sql = "SELECT mo_num FROM m_movie WHERE mo_num=?";
+	         pstmt = conn.prepareStatement(sql);
+	         pstmt.setInt(1, mo_num);
+	         rs = pstmt.executeQuery();
+	         if(rs.next()) { // ìˆëŠ” ì˜í™” ë²ˆí˜¸ë¥¼ ì…ë ¥í•œ ê²½ìš°
+	            check = 1;
+	         }
+	         else { // ì—†ëŠ” ì˜í™” ë²ˆí˜¸ë¥¼ ì…ë ¥í•œ ê²½ìš°
+	            check = -1;
+	         }
+	      }
+	      catch(Exception e) {
+	         e.printStackTrace();
+	      }
+	      finally {
+	         DBUtil.executeClose(rs, pstmt, conn);
+	      }
+	      
+	      return check;
+	   }
+
+	// íšŒì› ê°€ì…
 	public void insertMember(MemberVO vo) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -173,7 +194,7 @@ public class MovieDAO {
 			pstmt.setInt(4, vo.getMe_Age());
 			pstmt.setString(5,vo.getMe_phone());
 			pstmt.executeUpdate();
-			System.out.println("CGVÀÇ È¸¿øÀÌ µÇ½Å°É ÃàÇÏµå¸³´Ï´Ù.");
+			System.out.println("ìŒìš© ì”¨ë„¤ë§ˆì˜ íšŒì›ì´ ë˜ì‹  ê±¸ ì¶•í•˜ë“œë¦½ë‹ˆë‹¤.");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -181,7 +202,7 @@ public class MovieDAO {
 		}
 	}
 
-	// ¾ÆÀÌµğ Áßº¹ Ã¼Å©
+	//ì•„ì´ë”” ì¤‘ë³µ ì²´í¬
 	public int checkId(String me_id) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -207,7 +228,7 @@ public class MovieDAO {
 		return count;
 	}
 
-	// ·Î±×ÀÎ
+	// ë¡œê·¸ì¸
 	public int loginCheck(String me_id,String me_passwd) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -217,7 +238,7 @@ public class MovieDAO {
 
 		try {
 			conn = DBUtil.getConnection();
-			sql = "SELECT me_num FROM m_member WHERE me_id=? AND me_passwd=?";
+			sql = "SELECT me_num FROM m_member WHERE me_id =? AND me_passwd = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, me_id);
 			pstmt.setString(2, me_passwd);
@@ -232,39 +253,41 @@ public class MovieDAO {
 		}
 
 		return me_num;
+
 	}
 	
-	// ¿¹¸ÅÇÏ±â
+
+	// ì˜ˆë§¤í•˜ê¸°
 	public void reserve(ReservationVO vo) {
 		Connection conn = null;
-		PreparedStatement pstmt_i = null; // INSERT¹®À» ´ãÀ» PreparedStatement °´Ã¼ ¼±¾ğ
-		PreparedStatement pstmt_u = null; // UPDATE¹®À» ´ãÀ» PreparedStatement °´Ã¼ ¼±¾ğ
+		PreparedStatement pstmt_i = null; // INSERTë¬¸ì„ ë‹´ì„ PreparedStatement ê°ì²´ ì„ ì–¸
+		PreparedStatement pstmt_u = null; // UPDATEë¬¸ì„ ë‹´ì„ PreparedStatement ê°ì²´ ì„ ì–¸
 		String sql_i = null;
 		String sql_u = null;
 
 		try {
 			conn = DBUtil.getConnection();
-			conn.setAutoCommit(false); // m_reservation Å×ÀÌºí°ú m_movie Å×ÀÌºíÀÇ Á¤º¸¸¦ ¸ğµÎ º¯°æÇØ¾ß ÇÏ¹Ç·Î, ¼öµ¿À¸·Î Æ®·£Àè¼Ç °ü¸®
+			conn.setAutoCommit(false); // m_reservation í…Œì´ë¸”ê³¼ m_movie í…Œì´ë¸”ì˜ ì •ë³´ë¥¼ ëª¨ë‘ ë³€ê²½í•´ì•¼ í•˜ë¯€ë¡œ, ìˆ˜ë™ìœ¼ë¡œ íŠ¸ëœì­ì…˜ ê´€ë¦¬
 			sql_i = "INSERT INTO m_reservation (re_num, me_num, mo_num, re_seats) "
 					+ "VALUES (m_reservation_seq.NEXTVAL, ?, ?, ?)";
 			pstmt_i = conn.prepareStatement(sql_i);
 			pstmt_i.setInt(1, vo.getMe_num());
 			pstmt_i.setInt(2, vo.getMo_num());
 			pstmt_i.setInt(3, vo.getRe_seats());
-			pstmt_i.executeUpdate(); // INSERT¹® ½ÇÇà
+			pstmt_i.executeUpdate(); // INSERTë¬¸ ì‹¤í–‰
 			sql_u = "UPDATE m_movie SET mo_seats=mo_seats-? WHERE mo_num=?";
 			pstmt_u = conn.prepareStatement(sql_u);
 			pstmt_u.setInt(1, vo.getRe_seats());
 			pstmt_u.setInt(2, vo.getMo_num());
-			pstmt_u.executeUpdate(); // UPDATE¹® ½ÇÇà
-			conn.commit(); // INSERT¹®°ú UPDATE¹®ÀÌ ¸ğµÎ ¼º°øÇßÀ» ¶§¸¸ ÇöÀç Æ®·£Àè¼ÇÀÇ º¯°æ ³»¿ªÀ» µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¹İ¿µ
-			System.out.println(getMovieOneLine(vo)+"À»/¸¦ "+vo.getRe_seats()+"¼® ¿¹¸ÅÇß½À´Ï´Ù.");
+			pstmt_u.executeUpdate(); // UPDATEë¬¸ ì‹¤í–‰
+			conn.commit(); // INSERTë¬¸ê³¼ UPDATEë¬¸ì´ ëª¨ë‘ ì„±ê³µí–ˆì„ ë•Œë§Œ í˜„ì¬ íŠ¸ëœì­ì…˜ì˜ ë³€ê²½ ë‚´ì—­ì„ ë°ì´í„°ë² ì´ìŠ¤ì— ë°˜ì˜
+			System.out.println(getMovieOneLine(vo)+"ì„/ë¥¼ "+vo.getRe_seats()+"ì„ ì˜ˆë§¤í–ˆìŠµë‹ˆë‹¤.");
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 			try {
-				conn.rollback(); // ¿¡·¯ ¹ß»ı½Ã, ÇöÀç Æ®·£Àè¼ÇÀÇ º¯°æ ³»¿ªÀ» ÀüºÎ Ãë¼Ò
-				System.out.println("¿¹¸Å¿¡ ½ÇÆĞÇß½À´Ï´Ù!");
+				conn.rollback(); // ì—ëŸ¬ ë°œìƒì‹œ, í˜„ì¬ íŠ¸ëœì­ì…˜ì˜ ë³€ê²½ ë‚´ì—­ì„ ì „ë¶€ ì·¨ì†Œ
+				System.out.println("ì˜ˆë§¤ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤!");
 			}
 			catch(SQLException se) {
 				se.printStackTrace();
@@ -276,65 +299,65 @@ public class MovieDAO {
 		}
 	}
 
-	// ¿¬·É Á¦ÇÑ È®ÀÎ
+	// ì—°ë ¹ ì œí•œ í™•ì¸
 	public int checkAge(ReservationVO vo) {
-		int check = 0; // ¹İÈ¯ÇÒ °ªÀ» ´ãÀ» int º¯¼ö ¼±¾ğÇÏ°í 0À¸·Î ÃÊ±âÈ­
-		int me_age = Integer.parseInt(getInfo(vo, "me_age")); // È¸¿øÀÇ ³ªÀÌ °¡Á®¿À±â
-		int mo_ban = Integer.parseInt(getInfo(vo, "mo_ban")); // ¿µÈ­ÀÇ °ü¶÷°¡ °¡Á®¿À±â
+		int check = 0; // ë°˜í™˜í•  ê°’ì„ ë‹´ì„ int ë³€ìˆ˜ ì„ ì–¸í•˜ê³  0ìœ¼ë¡œ ì´ˆê¸°í™”
+		int me_age = Integer.parseInt(getInfo(vo, "me_age")); // íšŒì›ì˜ ë‚˜ì´ ê°€ì ¸ì˜¤ê¸°
+		int mo_ban = Integer.parseInt(getInfo(vo, "mo_ban")); // ì˜í™”ì˜ ê´€ëŒê°€ ê°€ì ¸ì˜¤ê¸°
 
-		if(me_age>=mo_ban) { // È¸¿øÀÇ ³ªÀÌ°¡ ¿µÈ­ÀÇ °ü¶÷°¡ ÀÌ»óÀÎ °æ¿ì
-			check = 1; // 1 ¹İÈ¯ 
+		if(me_age>=mo_ban) { // íšŒì›ì˜ ë‚˜ì´ê°€ ì˜í™”ì˜ ê´€ëŒê°€ ì´ìƒì¸ ê²½ìš°
+			check = 1; // 1 ë°˜í™˜ 
 		}
-		else { // È¸¿øÀÇ ³ªÀÌ°¡ ¿µÈ­ÀÇ °ü¶÷°¡ ¹Ì¸¸ÀÎ °æ¿ì
-			System.out.println("ÇØ´ç ¿µÈ­´Â "+mo_ban+"¼¼ ÀÌ»ó °ü¶÷°¡ÀÔ´Ï´Ù!"); // ÃÊ±â°ª(=0) ¹İÈ¯ÇÏ°í ÇØ´ç ¿µÈ­ÀÇ °ü¶÷°¡¸¦ Ãâ·Â
+		else { // íšŒì›ì˜ ë‚˜ì´ê°€ ì˜í™”ì˜ ê´€ëŒê°€ ë¯¸ë§Œì¸ ê²½ìš°
+			System.out.println("í•´ë‹¹ ì˜í™”ëŠ” "+mo_ban+"ì„¸ ì´ìƒ ê´€ëŒê°€ì…ë‹ˆë‹¤!"); // ì´ˆê¸°ê°’(=0) ë°˜í™˜í•˜ê³  í•´ë‹¹ ì˜í™”ì˜ ê´€ëŒê°€ë¥¼ ì¶œë ¥
 		}
 
 		return check;
 	}
 
-	// ÀÜ¿© ÁÂ¼® ¼ö È®ÀÎ
+	// ì”ì—¬ ì¢Œì„ ìˆ˜ í™•ì¸
 	public int checkSeats(ReservationVO vo) {
-		int check = 0; // ¹İÈ¯ÇÒ °ªÀ» ´ãÀ» int º¯¼ö ¼±¾ğÇÏ°í 0À¸·Î ÃÊ±âÈ­
-		int mo_seats = Integer.parseInt(getInfo(vo, "mo_seats")); // ¿µÈ­ÀÇ ÀÜ¿© ÁÂ¼® ¼ö °¡Á®¿À±â
+		int check = 0; // ë°˜í™˜í•  ê°’ì„ ë‹´ì„ int ë³€ìˆ˜ ì„ ì–¸í•˜ê³  0ìœ¼ë¡œ ì´ˆê¸°í™”
+		int mo_seats = Integer.parseInt(getInfo(vo, "mo_seats")); // ì˜í™”ì˜ ì”ì—¬ ì¢Œì„ ìˆ˜ ê°€ì ¸ì˜¤ê¸°
 
-		if(mo_seats>=vo.getRe_seats()) { // ¿µÈ­ÀÇ ÀÜ¿© ÁÂ¼® ¼ö°¡ ¿¹¸ÅÇÏ·Á´Â ÁÂ¼® ¼ö ÀÌ»óÀÎ °æ¿ì
-			check=1; // 1 ¹İÈ¯
+		if(mo_seats>=vo.getRe_seats()) { // ì˜í™”ì˜ ì”ì—¬ ì¢Œì„ ìˆ˜ê°€ ì˜ˆë§¤í•˜ë ¤ëŠ” ì¢Œì„ ìˆ˜ ì´ìƒì¸ ê²½ìš°
+			check=1; // 1 ë°˜í™˜
 		}
-		else if(mo_seats==0) { // ¿µÈ­ÀÇ ÀÜ¿© ÁÂ¼® ¼ö°¡ 0ÀÎ °æ¿ì
-			System.out.println(getMovieOneLine(vo)+"Àº/´Â ÇöÀç Àü ÁÂ¼®ÀÌ ¸ÅÁøµÇ¾ú½À´Ï´Ù!"); // ÃÊ±â°ª(=0) ¹İÈ¯ÇÏ°í ¸ÅÁøµÇ¾ú´Ù°í Ãâ·Â
+		else if(mo_seats==0) { // ì˜í™”ì˜ ì”ì—¬ ì¢Œì„ ìˆ˜ê°€ 0ì¸ ê²½ìš°
+			System.out.println(getMovieOneLine(vo)+"ì€/ëŠ” í˜„ì¬ ì „ ì¢Œì„ì´ ë§¤ì§„ë˜ì—ˆìŠµë‹ˆë‹¤!"); // ì´ˆê¸°ê°’(=0) ë°˜í™˜í•˜ê³  ë§¤ì§„ë˜ì—ˆë‹¤ê³  ì¶œë ¥
 		}
-		else { // ¿µÈ­ÀÇ ÀÜ¿© ÁÂ¼® ¼ö°¡ ¿¹¸ÅÇÏ·Á´Â ÁÂ¼® ¼ö ¹Ì¸¸ÀÎ °æ¿ì
-			System.out.println(getMovieOneLine(vo)+"Àº/´Â ÇöÀç ÃÖ´ë "+mo_seats+"¼®¸¸ ¿¹¸Å °¡´ÉÇÕ´Ï´Ù!"); // ÃÊ±â°ª(=0) ¹İÈ¯ÇÏ°í ¿¹¸Å °¡´ÉÇÑ ÁÂ¼® ¼ö¸¦ Ãâ·Â
+		else { // ì˜í™”ì˜ ì”ì—¬ ì¢Œì„ ìˆ˜ê°€ ì˜ˆë§¤í•˜ë ¤ëŠ” ì¢Œì„ ìˆ˜ ë¯¸ë§Œì¸ ê²½ìš°
+			System.out.println(getMovieOneLine(vo)+"ì€/ëŠ” í˜„ì¬ ìµœëŒ€ "+mo_seats+"ì„ë§Œ ì˜ˆë§¤ ê°€ëŠ¥í•©ë‹ˆë‹¤!"); // ì´ˆê¸°ê°’(=0) ë°˜í™˜í•˜ê³  ì˜ˆë§¤ ê°€ëŠ¥í•œ ì¢Œì„ ìˆ˜ë¥¼ ì¶œë ¥
 		}
 
 		return check;
 	}
 
-	// ¿µÈ­ Á¦¸ñ°ú »ó¿µ ³¯Â¥, ½Ã°£À» ÇÑ ÁÙ·Î ¹İÈ¯
+	// ì˜í™” ì œëª©ê³¼ ìƒì˜ ë‚ ì§œ, ì‹œê°„ì„ í•œ ì¤„ë¡œ ë°˜í™˜
 	public String getMovieOneLine(ReservationVO vo) {
 		String mo_title = getInfo(vo, "mo_title");
 		String mo_date = getInfo(vo, "mo_date");
 		String mo_time = getInfo(vo, "mo_time");
-		return mo_title+" ("+mo_date.substring(5,10)+" "+mo_time.substring(0,2)+"½Ã »ó¿µ) ";
+		return mo_title+" ("+mo_date.substring(5,10)+" "+mo_time.substring(0,2)+"ì‹œ ìƒì˜) ";
 	}
 
-	// PRIMARY KEY·Î Æ¯Á¤ ÄÃ·³ÀÇ °ª °¡Á®¿À±â
-	public String getInfo(ReservationVO vo, String whichcol) { // PRIMARY KEY°¡ ´ã±ä ReservationVO °´Ã¼¿Í, °ª °¡Á®¿Ã ÄÃ·³¸íÀ» ÀÎÀÚ·Î ¹ŞÀ½
-		String info = ""; // ¹İÈ¯ÇÒ °ªÀ» ´ãÀ» String º¯¼ö¸¦ ¼±¾ğÇÏ°í ºó ¹®ÀÚ¿­·Î ÃÊ±âÈ­
+	// PRIMARY KEYë¡œ íŠ¹ì • ì»¬ëŸ¼ì˜ ê°’ ê°€ì ¸ì˜¤ê¸°
+	public String getInfo(ReservationVO vo, String whichcol) { // PRIMARY KEYê°€ ë‹´ê¸´ ReservationVO ê°ì²´ì™€, ê°’ ê°€ì ¸ì˜¬ ì»¬ëŸ¼ëª…ì„ ì¸ìë¡œ ë°›ìŒ
+		String info = ""; // ë°˜í™˜í•  ê°’ì„ ë‹´ì„ String ë³€ìˆ˜ë¥¼ ì„ ì–¸í•˜ê³  ë¹ˆ ë¬¸ìì—´ë¡œ ì´ˆê¸°í™”
 		
 		String whichtab = "dual";
 		int whichnum = 0;
-		if(whichcol.startsWith("me_")) { // °ª °¡Á®¿Ã ÄÃ·³¸íÀÌ me_·Î ½ÃÀÛÇÏ´Â °æ¿ì
-			whichtab = "m_member"; // ÇØ´ç ÄÃ·³Àº m_member Å×ÀÌºí¿¡ Á¸Àç
-			whichnum = vo.getMe_num(); // ÇØ´ç Å×ÀÌºíÀÇ PRIMARY KEY´Â me_num
+		if(whichcol.startsWith("me_")) { // ê°’ ê°€ì ¸ì˜¬ ì»¬ëŸ¼ëª…ì´ me_ë¡œ ì‹œì‘í•˜ëŠ” ê²½ìš°
+			whichtab = "m_member"; // í•´ë‹¹ ì»¬ëŸ¼ì€ m_member í…Œì´ë¸”ì— ì¡´ì¬
+			whichnum = vo.getMe_num(); // í•´ë‹¹ í…Œì´ë¸”ì˜ PRIMARY KEYëŠ” me_num
 		}
-		else if(whichcol.startsWith("mo_")) { // °ª °¡Á®¿Ã ÄÃ·³¸íÀÌ mo_·Î ½ÃÀÛÇÏ´Â °æ¿ì
-			whichtab = "m_movie"; // ÇØ´ç ÄÃ·³Àº m_movie Å×ÀÌºí¿¡ Á¸Àç
-			whichnum = vo.getMo_num(); // ÇØ´ç Å×ÀÌºíÀÇ PRIMARY KEY´Â mo_num
+		else if(whichcol.startsWith("mo_")) { // ê°’ ê°€ì ¸ì˜¬ ì»¬ëŸ¼ëª…ì´ mo_ë¡œ ì‹œì‘í•˜ëŠ” ê²½ìš°
+			whichtab = "m_movie"; // í•´ë‹¹ ì»¬ëŸ¼ì€ m_movie í…Œì´ë¸”ì— ì¡´ì¬
+			whichnum = vo.getMo_num(); // í•´ë‹¹ í…Œì´ë¸”ì˜ PRIMARY KEYëŠ” mo_num
 		}
-		else if(whichcol.startsWith("re_")) { // °ª °¡Á®¿Ã ÄÃ·³¸íÀÌ re_·Î ½ÃÀÛÇÏ´Â °æ¿ì
-			whichtab = "m_reservation"; // ÇØ´ç ÄÃ·³Àº m_reservation Å×ÀÌºí¿¡ Á¸Àç
-			whichnum = vo.getRe_num(); // ÇØ´ç Å×ÀÌºíÀÇ PRIMARY KEY´Â re_num
+		else if(whichcol.startsWith("re_")) { // ê°’ ê°€ì ¸ì˜¬ ì»¬ëŸ¼ëª…ì´ re_ë¡œ ì‹œì‘í•˜ëŠ” ê²½ìš°
+			whichtab = "m_reservation"; // í•´ë‹¹ ì»¬ëŸ¼ì€ m_reservation í…Œì´ë¸”ì— ì¡´ì¬
+			whichnum = vo.getRe_num(); // í•´ë‹¹ í…Œì´ë¸”ì˜ PRIMARY KEYëŠ” re_num
 		}
 		
 		Connection conn = null;
@@ -344,12 +367,12 @@ public class MovieDAO {
 
 		try {
 			conn = DBUtil.getConnection();
-			sql = "SELECT " + whichcol + " FROM " + whichtab + " WHERE " + whichcol.substring(0,3) + "num=?"; // ÀÔ·ÂÇÑ ÄÃ·³¸í¿¡ ¾Ë¸ÂÀº Å×ÀÌºí¸í°ú PRIMARY KEY¸¦ ÀÌ¿ëÇÏ¿© ÇØ´ç ÄÃ·³ÀÇ °ªÀ» Á¶È¸
+			sql = "SELECT " + whichcol + " FROM " + whichtab + " WHERE " + whichcol.substring(0,3) + "num=?"; // ì…ë ¥í•œ ì»¬ëŸ¼ëª…ì— ì•Œë§ì€ í…Œì´ë¸”ëª…ê³¼ PRIMARY KEYë¥¼ ì´ìš©í•˜ì—¬ í•´ë‹¹ ì»¬ëŸ¼ì˜ ê°’ì„ ì¡°íšŒ
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, whichnum);
 			rs = pstmt.executeQuery();
-			if(rs.next()) { // PRIMARY KEY¸¦ ÀÌ¿ëÇÑ SELECT¹® °á°ú´Â ÃÖ´ë ÇÑ °Ç¸¸ ¹İÈ¯µÊ
-				info = rs.getString(1); // ¸ğµç ÄÃ·³ÀÌ NUMBER È¤Àº VARCHAR2ÀÌ¹Ç·Î, µÎ ÀÚ·áÇü ¸ğµÎ °¡Á®¿Ã ¼ö ÀÖµµ·Ï getString() ¸Ş¼­µå »ç¿ë
+			if(rs.next()) { // PRIMARY KEYë¥¼ ì´ìš©í•œ SELECTë¬¸ ê²°ê³¼ëŠ” ìµœëŒ€ í•œ ê±´ë§Œ ë°˜í™˜ë¨
+				info = rs.getString(1); // ëª¨ë“  ì»¬ëŸ¼ì´ NUMBER í˜¹ì€ VARCHAR2ì´ë¯€ë¡œ, ë‘ ìë£Œí˜• ëª¨ë‘ ê°€ì ¸ì˜¬ ìˆ˜ ìˆë„ë¡ getString() ë©”ì„œë“œ ì‚¬ìš©
 			}
 		}
 		catch(Exception e) {
@@ -362,204 +385,169 @@ public class MovieDAO {
 		return info;
 	}
 	
-	// ¿¹¸Å ³»¿ª È®ÀÎÇÏ±â
-	public void selectListReservation() { // ÀüÃ¼ ¿¹¸Å ³»¿ª
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = null;
-		
-		try {
-			conn = DBUtil.getConnection();
-			sql = "SELECT re_num, me_num, mo_num, mo_title, mo_date, mo_time, re_seats FROM m_reservation "
-				+ "JOIN m_member USING(me_num) JOIN m_movie USING(mo_num) "
-				+ "ORDER BY re_num DESC";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			System.out.println("=========================================================================");
-			System.out.println("¿¹¸Å ¹øÈ£\tÈ¸¿ø ¹øÈ£\t¿µÈ­ ¹øÈ£\t¿µÈ­ Á¦¸ñ\t\t»ó¿µ ³¯Â¥\t\t»ó¿µ ½Ã°£\t¿¹¸Å ÁÂ¼® ¼ö");
-			System.out.println("=========================================================================");
-			while(rs.next()) {
-				System.out.print(rs.getInt("re_num")+"\t");
-				System.out.print(rs.getInt("me_num")+"\t");
-				System.out.print(rs.getInt("mo_num")+"\t");
-				String mo_title = rs.getString("mo_title"); // ¿µÈ­ Á¦¸ñÀÌ ³Ê¹« ±æ¸é ¸»ÁÙÀÓÇ¥ Ã³¸®ÇÏ±â À§ÇØ º¯¼ö ¼±¾ğ
-				if(mo_title.length()>6+6) {
-					System.out.print(mo_title.substring(0,4+6)+"..\t");
-				}
-				else if(mo_title.length()>6) {
-					System.out.print(mo_title+"\t");
-				}
-				else {
-					System.out.print(mo_title+"\t\t");
-				}
-				System.out.print(rs.getString("mo_date")+"\t");
-				System.out.print(rs.getString("mo_time").substring(0,5)+"\t"); // ÃÊ ´ÜÀ§ »ı·«
-				int re_seats = rs.getInt("re_seats");
-				if(re_seats==0) {
-					System.out.println("¿¹¸Å Ãë¼Ò");
-				}
-				else {
-					System.out.println(re_seats);
-				}
-			}
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-		finally {
-			DBUtil.executeClose(rs, pstmt, conn);
-		}
-	}
-	public void selectListReservation(int me_num) { // ³» ¿¹¸Å ³»¿ª
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = null;
-		
-		try {
-			conn = DBUtil.getConnection();
-			sql = "SELECT re_num, mo_num, mo_title, mo_date, mo_time, re_seats FROM m_reservation "
-				+ "JOIN m_member USING(me_num) JOIN m_movie USING(mo_num) "
-				+ "WHERE me_num=? ORDER BY re_num DESC";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, me_num);
-			rs = pstmt.executeQuery();
-			System.out.println("=================================================================");
-			System.out.println("¿¹¸Å ¹øÈ£\t¿µÈ­ ¹øÈ£\t¿µÈ­ Á¦¸ñ\t\t»ó¿µ ³¯Â¥\t\t»ó¿µ ½Ã°£\t¿¹¸Å ÁÂ¼® ¼ö");
-			System.out.println("=================================================================");
-			while(rs.next()) {
-				System.out.print(rs.getInt("re_num")+"\t");
-				System.out.print(rs.getInt("mo_num")+"\t");
-				String mo_title = rs.getString("mo_title"); // ¿µÈ­ Á¦¸ñÀÌ ³Ê¹« ±æ¸é ¸»ÁÙÀÓÇ¥ Ã³¸®ÇÏ±â À§ÇØ º¯¼ö ¼±¾ğ
-				if(mo_title.length()>6+6) {
-					System.out.print(mo_title.substring(0,4+6)+"..\t");
-				}
-				else if(mo_title.length()>6) {
-					System.out.print(mo_title+"\t");
-				}
-				else {
-					System.out.print(mo_title+"\t\t");
-				}
-				System.out.print(rs.getString("mo_date")+"\t");
-				System.out.print(rs.getString("mo_time").substring(0,5)+"\t"); // ÃÊ ´ÜÀ§ »ı·«
-				int re_seats = rs.getInt("re_seats");
-				if(re_seats==0) {
-					System.out.println("¿¹¸Å Ãë¼Ò");
-				}
-				else {
-					System.out.println(re_seats);
-				}
-			}
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-		finally {
-			DBUtil.executeClose(rs, pstmt, conn);
-		}
-	}
-
-	// ¿¹¸Å Á¤º¸ È®ÀÎ
-	public void reservationCheck(int me_num) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = null;
-
-		try {
-			conn = DBUtil.getConnection();
-			sql = "SELECT re_num,me_num,mo_date,mo_time,re_seats FROM m_reservation "
-					+ "JOIN m_movie USING(mo_num)"
-					+ "JOIN m_member USING(me_num) WHERE me_num=? "
-					+ "ORDER BY re_num DESC";
-			pstmt=conn.prepareStatement(sql);      
-			pstmt.setInt(1, me_num);
-			rs=pstmt.executeQuery();
-			System.out.println("=========================");
-			System.out.println("¿¹¸Å¹øÈ£\t¿µÈ­¹øÈ£\t¿µÈ­Á¦¸ñ\t»ó¿µ³¯Â¥\t»ó¿µ½Ã°£\tÁÂ¼®");
-			System.out.println("=========================");
-			while(rs.next()) {
-				System.out.print(rs.getInt("re_num")+"\t");
-				System.out.print(rs.getInt("me_num")+"\t");
-				System.out.print(rs.getString("mo_date")+"\t");
-				System.out.print(rs.getString("mo_time")+"\t");
-				System.out.println(rs.getInt("re_seats"));
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			DBUtil.executeClose(rs, pstmt,conn);
-		}
-	}
 	
-	// ¿¹¸Å Ãë¼ÒÇÏ±â
-	public void cancelReservation(ReservationVO vo) {
-		Connection conn = null;
-		PreparedStatement pstmt_m = null;
-		PreparedStatement pstmt_r = null;
-		String sql_m = null;
-		String sql_r = null;
-		
-		try {
-			conn = DBUtil.getConnection();
-			conn.setAutoCommit(false);
-			sql_m = "UPDATE m_movie SET mo_seats=mo_seats+? WHERE mo_num=?";
-			pstmt_m = conn.prepareStatement(sql_m);
-			pstmt_m.setInt(1, vo.getRe_seats());
-			pstmt_m.setInt(2, vo.getMo_num());
-			pstmt_m.executeUpdate();
-			sql_r = "UPDATE m_reservation SET re_seats=0 WHERE re_num=?";
-			pstmt_r = conn.prepareStatement(sql_r);
-			pstmt_r.setInt(1, vo.getRe_num());
-			pstmt_r.executeUpdate();
-			conn.commit();
-			System.out.println(getMovieOneLine(vo)+"ÀÇ ¿¹¸Å¸¦ Ãë¼ÒÇÏ¿´½À´Ï´Ù.");
-		}
-		catch(Exception e) {
-			e.printStackTrace();
+	// ì˜ˆë§¤ ì •ë³´ í™•ì¸
+	   public void reservationCheck(int me_num) {
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	      String sql = null;
+
+	      try {
+	         conn = DBUtil.getConnection();
+	         sql = "SELECT re_num,me_num,mo_title,mo_date,mo_time,re_seats FROM m_reservation "
+	            + "JOIN m_movie USING(mo_num)"
+	            + "JOIN m_member USING(me_num) WHERE me_num=? "
+	            + "ORDER BY re_num DESC";
+	         pstmt=conn.prepareStatement(sql);      
+	         pstmt.setInt(1, me_num);
+	         rs=pstmt.executeQuery();
+	         System.out.println("===========================================================");
+	         System.out.println("ì˜ˆë§¤ ë²ˆí˜¸\tì˜í™” ë²ˆí˜¸\tì˜í™” ì œëª©\t\tìƒì˜ ë‚ ì§œ\t\tìƒì˜ ì‹œê°„\tì¢Œì„");
+	         System.out.println("===========================================================");
+	         while(rs.next()) {
+	            System.out.print(rs.getInt("re_num")+"\t");
+	            System.out.print(rs.getInt("me_num")+"\t");
+	            String mo_title = rs.getString("mo_title"); // ì˜í™” ì œëª©ì´ ë„ˆë¬´ ê¸¸ë©´ ë§ì¤„ì„í‘œ ì²˜ë¦¬í•˜ê¸° ìœ„í•´ ë³€ìˆ˜ ì„ ì–¸
+	            if(mo_title.length()>6+6) {
+	            	System.out.print(mo_title.substring(0, 6+6-2)+"..\t");
+	            }
+	            else if(mo_title.length()>6) {
+	            	System.out.print(mo_title+"\t");
+	            }
+	            else {
+	            	System.out.print(mo_title+"\t\t");
+	            }
+	            System.out.print(rs.getString("mo_date")+"\t");
+	            System.out.print(rs.getString("mo_time")+"\t");
+	            int re_seats = rs.getInt("re_seats"); // ì˜ˆë§¤ ì¢Œì„ ìˆ˜ê°€ 0ì¸ ê²½ìš° ì˜ˆë§¤ ì·¨ì†Œë¼ê³  ì¶œë ¥í•˜ê¸° ìœ„í•´ ë³€ìˆ˜ ì„ ì–¸
+	            if(re_seats==0) {
+	            	System.out.println("ì˜ˆë§¤ ì·¨ì†Œ");
+	            }
+	            else {
+	            	System.out.println(re_seats);
+	            }
+	         }
+	      }catch(Exception e) {
+	         e.printStackTrace();
+	      }finally {
+	         DBUtil.executeClose(rs, pstmt,conn);
+	      }
+	   }
+	  public void reservationCheck() {
+		  Connection conn =null;
+		  PreparedStatement pstmt = null;
+		  String sql = null;
+		  ResultSet rs = null;
+		  try {
+			  conn = DBUtil.getConnection();
+			  sql = "SELECT re_num,mo_title,mo_date,mo_time,mo_ban,me_name,me_age "
+			  		+ "FROM m_reservation JOIN m_member USING(me_num)"
+			  		+ "JOIN m_movie USING(mo_num)";
+			  pstmt = conn.prepareStatement(sql);
+			  rs = pstmt.executeQuery();
+			  System.out.println("=======================================================================");
+			  System.out.println("ì˜ˆë§¤ ë²ˆí˜¸\tì˜í™” ì œëª©\t\tìƒì˜ ë‚ ì§œ\t\tìƒì˜ ì‹œê°„\tê´€ëŒê°€\tì˜ˆë§¤ìëª…\tì˜ˆë§¤ì ë‚˜ì´");
+			  System.out.println("=======================================================================");
+			  while(rs.next()) {
+				  System.out.print(rs.getInt("re_num")+"\t");
+				  String mo_title = rs.getString("mo_title"); // ì˜í™” ì œëª©ì´ ë„ˆë¬´ ê¸¸ë©´ ë§ì¤„ì„í‘œ ì²˜ë¦¬í•˜ê¸° ìœ„í•´ ë³€ìˆ˜ ì„ ì–¸
+				  if(mo_title.length()>6+6) {
+					  System.out.print(mo_title.substring(0, 6+6-2)+"..\t");
+				  }
+				  else if(mo_title.length()>6) {
+					  System.out.print(mo_title+"\t");
+				  }
+				  else {
+					  System.out.print(mo_title+"\t\t");
+				  }
+				  System.out.print(rs.getString("mo_date")+"\t");
+				  System.out.print(rs.getString("mo_time")+"\t");
+					int mo_ban = rs.getInt("mo_ban"); // ì—°ë ¹ ì œí•œ 0ì¸ ê²½ìš° ì „ì—°ë ¹ì´ë¼ê³  ì¶œë ¥í•˜ê¸° ìœ„í•´ ë³€ìˆ˜ ì„ ì–¸
+					if(mo_ban==0) {
+						System.out.print("ì „ì—°ë ¹\t");
+					}
+					else {
+						System.out.print(mo_ban + "\t");
+					}
+				  System.out.print(rs.getString("me_name")+"\t");
+				  System.out.println(rs.getInt("me_age"));
+			  }
+		  }catch(Exception e) {
+			  e.printStackTrace();
+		  }finally {
+			  DBUtil.executeClose(rs, pstmt, conn);
+		  }
+	  }
+
+		// ì˜ˆë§¤ ì·¨ì†Œí•˜ê¸°
+		public void cancelReservation(ReservationVO vo) {
+			Connection conn = null;
+			PreparedStatement pstmt_m = null;
+			PreparedStatement pstmt_r = null;
+			String sql_m = null;
+			String sql_r = null;
+			
 			try {
-				conn.rollback();
+				conn = DBUtil.getConnection();
+				conn.setAutoCommit(false);
+				sql_m = "UPDATE m_movie SET mo_seats=mo_seats+? WHERE mo_num=?";
+				pstmt_m = conn.prepareStatement(sql_m);
+				pstmt_m.setInt(1, vo.getRe_seats());
+				pstmt_m.setInt(2, vo.getMo_num());
+				pstmt_m.executeUpdate();
+				sql_r = "UPDATE m_reservation SET re_seats=0 WHERE re_num=?";
+				pstmt_r = conn.prepareStatement(sql_r);
+				pstmt_r.setInt(1, vo.getRe_num());
+				pstmt_r.executeUpdate();
+				conn.commit();
+				System.out.println(getMovieOneLine(vo)+"ì˜ ì˜ˆë§¤ë¥¼ ì·¨ì†Œí•˜ì˜€ìŠµë‹ˆë‹¤.");
 			}
-			catch(SQLException se) {
-				se.printStackTrace();
+			catch(Exception e) {
+				e.printStackTrace();
+				try {
+					conn.rollback();
+				}
+				catch(SQLException se) {
+					se.printStackTrace();
+				}
 			}
-		}
-		finally {
-			DBUtil.executeClose(null, pstmt_m, null);
-			DBUtil.executeClose(null, pstmt_r, conn);
-		}
-	}
-	
-	// 1°ÇÀÇ ¿¹¾à Á¤º¸°¡ ´ã±ä ReservationVO °´Ã¼ ¹İÈ¯ÇÏ±â
-	public ReservationVO getReservationVO(int re_num) {
-		ReservationVO vo = new ReservationVO();
-		vo.setRe_num(re_num);
-		
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = null;
-		
-		try {
-			conn = DBUtil.getConnection();
-			sql = "SELECT * FROM m_reservation WHERE re_num=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, re_num);
-			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				vo.setMe_num(rs.getInt("me_num"));
-				vo.setMo_num(rs.getInt("mo_num"));
-				vo.setRe_seats(rs.getInt("re_seats"));
+			finally {
+				DBUtil.executeClose(null, pstmt_m, null);
+				DBUtil.executeClose(null, pstmt_r, conn);
 			}
 		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-		finally {
-			DBUtil.executeClose(rs, pstmt, conn);
-		}
 		
-		return vo;
-	}
+		// 1ê±´ì˜ ì˜ˆì•½ ì •ë³´ê°€ ë‹´ê¸´ ReservationVO ê°ì²´ ë°˜í™˜í•˜ê¸°
+		public ReservationVO getReservationVO(int re_num) {
+			ReservationVO vo = new ReservationVO();
+			vo.setRe_num(re_num);
+			
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String sql = null;
+			
+			try {
+				conn = DBUtil.getConnection();
+				sql = "SELECT * FROM m_reservation WHERE re_num=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, re_num);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					vo.setMe_num(rs.getInt("me_num"));
+					vo.setMo_num(rs.getInt("mo_num"));
+					vo.setRe_seats(rs.getInt("re_seats"));
+				}
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+				DBUtil.executeClose(rs, pstmt, conn);
+			}
+			
+			return vo;
+		}
 }
+	
