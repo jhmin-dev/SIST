@@ -4,6 +4,7 @@ public class MovieVO {
 	private int mo_num;
 	private String mo_title;
 	private String mo_date;
+	private String mo_time;
 	private int mo_seats;
 	private int mo_ban;
 
@@ -24,6 +25,12 @@ public class MovieVO {
 	}
 	public void setMo_date(String mo_date) {
 		this.mo_date = mo_date;
+	}
+	public String getMo_time() {
+		return mo_time;
+	}
+	public void setMo_time(String mo_time) {
+		this.mo_time = mo_time;
 	}
 	public int getMo_seats() {
 		return mo_seats;

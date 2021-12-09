@@ -25,16 +25,14 @@ public class MemberMain {
 		}
 	}
 	
-	public void callMenu() throws IOException {		
-		// 로그인 건너뛰고 예매하기 위해 임시로 값 설정
+	public void callMenu() throws IOException {
 		while(true) {
-			System.out.print("1.로그인, 2.회원가입, 3.종료");
+			System.out.print("1.로그인, 2.회원 가입, 3.종료");
 			try {
 				int no = Integer.parseInt(br.readLine());
-				if(no == 1) {
+				if(no==1) { // 로그인
 					System.out.print("아이디:");
 					String me_id = br.readLine();
-
 					System.out.print("비밀번호");
 					String me_passwd = br.readLine();
 
@@ -46,11 +44,10 @@ public class MemberMain {
 					}
 					System.out.println("아이디 또는 비밀번호가 불일치합니다.");
 
-				}else if (no ==2) {
+				}else if (no ==2) { // 회원 가입
 					System.out.print("아이디 입력>");
 					String me_id = br.readLine();
 					int count = dao.checkId(me_id);
-
 					if(count ==1) {
 						System.out.println("아이디가 중복되었습니다.");
 						continue;
@@ -71,12 +68,10 @@ public class MemberMain {
 					vo.setMe_name(me_name);
 					vo.setMe_Age(me_age);
 					vo.setMe_phone(me_phone);
-					dao.insertMember(vo);
-					
-				}else if(no==3) {
-					System.out.println("프로그램 종료");
+					dao.insertMember(vo);					
+				}else if(no==3) { // 종료
+					System.out.println("프로그램을 종료합니다.");
 					break;
-
 				}else {
 					System.out.println("잘못 입력했습니다");
 				}
@@ -91,7 +86,7 @@ public class MemberMain {
 				int menu=Integer.parseInt(br.readLine());
 				if(menu==1) {
 					System.out.println("상영시간표");
-					// dao.selectListMovie();
+					dao.selectListMovie();
 					ReservationVO vo = new ReservationVO();
 					vo.setMe_num(me_num);
 					System.out.println("예매할 영화 번호를 입력하세요.");
@@ -101,14 +96,19 @@ public class MemberMain {
 						continue;
 					}
 					while(true) {
-						System.out.println("예매할 영화 좌석 수(1~4)를 입력하세요.");
+						System.out.println("예매할 좌석 수를 입력하세요. 1인에서 4인까지의 자리를 예매할 수 있습니다.");
 						System.out.print("좌석 수 > ");
 						int re_seats=Integer.parseInt(br.readLine());
 						if(re_seats<=4 && re_seats>=1) {
 							vo.setRe_seats(re_seats);
 							break;
 						}
-						System.out.println("한 번에 1~4인 좌석만 예매 가능합니다.");
+						else if(re_seats>4) {
+							System.out.println("한 번에 최대 4자리까지만 예매 가능합니다!");
+						}
+						else {
+							System.out.println("예매할 좌석 수는 적어도 1자리 이상이어야 합니다!");
+						}
 					}
 					if(dao.checkSeats(vo)!=1) {
 						continue;
@@ -116,18 +116,30 @@ public class MemberMain {
 					dao.reserve(vo);
 				}
 				else if(menu==2) {
-					System.out.println("예매 정보 보기");
-					dao.reservationCheck(me_num);
+					dao.selectListReservation(me_num);
 				}
 				else if(menu==3) {
-					System.out.println("예매 취소하기");
+					dao.selectListReservation(me_num);
+					System.out.println("취소하려는 예매의 번호를 입력하세요.");
+					System.out.print("예매 번호 > ");
+					int re_num = Integer.parseInt(br.readLine());
+					ReservationVO vo = dao.getReservationVO(re_num);
+					if(vo.getMe_num()!=me_num) {
+						System.out.println("예매 번호를 잘못 입력했습니다.");
+						continue;
+					}
+					if(vo.getRe_seats()==0) {
+						System.out.println("이미 취소한 예매 내역입니다.");
+						continue;
+					}
+					dao.cancelReservation(vo);
 				}
 				else if(menu==4) {
 					System.out.println("프로그램을 종료합니다.");
 					break;
 				}
 				else {
-					throw new NumberFormatException();
+					throw new NumberFormatException(); // catch 블럭으로 이동
 				}
 			}
 			catch(NumberFormatException e) {

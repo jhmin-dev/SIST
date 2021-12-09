@@ -25,3 +25,11 @@ CREATE TABLE m_reservation(
 	re_seats NUMBER NOT NULL
 );
 CREATE SEQUENCE m_reservation_seq;
+
+-- √ ±‚»≠
+DROP TABLE m_reservation;
+DROP TABLE m_movie;
+DROP TABLE m_member;
+DROP SEQUENCE m_reservation_seq;
+DROP SEQUENCE m_movie_seq;
+DROP SEQUENCE m_member_seq;
