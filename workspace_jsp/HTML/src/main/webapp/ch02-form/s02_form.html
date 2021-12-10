@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form</title>
+</head>
+<body>
+<form action="a.jsp" method="post">
+	<!-- 
+	fieldset : 외곽선을 만들어 form을 그룹핑하는 역할
+	legend : 제목 지정
+	 -->
+	<fieldset>
+		<legend>프로젝트 정보</legend>
+		<ul>
+			<li>
+				<!-- label : 입력 창 앞에 '아이디', '비밀번호'처럼 붙여 놓은 텍스트를 말함; label 태그를 사용하면 form 요소와 label 텍스트가 서로 연결되어 있다는 것을 브라우저가 알 수 있음 -->
+				<!-- 
+				autofocus : 페이지 로드시 포커스(=해당 input 태그에 커서를 위치시키는 것) 지원
+				required : 입력 필수 지정
+				 -->
+				<label for="writer">이름</label> <!-- for 속성에 (label 태그와 연결할) input 태그의 id 값을 명시 -->
+				<input type="text" name="username" id="writer" required autofocus> <!-- id 속성은 input 태그를 unique하게 식별하는 값을 가져야 함; 속성명에서 선택할 수 있는 속성값이 하나뿐인 경우 값 지정을 생략 가능 -->
+			</li>
+			<li>
+				<!-- 
+				range : 슬라이드 막대로 표시하는 숫자 필드; input 태그의 type에 명시하는 속성값을 필드라고 함
+				 -->
+				<label for="priority">중요도</label>
+				<input type="range" name="priority" id="priority" min="0" max="10" value="0"> <!-- 슬라이드로 선택한 값을 화면에 표시하려면 별도로 output 태그를 사용해야 함 -->
+			</li>
+			<li>
+				<!-- 
+				number : 숫자 필드
+				 -->
+				 <label for="hours">예상 시간</label>
+				 <input type="number" name="hours" id="hours" min="0" max="24"> <!-- min, max 속성을 주면 지정한 범위를 벗어나는 값을 입력할 수는 있어도 전송할 수는 없음 -->
+			</li>
+			<li>
+				<input type="submit" value="전송">
+			</li>
+		</ul>
+	</fieldset>
+</form>
+</body>
+</html>

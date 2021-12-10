@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블</title>
+</head>
+<body>
+<h3>th, td 태그의 사용 및 속성 지정</h3>
+<table border="1"> <!-- HTML5에서는 표 전체의 배경색을 지정하는 table 태그의 bgcolor 속성이 deprecated되었으므로, 표 전체의 배경색은 CSS로 처리해야 함 -->
+	<tr>
+		<th width="100">서울</th>
+		<th width="100">인천</th>
+		<th width="100">광주</th>
+	</tr>
+	<tr>
+		<td>왼쪽</td> <!-- 같은 열의 다른 셀에서 지정한 너비가 자동으로 적용됨; align의 기본값은 left -->
+		<td align="center">가운데</td>
+		<td align="right" bgcolor="#f3f3f3">오른쪽</td> <!-- bgcolor 속성으로 한 셀의 색 지정 가능 -->
+	</tr>
+	<tr>
+		<td height="100" valign="top">상단</td>
+		<td>중앙</td> <!-- 같은 행의 다른 셀에서 지정한 높이가 자동으로 적용됨; valign의 기본값은 middle -->
+		<td valign="bottom" background="../images/landscape.jpg">하단</td> <!-- background 속성으로 한 셀의 배경 이미지 지정 가능 -->
+	</tr>
+</table>
+
+<h3>셀 합치기</h3>
+<table border="1">
+	<tr>
+		<td width="100">1</td>
+		<td width="200" colspan="2">2, 3</td> <!-- 같은 행에서 셀을 합칠 때 colspan 사용 -->
+	</tr>
+	<tr>
+		<td rowspan="2">4, 7</td> <!-- 같은 열에서 셀을 합칠 때 rowspan 사용 -->
+		<td>5</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td>9</td>
+	</tr>
+</table>
+</body>
+</html>
