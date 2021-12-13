@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클래스 선택자</title>
+<style type="text/css">
+	.ft { /* 클래스 선택자는 클래스명 앞에 .을 붙임 */
+		color:slateblue;
+		background-color:lightcyan;
+	}
+	.sp {
+		font-size:30pt;
+	}
+</style>
+</head>
+<body>
+<div class="ft">오늘은 월요일</div> <!-- 복수의 태그에 동일한 클래스 선택자를 지정할 수 있음 -->
+<br>
+<span class="ft">내일은 화요일</span>
+<br>
+<p class="ft sp">비 오는 하루</p> <!-- 하나의 태그에 공백을 구분자로 하여 여러 개의 클래스를 적용할 수 있음 -->
+<br>
+<span class="sp">모레는 수요일</span>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그 선택자와 클래스 선택자의 연계</title>
+<style type="text/css">
+	.item {
+		color:lightsalmon;
+	}
+	.item2 {
+		color:crimson;
+	}
+	h1.item { /* h1 태그를 검색한 후, 여러 개의 h1 태그 중 item 클래스가 적용된 h1 태그를 검색; 태그 선택자와 클래스 선택자를 연계할 때는 선택자 사이에 공백이 없어야 함; 태그나 클래스 단독 선택자보다 우선순위가 높음 */
+		color:midnightblue;
+		background:skyblue;
+	}
+</style>
+</head>
+<body>
+<h1 class="item">하늘</h1>
+<h1 class="item2">바다</h1>
+<h1>별</h1>
+<span class="item">비행기</span>
+</body>
+</html>

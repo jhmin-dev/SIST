@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form</title>
+</head>
+<body>
+<form action="a.jsp" method="post">
+	<fieldset>
+		<legend>새 계정을 만듭니다.</legend>
+		<ul>
+			<li>
+				<!-- 
+				placeholder : 힌트(=입력 가이드) 기능; 모바일에서는 공간이 좁으므로 label 태그를 placeholder로 대체하기도 함
+				autocomplete : 자동 완성 기능; 기본값이 on이며, 해제해야 할 때 off로 값 지정; Chrome에서는 정상적으로 동작하지만 Edge에서는 off여도 자동 완성되는 문제가 있음
+				 -->
+				<label for="name">이름</label>
+				<input type="text" name="name" id="name" placeholder="이름 입력" autocomplete="off">
+			</li>
+			<li>
+				<label for="email">이메일</label>
+				<input type="email" name="email" id="email" placeholder="email@example.com">
+			</li>		
+			<li>
+				<label for="password">비밀번호</label>
+				<input type="password" name="password" id="password">
+			</li>
+			<li>
+				<input type="submit" value="가입">
+			</li>
+		</ul>
+	</fieldset>
+</form>
+</body>
+</html>

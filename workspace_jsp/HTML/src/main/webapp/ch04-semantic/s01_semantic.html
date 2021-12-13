@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본 구성</title>
+</head>
+<body>
+<!-- 
+semantic : '의미를 갖는다'는 뜻으로, 각 태그가 스스로 의미를 지닌다는 뜻
+
+header : 사이트에 대한 소개 정보나 메인 메뉴, 사이트 로고 등이 포함됨
+hgroup : 제목과 부제목을 묶는 역할
+nav : 사이트의 메뉴나 링크 같은 내비게이션 요소들이 포함됨
+section : 실제 문서 내용이 들어감
+article : 문서 내용이 많을 경우 여러 개의 <article> 요소로 나눌 수 있음
+aside : 문서의 주요 내용 외에 다른 내용들을 넣어 문서의 주 영역 주변에 배치; 부수적인 요소
+footer : 작성자 정보나 저작권 정보, 또는 문서 링크 등 부가 정보들을 담고 있음; 주로 문서 하단에 배치
+ -->
+<header> <!-- 머리말 -->
+	<hgroup> <!-- 제목과 부제목을 묶어주는 역할 -->
+		<h1>서울 고등학교 홈페이지</h1>
+		<h4>우리들만의 즐거운 공간</h4>
+	</hgroup>
+	<nav> <!-- 메뉴 -->
+		<ul>
+			<li><a href="1.html">1학년</a></li>
+			<li><a href="2.html">2학년</a></li>
+			<li><a href="3.html">3학년</a></li>
+		</ul>
+	</nav>
+</header>
+<section> <!-- 내용 -->
+	<header><h3>이 달의 인물</h3></header> <!-- 내용 중에서 머리말  -->
+	<article>
+		교내 영상제에서 <strong>최우수상</strong>을 받은 <mark>너굴</mark>을 만나봅니다.
+	</article>
+</section>
+<footer> <!-- 꼬리말 -->
+	<address>서울시 마포구 서교동</address>
+	&copy; 2021 서울 고등학교
+</footer>
+</body>
+</html>

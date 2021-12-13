@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form</title>
+</head>
+<body>
+<form action="a.jsp" method="post">
+	<fieldset>
+		<legend>label 테스트</legend>
+		<!-- 
+		<label> 태그를 이용해 라디오 버튼, 체크박스에 텍스트를 연결해 놓았다면 텍스트만 터치해도 라디오 버튼이나 체크박스가 선택되어 편리하게 사용 가능
+		 -->
+		<ul>
+			<li>
+				<input type="checkbox" name="score" value="korean">국어
+				<input type="checkbox" name="score" value="english">영어
+				<input type="radio" name="score" value="math">수학
+			</li>
+			<li>
+				<!-- label 영역 내의 텍스트 선택시, label 태그와 연결된 input 태그가 선택됨 -->
+				<label for="grm">
+					<input type="checkbox" name="a" value="grm" id="grm">문법
+				</label>
+			</li>
+			<li>
+				<!-- 암시적 연결 : input 태그를 label 태그로 감싸 연결 -->
+				<label>
+					<input type="checkbox" name="b" value="wr">작문
+				</label>
+			</li>
+			<li>
+				<!-- 명시적 연결 : label의 for 속성과 input의 id 속성에 동일한 값을 사용하여 연결 -->
+				<input type="radio" name="c" value="rc" id="rc">
+				<label for="rc">독해</label>
+			</li>
+		</ul>
+	</fieldset>
+</form>
+</body>
+</html>
