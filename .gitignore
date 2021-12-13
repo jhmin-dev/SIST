@@ -8,6 +8,8 @@
 *.class
 study db/
 sync/
+bin/
+lib/
 
 # Eclipse Metadata
 .metadata/

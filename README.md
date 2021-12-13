@@ -14,8 +14,18 @@
 		{
 			"target": "terminus_exec",
 			"cancel": "terminus_cancel_build",
-			"working_dir": "$folder",
+			"working_dir": "$file_path",
 			"shell_cmd": "javac -d . $file -encoding UTF-8 && java $file_base_name",
+			"selector": "source.java",
+		}
+		```
+		* `RunJavaProject.sublime-build` (to build Java packages within ST 4)
+		```json
+		{
+			"target": "terminus_exec",
+			"cancel": "terminus_cancel_build",
+			"working_dir": "$file_path",
+			"shell_cmd": "javac -d ../../bin -cp ../../lib/*;../../bin -encoding UTF-8 *.java && for %I in (.) do java -cp ../../lib/*;../../bin %~nxI.$file_base_name",
 			"selector": "source.java",
 		}
 		```
