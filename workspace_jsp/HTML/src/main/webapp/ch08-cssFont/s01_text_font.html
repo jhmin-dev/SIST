@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>font</title>
+<style type="text/css">
+/* 
+font-family
+serif : 명조 계열 글자체
+sans-serif : 고딕 계열 글자체
+cursive : 필기체
+fantasy : 장식이 되어 있는 글자체
+monospace : 일정한 공간으로 되어 있는 글자체
+
+font-style
+italic : 이탤릭체
+oblique : 기울임체; normal 상태의 글자를 단순히 기울여서 표현
+
+font-variant
+small-caps : 작은 대문자로 변환
+
+일괄 지정 font
+font:font-style값
+	font-weight값
+	font-variant값
+	font-size값/line-height값
+	font-family값
+예) .font {font:italic bold small-caps 30pt/50pt serif;}
+ */
+span {
+	font-family:serif;
+	font-size:20pt;
+	font-style:oblique;
+}
+p {
+	font:italic bold small-caps 30pt/50pt serif;
+}
+</style>
+</head>
+<body>
+	<span>서울에서 인천까지</span>
+	<p>Happy Sunday!!</p>
+	<div>Welcome! 환영합니다.</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>하위 선택자 또는 후손 선택자(descendant selector)</title>
+<style type="text/css">
+	body div { /* 공백을 결합자로 하위(후손) 선택자를 지정; body 태그 안에서 지정한 하위(후손) 태그인 div 태그와 일치하는 모든 태그를 선택함 */
+		border:3px solid peachpuff; /* 테두리 */
+	}
+</style>
+</head>
+<body>
+	<div> <!-- 선택됨 -->
+		<ul>
+			<li>사과</li>
+			<li>귤</li>
+			<li>바나나</li>
+			<li>토마토</li>
+			<li>배</li>
+		</ul>
+		<div>하늘</div> <!-- 선택됨 -->
+	</div>
+	<p>
+		<span>하하</span>
+	</p>
+</body>
+</html>

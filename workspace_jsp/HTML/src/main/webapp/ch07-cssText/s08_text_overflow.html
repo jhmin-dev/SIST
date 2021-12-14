@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>text-overflow</title>
+<style type="text/css">
+	div.div01 {
+		border:1px solid teal;
+		width:150px;
+		text-overflow:ellipsis; /* 영역을 벗어나 보이지 않는 내용이 있으면 말줄임표 표시 */
+		overflow:hidden; /* 영역 밖의 내용은 보이지 않게 처리 */
+		white-space:nowrap; /* 자동 줄바꿈 안 됨 */
+	}
+</style>
+</head>
+<body>
+	<div class="div01">
+	엘리먼트가 잘리거나 부모 엘리먼트의 너비 및 높이가 내용을 다 보여줄 만큼 크지 않으면 엘리먼트가 잘리거나 부모 엘리먼트의 너비 및 높이가 내용을 다 보여줄 만큼 크지 않으면 엘리먼트가 잘리거나 부모 엘리먼트의 너비 및 높이가 내용을 다 보여줄 만큼 크지 않으면
+	</div>
+	<div class="div01">말줄임표 없음</div>
+</body>
+</html>

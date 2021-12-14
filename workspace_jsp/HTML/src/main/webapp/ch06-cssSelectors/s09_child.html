@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자식 선택자(child selector)</title>
+<style type="text/css">
+	body > div { /* >를 결합자로 선택자를 지정시, 지정한 자식 태그(직계 자식)만 선택 */
+		border:3px solid peachpuff;
+	}
+</style>
+</head>
+<body>
+	<div> <!-- 선택됨 -->
+		<ul>
+			<li>사과</li>
+			<li>귤</li>
+			<li>바나나</li>
+			<li>토마토</li>
+			<li>배</li>
+		</ul>
+		<div>하늘</div> <!-- 선택되지 않음 -->
+	</div>
+	<p>
+		<span>하하</span>
+	</p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>형제 선택자(sibling selector)</title>
+<style type="text/css">
+	div~div {color:#ffc700;} /* ~를 결합자로 하여 첫 번째 선택자로 태그를 검색하고, 그 태그 자신을 제외한 모든 형제들 중 두 번째 선택자와 일치하는 태그들에 CSS를 지정 */
+</style>
+</head>
+<body>
+	<div>test1</div>
+	<p>테스트</p>
+	<div>test2</div> <!-- CSS 적용됨 -->
+	<span>테스트</span>
+	<div>test3</div> <!-- CSS 적용됨 -->
+</body>
+</html>

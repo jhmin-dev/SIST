@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이웃 선택자(adjacent sibling selector)</title>
+<style type="text/css">
+	div+p {color:#ff0000;} /* +를 결합자로 하여 첫 번째 선택자로 태그를 검색하고, 그 태그의 바로 다음에 위치하는 태그가 두 번째 선택자와 일치하면 CSS를 지정 */
+</style>
+</head>
+<body>
+	<div>테스트1</div>
+	<p>테스트2</p> <!-- CSS 적용됨 -->
+	<div>테스트a</div>
+	<span>테스트b</span>
+	<p>테스트c</p>
+	<div>테스트4</div>
+	<p>테스트3</p> <!-- CSS 적용됨 -->
+</body>
+</html>

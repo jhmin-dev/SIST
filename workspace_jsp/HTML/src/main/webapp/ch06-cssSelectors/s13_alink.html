@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가상 클래스 선택자</title>
+<style type="text/css">
+/* 
+:hover : 마우스 커서가 링크에 올라가 있는 상태
+:active : 마우스 커서를 클릭한 순간부터 놓기 직전까지 상태
+:link : 링크를 클릭하지 않은, 그냥 링크되어 있는 상태
+:visited : 링크를 눌러서 방문한 후의 상태
+ */
+	a:link {
+		text-decoration:none; /* a 태그의 밑줄 제거 */
+		color:rgb(255,102,102);
+	}
+	a:visited {
+		text-decoration:none;
+		color:rgb(89,71,71);
+	}
+	a:hover {
+		border-bottom:1px dotted rgb(255,0,0);
+		background-color:skyblue;
+	}
+	a:active {
+		text-decoration:none;
+		color:white;
+		background-color:black;
+	}
+</style>
+</head>
+<body>
+	<a href="https://www.naver.com">네이버</a><br>
+	<a href="http://www.netian.com">네티앙</a>
+</body>
+</html>

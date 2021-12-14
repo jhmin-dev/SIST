@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>text-shadow</title>
+<style type="text/css">
+	p {font-family:Arial;font-size:50px;}
+	.text1 {color:#06f;} /* 06f와 0066ff는 같은 색상을 나타냄 */
+	.text2 {color:#c30;}
+	.text3 {
+		color:#06f;
+		text-shadow:-3px -3px 5px aqua;
+		/* 
+		가로 오프셋 거리 : 그림자가 가로로 얼마나 떨어져 있는지를 지정; 양수는 글자의 오른쪽에, 음수는 글자의 왼쪽에 그림자를 표시
+		세로 오프셋 거리 : 그림자가 세로로 얼마나 떨어져 있는지를 지정; 양수는 글자의 아래쪽에, 음수는 글자의 위쪽에 그림자를 표시
+		blur radius : 그림자가 번지는 정도를 지정; 생략시 그림자를 선명하게 표시
+		그림자 색상 : 그림자의 색상을 지정
+		 */
+	}
+	.text4 {
+		color:#c30;
+		text-shadow:3px 3px pink;
+	}
+</style>
+</head>
+<body>
+	<p>
+		<span class="text1">HTML</span> &amp;
+		<span class="text2">CSS</span>
+	</p>
+	<p>
+		<span class="text3">HTML</span> &amp;
+		<span class="text4">CSS</span>
+	</p>
+</body>
+</html>

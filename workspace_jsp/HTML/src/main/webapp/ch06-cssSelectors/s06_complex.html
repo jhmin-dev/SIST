@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그 선택자와 ID 선택자 연계</title>
+<style type="text/css">
+	h1 {
+		color:darkseagreen;
+		background:darkslategray; /* 배경색 지정에는 background-color와 background 모두 사용 가능 */
+	}
+	h1#target { /* h1 태그를 검색 후, 여러 개의 h1 태그 중 ID가 target인 h1 태그를 검색; 태그 선택자와 ID 선택자를 연계할 때는 선택자 사이에 공백이 없어야 함; 태그나 ID 단독 선택자보다 우선순위가 높음 */
+		color:mistyrose;
+		background:tomato;	
+	}
+</style>
+</head>
+<body>
+<h1 id="target">가을</h1>
+<h1>별</h1>
+<span>바다</span>
+</body>
+</html>
