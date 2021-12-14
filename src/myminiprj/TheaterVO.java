@@ -1,16 +1,14 @@
 package myminiprj;
 
-import java.sql.Date;
-
 public class TheaterVO { // my_theater
 	private int th_num; // 상영관 번호
-	private Date th_date; // 상영 날짜 및 시간
+	private String th_date; // 상영 날짜 및 시간
 	private int mo_num; // 영화 번호
 	private int th_seats_total; // 총 좌석 수
 	private int th_seats; // 잔여 좌석 수
 
 	public TheaterVO() {}
-	public TheaterVO(int th_num, Date th_date) {
+	public TheaterVO(int th_num, String th_date) {
 		this.th_num=th_num;
 		this.th_date=th_date;
 	}
@@ -21,10 +19,10 @@ public class TheaterVO { // my_theater
 	public void setTh_num(int th_num) {
 		this.th_num = th_num;
 	}
-	public Date getTh_date() {
+	public String getTh_date() {
 		return th_date;
 	}
-	public void setTh_date(Date th_date) {
+	public void setTh_date(String th_date) {
 		this.th_date = th_date;
 	}
 	public int getMo_num() {

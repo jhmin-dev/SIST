@@ -22,7 +22,30 @@ public class CinemaDAO {
 
 	// 회원 가입
 	public void insertMember(MemberVO vo) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
 
+		try {
+			conn = DBUtil.getConnection();
+			sql = "INSERT INTO my_member (me_num, me_id, me_pw, me_name, me_birthdate) "
+				+ "VALUES (my_member_seq.NEXTVAL, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'))";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getMe_id());
+			pstmt.setString(2, vo.getMe_pw());
+			pstmt.setString(3, vo.getMe_name());
+			pstmt.setString(4, vo.getMe_birthdate());
+			int count = pstmt.executeUpdate();
+			if(count==1) {
+				System.out.println(vo.getMe_name()+"님 회원 가입이 완료되었습니다.");
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			DBUtil.executeClose(null, pstmt, conn);
+		}
 	}
 
 	// 관리자 등록

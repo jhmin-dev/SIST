@@ -7,7 +7,7 @@ public class MemberVO { // my_member
 	private String me_id; // 아이디
 	private String me_pw; // 비밀번호
 	private String me_name; // 이름
-	private Date me_birthdate; // 생년월일
+	private String me_birthdate; // 생년월일
 	private Date me_regdate; // 가입일
 	private String me_access; // 권한
 
@@ -40,10 +40,10 @@ public class MemberVO { // my_member
 	public void setMe_name(String me_name) {
 		this.me_name = me_name;
 	}
-	public Date getMe_birthdate() {
+	public String getMe_birthdate() {
 		return me_birthdate;
 	}
-	public void setMe_birthdate(Date me_birthdate) {
+	public void setMe_birthdate(String me_birthdate) {
 		this.me_birthdate = me_birthdate;
 	}
 	public Date getMe_regdate() {
