@@ -99,6 +99,9 @@ public class CinemaMain {
 		else if(type.equals("date_error")) {
 			System.out.println("일을 잘못 입력했습니다!");
 		}
+		else if(type.equals("login_error")) {
+			System.out.println("로그인에 실패했습니다!");
+		}
 		else {
 			System.out.println(type);
 		}
@@ -106,21 +109,38 @@ public class CinemaMain {
 
 	// 1. 로그인
 	public int callGetLogin() throws IOException {
-
+		MemberVO vo = new MemberVO();
+		while(true) {
+			System.out.print("아이디 : ");
+			vo.setMe_id(br.readLine());
+			if(vo.getMe_id()==null || vo.getMe_id().equals("")) { // 사용자가 아이디 입력을 취소한 경우
+				printMessage("login_error");
+				return 0;
+			}
+			System.out.print("비밀번호 : ");
+			vo.setMe_pw(br.readLine());
+			if(vo.getMe_pw()==null || vo.getMe_pw().equals("")) { // 사용자가 비밀번호 입력을 취소한 경우
+				printMessage("login_error");
+				return 0;
+			}
+			me_num = dao.getLogin(vo);
+			if(me_num!=0) break;
+		}
 		return me_num;
 	}
 
 	// 2. 회원 가입
-	public void callInsertMember() throws IOException {
+	public MemberVO callInsertMember() throws IOException {
 		MemberVO vo = new MemberVO();
 		while(true) {
 			vo.setMe_id(validateLength("아이디 : ", 20));
 			if(dao.checkID(vo)==0) break;
 		}
-		vo.setMe_pw(validateLength("비밀번호 : ", 30));
+		vo.setMe_pw(validateLength("비밀번호 : ", 30, 4));
 		vo.setMe_name(validateLength("이름 : ", 4000));
 		vo.setMe_birthdate(validateDate("생년월일을 입력하세요.", "before"));
 		dao.insertMember(vo);
+		return vo;
 	}
 
 	// admin. 관리자 페이지
@@ -171,17 +191,22 @@ public class CinemaMain {
 
 	// 1. 로그인
 	public String callCheckAdmin() throws IOException {
-		System.out.print("아이디 : ");
-		String me_id = br.readLine();
-		System.out.print("비밀번호 : ");
-		String me_pw = br.readLine();
-		return dao.checkAdmin(me_id, me_pw);
+		while(true) {
+			me_num = callGetLogin();
+			if(me_num==0) { // 사용자가 입력을 취소하여 회원 번호가 반환되지 않은 경우
+				return "USER";
+			}
+			me_access = dao.checkAdmin(me_num);
+			if(me_access.equalsIgnoreCase("ADMIN")) break;
+		}
+		return me_access;
 	}
 
 	// 2. 관리자 등록
 	public void callRegisterAdmin() throws IOException {
-		callInsertMember();
-		dao.registerAdmin();
+		MemberVO vo = callInsertMember();
+		// 관리자 등록시 별도의 인증 과정 요구하기
+		dao.registerAdmin(vo);
 	}
 
 	// 유효성 검사 : 길이
@@ -194,6 +219,24 @@ public class CinemaMain {
 			}
 			else if(str.getBytes("UTF-8").length>length) {
 				System.out.println("최대 "+length+"바이트까지만 입력 가능합니다! (한글 : 3바이트, 영문 및 숫자 : 1바이트)");
+			}
+			else {
+				return str;
+			}
+		}
+	}
+	public String validateLength(String guide, int maxlength, int minlength) throws IOException {
+		while(true) {
+			System.out.print(guide);
+			String str = br.readLine();
+			if(str.equals("")) {
+				printMessage("input_null");
+			}
+			else if(str.getBytes("UTF-8").length>maxlength) {
+				System.out.println("최대 "+maxlength+"바이트까지만 입력 가능합니다! (한글 : 3바이트, 영문 및 숫자 : 1바이트)");
+			}
+			else if(str.length()<minlength) {
+				System.out.println("최소 "+minlength+"자 이상 입력해야 합니다!");
 			}
 			else {
 				return str;

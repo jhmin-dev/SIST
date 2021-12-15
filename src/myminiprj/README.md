@@ -64,13 +64,13 @@
 
 #### 첫 번째 while
 
-1. 로그인 `getLogin()`
-2. 회원 가입 `insertMember()`
+1. 로그인 `callGetLogin()`, `getLogin()`
+2. 회원 가입 `callInsertMember()`, `insertMember()`
 	- 아이디 중복 검사 `checkID`
 	- 유효성 검사
-		+ 아이디
-		+ 비밀번호
-		+ 생년월일
+		+ 길이 `validateLength()`
+		+ 날짜 `validateDate()`
+		+ (특수문자)
 		+ (연락처)
 9. 종료
 
@@ -91,8 +91,8 @@
 
 #### 첫 번째 while
 
-1. 로그인 `getLogin()`
-2. 관리자 등록 `insertAdmin()`
+1. 로그인 `callCheckAdmin()`, `checkAdmin()`
+2. 관리자 등록 `callRegisterAdmin()`, `registerAdmin()`
 9. 종료
 
 #### 두 번째 while
