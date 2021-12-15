@@ -55,7 +55,30 @@ public class CinemaDAO {
 
 	// 아이디 중복 검사
 	public int checkID(MemberVO vo) {
-		int check=0;
+		int check = 0;
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+
+		try {
+			conn = DBUtil.getConnection();
+			sql = "SELECT me_num FROM my_member WHERE me_id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getMe_id());
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				check = rs.getInt("me_num");
+				System.out.println(vo.getMe_id()+"는 이미 존재하는 아이디입니다!");
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
 
 		return check;
 	}

@@ -113,7 +113,10 @@ public class CinemaMain {
 	// 2. 회원 가입
 	public void callInsertMember() throws IOException {
 		MemberVO vo = new MemberVO();
-		vo.setMe_id(validateLength("아이디 : ", 20));
+		while(true) {
+			vo.setMe_id(validateLength("아이디 : ", 20));
+			if(dao.checkID(vo)==0) break;
+		}
 		vo.setMe_pw(validateLength("비밀번호 : ", 30));
 		vo.setMe_name(validateLength("이름 : ", 4000));
 		vo.setMe_birthdate(validateDate("생년월일을 입력하세요."));
