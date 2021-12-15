@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>박스 모델</title>
+<style type="text/css">
+/* 
+테두리 밖 여백
+margin
+속성값 4개 명시 : 상 우 하 좌; 시계방향
+속성값 3개 명시 : 상 좌우 하
+속성값 2개 명시 : 상하 좌우
+속성값 1개 명시 : 상우하좌
+
+방향 지정
+margin-left : 왼쪽 여백
+margin-right : 오른쪽 여백
+margin-top : 상단 여백
+margin-bottom : 하단 여백
+
+테두리 안 여백
+padding
+속성값 4개 명시 : 상 우 하 좌; 시계방향
+속성값 3개 명시 : 상 좌우 하
+속성값 2개 명시 : 상하 좌우
+속성값 1개 명시 : 상우하좌
+
+방향 지정
+padding-left : 왼쪽 여백
+padding-right : 오른쪽 여백
+padding-top : 상단 여백
+padding-bottom : 하단 여백
+
+박스 테두리의 스타일 지정
+border-style
+none : 테두리를 표시하지 않음
+hidden : 테두리를 숨김
+dotted : 테두리를 점선으로 표시
+dashed : 테두리를 파선으로 표시
+solid : 테두리를 실선으로 표시
+double : 테두리를 두 줄 실선으로 표시
+groove : 테두리를 오른쪽 아래에서 빛을 받은 스타일로 지정
+ridge : 테두리를 왼쪽 위에서 빛을 받은 스타일로 지정
+outset : 테두리를 밖으로 나온 스타일로 지정
+inset : 테두리를 안으로 파인 스타일로 지정
+
+박스 테두리의 굵기를 지정
+border-width
+
+박스 테두리의 색상을 지정
+border-color
+
+방향별로 테두리 지정
+border-top-
+border-right-
+border-bottom-
+border-left-
+
+일괄 지정
+border:style width color
+*/
+	ul {
+		list-style:none; /* 목록의 기호/문자 제거 */
+		background:cadetblue;
+		margin:10px 5px 10px 5px; /* 테두리 바깥 여백을 상 10px, 우 5px, 하 10px, 좌 5px로 지정 */
+		padding:10px; /* 테두리 안의 여백을 상우하좌 모두 10px로 지정 */
+	}
+	li {
+		color:palevioletred;
+		background:lightgoldenrodyellow;
+		margin:10px;
+		padding:10px;
+	}
+	li.withborder {
+		border-style:dashed; /* 파선 */
+		border-width:medium; /* 테두리의 두께를 중간으로 설정 */
+		border-color:slategray; /* 테두리 색깔 */
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li>테두리가 없는 곳</li>
+		<li class="withborder">테두리가 있는 곳</li>
+	</ul>
+</body>
+</html>

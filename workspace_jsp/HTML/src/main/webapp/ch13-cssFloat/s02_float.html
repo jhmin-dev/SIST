@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>float</title>
+<style type="text/css">
+	div {height:100px;}
+	div#a {
+		width:75%;
+		background-color:lightpink;
+		float:left;
+	}
+	div#b {
+		width:23%;
+		background-color:powderblue;
+		float:right;
+	}
+	div#c {
+		/* float 속성 무효화; float 속성을 한 요소에 지정하면 다음 요소에도 자동으로 적용되기 때문에, 원치 않는 경우 clear 속성을 지정해야 함 */
+		width:100%;
+		background-color:plum;
+		clear:both; /* 이전 요소들의 float이 한 방향으로만 지정된 경우, clear에서 다른 방향을 지정하면 무효화되지 않을 수 있음; clear를 both로 지정시 float 방향을 고려하지 않아도 됨 */
+	}
+</style>
+</head>
+<body>
+	<div id="a">서울</div> <!-- 내용 -->
+	<div id="b">인천</div> <!-- 메뉴 -->
+	<div id="c">광주</div> <!-- 꼬리말 -->
+</body>
+</html>

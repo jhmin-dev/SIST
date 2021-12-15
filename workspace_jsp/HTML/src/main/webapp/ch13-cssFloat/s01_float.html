@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>float</title>
+<style type="text/css">
+	div {height:50px;}
+	div#a {
+		background-color:pink;
+		width:75%;
+		float:left;
+	}
+	div#b {
+		background-color:darkseagreen;
+		width:23%; /* 어디를 기준으로 정렬되는지 확인하기 위해 일부러 합을 100%가 되지 않게 설정 */
+		float:left;
+	}
+	div#a2 {
+		background-color:pink;
+		width:75%;
+		float:left;
+	}
+	div#b2 {
+		background-color:darkseagreen;
+		width:23%;
+		float:right;
+	}
+	div#a3 {
+		background-color:pink;
+		width:75%;
+		float:right;
+	}
+	div#b3 {
+		background-color:darkseagreen;
+		width:23%;
+		float:left;
+	}
+	div#a4 {
+		background-color:pink;
+		width:75%;
+		float:right;
+	}
+	div#b4 {
+		background-color:darkseagreen;
+		width:23%;
+		float:right;
+	}
+</style>
+</head>
+<body>
+	<div id="a">서울, float:left</div>
+	<div id="b">인천, float:left</div>
+	<br><br><br>
+	<div id="a2">서울, float:left</div>
+	<div id="b2">인천, float:right</div>
+	<br><br><br>
+	<div id="a3">서울, float:right</div>
+	<div id="b3">인천, float:left</div>
+	<br><br><br>
+	<div id="a4">서울, float:right</div>
+	<div id="b4">인천, float:right</div>
+</body>
+</html>

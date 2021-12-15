@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>overflow</title>
+<style type="text/css">
+/* 
+속성
+overflow
+값
+hidden : 오버플로우된 부분을 감춰버림
+scroll : 오버플로우 속성이 부여된 요소에 강제로(=내용이 넘치지 않더라도) 스크롤 바를 생성
+auto : 오버플로우되면(=필요한 경우에만) 자동적으로 스크롤 바를 생성
+*/
+	.div01 {
+		background-color:gold;
+		width:250px;
+		height:100px;
+		overflow:hidden; /* 내용이 정해진 크기를 벗어날 때 어떻게 처리할지를 지정 */
+	}
+	.div02 {
+		background-color:deeppink;
+		width:250px;
+		height:100px;
+		/* overflow:scroll; */
+		overflow:auto;
+	}
+</style>
+</head>
+<body>
+	<div class="div01">
+		엘리먼트가 잘리거나 부모 엘리먼트의 너비 및 높이가 내용을 다 보여줄 만큼 크지 않다면
+		엘리먼트가 잘리거나 부모 엘리먼트의 너비 및 높이가 내용을 다 보여줄 만큼 크지 않다면
+		엘리먼트가 잘리거나 부모 엘리먼트의 너비 및 높이가 내용을 다 보여줄 만큼 크지 않다면
+	</div>
+	<br><br>
+	<div class="div02">
+		엘리먼트가 잘리거나 부모 엘리먼트의 너비 및 높이가 내용을 다 보여줄 만큼 크지 않다면
+		엘리먼트가 잘리거나 부모 엘리먼트의 너비 및 높이가 내용을 다 보여줄 만큼 크지 않다면
+		엘리먼트가 잘리거나 부모 엘리먼트의 너비 및 높이가 내용을 다 보여줄 만큼 크지 않다면
+	</div>
+</body>
+</html>
