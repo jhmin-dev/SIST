@@ -119,7 +119,7 @@ public class CinemaMain {
 		}
 		vo.setMe_pw(validateLength("비밀번호 : ", 30));
 		vo.setMe_name(validateLength("이름 : ", 4000));
-		vo.setMe_birthdate(validateDate("생년월일을 입력하세요."));
+		vo.setMe_birthdate(validateDate("생년월일을 입력하세요.", "before"));
 		dao.insertMember(vo);
 	}
 
@@ -202,11 +202,14 @@ public class CinemaMain {
 	}
 
 	// 유효성 검사 : 날짜
-	public String validateDate(String guide) throws IOException {
+	public String validateDate(String guide, String compare) throws IOException {
 		int year, month, date;
 		Calendar input = Calendar.getInstance();
+		Calendar today = Calendar.getInstance();
+
 		while(true) {
 			System.out.println(guide);
+
 			while(true) { // 연도 loop
 				System.out.print("연도 : ");
 				try {
@@ -246,6 +249,7 @@ public class CinemaMain {
 				}
 				printMessage("year_error");
 			}
+
 			while(true) { // 월 loop
 				System.out.print("월 : ");
 				try {
@@ -260,6 +264,8 @@ public class CinemaMain {
 				}
 				printMessage("month_error");
 			}
+
+			input.set(year, month-1, 1); // 일의 최댓값을 구하기 위해 Calendar 객체의 날짜를 입력받은 연도와 월로 설정; 일은 임의로 1로 설정
 			while(true) { // 일 loop
 				System.out.print("일 : ");
 				try {
@@ -269,22 +275,33 @@ public class CinemaMain {
 					printMessage("date_error");
 					continue;
 				}
-				if(date>=1 && date<=31) {
+				if(date>=1 && date<=input.getActualMaximum(Calendar.DATE)) {
 					break;
 				}
 				printMessage("date_error");
 			}
-			input.setLenient(false); // 날짜를 엄격하게 해석하도록 설정
-			input.set(year, month-1, date);
-			try {
-				input.getTime(); // 입력받은 날짜가 유효하지 않은 경우 예외 발생
-				break;
+			input.set(Calendar.DATE, date); // Calendar 객체의 날짜를 입력받은 일로 설정
+
+			// Calendar의 before(), after() 메서드는 밀리초 단위로 날짜를 비교하기 때문에 오늘 날짜가 담긴 Calendar 객체의 시, 분, 초, 밀리초를 0으로 설정
+			today.set(Calendar.HOUR_OF_DAY, 0);
+			today.set(Calendar.MINUTE, 0);
+			today.set(Calendar.SECOND, 0);
+			today.set(Calendar.MILLISECOND, 0);
+			if(compare.equals("before")) {
+				if(!input.before(today)) {
+					System.out.println("오늘 이전 날짜를 입력해야 합니다!");
+					continue; // 처음부터 다시 입력 받기
+				}
 			}
-			catch(IllegalArgumentException e) {
-				System.out.println("유효하지 않은 날짜입니다!");
-				continue;
+			else if(compare.equals("after")) {
+				if(!input.after(today)) {
+					System.out.println("오늘 이후 날짜를 입력해야 합니다!");
+					continue; // 처음부터 다시 입력 받기
+				}
 			}
+			break;
 		}
+
 		return year+"-"+month+"-"+date;
 	}
 
