@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sublime with Stata</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Lato:400,300,300italic,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='//fonts.googleapis.com/css?family=Fjalla+One&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+</head>
+<body>
+	<div id="wrap">
+		<!-- 로고, 메뉴, 배너 -->
+		<header>
+			<!-- 데스크탑 로고, 메뉴 -->
+			<div id="page-top">
+				<h1><a href="https://ezstata.weebly.com/">Sublime with Stata</a></h1>
+				<nav>
+					<ul>
+						<li><a href="enghome.html">KOR2ENG</a></li>
+						<li><a href="s02_home.html">HOME</a></li>
+						<li><a href="install.html">INSTALL</a></li>
+						<li><a href="tweaks.html">TWEAKS</a></li>
+						<li><a href="shortcuts.html">SHORTCUTS</a></li>
+						<li><a href="markdown.html">MARKDOWN</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!-- 모바일 로고, 메뉴 -->
+			<div id="mobile-page-top">
+				<h1><a href="https://ezstata.weebly.com/">Sublime with Stata</a></h1>
+				<nav>
+					<ul>
+						<li><a href="enghome.html">KOR2ENG</a></li>
+						<li><a href="s02_home.html">HOME</a></li>
+						<li><a href="install.html">INSTALL</a></li>
+						<li><a href="tweaks.html">TWEAKS</a></li>
+						<li><a href="shortcuts.html">SHORTCUTS</a></li>
+						<li><a href="markdown.html">MARKDOWN</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!-- 배너 -->
+			<div id="page-banner">
+				<hgroup>
+					<h1>RUN STATA WITHIN SUBLIME TEXT 3</h1>
+					<p>A Lot Better Than Before</p>
+				</hgroup>
+			</div>
+		</header>
+		<!-- 내용 -->
+		<section id="contents">
+			<header>
+				<h1>MAIN FEATURES</h1>
+			</header>
+			<ul>
+				<li>문법 강조 지원--<a href="https://w3bits.com/sublime-text-themes/">다채로운 배색</a> 중 원하는 것을 골라 보세요!
+					<ul>
+						<li>문법 강조는 코딩 실수를 줄이는 데 중요한 역할을 하지만, Stata 기본 편집기의 문법 강조는 전혀 눈에 띄지 않습니다. 16버전에서 다크 모드를 지원하면서 사정이 약간 나아졌지만, Stata 기본 편집기는 여전히 겨우 한 가지의 추가 배색 선택지를 제공할 뿐입니다. 대조적으로, 서브라임 텍스트의 세계에는 <a href="https://colorsublime.github.io/">수백 가지의 배색</a> 및 <a href="https://packagecontrol.io/browse/labels/theme">UI 테마</a>가 존재합니다.</li>
+					</ul>
+				</li>
+				<li><b><a href="multipleauto.png">자동 완성 지원</a>
+					<ul>
+						<li>Stata 기본 편집기는 16버전에서도 기껏해야 현재 편집 중인 do-file 내에 존재하는 단어들의 자동 완성만 지원하고 있습니다. 서브라임 텍스트의 윈도우용 Stata 연동 플러그인은 변수명, 함수명, 자주 사용되는 기본 명령어들, 루프문의 자동 완성을 추가적으로 지원합니다. 서브라임 텍스트의 맥용 Stata 연동 플러그인은 기본 명령어와 몇몇 인기 있는 사용자-작성-명령어들, 루프문의 자동 완성을 추가적으로 지원합니다. 뿐만 아니라, 서브라임 텍스트에서는 <a href="http://docs.sublimetext.info/en/latest/extensibility/snippets.html">사용자가 직접 자동 완성 코드를 추가</a>할 수도 있습니다.</li>
+					</ul>
+				</li>
+				<li><a href="brackethl.png">괄호 강조 지원</a>
+					<ul>
+						<li>서브라임 텍스트의 괄호 강조 패키지는 do-file 내에서 현재 커서가 위치한 괄호와 그 짝을 함께 강조하며, 짝이 맞지 않는 괄호들을 감지하여 문제되는 행 번호 앞에 물음표를 띄웁니다. 사용자는 괄호가 연달아 붙어 있건, 여러 행 간격을 두고 한참 떨어져 있건 관계없이 괄호로 묶이는 코드의 범위를 쉽게 식별할 수 있으며, Stata가 지적하기 전에 코드의 오류를 교정할 수 있습니다.</li>
+					</ul>
+				</li>
+				<li><a href="colorpicker.png">색상 강조 및 삽입 지원</a>
+					<ul>
+						<li>서브라임 텍스트에서는 do-file 내에 색상 헥스 코드나 색상 이름이 있는 경우, 어떤 색상인지를 서브라임 텍스트 창에서 직접 확인하는 것이 가능합니다. 나아가, 색상표에서 원하는 색을 골라 대응하는 헥스 코드를 do-file 내에 바로 삽입하는 것도 가능합니다. <a href="http://repec.sowi.unibe.ch/stata/grstyle/grstyle-set.html#h-4-2">SSC 명령어 -grstyle-을 이용</a>한다면, 단축키 입력 한 번과 마우스 클릭 한 번으로 그래프의 색상을 바라는 대로 변경할 수 있습니다.</li>
+					</ul>
+				</li>
+				<li>그리고 Stata 기본 편집기와 정확히 동일한 단축키로 do-file을 실행할 수 있습니다!
+					<ul>
+						<li>​물론, <a href="https://www.sublimetext.com/docs/3/key_bindings.html">입맛대로 단축키를 변경하는 것 역시 가능합니다.​​</a></li>
+					</ul>
+				</li>
+			</ul>
+			<hr>
+			<div id="contact" class="noselect"><a href="contact.html">Contact Information</a></div>
+			<div id="note">마지막 갱신: 2019년 12월 13일<br>
+			주: IE는 코드 복사시 행 번호를 제외할 수 없습니다</div>
+		</section>
+		<!-- 사이드바 -->
+		<section id="sidebar">
+			<nav>
+			</nav>
+		</section>
+		<!-- 사이트 정보 -->
+		<footer id="page-footer">
+			<p>&copy; Sublime with Stata</p>
+			<nav>
+				<ul>
+					<li><a href="home.html">하단 메뉴1</a></li>
+					<li><a href="contact.html">하단 메뉴2</a></li>
+					<li><a href="address.html">하단 메뉴3</a></li>
+					<li><a href="board.html">하단 메뉴4</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</div>
+</body>
+</html>

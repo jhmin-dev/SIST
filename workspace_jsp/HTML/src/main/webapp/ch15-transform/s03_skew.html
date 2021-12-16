@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>skew</title>
+<style type="text/css">
+/*
+속성
+transform
+값
+skew(각도,각도) : 첫 번째 각도는 x축상에서의 왜곡 각도, 두 번째 각도는 y축상에서의 왜곡 각도; 두 번째 각도 생략시 y축 왜곡 각도는 0으로 간주
+skewX(각도) : x축을 따라 주어진 각도만큼 왜곡
+skewY(각도) : y축을 따라 주어진 각도만큼 왜곡
+*/
+	.myphoto {
+		position:absolute;
+		left:50px;
+		top:70px;
+		transform:skew(10deg,10deg); /* 음수값도 지정 가능 */
+	}
+</style>
+</head>
+<body>
+	<img class="myphoto" src="../images/cross.jpg">
+</body>
+</html>

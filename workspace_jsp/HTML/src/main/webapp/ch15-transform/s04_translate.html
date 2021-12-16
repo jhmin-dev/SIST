@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>translate</title>
+<style type="text/css">
+/*
+속성
+transform
+값
+translate(tx,ty) : x축으로 tx만큼, y축으로 ty만큼 이동; ty값 생략시 0으로 간주
+translateX(tx) : tx만큼 x축 방향으로 이동
+translateY(ty) : ty만큼 y축 방향으로 이동
+*/
+	.myphoto {
+		position:absolute;
+		left:30px;
+		top:30px;
+		transform:translate(200px,100px); /* 양수값은 각각 오른쪽, 아래쪽으로 이동하며 음수값은 반대 방향으로 이동 */
+	}
+</style>
+</head>
+<body>
+	<img class="myphoto" src="../images/cross.jpg">
+</body>
+</html>

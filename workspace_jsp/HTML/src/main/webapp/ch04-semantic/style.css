@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* 여백 및 기본적인 폰트를 설정 */
+body {
+	margin:0;
+	padding:0;
+	font-family:Arial, "MS Trebuchet", sans-serif; /* 폰트는 ,를 구분자로 여러 개를 나열할 수 있고, 폰트명에 공백이 있을 경우에는 큰따옴표로 감싸야 함 */
+}
+/* 페이지의 내용을 가운데에 놓음 */
+#wrap {
+	width:960px;
+	margin:0 auto;
+}
+/* 헤더의 너비를 정함 */
+header#page_header {
+	width:100%;
+}
+/* 내비게이션 목록의 기호/문자 제거 */
+header#page_header nav ul, footer#page_footer nav ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+/* 내비게이션을 가로 바 형태로 만들기 */
+header#page_header nav ul li, footer#page_footer nav ul li {
+	padding:0;
+	margin:0 20px 0 0; /* 우측 20px, 그 외 0px */
+	display:inline;
+}
+p {
+	margin:0 0 20px 0; /* 하단 20px, 그 외 0px */
+}
+/* 가로 방향으로 표시 */
+section#posts {
+	width:74%;
+	float:left;
+}
+section#posts aside {
+	width:35%;
+	float:right; /* aside 태그 다음에 오는 본문 p 태그들의 경우, section#posts의 float:left를 상속받음 */
+	margin-left:5%;
+	font-size:20px;
+	line-height:40px;
+}
+section#sidebar {
+	width:25%;
+	float:left;
+}
+/* float를 해제해서 page_footer를 페이지 하단에 안착시키기 */
+footer#page_footer {
+	clear:both;
+	width:100%;
+	text-align:center;
+}

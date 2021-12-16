@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>scale</title>
+<style type="text/css">
+/* 
+속성
+transform
+값
+scale(sx,sy) : 가로로 sx만큼, 세로로 sy만큼 확대; sy값 생략시 sx값과 동일하다고 가정; 1이 원본 비율을 의미함
+scaleX(sx) : 가로로 sx만큼 확대; scale(sx,1)과 같음
+scaleY(sy) : 세로로 sy만큼 확대; scale(1,sy)와 같음
+*/
+	.myphoto {
+		position:absolute;
+		left:150px;
+		top:120px;
+		transform:scale(1.5,1.5); /* 가로, 세로 1.5배만큼 확대 */
+	}
+</style>
+</head>
+<body>
+	<img src="../images/cross.jpg">
+	<img class="myphoto" src="../images/cross.jpg">
+</body>
+</html>
