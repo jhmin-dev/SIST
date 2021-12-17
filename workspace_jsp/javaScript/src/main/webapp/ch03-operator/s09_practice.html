@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<script type="text/javascript">
+/* 
+[문제]
+534자루의 연필을 30명의 학생들에게 똑같은 개수로 나누어 줄 때 학생당 몇 개를 가질 수 있고, 최종적으로 몇 개가 남는지를 구하시오.
+*/
+	var pencils = 534;
+	var students = 30;
+	document.write('학생 수 : ' + students + '<br>');
+	document.write('연필 수 : ' + pencils + '<br>');
+	
+	// 학생 한 명이 가지는 연필 수를 구하고 소수점 이하 자리를 절사
+	var quantity = Math.floor(pencils / students);
+	document.write('학생 한 명이 가지는 연필 수 : ' + quantity + '<br>');
+	
+	// 남은 연필 수 구하기
+	var rest = pencils % students;
+	document.write('남은 연필 수 : ' + rest);
+</script>
+</head>
+<body>
+
+</body>
+</html>

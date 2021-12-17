@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>논리 연산자</title>
+<script type="text/javascript">
+	document.write('====논리 연산자====<br>');
+	
+	var a = true && false; // 논리곱
+	document.write('true && false : ' + a + '<br>');
+
+	var b = true || false; // 논리합
+	document.write('true || false : ' + b + '<br>');
+	
+	var c = !true; // 논리부정
+	document.write('!true : ' + c + '<br>');
+	
+	document.write('--------<br>');
+	
+	var d = 1, e = 0, f; // 자바스크립트에서는 1을 true, 0을 false로 간주하여 논리 연산을 수행할 수 있음
+	f = d && e ; // 논리곱; 결과값은 number로 반환됨
+	document.write('d && e : ' + f + '<br>');
+	
+	f = d || e; // 논리합; 결과값은 number로 반환됨
+	document.write('d || e : ' + f + '<br>');
+
+	f = !d; // 논리부정; 결과값은 boolean으로 반환됨
+	document.write('!d : ' + f);
+</script>
+</head>
+<body>
+
+</body>
+</html>

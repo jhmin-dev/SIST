@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<script type="text/javascript">
+/*
+[문제]
+prompt를 이용해서 국어(korean), 영어(english), 수학(math)을 입력받아서 총점(sum), 평균(avg)을 구해서 출력하시오.
+
+[출력 예시]
+국어 : 90
+영어 : 90
+수학 : 90
+총점 : 270
+평균 : 90
+*/
+	// 입력
+	var korean = Number(prompt('국어 점수를 입력하세요', ''));
+	var english = Number(prompt('영어 점수를 입력하세요', ''));
+	var math = Number(prompt('수학 점수를 입력하세요', ''));
+	// 총점, 평균 구하기
+	var sum = korean + english + math;
+	var avg = sum / 3;
+	// 출력
+	document.write('국어 : ' + korean + '<br>');
+	document.write('영어 : ' + english + '<br>');
+	document.write('수학 : ' + math + '<br>');
+	document.write('총점 : ' + sum + '<br>');
+	document.write('평균 : ' + avg);
+</script>
+</head>
+<body>
+
+</body>
+</html>

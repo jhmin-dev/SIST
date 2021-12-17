@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>삼항(조건) 연산자</title>
+<script type="text/javascript">
+	var temp1 = 5, temp2 = 10;
+	var max, min;
+	
+	// 두 숫자의 크기를 비교하여 최댓값은 max에, 최솟값은 min에 저장
+	// 조건 ? (참일 때 작업1, 작업2, ...) : (거짓일 때 작업, ...)
+	temp1 >= temp2 ? (max = temp1, min = temp2) : (max = temp2, min = temp1);
+	
+	document.write('최댓값 : ' + max + '<br>');
+	document.write('최솟값 : ' + min);
+</script>
+</head>
+<body>
+
+</body>
+</html>

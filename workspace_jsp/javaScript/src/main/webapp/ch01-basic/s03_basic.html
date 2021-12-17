@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그에 내장(inline)</title>
+</head>
+<body>
+	<input type="button" value="확인" onclick="alert('태그에 자바스크립트 내장');"> <!-- 버튼을 누르면 이벤트가 발생; 이벤트 속성에 이벤트 발생시에 실행할 자바스크립트 코드를 작성; alert()는 경고창을 띄워 줌 -->
+	<input type="button" value="지우기" onclick="document.write('페이지 로딩 후 document.write()를 사용하면 로딩된 내용이 모두 지워짐!');"> <!-- inline 방식으로 자바스크립트를 사용하는 것은 권장되지 않지만, 간혹 필요한 경우가 있음 -->
+</body>
+</html>

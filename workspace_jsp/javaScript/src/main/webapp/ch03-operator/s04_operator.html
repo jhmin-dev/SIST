@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비교 연산자</title>
+<script type="text/javascript">
+	document.write('====비교 연산자====<br>');
+	
+	/* 
+	자바스크립트에서 비교 연산은 기본적으로 자동 형변환 후 값만 비교하며, 타입까지 비교하기 위한 연산자가 별도로 존재함
+	x === y : x와 y의 값과 타입이 같으면 true
+	x !== y : x와 y의 값 또는 타입이 다르면 true
+	*/
+	var a = 20, b = '20', result;
+	
+	result = a == b; // 값만 비교
+	document.write('a == b : ' + result + '<br>');
+	
+	result = a != b; // 값만 비교
+	document.write('a != b : ' + result + '<br>');
+	
+	document.write('--------<br>')
+	
+	result = a === b; // 값과 타입 모두 비교
+	document.write('a === b : ' + result + '<br>');
+	
+	result = a !== b; // 값과 타입 모두 비교
+	document.write('a !== b : ' + result + '<br>');
+	
+	document.write('--------<br>');
+	
+	result = a > b; // 값만 비교
+	document.write('a > b : ' + result + '<br>');
+	
+	result = a <= b; // 값만 비교
+	document.write('a <= b : ' + result + '<br>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

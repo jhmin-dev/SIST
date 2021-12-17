@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>do~while</title>
+<script type="text/javascript">
+	// 변수 선언 및 초기화
+	var value = 0;
+	
+	// while
+	while(value++ < 5) { // 선비교
+		document.write(value + '번째 반복<br>'); // 후수행
+	}
+	
+	document.write('--------<br>');
+	
+	// 변수 초기화
+	value = 0;
+	
+	// do~while
+	do { // 선수행
+		document.write(value + '번째 반복<br>');
+	} while(value++ < 5); // 후비교	
+</script>
+</head>
+<body>
+
+</body>
+</html>

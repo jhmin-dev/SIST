@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>형변환</title>
+<script type="text/javascript">
+	var input = prompt('숫자를 입력하세요!', '숫자'); // prompt()의 첫 번째 인자는 내용이며, 두 번째 인자는 입력 칸에 미리 보여지는 값임; 미리 보여지는 값은 힌트와 달리 사용자가 직접 지워야 함; prompt()는 문법 학습에만 사용하고, 실제로는 form 태그를 이용함
+
+	document.write(typeof(input) + ' : ' + input); // 최우선 연산자 소괄호 사용시 typeof 연산자 다음에 공백 생략 가능
+	document.write('<br>');
+	
+	document.write(input * 10); // 2가지 기능을 가진 + 연산자 외에 다른 연산자의 경우, 자동적으로 형변환됨
+	document.write('<br>');
+	
+	document.write(input + 10); // prompt()는 입력받은 값을 string으로 반환하므로, 숫자를 입력해도 덧셈이 수행되지 않고 문자열로 연결됨
+	document.write('<br>--------<br>')
+	
+	// 형변환
+	// 문자열을 숫자로 변환
+	var numberInput = Number(input); // string을 number로
+	document.write(typeof(numberInput) + ' : ' + numberInput);
+	document.write('<br>');
+	
+	document.write(numberInput + 10); // 숫자끼리의 덧셈이 수행됨
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

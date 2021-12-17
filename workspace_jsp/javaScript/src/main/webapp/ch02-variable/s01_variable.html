@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수</title>
+<script type="text/javascript">
+/* 
+ 변수명의 정의
+ 1. 키워드(예약어)를 사용하면 안 됨
+ 2. 숫자로 시작하면 안 됨
+ 3. 특수문자는 _와 $만 허용
+ 4. 공백 문자를 포함할 수 없음
+ 
+ 식별자를 잘못 지정한 예
+ break (키워드)
+ 10alpha (숫자로 시작)
+ #num (특수문자 사용)
+ has space (공백 사용)
+ */
+	// 변수의 선언
+	// 자료형은 데이터가 대입될 때 인식되어 내부적으로 결정되며, 변수의 자료형을 지정하는 키워드(int 등)가 별도로 존재하지 않음
+	var num;
+	
+	// 변수에 값을 할당
+	num = 123;
+	
+	// 출력
+	document.write('num = ' + num + '<br>'); // 연결 연산자 +로 문자열과 숫자를 연결
+
+	// 변수를 선언하는 동시에 초기화
+	var num2 = 1234;
+
+	document.write('num2 = ' + num2);
+	document.write('<br>');
+
+	// 변수를 선언하지 않고 출력
+	// alert(num3); // 에러 발생; 콘솔에서 에러의 원인 및 발생 위치 확인 가능
+	
+	// 변수 선언 후 값을 할당하지 않고 출력
+	var num4;
+
+	document.write('num4 = ' + num4); // 에러 발생하지 않고 num4는 undefined라고 출력됨
+	document.write('<br>');
+	
+	// 두 개 이상의 변수를 한 번에 선언
+	var a, b;
+
+	a = 10;
+	b = 5;
+	
+	document.write(a + ' + ' + b + ' = ' + (a + b)); // 연결 연산자에 의해 덧셈을 방해받지 않으려면 최우선 연산자 소괄호를 사용
+	document.write('<br>');
+	
+	// 두 개 이상의 변수를 한 번에 선언하고 초기화
+	var c = 10, d = 3.5;
+	
+	document.write(c + ' + ' + d + ' = ' + (c + d)); // 자바스크립트에서는 숫자 자료형이 정수, 실수를 구분하지 않고 number로 되어 있음
+	document.write('<br>');
+	
+	// 변수명에 한글 사용하기; 권장되지는 않음
+	var 번호 = 3;
+	document.write('번호 = ' + 번호);
+</script>
+</head>
+<body>
+
+</body>
+</html>

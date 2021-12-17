@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>break</title>
+<script type="text/javascript">
+	for(var i=0;i<5;i++) {
+		for(var j=0;j<5;j++) {
+			if(j == 3) break; // 다중 반복문에서 break를 사용하면 break가 포함된 바로 그 반복문만 탈출
+			document.write('i값 : ' + i + ', j값 : ' + j + '<br>');
+		}
+	}
+	
+	document.write('--------<br>')
+	
+	outer_loop: // 바깥쪽 반복문에 label을 지정
+	for(var i=0;i<5;i++) {
+		for(var j=0;j<5;j++) {
+			if(j == 3) break outer_loop; // 다중 반복문에서 label을 사용하면 안쪽 반복문에서 break해도 전체 반복문을 탈출 가능
+			document.write('i값 : ' + i + ', j값 : ' + j + '<br>');
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
