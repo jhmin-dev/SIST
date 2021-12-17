@@ -29,6 +29,18 @@
 			"selector": "source.java",
 		}
 		```
+	+ ProjectSpecificKeys (key bindings)
+		* `myminiprj.sublime-project` (to build with specific build system within specific project)
+		```json
+		"keys":
+		[
+			{
+				"keys": ["ctrl+b"], "command": "build", "args": {
+					"build_system": "Packages/User/RunJavaProject.sublime-build"
+				}
+			},
+		]
+		```
 	+ LSP-jdtls
 - Eclipse
 	+ Eclipse Color Theme
