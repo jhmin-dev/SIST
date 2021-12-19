@@ -13,30 +13,50 @@
 		<!-- 로고, 메뉴, 배너 -->
 		<header>
 			<!-- 데스크탑 로고, 메뉴 -->
-			<div id="page-top">
-				<h1><a href="https://ezstata.weebly.com/">Sublime with Stata</a></h1>
+			<div id="page-top" class="noselect">
+				<h1><a href="#">Sublime with Stata</a></h1>
 				<nav>
 					<ul>
-						<li><a href="enghome.html">KOR2ENG</a></li>
+						<li><a href="#enghome.html">KOR2ENG</a></li>
 						<li><a href="s02_home.html">HOME</a></li>
-						<li><a href="install.html">INSTALL</a></li>
-						<li><a href="tweaks.html">TWEAKS</a></li>
-						<li><a href="shortcuts.html">SHORTCUTS</a></li>
-						<li><a href="markdown.html">MARKDOWN</a></li>
+						<li><a href="#install.html">INSTALL</a></li>
+						<li><a href="#tweaks.html">TWEAKS</a></li>
+						<li><a href="#shortcuts.html">SHORTCUTS</a></li>
+						<li class="dropdown"><a href="#markdown.html">MARKDOWN</a>
+							<ul class="dropdown-menu">
+								<li><a href="#PlainNotes">PlainNotes</a></li>
+								<li><a href="#MarkdownEditing">MarkdownEditing</a></li>
+							</ul>
+						</li>
 					</ul>
 				</nav>
 			</div>
 			<!-- 모바일 로고, 메뉴 -->
-			<div id="mobile-page-top">
-				<h1><a href="https://ezstata.weebly.com/">Sublime with Stata</a></h1>
+			<div id="mobile-page-top" class="noselect">
+				<h1><a href="#">Sublime with Stata</a></h1>
 				<nav>
 					<ul>
-						<li><a href="enghome.html">KOR2ENG</a></li>
-						<li><a href="s02_home.html">HOME</a></li>
-						<li><a href="install.html">INSTALL</a></li>
-						<li><a href="tweaks.html">TWEAKS</a></li>
-						<li><a href="shortcuts.html">SHORTCUTS</a></li>
-						<li><a href="markdown.html">MARKDOWN</a></li>
+						<li class="dropdown">
+							<input type="checkbox" id="toggle_checkbox">
+							<label class="dropdown" for="toggle_checkbox">
+								<div></div>
+								<div></div>
+								<div></div>
+							</label>
+							<ul class="dropdown-menu">
+								<li><a href="#enghome.html">KOR2ENG</a></li>
+								<li><a class="active" href="s02_home.html">HOME</a></li>
+								<li><a href="#install.html">INSTALL</a></li>
+								<li><a href="#tweaks.html">TWEAKS</a></li>
+								<li><a href="#shortcuts.html">SHORTCUTS</a></li>
+								<li class="dropdown"><a href="#markdown.html">MARKDOWN</a>
+									<ul class="dropdown-menu">
+										<li><a href="#PlainNotes">PlainNotes</a></li>
+										<li><a href="#MarkdownEditing">MarkdownEditing</a></li>
+									</ul>				
+								</li>
+							</ul>
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -59,7 +79,7 @@
 						<li>문법 강조는 코딩 실수를 줄이는 데 중요한 역할을 하지만, Stata 기본 편집기의 문법 강조는 전혀 눈에 띄지 않습니다. 16버전에서 다크 모드를 지원하면서 사정이 약간 나아졌지만, Stata 기본 편집기는 여전히 겨우 한 가지의 추가 배색 선택지를 제공할 뿐입니다. 대조적으로, 서브라임 텍스트의 세계에는 <a href="https://colorsublime.github.io/">수백 가지의 배색</a> 및 <a href="https://packagecontrol.io/browse/labels/theme">UI 테마</a>가 존재합니다.</li>
 					</ul>
 				</li>
-				<li><b><a href="multipleauto.png">자동 완성 지원</a>
+				<li><a href="multipleauto.png">자동 완성 지원</a>
 					<ul>
 						<li>Stata 기본 편집기는 16버전에서도 기껏해야 현재 편집 중인 do-file 내에 존재하는 단어들의 자동 완성만 지원하고 있습니다. 서브라임 텍스트의 윈도우용 Stata 연동 플러그인은 변수명, 함수명, 자주 사용되는 기본 명령어들, 루프문의 자동 완성을 추가적으로 지원합니다. 서브라임 텍스트의 맥용 Stata 연동 플러그인은 기본 명령어와 몇몇 인기 있는 사용자-작성-명령어들, 루프문의 자동 완성을 추가적으로 지원합니다. 뿐만 아니라, 서브라임 텍스트에서는 <a href="http://docs.sublimetext.info/en/latest/extensibility/snippets.html">사용자가 직접 자동 완성 코드를 추가</a>할 수도 있습니다.</li>
 					</ul>
@@ -81,24 +101,17 @@
 				</li>
 			</ul>
 			<hr>
-			<div id="contact" class="noselect"><a href="contact.html">Contact Information</a></div>
+			<div id="contact" class="noselect"><a href="#contact.html">Contact Information</a></div>
 			<div id="note">마지막 갱신: 2019년 12월 13일<br>
 			주: IE는 코드 복사시 행 번호를 제외할 수 없습니다</div>
 		</section>
-		<!-- 사이드바 -->
-		<section id="sidebar">
-			<nav>
-			</nav>
-		</section>
 		<!-- 사이트 정보 -->
 		<footer id="page-footer">
-			<p>&copy; Sublime with Stata</p>
+			<p>이 페이지는 JavaScript를 사용하지 않고 제작되었습니다.</p>
 			<nav>
 				<ul>
-					<li><a href="home.html">하단 메뉴1</a></li>
-					<li><a href="contact.html">하단 메뉴2</a></li>
-					<li><a href="address.html">하단 메뉴3</a></li>
-					<li><a href="board.html">하단 메뉴4</a></li>
+					<li><a href="#">위로 가기</a></li>
+					<li><a href="https://ezstata.weebly.com">원본 페이지</a></li>
 				</ul>
 			</nav>
 		</footer>
