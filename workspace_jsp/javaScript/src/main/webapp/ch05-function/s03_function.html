@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>익명 함수</title>
+<script type="text/javascript">
+	// 익명 함수를 동일한 이름의 변수에 대입하고 호출하면 마지막에 대입한 함수가 호출됨
+	var 함수1 = function() {
+		document.write('함수 A<br>');
+	};
+	var 함수1 = function() {
+		document.write('함수 B<br>');
+	};
+	// 함수 호출
+	함수1();
+	
+	document.write('--------<br>')
+	
+	// 익명 함수로 함수를 정의하면 함수 호이스팅이 발생하는 것이 아니라 변수 호이스팅이 발생함; 즉, 익명 함수를 정의하기 전에 함수를 호출하면 undefined를 호출하는 것과 마찬가지이므로 타입 에러가 발생
+	// 함수2();
+	// 함수 선언
+	var 함수2 = function() {
+		document.write('함수2<br>');
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

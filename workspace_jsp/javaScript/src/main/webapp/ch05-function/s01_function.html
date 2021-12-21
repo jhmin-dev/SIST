@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+<script type="text/javascript">
+	// 선언적 함수
+	function check() {
+		document.write('호출하면 동작함<br>');
+	}
+	// 함수 호출
+	check();
+	
+	// 인자가 있는 함수
+	function check2(msg) { // 인자 앞에 var를 명시하면 에러
+		document.write(msg + '을 좋아합니다.<br>');
+	}
+	// 함수 호출
+	check2('가을');
+	
+	// 반환값이 있는 함수
+	function check3(num) {
+		return num*num;
+	}
+	// 함수 호출
+	var number = check3(10);
+	document.write('number = ' + number + '<br>');
+	
+	document.write('--------<br>');
+	
+	// 익명 함수
+	var play = function() { // 변수명이 익명 함수의 이름을 대신함
+		document.write('게임을 좋아해요!<br>');
+	}; // 변수를 선언하는 것으로 간주하므로 세미콜론 필요
+	// 함수 호출
+	play();
+	
+	// 인자가 있는 익명 함수
+	var play2 = function(item) {
+		document.write(item + '를 좋아합니다!<br>');
+	};
+	// 함수 호출
+	play2('초코');
+	
+	// 반환값이 있는 익명 함수
+	var play3 = function(x, y) {
+		return x + y;	
+	};
+	// 함수 호출
+	var result = play3(5, 8);
+	document.write('result = ' + result + '<br>');
+	
+	document.write('--------<br>');
+	
+	function checkIt() {
+		alert('오늘은 월요일입니다.');	
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="확인" onclick="checkIt();"> <!-- 인라인 방식으로 HTML 태그와 자바스크립트 함수를 연결 -->
+</body>
+</html>

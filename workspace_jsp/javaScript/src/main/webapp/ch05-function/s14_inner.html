@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내부 함수</title>
+<script type="text/javascript">
+	function f() {
+		// 지역 변수 선언 및 초기화
+		var n = 123;
+		// 내부 함수
+		function g() {
+			document.write('n is ' + n + '<br>');
+			document.write('g is called<br>');
+		}
+		return g; // 함수 정보 반환
+	}
+	// 함수 호출
+	var m = f(); // f()는 내부 함수 g를 반환하여 m에 대입
+	document.write(m + '<br>'); // g 선언 코드 출력
+	
+	document.write('--------<br>');
+	
+	// 변수 m에 대입된 함수 g를 호출; 함수 f가 종료되었음에도 f의 지역 변수인 n이 계속 사용되고 있음
+	m();
+	
+	document.write('--------<br>');
+	
+	// f()가 함수 g를 의미하므로, f()에 ()를 붙이면 g()가 되어 함수 g 호출 가능
+	f()();
+</script>
+</head>
+<body>
+
+</body>
+</html>

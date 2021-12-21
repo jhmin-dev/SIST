@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클로저</title>
+<script type="text/javascript">
+/* 
+지역 변수는 함수가 실행될 때 생성되고 함수가 종료될 때 사라짐
+하지만 클로저를 사용하면 이 규칙을 위반할 수 있음
+지역 변수를 남겨두는 현상을 클로저라고 함
+내부 함수를 이용해서 지역 변수를 호출할 때 지역 변수가 선언된 함수가 종료되어도 클로저를 이용해서 내부 함수 내에서 지역 변수를 호출 가능함
+*/
+	function outerFunction(name) {
+		// 지역 변수
+		var output = 'Hello ' + name + '!!!';
+		
+		// 선언적 함수
+		/*
+		function g() {
+			alert(output);
+		}
+		return g;
+		*/
+		
+		// 익명 함수
+		return function() {
+			alert(output); // outerFunction의 지역 변수 호출
+		};
+	}
+	
+	// 변수를 만들어 outerFunction의 내부 함수 호출하기
+	// var result = outerFunction('너굴');
+	// result();
+	
+	// 변수를 만들지 않고 outerFunction의 내부 함수 호출하기
+	outerFunction('콩돌')();
+</script>
+</head>
+<body>
+
+</body>
+</html>

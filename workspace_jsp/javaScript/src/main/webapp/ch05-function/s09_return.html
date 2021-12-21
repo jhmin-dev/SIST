@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>return</title>
+<script type="text/javascript">
+	function returnTest1(x, y) {
+		return x + y; // 값을 반환
+	}
+	// 함수 호출
+	var result = returnTest1(3, 5);
+	document.write(result + '<br>');
+	
+	document.write('--------<br>');
+	
+	function returnTest2() {
+		document.write('문장 A<br>');
+		
+		for(var i=1;i<=10;i++) {
+			if(i == 5) {
+				// break; // 조건 만족시 현재 반복을 중지하고 for문을 빠져나감
+				return; // 조건 만족시 함수를 빠져나가 함수가 종료됨
+			}
+			document.write(i + '<br>');
+		}
+		
+		document.write('문장 B<br>'); // break일 때는 실행되고, return일 때는 실행되지 않음
+	}
+	// 함수 호출
+	returnTest2();
+</script>
+</head>
+<body>
+
+</body>
+</html>

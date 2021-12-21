@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>isFinite 함수</title>
+<script type="text/javascript">
+	var number1 = -10 / 0; // 양수를 0으로 나누면 Infinity, 음수를 0으로 나누면 -Infinity 반환
+	document.write('number1 = ' + number1 + '<br>');
+	
+	// Infinity에 부호가 있기 때문에 조건문 작성이 번거로움
+	if(number1 == Infinity) { // 0으로 나누는 경우
+		document.write('무한<br>');
+	}
+	else { // 0이 아닌 수로 나누는 경우
+		document.write('유한<br>');
+	}
+	
+	// 주어진 값이 유한한지 판별하는 isFinite 함수를 사용하면 Infinity의 부호를 고려할 필요 없음
+	if(isFinite(number1)) { // 0이 아닌 수로 나누는 경우
+		document.write('유한');
+	}
+	else { // 0으로 나누는 경우
+		document.write('무한');
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

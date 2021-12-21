@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내부 함수</title>
+<script type="text/javascript">
+	function f() {
+		// 내부 함수 정의
+		function g() {
+			document.write('g is called');
+		}
+		// 내부 함수 호출; f()를 정의할 때 f() 내부에서 g()를 호출하더라도, 외부에서 f()를 호출해야 g()가 실행됨
+		g();
+	}
+	// 함수 호출
+	f();
+</script>
+</head>
+<body>
+
+</body>
+</html>

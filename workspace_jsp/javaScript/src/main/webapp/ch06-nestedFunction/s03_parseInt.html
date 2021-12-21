@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>parseInt, parseFloat</title>
+<script type="text/javascript">
+	var num = '1234';
+	var won = '1000원';
+	var won2 = '원1000';
+	var won3 = '10원00'
+	
+	var num2 = '24.56';
+	var dollar = '1.5$'
+	var dollar2 = '$2.5'
+	
+	document.write(Number(num) + '<br>'); // string을 number로
+	document.write(parseInt(num) + '<br>'); // string을 number로
+
+	document.write(Number(won) + '<br>'); // NaN
+	document.write(parseInt(won) + '<br>'); // 1000; 문자가 나오기 전까지의 숫자를 추출; 모든 .을 문자로 간주
+	document.write(parseInt(won2) + '<br>'); // NaN; 문자가 가장 앞에 있는 경우 숫자 추출 실패
+	document.write(parseInt(won3) + '<br>'); // 10
+
+	document.write('--------<br>');
+
+	document.write(Number(num2) + '<br>'); // string을 number로
+	document.write(parseFloat(num2) + '<br>'); // string을 number로
+	
+	document.write(Number(dollar) + '<br>'); // NaN
+	document.write(parseFloat(dollar) + '<br>'); // 1.5; 문자가 나오기 전까지의 숫자를 추출; 첫 번째로 등장하는 .은 소수점으로 간주
+	document.write(parseFloat(dollar2) + '<br>'); // NaN; 문자가 가장 앞에 있는 경우 숫자 추출 실패
+
+	document.write('--------<br>');
+	
+	var no1 = '10';
+	var no2 = '3.67';
+	
+	document.write(parseInt(no2) + '<br>'); // 3; 소수점 이하 자리 절사
+	document.write(parseFloat(no1)); // 10
+</script>
+</head>
+<body>
+
+</body>
+</html>

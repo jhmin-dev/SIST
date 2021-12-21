@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>let</title>
+<script type="text/javascript">
+/* 
+블럭 레벨의 스코프 : let(변수), const(상수)
+ES6에서 변수를 정의하는 데 let을 사용할 수 있고, 상수를 정의하는 데는 const를 사용할 수 있으며, 이들은 블럭 레벨의 스코프를 가짐
+
+*/
+	for(let i=1;i<=3;i++) {
+		document.write(i + '<br>');
+	}
+	// document.write(i + '<br>'); // let으로 선언한 변수는 블럭 밖에서 호출 불가; var로 선언시에는 블럭 밖에서도 호출 가능
+	
+	document.write('--------<br>');
+	
+	function test1() {
+		let i = 20; // 지역 변수
+		document.write(i + '<br>');
+	}
+	// 함수 호출
+	test1();
+	// document.write(i + '<br>'); // let으로 선언한 변수는 함수 블럭 밖에서 호출 불가
+
+	document.write('--------<br>');
+	
+	function test2() {
+		let a = 30; // 지역 변수
+		document.write(a + '<br>');
+		
+		// let a = 40; // let으로 선언한 변수는 중복 선언시 에러 발생 
+		// document.write(a + '<br>');
+	}
+	// 함수 호출
+	test2();
+
+	document.write('--------<br>');
+	
+	let n = 50; // 전역 변수
+	function test3() {
+		document.write(n + '<br>');
+	}
+	// 함수 호출
+	test3();
+	// 전역 변수는 함수가 끝나도 재사용 가능
+	document.write(n + '<br>');
+	
+	// let로 선언한 변수는 변수 호이스팅이 적용되지 않음
+	// document.write(score);
+	// 변수 선언
+	// let score;
+</script>
+</head>
+<body>
+
+</body>
+</html>

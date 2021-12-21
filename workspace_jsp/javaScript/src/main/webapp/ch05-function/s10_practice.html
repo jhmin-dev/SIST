@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<script type="text/javascript">
+/* 
+[실습 문제]
+키와 몸무게를 입력해서 적정 몸무게를 구하는 함수 avgWeight를 만들어 보자.
+함수에 키와 몸무게를 전달하면 다음 예와 같이 출력되게 작성해 보자.
+적정 몸무게를 구하는 공식 : (height - 100) * 0.9
+
+[출력 예시]
+당신의 키는 00cm이고 현재 몸무게는 00kg이며 적정 몸무게는 00kg입니다.
+적정 몸무게(적정 몸무게 초과, 적정 몸무게 미만)
+*/
+	function avgWeight(height, weight) {
+		// 적정 몸무게 구하기
+		var balance = (height - 100) * 0.9;
+		
+		document.write('당신의 키는 ' + height + 'cm이고 현재 몸무게는 ' + weight + 'kg이며 적정 몸무게는 ' + balance + 'kg입니다.<br>');
+		
+		document.write('적정 몸무게');
+		if(weight>balance) {
+			document.write(' 초과');
+		}
+		else if(weight<balance) {
+			document.write(' 미만');
+		}
+	}
+	
+	// prompt를 이용해서 값을 입력받음
+	var height = Number(prompt('키를 입력하세요.', ''));
+	var weight = Number(prompt('몸무게를 입력하세요.', ''));
+	
+	// 함수 호출
+	avgWeight(height, weight);
+</script>
+</head>
+<body>
+
+</body>
+</html>
