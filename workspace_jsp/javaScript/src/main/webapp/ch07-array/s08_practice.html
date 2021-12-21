@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<script type="text/javascript">
+/* 
+[실습 문제]
+성적을 prompt로 입력받아서 배열 score에 담고 총점 sum과 평균 avg를 구하여 출력하시오.
+*/
+	var score = [];
+	var sum = 0, avg = 0;
+	let n;
+	
+	// 과목 수 입력 받기
+	do {
+		n = Number(prompt('과목 수를 입력하세요', ''));
+	} while(n == '' || Number.isNaN(n));
+	
+	// 배열에 데이터 삽입
+	for(let i=0;i<n;i++) {
+		score.push(checkScore((i + 1) + '번째 과목의 점수를 입력하세요'));
+	}
+	
+	// 총점 구하기
+	for(let i=0;i<score.length;i++) {
+		sum += score[i];
+	}
+	
+	// 평균 구하기
+	avg = sum / score.length;
+	
+	// 출력
+	document.write('성적 : ' + score.join(', ') + '<br>');
+	document.write('총점 : ' + sum + ', 평균 : ' + avg);
+	
+	// 입력받는 값 검사
+	function checkScore(guide) {
+		let sc;
+		while(true) {
+			sc = Number(prompt(guide, ''));
+			if(sc == '') continue;
+			if(sc>=0 && sc<=100) return sc;
+			alert('성적은 0부터 100 사이의 값이어야 합니다!');
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

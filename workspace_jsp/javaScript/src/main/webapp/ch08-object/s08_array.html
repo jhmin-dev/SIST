@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열에 객체 저장</title>
+<script type="text/javascript">
+	// 빈 배열 생성
+	var students = [];
+	
+	// 객체를 배열에 저장
+	students.push({이름:'너굴',국어:100,수학:94,영어:89,과학:91});
+	students.push({이름:'콩돌',국어:99,수학:93,영어:88,과학:92});
+	students.push({이름:'라이츄',국어:98,수학:92,영어:87,과학:93});
+	students.push({이름:'밤돌',국어:97,수학:91,영어:86,과학:94});
+	students.push({이름:'피카츄',국어:96,수학:90,영어:85,과학:95});
+	
+	// students 배열 내의 모든 객체에 메서드 추가
+	for(let i=0;i<students.length;i++) {
+		// 총점 구하는 메서드 추가
+		students[i].getSum = function() {
+			return this.국어 + this.수학 + this.영어 + this.과학;
+		};
+		
+		// 평균 구하는 메서드 추가
+		students[i].getAverage = function() {
+			return this.getSum() / 4;
+		}
+	}
+	
+	document.write('이름, 총점, 평균<br>');
+	for(let i=0;i<students.length;i++) {
+		document.write(students[i].이름 + ', ' + students[i].getSum() + ', ' + students[i].getAverage() + '<br>');
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

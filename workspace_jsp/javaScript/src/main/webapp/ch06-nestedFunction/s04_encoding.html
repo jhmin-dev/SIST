@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>encoding 관련 함수</title>
+<script type="text/javascript">
+/* 
+escape(uri) : 적절한 정도로 인코딩함
+unescape(uri) : 적절한 정도로 디코딩함
+encodeURI(uri) : 최소한의 문자만 인코딩함
+decodeURI(uri) : 최소한의 문자만 디코딩함
+encodeURIComponent(uri) : 대부분의 문자를 인코딩함
+decodeURIComponent(uri) : 대부분의 문자를 디코딩함
+*/
+	// 인코딩할 URL
+	var URI = 'http://www.test1234.co.kr?test=한글입니다.';
+	
+	// 출력용 변수 선언 및 초기화
+	var output = '';
+	
+	// 인코딩
+	output += '* escape()<br>';
+	output += escape(URI) + '<br><br>';
+	
+	output += '* encodeURI()<br>';
+	output += encodeURI(URI) + '<br><br>';
+	
+	output += '* encodeURIComponent()<br>';
+	output += encodeURIComponent(URI) + '<br><br>';
+	
+	// 출력
+	document.write(output);
+	
+	// 디코딩 및 출력
+	var urix = escape(URI);
+	document.write(unescape(urix));
+</script>
+</head>
+<body>
+
+</body>
+</html>

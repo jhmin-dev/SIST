@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>toString</title>
+<script type="text/javascript">
+	var student = {};
+	
+	document.write(student + '<br>'); // 객체명 출력시 자동적으로 toString() 호출; object는 자료형, Object는 student가 상속받은 최상위 객체
+	document.write(student.toString() + '<br>');
+
+	document.write('--------<br>');
+	
+	// 객체에 속성 추가
+	student.이름 = '너굴';
+	student.직업 = '과학자';
+	
+	// 객체에 메서드 추가
+	student.toString = function() {
+		let msg = '';
+		for(let key in student) {
+			if(key != 'toString') { // 자기 자신은 출력 대상에서 제외
+				msg += key + ':' + student[key] + '<br>';
+			}
+		}
+		return msg; // Object의 toString() 메서드와 같은 형식으로 만들기 위해 문자열을 반환
+	};
+	
+	document.write(student.toString());
+	
+	document.write('--------<br>')
+	
+	document.write(student); // toString() 생략하고 호출해도 내부적으로 toString() 메서드를 자동 호출
+</script>
+</head>
+<body>
+
+</body>
+</html>

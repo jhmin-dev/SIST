@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>eval</title>
+<script type="text/javascript">
+	// eval(string) : string(문자열)을 자바스크립트 코드로 실행
+	
+	var willEval = '';
+	willEval += 'var number = 10;'; // 세미콜론을 생략하면 eval시 에러
+	willEval += 'alert(number)'; // 단, 마지막 행은 세미콜론 생략 가능
+	
+	// 문자열 출력
+	document.write(willEval);
+	
+	// eval 함수를 이용해서 문자열로 되어 있는 자바스크립트 코드를 실행
+	eval(willEval);
+	alert(number + '!'); // eval로 생성한 전역 변수를 호출
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체의 속성과 메서드 사용</title>
+<script type="text/javascript">
+	var name = '밤돌'; // 전역 변수
+
+	// 객체 생성
+	var person = {
+			// 속성 지정
+			name:'너굴',
+			// 메서드 지정; 속성의 value에 익명 함수를 명시
+			eat:function(food) {
+				// var name = '콩돌'; // 지역 변수
+				
+				// this : 메서드 내에서 자기 자신이 가지고 있는 속성을 호출하고 싶을 때, 객체 내부에서 객체를 참조할 때 사용
+				alert(this.name + '이/가 ' + food + '을/를 먹습니다.');
+				// this를 명시하지 않고 호출하면 메서드 안에서 지역 변수를 찾고, 지역 변수가 없으면 전역 변수를 찾음
+				alert(name + '이/가 ' + food + '을/를 먹습니다.');
+			}
+	};
+	
+	// 객체의 속성 호출
+	document.write(person.name);
+	// 객체의 메서드 호출
+	person.eat('초코');
+</script>
+</head>
+<body>
+
+</body>
+</html>

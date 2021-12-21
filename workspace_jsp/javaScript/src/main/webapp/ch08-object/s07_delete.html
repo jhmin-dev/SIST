@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체의 속성 및 메서드 제거</title>
+<script type="text/javascript">
+	// 객체 생성
+	var student = {};
+	
+	// 객체에 속성 추가
+	student.이름 = '너굴';
+	student.취미 = '악기';
+	student.직업 = '경찰';
+	
+	// toString() 메서드 추가
+	student.toString = function() {
+		let output = '';
+		for(let key in this) {
+			if(key != 'toString') {
+				output += key + ':' + this[key] + '<br>';
+			}
+		}
+		return output;
+	};
+	
+	document.write(student);
+	
+	document.write('--------<br>');
+	
+	// delete 키워드 : 객체의 속성 제거
+	delete student.취미;
+	document.write(student);
+</script>
+</head>
+<body>
+
+</body>
+</html>
