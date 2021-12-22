@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>아날로그 시계</title>
+	<script type="text/javascript">
+		window.onload = function() {
+			window.setInterval(function() {
+				let time = new Date();
+
+				// 시, 분, 초의 값을 하루 동안 단조 증가하게 만들기 위해 밀리초 단위로 환산함
+				let midnight = new Date(time.getFullYear(), time.getMonth(), time.getDate(), 0, 0, 0);
+				let ms = time.getTime() - midnight.getTime();
+				let hours = ms / (1000 * 60 * 60);
+				let minutes = ms / (1000 * 60);
+				let seconds = ms / 1000;
+
+				// transform 속성을 이용해 바늘 회전
+				document.getElementById('hh').style.transform = 'rotateZ(' + (30 * hours) + 'deg)';
+				document.getElementById('mm').style.transform = 'rotateZ(' + (6 * minutes) + 'deg)';
+				document.getElementById('ss').style.transform = 'rotateZ(' + (6 * seconds) + 'deg)';
+			}, 1000);
+		};
+	</script>
+	</script>
+	</script>
+	<style type="text/css">
+		#clock {
+			display: flex;
+			align-items: flex-end;
+			width: 200px;
+			height: 200px;
+			margin: 0;
+			padding: 0;
+		}
+
+		/* 시, 분, 초 시곗바늘 */
+		.hand {
+			transform-origin: 0% 100%;
+			transition: transform 1s linear;
+			position: absolute;
+			left: 100px;
+			width: 3px;
+			height: 90px;
+			z-index: 1;
+			background: midnightblue;
+		}
+		.hand#hh {
+			width: 9px;
+			height: 60px;
+			z-index: 3;
+			background: cornflowerblue;
+		}
+		.hand#mm {
+			width: 6px;
+			height: 80px;
+			z-index: 2;
+			background: lightskyblue;
+		}
+
+		/* 시곗바늘 중심 */
+		.center {
+			position: absolute;
+			left: 100px;
+			width: 12px;
+			height: 12px;
+			border-radius: 6px;
+			z-index: 4;
+			background: midnightblue;
+		}
+	</style>
+</head>
+<body>
+	<div id="clock">
+		<div class="center"></div>
+		<div class="hand" id="hh"></div>
+		<div class="hand" id="mm"></div>
+		<div class="hand" id="ss"></div>
+	</div>
+</body>
+</html>
