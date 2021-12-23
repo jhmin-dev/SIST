@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>프로토타입을 이용한 메서드 생성</title>
+<script type="text/javascript">
+	// 생성자 함수 정의
+	function Student(name, kor, eng, math, sci) {
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+		this.sci = sci;
+	}
+	
+	// 프로토타입은 생성자 함수를 사용해 생성된 객체가 공통으로 가지는 공간
+	Student.prototype.getSum = function() {
+		return this.kor + this.eng + this.math + this.sci;
+	};
+	Student.prototype.getAvg = function() {
+		return this.getSum() / 4;
+	};
+	Student.prototype.toString = function() {
+		return this.name + ', ' + this.getSum() + ', ' + this.getAvg();
+	};
+	
+	// 배열 생성
+	let students = [];
+	
+	// 배열에 객체를 저장
+	students.push(new Student('초코', 99, 98, 97, 96));
+	students.push(new Student('자바칩', 97, 98, 97, 94));
+	students.push(new Student('얼그레이', 96, 93, 97, 96));
+	students.push(new Student('브라운슈가', 95, 91, 93, 95));
+	students.push(new Student('요거트', 94, 98, 62, 66));
+	
+	// 출력
+	document.write('이름, 총점, 평균<br>');
+	for(let value of students) { // 반복 가능한 객체 students에 대해 반복하고, 각 반복에 서로 다른 속성값을 value에 할당
+		document.write(value.toString() + '<br>');
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

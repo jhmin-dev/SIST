@@ -14,8 +14,9 @@
 	
 	// 과목 수 입력 받기
 	do {
-		n = Number(prompt('과목 수를 입력하세요', ''));
-	} while(n == '' || Number.isNaN(n));
+		n = Number(prompt('과목 수를 입력하세요', '')); // 아무 것도 입력하지 않는 경우 Number('')가 되어 0을 반환
+	} while(n == '' || Number.isNaN(n)); // 0을 ''와 비교하면 자동 형변환되어 true를 반환함
+	
 	
 	// 배열에 데이터 삽입
 	for(let i=0;i<n;i++) {
@@ -38,10 +39,10 @@
 	function checkScore(guide) {
 		let sc;
 		while(true) {
-			sc = Number(prompt(guide, ''));
-			if(sc == '') continue;
-			if(sc>=0 && sc<=100) return sc;
-			alert('성적은 0부터 100 사이의 값이어야 합니다!');
+			sc = prompt(guide, '');
+			if(sc === '') continue; // 빈 문자열을 입력받은 경우 경고 메시지 없이 다시 입력 강요
+			if(sc>=0 && sc<=100) return Number(sc); // 0~100 사이의 값을 입력받은 경우 string을 number로 형변환하여 반환
+			alert('성적은 0부터 100 사이의 값이어야 합니다!'); // 그 외의 경우 경고 메시지 출력
 		}
 	}
 </script>

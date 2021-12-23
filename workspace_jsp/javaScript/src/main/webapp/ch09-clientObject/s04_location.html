@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>location</title>
+<script type="text/javascript">
+	document.write('location.href : ' + location.href + '<br>'); // 전체 주소
+	document.write('location.host : ' + location.host + '<br>'); // 호스트명과 포트 번호
+	document.write('location.hostname : ' + location.hostname + '<br>'); // 호스트명; 도메인이 없지만 서버(=톰캣)와 클라이언트(=브라우저)가 같은 PC에 있으므로 IP 주소 대신 localhost를 반환
+	document.write('location.pathname : ' + location.pathname + '<br>'); // 하위 경로; 프로젝트명 javaScript는 contextPath에 해당
+	document.write('location.protocol : ' + location.protocol + '<br>');
+	document.write('location.port : ' + location.port + '<br>'); // 포트 번호; 톰캣의 기본 포트는 8080번이며, 상용 서비스의 경우 80번을 사용
+</script>
+</head>
+<body>
+
+</body>
+</html>

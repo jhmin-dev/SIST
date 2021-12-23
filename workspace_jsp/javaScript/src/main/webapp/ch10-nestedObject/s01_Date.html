@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date</title>
+<script type="text/javascript">
+	var now = new Date(); // 생성자 함수를 이용하여 Date 객체 생성
+	
+	document.write('now의 값 : ' + now + '<br>');
+
+	document.write('오늘 : ' + now.toLocaleString() + '<br>');
+	document.write('오늘의 날짜 : ' + now.toLocaleDateString() + '<br>');
+	document.write('오늘의 시간 : ' + now.toLocaleTimeString() + '<br>');
+	
+	document.write('연도 : ' + now.getFullYear() + '<br>');
+	document.write('월 : ' + (now.getMonth() + 1) + '<br>'); // 0~11로 반환
+	document.write('일 : ' + now.getDate() + '<br>');
+	document.write('요일 : ' + now.getDay() + '<br>'); // 요일을 숫자로 반환; 0=일요일, 6=토요일
+	document.write('시 : ' + now.getHours() + '<br>'); // 0~23으로 반환; 12시 표기법은 별도의 연산 필요
+	document.write('분 : ' + now.getMinutes() + '<br>');
+	document.write('초 : ' + now.getSeconds() + '<br>');
+	document.write('밀리초 : ' + now.getMilliseconds() + '<br>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

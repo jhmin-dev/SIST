@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>location</title>
+</head>
+<body>
+	<!-- 페이지 이동 -->
+	<input type="button" value="이동(href)" onclick="location.href = 's01_window.html';"> <!-- location의 href 속성에 직접 주소를 대입하면 해당 주소로 이동 -->
+	<input type="button" value="이동(assign)" onclick="location.assign('s02_window.html');"> <!-- location의 assign() 메서드에 주소를 인자로 전달하면 해당 주소로 이동 -->
+	<input type="button" value="이동(replace)" onclick="location.replace('s02_window.html');"> <!-- location의 replace() 메서드에 주소를 인자로 전달하면 해당 주소로 이동; 히스토리를 기록하지 않아 뒤로가기 불가 -->
+	<!-- 새로고침 -->
+	<input type="button" value="새로고침" onclick="location.reload();">
+</body>
+</html>

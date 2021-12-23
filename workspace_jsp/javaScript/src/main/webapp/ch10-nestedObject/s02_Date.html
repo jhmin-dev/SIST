@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date</title>
+<script type="text/javascript">
+	// <body>의 <span> 태그를 인식할 수 있게 하기 위해 스크립트 실행을 지연시킴
+	window.onload = function() {
+		// 지정한 시간마다 매개 변수로 전달된 함수를 반복해서 실행
+		window.setInterval(function() {
+			var time = new Date();
+			var hours = time.getHours();
+			var minutes = time.getMinutes();
+			var seconds = time.getSeconds();
+			
+			var clock = '';
+			clock += ((hours < 10) ? '0' : '') + hours;
+			clock += ((minutes < 10) ? ':0' : ':') + minutes;
+			clock += ((seconds < 10) ? ':0' : ':') + seconds;
+			
+			
+			// ID를 통해 태그를 검색하고, innerHTML 속성을 통해 태그의 내용을 제어
+			document.getElementById('display').innerHTML = clock; 
+		}, 1000);
+	};
+</script>
+</head>
+<body>
+	<span id="display"></span>
+</body>
+</html>

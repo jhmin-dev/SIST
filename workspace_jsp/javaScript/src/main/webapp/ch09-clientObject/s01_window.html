@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window</title>
+<script type="text/javascript">
+/* 
+브라우저 관련 객체
+window
+	|
+	location history frame document screen navigator
+							|
+		anchor applet area form image layer link plugin title
+							|
+			button checkbox fileupload hidden password radio reset select submit text textarea
+
+window의 메서드
+alert() : 경고창
+prompt() : 입력창
+confirm() : 선택창
+*/
+	window.alert('경고창');
+
+	var season = window.prompt('좋아하는 계절은?', '');
+	document.write('좋아하는 계절은 ' + season + '이다<br>');
+	
+	var choice = window.confirm('홀리데이 특별 패키지를 구매합니다. 결제 금액: 33,000원'); // 확인을 클릭하면 true 반환, 취소를 클릭하면 false 반환
+	if(choice) {
+		document.write('결제에 성공했습니다.');
+	}
+	else {
+		document.write('결제에 실패했습니다!')
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

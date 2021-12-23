@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<script type="text/javascript">
+/* 
+[실습 문제]
+이름		수입		지출		잔액(getBalance, 세금 공제)		세금(getTax, 5%)
+홍길동	3000	2500
+박문수	5000	1100
+이순신	4000	3600
+김유신	7000	4200
+*/
+	// 배열 생성
+	var member = [];
+	
+	// 배열에 객체를 저장
+	member.push({name:'바닐라', income:3000, spending:2500});
+	member.push({name:'모카', income:5000, spending:1100});
+	member.push({name:'초코', income:4000, spending:3600});
+	member.push({name:'헤이즐넛', income:7000, spending:4200});
+	
+	// 객체에 메서드 추가
+	for(let me of member) {
+		// 잔액(세금 공제) 구하기
+		me.getBalance = function() {
+			return this.income - this.getTax() - this.spending;
+		};	
+		// 세금 구하기
+		me.getTax = function() {
+			return this.income * 0.05;
+		};
+		// 정보 반환하기
+		me.toString = function() {
+			let out = '';
+			for(let key in this) {
+				if(key.startsWith('get')) {
+					out += '<td>' + this[key]() + '</td>';
+				}
+				else if(key !== 'toString') {
+					out += '<td>' + this[key] + '</td>';
+				}	
+			}
+			return out;
+		};
+	}
+
+	// 출력
+	document.write('<table>');
+	document.write('<tr>');
+	document.write('<th>이름</th><th>수입</th><th>지출</th><th>잔액</th><th>세금</th>');
+	document.write('</tr>');
+	for(let me of member) {
+		document.write('<tr>');
+		document.write(me);
+		document.write('</tr>');
+	}
+	document.write('</table>');
+</script>
+<style type="text/css">
+	table {
+		border-collapse: collapse;
+		margin:0;
+		padding:0;
+	}
+	th {
+		border-bottom: solid 1px black;	
+		background: lightgray;
+	}
+	tr :first-child {
+		border-right: solid 1px black;
+	}
+	tr td:first-child {
+		text-align: center;
+	}
+	tr td:not(:first-child) {
+		text-align: right;
+	}
+	th, td {
+		padding: 0 2rem;
+	}
+</style>
+</head>
+<body>
+
+</body>
+</html>

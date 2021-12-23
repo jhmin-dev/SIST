@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window</title>
+<script type="text/javascript">
+/* 
+window의 메서드
+setTimeout(function, millisecond) : 지정한 시간(밀리초 단위) 후에 함수를 한 번 실행
+setInterval(function, millisecond) : 지정한 시간(밀리초 단위)마다 함수를 반복해서 실행
+*/
+	// window가 로드될 때 함수를 실행
+	window.onload = function() { // 스크립트의 실행 속도를 의도적으로 지연시키기 위해 window가 모두 로드되면 호출되는 이벤트 속성 onload에 함수를 연결; <body>까지 모두 인식하고 창이 열린 다음에 창을 닫아야 하기 때문
+		alert('경고창을 닫고 3초 후 이 페이지는 종료됩니다.');
+		// 3초 후에 함수를 실행
+		window.setTimeout(function() {
+			// 현재 창 닫기
+			window.close();
+		}, 3000);
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

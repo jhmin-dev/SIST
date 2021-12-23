@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수를 매개 변수로 받는 함수</title>
+<script type="text/javascript">
+	// 함수의 매개 변수를 통해 다른 함수의 내부로 전달되는 함수를 콜백 함수라고 함
+	// 함수를 10번 호출하는 함수
+	function callFunctionTenTimes(otherFunction) {
+		for(let i=0;i<10;i++) {
+			otherFunction(); // 매개 변수로 전달된 함수를 실행
+		}
+	}
+	
+	// 선언적 함수
+	function justFunction() {
+		document.write('Happy Day!<br>');
+	}
+
+	// 함수를 호출하면서 전달되는 함수가 바로 실행되는 경우; 에러 발생
+	// callFunctionTenTimes(justFunction());
+	
+	// 함수를 호출하면서 다른 함수를 매개 변수로 전달하는 경우
+	callFunctionTenTimes(justFunction);
+	
+	document.write('--------<br>');
+	
+	// 익명 함수 전달
+	callFunctionTenTimes(function() {
+		document.write('Hello World!<br>');
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>
