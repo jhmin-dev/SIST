@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>name 속성을 이용한 문서 객체 탐색</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var prev = document.getElementsByName('prev'); // getElementsByName() 메서드는 name 속성을 통해 문서 객체를 탐색; name 속성은 중복될 수 있기 때문에 NodeList로 반환
+		var next = document.getElementsByName('next');
+		
+		prev[0].innerHTML = '이전';
+		next[0].innerHTML = '다음';
+		
+		var country = document.getElementsByName('country');
+		country[0].checked = true; // checked 속성의 값을 true로 지정; NodeList에서 첫 번째 체크박스의 기본값을 선택된 것으로 변경
+		
+		var comment = document.getElementsByName('comment');
+		// comment[0].value = '간단한 설명 입력'; // value 속성에 값을 대입하면 입력 박스에 해당 값이 채워짐
+		comment[0].placeholder = '간단한 설명 입력'; // placeholder 속성에 값을 대입하면 입력 박스에 해당 값이 hint로 제공됨; value 속성과 함께 지정시 value 속성이 우선함
+	};
+</script>
+</head>
+<body>
+	<button name="prev">prev</button><br>
+	<button name="next">next</button><br>
+	
+	<input type="checkbox" name="country" value="한국">한국
+	<input type="checkbox" name="country" value="미국">미국
+	<input type="checkbox" name="country" value="영국">영국
+	
+	<br><input type="text" name="comment">
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 제거</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var willBeRemoved = document.getElementById('will_be_removed');
+		
+		// 3초 후에 함수 호출
+		setTimeout(function(){
+			// 지정한 문서 객체를 제거; 메서드를 호출한 문서 객체의 직계 자식만 제거 가능
+			// document.body.removeChild(willBeRemoved);
+			
+			// 문서 객체의 하위 요소를 모두 제거
+			document.body.innerHTML = '';
+		}, 3000);
+	};
+</script>
+</head>
+<body>
+	<h1 id="will_be_removed">Header</h1>
+	<h1>Header2</h1>
+</body>
+</html>

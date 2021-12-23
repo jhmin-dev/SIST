@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String의 메서드</title>
+<script type="text/javascript">
+	var msg = '세상의 끝에서 세상을 노래하다';
+	
+	document.write(msg.length + '<br>'); // 문자열의 길이
+	document.write(msg.charAt(8) + '<br>'); // 지정한 인덱스에 해당하는 위치의 문자 추출
+	document.write(msg.indexOf('상') + '<br>'); // 지정한 문자가 처음으로 등장하는 위치의 인덱스 반환
+	document.write(msg.indexOf('노래') + '<br>'); // 지정한 문자열의 첫 번째 문자가 처음으로 등장하는 위치의 인덱스 반환
+	document.write(msg.lastIndexOf('상') + '<br>'); // 지정한 문자가 마지막으로 등장하는 위치의 인덱스 반환
+	
+	document.write(msg.substring(5) + '<br>'); // 지정한 인덱스부터 끝까지의 문자열 추출
+	document.write(msg.substr(5) + '<br>');
+	document.write(msg.substring(1,5) + '<br>'); // 시작 인덱스부터 끝 인덱스 전까지의 문자열 추출
+	
+	var msg2 = '2021-12-23';
+	
+	var array = msg2.split('-'); // 구분자를 이용해서 문자열을 잘라낸 후 배열로 반환
+	document.write(array);
+</script>
+</head>
+<body>
+
+</body>
+</html>

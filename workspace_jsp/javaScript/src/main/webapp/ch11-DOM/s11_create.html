@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 생성</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var output = '';
+		output += '<ul>';
+		output += '	<li>Java</li>';
+		output += '	<li>SQL</li>';
+		output += '	<li>HTML</li>';
+		output += '	<li>CSS</li>';
+		output += '	<li>JavaScript</li>';
+		output += '</ul>';
+		
+		// innerHTML 속성을 이용해서 태그를 추가
+		// document.body.innerHTML = output;
+		
+		// textContent 속성을 이용해서 텍스트를 추가
+		document.body.textContent = output;
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

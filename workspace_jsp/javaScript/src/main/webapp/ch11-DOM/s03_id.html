@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>id를 이용한 문서 객체 탐색</title>
+<script type="text/javascript">
+	window.onload = function() { 
+		var header1 = document.getElementById('header_1'); // getElementById() 메서드는 id 속성을 통해 태그를 탐색; id 속성은 문서 내에서 유일해야 하기 때문에 하나의 태그를 호출
+		var header2 = document.getElementById('header_2');
+		
+		header1.innerHTML = '모카'; // innerHTML 속성을 이용해 호출된 문서 객체의 내용 변경
+		header2.innerHTML = '초코';
+	};
+</script>
+</head>
+<body>
+	<h1 id="header_1">Header</h1>
+	<h1 id="header_2">Header</h1>
+</body>
+</html>

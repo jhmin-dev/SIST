@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자를 이용해서 문서 객체 탐색</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var elems = document.querySelectorAll('ul > li'); // querySelectorAll() 메서드는 선택자를 이용해서 태그를 탐색; 복수의 태그가 존재할 수 있으므로 태그 정보를 NodeList로 반환
+		
+		var output = '';
+		for(var i=0;i<elems.length;i++) {
+			output += elems[i].innerHTML + '\n';
+		}
+		alert(output);
+		
+		elems[0].style.background = 'gold';
+	};
+</script>
+</head>
+<body>
+	<ul>
+		<li>Apple</li>
+		<li>Strawberry</li>
+		<li>Mango</li>
+	</ul>
+</body>
+</html>

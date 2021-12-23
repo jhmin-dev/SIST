@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자를 이용한 문서 객체 탐색</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var header1 = document.querySelector('#header_1'); // 선택자를 이용해서 문서 객체를 탐색
+		var header2 = document.querySelector('#header_2');
+		
+		header1.innerHTML = 'Hello';
+		header2.innerHTML = 'World';
+	};
+</script>
+</head>
+<body>
+	<h1 id="header_1">도시</h1>
+	<h1 id="header_2">도시</h1>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String</title>
+<script type="text/javascript">
+	function trans() { // 버튼을 눌러서 함수를 호출하면 입력창에 입력한 소문자 데이터를 읽어와서 대문자로 변환하고, 변환된 데이터를 다시 입력창에 저장
+		var txt = document.form1.id.value; // document로 전체 문서에 접근하고, 하위 요소인 <form>과 <input>에 name 속성(대소문자 구분)을 통해 접근 후, value 속성을 통해 입력창에 입력한 데이터를 반환
+		txt = txt.toUpperCase(); // toUpperCase() 메서드를 통해 소문자를 대문자로 변환
+		document.form1.id.value = txt; // 대문자로 변환된 데이터를 입력창에 저장
+	}
+</script>
+</head>
+<body>
+	<form name="form1">
+		ID를 소문자로 입력하면 대문자로 변환됩니다.<br>
+		ID : <input type="text" name="id">
+		<input type="button" value="입력" onclick="trans();"> <!-- 서버로 전송하지 않고 자바스크립트를 호출할 것이므로 submit 대신 button 생성 -->
+	</form>
+</body>
+</html>

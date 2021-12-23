@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자를 이용한 태그 탐색</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var elem = document.querySelector('.strawberry'); // querySelector() 메서드는 선택자를 이용해서 태그를 탐색; 태그가 중복될 경우 첫 번째 태그만 호출
+		
+		elem.style.color = 'crimson'; // style 속성을 이용해 호출한 태그의 글자 색을 변경함
+	};
+</script>
+</head>
+<body>
+	<ul>
+		<li class="apple">Apple</li>
+		<li class="strawberry">Strawberry</li>
+		<li class="strawberry">Strawberry2</li>
+		<li class="orange">Orange</li>
+	</ul>
+</body>
+</html>
