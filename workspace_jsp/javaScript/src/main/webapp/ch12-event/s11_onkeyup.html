@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>onkeyup</title>
+<script type="text/javascript">
+/* 
+이벤트 이름		설명									발생 순서
+keydown		키보드가 눌러질 때 발생					1
+keypress	글자가 입력될 때 발생(한글로 사용할 수 없음)	2
+keyup		키보드가 떼어질 때 발생					3
+*/
+	window.onload = function() {
+		// textarea
+		var content = document.getElementById('content');
+		// 이벤트 연결
+		content.onkeyup = function() {
+			// 입력한 글자 수 구하기
+			var inputLength = this.value.length;
+			// 남은 글자 수 구하기
+			var remain = 150 - inputLength;
+			// 문서 객체의 내용 변경
+			var letter = document.getElementById('letter');
+			letter.textContent = remain;	
+		};
+	};
+</script>
+</head>
+<body>
+	<h4 id="letter">150</h4>
+	<textarea rows="5" cols="30" name="content" id="content"></textarea>
+</body>
+</html>

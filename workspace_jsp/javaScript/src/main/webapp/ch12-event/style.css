@@ -1,0 +1,34 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+h2 {
+	margin-top: 40px;
+	text-align: center;
+}
+table {
+	margin: 40px auto;
+	width: 600px;
+}
+td {
+	padding-left: 10px;
+}
+img {
+	width: 100px;	
+}
+#price {
+	text-align: center;
+}
+#preview {
+	border: 3px solid gray;
+	margin: 30px auto;
+	text-align: center;
+	height: 50px;
+}
+span {
+	font-size: 20px;
+}
+span#total {
+	color: red;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 전달</title>
+<script type="text/javascript">
+/* 
+이벤트 버블링(기본) : 자식 노드에서 부모 노드 순으로 이벤트를 실행하는 것을 의미
+이벤트 캡쳐링 : 부모 노드에서 자식 노드 순으로 이벤트를 실행하는 것을 의미
+
+이벤트 버블링
+div
+|		^
+div		|
+|		|	자식 노드에서 부모 노드로 이벤트 전파
+p		|
+|		|
+span	이벤트 발생
+
+이벤트 캡쳐링
+div	이벤트 발생
+|		|
+div		|
+|		|	부모 노드에서 자식 노드로 이벤트 전파
+p		|
+|		v
+span
+*/
+	window.onload = function() {
+		// <h1> 태그에 이벤트 연결
+		document.getElementById('header').onclick = function() {
+			alert('header');
+			this.style.background = 'pink';
+		};
+		// <p> 태그에 이벤트 연결
+		document.getElementById('paragraph').onclick = function(event) { // 이벤트 객체를 사용하려면 이벤트 핸들러의 매개 변수로 이벤트 객체를 전달받아야 함
+			alert('paragraph');
+			this.style.backgroundColor = 'gold';
+			
+			// 이벤트 전달 막기
+			event.stopPropagation();
+		};
+		
+	}
+</script>
+</head>
+<body>
+	<h1 id="header">Header
+		<p id="paragraph">Paragraph</p>
+	</h1>
+</body>
+</html>

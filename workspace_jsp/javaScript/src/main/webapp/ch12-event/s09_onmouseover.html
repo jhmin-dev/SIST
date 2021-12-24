@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 크기 변경하기</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var alink = document.getElementsByTagName('a');
+		var bigImg = document.getElementById('bigImg');
+		
+		for(let i=0;i<alink.length;i++) {
+			// 썸네일 마우스오버시 큰 이미지 보여주기
+			alink[i].onmouseover = function() {
+				bigImg.style.display = ''; // <img> 태그를 노출시킴
+				bigImg.src = this.href; // 이벤트가 발생한 <a> 태그에서 큰 이미지 경로를 읽어옴
+				bigImg.width = 500;
+				bigImg.height = 350;
+			};
+			// 썸네일 마우스오버 해제시 큰 이미지 감추기
+			alink[i].onmouseout = function() {
+				bigImg.style.display = 'none'; // <img> 태그 숨기기
+			};
+			// 썸네일 클릭시 무반응
+			alink[i].onclick = function() {
+				return false; // <a> 태그의 기본 이벤트인 링크 기능을 제거
+			};
+		}
+	};
+</script>
+</head>
+<body>
+	<div>
+		<a href="../images/Penguins.jpg"><img src="../images/Penguins.jpg" width="83" alt="펭귄 이미지"></a> <!-- 썸네일용 작은 크기 이미지를 별도로 준비할 경우 <a> 태그에는 큰 이미지 경로, <img> 태그에는 썸네일 이미지 경로를 사용 -->
+		<a href="../images/Koala.jpg"><img src="../images/Koala.jpg" width="83" alt="코알라 이미지"></a>
+	</div>
+	<div>
+		<img id="bigImg" style="display: none;">
+	</div>
+</body>
+</html>

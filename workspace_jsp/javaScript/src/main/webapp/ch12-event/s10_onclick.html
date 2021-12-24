@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>radio와 이벤트</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var radios = document.getElementsByName('price');
+		var fee = document.getElementById('fee');
+		
+		for(let i=0;i<radios.length;i++) {
+			radios[i].onclick = function() {
+				if(this.value=='1' && this.checked) { // 유료 radio 버튼 선택시 가입비 안내를 보여주기
+					fee.style.display = '';
+				}
+				else { // 무료 radio 버튼 선택시 가입비 안내를 감추기
+					fee.style.display = 'none';
+				}
+			};
+		}
+	};
+</script>
+</head>
+<body>
+	<form>
+		<label><input type="radio" name="price" value="0" checked>무료</label>
+		<label><input type="radio" name="price" value="1">유료</label>
+	</form>
+	<div id="fee" style="display: none;">
+		유료 회원 가입비는 10,000원입니다.
+	</div>
+</body>
+</html>
