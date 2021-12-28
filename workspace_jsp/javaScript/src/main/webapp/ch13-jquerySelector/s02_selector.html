@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	// 문서가 준비 완료되면 매개 변수로 전달된 함수를 실행
+	$(function() {
+		// 태그 선택자를 통해 태그에 접근하여 jQuery 객체를 만들고, css() 메서드에 속성 및 속성값을 전달하여 스타일 처리
+		$('span').css('border', '3px solid blue');
+		// 클래스 선택자
+		$('.my').css('border', '5px solid red')
+		// ID 선택자
+		$('#content').css('background-color', 'green');
+	});
+</script>
+</head>
+<body>
+	<p class="my">jQuery 실습</p>
+	<div>
+		<div id="content">id값이 content인 div 태그</div>
+	</div>
+	<span>span1</span>
+	<span class="my">span2</span>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본 필터 선택자</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+/* 
+기본 필터 선택자
+선택자 형태		설명
+요소:odd		홀수 번째에 위치한 문서 객체를 선택
+요소:even		짝수 번째에 위치한 문서 객체를 선택
+요소:first	첫 번째에 위치한 문서 객체를 선택
+요소:last		마지막에 위치한 문서 객체를 선택
+*/
+	$(function() {
+		$('tr:odd').css('background-color', 'gold'); // 홀수 행
+		$('tr:even').css('background-color', 'pink'); // 짝수 행
+		/*
+		$('tr:first').css('background-color', '#000') // 첫 번째 행;
+					.css('color', '#fff'); // css() 메서드는 jQuery 객체를 반환하므로 메서드를 연속해서 사용 가능
+		*/
+		$('tr:first').css({ // 같은 메서드를 여러 번 호출할 때는 객체 표기법 사용을 권장
+			backgroundColor:'#000',
+			color:'#fff'
+		});
+	});
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>이름</th><th>혈액형</th><th>지역</th>
+		</tr>
+		<tr>
+			<td>너굴</td><td>AB형</td><td>서울</td>
+		</tr>
+		<tr>
+			<td>콩돌</td><td>A형</td><td>서울</td>
+		</tr>
+		<tr>
+			<td>밤돌</td><td>O형</td><td>인천</td>
+		</tr>
+		<tr>
+			<td>바닐프티</td><td>B형</td><td>광주</td>
+		</tr>
+		<tr>
+			<td>바닐리치</td><td>B형</td><td>전주</td>
+		</tr>
+		<tr>
+			<td>배바닐라</td><td>O형</td><td>창원</td>
+		</tr>
+	</table>
+</body>
+</html>

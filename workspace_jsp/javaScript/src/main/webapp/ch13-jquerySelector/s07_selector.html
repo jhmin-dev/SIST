@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>입력 양식 필터 선택자2</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+/* 
+입력 양식 필터 선택자2
+선택자 형태			설명
+요소:checked		체크된 입력 양식
+요소:disabled		비활성화된 입력 양식
+요소:enabled		활성화된 입력 양식
+요소:focus		초점이 맞춰져 있는 입력 양식
+요소:selected		<select> 태그 내 <option> 태그들 중 선택된 태그
+*/
+	$(function() {
+		// 5초 후에 코드를 실행
+		setTimeout(function(){
+			// <select> 태그에서 선택된 <option>에 접근
+			var value = $('select > option:selected').val();
+			
+			alert(value); // 5초 내에 아무 것도 선택하지 않으면 첫 번째 <option> 태그의 값이 출력됨
+		}, 5000);
+	});
+</script>
+</head>
+<body>
+	<select>
+		<option>Apple</option> <!-- value 속성 생략시, 태그 내 텍스트를 value로 인식 -->
+		<option>Mango</option>
+		<option>Strawberry</option>
+		<option>Grape</option>
+		<option>Melon</option>
+	</select>
+</body>
+</html>

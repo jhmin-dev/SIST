@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그 선택자와 ID 선택자 연계</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// h1 태그에 target이라는 ID가 적용된 태그를 선택
+		$('h1#target').css('color', 'orange');
+	});
+</script>
+</head>
+<body>
+	<h1>Header-0</h1>
+	<h1 id="target">Header-1</h1>
+	<h1>Header-2</h1>
+</body>
+</html>

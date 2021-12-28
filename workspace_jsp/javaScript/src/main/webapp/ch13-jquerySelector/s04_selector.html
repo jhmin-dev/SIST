@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그 선택자와 클래스 선택자 연계</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.item').css('color', 'gold');
+		$('h1.item').css('background-color', 'crimson');
+		// 두 개의 클래스를 모두 가지는 태그를 선택
+		$('h1.item.select').css('background-color', 'navy');
+	});
+</script>
+</head>
+<body>
+	<h1 class="item">Header-0</h1>
+	<h1 class="item">Header-1</h1>
+	<h1 class="item select">Header-2</h1>
+	<h1 class="item">Header-3</h1>
+</body>
+</html>
