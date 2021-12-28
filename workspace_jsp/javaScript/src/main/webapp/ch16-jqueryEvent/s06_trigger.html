@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 강제 발생</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('h1').on('click', function() { // on() 메서드에 이벤트명과 이벤트 핸들러를 인자로 전달
+			$(this).html(function(index, html) { // html() 메서드의 첫 번째 인자는 선택된 태그의 인덱스, 두 번째 인자는 선택된 태그의 내용
+				return html + '*'; // <h1> 태그의 원래 내용에 *을 추가하여 저장
+			});
+		});
+		
+		// 1초마다 매개 변수로 전달된 함수를 실행
+		setInterval(function() {
+			// trigger() 메서드는 인자로 이벤트명을 전달하면 해당 이벤트를 강제 발생
+			$('h1').trigger('click');
+		}, 1000);
+	});
+</script>
+</head>
+<body>
+	<h1>Start : </h1>
+</body>
+</html>

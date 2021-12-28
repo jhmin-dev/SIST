@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>click 이벤트</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 이벤트 연결
+		$('#btn').click(function() {
+			$('p').css('background-color', 'gold');
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn">click</button>
+	<p>내용</p>
+</body>
+</html>

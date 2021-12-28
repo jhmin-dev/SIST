@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>hover</title>
+<style type="text/css">
+	.reverse {
+		background-image: url(../images/Jellyfish.jpg);
+		color:white;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 이벤트 연결
+		$('h1').hover(function() {
+			$(this).addClass('reverse'); // this는 이벤트가 발생한 태그; $(this)는 이벤트가 발생한 태그의 jQuery 객체
+		},
+		function() {
+			$(this).removeClass('reverse');
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>Header-0</h1>
+	<h1>Header-1</h1>
+	<h1>Header-2</h1>
+</body>
+</html>

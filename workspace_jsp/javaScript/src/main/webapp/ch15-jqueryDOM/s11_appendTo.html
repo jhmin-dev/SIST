@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 추가</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 새로운 태그 생성 후 속성을 제어하고 <body> 태그의 마지막 자식으로 추가
+		$('<img>').attr({
+			src:'../images/Penguins.jpg',
+			width:400,
+			height:250
+		}).appendTo('body');
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

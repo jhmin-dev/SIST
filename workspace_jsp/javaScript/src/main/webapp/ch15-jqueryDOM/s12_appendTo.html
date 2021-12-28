@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 추가</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 이미지의 너비 지정
+		$('img').css('width', 200);
+		
+		// 2초마다 함수를 반복 실행
+		setInterval(function() {
+			$('img').first().appendTo('body'); // first() 메서드는 선택된 태그들 중 가장 앞에 위치한 태그에 접근
+		}, 2000);
+	});
+</script>
+</head>
+<body>
+	<img src="../images/Hydrangeas.jpg">
+	<img src="../images/Jellyfish.jpg">
+	<img src="../images/Desert.jpg">
+	<img src="../images/Penguins.jpg">
+	<img src="../images/Koala.jpg">
+</body>
+</html>

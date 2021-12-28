@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 추가</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var content = [
+			{name:'김연아', city:'서울시'},
+			{name:'이상화', city:'부산시'},
+			{name:'손연재', city:'인천시'}
+		];
+		
+		var output = '';
+		$.each(content, function(index, item) {
+			output += '<div>';
+			output += '<h1>' + item.name + '</h1>';
+			output += '<h2>' + item.city + '</h2>';
+			output += '</div>';
+		});
+		
+		$('#output').append(output);
+	});
+</script>
+</head>
+<body>
+	<div id="output"></div>
+</body>
+</html>

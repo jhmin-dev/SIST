@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 연결</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		/*
+		$('h1').on('click', function() { // 현재 태그에만 이벤트가 연결되고 동적으로 생성되는 미래 태그들에는 이벤트가 연결되지 않음
+			var length = $('h1').length; // <h1> 태그의 수 반환
+			var targetHTML = $(this).html(); // 이벤트가 발생한 태그의 내용 반환
+			$('#wrap').append('<h1>' + length + ' - ' + targetHTML + '</h1>');
+		});
+		*/
+		
+		$(document).on('click', 'h1', function() { // 현재 태그뿐만 아니라 미래에 생성되는 태그들에도 이벤트 연결
+			var length = $('h1').length; // <h1> 태그의 수 반환
+			var targetHTML = $(this).html(); // 이벤트가 발생한 태그의 내용 반환
+			$('#wrap').append('<h1>' + length + ' - ' + targetHTML + '</h1>');			
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h1>Header</h1> <!-- 현재 태그 -->
+	</div>
+</body>
+</html>

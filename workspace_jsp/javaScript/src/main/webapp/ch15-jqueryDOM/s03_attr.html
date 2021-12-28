@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 속성 처리</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		/*
+		$('img').attr('width', function(index) { // attr() 메서드에 매개 변수로 익명 함수를 전달
+			return 100 * (1 + index); // 인덱스를 이용해 너비 값을 가공 후 attr() 메서드에 반환
+		});
+		*/
+		
+		$('img').attr({
+			width:function(index) {
+				return 100 * (1 + index);
+			},
+			height:function(index) {
+				return 100 * (1 + index);
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<img src="../images/Desert.jpg">
+	<img src="../images/Penguins.jpg">
+	<img src="../images/Koala.jpg">
+</body>
+</html>

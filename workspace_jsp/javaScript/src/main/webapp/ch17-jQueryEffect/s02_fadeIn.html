@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>효과</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#btn1').on('click', function() {
+			$('#dog').fadeIn('slow');
+		});
+		
+		$('#btn2').on('click', function() {
+			$('#dog').fadeOut(1000);
+		});
+		
+		$('#btn3').on('click', function() {
+			$('#dog').fadeToggle('fast');
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">fadeIn</button>
+	<button id="btn2">fadeOut</button>
+	<button id="btn3">fadeToggle</button>
+	<br>
+	<img id="dog" src="../images/dog.png" width="150" heigth="100" style="display: none;">
+</body>
+</html>

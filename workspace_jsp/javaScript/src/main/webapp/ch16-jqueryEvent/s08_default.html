@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본 이벤트</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 이벤트 연결
+		$('a').click(function(event) { // 이벤트 객체를 사용하려면 이벤트 핸들러의 인자로 전달해야 함
+			$(this).css('background-color', 'skyblue');
+			
+			// 기본 이벤트 제거
+			event.preventDefault(); // return false;와 같은 기능
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>
+		<a href="https://www.naver.com">네이버</a>
+	</h1>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체에 HTML 태그 추가</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// html() 메서드는 태그의 내용을 제어; innerHTML 속성과 같은 기능
+		$('div').html('<h1>오늘은 화요일!</h1>');
+		
+		// text() 메서드는 태그의 내용을 제어; 데이터를 텍스트로 추가; textContent 속성과 같은 기능
+		$('p').text('<h1>너무 추운 날씨</h1>');
+	});
+</script>
+</head>
+<body>
+	<div></div>
+	<p></p>
+</body>
+</html>

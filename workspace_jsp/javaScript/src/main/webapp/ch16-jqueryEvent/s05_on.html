@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 연결</title>
+<style>
+	.reverse {
+		background: black;
+		color: white;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 이벤트 연결
+		$('h1').on('click', function() { // on() 메서드에 이벤트명과 이벤트 핸들러를 인자로 전달
+			$(this).html(function(index, html) {
+				return html + '*'; // <h1> 태그의 원래 내용에 *을 추가하여 저장
+			});
+		});
+		
+		// 이벤트 연결
+		$('h1').on({ // on() 메서드에 이벤트명과 이벤트 핸들러를 객체로 전달
+			mouseover:function() {
+				$(this).addClass('reverse');
+			},
+			mouseout:function() {
+				$(this).removeClass('reverse');
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>Header-0</h1>
+	<h1>Header-1</h1>
+	<h1>Header-2</h1>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 속성 처리</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// attr() 메서드는 속성과 관련된 모든 기능을 수행
+		// $('img').attr('width', 100);
+		
+		// $('img').attr('width', 100).attr('height', 100);
+		
+		$('img').attr({width:100,height:100});
+	});
+</script>
+</head>
+<body>
+	<img src="../images/Desert.jpg">
+	<img src="../images/Penguins.jpg">
+	<img src="../images/Koala.jpg">
+</body>
+</html>

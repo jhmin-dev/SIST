@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 추가</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+/* 
+[실습 문제] 성적을 <table> 태그에 표시
+	name	korean	english	math
+	이름		국어		영어		수학
+	홍길동	80		90		88
+	박문수	99		99		70
+	이순신	89		77		99
+	김유신	88		99		98
+*/
+	$(function() {
+		// 배열 생성
+		let score = [
+			{name:'모카', korean:80, english:90, math:88},
+			{name:'초코', korean:99, english:99, math:70},
+			{name:'자바칩', korean:89, english:77, math:99},
+			{name:'프라페', korean:88, english:99, math:98}
+		];
+		
+		let output = '<tr><th>이름</th><th>국어</th><th>영어</th><th>수학</th></tr>';
+		
+		// each() 메서드를 이용해서 배열로부터 객체의 정보를 얻기
+		$.each(score, function() {
+			output += '<tr>';
+			output += '<td>' + this.name + '</td>';
+			output += '<td>' + this.korean + '</td>';
+			output += '<td>' + this.english + '</td>';
+			output += '<td>' + this.math + '</td>';
+			output += '</tr>';
+		});
+		
+		// <table> 태그에 자식 태그를 추가
+		$('#output').append(output);
+
+		$('#output').css('border-collapse', 'collapse');
+		$('td,th').css({
+			padding:'0 20px',
+			textAlign:'center'
+		});
+		$('tr > td').not(':first-child').css('text-align', 'right');
+	});
+</script>
+</head>
+<body>
+	<table id="output" border="1"></table>
+</body>
+</html>
