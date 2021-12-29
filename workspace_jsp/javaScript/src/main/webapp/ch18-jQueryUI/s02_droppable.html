@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Droppable</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<style type="text/css">
+	#draggable {width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0;}
+	#droppable {width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px;}
+</style>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#draggable').draggable();
+		$('#droppable').droppable({ // 옵션 값을 객체로 전달
+			drop:function() { // draggable한 요소가 영역에 진입하고 놓여졌을 때 발생하는 이벤트
+				$(this).addClass('ui-state-highlight') // 이벤트가 발생한 <div> 태그에 jQueryUI의 내장 클래스 부여
+						.find('p') // 이벤트가 발생한 <div> 태그 하위의 <p> 태그에 접근
+						.html('Dropped!'); // <p> 태그의 내용을 변경
+			},
+			out:function() { // draggable한 요소가 영역을 벗어났을 때 발생하는 이벤트
+				$(this).removeClass('ui-state-highlight')
+						.find('p')
+						.html('Drop here'); // <p> 태그의 내용을 원래대로 되돌림
+			},
+			over:function() { // draggable한 요소를 영역에 드래그 오버할 때 발생하는 이벤트
+				$(this).find('p').html('Dragged over');
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="draggable" class="ui-widget-content"> <!-- jQueryUI의 내장 클래스 부여 -->
+		<p>Drag me around</p>
+	</div>
+	<div id="droppable" class="ui-widget-header"> <!-- jQueryUI의 내장 클래스 부여 -->
+		<p>Drop here</p>
+	</div>
+</body>
+</html>

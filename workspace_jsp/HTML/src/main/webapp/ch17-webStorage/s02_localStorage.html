@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로컬 스토리지</title>
+<script type="text/javascript">
+	window.onload = function() {
+		// 저장된 설정 값 읽어오기
+		load_setting();
+		
+		// 이벤트 연결
+		document.getElementById('form').onsubmit = function(event) { // submit 이벤트는 <form> 태그에서 발생
+			event.preventDefault(); // 기본 이벤트 제거
+			save_setting(); // 설정 값 저장
+		};
+		
+		// <input> 태그의 value 속성이 변경되면 실시간으로 스타일에 반영
+		document.getElementById('form').oninput = function() {
+			apply_setting();
+		}
+		
+		// 로컬 스토리지와 태그의 설정 값을 초기화
+		document.querySelector('button').onclick = function() {
+			remove_setting();
+		}
+	};
+
+	// 로컬 스토리지에서 저장된 설정 값을 (태그에) 반환
+	function load_setting() {
+		document.getElementById('bg_color').value = localStorage.getItem('bg_color');
+		document.getElementById('text_color').value = localStorage.getItem('text_color');
+		document.getElementById('text_size').value = localStorage.getItem('text_size');
+		
+		apply_setting();
+	}
+	
+	// 로컬 스토리지에 (태그의) 설정 값을 저장
+	function save_setting() {
+		localStorage.setItem('bg_color', document.getElementById('bg_color').value);
+		localStorage.setItem('text_color', document.getElementById('text_color').value);
+		localStorage.setItem('text_size', document.getElementById('text_size').value);
+		
+		apply_setting();
+	}
+	
+	// 설정 값을 스타일에 반영
+	function apply_setting() {
+		document.body.style.backgroundColor = document.getElementById('bg_color').value;
+		document.body.style.color = document.getElementById('text_color').value;
+		document.body.style.fontSize = document.getElementById('text_size').value;
+	}
+	
+	// 로컬 스토리지와 태그의 설정 값을 초기화
+	function remove_setting() {
+		localStorage.removeItem('bg_color');
+		localStorage.removeItem('text_color');
+		localStorage.removeItem('text_size');
+		
+		document.getElementById('bg_color').value = '';
+		document.getElementById('text_color').value = '#000000';
+		document.getElementById('text_size').value = '16px';
+		
+		apply_setting();
+	}
+</script>
+</head>
+<body>
+	<h2>환경 설정 값 기억</h2>
+	<form id="form">
+		<fieldset> <!-- 그룹화 -->
+			<legend>색상/글자 크기 선택</legend> <!-- 그룹 제목 -->
+			<ul>
+				<li>
+					<label for="bg_color">배경색</label>
+					<input type="text" name="bg_color" id="bg_color">
+				</li>
+				<li>
+					<label for="text_color">글자색</label>
+					<input type="color" name="text_color" id="text_color">
+				</li>
+				<li>
+					<label for="text_size">글자색</label>
+					<select name="text_size" id="text_size">
+						<option>16px</option>
+						<option>20px</option>
+						<option>24px</option>						
+					</select>
+				</li>
+			</ul>
+			<input type="submit" value="저장">
+			<button>초기화</button>
+		</fieldset>
+	</form>
+</body>
+</html>

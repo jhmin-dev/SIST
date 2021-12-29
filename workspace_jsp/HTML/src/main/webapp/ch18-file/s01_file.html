@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>file</title>
+<script type="text/javascript">
+	window.onload = function() {
+		// 이벤트 연결
+		document.getElementById('file').onchange = function() { // 파일을 선택할 때 <input> 태그에서 change 이벤트 발생
+			var file = this.files[0]; // <input type="file"> 사용시 multiple 속성을 지정하면 복수의 파일을 전송할 수 있기 때문에 복수의 파일에 대응하기 위해 파일 정보를 배열로 관리; 인덱스를 통해 선택한 파일 각각에 접근 가능
+			if(file) alert(file.name + '을 선택했습니다.');
+		};
+		
+		// 이벤트 연결
+		document.getElementById('btnStart').onclick = function() {
+			readProcess();
+		};
+	};
+	
+	function readProcess() {
+		var file = document.getElementById('file').files[0]; // 선택한 파일에 대한 정보를 File 객체로 반환
+		
+		if(!file) { // 파일을 선택하지 않은 경우; file == undefined이면 true
+			alert('파일을 선택하세요!');
+			return; // 함수를 빠져나감
+		}
+		
+		// File 객체의 속성을 통해 파일의 정보 읽기
+		document.getElementById('filename').textContent = file.name; // 파일명
+		document.getElementById('filesize').textContent = '(' + file.size + 'bytes)'; // 파일의 용량
+		document.getElementById('filetype').textContent = file.type; // 파일의 MIME 타입
+		document.getElementById('filedate').textContent = file.lastModifiedDate.toLocaleString(); // 파일의 마지막 갱신 날짜를 사용자의 locale 포맷으로 표시
+		
+		// FileReader 객체를 통해 파일의 내용 읽기
+		var reader = new FileReader();
+		var encodeList = document.getElementById('encoding'); // 선택한 인코딩 방식 읽기
+		reader.readAsText(file, encodeList.value); // 선택한 파일을 읽어 문자열로 저장; 첫 번째 인자는 File 객체, 두 번째 인자는 인코딩 방식
+		reader.onload = function() { // 파일의 내용을 전부 읽어들이면 load 이벤트가 발생하고 onload 속성에 대입된 함수가 실행됨
+			document.getElementById('contents').value = reader.result; // 읽어들인 파일의 내용을 <textarea> 태그에 저장
+		};
+	}
+</script>
+</head>
+<body>
+	<h2>현재 시스템의 파일 읽기</h2>
+	<input type="file" id="file" accept="text/*">
+	<select id="encoding">
+		<option>EUC-KR</option>
+		<option>UTF-8</option>
+	</select>
+	<button id="btnStart">읽기</button>
+	<br>
+	<div>
+		<span id="filename">파일명</span>
+		<span id="filesize">파일 크기</span>
+		<span id="filetype">파일 타입</span>
+		<span id="filedate">파일의 마지막 갱신 일시</span>
+	</div>
+	<textarea rows="10" cols="50" id="contents" readonly></textarea>
+</body>
+</html>

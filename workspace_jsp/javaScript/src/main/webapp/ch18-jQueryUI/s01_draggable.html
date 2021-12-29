@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Draggable</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<style type="text/css">
+	#draggable {width: 150px; height: 150px; padding: 0.5em;}
+</style>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#draggable').draggable(); // jQueryUI의 메서드를 이용하면 HTML5 표준보다 간편하게 드래그 기능을 구현 가능
+	});
+</script>
+</head>
+<body>
+	<div id="draggable" class="ui-widget-content"> <!-- jQueryUI의 내장 클래스 부여 -->
+		<p>Drag me around</p>
+	</div>
+</body>
+</html>

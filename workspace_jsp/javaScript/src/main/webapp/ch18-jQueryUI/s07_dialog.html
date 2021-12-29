@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dialog</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#dialog').dialog({
+			modal:true, // 다이얼로그 창이 열려 있으면 페이지 내 다른 요소들은 비활성화됨(클릭, 드래그 등 상호작용 불가)
+			resizable:false, // 다이얼로그 창의 크기 변경을 불가능하게 변경; 기본값은 true
+			buttons:{ // 다이얼로그 창 내에 버튼을 추가
+				'Delete all items':function() { // key는 버튼의 문구로 표시되며 함수는 버튼을 눌렀을 때 실행됨
+					$(this).find('p').css('display', 'none');
+				},
+				Cancel:function() {
+					$(this).find('p').css('display', '');
+				}
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 다이얼로그 창 -->
+	<div id="dialog" title="Basic dialog">
+		<p>This is the default dialog. 
+			This is the default dialog. 
+			This is the default dialog. 
+			This is the default dialog.</p>
+	</div>
+	
+	<div>Hello World!!</div>
+</body>
+</html>

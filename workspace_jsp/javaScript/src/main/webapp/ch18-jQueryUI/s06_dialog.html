@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dialog</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#dialog').dialog({ // 옵션 값을 객체로 전달
+			autoOpen:false, // 다이얼로그 창이 기본적으로 열려 있지 않도록 변경
+			show:{ // 다이얼로그 창이 open될 때의 효과 설정
+				effect:'blind',
+				duration:1000
+			},
+			hide:{ // 다이얼로그 창이 close될 때의 효과 설정
+				effect:'explode',
+				duration:1000
+			}
+		});
+		
+		// 이벤트 연결
+		$('#opener').on('click', function() {
+			$('#dialog').dialog('open'); // 다이얼로그 창 열기
+		});
+		$('#closer').on('click', function() {
+			$('#dialog').dialog('close'); // 다이얼로그 창 닫기
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 다이얼로그 창 -->
+	<div id="dialog" title="Basic dialog">
+		<p>This is the default dialog. 
+			This is the default dialog. 
+			This is the default dialog. 
+			This is the default dialog.</p>
+	</div>
+	
+	<button id="opener">Open dialog</button>
+	<button id="closer">Close dialog</button>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>datepicker</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// $('#datepicker').datepicker();
+		$('#datepicker').datepicker({ // 옵션 값을 객체로 전달
+			showMonthAfterYear:true, // 달력에서 월 연도 순이 아닌 연도 월 순으로 표시
+			dateFormat:'yy-mm-dd', // 선택한 날짜를 YYYY-MM-DD 형식으로 반환; YY-MM-DD 형식으로 반환하려면 값을 y-mm-dd으로 지정
+			dayNamesMin:['일', '월', '화', '수', '목', '금', '토'], // 달력에서 요일을 영문이 아닌 한글로 표시
+			monthNames:['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'] // 달력에서 월을 영문이 아닌 한글로 표시
+		});
+	});
+</script>
+</head>
+<body>
+	<p>
+		Date : <input type="text" id="datepicker">
+	</p>
+</body>
+</html>

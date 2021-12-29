@@ -1,7 +1,7 @@
 ### for other purposes ###
 apps/
 
-### HTML ###
+### HTML, CSS & JavaScript ###
 images/
 build/
 *.jpg
@@ -10,9 +10,8 @@ build/
 *.woff2
 *.ttf
 META-INF/
-
-### JavaScript ###
 js/
+css/
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/windows,eclipse,java

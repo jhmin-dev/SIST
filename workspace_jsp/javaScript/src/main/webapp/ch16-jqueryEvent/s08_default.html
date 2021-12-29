@@ -10,8 +10,7 @@
 		$('a').click(function(event) { // 이벤트 객체를 사용하려면 이벤트 핸들러의 인자로 전달해야 함
 			$(this).css('background-color', 'skyblue');
 			
-			// 기본 이벤트 제거
-			event.preventDefault(); // return false;와 같은 기능
+			event.preventDefault(); // 기본 이벤트를 제거하는 JavaScript 표준 메서드; return false;와 같은 기능
 		});
 	});
 </script>

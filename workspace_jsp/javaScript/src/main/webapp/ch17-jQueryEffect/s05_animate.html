@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>효과와 애니메이션</title>
+<style type="text/css">
+	h1 {width: 50px; height: 30px; background-color: crimson; font-size: 100%;}
+	h2 {width: 50px; height: 30px; background-color: orange; font-size: 100%;}
+	h3 {width: 50px; height: 30px; background-color: aqua; font-size: 100%;}
+</style>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// animate({애니메이션 속성}, '효과 속도', 콜백 함수)
+		// 애니메이션 속성 : 모션으로 적용할 속성을 스타일(CSS)을 이용해 입력
+		$('h1').animate({
+			marginLeft:'250px'
+		}, 5000, function() { // 애니메이션 종료시 수행할 작업
+			alert('도착 완료');
+		});
+		
+		$('h2').animate({
+			marginLeft:'250px',
+			opacity:0.3,
+			width:'100px',
+			height:'100px' // <h2> 태그의 높이(=점유 공간)가 변경되면 맞닿아 있는 <h3> 태그 역시 (별도의 애니메이션 속성을 주지 않더라도) 움직이게 됨
+		}, 5000);
+		
+		$('h3').animate({marginLeft:'250px'}, 3000)
+				.animate({marginLeft:'100px'}, 2000); // animate() 메서드의 경우 효과 속도와 콜백 함수를 인자로 받아야 하기 때문에 같은 메서드를 여러 번 사용할 때 (css() 메서드처럼 객체표기법 대신에) .으로 연결
+	});
+</script>
+</head>
+<body>
+	<h1>내용</h1>
+	<h2>내용</h2>
+	<h3>내용</h3>
+</body>
+</html>
