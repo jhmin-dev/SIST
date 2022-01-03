@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>bootstrap</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+	<div class="container">
+		<h4>기본 형태</h4>
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Star</a> <!-- 사이트명 -->
+			</div>
+			<ul class="nav navbar-nav"> <!-- 메뉴 -->
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Game</a></li>
+				<li><a href="#">Setting</a></li>
+			</ul>
+		</nav>
+		
+		<h4>드롭다운</h4>
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> <!-- class는 스타일 부여, data- 속성은 JavaScript와 연동되어 기능 부여 -->
+					<span class="sr-only">Toggle navigation</span> <!-- 화면에는 렌더링되지 않고 소스 및 스크린 리더에서만 확인 가능한 문구 -->
+					<span class="icon-bar"></span> <!-- 토글 버튼에 표시될 바 -->
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Star</a> <!-- 사이트명 -->
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse"> <!-- data-target과 연동되어 토글 버튼을 눌렀을 때 collapse될 메뉴 -->
+				<ul class="nav navbar-nav"> <!-- 메뉴 -->
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Product</a></li>
+							<li><a href="#">Shopping</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Info</a></li>
+							<li><a href="#">Service</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		
+		<h4>검색</h4>
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse"> <!-- data-target은 페이지 내에서 unique해야 함 -->
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">Star</a> <!-- 사이트명 -->
+			</div>
+			
+			<div class="collapse navbar-collapse navbar-ex2-collapse"> <!-- data-target과 연동되어 토글 버튼을 눌렀을 때 collapse될 메뉴 -->
+				<ul class="nav navbar-nav"> <!-- 메뉴 -->
+					<li><a href="#">Home</a></li>
+					<li class="active"><a href="#">About</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Product</a></li>
+							<li><a href="#">Service</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Global</a></li>
+						</ul>
+					</li>
+				</ul>		
+				<form class="navbar-form navbar-right"> <!-- 검색 창을 네비게이션 바 오른쪽에 표시 -->
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="search">
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</nav>
+	</div>
+	<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</body>
+</html>

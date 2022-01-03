@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스</title>
+<style type="text/css">
+	#canvas {
+		border: 1px solid #999; /* 영역을 확인하기 위해 스타일 지정 */
+	}
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+		var canvas = document.getElementById('canvas');
+		console.log(canvas.getContext);
+		if(canvas.getContext) { // 문서 객체에 getContext 메서드가 존재하면 true
+			var context = canvas.getContext('2d'); // 2차원 그리기 맥락을 반환
+			
+			context.fillStyle = 'rgb(200,0,0)'; // 색상 지정
+			context.fillRect(10,10,100,100); // 사각형 만들기; 인자는 순서대로 x축 좌표, y축 좌표, width, height
+		}
+		else {
+			alert('브라우저가 캔버스를 지원하지 않습니다!');
+		}
+	};
+</script>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="300"></canvas>
+</body>
+</html>

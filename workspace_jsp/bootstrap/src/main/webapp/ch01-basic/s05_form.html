@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>bootstrap</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+	<div class="container">
+		<h4>폼 태그</h4>
+		<!-- 
+		.form-control이 있는 모든 텍스트 기반의 <input>, <textarea>, 그리고 <select> 요소의 width는 기본적으로 100%; 최적의 여백을 위해서는 <label>과 .form-control을 .form-group으로 감싸야 함
+		 -->
+		<form>
+			<div class="form-group">
+				<label for="email">Email address</label>
+				<input type="email" class="form-control" id="email" placeholder="Enter email">
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" class="form-control" id="password" placeholder="Enter password">
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox">Check me out</label>
+			</div>
+			<button type="submit" class="btn btn-default">Sign in</button>
+		</form>
+		
+		<h4>인라인 폼</h4>
+		<!-- 
+		.sr-only를 추가하면 <label>이 감춰짐
+		 -->
+		<form class="form-inline">
+			<div class="form-group">
+				<label class="sr-only" for="email2">Email address</label>
+				<input type="email" class="form-control" id="email2" placeholder="Enter email">
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="password2">Password</label>
+				<input type="password" class="form-control" id="password2" placeholder="Enter password">
+			</div>
+			<button type="submit" class="btn btn-primary">Sign in</button>
+		</form>
+		
+		<h4>수평 폼</h4>
+		<!--
+		.form-horizontal을 추가하여 수평 레이아웃을 만들고, 이 안에서 부트스트랩의 그리드 클래스를 사용하여 <label>과 .form-control들을 정렬; 그리드 행의 역할은 .form-group이 하므로 .row는 불필요 
+		 -->
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label for="email3" class="col-sm-2 control-label">Email address</label>
+				<div class="col-sm-10">
+					<input type="email" class="form-control" id="email3" placeholder="Enter email">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password3" class="col-sm-2 control-label">Password</label>
+				<div class="col-sm-10">
+					<input type="password" class="form-control" id="password3" placeholder="Enter password">
+				</div>
+			</div>
+			<div class="form-group"> <!-- 행 역할 -->
+				<div class="col-sm-offset-2 col-sm-10"> <!-- 컬럼 10개 크기의 공간을 컬럼 2개 크기만큼 이동시킴 -->
+					<button type="submit" class="btn btn-primary">Sign in</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</body>
+</html>

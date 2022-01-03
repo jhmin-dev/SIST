@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>bootstrap</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+	<div class="container">
+		<h4>기본 페이지네이션</h4>
+		<ul class="pagination">
+			<li><a href="#">&laquo;</a></li> <!-- « -->
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#">&raquo;</a></li> <!-- » -->
+		</ul>
+
+		<h4>비활성화 그리고 활성화</h4>
+		<ul class="pagination">
+			<li class="disabled"><a href="#">&laquo;</a></li> <!-- « -->
+			<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#">&raquo;</a></li> <!-- » -->
+		</ul>
+
+		<h4>크기</h4>
+		<ul class="pagination pagination-lg"> <!-- 큰 크기 -->
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+		</ul>
+		<ul class="pagination"> <!-- 기본 크기 -->
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+		</ul>
+		<ul class="pagination pagination-sm"> <!-- 작은 크기 -->
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+		</ul>
+		
+		<h4>페이지 기본 예제</h4>
+		<ul class="pager">
+			<li><a href="#">Previous</a></li>
+			<li><a href="#">Next</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</body>
+</html>

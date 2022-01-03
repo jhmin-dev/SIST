@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>bootstrap</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+<style type="text/css">
+	div { /* 영역을 확인하기 위해 스타일 지정 */
+		border:1px solid #ccc;
+		background: #eee;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		내용
+	</div>
+	<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script> <!-- 부트스트랩 v4까지는 jQuery에 의존하기 때문에, 부트스트랩의 JavaScript 플러그인들보다 jQuery를 먼저 포함해야 함 -->
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script> <!-- JavaScript를 <head>가 아닌 <body>의 가장 끝에 위치시킬 경우, <body>의 내용을 모두 인식한 후에 JavaScript 코드가 실행되므로 window.onload = function() {};나 $(function(){};)을 작성할 필요 없음 -->
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var canvas = document.getElementById('canvas');
+		if(canvas.getContext) {
+			var context = canvas.getContext('2d');
+			
+			var img = new Image();
+			img.src = '../images/pattern.png';
+			img.onload = function() {
+				var pttn = context.createPattern(img, 'repeat'); // 지정한 이미지를 반복하는 패턴 생성
+				context.fillStyle = pttn; // 채우기 스타일을 패턴으로 지정
+				context.fillRect(0,0,300,500); // 패턴이 채워진 사각형 그리기
+			};
+		}
+		else {
+			alert('브라우저가 캔버스를 지원하지 않습니다!');
+		}
+	};
+</script>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="300"></canvas>
+</body>
+</html>

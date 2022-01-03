@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var canvas = document.getElementById('canvas');
+		if(canvas.getContext) {
+			var context = canvas.getContext('2d');
+			
+			/* 
+			경로 그리기
+			1. 경로 시작
+			2. 선 그리기
+			3. 경로 종료
+			*/
+			
+			// 색칠된 삼각형 그리기
+			context.beginPath();
+			context.moveTo(50,50); // 직선의 시작 좌표 지정
+			context.lineTo(150,50); // (50,50)에서 (150,50)이 직선으로 연결됨
+			context.lineTo(50,150); // (150,50)에서 (50,150)이 직선으로 연결됨
+			context.closePath(); // 경로가 닫히면 마지막 좌표 (50,150)과 시작 좌표 (50,50)이 직선으로 연결됨
+			context.fill(); // 경로 내부에 색 채우기
+			
+			// 테두리만 있는 삼각형 그리기
+			context.beginPath();
+			context.moveTo(80,80);
+			context.lineTo(200,100);
+			context.lineTo(100,200);
+			context.closePath(); // 경로가 닫히면 (100,200)과 (80,80)도 직선으로 연결됨
+			context.strokeStyle = 'rgb(200,0,0)'; // 경로 테두리의 색을 지정
+			context.stroke();
+		}
+		else {
+			alert('브라우저가 캔버스를 지원하지 않습니다!');
+		}
+	};
+</script>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="300"></canvas>
+</body>
+</html>

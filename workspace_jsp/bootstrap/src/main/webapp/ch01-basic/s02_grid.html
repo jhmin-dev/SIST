@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>bootstrap</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+<style type="text/css">
+	[class*="col-"] { /* 속성 선택자를 이용해 col-로 시작하는 클래스들에 스타일 부여 */
+		padding-top: 15px;
+		padding-bottom: 150px;
+		background-color: #eee;
+		border: 1px solid #999;
+	}
+</style>
+</head>
+<body>
+<!--
+				매우 작은 기기		작은 기기			중간 기기			큰 기기
+				모바일(<768px)	태블릿(>=768px)	데스크탑(>=992px)	데스크탑(>=1200px)
+그리드 적용			항상				분기점보다 크면 적용
+클래스 최대 너비		None(auto)		750px			970px			1170px
+클래스 접두사		.col-xs-		.col-sm-		.col-md-		.col-lg-
+컬럼 수			12
+ -->
+	<div class="container">
+		<h4>12개 컬럼</h4>
+		<div class="row">
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+			<div class="col-md-1">.col-md-1</div>
+		</div>
+		
+		<h4>2개 컬럼</h4>
+		<div class="row">
+			<div class="col-md-8">.col-md-8</div>
+			<div class="col-md-4">.col-md-4</div>
+		</div>
+		
+		<h4>3개 컬럼</h4>
+		<div class="row">
+			<div class="col-md-3">.col-md-3</div>
+			<div class="col-md-6">.col-md-6</div>
+			<div class="col-md-3">.col-md-3</div>
+		</div>
+		
+		<h4>2개 컬럼</h4>
+		<div class="row">
+			<div class="col-md-6">.col-md-6</div>
+			<div class="col-md-6">.col-md-6</div>
+		</div>
+		
+		<h4>모바일에서 컬럼들이 하나는 꽉 찬 너비로, 다른 하나는 절반 너비로 쌓임</h4>
+		<div class="row">
+			<div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+			<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+		</div>
+		
+		<h4>컬럼들은 모바일에서 50% 너비로 시작하고 데스크탑에서는 33.3% 너비가 됨</h4>
+		<div class="row">
+			<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+			<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+			<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</body>
+</html>

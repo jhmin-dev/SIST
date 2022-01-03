@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>bootstrap</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+	<div class="container">
+		<h4>기본 버튼</h4>
+		<button type="button" class="btn btn-default">Default</button>
+		<button type="button" class="btn btn-primary">Primary</button> <!-- 파란색 -->
+		<button type="button" class="btn btn-success">Success</button> <!-- 초록색 -->
+		<button type="button" class="btn btn-info">Info</button> <!-- 연한 파란색 -->
+		<button type="button" class="btn btn-warning">Warning</button> <!-- 노란색 -->
+		<button type="button" class="btn btn-danger">Danger</button> <!-- 붉은색 -->
+		
+		<h4>크기 조정</h4>
+		<button type="button" class="btn btn-default btn-lg">Default</button> <!-- 큰 버튼 -->
+		<button type="button" class="btn btn-primary">Primary</button> <!-- 기본값 -->
+		<button type="button" class="btn btn-success btn-sm">Success</button> <!-- 작은 버튼 -->
+		<button type="button" class="btn btn-info btn-xs">Info</button> <!-- 매우 작은 버튼 -->
+		
+		<h4>.btn-block을 추가하면 너비가 상위 요소에 맞춰진 블럭 레벨 버튼이 만들어짐</h4>
+		<div>
+			<button type="button" class="btn btn-default btn-block">Default</button>
+			<button type="button" class="btn btn-primary btn-block">Primary</button>
+		</div>
+		<div class="well" style="max-width:400px; margin:0 auto;"> <!-- .well은 padding과 배경색을 지정 -->
+			<button type="button" class="btn btn-default btn-block">Default</button>
+			<button type="button" class="btn btn-primary btn-block">Primary</button>
+		</div>
+		
+		<h4>다양한 버튼</h4>
+		<a href="#" class="btn btn-default">Link</a>
+		<input type="button" value="Input" class="btn btn-success">
+		<input type="submit" value="Submit" class="btn btn-info">
+	</div>
+	<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</body>
+</html>

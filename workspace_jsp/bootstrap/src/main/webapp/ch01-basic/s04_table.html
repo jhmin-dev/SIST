@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>bootstrap</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+	<div class="container">
+		<h4>.table 선택자를 사용하면 각 행에 위쪽 테두리 선만 있는 테이블이 만들어짐</h4>
+		<table class="table">
+			<tr>
+				<th>#</th>
+				<th>이름</th>
+				<th>주소</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>너굴</td>
+				<td>서울시 서대문구</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>콩돌</td>
+				<td>서울시 마포구</td>
+			</tr>
+		</table>
+		
+		<h4>.table-striped 선택자를 추가하면 줄무늬 행 테이블이 됨</h4>
+		<table class="table table-striped">
+			<tr>
+				<th>#</th>
+				<th>이름</th>
+				<th>주소</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>너굴</td>
+				<td>서울시 서대문구</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>콩돌</td>
+				<td>서울시 마포구</td>
+			</tr>
+		</table>
+		
+		<h4>.table-bordered 선택자를 추가하면 각 셀마다 테두리가 그려짐</h4>
+		<table class="table table-bordered">
+			<tr>
+				<th>#</th>
+				<th>이름</th>
+				<th>주소</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>너굴</td>
+				<td>서울시 서대문구</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>콩돌</td>
+				<td>서울시 마포구</td>
+			</tr>
+		</table>
+		
+		<h4>행이나 셀에 맥락적인 클래스들을 추가하면 배경색이 지정됨</h4>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>이름</th>
+					<th>주소</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="success"> <!-- 초록색 -->
+					<td>1</td>
+					<td>너굴</td>
+					<td>서울시 서대문구 (.table-responsive로 감싸지 않으면 컬럼이 많거나 내용이 긴 테이블은 화면 크기가 작아질 때 디자인이 깨질 수 있음)</td>
+					</tr>
+				<tr class="info"> <!-- 파란색 -->
+					<td>2</td>
+					<td>바닐프티</td>
+					<td>서울시 서대문구</td>
+				</tr>
+				<tr class="danger"> <!-- 붉은색 -->
+					<td>3</td>
+					<td>콩돌</td>
+					<td>서울시 마포구</td>
+				</tr>
+				<tr class="warning"> <!-- 노란색 -->
+					<td>4</td>
+					<td>밤돌</td>
+					<td>서울시 마포구</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<h4>.table을 .table-responsive로 감싸면 작은 기기에서 수평 스크롤을 할 수 있는 반응형 테이블이 됨</h4>
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>이름</th>
+						<th>주소</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="success"> <!-- 초록색 -->
+						<td>1</td>
+						<td>너굴</td>
+						<td>서울시 서대문구 (.table-responsive로 감싸지 않으면 컬럼이 많거나 내용이 긴 테이블은 화면 크기가 작아질 때 디자인이 깨질 수 있음)</td>
+					</tr>
+					<tr class="info"> <!-- 파란색 -->
+						<td>2</td>
+						<td>바닐프티</td>
+						<td>서울시 서대문구</td>
+					</tr>
+					<tr class="danger"> <!-- 붉은색 -->
+						<td>3</td>
+						<td>콩돌</td>
+						<td>서울시 마포구</td>
+					</tr>
+					<tr class="warning"> <!-- 노란색 -->
+						<td>4</td>
+						<td>밤돌</td>
+						<td>서울시 마포구</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</body>
+</html>
