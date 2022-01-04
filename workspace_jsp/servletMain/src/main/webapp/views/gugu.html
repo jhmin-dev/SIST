@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단 입력</title>
+</head>
+<body>
+<h1>구구단의 단 입력</h1>
+<form action="/servletMain/gugudan" method="get"> <!-- action 속성에는 호출할 서버 프로그램의 주소(Context Root부터)를 명시, method 속성에는 전송 방식(get 방식은 클라이언트의 데이터를 URL에 ?name=value 형식으로 붙여서 보냄)을 명시 -->
+	단 <input type="number" name="dan" min="2" max="9"><br>
+	<input type="submit" value="전송">
+</form>
+</body>
+</html>

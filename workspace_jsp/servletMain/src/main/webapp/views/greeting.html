@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Greeting Form</title>
+</head>
+<body>
+<form action="/servletMain/greeting" method="post"> <!-- post 방식은 클라이언트의 데이터를 URL에 표시하지 않고 HTTP 패킷의 body에 담아 보냄 -->
+	당신의 이름은? <input type="text" name="name"><br>
+	<input type="submit" value="전송">
+</form>
+</body>
+</html>

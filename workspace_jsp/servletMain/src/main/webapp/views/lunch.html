@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>점심 선택</title>
+</head>
+<body>
+	<h3>오늘 점심은 무엇을 먹을까?(2개 이상 선택)</h3>
+	<form action="/servletMain/todayMenu" method="post"> <!-- 체크박스의 경우, 파라미터명 하나에 여러 값을 전송할 수 있음 -->
+		<label><input type="checkbox" name="lunch" value="미트치즈피자">미트치즈피자</label>
+		<label><input type="checkbox" name="lunch" value="매콤크림파스타">매콤크림파스타</label>
+		<label><input type="checkbox" name="lunch" value="카츠카레">카츠카레</label>
+		<label><input type="checkbox" name="lunch" value="마늘간장치킨">마늘간장치킨</label>
+		<label><input type="checkbox" name="lunch" value="비프칠리버거">비프칠리버거</label>
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>
