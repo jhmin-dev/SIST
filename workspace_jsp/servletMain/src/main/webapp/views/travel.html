@@ -3,44 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <title>실습</title>
+<script type="text/javascript">
+	window.onload = function() {
+		var myForm = document.getElementById('myForm');
+		// 이벤트 연결
+		myForm.onsubmit = function() {
+			var name = document.getElementById('name');
+			if(name.value.trim()=='') { // 아무것도 입력하지 않거나 공백만 입력한 경우
+				alert('이름을 입력하세요!');
+				name.focus();
+				name.value = '';
+				return false;
+			}
+			
+			var cities = document.getElementsByClassName('cb-city');
+			var num = 0;
+			for(var i=0;i<cities.length;i++) {
+				if(cities[i].checked) { // 체크박스가 선택된 경우
+					num++;
+				}
+			}
+			if(num<2) {
+				alert('여행지를 2개 이상 선택해야 합니다!');
+				return false;
+			}
+		};
+	};
+</script>
 </head>
 <body>
 	<!-- 이름(name), 여행지 선택(city: 서울, 뉴욕, 런던, 파리) -->
 	<h3>여행지를 선택하세요(2개 이상 선택)</h3>
-	<form method="post" action="/servletMain/travel">
-		이름 : <input type="text" name="name">
+	<form id="myForm" method="post" action="/servletMain/travel">
+		이름 : <input type="text" name="name" id="name">
 		<br>
 		여행지 : 
-		<label><input type="checkbox" name="city" value="서울">서울</label>
-		<label><input type="checkbox" name="city" value="뉴욕">뉴욕</label>
-		<label><input type="checkbox" name="city" value="런던">런던</label>
-		<label><input type="checkbox" name="city" value="파리">파리</label>
+		<label><input type="checkbox" name="city" value="서울" class="cb-city">서울</label>
+		<label><input type="checkbox" name="city" value="뉴욕" class="cb-city">뉴욕</label>
+		<label><input type="checkbox" name="city" value="런던" class="cb-city">런던</label>
+		<label><input type="checkbox" name="city" value="파리" class="cb-city">파리</label>
 		<br>
 		<input type="submit" value="전송 w/ JavaScript">
-		<input type="button" value="전송 w/o JavaScript" id="woJS">
+		<button type="button">전송 w/o JavaScript</button> <!-- <button> 태그의 type 속성 기본값은 submit으로, <form> 태그 내부에 있는 <button> 태그에 type을 명시하지 않으면 해당 버튼 클릭시 자신이 포함된 <form> 태그의 submit 이벤트를 발생시킴 -->
 	</form>
 	
 	<script type="text/javascript">
-		form = document.querySelector('form'); // form 태그 선택
-		
-		document.getElementById('woJS').onclick = function() {form.submit();}; // form 요소의 submit() 메서드는 submit 이벤트를 발생시키지 않고(=onsubmit 이벤트 핸들러를 실행하지 않고) JavaScript로 직접 form을 서버에 전송
-		
-		form.onsubmit = function(event) { // onsubmit 이벤트 핸들러 정의
-			let name = document.getElementsByName('name')[0];
-			if(!name.value.trim()) {
-				alert('이름을 입력하세요!');
-				return false;
-			}
-			
-			let count = 0;
-			let cities = document.getElementsByName('city');			
-			for(let i=0;i<cities.length;i++) {
-				if(cities[i].checked) count++;
-			}
-			if(count<2) {
-				event.preventDefault();
-				alert('여행지를 2곳 이상 선택하세요!');
-			}
+		document.getElementsByTagName('button')[0].onclick = function() {
+			document.querySelector('form').submit(); // <form> 요소의 submit() 메서드는 submit 이벤트를 발생시키지 않고(=onsubmit 이벤트 핸들러를 실행하지 않고) JavaScript로 직접 <form>을 서버에 전송
 		};
 	</script>
 </body>
