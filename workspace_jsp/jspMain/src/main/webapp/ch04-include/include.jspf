@@ -1,0 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%> <%-- 한글로 주석 작성하는 경우, jspf 파일 내에서도 page 디렉티브로 인코딩 방식을 (include되는 JSP 파일과 동일하게) 설정해야 함 --%>
+<%
+String img_path = "/image";
+String file_path = "/file";
+%>
