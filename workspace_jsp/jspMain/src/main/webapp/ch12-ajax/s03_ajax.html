@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery를 이용한 비동기 통신 구현</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// XML 데이터 읽어오기
+		$.ajax({
+			url:'myXML.jsp',
+			success:function(param) {
+				$(param).find('person').each(function() { // <person> 태그를 배열 형태로 인식하여 each() 메서드로 처리
+					var name = '<li>' + $(this).find('name').text() + '</li>'; // $(this)는 <person> 태그의 jQuery 객체를 가리킴; text() 메서드는 선택된 <name> 태그 내의 내용을 반환
+					var job = '<li>' + $(this).find('job').text() + '</li>';
+					var age = '<li>' + $(this).find('age').text() + '</li>';
+					
+					// body에 가공한 데이터를 추가
+					$('body').append('<ul>' + name + job + age + '</ul>');
+				});
+			}
+		});
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

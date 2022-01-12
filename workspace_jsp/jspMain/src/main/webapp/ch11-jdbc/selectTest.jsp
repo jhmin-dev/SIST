@@ -40,28 +40,30 @@
 			<th>상품명</th>
 			<th>가격 <small>(원)</small></th>
 			<th>재고 <small>(개)</small></th>
-			<th>원산지</th>
-			<th>등록일</th>
 		</tr>
 <%
-	while(rs.next()) {
+		while(rs.next()) {
+			int num = rs.getInt("num");
 %>
 		<tr>
-			<td><%= rs.getInt("num") %></td>
-			<td><a href="detailTest.jsp?num=<%= rs.getInt("num") %>"><%= rs.getString("name") %></a></td>
+			<td><%= num %></td>
+			<td><a href="detailTest.jsp?num=<%= num %>"><%= rs.getString("name") %></a></td>
 			<td><%= String.format("%,d", rs.getInt("price")) %></td>
 			<td><%= String.format("%,d", rs.getInt("stock")) %></td>
-			<td><%= rs.getString("origin") %></td>
-			<td><span title="<%= rs.getString("reg_date") %>"><%= rs.getDate("reg_date") %></span></td>
 		</tr>
 <%		
-	}
+		}
 %>
 	</table>
 <%
 	}
 	catch(Exception e) {
 		e.printStackTrace();
+%>
+	<div class="result-display">
+		<span>오류 발생!</span>>
+	</div>
+<%
 	}
 	finally {
 		if(rs!=null) try {rs.close();} catch(SQLException e) {}
