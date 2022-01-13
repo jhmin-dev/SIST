@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아이디 중복 체크</title>
+<style type="text/css">
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	ul li {
+		padding: 0;
+		margin: 0 0 10px 0;
+	}
+	label {
+		width: 100px;
+		float: left;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 아이디 중복 체크 결과
+		var count = 0; // 0: 아이디 중복 체크하지 않았거나 중복, 1: 아이디 중복되지 않음
+		
+		$('#confirmId').click(function() {
+			if($('#id').val().trim()=='') {
+				alert('아이디를 입력하세요!');
+				$('#id').focus();
+				$('#id').val(''); // 공백 제거
+				return; // 함수를 빠져나감
+			} // end of if
+			
+			// 서버 프로그램과 통신
+			$.ajax({
+				url:'confirmId.jsp', // 요청 URL
+				type:'post', // 클라이언트의 데이터 전송 방식
+				data:{id:$('#id').val()}, // 서버로 전송할 데이터
+				dataType:'json', // 서버로부터 전송받는 데이터의 타입
+				cache:false, // 캐시를 사용하지 않음
+				timeout:30000, // 전송 또는 서버 상황이 좋지 않아 응답이 지연되는 경우, 실패로 간주하는 대기 시간; 밀리초 단위이며 정상적인 경우 통신에 1-2초 정도 소요
+				success:function(param) { // JSON 데이터를 정상적으로 전송받았을 때; catch 블럭의 {"result":"failure"}도 success에 해당
+					if(param.result=='idDuplicated') {
+						count = 0;
+						$('#id_signed').text('이미 등록된 아이디').css('color', 'red');
+						$('#id').val('').focus();
+					}
+					else if(param.result=='idNotFound') {
+						count = 1;
+						$('#id_signed').text('사용 가능한 아이디').css('color', 'black');
+					}
+					else {
+						count = 0;
+						alert('아이디 중복 체크시 오류 발생!')
+					}
+				},
+				error:function() { // JSON 데이터가 아닌 에러 페이지 등을 전송받았을 때
+					count = 0;
+					alert('네트워크 오류 발생!');
+				}
+			}); // end of ajax
+		}); // end of click
+		
+		$('#insert_form #id').keyup(function() {
+			$('#id_signed').text('');
+			count = 0;
+		}); // end of keyup
+		
+		$('#insert_form').submit(function() {
+			if($('#id').val().trim()=='') {
+				alert('아이디를 입력하세요!');
+				$('#id').val('').focus();
+				return false;
+			}
+			
+			if(count==0) {
+				alert('아이디 중복 체크는 필수입니다!');
+				$('#confirmId').focus();
+				return false;
+			}
+			else {
+				alert('아이디가 중복되지 않습니다.');
+				return false;
+			}
+		}); // end of submit
+	});
+</script>
+</head>
+<body>
+<div>
+	<form id="insert_form" method="post"> <!-- action을 지정하지 않으면 자기 자신을 호출 -->
+		<fieldset>
+			<legend>회원 가입</legend>
+			<ul>
+				<li>
+					<label for="id">아이디</label>
+					<input type="text" name="id" id="id">
+					<input type="button" id="confirmId" value="중복 체크">
+					<span id="id_signed"></span> <!-- 중복 체크 결과를 표시하기 위한 빈 태그 -->
+				</li>
+				<li>
+					<input type="submit" value="전송">
+				</li>
+			</ul>
+		</fieldset>
+	</form>
+</div>
+</body>
+</html>

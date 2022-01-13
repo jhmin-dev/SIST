@@ -1,0 +1,10 @@
+CREATE TABLE product (
+	num NUMBER PRIMARY KEY,
+	name VARCHAR2(30) NOT NULL,
+	price NUMBER(9) NOT NULL,
+	stock NUMBER(9) NOT NULL,
+	origin VARCHAR2(30) NOT NULL,
+	reg_date DATE NOT NULL
+);
+
+CREATE SEQUENCE product_seq;

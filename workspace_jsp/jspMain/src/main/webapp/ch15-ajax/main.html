@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>XML 데이터 처리</title>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#wrap {
+		overflow: hidden;
+	}
+	.item {
+		margin: 5px;
+		padding: 5px;
+		width: 200px;
+		height: 150px;
+		float: left; /* 반응형처럼 동작함 */
+		border-width: 3px;
+		border-style: solid;
+		border-color: gray;
+		border-radius: 10px;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		function selectData() {			
+			$.ajax({
+				url:'getProductList.jsp',
+				dataType:'xml',
+				success:function(param) {
+					// 화면 초기화
+					$('#wrap').empty();
+					$(param).find('item').each(function() {
+						var output = '<div class="item">';
+						output += '<p>상품 번호 : ' + $(this).find('num').text() + '</p>';
+						output += '<p>상품명 : ' + $(this).find('name').text() + '</p>';
+						output += '<p>가격 : ' + $(this).find('price').text() + '</p>';
+						output += '<p>재고 : ' + $(this).find('stock').text() + '</p>';
+						output += '<p>원산지 : ' + $(this).find('origin').text() + '</p>';
+						output += '<p>등록일 : ' + $(this).find('reg_date').text() + '</p>';
+						output += '</div>';
+						
+						// 문서 객체 추가
+						$('#wrap').append(output);
+					}); // end of each
+				}
+			}); // end of ajax
+		} // end of selectData
+		
+		// 초기 화면 데이터 처리
+		selectData();
+	});
+</script>
+</head>
+<body>
+	<div id="wrap"></div>
+</body>
+</html>
