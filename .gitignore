@@ -9,9 +9,9 @@ build/
 *.woff
 *.woff2
 *.ttf
-META-INF/
-js/
-css/
+*.MF
+# js/
+# css/
 fonts/
 
 
