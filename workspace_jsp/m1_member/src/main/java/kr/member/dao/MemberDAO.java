@@ -68,11 +68,54 @@ public class MemberDAO {
 			throw new Exception(e);
 		}
 		finally {
+			// 자원 정리
 			executeClose(null, pstmt, conn);
 		}
 	}
 	
 	// 회원 상세 정보
+	public MemberVO getMember(int num) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		MemberVO member = null;
+		String sql = null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션을 할당
+			conn = getConnection();
+			
+			// SQL문 작성
+			sql = "SELECT * FROM smember WHERE num=?";
+			
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setInt(1, num);
+			
+			// SQL문을 실행해서 결과 행을 ResultSet에 담아 반환
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				member = new MemberVO(); // 자바빈 객체 생성
+				member.setNum(rs.getInt("num"));
+				member.setId(rs.getString("id"));
+				member.setPasswd(rs.getString("passwd"));
+				member.setName(rs.getString("name"));
+				member.setEmail(rs.getString("email"));
+				member.setPhone(rs.getString("phone"));
+				member.setReg_date(rs.getDate("reg_date"));
+			}
+		}
+		catch(Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			executeClose(rs, pstmt, conn);
+		}
+		
+		return member;
+	}
 	
 	// 아이디 중복 체크, 로그인 체크
 	public MemberVO checkMember(String id) throws Exception {
@@ -109,6 +152,7 @@ public class MemberDAO {
 			throw new Exception(e); // UI는 에러 페이지가 전송되고, 콘솔에는 에러 메시지가 출력됨
 		}
 		finally {
+			// 자원 정리
 			executeClose(rs, pstmt, conn);
 		}
 		
@@ -116,6 +160,66 @@ public class MemberDAO {
 	}
 	
 	// 회원 정보 수정
+	public void updateMember(MemberVO member) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql= null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션을 할당
+			conn = getConnection();
+			
+			// SQL문 작성
+			sql = "UPDATE smember SET name=?, passwd=?, email=?, phone=? WHERE num=?";
+			
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setString(1, member.getName());
+			pstmt.setString(2, member.getPasswd());
+			pstmt.setString(3, member.getEmail());
+			pstmt.setString(4, member.getPhone());
+			pstmt.setInt(5, member.getNum());
+			
+			// SQL문 실행
+			pstmt.executeUpdate();
+		}
+		catch(Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			executeClose(null, pstmt, conn);
+		}
+	}
 	
 	// 회원 탈퇴(회원 정보 삭제)
+	public void deleteMember(int num) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql= null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션을 할당
+			conn = getConnection();
+			
+			// SQL문 작성
+			sql = "DELETE FROM smember WHERE num=?";
+			
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setInt(1, num);
+			
+			// SQL문 실행
+			pstmt.executeUpdate();
+		}
+		catch(Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			executeClose(null, pstmt, conn);
+		}
+	}
 }

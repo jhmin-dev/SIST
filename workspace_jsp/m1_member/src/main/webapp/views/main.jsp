@@ -23,8 +23,7 @@
 			}
 			else { // 로그인된 경우
 		%>
-		<a href="modifyUserForm">회원 정보 수정</a>
-		<a href="deleteUserForm">회원 탈퇴</a>
+		<a href="myPage.jsp">MyPage</a>
 		[<b><%= user_id %></b>님 로그인 중]
 		<a href="logout.jsp">로그아웃</a>
 		<%
