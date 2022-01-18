@@ -7,7 +7,6 @@ public class BoardVO {
 	private String title; // 제목
 	private String name; // 작성자
 	private String passwd; // 비밀번호
-	private String email; // 이메일
 	private String content; // 내용
 	private String ip; // 작성자 IP
 	private Date reg_date; // 작성일
@@ -43,12 +42,6 @@ public class BoardVO {
 	}
 	public void setPasswd(String passwd) {
 		this.passwd = passwd;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
 	}
 	public String getContent() {
 		return content;
