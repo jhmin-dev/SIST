@@ -14,11 +14,11 @@
 		<ul>
 			<li>
 				<label for="name">상품명</label>
-				<input type="text" name="name" id="name">
+				<input type="text" name="name" id="name" size="10">
 			</li>
 			<li>
 				<label for="price">가격</label>
-				<input type="number" name="price" id="price" min="0">
+				<input type="number" name="price" id="price" min="1">
 			</li>
 			<li>
 				<label for="stock">재고</label>
@@ -26,7 +26,7 @@
 			</li>
 			<li>
 				<label for="origin">원산지</label>
-				<input type="text" name="origin" id="origin">
+				<input type="text" name="origin" id="origin" size="10">
 			</li>
 			<li>
 				<label for="content">설명</label>

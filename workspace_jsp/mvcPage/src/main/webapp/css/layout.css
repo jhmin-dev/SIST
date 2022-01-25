@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+.page-main{
+	width:900px;
+	margin:0 auto;
+}
+.result-display{
+	width:400px;
+	height:200px;
+	/* 정중앙에 div를 배치하기 위한 설정 */
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	border:1px solid #000;
+	display:flex;
+	/* 세로 정렬 */
+	align-items:center;
+	/* 가로 정렬 */
+	justify-content:center;
+}
+.align-center{
+	text-align:center;
+}
+.align-right{
+	text-align:right;
+}
+
+/* 메인 */
+a:link {
+	text-decoration: none;
+	color: #000;	
+}
+a:visited {
+	text-decoration: none;
+	color: #000;	
+}
+a:hover {
+	text-decoration: underline;
+	color: #999;	
+}
+
+/* 회원가입, 수정폼 */
+form{
+	width:600px;
+	margin:0 auto;
+	padding:10px 10px 10px 30px;
+	border:1px solid #000;
+}
+ul{
+	list-style:none;
+}
+label{
+	width:120px;
+	float:left;
+}
+
+/* 목록 */
+table{
+	width:100%;
+	border:1px solid #000;
+	border-collapse:collapse;
+	margin-top:5px;
+}
+table td, table th{
+	border:1px solid #000;
+	padding:5px;
+}
+
+/* My Page */
+.mypage-div {
+	width: 48%;
+	float: left;
+	padding: 5px;
+}
+.my-photo {
+	object-fit: cover;
+	/* 정사각형이 아니라 직사각형일 경우 원 안에 보여지게 할 중심 이미지의 위치를 지정 */
+	object-position: top;
+	/* 사각형의 모서리 둥근 정도를 지정; 50% 지정시 완전한 원이 됨 */
+	border-radius: 50%;
+}

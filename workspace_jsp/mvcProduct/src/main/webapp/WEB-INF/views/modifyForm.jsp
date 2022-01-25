@@ -11,15 +11,15 @@
 <div class="page-main">
 	<h2>상품 수정</h2>
 	<form id="form" action="modify.do" method="post">
-		<input type="hidden" name="num" value="${param.num}">
+		<input type="hidden" name="num" value="${vo.num}">
 		<ul>
 			<li>
 				<label for="name">상품명</label>
-				<input type="text" name="name" id="name" value="${vo.name}">
+				<input type="text" name="name" id="name" size="10" value="${vo.name}">
 			</li>
 			<li>
 				<label for="price">가격</label>
-				<input type="number" name="price" id="price" min="0" value="${vo.price}">
+				<input type="number" name="price" id="price" min="1" value="${vo.price}">
 			</li>
 			<li>
 				<label for="stock">재고</label>
@@ -27,7 +27,7 @@
 			</li>
 			<li>
 				<label for="origin">원산지</label>
-				<input type="text" name="origin" id="origin" value="${vo.origin}">
+				<input type="text" name="origin" id="origin" size="10" value="${vo.origin}">
 			</li>
 			<li>
 				<label for="content">설명</label>

@@ -34,6 +34,10 @@
 			<label>원산지</label>
 			${vo.origin}
 		</li>
+		<li>
+			<label>등록일</label>
+			${vo.reg_date}
+		</li>
 	</ul>
 	<hr>
 	<p>
@@ -41,7 +45,6 @@
 	</p>
 	<hr>
 	<div class="align-right">
-		등록일 : ${vo.reg_date}
 		<input type="button" value="수정" onclick="location.href = 'modifyForm.do?num=${vo.num}';">
 		<input type="button" value="삭제" onclick="location.href = 'deleteForm.do?num=${vo.num}';">
 		<input type="button" value="목록" onclick="location.href = 'list.do';">

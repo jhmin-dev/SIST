@@ -13,7 +13,7 @@ public class DeleteAction implements Action {
 		ProductDAO.getInstance().deleteProduct(Integer.parseInt(request.getParameter("num")));
 		
 		// JSP 경로 반환
-		return "WEB-INF/views/delete.jsp";
+		return "/WEB-INF/views/delete.jsp";
 	}
 
 }

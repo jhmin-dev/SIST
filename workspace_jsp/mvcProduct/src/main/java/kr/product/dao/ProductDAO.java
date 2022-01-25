@@ -125,8 +125,8 @@ public class ProductDAO {
 				vo.setPrice(rs.getInt("price"));
 				vo.setStock(rs.getInt("stock"));
 				vo.setOrigin(rs.getString("origin"));
-				vo.setContent(rs.getString("content"));
 				vo.setReg_date(rs.getDate("reg_date"));
+				
 				list.add(vo);
 			}
 		}
