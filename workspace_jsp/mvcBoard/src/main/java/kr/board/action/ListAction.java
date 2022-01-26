@@ -35,7 +35,7 @@ public class ListAction implements Action {
 		request.setAttribute("pagingHtml", page.getPagingHtml());
 		
 		// JSP 경로 반환
-		return "WEB-INF/views/list.jsp"; // WEB-INF는 클라이언트에서 직접 호출 불가; WEB-INF 하위에 위치한 JSP 페이지는 (Servlet을 통한) forward 방식으로만 접근 가능
+		return "/WEB-INF/views/list.jsp"; // WEB-INF는 클라이언트에서 직접 호출 불가; WEB-INF 하위에 위치한 JSP 페이지는 (Servlet을 통한) forward 방식으로만 접근 가능
 	}
 
 }

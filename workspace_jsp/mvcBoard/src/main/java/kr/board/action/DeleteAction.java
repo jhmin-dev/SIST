@@ -32,7 +32,7 @@ public class DeleteAction implements Action {
 		request.setAttribute("check", check); // UI를 처리하기 위해 request 영역에 check 값 저장
 		
 		// JSP 경로 반환
-		return "WEB-INF/views/delete.jsp";
+		return "/WEB-INF/views/delete.jsp";
 	}
 
 }

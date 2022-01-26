@@ -38,7 +38,7 @@ public class ModifyAction implements Action {
 		request.setAttribute("check", check); // 화면 제어에 이용하기 위해 request 영역에 check 값 저장
 		
 		// JSP 경로 반환
-		return "WEB-INF/views/modify.jsp";
+		return "/WEB-INF/views/modify.jsp";
 	}
 
 }

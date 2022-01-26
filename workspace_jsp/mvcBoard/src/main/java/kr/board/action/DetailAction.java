@@ -18,7 +18,7 @@ public class DetailAction implements Action{
 		
 		request.setAttribute("vo", vo);
 		
-		return "WEB-INF/views/detail.jsp";
+		return "/WEB-INF/views/detail.jsp";
 	}
 	
 }

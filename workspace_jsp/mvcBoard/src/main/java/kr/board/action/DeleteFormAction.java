@@ -12,7 +12,7 @@ public class DeleteFormAction implements Action {
 		request.setAttribute("num", Integer.parseInt(request.getParameter("num")));
 		
 		// JSP 경로 반환
-		return "WEB-INF/views/deleteForm.jsp";
+		return "/WEB-INF/views/deleteForm.jsp";
 	}
 
 }

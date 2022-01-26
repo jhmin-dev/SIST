@@ -13,7 +13,7 @@ public class ModifyFormAction implements Action {
 		request.setAttribute("vo", BoardDAO.getInstance().getBoard(Integer.parseInt(request.getParameter("num"))));
 		
 		// JSP 경로 반환
-		return "WEB-INF/views/modifyForm.jsp";
+		return "/WEB-INF/views/modifyForm.jsp";
 	}
 
 }

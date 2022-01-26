@@ -28,7 +28,7 @@ public class WriteAction implements Action {
 		dao.insert(vo);
 		
 		// JSP 경로 반환
-		return "WEB-INF/views/write.jsp";
+		return "/WEB-INF/views/write.jsp";
 	}
 
 }
