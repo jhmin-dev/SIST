@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import kr.member.vo.MemberVO;
 import kr.util.DBUtil;
@@ -215,18 +217,191 @@ public class MemberDAO {
 	}
 	
 	// 비밀번호 수정
+	public void updatePassword(String passwd, int mem_num) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			// SQL문 작성
+			sql = "UPDATE zmember_detail SET passwd=? WHERE mem_num=?";
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setString(1, passwd); // 새 비밀번호
+			pstmt.setInt(2, mem_num); // 회원 번호
+			// SQL문 실행
+			pstmt.executeUpdate();
+		}
+		catch (Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	}
 
 	// 프로필 사진 수정
+	public void updateMyPhoto(String photo, int mem_num) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			// SQL문 작성
+			sql = "UPDATE zmember_detail SET photo=? WHERE mem_num=?";
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setString(1, photo);
+			pstmt.setInt(2, mem_num);
+			// SQL문 실행
+			pstmt.executeUpdate();
+		}
+		catch(Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	}
 	
 	// 회원 탈퇴(=회원 정보 삭제)
+	public void deleteMember(int mem_num) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		PreparedStatement pstmt2 = null;
+		String sql = null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			// 오토 커밋 해제
+			conn.setAutoCommit(false);
+			
+			// zmember의 auth 값 변경
+			// SQL문 작성
+			sql = "UPDATE zmember SET auth=0 WHERE mem_num=?";
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setInt(1, mem_num);
+			// SQL문 실행
+			pstmt.executeUpdate();
+			
+			// zmember_detail의 레코드 삭제
+			// SQL문 작성
+			sql = "DELETE FROM zmember_detail WHERE mem_num=?";
+			// PreparedStatement 객체 생성
+			pstmt2 = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt2.setInt(1, mem_num);
+			// SQL문 실행
+			pstmt2.executeUpdate();
+			
+			// SQL문 실행이 모두 성공하면 커밋
+			conn.commit();
+		}
+		catch(Exception e) {
+			// SQL문 실행이 하나라도 실패하면 롤백
+			conn.rollback();
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(null, pstmt2, null);
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	}
 	
 	/* 관리자 */
 	// 총 회원 수
+	public int getMemberCountByAdmin(String keyfield, String keyword) throws Exception {
+		int count = 0;
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		String sub_sql = null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			
+			// 전체 레코드 수
+			// SQL문 작성
+			sql = "SELECT COUNT(*) FROM zmember";
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// SQL문을 실행해서 결과 행을 ResultSet에 담아 반환
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+		}
+		catch(Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		
+		return count;
+	}
 	
 	// 회원 목록
+	public List<MemberVO> getListMemberByAdmin(int startRow, int endRow, String keyfield, String keyword) throws Exception {
+		List<MemberVO> list = null;
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		String sub_sql = null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			// SQL문 작성
+			sql = "SELECT * FROM (SELECT z.*, ROWNUM AS rnum "
+				+ "FROM (SELECT * FROM zmember m LEFT OUTER JOIN zmember_detail d "
+				+ "USING(mem_num) ORDER BY reg_date DESC NULLS LAST) z) "
+				+ "WHERE rnum >= ? AND rnum <=?";
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			// SQL문을 실행해서 결과 행들을 ResultSet에 담아 반환
+			rs = pstmt.executeQuery();
+			list = new ArrayList<MemberVO>();
+			while(rs.next()) {
+				MemberVO member = new MemberVO();
+				member.setId(rs.getString("id"));
+				member.setName(rs.getString("name"));
+				member.setReg_date(rs.getDate("reg_date"));
+				list.add(member);
+			}
+		}
+		catch(Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		
+		return list;
+	}
 	
 	// 회원 정보 수정
 	
-	// 회원 정보 삭제
-
 }

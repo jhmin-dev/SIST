@@ -91,7 +91,7 @@
 		<ul>
 			<li>
 				<label for="id">아이디</label>
-				<input type="text" name="id" id="id">
+				<input type="text" name="id" id="id" maxlength="12">
 				<input type="button" value="아이디 중복 체크" id="id_check">
 				<span id="message_id"></span>
 			</li>

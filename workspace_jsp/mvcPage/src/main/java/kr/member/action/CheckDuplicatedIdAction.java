@@ -44,7 +44,7 @@ public class CheckDuplicatedIdAction implements Action {
 		request.setAttribute("ajaxData", ajaxData);
 		
 		// JSP 경로 반환
-		return "/WEB-INF/views/common/ajax_view.jsp"; // 모델 클래스가 직접 Ajax 데이터를 전송할 수 없으므로 JSP 필요; Ajax 데이터를 전송하는 JSP의 경우, 별도의 가공을 하지 않기 때문에 여러 모델 클래스에서 공유 가능
+		return "/WEB-INF/views/common/ajax_view.jsp"; // 모델 클래스가 직접 Ajax 데이터를 클라이언트에 전송할 수 없으므로 서버 프로그램인 JSP가 필요; Ajax 데이터를 전송하는 JSP의 경우, 별도의 가공을 하지 않기 때문에 여러 모델 클래스에서 공유 가능
 	}
 
 }

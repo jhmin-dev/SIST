@@ -10,7 +10,84 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(function() {
+		let photo_path;
+		let my_photo;
 		
+		$('#photo_btn').click(function() {
+			$('#photo_choice').show();
+			$(this).hide(); // 수정 버튼 감추기
+		}); // end of click
+		
+		// 이미지 미리보기 취소
+		$('#photo_reset').click(function() {
+			$('.my-photo').attr('src', photo_path); // 미리보기 전 원래 이미지로 되돌리기
+			$('#photo').val(''); // <input type="file"> 태그에서 선택한 파일 정보 지우기
+			$('#photo_choice').hide();
+			$('#photo_btn').show(); // 수정 버튼 보이기
+		}); // end of click
+		
+		// 이미지 선택 및 이미지 미리보기
+		$('#photo').change(function() {
+			my_photo = this.files[0];
+			if(!my_photo) {
+				$('.my-photo').attr('src', '${pageContext.request.contextPath}/images/face.png');
+				return;
+			}
+			
+			if(my_photo.size > 1024*1024) {
+				alert('1MB까지만 업로드 가능합니다!');
+				$(this).val('');
+				return;
+			}
+			
+			let reader = new FileReader();
+			reader.readAsDataURL(my_photo);
+			
+			reader.onload = function() {
+				photo_path = $('.my-photo').attr('src'); // 미리보기 전 원래 이미지 저장
+				$('.my-photo').attr('src', reader.result);
+			}; // end of onload
+		}); // end of change
+		
+		// 이미지 전송
+		$('#photo_submit').click(function() {
+			if($('#photo').val()=='') {
+				alert('이미지를 선택하세요!');
+				$('#photo').focus();
+				return;
+			}
+			
+			// 파일 전송
+			let form_data = new FormData(); // FormData 객체에 저장된 key와 value는 <form> 태그의 입력 필드와 같은 효과
+			form_data.append('photo', my_photo); // photo는 식별자, my_photo는 선택된 파일 정보
+			$.ajax({
+				url:'updateMyPhoto.do',
+				type:'post',
+				data:form_data,
+				dataType:'json',
+				contentType:false, // 기본값은 "application/x-www-form-urlencoded; charset=UTF-8"이며, "multipart/form-data"로 전송되게 하기 위해 false로 설정
+		        processData:false, // true일 경우 jQuery 내부적으로 key와 value를 Query String으로 변환; 일반 문자열이 아니라 파일로 전송되어야 하므로 false로 설정
+				enctype:'multipart/form-data',
+				success:function(param) {
+					if(param.result=='logout') {
+						alert('로그인 후 사용하세요!');
+					}
+					else if(param.result=='success') {
+						alert('프로필 사진이 수정되었습니다.');
+						$('#photo').val('');
+						$('#photo_choice').hide();
+						$('#photo_btn').show();
+						photo_path = $('.my-photo').attr('src'); // 미리보기 전 원래 이미지를 갱신
+					}
+					else {
+						alert('파일 전송 오류 발생!');
+					}
+				},
+				error:function() {
+					alert('네트워크 오류 발생!');
+				}
+			}); // end of ajax
+		}); // end of click
 	});
 </script>
 </head>
