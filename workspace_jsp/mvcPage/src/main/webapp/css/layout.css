@@ -51,11 +51,40 @@ ul{
 	list-style:none;
 }
 label{
-	width:125px;
+	width:130px;
 	float:left;
+}
+input[type="text"],input[type="password"],input[type="email"] {
+	width: 200px;
+}
+#register_form input[id="id"] {
+	width: 78px;
+}
+input[id="zipcode"] {
+	width: 95px;
+}
+.form-notice {
+	margin-left: 130px;
 }
 
 /* 목록 */
+form#search_form {
+	border: none;
+}
+ul.search {
+	width: 300px;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+}
+ul.search li {
+	margin:0 0 9px 0;
+	padding: 0;
+	display: inline;
+}
+.list-space {
+	margin-bottom: 10px;
+}
 table{
 	width:100%;
 	border:1px solid #000;

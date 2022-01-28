@@ -10,8 +10,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		let photo_path;
-		let my_photo;
+		let photo_path = $('.my-photo').attr('src'); // 이미지 경로를 담을 변수; 원래 이미지를 처음 프로필 사진으로 지정
+		let my_photo; // File 객체를 담을 변수
 		
 		$('#photo_btn').click(function() {
 			$('#photo_choice').show();
@@ -30,11 +30,11 @@
 		$('#photo').change(function() {
 			my_photo = this.files[0];
 			if(!my_photo) {
-				$('.my-photo').attr('src', '${pageContext.request.contextPath}/images/face.png');
+				$('.my-photo').attr('src', photo_path); // 파일 선택 취소시 원래 이미지로 되돌리기
 				return;
 			}
 			
-			if(my_photo.size > 1024*1024) {
+			if(my_photo.size>1024*1024) {
 				alert('1MB까지만 업로드 가능합니다!');
 				$(this).val('');
 				return;
@@ -44,7 +44,6 @@
 			reader.readAsDataURL(my_photo);
 			
 			reader.onload = function() {
-				photo_path = $('.my-photo').attr('src'); // 미리보기 전 원래 이미지 저장
 				$('.my-photo').attr('src', reader.result);
 			}; // end of onload
 		}); // end of change
@@ -74,10 +73,10 @@
 					}
 					else if(param.result=='success') {
 						alert('프로필 사진이 수정되었습니다.');
+						photo_path = $('.my-photo').attr('src'); // 원래 이미지를 수정한 프로필 사진으로 갱신
 						$('#photo').val('');
 						$('#photo_choice').hide();
 						$('#photo_btn').show();
-						photo_path = $('.my-photo').attr('src'); // 미리보기 전 원래 이미지를 갱신
 					}
 					else {
 						alert('파일 전송 오류 발생!');

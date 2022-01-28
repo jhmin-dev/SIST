@@ -1,3 +1,4 @@
+/* 회원 관리 */
 CREATE TABLE zmember(
 	mem_num NUMBER NOT NULL,
 	id VARCHAR2(12) UNIQUE NOT NULL, /* 탈퇴하더라도 아이디를 보존하여 재가입을 방지 */
@@ -22,3 +23,20 @@ CREATE TABLE zmember_detail( /* 개인 정보를 별도의 테이블로 분리�
 );
 
 CREATE SEQUENCE zmember_seq;
+
+/* 게시판 */
+CREATE TABLE zboard(
+	board_num NUMBER NOT NULL,
+	title VARCHAR2(150) NOT NULL,
+	content CLOB NOT NULL,
+	hit NUMBER(5) DEFAULT 0 NOT NULL, /* 조회수는 최대 십만 단위까지 */
+	reg_date DATE DEFAULT SYSDATE NOT NULL,
+	modfiy_date DATE,
+	filename VARCHAR2(150),
+	ip VARCHAR2(40) NOT NULL,
+	mem_num NUMBER NOT NULL,
+	CONSTRAINT zboard_pk PRIMARY KEY (board_num),
+	CONSTRAINT zboard_fk FOREIGN KEY (mem_num) REFERENCES zmember (mem_num)
+);
+
+CREATE SEQUENCE zboard_seq;
