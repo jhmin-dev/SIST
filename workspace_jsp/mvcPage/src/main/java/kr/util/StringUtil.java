@@ -29,7 +29,7 @@ public class StringUtil {
 				.replaceAll(">", "&gt;");
 	}
 	
-	// 일정 문자열 이후에 ...으로 처리
+	// 특정 길이 이후에 ...으로 처리
 	public static String shortWords(int length, String content) {
 		if(content==null) return null;
 		

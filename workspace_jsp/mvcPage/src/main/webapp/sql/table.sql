@@ -31,7 +31,7 @@ CREATE TABLE zboard(
 	content CLOB NOT NULL,
 	hit NUMBER(5) DEFAULT 0 NOT NULL, /* 조회수는 최대 십만 단위까지 */
 	reg_date DATE DEFAULT SYSDATE NOT NULL,
-	modfiy_date DATE,
+	modify_date DATE,
 	filename VARCHAR2(150),
 	ip VARCHAR2(40) NOT NULL,
 	mem_num NUMBER NOT NULL,
