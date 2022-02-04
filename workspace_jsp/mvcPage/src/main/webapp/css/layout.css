@@ -109,3 +109,8 @@ table td, table th{
 	/* 사각형의 모서리 둥근 정도를 지정; 50% 지정시 완전한 원이 됨 */
 	border-radius: 50%;
 }
+
+/* 글 상세 */
+.detail-img {
+	max-width: 500px;
+}

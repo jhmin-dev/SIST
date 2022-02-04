@@ -153,11 +153,148 @@ public class BoardDAO {
 	}
 	
 	// 글 상세
+	public BoardVO getBoard(int board_num) throws Exception {
+		BoardVO board = null;
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			// SQL문 작성
+			sql = "SELECT * FROM zboard b JOIN zmember m "
+				+ "ON b.mem_num=m.mem_num WHERE b.board_num=?";
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setInt(1, board_num);
+			// SQL문을 실행해서 결과 행을 ResultSet에 담아 반환
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				board = new BoardVO();
+				board.setBoard_num(board_num);
+				board.setTitle(rs.getString("title"));
+				board.setContent(rs.getString("content"));
+				board.setHit(rs.getInt("hit"));
+				board.setReg_date(rs.getDate("reg_date"));
+				board.setModify_date(rs.getDate("modify_date"));
+				board.setFilename(rs.getString("filename"));
+				board.setMem_num(rs.getInt("mem_num"));
+				board.setId(rs.getString("id"));
+			}
+		}
+		catch (Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		
+		return board;
+	}
 	
 	// 조회수 증가
+	public void updateReadcount(int board_num) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			// SQL문 작성
+			sql = "UPDATE zboard SET hit=hit+1 WHERE board_num=?";
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setInt(1, board_num);
+			// SQL문 실행
+			pstmt.executeUpdate();
+		}
+		catch (Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	}
 	
 	// 글 수정
+	public void updateBoard(BoardVO board) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		String sub_sql = "";
+		int cnt = 0; // 가변적 ? 번호 처리
+		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+
+			if(board.getFilename()!=null) {
+				sub_sql = "filename=?, ";
+			}
+			
+			// SQL문 작성
+			sql = "UPDATE zboard SET title=?, content=?, " + sub_sql
+				+ "modify_date=SYSDATE, ip=? WHERE board_num=?";
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setString(++cnt, board.getTitle());
+			pstmt.setString(++cnt, board.getContent());
+			if(board.getFilename()!=null) {
+				pstmt.setString(++cnt, board.getFilename());
+			}
+			pstmt.setString(++cnt, board.getIp());
+			pstmt.setInt(++cnt, board.getBoard_num());
+			// SQL문 실행
+			pstmt.executeUpdate();
+		}
+		catch(Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	}
+	
+	// 파일 삭제
+	public void deleteFile(int board_num) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			// SQL문 작성
+			sql = "UPDATE zboard SET filename='' WHERE board_num=?";
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setInt(1, board_num);
+			// SQL문 실행
+			pstmt.executeUpdate();
+		}
+		catch(Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	}
 	
 	// 글 삭제
+	public void deleteBoard(int board_num) {
+		
+	}
 	
 }
