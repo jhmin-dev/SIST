@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.board.vo.BoardReplyVO;
 import kr.board.vo.BoardVO;
 import kr.util.DBUtil;
 import kr.util.StringUtil;
@@ -293,8 +294,92 @@ public class BoardDAO {
 	}
 	
 	// 글 삭제
-	public void deleteBoard(int board_num) {
+	public void deleteBoard(int board_num) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		PreparedStatement pstmt2 = null;
+		String sql = null;
 		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			// 오토커밋 해제
+			conn.setAutoCommit(false);
+			
+			// 댓글 삭제
+			// SQL문 작성
+			sql = "DELETE FROM zboard_reply WHERE board_num=?";
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setInt(1, board_num);
+			// SQL문 실행
+			pstmt.executeUpdate();
+			
+			// 부모글 삭제
+			// SQL문 작성
+			sql = "DELETE FROM zboard WHERE board_num=?";
+			// PreparedStatement 객체 생성
+			pstmt2 = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt2.setInt(1, board_num);
+			// SQL문 실행
+			pstmt2.executeUpdate();
+			
+			// 정상적으로 모든 SQL문이 실행된 경우
+			conn.commit();
+		}
+		catch(Exception e) {
+			// SQL문 실행이 하나라도 실패한 경우
+			conn.rollback();
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(null, pstmt2, null);
+			DBUtil.executeClose(null, pstmt, conn);
+		}
 	}
+	
+	// 댓글 등록
+	public void insertReplyBoard(BoardReplyVO boardReply) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			// SQL문 작성
+			sql = "INSERT INTO zboard_reply (re_num, re_content, re_ip, board_num, mem_num) "
+				+ "VALUES (zreply_seq.NEXTVAL, ?, ?, ?, ?)";
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setString(1, boardReply.getRe_content());
+			pstmt.setString(2, boardReply.getRe_ip());
+			pstmt.setInt(3, boardReply.getBoard_num());
+			pstmt.setInt(4, boardReply.getMem_num());
+			// SQL문 실행
+			pstmt.executeUpdate();
+		}
+		catch(Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(null, pstmt, conn);
+		}
+	}
+	
+	// 댓글 수
+	
+	// 댓글 목록
+	
+	// 댓글 상세
+	
+	// 댓글 수정
+	
+	// 댓글 삭제
 	
 }

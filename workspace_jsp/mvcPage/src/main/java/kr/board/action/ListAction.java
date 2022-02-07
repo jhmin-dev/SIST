@@ -19,10 +19,7 @@ public class ListAction implements Action {
 
 		String keyfield = request.getParameter("keyfield");
 		String keyword = request.getParameter("keyword");
-		
-		if(keyfield==null) keyfield = ""; // GET 방식으로 null 전송시 PagingUtil에서 문제가 발생할 수 있으므로 빈 문자열로 처리
-		if(keyword==null) keyword = "";
-		
+
 		BoardDAO dao = BoardDAO.getInstance();
 		int totalCount = dao.getBoardCount(keyfield, keyword);
 		

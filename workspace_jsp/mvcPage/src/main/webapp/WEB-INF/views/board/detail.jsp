@@ -10,6 +10,8 @@
 <style type="text/css">
 	hr {border-style: solid; color: gray;}
 </style>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/board-reply.js"></script>
 </head>
 <body>
 <div class="page-main">
@@ -61,13 +63,41 @@
 	delete_btn.onclick = function() {
 		let choice = confirm('삭제하시겠습니까?');
 		if(choice) {
-			location.replace = 'delete.do?board_num=${board.board_num}'; // 삭제 후 뒤로가기 방지
+			location.replace('delete.do?board_num=${board.board_num}'); // 삭제 후 뒤로가기 방지
 		}
 	};
 </script>
 		</c:if>
 		<input type="button" value="목록" onclick="location.href = 'list.do';">
 	</div>
+	<!-- 댓글 시작 -->
+	<div id="reply_div">
+		<span class="re-title">댓글 달기</span>
+		<form id="re_form">
+			<input type="hidden" name="board_num" value="${board.board_num}" id="board_num">
+			<textarea rows="3" cols="50" name="re_content" id="re_content" class="rep-content" <c:if test="${empty user_num}">disabled</c:if>><c:if test="${empty user_num}">로그인해야 작성할 수 있습니다.</c:if></textarea>
+			<c:if test="${!empty user_num}">
+			<div id="re_first">
+				<span class="letter-count">300/300</span>
+			</div>
+			<div id="re_second">
+				<input type="submit" value="전송">
+			</div>
+			</c:if>
+		</form>
+	</div>
+	<!-- 댓글 목록 출력 시작 -->
+	<div id="output">
+		<div class="paging-button" style="display: none;">
+			<input type="button" value="다음 글 보기">
+		</div>
+		<div class="loading" style="display: none;">
+			<img src="${pageContext.request.contextPath}/images/ajax-loader.gif">
+		</div>
+		
+	</div>
+	<!-- 댓글 목록 출력 끝 -->
+	<!-- 댓글 끝 -->
 </div>
 </body>
 </html>

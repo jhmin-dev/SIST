@@ -40,3 +40,19 @@ CREATE TABLE zboard(
 );
 
 CREATE SEQUENCE zboard_seq;
+
+/* 댓글 */
+CREATE TABLE zboard_reply(
+	re_num NUMBER NOT NULL,
+	re_content VARCHAR2(900) NOT NULL,
+	re_date DATE DEFAULT SYSDATE NOT NULL,
+	re_modifydate DATE,
+	re_ip VARCHAR2(40)  NOT NULL,
+	board_num NUMBER NOT NULL,
+	mem_num NUMBER NOT NULL,
+	CONSTRAINT zreply_pk PRIMARY KEY (re_num),
+	CONSTRAINT zreply_fk1 FOREIGN KEY (board_num) REFERENCES zboard (board_num),
+	CONSTRAINT zreply_fk2 FOREIGN KEY (mem_num) REFERENCES zmember (mem_num)
+);
+
+CREATE SEQUENCE zreply_seq;
