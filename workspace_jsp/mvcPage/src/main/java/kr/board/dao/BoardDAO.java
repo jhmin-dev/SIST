@@ -9,6 +9,7 @@ import java.util.List;
 import kr.board.vo.BoardReplyVO;
 import kr.board.vo.BoardVO;
 import kr.util.DBUtil;
+import kr.util.DurationFromNow;
 import kr.util.StringUtil;
 
 public class BoardDAO {
@@ -373,8 +374,96 @@ public class BoardDAO {
 	}
 	
 	// 댓글 수
+	public int getReplyBoardCount(int board_num) throws Exception {
+		int count = 0;
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			// SQL문 작성
+			sql = "SELECT COUNT(*) FROM zboard_reply JOIN zmember "
+				+ "USING(mem_num) WHERE board_num=?";
+			// PreparedStatement 객체 생성
+			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
+			pstmt.setInt(1, board_num);
+			// SQL문을 실행해서 ResultSet에 결과 행을 담아 반환
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+		}
+		catch(Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		
+		return count;
+	}
 	
 	// 댓글 목록
+	public List<BoardReplyVO> getListReplyBoard(int startRow, int endRow, int board_num) throws Exception {
+		List<BoardReplyVO> list = null;
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		
+		try {
+			// 커넥션 풀로부터 커넥션 할당
+			conn = DBUtil.getConnection();
+			// SQL문 작성
+ 			sql = "SELECT * FROM (SELECT r.*, ROWNUM AS rnum "
+ 				+ "FROM (SELECT b.re_num, TO_CHAR(b.re_date, 'YYYY-MM-DD HH24:MI:SS') AS re_date, "
+ 				+ "TO_CHAR(b.re_modifydate, 'YYYY-MM-DD HH24:MI:SS') AS re_modifydate, b.re_content, "
+ 				+ "b.board_num, mem_num, m.id FROM zboard_reply b JOIN zmember m USING(mem_num) " // USING에 사용되는 컬럼은 컬럼명에 테이블 알리아스를 붙이면 오류 발생하므로 주의
+ 				+ "WHERE b.board_num=? ORDER BY b.re_num DESC) r) "
+ 				+ "WHERE rnum >= ? AND rnum <= ?";
+ 			// PreparedStatement 객체 생성
+ 			pstmt = conn.prepareStatement(sql);
+ 			// ?에 데이터를 바인딩
+ 			pstmt.setInt(1, board_num);
+ 			pstmt.setInt(2, startRow);
+ 			pstmt.setInt(3, endRow);
+ 			// SQL문을 실행해서 결과 행들을 ResultSet에 담아 반환
+ 			rs = pstmt.executeQuery();
+ 			list = new ArrayList<BoardReplyVO>();
+ 			while(rs.next()) {
+ 				BoardReplyVO reply = new BoardReplyVO();
+ 				reply.setRe_num(rs.getInt("re_num"));
+ 				// 날짜를 1분 전, 1시간 전, 1일 전 형식의 문자열로 변환
+ 				reply.setRe_date(DurationFromNow.getTimeDiffLabel(rs.getString("re_date")));
+ 				if(rs.getString("re_modifydate")!=null) {
+ 					reply.setRe_modifydate(DurationFromNow.getTimeDiffLabel(rs.getString("re_modifydate")));
+ 				}
+ 				// 줄바꿈은 인정하고 HTML 태그는 허용하지 않음
+ 				reply.setRe_content(StringUtil.useBrNoHtml(rs.getString("re_content")));
+ 				reply.setBoard_num(rs.getInt("board_num"));
+ 				reply.setMem_num(rs.getInt("mem_num"));
+ 				reply.setId(rs.getString("id"));
+
+ 				list.add(reply);
+ 			}
+		}
+		catch(Exception e) {
+			throw new Exception(e);
+		}
+		finally {
+			// 자원 정리
+			DBUtil.executeClose(rs, pstmt, conn);
+		}
+		
+		return list;
+	}
 	
 	// 댓글 상세
 	
