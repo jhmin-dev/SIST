@@ -87,14 +87,12 @@
 		</form>
 	</div>
 	<!-- 댓글 목록 출력 시작 -->
-	<div id="output">
-		<div class="paging-button" style="display: none;">
-			<input type="button" value="다음 글 보기">
-		</div>
-		<div class="loading" style="display: none;">
-			<img src="${pageContext.request.contextPath}/images/ajax-loader.gif">
-		</div>
-		
+	<div id="output"></div>
+	<div class="paging-button" style="display: none;">
+		<input type="button" value="다음 댓글 보기">
+	</div>
+	<div class="loading" style="display: none;">
+		<img src="${pageContext.request.contextPath}/images/ajax-loader.gif">
 	</div>
 	<!-- 댓글 목록 출력 끝 -->
 	<!-- 댓글 끝 -->
