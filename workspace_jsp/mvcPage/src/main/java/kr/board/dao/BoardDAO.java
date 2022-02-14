@@ -540,16 +540,22 @@ public class BoardDAO {
 		String sql = null;
 		
 		try {
+			// 커넥션 풀로부터 커넥션 할당
 			conn = DBUtil.getConnection();
+			// SQL문 작성
 			sql = "DELETE FROM zboard_reply WHERE re_num=?";
+			// PreparedStatement 객체 생성
 			pstmt = conn.prepareStatement(sql);
+			// ?에 데이터를 바인딩
 			pstmt.setInt(1, re_num);
+			// SQL문 실행
 			pstmt.executeUpdate();
 		}
 		catch(Exception e) {
 			throw new Exception(e);
 		}
 		finally {
+			// 자원 정리
 			DBUtil.executeClose(null, pstmt, conn);
 		}
 	}

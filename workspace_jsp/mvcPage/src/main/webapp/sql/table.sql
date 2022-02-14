@@ -56,3 +56,20 @@ CREATE TABLE zboard_reply(
 );
 
 CREATE SEQUENCE zreply_seq;
+
+/* 상품 관리 */
+CREATE TABLE zitem(
+	item_num NUMBER NOT NULL,
+	name VARCHAR2(30) NOT NULL,
+	price NUMBER(8) NOT NULL,
+	quantity NUMBER(5) NOT NULL,
+	photo1 VARCHAR2(60) NOT NULL,
+	photo2 VARCHAR2(60) NOT NULL,
+	detail CLOB NOT NULL,
+	reg_date DATE DEFAULT SYSDATE NOT NULL,
+	modify_date DATE,
+	status NUMBER(1) NOT NULL,
+	CONSTRAINT zitem_pk PRIMARY KEY(item_num)
+);
+
+CREATE SEQUENCE zitem_seq;

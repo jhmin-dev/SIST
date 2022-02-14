@@ -31,11 +31,9 @@ public class ListReplyAction implements Action {
 		BoardDAO dao = BoardDAO.getInstance();
 		int count = dao.getReplyBoardCount(board_num);
 
-		/*
-		 * ajax 방식으로 목록을 표시하기 때문에 PagingUtil은 페이지 수를 표시하는 것이 아니라 목록 데이터의 분할을 위한 ROWNUM 번호를 구하는 것이 목적
-		 */
+		// ajax 방식으로 목록을 표시하기 때문에 PagingUtil은 페이지 수를 표시(getPagingHtml)하는 것이 아니라 목록 데이터의 분할을 위한 ROWNUM 번호를 구하는 것이 목적
 		int rowCount = 10;
-		PagingUtil page = new PagingUtil(Integer.parseInt(pageNum), count, rowCount, 1, null);
+		PagingUtil page = new PagingUtil(Integer.parseInt(pageNum), count, rowCount, 1, null); // pageCount와 pageUrl은 불필요하므로 임의의 값 전달
 
 		List<BoardReplyVO> list = null;
 		if(count>0) {

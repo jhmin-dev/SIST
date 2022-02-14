@@ -10,6 +10,7 @@
 	<c:if test="${!empty user_num && empty user_photo}">
 		<img src="${pageContext.request.contextPath}/images/face.png" width="25" height="25" class="my-photo">
 	</c:if>
+	<a href="${pageContext.request.contextPath}/item/itemList.do">상품 목록</a>
 	<a href="${pageContext.request.contextPath}/board/list.do">게시판</a>
 	<c:if test="${!empty user_num}">
 		[<span>${user_id}</span>]
@@ -24,6 +25,7 @@
 	</c:if>
 	<c:if test="${!empty user_num && user_auth == 3}">
 		<a href="${pageContext.request.contextPath}/member/memberList.do">회원 관리</a>
+		<a href="${pageContext.request.contextPath}/item/list.do">상품 관리</a>
 	</c:if>
 </div>
 <!-- header 끝 -->
