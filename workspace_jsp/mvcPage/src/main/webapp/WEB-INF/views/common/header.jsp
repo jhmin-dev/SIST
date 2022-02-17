@@ -13,6 +13,7 @@
 	<a href="${pageContext.request.contextPath}/item/itemList.do">상품 목록</a>
 	<a href="${pageContext.request.contextPath}/board/list.do">게시판</a>
 	<c:if test="${!empty user_num}">
+		<a href="${pageContext.request.contextPath}/cart/list.do">장바구니</a>
 		[<span>${user_id}</span>]
 		<a href="${pageContext.request.contextPath}/member/logout.do">로그아웃</a>
 	</c:if>

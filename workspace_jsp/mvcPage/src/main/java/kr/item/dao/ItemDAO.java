@@ -263,11 +263,11 @@ public class ItemDAO {
 			// SQL문 작성
 			sql = "DELETE FROM zcart WHERE item_num=?";
 			// PreparedStatement 객체 생성
-			// pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql);
 			// ?에 데이터를 바인딩
-			// pstmt.setInt(1, item_num);
+			pstmt.setInt(1, item_num);
 			// SQL문 실행
-			// pstmt.executeUpdate();
+			pstmt.executeUpdate();
 			
 			// 상품 테이블에서 상품 삭제
 			// SQL문 작성
