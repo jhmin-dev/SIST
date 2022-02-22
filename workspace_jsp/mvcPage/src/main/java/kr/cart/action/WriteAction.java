@@ -50,7 +50,7 @@ public class WriteAction implements Action {
 		}
 		
 		// JSP 경로 반환
-		return "/WEB-INF/views/cart/list.jsp";
+		return "redirect:/cart/list.do";
 	}
 	
 }

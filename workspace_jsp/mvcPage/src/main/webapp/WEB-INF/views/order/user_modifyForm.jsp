@@ -6,41 +6,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 구매</title>
+<title>구매 정보 수정</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/layout.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$('#order_form').submit(function() {
-			if($('#receive_name').val().trim()=='') {
-				alert('구매자를 입력하세요!');
-				$('#receive_name').val('').focus();
-				return false;
-			}
-			if($('#zipcode').val().trim()=='') {
-				alert('우편번호를 입력하세요!');
-				$('#zipcode').val('').focus();
-				return false;
-			}
-			if($('#address1').val().trim()=='') {
-				alert('주소를 입력하세요!');
-				$('#address1').val('').focus();
-				return false;
-			}
-			if($('#address2').val().trim()=='') {
-				alert('상세 주소를 입력하세요!');
-				$('#address2').val('').focus();
-				return false;
-			}
-			if($('#receive_phone').val().trim()=='') {
-				alert('전화번호를 입력하세요!');
-				$('#receive_phone').val('').focus();
-				return false;
-			}
-			if($('input[type="radio"]:checked').length<1) {
-				alert('결제 수단을 선택하세요!');
-				return false;
-			}
+		$('#order_modify').submit(function() {
+			let isValid = true; // submit()의 return 값 지정
+			
+			$('li').each(function() {
+				let input = $(this).find('input[type!="button"]'); // button이 아닌 <input> 태그들만 선택
+				if(!input.val().trim()) {
+					let word = $(this).find('label').text();
+					let post = (word.charCodeAt(word.length-1) - '가'.charCodeAt(0)) % 28 > 0 ? '을' : '를';
+					alert(word + post + ' 입력하세요!');
+					input.val('').focus();
+					isValid = false; // submit()의 return 값 지정
+					return false; // each() 루프 중단
+				}
+			}); // end of each
+			
+			return isValid;
 		}); // end of submit
 	});
 </script>
@@ -48,7 +34,9 @@
 <body>
 <div class="page-main">
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-	<h2>상품 구매</h2>
+	<h2>구매 정보 수정</h2>
+	<hr size="1" width="100%" noshade>
+	<h4>구매 내역</h4>
 	<table>
 		<tr>
 			<th>상품명</th>
@@ -56,60 +44,80 @@
 			<th>상품 가격</th>
 			<th>합계</th>
 		</tr>
-		<c:forEach var="cart" items="${list}">
+		<c:forEach var="detail" items="${detailList}">
 		<tr>
-			<td>
-				<a href="${pageContext.request.contextPath}/item/detail.do?item_num=${cart.item_num}">
-					<img src="${pageContext.request.contextPath}/upload/${cart.item.photo1}" width="80" height="80">
-					${cart.item.name}
-				</a>
-			</td>
-			<td><fmt:formatNumber value="${cart.order_quantity}"/></td>
-			<td><fmt:formatNumber value="${cart.item.price}"/>원</td>
-			<td><fmt:formatNumber value="${cart.sub_total}"/>원</td>
+			<td>${detail.item_name}</td>
+			<td class="align-center"><fmt:formatNumber value="${detail.order_quantity}"/>개</td>
+			<td class="align-center"><fmt:formatNumber value="${detail.item_price}"/>원</td>
+			<td class="align-center"><fmt:formatNumber value="${detail.item_total}"/>원</td>
 		</tr>
 		</c:forEach>
 		<tr>
-			<td colspan="3"><b>총 구매 금액</b></td>
-			<td class="align-center"><fmt:formatNumber value="${all_total}"/>원</td>
+			<td colspan="3" class="align-right"><b>총 구매 금액</b></td>
+			<td class="align-center"><fmt:formatNumber value="${order.order_total}"/>원</td>
 		</tr>
 	</table>
-	<form action="order.do" method="post" id="order_form">
+	<form action="orderModify.do" method="post" id="order_modify">
+		<input type="hidden" name="order_num" value="${order.order_num}">
 		<ul>
 			<li>
 				<label for="receive_name">구매자</label>
-				<input type="text" name="receive_name" id="receive_name" maxlength="10">
+				<input type="text" name="receive_name" id="receive_name" value="${order.receive_name}" maxlength="10" <c:if test="${order.status!=1}">class="order-notModify" readonly</c:if>>
 			</li>
 			<li>
 				<label for="zipcode">우편번호</label>
-				<input type="text" name="receive_post" id="zipcode" maxlength="5">
-				<input type="button" onclick="sample2_execDaumPostcode()" value="우편번호 찾기">
+				<input type="text" name="receive_post" id="zipcode" value="${order.receive_post}" maxlength="5" <c:if test="${order.status!=1}">class="order-notModify" readonly</c:if>>
+				<c:if test="${order.status==1}">
+				<input type="button" value="우편번호 찾기" onclick="sample2_execDaumPostcode()">
+				</c:if>
 			</li>
 			<li>
 				<label for="address1">주소</label>
-				<input type="text" name="receive_address1" id="address1" maxlength="30">
+				<input type="text" name="receive_address1" id="address1" value="${order.receive_address1}" maxlength="30" <c:if test="${order.status!=1}">class="order-notModify" readonly</c:if>>
 			</li>
 			<li>
 				<label for="address2">상세 주소</label>
-				<input type="text" name="receive_address2" id="address2" maxlength="30">
+				<input type="text" name="receive_address2" id="address2" value="${order.receive_address2}" maxlength="30" <c:if test="${order.status!=1}">class="order-notModify" readonly</c:if>>
 			</li>
 			<li>
 				<label for="receive_phone">전화번호</label>
-				<input type="text" name="receive_phone" id="receive_phone" maxlength="15">
+				<input type="text" name="receive_phone" id="receive_phone" value="${order.receive_phone}" maxlength="15" <c:if test="${order.status!=1}">class="order-notModify" readonly</c:if>>
 			</li>
 			<li>
 				<label>결제 수단</label>
-				<input type="radio" name="payment" id="payment" value="1">통장 입금
-				<input type="radio" name="payment" id="payment" value="2">카드 결제
+				<input type="hidden" name="payment" value="${order.payment}">
+				<c:if test="${order.payment==1}">통장 입금</c:if>
+				<c:if test="${order.payment==2}">카드 결제</c:if>
+			</li>
+			<li>
+				<label for="status">배송 상태</label>
+				<c:if test="${order.status==1}">배송 대기</c:if>
+				<c:if test="${order.status==2}">배송 준비 중</c:if>
+				<c:if test="${order.status==3}">배송 중</c:if>
+				<c:if test="${order.status==4}">배송 완료</c:if>
+				<c:if test="${order.status==5}">주문 취소</c:if>
+				<c:if test="${order.status<2}">
+				<input type="radio" name="status" value="5">주문 취소
+				</c:if>
+				<c:if test="${order.status>=2}">
+				<input type="hidden" name="status" value="${order.status}">
+				</c:if>
 			</li>
 			<li>
 				<label for="notice">남기실 말씀</label>
-				<textarea rows="5" cols="30" name="notice" id="notice"></textarea>
+				<c:if test="${order.status==1}">
+				<textarea rows="5" cols="30" name="notice" id="notice">${order.notice}</textarea>
+				</c:if>
+				<c:if test="${order.status!=1}">
+				${order.notice}
+				</c:if>
 			</li>
 		</ul>
 		<div class="align-center">
-			<input type="submit" value="주문">
-			<input type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do';">
+			<c:if test="${order.status<2}">
+			<input type="submit" value="주문 수정">
+			</c:if>
+			<input type="button" value="주문 목록" onclick="location.href = 'orderList.do';">
 		</div>
 	</form>
 <!-- 우편번호 스크립트 시작 -->

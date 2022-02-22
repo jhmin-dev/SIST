@@ -159,6 +159,26 @@
 				<input type="button" value="비밀번호 수정" onclick="location.href = 'modifyPasswordForm.do';">
 			</li>
 		</ul>
+		<h3>상품 구매 목록</h3>
+		<ul>
+			<li>
+				<c:forEach var="order" items="${orderList}">
+				<div>
+					<a href="${pageContext.request.contextPath}/order/orderModifyForm.do?order_num=${order.order_num}">
+						${order.order_num} ${order.item_name} ${order.reg_date}
+					<c:if test="${order.status==1}">배송 대기</c:if>
+					<c:if test="${order.status==2}">배송 준비 중</c:if>
+					<c:if test="${order.status==3}">배송 중</c:if>
+					<c:if test="${order.status==4}">배송 완료</c:if>
+					<c:if test="${order.status==5}">주문 취소</c:if>
+					</a>
+				</div>
+				</c:forEach>
+			</li>
+			<li>
+				<input type="button" value="구매 목록 보기" onclick="location.href = '${pageContext.request.contextPath}/order/orderList.do';">
+			</li>
+		</ul>
 	</div>
 </div>
 </body>

@@ -27,6 +27,7 @@
 	<c:if test="${!empty user_num && user_auth == 3}">
 		<a href="${pageContext.request.contextPath}/member/memberList.do">회원 관리</a>
 		<a href="${pageContext.request.contextPath}/item/list.do">상품 관리</a>
+		<a href="${pageContext.request.contextPath}/order/list.do">주문 관리</a>
 	</c:if>
 </div>
 <!-- header 끝 -->
