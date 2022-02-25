@@ -103,3 +103,32 @@ perl -pi -e 's/\n/\r\n/g' *.java
 
 - 이클립스에서 기존 파일을 임의로 선택하여 열었을 때, 한글 주석이 깨지지 않는 것을 확인
 - 264개의 `.java` 파일을 한 번에 커밋하는 대참사 발생
+
+## 이클립스에서 JavaScript 선택된 항목 배경색 변경
+
+### 상황
+
+- 전체적으로는 Eclipse Color Theme 플러그인을 이용하여 `*.xml` 형식의 커스텀 테마가 적용되어 있음
+- JS 파일의 경우 해당 테마가 무시되고 Window-Preferences-TextMate-Theme 혹은 소스 편집 창에서 오른쪽 클릭시 Switch to Theme...를 선택하여 확인할 수 있는 `*.css` 형식의 테마가 적용되어 있음
+
+### 문제
+
+- `*.js` 파일에서 현재 선택된 항목 배경색이 지나치게 밝아 가독성을 심각하게 해침
+- TextMate가 제공하는 **어떤 테마를 선택하더라도 현재 선택된 항목의 배경색이 바뀌지 않고**, Eclipse Color Theme의 설정도 유효하지 않음
+	+ JS 파일만 밝은 테마를 쓴다면 문제가 되지 않을 수 있지만, 어두운 테마를 사용하고 싶음
+
+### 해결
+
+- `eclipse javascript occurrence color`로 검색하여 발견한 스택오버플로우 글에서 상위 추천 답변은 아니지만, [혹시 JS 파일 문제라면...](https://stackoverflow.com/a/44987153)으로 시작하는 답변을 발견
+- (아마도 버전 차이로 인해) 해당 답변에 첨부된 스크린샷과 달리 JavaScript Occurences는 없었지만, 대신 **LSP Read Occurrence**의 색을 변경하여 해결(Text, Write도 변경해보았지만 영향 없었음)
+
+## eGovFrame의 외부 웹 브라우저로 Microsoft Edge 추가
+
+### 문제
+
+- eGovFrame 개발자용 개발환경 3.10.0 버전에는 Window-Web Browser에서 제공하는 항목에 Microsoft Edge가 없음
+
+### 해결
+
+- Window-Preferences-General-Web Browser에서 New...를 선택하여 경로에 `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`를 입력하고 추가
+	+ 시작 메뉴에 있는 Microsoft Edge 바로가기 파일의 속성에서 대상 경로를 확보 가능
