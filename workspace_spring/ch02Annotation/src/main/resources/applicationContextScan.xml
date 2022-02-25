@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 
+	컨테이너에 bean을 등록하기 위해서 패키지를 지정
+	<context:component-scan/> 태그를 명시해서 자동 스캔할 패키지를 지정하면 <context:annotation-config/> 태그는 명시하지 않아도 어노테이션을 사용할 수 있음
+	 -->
+	<context:component-scan base-package="kr.spring.ch05"/>
+</beans>

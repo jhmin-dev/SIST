@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DI 프로퍼티 설정 방식 -->
+	<!-- bean 태그의 식별자는 name으로 부여해도 되고 id로 부여해도 됨 -->
+	<bean id="registerService" class="kr.spring.ch07.RegisterService">
+		<property name="registerDAO">
+			<!-- ref : 주입할 의존 객체에 해당하는 bean 객체의 식별값 -->
+			<ref bean="registerDAO"/>
+		</property>
+	</bean>
+	<bean id="registerDAO" class="kr.spring.ch07.RegisterDAO"/>
+	
+	<!-- DI 프로퍼티 설정 방식 : 여러 개의 프로퍼티 -->
+	<bean id="work" class="kr.spring.ch08.WorkController">
+		<!-- property 태그의 경우 항상 프로퍼티명을 명시하므로 순서 무관 -->
+		<property name="periodTime">
+			<value>10</value>
+		</property>
+		<property name="email"> <!-- WorkController의 프로퍼티명 -->
+			<ref bean="email"/> <!-- bean 식별자 -->
+		</property>
+	</bean>
+	<bean id="email" class="kr.spring.ch08.EmailSender"/>
+	
+	<!-- XML 네임스페이스를 이용한 프로퍼티 설정 -->
+	<bean id="upload" class="kr.spring.ch09.UploadController" p:timeout="50" p:image-ref="image"/>
+	<bean id="image" class="kr.spring.ch09.ImageSender"/>
+	
+	<!-- List 타입 프로퍼티 설정 -->
+	<bean id="performanceMonitor" class="kr.spring.ch10.PerformanceMonitor">
+		<property name="deviations">
+			<list> <!-- 컨테이너가 List 타입 객체를 생성하여 deviations에 전달 -->
+				<value>0.2</value>
+				<value>0.3</value>
+				<!-- 문자열일 경우 <value>String</value> -->
+				<!-- 객체일 경우 <ref bean="SomeDemo"/> -->
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Map 타입 프로퍼티 설정 -->
+	<bean id="protocolHandlerFactory" class="kr.spring.ch11.ProtocolHandlerFactory">
+		<property name="map">
+			<map>
+				<entry>
+					<key><value>soap</value></key> <!-- 프로퍼티 map은 key 자료형이 String이므로 <value>로 key에 넣을 문자열 전달 -->
+					<ref bean="soapHandler"/> <!-- 프로퍼티 map은 value 자료형이 Object이므로 <ref bean>으로 value에 넣을 객체 전달 -->
+				</entry>
+				<entry>
+					<key><value>rest</value></key>
+					<ref bean="restHandler"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="soapHandler" class="kr.spring.ch11.SoapHandler"/>
+	<bean id="restHandler" class="kr.spring.ch11.RestHandler"/>
+	
+	<!-- Set 타입 프로퍼티 설정 -->
+	<bean id="videoClient" class="kr.spring.ch12.VideoClient">
+		<property name="subSet">
+			<set> <!-- 컨테이너에서 Set 타입 객체를 생성하여 subSet에 전달 -->
+				<value>10</value>
+				<value>20</value>
+			</set>
+		</property>
+	</bean>
+	
+	<!-- Properties 타입 프로퍼티 설정 -->
+	<bean id="bookClient" class="kr.spring.ch13.BookClient">
+		<property name="prop">
+			<props> <!-- 다른 컬렉션 타입 태그들과 달리 타입명과 태그명이 불일치하므로 주의 -->
+				<prop key="server">192.168.0.1</prop>
+				<prop key="connectionTimeout">50000</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

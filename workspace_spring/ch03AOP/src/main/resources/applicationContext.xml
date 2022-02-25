@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- 
+Aspect J의 Pointcut 표현식
+execution(public void set*(..))
+반환형이 void이고 메서드명이 set으로 시작하고, 인자가 0개 이상인 메서드 호출
+
+execution(* kr.spring.ch01.*.*())
+kr.spring.ch01 패키지의 인자가 없는 모든 메서드 호출
+
+execution(* kr.spring.ch01..*.*(..))
+kr.spring.ch01 패키지 및 하위 패키지에 있는 인자가 0개 이상인 메서드 호출
+
+execution(Integer kr.spring.ch01..WriteArticleService.write(..))
+반환형이 Integer이고, kr.spring.ch01 패키지 및 하위 패키지의 WriteArticleService 클래스에 있는 write() 메서드 호출
+
+execution(* get*(*))
+메서드명이 get으로 시작하고 인자가 1개인 메서드 호출
+
+execution(* get*(*,*))
+메서드명이 get으로 시작하고 인자가 2개인 메서드 호출
+
+execution(* read*(Integer,..))
+메서드명이 read로 시작하고 첫 번째 인자의 자료형이 Integer이며, 인자가 1개 이상인 메서드 호출
+ -->
+
+	<!-- 공통 기능이 구현된 클래스 -->
+	<bean id="myFirstAdvice" class="kr.spring.ch01.MyFirstAdvice"/>
+	
+	<!-- 핵심 기능이 구현된 클래스 -->
+	<bean id="product" class="kr.spring.product.Product"/>
+	
+	<!-- AOP 설정 -->
+	<aop:config>
+		<!-- Aspect 설정 : Advice를 어떤 Pointcut에 적용할지를 설정 -->
+		<aop:aspect id="aspect" ref="myFirstAdvice"> <!-- 공통 기능이 있는 bean의 식별자를 등록 -->
+			<!-- 실제로 Advice가 적용되는 지점 -->
+			<aop:pointcut expression="execution(public String launch())" id="publicMethod"/>
+			
+			<!-- 실행할 공통 기능 메서드명과, 적용 대상인 Pointcut의 식별자를 등록 -->
+			<!-- <aop:before method="before" pointcut-ref="publicMethod"/> -->
+			
+			<!-- 공통 기능 메서드의 인자명을 returning에 지정하면, 핵심 기능 반환 값이 해당 인자에 전달됨 -->
+			<!-- <aop:after-returning method="afterReturning" pointcut-ref="publicMethod" returning="msg"/> -->
+			
+			<!-- 공통 기능 메서드의 인자명을 throwing에 지정하면, 핵심 기능에서 발생한 예외 객체가 해당 인자에 전달됨 -->
+			<!-- <aop:after-throwing method="afterThrowing" pointcut-ref="publicMethod" throwing="ex"/> -->
+			
+			<!-- <aop:after method="after" pointcut-ref="publicMethod"/> -->
+			
+			<aop:around method="around" pointcut-ref="publicMethod"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
