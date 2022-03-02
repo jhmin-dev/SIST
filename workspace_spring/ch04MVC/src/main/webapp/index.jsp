@@ -13,5 +13,15 @@
 <a href="${pageContext.request.contextPath}/article/newArticle.do">NewArticleController</a><br>
 <a href="${pageContext.request.contextPath}/cookie/make.do">CookieController : make.do</a><br>
 <a href="${pageContext.request.contextPath}/cookie/view.do">CookieController : view.do</a><br>
+<a href="${pageContext.request.contextPath}/search/main.do">GameSearchController</a><br>
+<a href="${pageContext.request.contextPath}/account/create.do">CreateAccountController</a><br>
+<a href="${pageContext.request.contextPath}/report/submitReport.do">SubmitReportController</a><br>
+<a href="${pageContext.request.contextPath}/login/login.do">LoginController</a><br>
+----------------------------<br>
+===로케일 변경하기===<br>
+<a href="${pageContext.request.contextPath}/changeLanguage.do?lang=ko">/changeLanguage.do?lang=ko</a><br>
+<a href="${pageContext.request.contextPath}/changeLanguage.do?lang=en">/changeLanguage.do?lang=en</a><br>
+로케일 변경하기를 클릭한 후 로케일 변경을 확인하기 위해 /login/login.do를 클릭하세요.<br>
+----------------------------<br>
 </body>
 </html>

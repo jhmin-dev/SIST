@@ -36,4 +36,43 @@
 	
 	<!-- @CookieValue 어노테이션을 이용한 쿠키 매핑 -->
 	<beans:bean id="cookieController" class="kr.spring.ch04.controller.CookieController"/>
+	
+	<!-- 폼에서 전송받은 데이터 처리 -->
+	<beans:bean class="kr.spring.ch05.controller.GameSearchController"/> <!-- 요청 URL에 의해 매핑되므로(@RequestMapping), bean 식별자 불필요 -->
+	<beans:bean class="kr.spring.ch05.service.SearchService"/> <!-- 클래스명(=자료형)에 의해 매핑되므로(@Autowired), bean 식별자 불필요 -->
+	
+	<!-- 리소스 번들 지정 -->
+	<beans:bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<beans:property name="basenames">
+			<beans:list> <!-- properties 파일을 여러 개 등록 가능 -->
+				<beans:value>messages.validation</beans:value> <!-- 리스트의 값들은 전부 properties 파일로 인식하므로 확장자는 생략하며, src/main/resources 하위의 폴더 경로는 포함 -->
+				<beans:value>messages.label</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+	
+	<!-- 유효성 체크 -->
+	<beans:bean class="kr.spring.ch06.controller.CreateAccountController"/>
+	
+	<!-- multipartResolver 설정 -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="52428800"/> <!-- 50MB -->
+		<beans:property name="defaultEncoding" value="UTF-8"/>
+	</beans:bean>
+	
+	<!-- 업로드 폴더 등록 -->
+	<context:property-placeholder location="classpath:config/file.properties"/> <!-- classpath가 src/main/resources를 가리킴 -->
+	
+	<!-- 파일 업로드 처리 -->
+	<beans:bean class="kr.spring.ch07.controller.SubmitReportController"/>
+	
+	<!-- 로그인 처리 -->
+	<beans:bean class="kr.spring.ch08.controller.LoginController"/>
+	<beans:bean class="kr.spring.ch08.service.LoginService"/>
+	
+	<!-- localeResolver 지정 -->
+	<beans:bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
+	
+	<!-- 로케일 변경하기 -->
+	<beans:bean class="kr.spring.ch09.controller.LocaleChangeController"/>
 </beans:beans>
