@@ -2,6 +2,7 @@
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
@@ -19,6 +20,7 @@
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="order" value="1"/> <!-- View Resolver가 2개이므로 충돌하지 않도록 우선순위를 서로 다르게 지정 -->
 	</beans:bean>
 	
 	<!-- @Autowired 사용을 위해서  -->
@@ -75,4 +77,29 @@
 	
 	<!-- 로케일 변경하기 -->
 	<beans:bean class="kr.spring.ch09.controller.LocaleChangeController"/>
+	
+	<!-- localChangeInterceptor를 이용한 로케일 처리 -->
+	<beans:bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="language"/>
+	<interceptors>
+		<interceptor>
+			<mapping path="/login/login.do"/>
+			<beans:ref bean="localeChangeInterceptor"/>
+		</interceptor>
+	</interceptors>
+	
+	<!-- view의 이름과 bean의 이름이 같으면 해당 bean을 view로 호출 -->
+	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0"/>
+	
+	<!-- 파일 다운로드 -->
+	<beans:bean class="kr.spring.ch10.controller.DownloadController"/>
+	<beans:bean id="download" class="kr.spring.ch10.view.DownloadView"/>
+	
+	<!-- 어노테이션을 이용한 유효성 검증 -->
+	<beans:bean class="kr.spring.ch11.controller.MemberWriteController"/>
+	
+	<!-- JSON 파싱 -->
+	<beans:bean class="kr.spring.ch12.controller.PageReportController"/>
+	
+	<!-- @RestController 사용 -->
+	<beans:bean class="kr.spring.ch13.controller.RestMainController"/>
 </beans:beans>

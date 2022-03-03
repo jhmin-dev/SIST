@@ -23,5 +23,13 @@
 <a href="${pageContext.request.contextPath}/changeLanguage.do?lang=en">/changeLanguage.do?lang=en</a><br>
 로케일 변경하기를 클릭한 후 로케일 변경을 확인하기 위해 /login/login.do를 클릭하세요.<br>
 ----------------------------<br>
+<a href="${pageContext.request.contextPath}/login/login.do?language=ko">/login/login.do?language=ko</a><br>
+<a href="${pageContext.request.contextPath}/login/login.do?language=en">/login/login.do?language=en</a><br>
+----------------------------<br>
+<a href="${pageContext.request.contextPath}/file.do">DownloadController</a><br>
+<a href="${pageContext.request.contextPath}/member/write.do">MemberWriteController</a><br>
+<a href="${pageContext.request.contextPath}/pageJsonReport.do">PageReportController</a><br>
+<a href="${pageContext.request.contextPath}/member">RestMainController</a><br>
+<a href="${pageContext.request.contextPath}/member/id/sleepy/name/도로롱">/member/id/sleepy/name/도로롱</a><br>
 </body>
 </html>
