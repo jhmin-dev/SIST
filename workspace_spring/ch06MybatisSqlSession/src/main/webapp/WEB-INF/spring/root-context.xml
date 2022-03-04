@@ -41,27 +41,19 @@
 		<property name="maxWait" value="5"/>
 	</bean>
 	
-	<!-- JdbcTemplate 객체 생성 -->
-	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-		<property name="dataSource" ref="dataSource"/>
-	</bean>
-	
 	<!-- JDBC 기반 트랜잭션 관리자 설정 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" p:dataSource-ref="dataSource"/>
-	
-	<!-- 선언적 트랜잭션 처리 -->
-	<!-- 
-	<tx:advice id="txAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="update*"/>
-		</tx:attributes>
-	</tx:advice>
-	<aop:config>
-		<aop:pointcut expression="execution(public * kr.spring.board..*ServiceImpl.*(..))" id="servicePublicMethod"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="servicePublicMethod"/>
-	</aop:config>
-	 -->
 
 	<!-- 어노테이션 방식으로 처리할 때 반드시 명시 -->
 	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	<!-- MyBatis 설정 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:config/SqlMapConfig.xml"/>
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory"/>
+	</bean>
+	
 </beans>

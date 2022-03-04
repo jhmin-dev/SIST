@@ -1,47 +1,51 @@
 package kr.spring.board.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import kr.spring.board.dao.BoardDAO;
 import kr.spring.board.vo.BoardVO;
 
-@Service // Service 전용 어노테이션; 자동 스캔되기 위해 필요
+@Service // 자동 스캔 처리
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private BoardDAO boardDAO;
 	
 	@Override
 	public void insertBoard(BoardVO board) {
-		boardDAO.insertBoard(board);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public int getBoardCount() {
-		return boardDAO.getBoardCount();
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
-	public List<BoardVO> getBoardList(int startRow, int endRow) {
-		return boardDAO.getBoardList(startRow, endRow);
+	public List<BoardVO> getBoardList(Map<String, Object> map) {
+		return boardDAO.getBoardList(map);
 	}
 
 	@Override
 	public BoardVO getBoard(int num) {
-		return boardDAO.getBoard(num);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	@Transactional
 	public void updateBoard(BoardVO board) {
-		boardDAO.updateBoard(board);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void deleteBoard(int num) {
-		boardDAO.deleteBoard(num);
+		// TODO Auto-generated method stub
+		
 	}
 }

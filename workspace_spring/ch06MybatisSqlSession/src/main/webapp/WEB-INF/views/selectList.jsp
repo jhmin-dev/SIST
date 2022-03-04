@@ -6,18 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판 목록</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
 <div class="page-main">
-	<h2>게시판 목록</h2>
-	<div class="align-right">
-		<input type="button" value="글쓰기" onclick="location.href = 'insert.do';">
-	</div>
-	<c:if test="${count==0}">
-		<div class="result-display">표시할 내용이 없습니다.</div>
-	</c:if>
-	<c:if test="${count>0}">
 	<table>
 		<tr>
 			<th>번호</th>
@@ -34,8 +25,6 @@
 		</tr>
 		</c:forEach>
 	</table>
-	<div class="align-center">${pagingHtml}</div>
-	</c:if>
 </div>
 </body>
 </html>

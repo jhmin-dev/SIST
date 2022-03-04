@@ -2,11 +2,17 @@ package kr.spring.board.vo;
 
 import java.sql.Date;
 
+import javax.validation.constraints.NotEmpty;
+
 public class BoardVO {
 	private int num;
+	@NotEmpty
 	private String name;
+	@NotEmpty
 	private String title;
+	@NotEmpty
 	private String passwd;
+	@NotEmpty
 	private String content;
 	private Date reg_date;
 	
