@@ -26,5 +26,5 @@ hide_toc: true
     + [jQuery](index_front.md#jQuery)
     + [Bootstrap](index_front.md#Bootstrap)
 - [Servlet & JSP](index_jsp.md)
-- [Spring](index_spring.md)
+- [Spring & Spring Boot](index_spring.md)
 - Python
