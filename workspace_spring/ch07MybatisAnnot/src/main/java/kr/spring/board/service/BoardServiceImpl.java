@@ -6,41 +6,43 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kr.spring.board.dao.BoardDAO;
+import kr.spring.board.dao.BoardMapper;
 import kr.spring.board.vo.BoardVO;
 
-@Service // 자동 스캔 처리
-public class BoardServiceImpl implements BoardService {
+@Service
+public class BoardServiceImpl implements BoardService{
+
 	@Autowired
-	private BoardDAO boardDAO;
+	private BoardMapper boardMapper;
 	
 	@Override
 	public void insertBoard(BoardVO board) {
-		boardDAO.insertBoard(board);
+		boardMapper.insertBoard(board);
 	}
 
 	@Override
 	public int getBoardCount() {
-		return boardDAO.getBoardCount();
+		return boardMapper.getBoardCount();
 	}
 
 	@Override
 	public List<BoardVO> getBoardList(Map<String, Object> map) {
-		return boardDAO.getBoardList(map);
+		return boardMapper.getBoardList(map);
 	}
 
 	@Override
 	public BoardVO getBoard(int num) {
-		return boardDAO.getBoard(num);
+		return boardMapper.getBoard(num);
 	}
 
 	@Override
 	public void updateBoard(BoardVO board) {
-		boardDAO.updateBoard(board);
+		boardMapper.updateBoard(board);
 	}
 
 	@Override
 	public void deleteBoard(int num) {
-		boardDAO.deleteBoard(num);
+		boardMapper.deleteBoard(num);
 	}
+
 }

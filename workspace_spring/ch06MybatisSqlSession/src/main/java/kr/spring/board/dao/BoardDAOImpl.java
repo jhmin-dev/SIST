@@ -16,14 +16,13 @@ public class BoardDAOImpl implements BoardDAO {
 	
 	@Override
 	public void insertBoard(BoardVO board) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.insert("insertBoard", board);
 	}
 
 	@Override
 	public int getBoardCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		Integer count = sqlSession.selectOne("getBoardCount");
+		return count;
 	}
 
 	@Override
@@ -33,19 +32,16 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public BoardVO getBoard(int num) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("getBoard", num); // 자바빈 또는 Map 객체가 아니라 값 하나만 전달시, 해당 값이 담긴 변수명 num이 데이터 바인딩시의 식별자로 사용됨
 	}
 
 	@Override
 	public void updateBoard(BoardVO board) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.update("updateBoard", board);
 	}
 
 	@Override
 	public void deleteBoard(int num) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.delete("deleteBoard", num);
 	}
 }

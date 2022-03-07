@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.board.dao.BoardMapper"> 
+	<!-- 목록 -->
+	<select id="getBoardList" resultType="boardVO" parameterType="map"> <!-- (SQL문이 복잡한 경우) XML에 SQL문 명시; XML에서 SQL문의 식별자는 DAO의 메서드명을 사용 -->
+		SELECT 
+			*
+		FROM (SELECT 
+				a.*,
+				ROWNUM AS rnum
+			FROM (SELECT 
+					* 
+				FROM tboard 
+				ORDER BY reg_date DESC) a)
+		<![CDATA[
+		WHERE rnum>=#{start} AND rnum<=#{end}
+		]]>
+	</select>
+	
+	<!-- 글쓰기 -->
+	<insert id="insertBoard" parameterType="boardVO">
+		INSERT INTO tboard (
+			num,
+			name,
+			title,
+			passwd,
+			content,
+			reg_date)
+		VALUES (
+			tboard_seq.NEXTVAL,
+			#{name},
+			#{title},
+			#{passwd},
+			#{content},
+			SYSDATE)
+	</insert>
+</mapper>
