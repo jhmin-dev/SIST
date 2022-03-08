@@ -30,6 +30,7 @@
 		<beans:property name="definitions">
 			<beans:list>
 				<beans:value>/WEB-INF/tiles-def/main.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/member.xml</beans:value>
 			</beans:list>
 		</beans:property>	
 	</beans:bean>
@@ -59,5 +60,14 @@
 			</beans:list>
 		</beans:property>	
 	</beans:bean>
+	
+	<!-- 로그인 여부 검사 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/member/myPage.do"/>
+			<mapping path="/member/update.do"/>
+			<beans:bean class="kr.spring.interceptor.LoginCheckInterceptor"/>
+		</interceptor>
+	</interceptors>
 	
 </beans:beans>
