@@ -40,32 +40,28 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void updatePassword(MemberVO member) {
-		// TODO Auto-generated method stub
-		
+		memberMapper.updatePassword(member);
 	}
 
 	@Override
 	public void deleteMember(Integer mem_num) {
-		// TODO Auto-generated method stub
-		
+		memberMapper.deleteMember(mem_num);
+		memberMapper.deleteMember_detail(mem_num);
 	}
 
 	@Override
 	public void updateProfile(MemberVO member) {
-		// TODO Auto-generated method stub
-		
+		memberMapper.updateProfile(member);
 	}
 
 	@Override
 	public List<MemberVO> selectList(Map<String, Object> map) {
-		// TODO Auto-generated method stub
-		return null;
+		return memberMapper.selectList(map);
 	}
 
 	@Override
 	public int selectRowCount(Map<String, Object> map) {
-		// TODO Auto-generated method stub
-		return 0;
+		return memberMapper.selectRowCount(map);
 	}
 
 	@Override

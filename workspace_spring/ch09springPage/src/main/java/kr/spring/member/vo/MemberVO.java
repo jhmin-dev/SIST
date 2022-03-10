@@ -36,6 +36,7 @@ public class MemberVO {
 	private Date modify_date;
 	
 	// 비밀번호 변경시 현재 비밀번호를 저장하는 용도로 사용
+	@Pattern(regexp="^[A-Za-z0-9]{4,12}$") // 영문 대소문자 및 숫자만 사용 가능, 최소 4자 최대 12자
 	private String now_passwd;
 	
 	// 비밀번호 일치 여부 검증

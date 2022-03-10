@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.member.dao.MemberMapper"> 
+	<select id="selectList" parameterType="map" resultType="memberVO">
+		SELECT 
+			* 
+		FROM (SELECT 
+				a.*, ROWNUM AS rnum 
+			FROM (SELECT 
+					* 
+				FROM spmember LEFT JOIN spmember_detail 
+				USING (mem_num) 
+				<where>
+					<if test="keyword!='' and keyfield==1">
+						id LIKE '%' || #{keyword} || '%'
+					</if>
+					<if test="keyword!='' and keyfield==2">
+						name LIKE '%' || #{keyword} || '%'
+					</if>
+					<if test="keyword!='' and keyfield==3">
+						email LIKE '%' || #{keyword} || '%'
+					</if>
+				</where>
+				ORDER BY reg_date DESC) a)
+		<![CDATA[
+		WHERE rnum>=#{start} AND rnum<=#{end}
+		]]>
+	</select>
+	<select id="selectRowCount" parameterType="map" resultType="integer">
+		SELECT
+			COUNT(*)
+		FROM spmember LEFT JOIN spmember_detail
+		USING (mem_num) 
+		<where>
+			<if test="keyword!='' and keyfield==1">
+				id LIKE '%' || #{keyword} || '%'
+			</if>
+			<if test="keyword!='' and keyfield==2">
+				name LIKE '%' || #{keyword} || '%'
+			</if>
+			<if test="keyword!='' and keyfield==3">
+				email LIKE '%' || #{keyword} || '%'
+			</if>
+		</where>
+	</select>
+</mapper>

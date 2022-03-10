@@ -43,11 +43,7 @@ div#main_menu ul li {
 .result-display {
 	width: 400px;
 	height: 200px;
-	/* 정중앙에 div를 배치하기 위한 설정 */
-	position: absolute;
-    top: 50%;
-  	left: 50%;
-  	transform: translate(-50%, -50%);
+	margin: 50px auto;
     /* 테두리 */
 	border: 1px solid #000;
 	/* 하위 요소를 수직으로 쌓을 수 있는 공간을 만듦 */
@@ -64,7 +60,43 @@ div#main_menu ul li {
 	text-align: center;
 }
 
+/* 메인 */
+a:link,a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #999999;
+}
+
+/* My Page */
+.mypage-div {
+	width: 48%;
+	float: left;
+	padding: 5px;
+}
+.my-photo {
+	object-fit: cover;
+	object-position: top;
+	border-radius: 50%;
+}
+
 /* 목록 */
+form#search_form {
+	border: none;
+}
+ul.search {
+	width: 500px;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+}
+ul.search li {
+	margin: 0 0 9px 0;
+	padding: 0;
+	display: inline;
+}
 table {
 	width: 100%;
 	border: 1px solid #000;
@@ -88,6 +120,15 @@ ul {
 label {
 	width: 100px;
 	float: left;
+}
+input[type="text"],input[type="passwd"],input[type="email"] {
+	width: 200px;
+}
+#register_form input[id="id"] {
+	width: 113px;
+}
+input[id="zipcode"] {
+	width: 95px;
 }
 .error-color {
 	color: red;

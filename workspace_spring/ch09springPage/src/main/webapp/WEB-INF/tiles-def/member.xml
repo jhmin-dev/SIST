@@ -5,6 +5,7 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
+	<!-- 사용자 -->
 	<definition name="memberRegister" extends="main">
 		<put-attribute name="title" value="회원 가입"/>
 		<put-attribute name="body" value="/WEB-INF/views/member/memberRegister.jsp"/>
@@ -20,5 +21,22 @@
 	<definition name="memberModify" extends="main">
 		<put-attribute name="title" value="회원 정보 수정"/>
 		<put-attribute name="body" value="/WEB-INF/views/member/memberModify.jsp"/>
+	</definition>
+	<definition name="memberChangePassword" extends="main">
+		<put-attribute name="title" value="비밀번호 변경"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/memberChangePassword.jsp"/>
+	</definition>
+	<definition name="memberDelete" extends="main">
+		<put-attribute name="title" value="회원 탈퇴"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/memberDelete.jsp"/>
+	</definition>
+	<!-- 관리자 -->
+	<definition name="admin_memberList" extends="main">
+		<put-attribute name="title" value="회원 목록 (관리자용)"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/admin_memberList.jsp"/>
+	</definition>
+	<definition name="admin_memberModify" extends="main">
+		<put-attribute name="title" value="회원 정보 수정 (관리자용)"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/admin_memberModify.jsp"/>
 	</definition>
 </tiles-definitions>

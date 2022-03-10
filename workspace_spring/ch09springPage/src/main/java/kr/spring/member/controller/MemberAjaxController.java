@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +43,28 @@ public class MemberAjaxController {
 			else { // 패턴 일치
 				map.put("result", "idNotFound");
 			}
+		}
+		
+		return map;
+	}
+	
+	@RequestMapping("/member/updateMyPhoto.do")
+	@ResponseBody
+	public Map<String, String> processProfile(MemberVO memberVO, HttpSession session) {
+		Map<String, String> map = new HashMap<String, String>();
+		
+		Integer user_num = (Integer)session.getAttribute("user_num");
+		if(user_num==null) { // 로그인되어 있지 않은 경우
+			map.put("result", "logout");
+		}
+		else { // 로그인되어 있는 경우
+			memberVO.setMem_num(user_num);
+			memberService.updateProfile(memberVO);
+			
+			// 이미지를 업로드한 후 세션에 저장된 user_photo 값 변경
+			session.setAttribute("user_photo", memberVO.getPhoto());
+			
+			map.put("result", "success");
 		}
 		
 		return map;
