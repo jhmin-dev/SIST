@@ -36,6 +36,8 @@ public interface MemberMapper {
 	// 관리자
 	public List<MemberVO> selectList(Map<String, Object> map);
 	public int selectRowCount(Map<String, Object> map);
+	@Update("UPDATE spmember SET auth=#{auth} WHERE mem_num=#{mem_num}")
 	public void updateByAdmin(MemberVO member);
+	@Update("UPDATE spmember_detail SET name=#{name}, phone=#{phone}, email=#{email}, zipcode=#{zipcode}, address1=#{address1}, address2=#{address2}, modify_date=SYSDATE WHERE mem_num=#{mem_num}")
 	public void updateDetailByAdmin(MemberVO member);
 }

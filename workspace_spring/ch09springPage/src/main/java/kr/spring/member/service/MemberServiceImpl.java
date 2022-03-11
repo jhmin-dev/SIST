@@ -66,7 +66,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void updateByAdmin(MemberVO member) {
-		// TODO Auto-generated method stub
-		
+		memberMapper.updateByAdmin(member);
+		memberMapper.updateDetailByAdmin(member);		
 	}
 }

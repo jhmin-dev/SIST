@@ -26,7 +26,7 @@
 				</select>
 			</li>
 			<li>
-				<input type="text" name="keyword" id="keyword" value="${param.keyword}">
+				<input type="search" name="keyword" id="keyword" value="${param.keyword}">
 			</li>
 			<li>
 				<input type="submit" value="검색">

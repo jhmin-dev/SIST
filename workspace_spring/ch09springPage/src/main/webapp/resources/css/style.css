@@ -40,6 +40,10 @@ div#main_menu ul li {
 	width: 98%;
 	margin: 0 auto;
 }
+.page-one {
+	width: 600px;
+	margin: 0 auto;
+}
 .result-display {
 	width: 400px;
 	height: 200px;
@@ -121,7 +125,7 @@ label {
 	width: 100px;
 	float: left;
 }
-input[type="text"],input[type="passwd"],input[type="email"] {
+input[type="text"],input[type="password"],input[type="email"] {
 	width: 200px;
 }
 #register_form input[id="id"] {

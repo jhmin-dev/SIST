@@ -24,3 +24,21 @@ CREATE TABLE spmember_detail(
 );
 
 CREATE SEQUENCE spmember_seq;
+
+/* 게시판 */
+CREATE TABLE spboard(
+	board_num NUMBER NOT NULL,
+	title VARCHAR2(100) NOT NULL,
+	content CLOB not null,
+	hit NUMBER(5) DEFAULT 0 NOT NULL,
+	reg_date DATE DEFAULT SYSDATE NOT NULL,
+	modify_date DATE,
+	uploadfile BLOB,
+	filename VARCHAR2(100),
+	ip VARCHAR2(40) NOT NULL,
+	mem_num NUMBER NOT NULL,
+	CONSTRAINT spboard_pk PRIMARY KEY (board_num),
+	CONSTRAINT spboard_spmember_fk FOREIGN KEY (mem_num) REFERENCES spmember (mem_num)
+);
+
+CREATE SEQUENCE spboard_seq;

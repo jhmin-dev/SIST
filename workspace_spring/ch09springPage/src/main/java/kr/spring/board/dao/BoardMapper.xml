@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.board.dao.BoardMapper">
+	<!-- 목록 -->
+	<select id="selectList" parameterType="map" resultType="boardVO">
+		SELECT
+			*
+		FROM (SELECT
+					a.*,
+					ROWNUM AS rnum 
+				FROM (SELECT 
+						board_num,
+						<![CDATA[
+						REPLACE(REPLACE(title, '<', '&lt;'), '>', '&gt;') AS title,
+						]]>
+						hit,
+						reg_date,
+						id
+					FROM spboard
+					JOIN spmember
+					USING (mem_num)
+					<where>
+						<if test="keyword!='' and keyfield==1">
+						title LIKE '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword!='' and keyfield==2">
+						id LIKE '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword!='' and keyfield==3">
+						content LIKE '%' || #{keyword} || '%'
+						</if>
+						<if test="keyword!='' and keyfield==4">
+						title LIKE '%' || #{keyword} || '%'
+						OR
+						content LIKE '%' || #{keyword} || '%'
+						</if>
+					</where>
+					ORDER BY board_num DESC) a)
+		<![CDATA[
+		WHERE rnum>=#{start} AND rnum<=#{end}
+		]]>
+	</select>
+	<select id="selectRowCount" parameterType="map" resultType="integer">
+		SELECT
+			COUNT(*)
+		FROM spboard
+		JOIN spmember
+		USING (mem_num)
+		<where>
+			<if test="keyword!='' and keyfield==1">
+			title LIKE '%' || #{keyword} || '%'
+			</if>
+			<if test="keyword!='' and keyfield==2">
+			id LIKE '%' || #{keyword} || '%'
+			</if>
+			<if test="keyword!='' and keyfield==3">
+			content LIKE '%' || #{keyword} || '%'
+			</if>
+			<if test="keyword!='' and keyfield==4">
+			title LIKE '%' || #{keyword} || '%'
+			OR
+			content LIKE '%' || #{keyword} || '%'
+			</if>
+		</where>
+	</select>
+	<!-- 수정 -->
+	<update id="updateBoard" parameterType="boardVO">
+		UPDATE spboard SET
+			<if test="filename!=''">
+				uploadfile=#{uploadfile},
+				filename=#{filename},
+			</if>
+			title=#{title},
+			content=#{content},
+			ip=#{ip},
+			modify_date=SYSDATE
+		WHERE board_num=#{board_num}
+	</update>
+</mapper>

@@ -31,6 +31,7 @@
 			<beans:list>
 				<beans:value>/WEB-INF/tiles-def/main.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/member.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/board.xml</beans:value>
 			</beans:list>
 		</beans:property>	
 	</beans:bean>
@@ -68,10 +69,23 @@
 			<mapping path="/member/update.do"/>
 			<mapping path="/member/changePassword.do"/>
 			<mapping path="/member/delete.do"/>
+			<mapping path="/member/admin_list.do"/>
+			<mapping path="/member/admin_update.do"/>
+			<mapping path="/board/write.do"/>
+			<mapping path="/board/update.do"/>
+			<mapping path="/board/delete.do"/>
 			<beans:bean class="kr.spring.interceptor.LoginCheckInterceptor"/>
+		</interceptor>
+		<interceptor>
+			<mapping path="/member/admin_list.do"/>
+			<mapping path="/member/admin_update.do"/>
+			<beans:bean class="kr.spring.interceptor.AdminCheckInterceptor"/>
 		</interceptor>
 	</interceptors>
 	
 	<!-- BLOB 타입 이미지 표시 -->
 	<beans:bean id="imageView" class="kr.spring.view.ImageView"/>
+	
+	<!-- 파일 다운로드 -->
+	<beans:bean id="downloadView" class="kr.spring.view.DownloadView"/>
 </beans:beans>

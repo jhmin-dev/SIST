@@ -74,11 +74,18 @@ public class MemberAdminController {
 		return "admin_memberModify";
 	}
 	
+	// 회원 정보 수정 폼에서 전송된 데이터 처리
 	@PostMapping("/member/admin_update.do")
 	public String submit(@Valid MemberVO memberVO, BindingResult result) {
+		logger.info("<<관리자 회원 수정 처리>> : " + memberVO);
+		
+		// 유효성 검증 결과 오류가 있으면 폼 호출
 		if(result.hasErrors()) {
 			return "admin_memberModify";
 		}
+		
+		// 회원 정보 수정
+		memberService.updateByAdmin(memberVO);
 		
 		return "redirect:/member/admin_list.do";
 	}
