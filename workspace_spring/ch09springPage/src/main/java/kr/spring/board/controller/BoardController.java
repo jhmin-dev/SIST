@@ -155,6 +155,9 @@ public class BoardController {
 		
 		// 유효성 검증 결과에 오류가 있으면 폼 호출
 		if(result.hasErrors()) {
+			// title 또는 content가 입력되지 않으면 유효성 검증시 오류가 발생하고 파일 정보를 잃어버리기 때문에 폼을 호출할 때 다시 세팅
+			BoardVO vo = boardService.selectBoard(boardVO.getBoard_num());
+			boardVO.setFilename(vo.getFilename());
 			return "boardModify";
 		}
 		

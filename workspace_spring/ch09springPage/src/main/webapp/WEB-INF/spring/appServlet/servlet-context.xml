@@ -81,6 +81,11 @@
 			<mapping path="/member/admin_update.do"/>
 			<beans:bean class="kr.spring.interceptor.AdminCheckInterceptor"/>
 		</interceptor>
+		<interceptor>
+			<mapping path="/board/update.do"/>
+			<mapping path="/board/delete.do"/>
+			<beans:bean class="kr.spring.interceptor.WriterCheckInterceptor"/>
+		</interceptor>
 	</interceptors>
 	
 	<!-- BLOB 타입 이미지 표시 -->

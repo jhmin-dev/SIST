@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import kr.spring.board.vo.BoardReplyVO;
 import kr.spring.board.vo.BoardVO;
 
 public interface BoardMapper {
@@ -26,4 +27,16 @@ public interface BoardMapper {
 	public void deleteBoard(Integer board_num);
 	@Update("UPDATE spboard SET uploadfile='', filename='' WHERE board_num=#{board_num}")
 	public void deleteFile(Integer board_num);
+	
+	// 댓글
+	public List<BoardReplyVO> selectListReply(Map<String, Object> map);
+	public int selectRowCountReply(Map<String, Object> map);
+	public BoardReplyVO selectReply(Integer re_num);
+	@Insert("INSERT INTO spboard_reply (re_num, re_content, re_ip, board_num, mem_num) "
+			+ "VALUES (spreply_seq.NEXTVAL, #{re_content}, #{re_ip}, #{board_num}, #{mem_num})")
+	public void insertReply(BoardReplyVO boardReply);
+	public void updateReply(BoardReplyVO boardReply);
+	public void deleteReply(Integer re_num);	
+	// 부모글 삭제시 댓글이 존재하면 부모글 삭제 전 댓글 삭제
+	public void deleteReplyByBoardNum(Integer board_num);
 }
