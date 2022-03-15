@@ -138,13 +138,13 @@ textarea.rep-content {
 	height: 50px;
 	margin: 10px;
 }
-div#re_first {
+div#re_first,div#mre_first {
 	float: left;
 	width: 70%;
 	padding-left: 15px;
 	margin-bottom: 10px;
 }
-div#re_second {
+div#re_second,div#mre_second {
 	float: left;
 	width: 19%;
 	margin-bottom: 10px;
