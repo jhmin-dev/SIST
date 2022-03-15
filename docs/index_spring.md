@@ -188,7 +188,7 @@ hide_toc: true
 
 #### Views [3월 7일](0307.md#Views)
 
-### 10. `springPage` [3월 7일](0307.md#10-springPage) [3월 8일](0308.md#10-springPage) [3월 10일](0310.md#10-springPage) [3월 11일](0311.md#10-springPage) [3월 14일](0314.md#10-springPage)
+### 10. `springPage` [3월 7일](0307.md#10-springPage) [3월 8일](0308.md#10-springPage) [3월 10일](0310.md#10-springPage) [3월 11일](0311.md#10-springPage) [3월 14일](0314.md#10-springPage) [3월 15일](0315.md#10-springPage)
 
 #### 프로젝트 설정 [3월 7일](0307.md#프로젝트-설정) [3월 8일](0308.md#프로젝트-설정) [3월 10일](0310.md#프로젝트-설정) [3월 11일](0311.md#프로젝트-설정) [3월 14일](0314.md#프로젝트-설정)
 
@@ -221,7 +221,7 @@ hide_toc: true
 - DAO
 - Service
 
-#### Board [3월 11일](0311.md#Board) [3월 14일](0314.md#Board)
+#### Board [3월 11일](0311.md#Board) [3월 14일](0314.md#Board) [3월 15일](0315.md#Board)
 
 - VO
 - DAO
