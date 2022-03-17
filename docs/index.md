@@ -27,4 +27,8 @@ hide_toc: true
     + [Bootstrap](index_front.md#Bootstrap)
 - [Servlet & JSP](index_jsp.md)
 - [Spring & Spring Boot](index_spring.md)
-- Python
+    + [Spring](index_spring.md#Spring)
+    + [Spring Boot](index_spring.md#Spring-Boot)
+    + [UML](index_spring.md#UML)
+    + [소프트웨어 프로젝트 관리](index_spring.md#소프트웨어-프로젝트-관리)
+- [Python](index_python.md)
