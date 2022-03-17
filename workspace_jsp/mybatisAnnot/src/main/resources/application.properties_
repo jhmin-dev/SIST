@@ -1,0 +1,27 @@
+# tomcat port setting
+server.port=8081
+
+# JSP
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+# Datasource setting
+spring.datasource.hikari.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.hikari.jdbc-url=jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.hikari.username=scott
+spring.datasource.hikari.password=tiger
+spring.datasource.type=com.zaxxer.hikari.HikariDataSource
+# 클라이언트가 pool에 connection을 요청하는 데 기다리는 최대 시간을 30초로 설정
+spring.datasource.hikari.connection-timeout=30000
+# 유휴 및 사용 중인 connection을 포함하여 pool에 보관하는 최대 커넥션 개수를 설정
+spring.datasource.hikari.maximum-pool-size=20
+
+# 메시지 파일 지정
+spring.messages.basename=messages.validation
+
+# JSP reload
+spring.devtools.livereload.enabled=true
+
+# MyBatis setting
+mybatis.mapper-locations=classpath:mybatis/mapper/**/*.xml
+mybatis.type-aliases-package=kr.spring.**.vo

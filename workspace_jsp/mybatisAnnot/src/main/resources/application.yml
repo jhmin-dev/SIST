@@ -1,0 +1,30 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      driver-class-name: oracle.jdbc.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@localhost:1521:xe
+      username: scott
+      password: tiger
+      connection-timeout: 30000
+      maximum-pool-size: 20
+
+  messages:
+    basename: messages.validation
+    encoding: UTF-8
+
+  devtools:
+    livereload:
+      enabled: true
+
+mybatis:
+  type-aliases-package: kr.spring.**.vo
+  mapper-locations: mybatis/mapper/**/*.xml
+
+server:
+  port: 8081

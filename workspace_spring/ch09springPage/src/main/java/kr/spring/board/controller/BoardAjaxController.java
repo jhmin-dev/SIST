@@ -140,8 +140,22 @@ public class BoardAjaxController {
 	// 댓글 삭제
 	@RequestMapping("/board/deleteReply.do")
 	@ResponseBody
-	public Map<String, String> deleteReply() {
+	public Map<String, String> deleteReply(@RequestParam int re_num, HttpSession session) {
 		Map<String, String> map = new HashMap<String, String>();
+		
+		Integer user_num = (Integer)session.getAttribute("user_num");
+		BoardReplyVO db_reply = boardService.selectReply(re_num);
+		if(user_num==null) { // 로그인되어 있지 않은 경우
+			map.put("result", "logout");
+		}
+		else if(user_num!=null && user_num==db_reply.getMem_num()) { // 로그인한 회원 번호와 댓글 작성자 회원 번호가 일치하는 경우
+			boardService.deleteReply(re_num);
+			
+			map.put("result", "success");
+		}
+		else { // 로그인한 회원 번호와 댓글 작성자 회원 번호가 불일치하는 경우
+			map.put("result", "wrongAccess");
+		}
 		
 		return map;
 	}
