@@ -6,10 +6,9 @@
 /*.png
 /*.xlsx
 *.class
-study db/
-sync/
-bin/
-lib/
+**/
+!src/
+!docs/
 
 # Eclipse Metadata
 .metadata/
