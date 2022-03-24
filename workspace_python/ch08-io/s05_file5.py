@@ -5,7 +5,7 @@ print(lines)
 print('-'*3)
 
 for line in lines:
-    data = line.split()
+    data = line.split() # 구분자를 지정하지 않으면 공백(\s, \t, \n) 기준으로 문자열을 잘라냄
     # print(data)
     i=0
     sum=0
