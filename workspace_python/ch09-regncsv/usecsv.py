@@ -16,3 +16,13 @@ def writecsv(filename,enc,the_list):
         writer = csv.writer(f,delimiter=',')
         writer.writerows(the_list)
     f.close()
+
+# 숫자로 변환
+def switch(listName):
+    for i in listName:
+        for j in i:
+            try:
+                i[i.index(j)] = float(re.sub(',','',j))
+            except:
+                pass
+    return listName
