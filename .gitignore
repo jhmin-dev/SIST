@@ -2,6 +2,10 @@
 apps/
 workspace_sts/
 
+### Python ###
+
+*.pyc
+
 ### HTML, CSS & JavaScript ###
 images/
 build/
